@@ -1,0 +1,24 @@
+[Unit]
+Description=Avahi-usb0
+Wants=usb0.service
+After=usb0.service
+BindsTo=usb0.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+Restart=on-abort
+StandardOutput=journal
+StandardError=inherit
+
+EnvironmentFile=/etc/global.env
+# will exit from prestart if usbnic disabled
+# To start manually use following and then restart this service 
+# writecfg -g 16437 -e 1 -f 2 -v1
+# writecfg -g 16437 -e 1 -f 4 -v1
+ExecStartPre=/bin/sh -c "/bin/test `/usr/bin/readcfg -g 16437 -f 2 | cut -d'=' -f2` -eq 1"
+ExecStartPre=/bin/sh -c "/bin/test `/usr/bin/readcfg -g 16437 -f 4 | cut -d'=' -f2` -eq 1"
+ExecStart=/usr/sbin/avahi-daemon -f /etc/sysconfig/avahi/usbnic_avahi-daemon.conf --no-rlimits --no-drop-root --no-chroot
+
+[Install]
+WantedBy=multi-user.target

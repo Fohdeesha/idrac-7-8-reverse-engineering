@@ -1,0 +1,13 @@
+[Unit]
+Description=Front Panel SPI recovery
+ConditionPathExists=!/tmp/fpspi_mount_success
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/bin/sh -c "/usr/sbin/flash_eraseall -j /dev/$(cat /proc/mtd | grep '\"fpspi\"' | cut -d: -f1)"
+ExecStartPost=-/bin/sh -c "/bin/touch /mmc1/fpspi_mount_failed"
+ExecStartPost=-/bin/sh -c "sleep 10"
+ExecStartPost=/bin/sh -c "/sbin/reboot -f"

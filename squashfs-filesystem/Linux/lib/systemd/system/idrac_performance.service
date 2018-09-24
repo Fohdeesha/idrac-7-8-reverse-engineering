@@ -1,0 +1,21 @@
+[Unit]
+ 
+Description=iDRAC Performance Service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+RemainAfterExit=no
+Restart=on-failure
+#disable timeout for now
+TimeoutStartSec=0
+Nice=5
+
+LimitSTACK=65536
+Environment=PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib
+
+StandardOutput=journal
+StandardError=inherit
+
+ExecStart=/bin/idrac_performance.sh 120 500 /mnt/scratchpad/
+KillSignal=SIGKILL

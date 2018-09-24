@@ -1,0 +1,130 @@
+#!/bin/sh
+#
+# Init file for OpenSSH server daemon
+#
+RETVAL=0
+prog="sshd"
+
+KEYGEN=/bin/ssh-keygen
+SSHD=/sbin/sshd
+RSA_KEY=/etc/ssh/ssh_host_rsa_key
+DSA_KEY=/etc/ssh/ssh_host_dsa_key
+ECDSA_KEY=/etc/ssh/ssh_host_ecdsa_key
+SSHD_ENABLED=`/avct/sbin/aim_config_get_bool pm_bool_ssh_enabled`
+# Not implemented here, somebody apparently tried to start implementing it but
+# never finished, so commenting this out for posterity
+# SSHD_MAX_SESSIONS=`/avct/sbin/aim_config_get_int pm_int_ssh_max_sessions`
+# SSHD_SESSION_COUNT=`/avct/sbin/aim_config_get_int pm_int_ssh_session_count`
+SSHD_SESSION_TIMEOUT=`/avct/sbin/aim_config_get_int pm_int_ssh_session_timeout`
+SSHD_PORT=`/avct/sbin/aim_config_get_int pm_int_ssh_port`
+SSHD_PUBKEY=`/avct/sbin/aim_config_get_bool ameastatus_bool_amea_present`
+FM_STATUS=`/avct/sbin/fmchk pkauth -d 1 | awk '{print $1}'`
+CONFIG_FILE=/etc/ssh/sshd_config
+TMP_FILE=$(mktemp /tmp/sshd_config.XXXXXX)
+trap "rm -f ${TMP_FILE}" EXIT
+
+do_keygen() {
+	if [ ! -f $2 ] && ! $KEYGEN -t $1 -f $2 -q -C '' -N ''; then
+		exit 1
+	fi
+}
+
+write_to_file() {	
+	if ! diff -q $CONFIG_FILE $TMP_FILE > /dev/null; then
+		cp -f $TMP_FILE $CONFIG_FILE
+	fi
+}
+
+update_config_file() {
+
+	if [ ! -e /flash/data0/etc/ssh ]; then
+		mkdir -p /flash/data0/etc
+		cp -a /etc/def_ssh /flash/data0/etc/ssh
+	fi
+
+
+	cp -f /etc/def_ssh/sshd_config $TMP_FILE 
+
+    # FIPS mode
+    if [ -f /flash/data0/oem_ps/fips.txt ]; then
+        sed -i "/^MACs/d" $TMP_FILE
+        sed -i "/^KexAlgorithms/d" $TMP_FILE
+        sed -i "/^Ciphers/d" $TMP_FILE
+        sed -i "/^Protocol/a\\MACs hmac-sha1,hmac-sha2-256,hmac-sha2-512" $TMP_FILE
+        sed -i "/^Protocol/a\\Ciphers 3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc,aes128-ctr,aes192-ctr,aes256-ctr" $TMP_FILE
+        sed -i "/^Protocol/a\\KexAlgorithms ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1" $TMP_FILE
+    fi
+
+	if [ -n "$SSHD_PORT" ]; then
+		sed -i -e "s/^#*\s*Port .*$/Port $SSHD_PORT/g" $TMP_FILE
+	fi
+
+	if [ -n "$SSHD_SESSION_TIMEOUT" ]; then
+		sed -i -e "s/^#*\s*ClientAliveInterval .*$/ClientAliveInterval $SSHD_SESSION_TIMEOUT/g" $TMP_FILE 
+		sed -i -e "s/^#*\s*ClientAliveCountMax .*$/ClientAliveCountMax 0/g" $TMP_FILE
+	fi 
+
+	if [ "$SSHD_PUBKEY" == "true" ] && [ $FM_STATUS == "1" ]; then
+		sed -i -e 's/#*PubkeyAuthentication .*/PubkeyAuthentication yes/' $TMP_FILE 
+	else
+		sed -i -e 's/#*PubkeyAuthentication .*/PubkeyAuthentication no/' $TMP_FILE
+	fi
+
+	write_to_file
+	rm -f $TMP_FILE
+}
+
+start() {
+	# create sshd dirs and update config files
+	update_config_file
+		
+	# Create keys if necessary
+	do_keygen rsa $RSA_KEY
+	do_keygen dsa $DSA_KEY
+	do_keygen ecdsa $ECDSA_KEY
+	
+	# test if the variable is null is true
+	if [ "$SSHD_ENABLED" == "true" ]; then
+           mkdir /var/run/sshd	# for privsep path
+           if [ -e /flash/data0/features/fips.txt ]
+           then
+               export SECURITY_MODULE=1
+               # FIPS mode, point to openssl fips capable libraries
+               export LD_LIBRARY_PATH=/usr/fips:$LD_LIBRARY_PATH
+           fi
+		 LD_PRELOAD=/usr/lib/libfipsint.so.0.0.0 $SSHD -g 60
+	fi
+}
+
+stop() {
+	# kill all /sbin/sshd processes
+	for row in `ps -T | grep "/sbin/sshd" | awk '{print $1}'`
+	do
+		kill -9 $row  2> /dev/null
+	done
+
+	# kill ssh sessions for racuser when sshd is disabled
+	if [ $SSHD_ENABLED == "false" ]; then
+		for row in `ps -T | grep "sshd: racuser" | awk '{print $1}'`
+		do
+			kill -9 $row  2> /dev/null
+		done
+	fi
+
+	# Stop generating keys
+	killall -9 `basename ${KEYGEN}` 2> /dev/null
+}
+
+# use systemctl {stop|start|restart} to stop or restart
+case "$1" in
+	start)
+		start
+		;;
+        stop)
+		stop
+		;;
+	*)
+		echo $"Usage: $0 {start}"
+		RETVAL=1
+esac
+exit $RETVAL

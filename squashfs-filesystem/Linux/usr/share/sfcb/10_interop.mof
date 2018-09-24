@@ -1,0 +1,85 @@
+//
+// interop base classes for mofc/
+//
+//
+
+// ===================================================================
+// 	dummy classes to get event classes loaded by mofc
+// ===================================================================
+
+class DMY_ObjectManager : CIM_ObjectManager
+{
+};
+
+class DMY_IndicationService : CIM_IndicationService
+{
+};
+
+class SFCB_CIMXMLCommunicationMechanism : CIM_CIMXMLCommunicationMechanism
+{
+};
+
+class DMY_RegisteredSubProfile : CIM_RegisteredSubProfile
+ {
+ };
+
+class SFCB_RegisteredProfile : CIM_RegisteredProfile
+ {
+ };
+
+instance of SFCB_RegisteredProfile
+{
+  InstanceID = "CIM:SFCB_PR";
+  RegisteredOrganization = 2;
+  RegisteredName = "Profile Registration";
+  RegisteredVersion = "1.0.0";
+  AdvertiseTypes = 3;
+};
+
+class DMY_Namespace : CIM_Namespace
+{
+};
+
+class DMY_SubProfileRequiresProfile : CIM_SubProfileRequiresProfile
+{
+};
+
+class DMY_ListenerDestinationCIMXML : CIM_ListenerDestinationCIMXML
+{
+};
+
+class DMY_IndicationHandlerCIMXML : CIM_IndicationHandlerCIMXML
+{
+};
+
+class DMY_IndicationFilter : CIM_IndicationFilter
+{
+};
+
+class DMY_IndicationSubscription : CIM_IndicationSubscription
+{
+};
+
+class DMY_HostedService : CIM_HostedService
+{
+};
+
+class DMY_NamespaceInManager : CIM_NamespaceInManager
+{
+};
+
+
+class SFCB_ElementConformsToProfile : CIM_ElementConformsToProfile
+{
+};
+
+class SFCB_IndicationElement : CIM_ManagedElement
+{
+    [key] uint32 IndicationID;
+    uint32 RetryCount;
+    sint32 LastDelivery;
+    CIM_Indication ref ind;
+    CIM_IndicationSubscription ref sub;
+    CIM_ListenerDestination ref ld;
+};
+

@@ -1,0 +1,21 @@
+[Unit]
+Description=VNC source
+#BindTo=vnc-server.service
+After=osinet.service
+After=driver-load-usb.service
+
+[Service]
+Type=simple
+Restart=on-failure
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/bin/fb_source
+TimeoutStopSec=2
+ExecStop=/bin/killall -SIGINT fb_source
+ExecStopPost=/bin/killall -SIGINT fb_vnc_server
+KillSignal=SIGINT
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

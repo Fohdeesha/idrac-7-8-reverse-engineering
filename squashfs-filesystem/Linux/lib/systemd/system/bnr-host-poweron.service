@@ -1,0 +1,17 @@
+[Unit]
+Description=Initiate host poweron after restore
+Wants=dm-stage2.service
+After=dm-stage2.service
+ConditionPathExists=/flash/data0/DontBackup/restorepwrupreq
+
+[Service]
+Type=oneshot
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/bin/IPMICmd 20 0 0 2 1
+ExecStart=/bin/rm /flash/data0/DontBackup/restorepwrupreq
+
+[Install]
+WantedBy=multi-user.target
+

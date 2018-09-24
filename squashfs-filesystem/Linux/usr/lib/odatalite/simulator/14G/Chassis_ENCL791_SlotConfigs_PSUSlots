@@ -1,0 +1,17 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/PSUSlots",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/SlotConfigs",
+    "@odata.type": "SlotConfig.1.0.0.SlotConfig",
+    "Id": "PSUSlots",
+    "Name": "Power supply slots",
+    "Row": "1",
+    "Column": "6",
+    "Location": "Front",
+    "Orientation": "Vertical",
+    "FirstSlotNamePattern": "1",
+    "SequenceOrder": [
+        "TLRA"
+    ],
+    "Oem": {}
+}

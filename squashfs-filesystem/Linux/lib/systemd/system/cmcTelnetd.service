@@ -1,0 +1,26 @@
+# Derived from /etc/sysapps_script/S_7015_telnetd_app.sh
+[Unit]
+Description=CMC Telnetd
+After=osinet_init_modular.service
+Wants=osinet_init_modular.service
+ConditionPathExists=/flash/data0/features/platform-modular
+
+# for cpu utilization/contention, not real deps
+After=fullfw_app.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-abort
+
+LimitSTACK=65536
+Environment=PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib CFGLIB_TELNET=16391 ENABLE=1 PORT=2 TIMEOUT=3
+EnvironmentFile=/var/run/features/modular-env
+
+StandardOutput=journal
+StandardError=inherit
+
+ExecStart=/bin/sh -c "/sbin/telnetd -B -b 169.254.31.${VLANIP}:2100 -l /etc/sysapps_script/SerRedir.sh -t `/usr/bin/readcfg -g ${CFGLIB_TELNET} -f ${TIMEOUT} |cut -d'=' -f2`"
+
+[Install]
+WantedBy=multi-user.target

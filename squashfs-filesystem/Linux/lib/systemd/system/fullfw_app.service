@@ -1,0 +1,34 @@
+[Unit]
+Description=fullfw
+DefaultDependencies=no
+After=aim.service
+Wants=aim.service
+After=syscallagent.service
+Wants=syscallagent.service
+After=driver-load.service
+Wants=driver-load.service
+RequiresMountsFor=/flash/data0 /flash/pd0
+
+[Service]
+Type=notify
+ControlGroup=memory:/idrac/C
+NotifyAccess=all
+WatchdogSec=60s
+Restart=on-failure
+#StartLimitInterval=5min
+#StartLimitBurst=4
+#StartLimitAction=reboot-force 
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+Environment=USER=root
+WorkingDirectory=/flash/data0/BMC_Data/
+
+ExecStart=/bin/fullfw
+ExecStartPre=/bin/sh -c "if [ -e /flash/data0/oem_ps/idraclog_ps ] ; then /bin/debugcontrol $(cat /flash/data0/oem_ps/idraclog_ps); fi "
+ExecStartPost=/bin/sh -c "while [ ! -e /tmp/FruInitDone ]; do sleep 1; done"
+KillSignal=SIGKILL
+ExecStopPost=/bin/AppThermalSHM -L
+TimeoutStopSec=2
+
+[Install]
+WantedBy=sysinit.target

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!-- Copyright 2015-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData" />
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish" />
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0"/>
+    <edmx:Include Namespace="Resource.v1_1_0"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataSecurityLoSCapabilities">
+      <EntityType Name="DataSecurityLoSCapabilities" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+        <Annotation Term="OData.Description" String="Describe data protection capabilities" />
+        <Annotation Term="OData.LongDescription"
+        String="The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics." />
+      </EntityType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataSecurityLoSCapabilities.v1_0_0">
+
+      <EntityType Name="DataSecurityLoSCapabilities" BaseType="DataSecurityLoSCapabilities.DataSecurityLoSCapabilities">
+        <Annotation Term="OData.Description" String="Describe data security capabilities." />
+        <Annotation Term="OData.LongDescription" String="This resource may be used to describe data security capabilities." />
+        <Property Name="Identifier" Type="Resource.v1_1_0.Identifier">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="The value identifies this resource."/>
+          <Annotation Term="OData.LongDescription" String="The value identifies this resource.  The value shall be unique within the managed ecosystem."/>
+        </Property>
+        <Property Name="SupportedMediaEncryptionStrengths" Type="Collection(DataSecurityLoSCapabilities.v1_0_0.KeySize)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Supported key sizes for media encryption." />
+          <Annotation Term="OData.LongDescription"
+          String="The enumeration literal shall specify supported key sizes in a symmetric encryption algorithm (AES) for media encryption." />
+        </Property>
+        <Property Name="SupportedChannelEncryptionStrengths" Type="Collection(DataSecurityLoSCapabilities.v1_0_0.KeySize)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Supported key sizes for transport channel encryption." />
+          <Annotation Term="OData.LongDescription"
+          String="The enumeration literal shall specify supported key sizes in a symmetric encryption algorithm (AES) for transport channel encryption." />
+        </Property>
+        <Property Name="SupportedHostAuthenticationTypes" Type="Collection(DataSecurityLoSCapabilities.v1_0_0.AuthenticationType)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Supported authentication types for hosts (servers) or initiator endpoints." />
+          <Annotation Term="OData.LongDescription"
+          String="The enumeration literal shall specify supported authentication types for hosts (servers) or initiator endpoints." />
+        </Property>
+        <Property Name="SupportedUserAuthenticationTypes" Type="Collection(DataSecurityLoSCapabilities.v1_0_0.AuthenticationType)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Supported authentication types for users (or programs)." />
+          <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify supported authentication types for users (or programs)." />
+        </Property>
+        <Property Name="SupportedSecureChannelProtocols" Type="Collection(DataSecurityLoSCapabilities.v1_0_0.SecureChannelProtocol)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Supported protocols that provide encrypted communication." />
+          <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify supported protocols that provide encrypted communication." />
+        </Property>
+        <Property Name="SupportedAntivirusScanPolicies" Type="Collection(DataSecurityLoSCapabilities.v1_0_0.AntiVirusScanTrigger)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Supported policies that trigger an AntiVirus scan." />
+          <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify supported policies that trigger an AntiVirus scan." />
+        </Property>
+        <Property Name="SupportedAntivirusEngineProviders" Type="Collection(Edm.String)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Supported AntiVirus providers." />
+          <Annotation Term="OData.LongDescription" String="The entry values shall specify supported AntiVirus providers." />
+        </Property>
+        <Property Name="SupportedDataSanitizationPolicies" Type="Collection(DataSecurityLoSCapabilities.v1_0_0.DataSanitizationPolicy)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Supported data sanitization policies." />
+          <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify supported data sanitization policies." />
+        </Property>
+        <Property Name="SupportedDataSecurityLinesOfService" Type="Collection(DataSecurityLoSCapabilities.v1_0_0.DataSecurityLineOfService)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Collection of known and supported DataSecurityLinesOfService." />
+          <Annotation Term="OData.LongDescription" String="The collection shall contain supported DataSecurity service options." />
+        </Property>
+      </EntityType>
+
+      <ComplexType Name="DataSecurityLineOfService">
+        <Annotation Term="OData.Description" String="Describe data security service level requirements." />
+        <Annotation Term="OData.LongDescription" String="This structure shall be used to describe data security service level requirements. "/>
+        <Property Name="Name" Type="Resource.Name" />
+        <Property Name="MediaEncryptionStrength" Type="DataSecurityLoSCapabilities.v1_0_0.KeySize">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Key size for media encryption." />
+          <Annotation Term="OData.LongDescription"
+          String="The enumeration literal shall specify a key size in a symmetric encryption algorithm for media encryption." />
+        </Property>
+        <Property Name="ChannelEncryptionStrength" Type="DataSecurityLoSCapabilities.v1_0_0.KeySize">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Key size for transport channel encryption." />
+          <Annotation Term="OData.LongDescription"
+          String="The enumeration literal shall specify a key size in a symmetric encryption algorithm for transport channel encryption." />
+        </Property>
+        <Property Name="HostAuthenticationType" Type="DataSecurityLoSCapabilities.v1_0_0.AuthenticationType">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Authentication type for hosts (servers) or initiator endpoints." />
+          <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify the authentication type for hosts (servers) or initiator endpoints." />
+        </Property>
+        <Property Name="UserAuthenticationType" Type="DataSecurityLoSCapabilities.v1_0_0.AuthenticationType">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Authentication type for users (or programs)." />
+          <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify the authentication type for users (or programs)." />
+        </Property>
+        <Property Name="SecureChannelProtocol" Type="DataSecurityLoSCapabilities.v1_0_0.SecureChannelProtocol">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Protocol that provide encrypted communication." />
+          <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify the protocol that provide encrypted communication." />
+        </Property>
+        <Property Name="AntivirusScanPolicies" Type="Collection(DataSecurityLoSCapabilities.v1_0_0.AntiVirusScanTrigger)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Policy for triggering an AntiVirus scan." />
+          <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify the policy for triggering an AntiVirus scan." />
+        </Property>
+        <Property Name="AntivirusEngineProvider" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="AntiVirus provider." />
+          <Annotation Term="OData.LongDescription" String="The value shall specify an AntiVirus provider." />
+        </Property>
+        <Property Name="DataSanitizationPolicy" Type="DataSecurityLoSCapabilities.v1_0_0.DataSanitizationPolicy">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="Data sanitization policy." />
+          <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify the data sanitization policy." />
+        </Property>
+      </ComplexType>
+
+      <EnumType Name="KeySize">
+        <Annotation Term="OData.Description"
+        String="Enumeration of Key sizes in a symmetric encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)" />
+        <Annotation Term="OData.LongDescription"
+        String="The enumeration literals shall specify Key sizes in a symmetric encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)" />
+        <Member Name="Bits_0">
+          <Annotation Term="OData.Description" String="No key." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies that there is no key." />
+        </Member>
+        <Member Name="Bits_112">
+          <Annotation Term="OData.Description" String="3DES 112 bit key." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies a 3DES 112 bit key." />
+        </Member>
+        <Member Name="Bits_128">
+          <Annotation Term="OData.Description" String="AES 128 bit key." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies an AES 128 bit key." />
+        </Member>
+        <Member Name="Bits_192">
+          <Annotation Term="OData.Description" String="AES 192 bit key." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies an AES 192 bit key." />
+        </Member>
+        <Member Name="Bits_256">
+          <Annotation Term="OData.Description" String="AES 256 bit key." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies an AES 256 bit key." />
+        </Member>
+      </EnumType>
+
+      <EnumType Name="AuthenticationType">
+        <Annotation Term="OData.Description" String="Enumeration of authentication algorithms.)" />
+        <Annotation Term="OData.LongDescription" String="The enumeration literals shall specify authentication algorithms." />
+        <Member Name="None">
+          <Annotation Term="OData.Description" String="No authentication." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies No authentication." />
+        </Member>
+        <Member Name="PKI">
+          <Annotation Term="OData.Description"
+          String="Public Key Infrastructure." />
+          <Annotation Term="OData.LongDescription"
+          String="This enumeration literal specifies a Public Key Infrastructure. Customers with the highest assurance requirements roll PKI out to hosts and users (it is more common for hosts than users. User PKI-based authentication has significant operational complications and administrative overheads, e.g., smart cards may be involved." />
+        </Member>
+        <Member Name="Ticket">
+          <Annotation Term="OData.Description"
+          String="Ticket-based (e.g., Kerberos)" />
+          <Annotation Term="OData.LongDescription"
+          String="This enumeration literal specifies Ticket-based (e.g., Kerberos): This is the most common class of authentication infrastructure used in enterprises. Kerberos is the best known example, and Windows usage of that via Active Directory is so widely deployed as to be a de facto standard. In other areas (e.g., academia) there are comparable ticket-based systems." />
+        </Member>
+        <Member Name="Password">
+          <Annotation Term="OData.Description"
+          String="Password/shared-secret" />
+          <Annotation Term="OData.LongDescription"
+          String="This enumeration literal specifies Password/shared-secret: Absent an distributed authentication infrastructure, this is what is typically done." />
+        </Member>
+      </EnumType>
+
+      <EnumType Name="SecureChannelProtocol">
+        <Annotation Term="OData.Description" String="Types of Secure channel protocols" />
+        <Annotation Term="OData.LongDescription" String="The enumeration literals shall specify types of Secure channel protocols." />
+        <Member Name="None">
+          <Annotation Term="OData.Description" String="No encryption." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies no encryption." />
+        </Member>
+        <Member Name="TLS">
+          <Annotation Term="OData.Description" String="Transport Layer Security (TLS), as defined by IETF RFC 5246." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies Transport Layer Security (TLS), as defined by IETF RFC 5246." />
+        </Member>
+        <Member Name="IPsec">
+          <Annotation Term="OData.Description" String="Internet Protocol Security (IPsec), as defined by IETF RFC 2401." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies Internet Protocol Security (IPsec), as defined by IETF RFC 2401." />
+        </Member>
+        <Member Name="RPCSEC_GSS">
+          <Annotation Term="OData.Description"
+          String="RPC access to the Generic Security Services Application Programming Interface (GSS-API), as defined by IETF RPC 2203." />
+          <Annotation Term="OData.LongDescription"
+          String="This enumeration literal specifies RPC access to the Generic Security Services Application Programming Interface (GSS-API), as defined by IETF RPC 2203." />
+        </Member>
+      </EnumType>
+
+      <EnumType Name="AntiVirusScanTrigger">
+        <Annotation Term="OData.Description" String="Types of antivirus scan triggers" />
+        <Annotation Term="OData.LongDescription" String="The enumberation literals shall specify types of antivirus scan triggers." />
+        <Member Name="None">
+          <Annotation Term="OData.Description" String="No trigger." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies No trigger." />
+        </Member>
+        <Member Name="OnFirstRead">
+          <Annotation Term="OData.Description" String="Trigger on first read." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies to trigger on first read." />
+        </Member>
+        <Member Name="OnPatternUpdate">
+          <Annotation Term="OData.Description" String="Trigger on antivirus pattern file update." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies to trigger on antivirus pattern file update." />
+        </Member>
+        <Member Name="OnUpdate">
+          <Annotation Term="OData.Description" String="Trigger on object update." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies to trigger on object update." />
+        </Member>
+        <Member Name="OnRename">
+          <Annotation Term="OData.Description" String="Trigger on object rename." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies to trigger on object rename." />
+        </Member>
+      </EnumType>
+
+      <EnumType Name="DataSanitizationPolicy">
+        <Annotation Term="OData.Description" String="Types of data sanitization policies" />
+        <Annotation Term="OData.LongDescription" String="The enumberation literals shall specify types of data sanitization policies." />
+        <Member Name="None">
+          <Annotation Term="OData.Description" String="No sanitization." />
+          <Annotation Term="OData.LongDescription" String="This enumeration literal specifies no sanitization." />
+        </Member>
+        <Member Name="Clear">
+          <Annotation Term="OData.Description"
+          String="Sanitize data in all user-addressable storage locations for protection against simple non-invasive data recovery techniques." />
+          <Annotation Term="OData.LongDescription"
+          String="This enumeration literal specifies to sanitize data in all user-addressable storage locations for protection against simple non-invasive data recovery techniques."/>
+        </Member>
+        <Member Name="CryptographicErase">
+          <Annotation Term="OData.Description"
+          String="Leverages the encryption of target data by enabling sanitization of the target data&#39;s encryption key. This leaves only the ciphertext remaining on the media, effectively sanitizing the data by preventing read-access. For more information, see NIST800-88 and ISO/IEC 27040." />
+          <Annotation Term="OData.LongDescription"
+          String="This enumeration literal specifies to leverages the encryption of target data by enabling sanitization of the target data's encryption key. This leaves only the ciphertext remaining on the media, effectively sanitizing the data by preventing read-access. For more information, see NIST800-88 and ISO/IEC 27040."/>
+        </Member>
+      </EnumType>
+
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

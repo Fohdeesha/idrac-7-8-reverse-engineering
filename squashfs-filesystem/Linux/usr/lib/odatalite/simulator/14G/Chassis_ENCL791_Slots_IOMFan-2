@@ -1,0 +1,17 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/Slots",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOMFan-2",
+    "@odata.type": "#Slots.1.0.0.Slot",
+    "Id": "IOMFan-2",
+    "Name": "IOMFan-2",
+    "SlotId": "2",
+    "SlotGroup": "IOMFan",
+    "Occupied": true,
+    "SlotType": "Fan",
+    "SlotConfig": { "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/IOMFanSlots" },
+    "Contains": [
+        { "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/IOM-2" }
+    ],
+    "Oem": {}
+}

@@ -1,0 +1,20 @@
+[Unit]
+Description=Verify maser partitions
+DefaultDependencies=no
+After=early-mount.service
+Requires=early-mount.service
+RequiresMountsFor=/mmc1 /mmc2
+
+ 
+After=systemd-tmpfiles-setup.service
+Wants=systemd-tmpfiles-setup.service
+# ordering for CPU Utilization only
+After=fullfw_app.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/sysapps_script/verify_maser.sh check
+
+[Install]
+WantedBy=basic.target

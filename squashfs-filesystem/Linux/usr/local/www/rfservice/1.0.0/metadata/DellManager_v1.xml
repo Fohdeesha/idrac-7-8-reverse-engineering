@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellManager  v1.0.0 -->
+<!--# This schema complements to OEM section of Manager Resource                   -->
+<!--# Copyright 2014-2016 Dell, Inc. or its subsidiaries.All Rights Reserved.             -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.1.0.0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/DellJobCollection_v1.xml">
+    <edmx:Include Namespace="DellJobCollection"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/DellAttributes_v1.xml">
+    <edmx:Include Namespace="DellAttributes"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager">
+      <EntityType Name="DellManager" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+	    <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+        <Annotation Term="OData.Description" String="This is the schema definition for the additional OEM properties to complement DMTF Manager Schema."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an OEM Manager for a Redfish implementation."/>
+      </EntityType>
+
+	  <Action Name="ResetToDefaults" IsBound="true">
+		<Parameter Name="DellManager" Type="DellManager.v1_0_0.OemActions"/>
+		<Parameter Name="ResetType" Type="DellManager.v1_0_0.ResetType" Nullable="false">
+		  <Annotation Term="OData.Description" String="The type of ResetType option to be performed."/>
+		  <Annotation Term="OData.LongDescription" String="The type of ResetType option to be performed."/>
+		</Parameter>
+        <Annotation Term="OData.Description" String="This action is used to reset the Dell attributes to default."/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform reset of the Dell attributes to their default values."/>
+      </Action>
+      <Action Name="ClearPending" IsBound="true">
+        <Parameter Name="DellManager" Type="DellManager.v1_0_0.OemActions" Nullable="false"/>
+        <Annotation Term="OData.Description" String="This action is used to clear all the pending values."/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform a clear pending values."/>
+     </Action>
+
+	  <!--ResetType parameter values for ResetToDefaults Action-->
+      <EnumType Name="ResetType">
+        <Member Name="All">
+          <Annotation Term="OData.Description" String="All configuration is set to default."/>
+        </Member>
+        <Member Name="ResetAllWithRootDefaults">
+          <Annotation Term="OData.Description" String="All configuration including network is set to default exception root user password set to calvin."/>
+        </Member>
+        <Member Name="Default">
+          <Annotation Term="OData.Description" String="All configuration is set to default except users and network settings are preserved."/>
+        </Member>
+	  </EnumType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_0_0">
+
+      <EntityType Name="DellManager" BaseType="DellManager.DellManager">
+        <Annotation Term="OData.Description" String="This is the schema definition for the additional OEM properties to complement DMTF Manager Schema."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an OEM Manager for a Redfish implementation."/>
+		<NavigationProperty Name="Jobs" Type="DellJobCollection.DellJobCollection" ContainsTarget="true" Nullable="false">
+			<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+			<Annotation Term="OData.Description" String="A reference to the collection of Job associated with this system."/>
+			<Annotation Term="OData.LongDescription" String="The value of this property shall be a link to a collection of type Job."/>
+			<Annotation Term="OData.AutoExpandReferences"/>
+		</NavigationProperty>
+		<NavigationProperty Name="DellAttributes" Type="Collection(DellAttributes.DellAttributes)" Nullable="false">
+			<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+			<Annotation Term="OData.Description" String="An array of references to the DellAttributes."/>
+			<Annotation Term="OData.LongDescription" String="The value of this property shall be a ."/>
+			<Annotation Term="OData.AutoExpandReferences"/>
+		</NavigationProperty>
+      </EntityType>
+     
+     <ComplexType Name="OemActions">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+      </ComplexType>
+
+      <ComplexType Name="ServerConfigurationProfileResults">
+        <Property Name="DisplayValue" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the Display Value of the Configuration opertaion."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain Display Value of the Configuration opertaion."/>
+        </Property>
+        <Property Name="ErrCode" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the Error code of the configuration operation."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain Error code of the configuration operation, default value for success is 0."/>
+        </Property>
+        <Property Name="Name" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the Name of the configuration operation."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain Name of the configuration operation."/>
+        </Property>
+        <Property Name="NewValue" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the New Value of the configuration operation."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain New Value of the configuration operation."/>
+        </Property>
+        <Property Name="OldValue" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the Old Value of the configuration operation."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain Old Value of the configuration operation."/>
+        </Property>
+	 </ComplexType>
+
+    </Schema>
+
+  </edmx:DataServices>
+</edmx:Edmx>

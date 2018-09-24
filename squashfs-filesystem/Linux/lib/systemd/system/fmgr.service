@@ -1,0 +1,21 @@
+[Unit]
+Description=Feature manager
+
+# requires data manager
+After=dsm-sa-datamgr.service
+Wants=dsm-sa-datamgr.service
+
+# for CPU Utilization
+After=fullfw_app.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+
+ExecStart=/usr/bin/fmgr
+
+[Install]
+WantedBy=multi-user.target

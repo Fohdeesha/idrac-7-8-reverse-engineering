@@ -1,0 +1,305 @@
+#
+#	Configuration for the Mbedthis AppWeb HTTP Server
+#	
+#	This configuration file controls the operation of the AppWeb 
+#	server. The order of configuration directives matters as this 
+#	file is parsed only once. You must put the server root and error 
+#	log definitions first to ensure configuration errors are logged.
+#
+#	Root directory for AppWeb to find necessary files and DLLs. 
+#	AppWeb will change directory to this location when it runs.
+#
+#       The following ENV variables are used in this template:
+#		AIM_HTTP_TIMEOUT - Web server session timeout
+#		AIM_HTTP_PORT    - Web server htt port
+#		AIM_HTTPS_PORT	 - Web server https port
+#
+ServerRoot "/usr/local/lib/appweb"
+#
+#	Log all AppWeb errors and trace to this file. This is the error 
+#	file for the whole server including all virtual hosts. 
+#
+#ErrorLog /tmp/error.log
+#
+#	The log level can be a number between 0 and 9 (most verbose level).
+#
+LogLevel 4
+#
+#	Name of the server to use for redirects and error responses to the 
+#	clients. Uncomment this line and replace it with the public name of your
+#	server. This host name and port do not get used for listening on 
+#	sockets.
+#
+#  TODO: get from AIM variable.
+ServerName idrac
+#
+#	Location for documents for the primary server host. Virtual hosts 
+#	may define their own DocumentRoot directives.
+#
+DocumentRoot "/usr/local/www"
+#
+#	Bind AppWeb to listen for incoming requests on this address. 
+#	Formats include (IP, IP:PORT, PORT). If an IP address is omitted, 
+#	AppWeb will listen on all interfaces. If a port is omitted, then 
+#	port 80 is used.
+#
+Listen ${AIM_HTTP_PORT}
+#
+#	This will listen on port 443 for SSL requests
+#
+Listen ${AIM_HTTPS_PORT}
+#
+#	Set the thread limit to 0 for single-threaded use
+#
+#ThreadLimit 4
+#
+#	Location of the mime translation file to map content types to 
+#	file extensions.
+#
+#TypesConfig mime.types
+#
+#	DLL / Dynamic Shared Object (DSO) support. If the modules has been 
+#	statically linked into AppWeb, these directive will be ignored.
+#
+LoadModulePath /usr/local/lib/appweb ./bin ../bin ../bin/Debug ../bin/Release 
+#LoadModule auth 	libauthModule
+#LoadModule AvctCgiHandler   libavctCGI
+LoadModule cgi 		libcgiModule
+LoadModule copy 	libcopyModule
+LoadModule dir		libdirModule
+LoadModule ssl 		libsslModule
+LoadModule openSsl	libopenSslModule
+LoadModule upload	libuploadModule
+LoadModule dataHandler   libDataHandler
+LoadModule firmwareStart libfirmwareStart
+LoadModule avctAuth      libavctAuth
+LoadModule wsMan       libWSManModule
+LoadModule vfkUpload   libvfkUpload
+LoadModule vfkDnload   libvfkDnload
+LoadModule lmUpload    liblmUpload
+LoadModule lmDnload    liblmDnload
+LoadModule pwdHandler  libPwdHandler
+LoadModule FWUpload	libfwUpload
+LoadModule dcmHandler  libDCMHandler
+#
+#	Map handlers to file extensions. If the extension is ommitted, the 
+#	handler itself will determine if a match to a given URL occurs. For
+#	example: authHandler is always run on all URLs. Handler matching
+#	to extensions occurs after the URL is descaped but before aliases
+#	are applied.
+#
+AddHandler avctAuthHandler
+AddHandler cgiHandler .cgi .cgi-nph .bat .cmd .pl .py
+AddHandler dirHandler
+<Location /lm/lmdnload>
+	AddHandler lmDnloadHandler .lxp
+</Location>
+<Location /lm/lmupload>
+	AddHandler lmUploadHandler .lmp
+</Location>
+<Location /vfkupload>
+	AddHandler vfkUploadHandler .vfk
+</Location>
+<Location /fwupload>
+	AddHandler fwUpdateHandler
+	AddHandler uploadHandler
+	FileUploadDir /mnt/scratchpad
+</Location>
+<Location /vfkdownload>
+	AddHandler vfkDnloadHandler
+</Location>
+#<Location /lm/lmupload>
+#    SetHandler dataHandler
+#</Location>
+AddHandler FWUploadHandler
+<Location /sysmgmt/2012/server/firmware>
+        SetHandler FWUploadHandler
+</Location>
+
+LoadModule RESTUpload	libRESTUpload
+AddHandler RESTUploadHandler
+<Location /sysmgmt/2012/server/transient/filestore>
+        SetHandler RESTUploadHandler
+</Location>
+
+#This module should be before the generic PUT module, because it supports PUT/DELETE on its own
+LoadModule RESTModule libRESTModule
+AddHandler RESTHandler
+<Location /sysmgmt>
+        SetHandler RESTHandler
+</Location>
+
+LoadModule fileHandler libFileHandler
+AddHandler fileHandler
+<Location /cemgui>
+	SetHandler fileHandler
+</Location>
+
+AddHandler espHandler .esp .asp .html .jsesp
+AddHandler copyHandler
+AddHandler WSMan
+AddHandler dataHandler
+AddHandler pwdHandler
+AddHandler dcmHandler
+
+#<Location /ssologin>
+#	SetHandler dataHandler
+#</Location>
+
+<Location /bindata>
+	SetHandler dataHandler
+</Location>
+
+<Location /chuser>
+        SetHandler pwdHandler
+</Location>
+
+<Location /dcmuser>
+        SetHandler dcmHandler
+</Location>
+
+<Location /data>
+	SetHandler dataHandler
+</Location>
+
+#<Location /console>
+#	SetHandler dataHandler
+#</Location>
+
+<Location /csvdata>
+	SetHandler dataHandler
+</Location>
+
+<Location /textdata>
+	SetHandler dataHandler
+</Location>
+
+<Location /lcldata>
+	SetHandler dataHandler
+</Location>
+
+<Location /viewer.jnlp>
+    SetHandler dataHandler
+</Location>
+
+<Location /playVideo.jnlp>
+    SetHandler dataHandler
+</Location>
+
+<Location /cmclogin>
+    SetHandler dataHandler
+</Location>
+
+<Location /Applications/dellUI/cmclogin>
+    SetHandler dataHandler
+</Location>
+
+#
+#    AuthType basic
+#    AuthName wsman
+#    AuthUserFile users.db
+#    Require valid-user
+<Location /wsman>
+	SetHandler WSMan
+</Location>
+#
+#<Location /cgi-bin>
+#	AddHandler AvctCgiHandler
+#</Location>
+#
+ScriptAlias /cgi-bin/ "/usr/local/cgi-bin"
+#
+Alias /capdata/ "/tmp/bsod/"
+Alias /capconsole/ "/tmp/preview/"
+Alias /captures/ "/tmp/bootcapture/"
+Alias /crashCaptures/ "/tmp/crashcapture/"
+#
+#	Define the log format for the access log.
+#
+#CustomLog logs/access.log "%h %l %u %t \"%r\" %>s %b"
+#
+#	Send ESP errors to the user's browser. Change to "log" for production
+#	systems.
+#
+#EspErrors browser
+EspErrors log
+#
+# 	Define persisten connections where one TCP/IP connection may serve
+#	multiple HTTP requests. (A definite performance boost)
+#
+KeepAlive on
+#
+#	Number of seconds to wait for the next HTTP request before closing 
+#	the TCP/IP connection.
+#
+KeepAliveTimeout 60
+#
+#	Number of HTTP requests to accept on a single TCP/IP connection
+#
+MaxKeepAliveRequests 200
+#
+#	Default session timeout (30 mins in seconds)
+#
+SessionTimeout ${AIM_HTTP_TIMEOUT}
+#
+#	Send and receive inactivity timeout to close a TCP/IP connection
+#
+Timeout 60
+#
+#	The user name and group to switch to once AppWeb has started.
+#
+#Group nobody
+#User nobody
+#
+#	Default directory index to serve when a directory (URL ends in "/")
+#	 is requested.
+#
+DirectoryIndex start.html
+#
+#	Uncomment this section if you want to use SSL. Also load the ssl module
+#		and either matrixSSL or OpenSSL 
+#
+#	This virtual host will process SSL requests
+#
+# default: SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP:+eNULL
+<VirtualHost *:${AIM_HTTPS_PORT}>
+#	DocumentRoot "/var/www/appweb-default"
+	SSLEngine on
+	SSLCipherSuite ${SSL_CIPHER_SUITES}
+	SSLProtocol ALL -SSLV2
+	SSLCertificateFile "/etc/certs/CA/certs/host.crt"
+	SSLCertificateKeyFile "/flash/data0/cv/private/host.key"
+        FileUploadDir /mnt/scratchpad
+	#
+	# Add these directives to verify client certificates
+	#SSLVerifyClient require
+</VirtualHost>
+#<VirtualHost *:80>
+#        Redirect permanent / :443/
+#</VirtualHost>
+                               
+#
+#		Redirect temp /pressRelease.html /fixedPressRelease.html
+#		Redirect permanent /acme.html http://www.coyote.com/acme.html
+#		Redirect 410 /membersOnly 
+#
+#	Performance and security directives
+		# 256k (max web page 108k. Racadm max response 64k)
+		LimitResponseBody 262144
+
+#		LimitScriptSize  131072	
+
+        # 2G-1 (0x7fffffff)
+        LimitRequestBody 2147483647
+
+		LimitClients 32
+
+#		LimitRequestFields 512	
+#		LimitRequestFieldSize 1048576
+#		LimitRequestLine 65536
+#		LimitUrl 60000
+#		SendBufferSize 8192
+#		StartThreads 4
+#		ThreadLimit 10
+#		ThreadStackSize 65536
+

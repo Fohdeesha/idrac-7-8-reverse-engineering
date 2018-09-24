@@ -1,0 +1,39 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_2_0.json",
+    "title": "#Storage.Storage",
+    "$ref": "#/definitions/Storage",
+    "definitions": {
+        "Storage": {
+            "anyOf": [
+                {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/Storage.v1_0_0.json#/definitions/Storage"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/Storage.v1_0_1.json#/definitions/Storage"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/Storage.v1_0_2.json#/definitions/Storage"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/Storage.v1_0_3.json#/definitions/Storage"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/Storage.v1_1_0.json#/definitions/Storage"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/Storage.v1_1_1.json#/definitions/Storage"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/Storage.v1_1_2.json#/definitions/Storage"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/Storage.v1_2_0.json#/definitions/Storage"
+                }
+            ]
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}

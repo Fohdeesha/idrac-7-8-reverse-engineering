@@ -1,0 +1,16 @@
+[Unit]
+Description=RACADM Remote Access Controller Log Daemon
+After=osinet.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/sysapps_script/S_7000_racadm_raclogd.sh start
+
+[Install]
+WantedBy=multi-user.target

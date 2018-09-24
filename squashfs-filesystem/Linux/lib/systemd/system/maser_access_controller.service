@@ -1,0 +1,18 @@
+[Unit]
+Description=Maser Access Controller
+# these dependencies may not needed as this module socket activated
+After=maser_attch.service
+After=aps.service
+After=verify_maser.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+RemainAfterExit=no
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/bin/maserserver
+ExecStop=/bin/stopmaserserver $MAINPID
+
+# Socket activated. do not install

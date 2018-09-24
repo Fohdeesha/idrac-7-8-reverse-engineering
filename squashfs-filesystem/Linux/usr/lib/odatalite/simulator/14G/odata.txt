@@ -1,0 +1,81 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata",
+    "value": [
+        {
+            "name": "Service",
+            "kind": "Singleton",
+            "url": "/redfish/v1/"
+        },
+        {
+            "name": "Systems",
+            "kind": "Singleton",
+            "url": "/redfish/v1/Systems"
+        },
+        {
+            "name": "Chassis",
+            "kind": "Singleton",
+            "url": "/redfish/v1/Chassis"
+        },
+        {
+            "name": "Managers",
+            "kind": "Singleton",
+            "url": "/redfish/v1/Managers"
+        },
+        {
+            "name": "Tasks",
+            "kind": "Singleton",
+            "url": "/redfish/v1/TaskService"
+        },
+        {
+            "name": "AccountService",
+            "kind": "Singleton",
+            "url": "/redfish/v1/AccountService"
+        },
+        {
+            "name": "SessionService",
+            "kind": "Singleton",
+            "url": "/redfish/v1/SessionService"
+        },
+        {
+            "name": "EventService",
+            "kind": "Singleton",
+            "url": "/redfish/v1/EventService"
+        },
+        {
+            "name": "JsonSchemas",
+            "kind": "Singleton",
+            "url": "/redfish/v1/JsonSchemas"
+        },
+        {
+            "name": "Registries",
+            "kind": "Singleton",
+            "url": "/redfish/v1/MessageRegistry"
+        },
+        {
+            "name": "Sessions",
+            "kind": "Singleton",
+            "url": "/redfish/v1/SessionService/Sessions"
+        },
+        {
+            "name": "SoftwareService",
+            "kind": "Singleton",
+            "url": "/redfish/v1/SoftwareService"
+        },
+        {
+            "name": "Slots",
+            "kind": "Singleton",
+            "url": "/redfish/v1/Slots"
+        },
+        {
+            "name": "SlotConfigs",
+            "kind": "Singleton",
+            "url": "/redfish/v1/SlotConfigs"
+        },
+        {
+            "name": "ControlPanel",
+            "kind": "Singleton",
+            "url": "/redfish/v1/ControlPanel"
+        }
+    ]
+}

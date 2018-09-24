@@ -1,0 +1,21 @@
+[Unit]
+Description=VM Statistics
+DefaultDependencies=no
+After=early-mount.service
+Requires=early-mount.service
+RequiresMountsFor=/var/volatile
+RequiresMountsFor=/flash/data0
+
+# only execute this for XREV builds
+ConditionPathExists=/flash/data0/features/debug-vmstat
+ConditionPathExists=/etc/xrev_fw
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh -c "date > /var/volatile/vmstat.txt 2>&1"
+ExecStart=/bin/sh -c "/usr/bin/vmstat 1 240 >> /var/volatile/vmstat.txt 2>&1"
+
+[Install]
+WantedBy=sysinit.target
+

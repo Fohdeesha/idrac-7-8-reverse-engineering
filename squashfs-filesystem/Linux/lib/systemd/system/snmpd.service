@@ -1,0 +1,24 @@
+# Derived from /etc/sysapps_script/S_7010_snmpd.sh
+[Unit]
+Description=SNMPD
+After=dsm-sa-datamgr.service
+
+# started/stopped by dsm-sa-eventmgr, so we don't need much ordering
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+StandardOutput=journal
+StandardError=inherit
+
+EnvironmentFile=/etc/global.env
+Environment=CFGLIB_SNMP=16403 ENABLE=1 PORT=5
+PIDFile=/var/run/snmpd.pid
+ExecStartPre=-/bin/mkdir -p /var/run/snmp
+ExecStartPre=-/bin/sh -c "if [ ! -f /var/run/snmp/snmpd.conf ]; then cp /etc/snmpd.conf /var/run/snmp/snmpd.conf ; fi; chmod 0660 /var/run/snmp/snmpd.conf"
+# so that the service always succeeds, note the test below
+# If snmpd is disabled, the 'test' part succeeds and the || snmpd... is not executed
+# if snmpd is enabled, the 'test' part fails, so the || snmpd... is executed
+ExecStart=/bin/sh -c "/usr/sbin/snmpd -p /var/run/snmpd.pid -c /var/run/snmp/snmpd.conf udp:`/usr/bin/readcfg -g ${CFGLIB_SNMP} -f ${PORT} |cut -d'=' -f2`,udp6:`/usr/bin/readcfg -g ${CFGLIB_SNMP} -f ${PORT} |cut -d'=' -f2`"

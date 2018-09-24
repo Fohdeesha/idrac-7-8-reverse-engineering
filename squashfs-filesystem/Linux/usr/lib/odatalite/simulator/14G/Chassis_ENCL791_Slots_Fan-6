@@ -1,0 +1,17 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.", 
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/Slots",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-6",
+    "@odata.type": "#Slots.1.0.0.Slot",
+    "Id": "Fan-6",
+    "Name": "Fan-6",
+    "SlotId": "6",
+    "SlotGroup": "Fan",
+    "Occupied": true,
+    "SlotType": "Fan",
+    "SlotConfig": { "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/FanSlots" },
+    "Contains": [
+        { "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/6" }
+    ],
+    "Oem": {}
+}

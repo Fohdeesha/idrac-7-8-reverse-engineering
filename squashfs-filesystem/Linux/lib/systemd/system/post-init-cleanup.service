@@ -1,0 +1,16 @@
+[Unit]
+Description=Post initialization cleanup
+After=dsm-sa-datamgr.service
+After=osinet.service
+After=maser_access_controller.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=-/etc/init.d/post-init-cleanup.sh
+ExecStartPost=-/bin/SysStatus
+
+[Install]
+WantedBy=multi-user.target

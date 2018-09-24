@@ -1,0 +1,9 @@
+#%PAM-1.0
+auth		sufficient	pam_session_manager.so sessiontype=vKVM
+auth		sufficient	pam_local_manager.so use_first_pass
+auth		required	pam_auth_status.so sessiontype=vKVM
+account		sufficient	pam_session_manager.so sessiontype=vKVM privilege=0x20
+account		sufficient	pam_local_manager.so privilege=0x20
+account		required	pam_auth_status.so sessiontype=vKVM
+session		required	pam_auth_status.so sessiontype=vKVM
+session		required	pam_session_manager.so sessiontype=vKVM

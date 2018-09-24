@@ -1,0 +1,33 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#StorageAccessCapability.v1_0_0",
+    "definitions": {
+        "StorageAccessCapability": {
+            "type": "string",
+            "enum": [
+                "Read",
+                "Write",
+                "WriteOnce",
+                "Append",
+                "Streaming"
+            ],
+            "enumDescriptions": {
+                "Read": "Read.",
+                "Write": "Write Many.",
+                "WriteOnce": "WriteOnce.",
+                "Append": "AppendOnly.",
+                "Streaming": "Streaming."
+            },
+            "enumLongDescriptions": {
+                "Read": "This enumeration literal shall indicate that the storage may be read.",
+                "Write": "This enumeration literal shall indicate that the storage may be written multiple times.",
+                "WriteOnce": "This enumeration literal shall indicate that the storage may be written only once.",
+                "Append": "This enumeration literal shall indicate that the storage may be written only to append.",
+                "Streaming": "This enumeration literal shall indicate that the storage may be read sequentially."
+            },
+            "description": "Values of StorageAccessCapability describe abilities to read or write storage.",
+            "longDescription": "StorageAccessCapability enumeration literals may be used to describe abilities to read or write storage."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=xmlconfig module
+#After=dsm-sa-datamgr.service
+After=dm-stage2.service
+After=osinet.service
+After=maser_access_controller.service
+ConditionPathExists=/flash/data0/oem_ps/pm_rstd
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/sysapps_script/xmlconfig.sh
+ExecStartPost=/bin/rm -f /flash/data0/oem_ps/pm_rstd 
+
+[Install]
+WantedBy=multi-user.target

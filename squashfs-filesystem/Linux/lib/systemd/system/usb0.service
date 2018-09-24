@@ -1,0 +1,29 @@
+[Unit]
+Description=udhcpd usb0
+After=setup-flash.service
+After=driver-load-usb.service
+#After=dm-stage2.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-abort
+StandardOutput=journal
+StandardError=inherit
+
+EnvironmentFile=/etc/global.env
+PIDFile=/var/run/udhcpd_usb0.pid
+# will exit from prestart if usbnic disabled
+# To start manually use following and then restart this service 
+# writecfg -g 16437 -e 1 -f 2 -v1
+# writecfg -g 16437 -e 1 -f 4 -v1
+ExecStartPre=-/bin/sleep 2
+ExecStartPre=/etc/sysconfig/usb0_init.sh
+ExecStartPre=-/etc/sysconfig/disable_lompt.sh
+ExecStart=/sbin/udhcpd -S /tmp/udhcpd/udhcpd_usb0.conf
+ExecStartPost=-/bin/sh -c "/bin/arping -f -b -U -s `/usr/bin/readcfg -g 16437 -f 5 | cut -d'=' -f2` -c 3 -f -I usb0 `/usr/bin/readcfg -g 16437 -f 5 | cut -d'=' -f2`"
+ExecStopPost=-/sbin/ifconfig
+ExecStopPost=-/sbin/rmmod g_ether
+
+[Install]
+WantedBy=multi-user.target

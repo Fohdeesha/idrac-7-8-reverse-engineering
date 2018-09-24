@@ -1,0 +1,10 @@
+[Unit]
+Description=feature manager socket
+
+[Socket]
+ListenStream=/tmp/fmSocket
+Accept=false
+Service=fmgr.service
+
+[Install]
+WantedBy=sockets.target

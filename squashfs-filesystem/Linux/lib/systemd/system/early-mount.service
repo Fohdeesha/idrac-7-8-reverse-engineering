@@ -1,0 +1,17 @@
+[Unit]
+Description=Mount All Filesystems
+DefaultDependencies=no
+Before=systemd-tmpfiles-setup.service
+Before=sysinit.target
+Before=basic.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Nice=-5
+ExecStart=/etc/init.d/early-mount.sh
+ExecStartPost=/bin/sh -c "/bin/touch /tmp/lclspi_mount_success"
+
+[Install]
+WantedBy=local-fs-pre.target
+WantedBy=local-fs.target

@@ -1,0 +1,10 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_2_0.json",
+    "title": "#CollectionCapabilities",
+    "definitions": {
+        "CollectionCapabilities": {
+                "$ref": "/redfish/v1/Schemas/CollectionCapabilities.v1_0_0.json#/definitions/CollectionCapabilities"
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}

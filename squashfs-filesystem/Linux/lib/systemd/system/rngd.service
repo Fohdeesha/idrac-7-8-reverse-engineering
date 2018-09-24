@@ -1,0 +1,14 @@
+[Unit]
+Description=Random Number Generator Daemon
+After=early-mount.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/usr/sbin/rngd
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript"><% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7 : ストレージ - トポロジ</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> トポロジビュー </span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">移動先：<a class="popup-jump-bar" href="#Other" id="A14">その他のオプション</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>このページから、主なストレージコンポーネントに関する、物理的な格納状態図を階層的に表示します。 このページでは、コントローラ、コントローラに接続されたエンクロージャ、および各エンクロージャ内に存在する物理ディスクへのリンクをリスト表示しています。 コントローラに直接接続されている物理ディスクも表示されます。</p> 
+<p>それぞれのコンポーネントの詳細を表示するには、そのリンクをクリックします。</p> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

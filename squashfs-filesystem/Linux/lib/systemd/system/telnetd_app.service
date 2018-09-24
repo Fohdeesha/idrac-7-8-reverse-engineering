@@ -1,0 +1,20 @@
+# Derived from /etc/sysapps_script/S_7015_telnetd_app.sh
+[Unit]
+Description=Telnet Daemon
+After=osinet.service
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+ControlGroup=memory:/idrac/NC
+Restart=on-abort
+
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+Environment=CFGLIB_TELNET=16391 ENABLE=1 PORT=2 TIMEOUT=3
+
+ExecStart=/bin/sh -c "/bin/test $(/usr/bin/readcfg -g ${CFGLIB_TELNET} -f ${ENABLE} |cut -d'=' -f2) -eq 0 || /sbin/telnetd -p $(/usr/bin/readcfg -g ${CFGLIB_TELNET} -f ${PORT} |cut -d'=' -f2) -t $(/usr/bin/readcfg -g ${CFGLIB_TELNET} -f ${TIMEOUT} |cut -d'=' -f2)"
+TimeoutStopSec=2
+
+[Install]
+WantedBy=multi-user.target

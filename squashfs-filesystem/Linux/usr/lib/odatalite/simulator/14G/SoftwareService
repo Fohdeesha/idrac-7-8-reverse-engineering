@@ -1,0 +1,17 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#SoftwareService",
+    "@odata.id": "/redfish/v1/SoftwareService"  ,"@oem.nav.parentid": "/redfish/v1",
+    "@odata.type": "#Dell.SoftwareService.1.0.0.SoftwareService",
+    "Id": "SoftwareService",
+    "Name": "Software Service",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "RetentionPolicy": "1",
+    "SoftwareInventory": {
+        "@odata.id": "/redfish/v1/SoftwareService/SoftwareInventory"
+    },
+    "Oem": {}
+}

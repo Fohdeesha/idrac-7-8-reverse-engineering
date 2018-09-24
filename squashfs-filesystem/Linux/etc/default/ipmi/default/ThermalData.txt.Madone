@@ -1,0 +1,599 @@
+#============= User Guide - Start =====================
+# How to use :
+#     Each section has its own descripton.
+#
+# Notice : 1. PV = possible value.
+#          2. DO NOT change or overcast all the section names and tags.
+#          3. If there are lines starting with "#", the following arguments would be disabled or mere annotations.
+#          4. By removing a line the corresponding argument would remain unchanged in the shared memory.
+#             If you want to change values of certain arguments, please kindly type in the values of your desire, especially for those TRUE/FALSE arguments. 
+#          5. ACTUAL_CNTs in the inventories mean maximum number of components allowed on the platform, and components in these "vacacies" can be either PRESENT or not.
+#             By changing these ACTUAL_CNTs, AppThermalSHM would change parsing frequencies of following components accordingly.
+# Sections : 
+#     There are five secitons below marked within the brackets [ ] :
+#   [GENERAL_TYPE]
+#   [1_IPMI_THERMAL_SENSORS]
+#   [2_IPMI_INVENTORY]
+#   [3_CEM_THERMAL_SENSORS]
+#   [4_CEM_INVENTORY]
+#============= User Guide - End =======================
+
+
+
+#=============GENERAL_TYPE - Start =====================
+[GENERAL_TYPE]
+
+#  Tags : 
+#    There are 15 tags below. The value(or variable) 
+#    in front of the equal sign is tags..
+#   and it is the value after the equal sign
+
+#
+
+    POWER_ON=TRUE; #PV:TRUE,FALSE
+    BLADE=FALSE;   #PV:TRUE,FALSE
+
+#For chassis intrusion
+    CHASSIS_INTRUSION=FALSE; #PV:TRUE,FALSE
+    
+#For FanFail Normal=0, Warning=1, Failed=2
+#Theoretically not convertible
+    FAN_FAIL_1=0;
+    FAN_FAIL_2=0;
+    FAN_FAIL_3=0;
+    FAN_FAIL_4=0;
+    FAN_FAIL_5=0;
+    FAN_FAIL_6=0;
+    FAN_FAIL_7=0;
+    FAN_FAIL_8=0;
+    FAN_FAIL_9=0;
+    FAN_FAIL_10=0;
+
+#possible value 1 to 15 depend on spreadsheet
+    CURRENT_CPU_REF_NUMBER=1;
+    
+#For Thermal Base
+#Any = 0 ACOUSTIC=1, MIN POWER=2, MAX PERFORMANCE=3
+#DENSE CONFIGURATION=4, C1E=5, HIGH AMBIENT=6    
+    
+    CURRENT_THERMAL_BASE=3;  
+    
+#For Thermal Input 
+#Any = 0
+#CPU OPTIMIZED=7, MAX EXHAUST 55C =8
+#MAX EXHAUST 50C=9, MAX EXHAUST 45C=10, MAX EXHAUST 40C=11,
+#FAN OFFSET LOW=12, FAN OFFSET HIGH=13 
+    
+    CURRENT_THERMAL_INPUT=0;
+
+
+#=============GENERAL_TYPE - End =====================
+
+
+
+#=============1_IPMI_THERMAL_SENSORS - Start =====================
+[1_IPMI_THERMAL_SENSORS]
+
+#MAX_AMB_SENS=1
+    AMBIENT_TEMPERATURE_1=27;
+    
+#MAX_PLAN_SENS=2
+    PLANAR_TEMPERAUTRE_1=0;
+    PLANAR_TEMPERAUTRE_2=0;
+    
+#MAX_EXHAUST=4
+    EXHAUST_TEMPERATURE_1=0;
+    EXHAUST_TEMPERATURE_2=0;
+    EXHAUST_TEMPERATURE_3=0;
+    EXHAUST_TEMPERATURE_4=0;
+    
+#MAX_CHIPSET_SENS=4   
+    CHIPSET_SENSOR_1=43;
+    CHIPSET_SENSOR_2=0;
+    CHIPSET_SENSOR_3=0;
+    CHIPSET_SENSOR_4=0;
+    
+#MAX_DIMM=128
+    DIMM_TEMPERATURE_1=31;
+    DIMM_TEMPERATURE_2=30;
+    DIMM_TEMPERATURE_3=29;
+    DIMM_TEMPERATURE_4=29;
+    DIMM_TEMPERATURE_5=30;
+    DIMM_TEMPERATURE_6=30;
+    DIMM_TEMPERATURE_7=29;
+    DIMM_TEMPERATURE_8=29;
+    DIMM_TEMPERATURE_9=31;
+    DIMM_TEMPERATURE_10=27;
+    DIMM_TEMPERATURE_11=29;
+    DIMM_TEMPERATURE_12=23;
+    DIMM_TEMPERATURE_13=32;
+    DIMM_TEMPERATURE_14=30;
+    DIMM_TEMPERATURE_15=30;
+    DIMM_TEMPERATURE_16=29;
+    DIMM_TEMPERATURE_17=32;
+    DIMM_TEMPERATURE_18=20;
+    DIMM_TEMPERATURE_19=30;
+    DIMM_TEMPERATURE_20=26;
+    DIMM_TEMPERATURE_21=32;
+    DIMM_TEMPERATURE_22=29;
+    DIMM_TEMPERATURE_23=29;
+    DIMM_TEMPERATURE_24=29;
+    
+#MAX_CPUS=4
+    CPU_DTS_TEMPERATURE_1=63;
+    CPU_DTS_TEMPERATURE_2=63;
+
+    CPU_POWER_1=15;
+    CPU_POWER_2=14;
+
+    
+#MAX_PSU=6
+    PSU_AMBIENT_TEMPERATURE_1=36;
+    PSU_AMBIENT_TEMPERATURE_2=45;
+
+    PSU_COMP_TEMPERATURE_1=51;
+    PSU_COMP_TEMPERATURE_2=47;
+
+    PSU_EXHAUST_TEMPERATURE_1=45;
+    PSU_EXHAUST_TEMPERATURE_2=48;
+
+#VR    
+    VR_TEMPERATURE=0;
+    
+#MAX_RISER=4
+    RISER_TEMPERATURE_1=0;
+    RISER_TEMPERATURE_2=0;
+    RISER_TEMPERATURE_3=0;
+    RISER_TEMPERATURE_4=0;
+
+#=============1_IPMI_THERMAL_SENSORS - End =====================
+
+
+
+#=============2_IPMI_INVENTORY - Start =====================
+[2_IPMI_INVENTORY]
+
+####### Fan Inventory #######
+#MAX_FAN_ZONE=10
+    FAN_INV_ACTUAL_FAN_CNT=14;
+      
+    FAN_INV_FAN_PRESENCE_1=TRUE;   #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_2=TRUE;   #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_3=TRUE;   #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_4=TRUE;   #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_5=TRUE;   #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_6=TRUE;   #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_7=TRUE;  #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_8=TRUE;  #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_9=TRUE;  #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_10=TRUE; #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_11=TRUE;   #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_12=TRUE;   #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_13=TRUE;   #PV:TRUE,FALSE
+    FAN_INV_FAN_PRESENCE_14=TRUE;   #PV:TRUE,FALSE
+
+####### DIMM Inventory #######
+#MAX_DIMM=128
+    DIMM_INV_ACTUAL_DIMM_CNT=24;
+
+    DIMM_INV_DIMM_PRESENCE_1=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_2=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_3=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_4=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_5=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_6=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_7=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_8=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_9=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_10=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_11=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_12=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_13=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_14=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_15=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_16=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_17=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_18=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_19=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_20=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_21=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_22=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_23=TRUE;  #PV:TRUE,FALSE
+    DIMM_INV_DIMM_PRESENCE_24=TRUE;  #PV:TRUE,FALSE
+
+#For DIMM spreaders presence
+#ANY = 0, YES=1,NO=3,NONE=4
+    #DIMM_INV_DIMM_HT_SPRD_PRES_1=0;
+    #DIMM_INV_DIMM_HT_SPRD_PRES_2=1;
+    #DIMM_INV_DIMM_HT_SPRD_PRES_3=3;
+    #DIMM_INV_DIMM_HT_SPRD_PRES_4=4;
+ 
+#For DIMM Capacity equal to
+#ANY=0,1GB=1,2GB=2,4GB=3,
+#8GB=4,16GB=5,32GB=6,64GB=7
+
+    DIMM_INV_DIMM_CAPACITY_1=4;
+    DIMM_INV_DIMM_CAPACITY_2=4;
+    DIMM_INV_DIMM_CAPACITY_3=4;
+    DIMM_INV_DIMM_CAPACITY_4=4;
+    DIMM_INV_DIMM_CAPACITY_5=4;
+    DIMM_INV_DIMM_CAPACITY_6=4;
+    DIMM_INV_DIMM_CAPACITY_7=4;
+    DIMM_INV_DIMM_CAPACITY_8=4;
+    DIMM_INV_DIMM_CAPACITY_9=4;
+    DIMM_INV_DIMM_CAPACITY_10=4;
+    DIMM_INV_DIMM_CAPACITY_11=4;
+    DIMM_INV_DIMM_CAPACITY_12=4;
+    DIMM_INV_DIMM_CAPACITY_13=4;
+    DIMM_INV_DIMM_CAPACITY_14=4;
+    DIMM_INV_DIMM_CAPACITY_15=4;
+    DIMM_INV_DIMM_CAPACITY_16=4;
+    DIMM_INV_DIMM_CAPACITY_17=4;
+    DIMM_INV_DIMM_CAPACITY_18=4;
+    DIMM_INV_DIMM_CAPACITY_19=4;
+    DIMM_INV_DIMM_CAPACITY_20=4;
+    DIMM_INV_DIMM_CAPACITY_21=4;
+    DIMM_INV_DIMM_CAPACITY_22=4;
+    DIMM_INV_DIMM_CAPACITY_23=4;
+    DIMM_INV_DIMM_CAPACITY_24=4;
+
+    DIMM_INV_MAX_DIMM_PER_CHANNEL=3;
+
+####### CPU Inventory #######
+#MAX_CPUS=4
+    CPU_INV_ACTUAL_CPU_CNT=2;
+
+    CPU_INV_PROC_TYPE_1=1;
+    CPU_INV_PROC_ID_1=210;
+    CPU_INV_T_CTRL_1=4;
+    CPU_INV_PROC_TDP_1=130;
+    CPU_INV_IA32_TARGET_TEMPERATURE_1=99;
+    CPU_INV_NUM_OF_CORES_1=8;
+    CPU_INV_ENERGY_1=50;
+    CPU_INV_TIME_STAMP_1=30;
+    CPU_INV_T_CTRL_ADJ_1=0;
+
+    #CPU_INV_PROC_TYPE_2=1;
+    #CPU_INV_PROC_ID_2=210;
+    #CPU_INV_T_CTRL_2=4;
+    #CPU_INV_PROC_TDP_2=130;
+    #CPU_INV_IA32_TARGET_TEMPERATURE_2=99;
+    #CPU_INV_NUM_OF_CORES_2=8;
+    #CPU_INV_ENERGY_2=50;
+    #CPU_INV_TIME_STAMP_2=45;
+    #CPU_INV_T_CTRL_ADJ_2=0;
+
+
+####### PSU Inventory #######
+#MAX_PSU=6
+    PSU_INV_ACTUAL_PSU_CNT=2;
+
+    PSU_INV_PSU_PRESENCE_1=TRUE;   #PV:TRUE,FALSE
+    PSU_INV_PSU_PRESENCE_2=TRUE;   #PV:TRUE,FALSE
+
+#For PSU redundancies
+#1 = redundant, 2 = non-redundant
+    #PSU_INV_PSU_REDUNDANCY=0;
+
+#For respective PSU capacities
+#Maximum is opted for configuration matching
+    PSU_INV_PSU_CAPACITY_1=1050;
+    PSU_INV_PSU_CAPACITY_2=1050;
+
+####### Ctrl Panel Inventory #######
+#ANY=0, VERTICAL=1, HORIZONTAL=2,
+    #CTRL_PANEL_INV_CTRL_PANEL_ORIENTATION=2;
+
+####### PCI Inventory #######
+#MAX_PCI=15
+    PCI_INV_ACTUAL_PCI_CNT=2;
+
+    PCI_INV_ACTUAL_PCI_PRESENCE_1=TRUE;   #PV:TRUE,FALSE
+    PCI_INV_ACTUAL_PCI_PRESENCE_2=TRUE;  #PV:TRUE,FALSE
+
+#PCI Device ID is undefined so far
+
+    PCI_INV_DEVICE_ID_1=1792;
+    PCI_INV_DEVICE_ID_2=91;
+
+#PCI Location is undefined so far
+    PCI_INV_PCI_LOCATION_1=1;
+    PCI_INV_PCI_LOCATION_2=2;
+ 
+#=============2_IPMI_INVENTORY - End ===================== 
+ 
+#=============3_CEM_THERMAL_SENSORS - Start =====================    
+[3_CEM_THERMAL_SENSORS]
+#MAX_PCI=15
+    PCI_TEMPERATURE_1=0;
+    PCI_TEMPERATURE_2=0;
+#MAX_NDC=4
+    NDC_TEMPERATURE_1=0;
+#MAX_HDD=50
+    HDD_TEMPERATURE_1=35;
+    HDD_TEMPERATURE_2=36;
+    HDD_TEMPERATURE_3=33;
+    HDD_TEMPERATURE_4=35;    
+    HDD_TEMPERATURE_5=35;
+    HDD_TEMPERATURE_6=37;    
+    HDD_TEMPERATURE_7=36;
+    HDD_TEMPERATURE_8=37;
+#MAX_GPU=6
+    #GPU_TEMPERATURE_1=60;
+#MAX_NICS=16
+    #NIC_TEMPERATURE_1=35;
+#MAX_MEZZ=4
+    #MEZZ_TEMPERATURE_1=35;
+
+    PERC_CONTROLLER_TEMPERATURE=49;
+    PERC_BATTERY_TEMPERATURE=35;
+
+    NDC_AMBIENT_TEMPERATURE_1=65;
+    NDC_ASIC_TEMPERATURE_1=87;
+
+#=============3_CEM_THERMAL_SENSORS - End =====================    
+
+
+#=============4_CEM_INVENTORY - Start =====================    
+[4_CEM_INVENTORY]
+####### GPU Inventory #######
+#MAX_GPU=6
+    GPU_INV_ACTUAL_GPU_CNT=0;
+
+    #GPU_INV_GPU_PRESENCE_1=TRUE;  #PV:TRUE,FALSE
+    #GPU_INV_GPU_PRESENCE_2=TRUE;  #PV:TRUE,FALSE
+
+#If one of the following IDs is matched then the GPU tier is matched
+#Do not exceed 4294967295
+    #GPU_INV_DEVICE_ID_1=2342135;
+    #GPU_INV_DEVICE_ID_2=4446345;
+    
+    
+####### PERC Inventory #######
+#MAX_PERC=6
+    PERC_INV_ACTUAL_PERC_CNT=2;
+
+    PERC_INV_PERC_PRESENCE_1=TRUE;  #PV:TRUE,FALSE
+    PERC_INV_PERC_PRESENCE_2=TRUE;  #PV:TRUE,FALSE
+
+#If one of the following IDs is matched then the PERC tier is matched
+#Do not exceed 4294967295
+    #PERC_INV_DEVICE_ID_1=5764567;
+    #PERC_INV_DEVICE_ID_2=5674587;
+
+#PV: 0-255
+    PERC_INV_PCI_SLOT_1=1;
+	  PERC_INV_PCI_SLOT_2=2;
+    
+    PERC_INV_TEMPERATURE_1=49;
+    PERC_INV_TEMPERATURE_2=65;
+    
+####### NDC Inventory #######
+#MAX_NDC=4
+    NDC_INV_ACTUAL_NDC_CNT=1;
+
+    NDC_INV_NDC_PRESENCE_1=TRUE;  #PV:TRUE,FALSE
+ 
+#If one of the following IDs is matched then the NDC tier is matched
+#Do not exceed 4294967295
+    NDC_INV_DEVICE_ID_1=5770;
+    NDC_INV_SUB_DEVICE_ID_1=8028;
+    NDC_INV_VENDOR_ID_1=5348;
+    NDC_INV_SUB_VENDOR_ID_1=4136;
+
+
+    NDC_INV_TARGET_TEMPERATURE_1=100;
+    
+####### HDD Inventory #######
+#MAX_HDD=50
+    HDD_INV_ACTUAL_HDD_CNT=8;
+
+    HDD_INV_HDD_PRESENCE_1=TRUE;  #PV:TRUE,FALSE
+    HDD_INV_HDD_PRESENCE_2=TRUE;  #PV:TRUE,FALSE
+    HDD_INV_HDD_PRESENCE_3=TRUE;  #PV:TRUE,FALSE
+    HDD_INV_HDD_PRESENCE_4=TRUE;  #PV:TRUE,FALSE
+    HDD_INV_HDD_PRESENCE_5=TRUE;  #PV:TRUE,FALSE
+    HDD_INV_HDD_PRESENCE_6=TRUE;  #PV:TRUE,FALSE
+    HDD_INV_HDD_PRESENCE_7=TRUE;  #PV:TRUE,FALSE
+    HDD_INV_HDD_PRESENCE_8=TRUE;  #PV:TRUE,FALSE
+
+#HDD_ANY=0,	HDD_SAS=1,	HDD_SATA=2
+    HDD_INV_HDD_TYPE_1=1;
+    HDD_INV_HDD_TYPE_2=1;
+    HDD_INV_HDD_TYPE_3=1;
+    HDD_INV_HDD_TYPE_4=1;
+    HDD_INV_HDD_TYPE_5=1;
+    HDD_INV_HDD_TYPE_6=1;
+    HDD_INV_HDD_TYPE_7=1;
+    HDD_INV_HDD_TYPE_8=1;
+
+#HDD speed RPM 10K=6,15K=7,
+    HDD_INV_HDD_SPEED_1=7;
+    HDD_INV_HDD_SPEED_2=7;
+    HDD_INV_HDD_SPEED_3=7;
+    HDD_INV_HDD_SPEED_4=7;
+    HDD_INV_HDD_SPEED_5=7;
+    HDD_INV_HDD_SPEED_6=7;
+    HDD_INV_HDD_SPEED_7=7;
+    HDD_INV_HDD_SPEED_8=7;
+    
+#HDD attached HDD_HOTPLG=11, HDDCABLED=12
+    HDD_INV_HDD_ATTACHED_1=11;
+    HDD_INV_HDD_ATTACHED_2=11;
+    HDD_INV_HDD_ATTACHED_3=11;
+    HDD_INV_HDD_ATTACHED_4=11;
+    HDD_INV_HDD_ATTACHED_5=11;
+    HDD_INV_HDD_ATTACHED_6=11;
+    HDD_INV_HDD_ATTACHED_7=11;
+    HDD_INV_HDD_ATTACHED_8=11;
+
+#HDD form factors: 2inch5=8, 3inch5=9, PCIe SSD=10
+    HDD_INV_HDD_FORM_FACTOR_1=9;
+    HDD_INV_HDD_FORM_FACTOR_2=9;
+    HDD_INV_HDD_FORM_FACTOR_3=9;
+    HDD_INV_HDD_FORM_FACTOR_4=9;
+    HDD_INV_HDD_FORM_FACTOR_5=9;
+    HDD_INV_HDD_FORM_FACTOR_6=9;
+    HDD_INV_HDD_FORM_FACTOR_7=9;
+    HDD_INV_HDD_FORM_FACTOR_8=9;
+ 
+    
+####### NIC Inventory #######
+#MAX_NICS=16
+    NIC_INV_ACTUAL_NIC_CNT=0;
+
+    #NIC_INV_NIC_PRESENCE_1=TRUE;   #PV:TRUE,FALSE
+    #NIC_INV_NIC_PRESENCE_2=FALSE;  #PV:TRUE,FALSE
+
+#If one of the following IDs is matched then the NIC tier is matched
+#Do not exceed 4294967295
+    #NIC_INV_DEVICE_ID_1=8888888;
+    #NIC_INV_DEVICE_ID_2=9999999;
+
+    #NIC_INV_TARGET_TEMPERATURE_1=40;
+    #NIC_INV_TARGET_TEMPERATURE_2=35;
+    
+####### Mezz Inventory #######
+#MAX_MEZZ=4
+    MEZZ_INV_ACTUAL_MEZZ_CNT=0;
+
+    #MEZZ_INV_MEZZ_PRESENCE_1=TRUE;   #PV:TRUE,FALSE
+    #MEZZ_INV_MEZZ_PRESENCE_2=TRUE;   #PV:TRUE,FALSE
+
+#If one of the following IDs is matched then the MEZZ tier is matched
+#Do not exceed 4294967295
+    #MEZZ_INV_DEVICE_ID_1=400;
+    #MEZZ_INV_DEVICE_ID_2=401;
+
+    #MEZZ_INV_TARGET_TEMPERATURE_1=40;
+    #MEZZ_INV_TARGET_TEMPERATURE_2=35;
+
+    #MEZZ_INV_SENSOR_TEMP_1=60;
+    #MEZZ_INV_SENSOR_TEMP_2=70;
+
+####### SAS/SATA Inventory #######
+#MAX_HDD=50
+#MAX_PERC=6
+
+#Actual number of physical drives on the system
+    SASSATA_INV_ACTUAL_HDD_CNT=0;
+
+#Bay ID of backplane to which the drive is connected
+#Do not exceed 255
+    SASSATA_INV_DRIVE_BAY_ID_1=10;
+    SASSATA_INV_DRIVE_BAY_ID_2=20;
+    SASSATA_INV_DRIVE_BAY_ID_3=30;
+    SASSATA_INV_DRIVE_BAY_ID_4=40;
+
+#Slot number occupied by the drive
+#PV: 0-255
+    SASSATA_INV_DRIVE_OCCUPIED_SLOT_1=1;
+    SASSATA_INV_DRIVE_OCCUPIED_SLOT_2=2;
+    SASSATA_INV_DRIVE_OCCUPIED_SLOT_3=3;
+    SASSATA_INV_DRIVE_OCCUPIED_SLOT_4=4;
+
+#SAS/SATA
+#ANY=0, SAS=1, SATA=2
+    SASSATA_INV_DRIVE_PROTOCOL_TYPE_1=1;
+    SASSATA_INV_DRIVE_PROTOCOL_TYPE_2=1;
+    SASSATA_INV_DRIVE_PROTOCOL_TYPE_3=2;
+    SASSATA_INV_DRIVE_PROTOCOL_TYPE_4=2;
+
+#HDD/SSD
+#ANY=0, HDD=1, SSD=2
+    SASSATA_INV_DRIVE_MEDIA_TYPE_1=1;
+    SASSATA_INV_DRIVE_MEDIA_TYPE_2=2;
+    SASSATA_INV_DRIVE_MEDIA_TYPE_3=1;
+    SASSATA_INV_DRIVE_MEDIA_TYPE_4=1;
+
+#2.5 inch or 3.5 inch
+#ANY=0, 2.5"=1, 3.5"=2
+    SASSATA_INV_DRIVE_FORM_FACTOR_1=1;
+    SASSATA_INV_DRIVE_FORM_FACTOR_2=1;
+    SASSATA_INV_DRIVE_FORM_FACTOR_3=2;
+    SASSATA_INV_DRIVE_FORM_FACTOR_4=2;
+
+#Degree celcius
+#One temperature for each PERC, thus subject to MAX_PERC
+    SASSATA_INV_PERC_TEMPERATURE_1=30;
+    SASSATA_INV_PERC_TEMPERATURE_2=35;
+    SASSATA_INV_PERC_TEMPERATURE_3=40;
+    SASSATA_INV_PERC_TEMPERATURE_4=45;
+    
+####### PERC Battery Inventory #######
+#MAX_PERCBat=6
+#Actual number of PERC batteries on the system
+    PERC_BAT_INV_ACTUAL_BATTERY_CNT=0;
+
+#The PCIe slot number of the controller to which the battery is connected
+#PV: 0-255
+    PERC_BAT_INV_SLOT_1=1;
+    PERC_BAT_INV_SLOT_2=2;
+
+#PERC battery states are not yet defined
+#PV: 0-255
+    PERC_BAT_INV_STATE_1=0;
+    PERC_BAT_INV_STATE_2=0;
+  	
+####### PCIe SSD Inventory #######
+#MAX_PCIeSSD=24
+
+#Actual number of PCIeSSDs on the system. Zero indicates no PCIe SSDs connected
+    PCIE_SSD_INV_ACTUAL_SSD_CNT=0;
+
+#Bay ID of  backplane to which the drive is connected
+#Do not exceed 255
+    PCIE_SSD_INV_DRIVE_BAY_ID_1=1;
+    PCIE_SSD_INV_DRIVE_BAY_ID_2=2;
+
+#Slot number occupied by the drive
+#PV: 0-255
+    PCIE_SSD_INV_DRIVE_OCCUPIED_SLOT_1=1;
+    PCIE_SSD_INV_DRIVE_OCCUPIED_SLOT_2=2;
+
+#RAID status definition not finished
+#E.g Online, Failed, Rebuilding, failure predicted, hot pare  etc.
+#PV: 0-255
+    PCIE_SSD_INV_DRIVE_RAID_STATUS_1=0;
+    PCIE_SSD_INV_DRIVE_RAID_STATUS_2=0;
+
+#FW version of the drive
+#Do not exceed 255
+    PCIE_SSD_INV_DRIVE_FW_REV_1=11;
+    PCIE_SSD_INV_DRIVE_FW_REV_2=22;
+
+#PCIe SSD drive form factors are not yet defined
+#PV: 0-255
+    PCIE_SSD_INV_DRIVE_FORM_FACTOR_1=0;
+    PCIE_SSD_INV_DRIVE_FORM_FACTOR_2=0;
+    
+####### PCIe SSD Backplanes Inventory #######
+#MAX_PCIeSSDBP=4
+
+#Actual number of PCIeSSDs backplanes on the system
+    PCIE_SSD_BP_INV_ACTUAL_BP_CNT=0; 
+
+#Bay ID of backplane to which the drive is connected . Same as location?
+#Do not exceed 255
+    PCIE_SSD_BP_INV_BAY_ID_1=1;
+    PCIE_SSD_BP_INV_BAY_ID_2=2;
+
+#Technology
+#Not sure what it is
+#PV: 0-255
+    PCIE_SSD_BP_INV_TECH_1=0;
+    PCIE_SSD_BP_INV_TECH_2=0;
+
+#Carrier sizes
+#PV: 0-255
+    PCIE_SSD_BP_INV_CARRIER_SIZE_1=10;
+    PCIE_SSD_BP_INV_CARRIER_SIZE_2=15;
+
+#FW version of the drive
+#Do not exceed 255
+    PCIE_SSD_BP_INV_FW_REV_1=11;
+    PCIE_SSD_BP_INV_FW_REV_2=22;
+	
+#=============4_CEM_INVENTORY - End =============
+
+

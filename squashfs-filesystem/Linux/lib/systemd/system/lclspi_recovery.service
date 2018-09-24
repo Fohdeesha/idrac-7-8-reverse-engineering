@@ -1,0 +1,13 @@
+[Unit]
+Description=LCL SPI(/flash/data1) recovery service
+ConditionPathExists=!/tmp/lclspi_mount_success
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/bin/sh -c "/usr/sbin/flash_eraseall -j /dev/$(cat /proc/mtd | grep '\"lcl\"' | cut -d: -f1)"
+ExecStartPost=-/bin/sh -c "/bin/touch /mmc1/lclspi_mount_failed"
+ExecStartPost=-/bin/sh -c "sleep 10"
+ExecStartPost=/bin/sh -c "/sbin/reboot -f"

@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+    <% include "h_serverType.html" %>
+
+</script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Controladoras de almacenamiento</title> 
+<script src="/js/prototype.js" type="text/javascript"> 
+</script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle">Controladoras RAID</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items"> Ir a: <a class="popup-jump-bar" href="#Battery" id="cc1">Batería de la controladora</a> | <a class="popup-jump-bar" href="#Other" id="A14">Otras opciones</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+ 
+<div class="popup_inner_content"> 
+<div> 
+<p>Use esta página para ver la condición y las propiedades de la controladora RAID y su batería. El nombre de la controladora se visualiza como una subficha en el siguiente formato:</p> 
+<p>&lt;modelo de controlador&gt; (Ranura PCI &lt;X&gt;) O &lt;modelo de controlador&gt; (Incorporado) </p> 
+<p>Por ejemplo, el adaptador PERC H810 (Ranura PCI 1) o PERC H310 Mini (Incorporado)<br /> 
+</p> 
+</div> 
+<div class="popup_subheader"> 
+<span id="Controller"> Condición y propiedades </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Estado</b></span></td> 
+<td class="desc"> 
+<p>Muestra la condición de la controladora.</p> 
+<ul> 
+<li> Buen estado<span class="status_ok">: </span>indica que el componente funciona según estaba previsto.</li> 
+<li> Advertencia<span class="status_noncritical">: </span>indica que una sonda u otro dispositivo de supervisión ha detectado una lectura de la controladora que se encuentra por encima o por debajo del nivel aceptable. El componente puede estar en funcionamiento, pero puede fallar. Es posible que el componente también esté funcionando en un estado de deterioro.</li> 
+<li>Crítico<span class="status_critical">: </span>indica que el componente ha fallado o que la falla es inminente. Se requiere atención inmediata y es posible que deba reemplazarse.</li> 
+<li>Información no disponible<span class="status_unknown">: </span>indica que se desconoce el estado del componente.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Estado de seguridad</b></span></td> 
+<td class="desc"> 
+<p>Indica si la controladora admite el cifrado. Posibles valores:</p> 
+<ul> 
+<li>Desconocido: indica que la seguridad de la controladora es desconocido.</li> 
+<li>Admite cifrado: indica que la controladora admite el cifrado.</li> 
+<li>Clave de seguridad asignado: indica que una clave de seguridad se asignó a la controladora.</li> 
+<li> Información no disponible: indica que la información no está disponible.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Modo de cifrado</b></span></td> 
+<td class="desc"> 
+<p>Indica el modo de cifrado admitido. Posibles valores:</p> 
+<ul> 
+<li>Ninguno: indica que la clave de seguridad no está asignada a la controladora.</li> 
+<li>Admitido con LKM: indica que la controladora usa la administración de clave local (Local Key Management, LKM) para realizar el cifrado.</li> 
+<li> Información no disponible: indica que la información no está disponible.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Ranura PCI</b></span> </td> 
+<td class="desc"> En el caso de las controladoras integradas, se visualiza el número de ranura PCI en el servidor en donde se encuentra la controladora. En el caso de las controladoras incorporadas, no se muestra esta propiedad.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Versión del firmware</b></span> </td> 
+<td class="desc"> Muestra la versión del firmware que se encuentra instalada actualmente en la controladora.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Versión del controlador</b></span></td> 
+<td class="desc"> Muestra la versión del controlador que se encuentra instalada actualmente en la controladora.<br /> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">Nota:</span> si no se obtiene la versión del controlador, en algunas controladoras se muestra la opción<b> No aplicable</b>.</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Tamaño de memoria caché</b></span></td> 
+<td class="desc"> Muestra el tamaño (en megabytes o gigabytes) de la memoria caché de la controladora.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Dirección SAS</b></span></td> 
+<td class="desc"> Muestra la única dirección SAS de la controladora. Si no se encuentra disponible, se muestra la opción <b>No aplicable</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Identificación del proveedor PCI</b></span></td> 
+<td class="desc"> Muestra la identificación del proveedor de la controladora.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Identificación del subproveedor PCI</b></span></td> 
+<td class="desc"> Muestra la identificación del subproveedor de la controladora.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Identificación del dispositivo PCI</b></span> </td> 
+<td class="desc"> Muestra la identificación del dispositivo de la controladora.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Identificación del subdispositivo PCI</b></span></td> 
+<td class="desc"> Muestra la identificación del subdispositivo de la controladora.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Bus PCI</b></span></td> 
+<td class="desc"> Indica el número del bus de la controladora.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Dispositivo PCI</b></span></td> 
+<td class="desc"> Indica el número del dispositivo de la controladora.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Función PCI</b></span></td> 
+<td class="desc"> Indica el número de función de la controladora. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Tipo de ranura</b></span></td> 
+<td class="desc"> Muestra el tipo de ranura PCI de la controladora. Por ejemplo, PCI Express x8. Si no está disponible, se muestra <b>Información no disponible</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Longitud de la ranura</b></span></td> 
+<td class="desc"> 
+<p>Muestra el factor de forma de la tarjeta PCI. Posibles valores:</p> 
+<ul> 
+<li>Corto: indica que la controladora está incorporada.</li> 
+<li>Largo: indica que la controladora no está incorporada.</li> 
+</ul> 
+<p>Si el valor no está disponible, se muestra <b>Información no disponible</b>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Amplitud_del_bus</b></span></td> 
+<td class="desc"> Muestra el ancho del bus de la controladora. Por ejemplo, 8x o x8. Si el valor no está disponible, se muestra <b>Información no disponible</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Modo copia de respaldo</b></span></td> 
+<td class="desc"> 
+<p>Indica si el modo Copia de respaldo está activado o desactivado. Posibles valores:</p> 
+<ul> 
+<li>Activado: indica que la copia automática de datos de un disco físico a un repuesto dinámico (en el caso de una falla prevista) o de un repuesto dinámico a un disco físico (en el caso del reemplazo de un disco degradado) se encuentra activada.</li> 
+<li>Apagado: indica que la copia de respaldo se encuentra desactivada.</li> 
+<li>Encendido con error SMART: indica que la copia automática de datos desde un disco físico (que forma parte de un disco virtual) hacia un repuesto dinámico está activada en caso de una falla predictiva del disco físico.</li> 
+<li>No admitido: indica que el modo de copia de respaldo no se admite.</li> 
+</ul> 
+<p>Si falla el disco físico en un disco virtual, los datos en el disco fallido se copian al repuesto dinámico asignado. Si reemplaza el disco fallido por un disco físico nuevo y si ha activado el modo Copia de respaldo, los datos se copian del repuesto dinámico anterior al nuevo disco. Si se encuentra activado con error SMART, el firmware de la controladora comienza a copiar automáticamente los datos del disco activado de SMART en el disco virtual del repuesto dinámico.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Porcentaje de lectura de patrullaje</b></span></td> 
+<td class="desc"> Muestra el porcentaje de recursos de la controladora dedicados a realizar una lectura de patrullaje en discos que forman parte de un disco virtual o de repuestos dinámicos. Cualquier valor entre 0 y 100 es válido.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Estado de lectura de patrullaje</b></span> </td> 
+<td class="desc"> 
+<p>Muestra el estado actual del proceso de lectura de patrullaje. Posibles valores: </p> 
+<ul> 
+<li>En ejecución: indica que el proceso de lectura de patrullaje se encuentra en ejecución actualmente.</li> 
+<li>Detenido: indica que la lectura de patrullaje está detenida.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Modo de lectura de control</b></span></td> 
+<td class="desc"> 
+<p>Muestra si el modo de lectura de patrullaje en la controladora es manual, automático o está desactivado. Posibles valores: </p> 
+<ul> 
+<li>Automático: indica que la lectura de patrullaje se ejecuta continuamente en el sistema. Cuando una iteración de lectura de patrullaje termina, la siguiente lectura de patrullaje se programa para comenzar dentro del periodo de tiempo que la controladora especifica. No puede iniciar o detener la lectura de patrullaje en este modo. </li> 
+<li>Manual: indica que puede iniciar o detener el proceso de lectura de patrullaje. </li> 
+<li>Desactivado: indica que el proceso de lectura de patrullaje se encuentra desactivado.</li> 
+<li>No admitido: indica que la controladora no admite lecturas de patrullaje.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Porcentaje de revisión de congruencia</b> </span></td> 
+<td class="desc"> Muestra el porcentaje de los recursos del sistema dedicados a realizar una revisión de congruencia en un disco virtual redundante. Esto determina la integridad de los datos redundantes de un disco virtual&#39;. Cuando es necesario, esta función recrea la información redundante. <br /> En 0 %, la revisión de congruencia es la menor prioridad para la controladora, tarda más tiempo en completarse y tiene el menor impacto en el rendimiento del sistema. Un porcentaje de revisión de congruencia de 0 % no significa que el proceso esté detenido o pausado. <span class="item"> <br /> 
+<br /> 
+</span>En 100 %, la revisión de congruencia es la mayor prioridad para la controladora, minimiza el tiempo y tiene el mayor impacto en el rendimiento del sistema.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Modo de revisión de congruencia</b></span></td> 
+<td class="desc"> 
+<p>Muestra el modo de revisión de congruencia para la controladora. Posibles valores: </p> 
+<ul> 
+<li>No admitido: indica que esta controladora no admite el modo de revisión de congruencia.</li> 
+<li>Normal: indica que el modo de congruencia es normal.</li> 
+<li>Detenerse en error: indica que la controladora anula la operación de revisión de congruencia debido a un error.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Porcentaje de recreación</b></span></td> 
+<td class="desc"> Muestra el porcentaje de los recursos de la controladora dedicados a recrear el disco fallido. Durante la recreación, todo el contenido del disco físico se reconstruye. <br /> En 0 %, la recreación es la menor prioridad para la controladora, tarda más tiempo en completarse y tiene el menor impacto en el rendimiento del sistema. Un porcentaje de recreación de 0 % no significa que la recreación esté detenida o pausada. <br /> En 100 %, la recreación es la mayor prioridad para la controladora, minimiza el tiempo de recreación y tiene el mayor impacto en el rendimiento del sistema.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Porcentaje de inicialización de segundo plano</b></span></td> 
+<td class="desc"> Muestra el porcentaje de los recursos de la controladora dedicados a realizar la inicialización de segundo plano (BGI) de un disco virtual después de haber sido creado. <br /> En 0 %, la inicialización de segundo plano es la menor prioridad para la controladora, tarda más tiempo en completarse y tiene el menor impacto en el rendimiento del sistema. Un porcentaje de inicialización de segundo plano de 0 % no significa que la inicialización de segundo plano esté detenida o pausada. <br /> 
+<br /> En 100 %, la inicialización de segundo plano es la mayor prioridad para la controladora, minimiza el tiempo de inicialización de segundo plano y tiene el mayor impacto en el rendimiento del sistema.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Porcentaje de reconstrucción</b></span> </td> 
+<td class="desc"> Muestra el porcentaje de los recursos de la controladora dedicados a reconstruir un grupo de discos después de agregar un disco físico o cambiar el nivel RAID de un disco virtual que se encuentra en el grupo de discos. <br /> 
+<br /> En 0 %, la reconstrucción es la menor prioridad para la controladora, tarda más tiempo en completarse y tiene el menor impacto en el rendimiento del sistema. Un porcentaje de reconstrucción de 0 % no significa que la reconstrucción esté detenida o pausada. <br /> 
+<br /> En 100 %, la reconstrucción es la mayor prioridad para la controladora, minimiza el tiempo de reconstrucción y tienen el mayor impacto en el rendimiento del sistema.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Máxima velocidad admitida</b></span></td> 
+<td class="desc"> Muestra la velocidad máxima con la que el dispositivo puede transferir datos (en gigabytes por segundo). Los posibles valores son 0, 1,5, 3,0 o 6,0. Si el valor no está disponible, se muestra <b>Información no disponible</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Repuesto dinámico persistente</b></span></td> 
+<td class="desc"> 
+<p>Indica si la ranura que corresponde a la unidad del repuesto dinámico es persistente o no. Posibles valores:</p> 
+<ul> 
+<li>Activado: indica que la ranura que corresponde a la unidad del repuesto dinámico es persistente. Cualquier unidad en la ranura funciona como repuesto dinámico siempre y cuando la unidad califique como repuesto dinámico. Si la unidad contiene datos ajenos, estos se sobreescriben. </li> 
+<li>Desactivado: indica que la ranura que corresponde a la unidad del repuesto dinámico no es persistente. Si se extrae la unidad de la ranura y se inserta cualquier unidad, la ranura deja de funcionar como repuesto dinámico. Usted debe asignar la unidad como repuesto dinámico nuevamente de forma manual.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Cargar valor de equilibrio</b></span></td> 
+<td class="desc"> 
+<p>Indica la capacidad para utilizar automáticamente los puertos de la controladora o los conectores conectados al mismo gabinete para dirigir solicitudes de E/S.<br /> Posibles valores:</p> 
+<ul> 
+<li>Automático: indica que el valor de equilibrio de carga se encuentra activado.</li> 
+<li>Ninguno: indica que el valor de equilibrio de carga se encuentra desactivado.</li> 
+<li>No admitido: indica que el equilibrio de carga no está admitido.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Caché preservado</b></span></td> 
+<td class="desc"> 
+<p>Indica si el controlador ha preservado o anclado caché. Se muestra el estado de la controladora como <b>Degradado</b> si la controladora ha preservado caché.<br /> Posibles valores: </p> 
+<ul> 
+<li>Presente</li> 
+<li>Ausente</li> 
+</ul> 
+<p>Si el valor no está disponible, se muestra <b>Información no disponible</b>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Intervalo de detención</b></span></td> 
+<td class="desc"> Muestra el intervalo en minutos después del cual los repuestos dinámicos y las unidades no configuradas se detienen.<br /> Cualquier valor entre 30 y 1440 es válido.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Detención de unidades no configuradas:</b></span></td> 
+<td class="desc"> 
+<p>Indica si la detención para los discos no configurados está activada o desactivada. Posibles valores:</p> 
+<ul> 
+<li>Activado: indica que la detención se encuentra activada si los discos no configurados están desatendidos por un intervalo de tiempo específico.</li> 
+<li>Desactivado: indica que la detención se encuentra desactivada.</li> 
+</ul> 
+<p>Si el valor no está disponible, se muestra <b>Información no disponible</b>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Repuesto dinámico de detención de la unidad:</b></span></td> 
+<td class="desc"> 
+<p>Indica si la detención para los repuestos dinámicos se encuentra activada o no. Posibles valores:</p> 
+<ul> 
+<li>Activado: indica que la detención está activada si no se realiza ninguna operación de lectura ni de escritura en el repuesto dinámico durante un intervalo de tiempo específico.</li> 
+<li>Desactivado: indica que la detención se encuentra desactivada.</li> 
+</ul> 
+<p>Si el valor no está disponible, se muestra <b>Información no disponible</b>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Modo de recopilación de información</b></span></td> 
+<td class="desc"> 
+<p>Muestra el modo de recopilación de información de la batería. Posibles valores:</p> 
+<ul> 
+<li>Automático: indica que la controladora realiza un ciclo de recopilación de información automático conforme al tiempo que usted configuró.</li> 
+<li>Advertir: indica que la controladora advierte sobre el ciclo de recopilación de información necesario, pero no inicia dicho ciclo automáticamente. El ciclo de recopilación de información ha pasado los 90 días predeterminados.</li> 
+<li>No admitido: indica que la controladora no admite el modo de recopilación de información.</li> 
+<li>Desactivado: indica que el modo de recopilación de información está desactivado.</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+<div class="popup_subheader"> 
+ 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Volver al principio</a> </div> 
+<span id="Controller_Battery">Batería de la controladora</span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Las siguientes propiedades se muestran solo si la controladora tiene batería.</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Estado</b></span></td> 
+<td class="desc"> 
+<p>Muestra el estado de la batería.</p> 
+<ul> 
+<li> Buen estado<span class="status_ok">: </span>indica que el componente funciona según estaba previsto.</li> 
+<li>Advertencia<span class="status_noncritical">: </span>indica que una sonda u otro dispositivo de supervisión ha detectado una lectura de la controladora que se encuentra por encima o por debajo del nivel aceptable. El componente puede estar en funcionamiento, pero puede fallar. Es posible que el componente también esté funcionando en un estado de deterioro.</li> 
+<li>Crítico<span class="status_critical">: </span>indica que el componente ha fallado o que la falla es inminente. Se requiere atención inmediata y es posible que deba reemplazarse.</li> 
+<li>Información no disponible<span class="status_unknown">: </span>indica que se desconoce el estado del componente.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nombre</b></span></td> 
+<td class="desc"> Muestra el nombre de la batería que se encuentra en la controladora.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Estado</b></span></td> 
+<td class="desc"> 
+<p>Muestra el estado actual de la batería. Los posibles estados son los siguientes: </p> 
+<ul> 
+<li>Listo: indica que la batería funciona normalmente.</li> 
+<li>Degradado: indica que la batería necesita reacondicionarse (ciclo de recopilación de información).</li> 
+<li>Cargando: indica que la batería se encuentra en la etapa de recarga del ciclo de recopilación de información de la batería.</li> 
+<li>Perdido: indica que la controladora no tiene batería.</li> 
+<li>Energía baja: indica que la carga de la batería está baja y que la batería necesita reacondicionarse. </li> 
+<li>Fallido: indica que la batería ha fallado y debe reemplazarse. </li> 
+<li>Desconocido: indica que el estado de la batería no se encuentra disponible.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Estado de capacidad previsto</b></span></td> 
+<td class="desc"> 
+<p>Muestra la capacidad de carga de la batería. Posibles valores: </p> 
+<ul> 
+<li>Listo: indica que la batería puede cargarse en su máxima capacidad.</li> 
+<li>Fallido: indica que la batería no puede cargarse y debe reemplazarse. </li> 
+<li>Desconocido: indica que la batería está completando un ciclo de recopilación de información. La capacidad de carga de la batería no se puede determinar hasta que el ciclo de recopilación de información se haya completado.</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

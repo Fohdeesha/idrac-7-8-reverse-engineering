@@ -1,0 +1,27 @@
+[Unit]
+Description=GUI Data Server
+Wants=appweb.service
+After=appweb.service
+Wants=aim.service
+After=aim.service
+PartOf=appweb.service
+
+# for CPU utilization
+After=appweb.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/C
+#Restart=on-failure
+
+LimitSTACK=65536
+
+# gds environment is different from the global environment, so not sourcing /etc/global.env here
+Environment=PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib/appweb NVRAM_DATA0=/flash/data0 NVRAM_DATA1=/flash/data1 CALLER=gui DATA_SERVER_PORT=8195 AVCT_DEF_PROP_FILE=/usr/local/etc/appweb/default.properties AVCT_MAP_PROP_FILE=/usr/local/etc/appweb/map.properties USER=root
+
+ExecStart=/usr/local/bin/guiDataServer
+#ExecStop=/bin/kill -QUIT ${MAINPID}
+TimeoutStopSec=2
+
+# socket activated. do not install
+#S_7600_appweb.sh gds

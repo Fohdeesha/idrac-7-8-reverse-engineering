@@ -1,0 +1,17 @@
+[Unit]
+Description=Debug service - Postinit
+After=dm-stage2.service
+
+# only execute this for XREV builds. Represents a security issue to allow this on a-rev.
+ConditionPathExists=/flash/data0/debug/postinit.sh
+ConditionPathExists=/etc/xrev_fw
+
+[Service]
+Type=idle
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=-/flash/data0/debug/postinit.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+[Unit]
+Description=Hardware Watchdog
+DefaultDependencies=no
+After=driver-load.service
+Wants=driver-load.service
+
+[Service]
+Type=forking
+Restart=on-failure
+#ControlGroup=memory:/idrac/C
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/sbin/watchdog
+
+[Install]
+WantedBy=sysinit.target

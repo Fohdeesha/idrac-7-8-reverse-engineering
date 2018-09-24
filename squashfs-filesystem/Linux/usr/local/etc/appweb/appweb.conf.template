@@ -1,0 +1,888 @@
+#
+#   appweb.conf -- Default Configuration for the Embedthis Appweb HTTP Server
+#   
+#   This configuration file controls the operation of the Appweb server. The 
+#   order of configuration directives matters as this file is parsed only once.
+#   You must put the server root and error log definitions first to ensure 
+#   configuration errors are logged.
+#
+
+#
+#   Define the logging configuration first so any errors are logged.
+#   This is for errors and debug trace. This log file is for the whole
+#   server including virtual hosts. Add a timestamp every 1 hour.
+#   This is overridden by appweb command line args: -v and --log.
+#
+# ErrorLog "/tmp/error.log" size=10MB level=2 backup=5 append anew stamp=1hr
+
+#
+#   Control the tracing of request and response requests to the error log.
+#   This directive defines the levels at which various events are logged.
+#
+#   Log rx conn=5 first=2 headers=3 body=5 limits=5 size=10K
+#   Log tx first=3 headers=3 body=5 limits=5 time=6 size=10K exclude="jpg,gif,png,ico,css,js"
+
+#
+#   Configure the access log
+#
+#   AccessLog "access.log" size=10MB backup=5 append anew
+
+#
+#   Server current directory for Appweb to find necessary files and libraries. 
+#   Appweb will change directory to this location when it runs.
+#
+#ServerRoot "/usr/local/lib/appweb"
+ServerRoot "/usr/local/bin"
+
+#
+#   Create a "chroot jail" by changing the system root directory to this
+#    directory. Once changed files outside the jail will be inaccessible.
+#   If rotating log files, must do Chroot before defining logs.
+#
+#   Chroot "."
+
+#
+#   Bind Appweb to listen for incoming requests on this address. Formats 
+#   include (IP, IP:PORT, PORT). If an IP address is omitted, Appweb will 
+#   listen on all interfaces. If a port is omitted, then port 80 is used.
+#   If the O/S has a dual-stack network, then connections on both IPv4 
+#   and IPv6 will be accepted. Use [::]:port to explicitly listen to only
+#   IPv6 requests. [::1] is the IPv6 loopback. Use 0.0.0.0:port to listen
+#   to only IPv4 requests.
+#   This directive may be specified via the include.conf above.
+#
+Listen ${AIM_HTTP_PORT}
+
+#
+#   SSL/TLS configuration
+#
+
+<if SSL_MODULE>
+        DocumentRoot "/usr/local/www"
+        LoadModule sslModule libmod_ssl
+        ListenSecure ${AIM_HTTPS_PORT}
+        #
+        #   SECURITY NOTE: you must generate the server.crt and server.key.pem. 
+        #   Use a decrypted key here so it won't prompt for the password when 
+        #   the server is restarted. 
+        #
+        ###SSLCertificateFile "sslconf/server.crt"
+        ###SSLCertificateKeyFile "sslconf/server.key.pem"
+		  ###SSLProtocol was modified such that TLSV1 is disabled permanently
+		  ###TLSV1.1 is configurable.
+      
+	SSLEngine on
+	SSLCipherSuite ${SSL_CIPHER_SUITES}
+	SSLProtocol ${SSL_PROTOCOL_SUITE}
+	SSLCertificateFile "/etc/certs/CA/certs/host.crt"
+	SSLCertificateKeyFile "/flash/data0/cv/private/host.key"
+        UploadDir /mnt/scratchpad 
+</if>
+
+#   Redirect all traffic over HTTPS
+#
+#   Redirect secure
+#
+#
+#   Remove default security headers if required
+#
+   Header remove Content-Security-Policy
+   Header remove X-Frame-Options
+   Header remove X-XSS-Protection
+   Header remove X-Content-Type-Options
+
+##
+#   Name of the server to use for redirects and error responses to clients. 
+#   Uncomment this line and replace it with the public name of your server. 
+#   This host name and port do not get used for listening on sockets. If 
+#   unspecified, Appweb will use the IP address for the host name.
+#   NOTE: Only define a ServerName if you are not using a ListenSecure
+#   directive for SSL. Otherwise, redirects will always go to the address
+#   you define here regardless of http or https. If you need to use a 
+#   ServerName with SSL, use a VirtualHost to define your SSL endpoint.
+#
+#   ServerName http://example.com
+ServerName idrac
+
+#
+#   Location for documents for the primary server host. Routes and virtual
+#   hosts may define their own document root.
+#   This directive may be specified via the include.conf above.
+#
+DocumentRoot "/usr/local/www"
+
+#
+#   Default directory index to serve when a directory is requested.
+#
+DirectoryIndex start.html.gz
+
+#
+#   Authorization directives. You can add these directives to apply to the 
+#   entire server and all routes after this point. Alternatively, put inside a 
+#   VirtualHost or Route block to localize to that block. By convention, the
+#   auth.conf file contains User and Role definitions. Alternatively build with
+#   PAM support to use the system password stores. 
+#
+#   include auth.conf
+
+#
+#   Route unauthenticated traffic over SSL.
+#   SECURITY NOTE: The authentication type of "basic" or "form" should
+#   only ever be employed over a secure SSL connection. Otherwise, the 
+#   plain-text password will be sent in the clear over the network.
+#
+#   Redirect secure
+#
+#   Form-based authentication. The realm is required if not using PAM password
+#   stores. This redirects unauthenticated accesses to https /admin/login.esp 
+#   which is a login form The /login url is used to process a posted with 
+#   username and password fields. For more details, see:
+#   http://embedthis.com/products/appweb/doc/guide/appweb/users/authentication.html.
+#
+#   AuthType form example.com https:///admin/login.esp https:///login /logout /home.html
+
+#
+#   Location of the mime translation file to map content types to file 
+#   extensions. For other types, you can use AddType.  
+#   "AddType application/x-appweb-other other"
+#
+#   TypesConfig mime.types
+
+#
+#   Search path for dynamically loadable modules. If modules have been 
+#   statically linked into Appweb, this directive and LoadModule directives
+#   will be ignored. This directive must be before any LoadModule directives.
+#   The default path is: dir-containing-executable : /usr/lib/appweb/bin
+#   Use ";" as a separator on windows.
+#
+#   LoadModulePath "/directory/to/modules:/other/directory"
+
+LoadModulePath /usr/local/lib/appweb:./bin:../bin:../bin/Debug:../bin/Release 
+
+#
+#   Notes on the request processing pipeline. The pipeline consists of a set 
+#   of stages comprised of a handler, possible filters and one network 
+#   connector. 
+#
+#   The request processing pipeline can be configured at various levels: 
+#   globally, virtual hosts and location blocks. At each level, a set of 
+#   processing stages can be defined. Inner levels inherit the pipeline from 
+#   the outer levels. The pipeline can be reset at a level by using 
+#   ResetPipeline. Each stage may be defined for all requests or only for a 
+#   specific file extension or location path prefix.
+#
+#   If you use the AddConnector, AddFilter or AddHandler directives, the 
+#   stage is defined for both input and output processing. For filters you can
+#   use AddInputFilter AddOutputFilter directives to define for a single 
+#   direction.
+#
+#   Multiple handlers can be defined, but only the first matching handler will
+#   be activated when a request is processed.
+#
+#TODO REVISIT - enabled in appweb-4.3.0
+SetConnector netConnector
+AddOutputFilter rangeFilter
+AddOutputFilter chunkFilter
+
+
+#The AddInputFilter directive adds a filter to the input processing pipeline. Incoming request data is passed through the input pipeline and may be processed by each filter in turn.
+#Filters stack and thus have an order. The first filter added will receive the data last and the last filter defined for a given URI will be the first filter to receive the data.
+
+LoadModule      avctAuthFilter      libavctAuth
+LoadModule      redfishAuthFilter      libredfishAuth
+
+LoadModule RESTFilter libRESTModule
+AddOutputFilter  RESTFilter
+
+LoadModule dataHandler libDataHandler
+LoadModule WSManHandler libWSManModule
+LoadModule pwdHandler libPwdHandler
+LoadModule dcmHandler libDCMHandler
+LoadModule lmdnloadHandler liblmDnload
+LoadModule vfkuploadFilter libvfkUpload
+LoadModule vfkdnload libvfkDnload
+LoadModule FWUpdateHandler libfwUpdate
+#LoadModule fwUploadFilter libfwUpdate
+#LoadModule preReqFwUploadFilter libfwUpdate
+
+# Adding Methods for all routes 
+# TODO Revisit to check applicability for all
+#	Methods add PUT, DELETE, POST
+
+#This module should be before the generic PUT module, because it supports PUT/DELETE on its own
+LoadModule RESTHandler libRESTModule
+LoadModule rfupload librfupload
+#Methods set to ALL would allow any valid HTTP methods
+<Route /redfish/v1/UpdateService/FirmwareInventory>
+        Methods set POST
+        AddInputFilter  redfishAuthFilter
+        AddInputFilter uploadFilter
+        UploadDir /mnt/scratchpad
+        UploadAutoDelete off
+        SetHandler rfupload
+</Route>
+<Route /redfish>
+	Methods add ALL
+	AddInputFilter  redfishAuthFilter
+	SetHandler RESTHandler
+</Route>
+
+AddInputFilter  avctAuthFilter
+
+<Route /sysmgmt/2012/server/firmware>
+	Methods add PUT, DELETE, POST
+        #AddInputFilter preReqFwUploadFilter
+        AddInputFilter uploadFilter
+        #AddInputFilter fwUploadFilter
+        UploadDir /mnt/scratchpad
+        UploadAutoDelete off
+        SetHandler FWUpdateHandler
+</Route>
+
+#This module should be before the generic PUT module, because it supports PUT/DELETE on its own
+LoadModule fileUploadHandler libFileUploadHandler
+
+<Route /fileupload>
+	Methods add PUT, DELETE, POST
+        AddInputFilter uploadFilter
+        UploadDir /mnt/scratchpad
+        UploadAutoDelete off
+        SetHandler fileUploadHandler
+</Route>
+
+<Route /sysmgmt>
+	Methods add PUT, DELETE, POST
+        AddInputFilter uploadFilter
+        UploadDir /mnt/scratchpad
+        UploadAutoDelete off
+        SetHandler RESTHandler
+</Route>
+
+### TODO: appweb410 has got its filehandler,so restui will have to change its filehandler to some other name and load
+#LoadModule fileHandler libFileHandler
+#AddHandler fileHandler
+<Route /cemgui>
+	SetHandler fileHandler
+	Compress gzip
+</Route>
+
+<Route /bindata>
+	Methods add PUT, DELETE, POST
+	SetHandler dataHandler
+</Route>
+
+<Location /chuser>
+	Methods add PUT, DELETE, POST
+        SetHandler pwdHandler
+</Location>
+
+<Location /dcmuser>
+	Methods add PUT, DELETE, POST
+        SetHandler dcmHandler
+</Location>
+
+<Location /postset>
+	Methods add PUT, DELETE, POST
+        SetHandler dcmHandler
+</Location>
+
+<Route /data>
+	Methods add PUT, DELETE, POST
+	SetHandler dataHandler
+</Route>
+
+<Route /session>
+	Methods add PUT, DELETE, POST
+	SetHandler dataHandler
+</Route>
+
+<Route /csvdata>
+	Methods add PUT, DELETE, POST
+	SetHandler dataHandler
+</Route>
+
+<Route /textdata>
+	Methods add PUT, DELETE, POST
+	SetHandler dataHandler
+</Route>
+
+<Route /lcldata>
+	Methods add PUT, DELETE, POST
+	SetHandler dataHandler
+</Route>
+
+<Route /health>
+	Methods add PUT, DELETE, POST
+	SetHandler dataHandler
+</Route>
+
+<Route /viewer.jnlp>
+	Methods add PUT, DELETE, POST
+    SetHandler dataHandler
+</Route>
+
+<Route /playVideo.jnlp>
+	Methods add PUT, DELETE, POST
+    SetHandler dataHandler
+</Route>
+
+<Route /cmclogin>
+	Methods add PUT, DELETE, POST
+    SetHandler dataHandler
+</Route>
+
+<Route /Applications/dellUI/cmclogin>
+	Methods add PUT, DELETE, POST
+    SetHandler dataHandler
+</Route>
+
+<Route /wsman>
+	Methods add PUT, DELETE, POST
+    SetHandler wsmanHandler
+</Route>
+
+#
+#   Enable the uploadFilter if you want Appweb to transparently accept upload
+#   data. Handlers receive form variables that refer to the uploaded file. 
+#   Most PHP apps require the uploadFilter to be disabled.
+#   SECURITY NOTE: Check the LimitUpload to cap the maximum upload. 
+#   SECURITY NOTE: Good to use the upload filter inside a route.
+#
+<Route /vfkdownload>
+	Methods add PUT, DELETE, POST
+	SetHandler vfkdnload
+</Route>
+
+<Route /lm/lmdnload>
+	Methods add PUT, DELETE, POST
+	SetHandler lmdnloadHandler
+</Route>
+
+<Route /vfkupload>
+	Methods add PUT, DELETE, POST
+	AddInputFilter vfkuploadFilter
+</Route>
+
+<Route /lm/lmupload>
+	Methods add PUT, DELETE, POST
+        AddInputFilter uploadFilter
+        UploadDir /tmp
+        UploadAutoDelete off
+        SetHandler fileUploadHandler
+</Route>
+
+#
+#   Select the fileHandler for static files and as a catch-all when all other 
+#   handlers fail.
+#
+AddHandler fileHandler gif jpeg jpg png pdf ico css js html jsesp esp ejs json  ""
+
+#
+#   For CGI scripts, such as your Perl scripts make sure that you have 
+#   "#!/PerlPath" as the first line. This works on Windows as well.
+#   The .bat and .cmd extensions are really only for Windows.
+#   
+<if CGI_MODULE>
+    LoadModule cgiHandler libmod_cgi
+    #
+    # WARNING: for information about CGI security, read:  http://www.w3.org/Security/faq/wwwsf4.html
+    #
+    AddHandler cgiHandler exe cgi cgi-nph out bat cmd pl py
+
+    #JIT-90201_Security Issue to append CGI_ for every query Param
+	 CgiPrefix "CGI_"
+    #ScriptAlias /cgi-bin/ "$DOCUMENT_ROOT/../cgi-bin"
+
+    ScriptAlias /cgi-bin/ "/usr/local/cgi-bin"
+
+    #
+    #   These actions specify the program to run for each Perl or Python 
+    #   script. They map to the extensions specified in the mime.types for for 
+    #   these mime types. Alternatively, you may use put all your scripts in 
+    #   the subdirectories specified by the releavant Route blocks below.
+    #   For perl and python, you can also put "#!/path/to/program" as the first 
+    #   line. This works on Windows as well. The .bat and .cmd extensions are 
+    #   really only for Windows. For Windows, update the program paths with
+    #   the right paths.
+    #   
+    Action application/x-appweb-perl /usr/bin/perl
+    Action application/x-appweb-python /usr/bin/python
+    Action application/x-appweb-lua /usr/bin/lua
+    Action application/x-appweb-ruby /usr/bin/ruby
+    LimitProcesses 10
+<else>
+    AddHandler errorHandler exe cgi cgi-nph out bat cmd pl py
+</if>
+
+#
+#   Directory listings. This provides a HTML directory list of the directory
+#   corresponding to the URI.
+#   SECURITY: This enables attackers to read directory contents.
+#   SECURITY: Do not do this outside a scoping route.
+#
+#   <if DIR_MODULE>
+#       <Route /URI-to-list>
+#           Options Indexes
+#           IndexOrder ascending name
+#           IndexOptions FancyIndexing FoldersFirst
+#       </Route>
+#   </if>
+
+#
+#   Enable the action handler for simple URI to "C" bindings
+#   This is used by the web-form Auth mechanism
+#
+<Route ^/action/>
+    SetHandler actionHandler
+</Route>
+
+<if EJS_MODULE>
+    LoadModule ejsHandler libmod_ejs
+   # AddHandler ejsHandler ejs es html esp jsesp asp
+    AddHandler ejsHandler ejs es
+
+   # EjsStartup /usr/local/bin/start.es
+    #
+    #   Define the ejs startup script
+    #
+    #   EjsStartup start.es
+    #
+    #   Define the default number of workers (threads) to use for ejs requests
+    #   Defaults to WorkerLimit
+    #
+    #   EjsWorkers 10
+    #
+    #   Define an ejs application. Args are:  Prefix Directory Script Workers
+    #
+    #   EjsAlias /farm /users/dev/farm /users/dev/farm/start.es 10
+    #
+    #   Define an ejs application using a location block instead of EjsAlias
+    #
+    #    <Route /myfarm>
+    #        EjsStartup start.es
+    #        EjsWorkers 10
+    #        Alias /myfarm /User _www
+    #        AddHandler fileHandler html gif jpeg jpg png pdf ico css js ""
+    #        AddHandler ejsHandler
+    #    </Route>
+    #
+    #   Define an ejs application using a virtual host
+    #
+    #    <VirtualHost *:4001>
+    #        Documents    .
+    #        AddHandler   fileHandler html gif jpeg jpg png pdf ico css js
+    #        AddHandler   ejsHandler
+    #        EjsStartup   farm
+    #    </VirtualHost>
+<else>
+    # Let the file handler to serve the file.
+    AddHandler fileHandler ejs es
+</if>
+
+<if ESP_MODULE>
+    LoadModule espHandler libmod_esp
+    AddHandler espHandler esp
+
+    #
+    #   Store compiled content in the "cache" directory
+    #   Defaults to the /var/spool/appweb/cache on unix. 
+    #
+    # EspDir cache "cache"
+
+    #
+    #   Update modified source by automatically recompiling
+    #
+    #EspUpdate on
+
+    #
+    #   Send server errors back to the client
+    #
+    # EspShowErrors on
+
+    #
+    #   Keep intermediate source code in the cache directory
+    #
+    # EspKeepSource on
+
+    #
+    #   Include esp compilation rules
+    #
+    # Commenting out as not being used as run time compliation needed, precompiled libs will be loaded for esp handlers
+    #include ${LIBDIR}/esp.conf
+    #include /usr/local/bin/esp.conf
+
+    #
+    #   Route requests from /appName/ to the ESP application under directory. 
+    #   Set routePackage to "simple", "mvc" or "restful". Set database to
+    #   provider://database. E.g. EspApp app . restful mdb://app.mdb
+    #
+    # EspApp /appNamePrefix directory routePackage database
+
+    #
+    #   Define a route for the home page
+    #
+    # EspRoute home GET,POST,PUT ^/$ ${STATIC_DIR}/index.esp
+    #
+    #   Define a route for static content. The leading "%" means it is a 
+    #   pure regular expression and so "$1" can be used to extract the
+    #    positional matching sub-expression.
+    #
+    # EspRoute static GET %^/static/(.*) ${STATIC_DIR}/$1
+    #
+    #   Define a route for controller/actions
+    #
+    # EspRoute default GET,POST ^/{controller}(~/{action}~) ${controller}-${action} ${controller}.c
+    #
+    #   Define of restful routes for a resource (singleton)
+    #   Use LogRoutes to see the routes added.
+    #
+    # EspResource name ...
+    
+    #
+    #   Define of restful routes for a group of resources (multiple)
+    #   Use LogRoutes to see the routes added.
+    #
+    # EspResourceGoup name ...
+    #
+    #   Define a set of routes. Possible arguments are "simple", "mvc" and restful". 
+    #   Use LogRoutes to see the routes added.
+    #
+    # EspRouteSet restful
+    #
+    #   Dynamically loaded controller. The source code in sample.c will be automatically compiled and loaded. 
+    #   Source code for sample.c:
+    #
+    #   ESP_EXPORT int esp_module_sample(HttpRoute *route, MprModule *module) {                                
+    #       //  Bound to http://IP/mytest/ACTION
+    #       espDefineAction(route, "mytest-ACTION", action);
+    #       return 0;
+    #   }
+    #
+    #   <Route ^/sample/{action}$>
+    #       AddHandler espHandler
+    #       Source     sample.c
+    #       Target     run mytest-$1        # URI pattern is http://IP/mytest/ACTION
+    #   </Route>
+    #
+    #   Show the route table in the log
+    #
+    # LogRoutes
+
+<else>
+    # Let the file handler to serve the file. Custom: Needed for ActiveX Launch
+    AddHandler fileHandler esp
+</if>
+
+<if PHP_MODULE>
+     LoadModule phpHandler libmod_php
+#    AddHandler phpHandler php
+<else>
+    AddHandler errorHandler php
+</if>
+
+
+# Below alias are used to download file for Crash Screen, BootCapture screen, Console preview etc.
+Alias /capdata/ "/tmp/bsod/"
+Alias /capconsole/ "/tmp/preview/"
+#Alias /captures/ "/tmp/bootcapture/"
+#Alias /crashCaptures/ "/tmp/crashcapture/"
+
+#
+#   Disable the trace method to enhance security
+#
+TraceMethod off
+
+#   Emit as little information as possible. Don't emit as "Server" header. Default is ON from Appweb 4.4 onwards.
+Stealth on
+
+#
+#   WARNING: this will enable the PUT and DELETE methods to upload and remove 
+#   documents. Only do this inside routes intended for that purpose.
+#
+#   <Route /puttable>
+#       Documents ./modifyable
+#       PutMethod on
+#   </Route>
+
+#
+#   Set a default response cache lifespan
+#
+#As per Appweb 2.4 design, we should not cache html which will give some clear cache problem
+Cache 1day 
+#Cache server=1 client=1 extensions="html,js"
+
+#
+#   Session state duration.
+#
+#SessionTimeout 30mins
+SessionTimeout ${AIM_HTTP_TIMEOUT}
+#
+#   Maximum duration to parse the request headers
+# This value should not be high for security reasons. Experimenting value will lead to winrm failures (BITS138353).
+RequestParseTimeout 30sec
+
+#
+#   Maximum request duration.
+#   BITS136641: On slow network ( 128kpbs is loweset which we support), Tried uploading max sized supported file( OS DUP of size 130MB)
+#   and it took around 120Mins ( Upload @ 1MB/1Min approx). So Consider the slow network, Concluded 150Min max as requestTimeout.
+RequestTimeout 150mins
+
+<Route /vfkupload>
+	# Vflash Upload can support max 2GB image.On Slow network( 128kbps), 2GB image upload may take 35Hours which is not practical scenario.
+	# So by considering the Normal network, concluded requestTimeout value as 12Hr( Which is MAX practical case, user can wait).
+	RequestTimeout 12hr
+</Route>
+
+
+#
+#   Maximum request and connection inactivity duration
+#   This is nothing but keep-alive timeout should be low value for security reasons. Check documentation for more details. 
+InactivityTimeout 1min
+#InactivityTimeout ${AIM_HTTP_TIMEOUT}
+
+#
+#   Request timeout when appweb is terminating or restarting
+#
+ExitTimeout 30secs
+
+#
+#   Maximum number of worker threads in the Appweb worker pool. Must have at 
+#   least one.  One thread will effectively single-thread the server. Appweb 
+#   will automatically adjust the number of workers between the minimum 
+#   specified by the MinWorkers and the maximum specified here. Every ten 
+#   minutes, Appweb will prune workers that have been idle for five minutes. 
+#   Appweb has two non-worker threads: one for the master event loop and one 
+#   for the garbage collector. So the total number of Appweb threads will be 
+#   two plus the number of active workers.
+#
+LimitWorkers 8
+
+#
+#   Minimum number of worker threads. Pre-start and always preserve this 
+#   number of workers threads.
+#
+MinWorkers 2
+
+#
+#   Memory allocation error policy. This defines what Appweb will do if 
+#   the memory limit defined by LimitMemory is exceeded. Choose from "prune" 
+#   to prune non-critical response cache and session state, but continue on.
+#   This make the memory limit a soft limit. Or select "restart" to do a
+#   graceful shutdown and then restart anew. Or "exit" to immediately exit 
+#   the application.
+#   'continue' makes LimitMemory basically a soft limit.
+#   Also 85% is redline for limit-memory, beyond which appweb starts pruning internal memory to reduce usage
+#
+MemoryPolicy continue
+
+#
+#   Maximum buffer size for pipeline queues
+#
+LimitBuffer 32K
+
+#
+#   Maximum application memory. Invokes MemoryPolicy if exceeded.
+#    Redline at 95%.
+#
+#   TODO REVISIT in 13G RTS wave3, as seperate memory limit per module like appweb will be available in systemd
+#   Currently appweb is in systemd critical group, together all modules in it share max memory limit of 113Mb
+#   Limiting appweb max memory usage under the limit
+LimitMemory 100MB
+
+#
+#  Maximum cache size for response caching and sessions
+#  In memory caching. Limiting to 2MB to retain session data & minimum possible response data
+#
+LimitCache 2MB
+
+#
+#   Maximum item size that can be cached
+#   In-memory caching. Limiting to 10% of maximum cache limit.
+#
+LimitCacheItem 200K
+
+#
+#   Maximum number of simultaneous client systems. Set to zero for unlimited.
+#
+#LimitClients 20
+LimitClients 20
+
+#
+#   Maximum number of open files/sockets on unix systems. 
+#   Set to zero for the maximum possible value. 
+#
+LimitFiles 0
+
+#
+#   Maximum number of simultaneous requests. Set to zero for unlimited.
+#
+#LimitRequests 50
+
+#TODO: Revist this number, If you keep low seeing some issue in vKVM launch.
+LimitConnections 30
+
+#
+#   Maximum number of simultaneous requests per client. This helps prevent denial of service attacks.
+#
+LimitRequestsPerClient 20
+
+#
+#   Number of HTTP requests to accept on a single TCP/IP connection
+#   Reduce this number to minimize the chance of DoS attacks.
+#
+LimitKeepAlive 200
+
+#
+#   Maximum size of the total request content body (includes header)
+#  
+#LimitRequestBody 2MB
+#2GB-1 bytes
+LimitRequestBody 2147483647
+
+#
+#   Maximum size of a request form
+#  
+LimitRequestForm 32K
+
+#
+#   Maximum size of request header
+#  
+LimitRequestHeader 32K
+
+#
+#   Maximum number of request header lines 
+#  
+LimitRequestHeaderLines 64
+
+#
+#   Maximum size of the maximum response body
+#  
+LimitResponseBody 2GB
+# 256k (max web page 108k. Racadm max response 64k)
+#LimitResponseBody 262144
+
+#
+#   Maximum response chunk size
+#
+LimitChunk 64K
+
+#
+#   Maximum uploaded file size
+#
+LimitUpload 2GB
+
+#
+#   Maximum request URI size
+#
+LimitUri 8K
+
+#
+#   WARNING: Change this very carefully. Typically operating systems with
+#   virtual memory can effectively allocate the stack size. Systems with 
+#   non-virtual memory may need to define this.
+#   ThreadStack 64K
+
+#
+#   The user name and group to switch to once Appweb has started. The fake name
+#   _default_ will translate into www on MAC, www-data on Linux or administrator
+#   on Windows. The fake name _unchanged_ means don't change the user or group. 
+#   NOTE: ESP and EJS require write access to the cache directory If you wish to 
+#   backup log files, you must have write permission to the log file directory. 
+#
+GroupAccount _unchanged_
+UserAccount _unchanged_
+
+#
+#   Cache static content at the client
+#   This sets an cache expiry period (secs) for content. Clients will refresh
+#   only if content is stale in their local cache. This defines a set of file
+#   extensions for which Expires/Cache-Control headers will be generated.
+#
+#       Cache client=1day extensions="html,gif,jpeg,jpg,png,pdf,ico,js"
+#
+#   Cache specific URIs at the server with a lifespan of one hour
+#   All requests with the same URI path, regardless of request params are
+#   cached as one.
+#
+#       Cache server=1hour all /cache.esp /cache.php /cache.ejs /cache.cgi
+#
+#   To define a document to present for errors. If the URI is local the
+#   error document will be served with the original status code. If the URI
+#   is not local (starts with http), then a redirect (302) status code will
+#   be used to redirect the client to the error document.
+#   Note: Failing ejs requests will always redirect.
+#
+#       ErrorDocument 404 /notFound.html
+#
+#   Other useful directives
+#
+#       Redirect temp /pressRelease.html https://${request:serverName}/fixedPressRelease.html
+#       Redirect temp /pressRelease.html /fixedPressRelease.html
+#       Redirect 410 /membersOnly 
+#       AddLanguage en english
+#       AddLanguageRoot en englishContentDir
+#       DefaultLanguage fr
+#
+#   Create a virtual host
+#
+#       Listen 5000
+#       <VirtualHost *:5000>
+#           Documents web
+#       </VirtualHost>
+#
+#   Useful Route directives
+#
+#   <Route /pattern>
+#       # Restrict the permissible methods. Default is to allow all methods sans DELETE, PUT, TRACE.
+#       # Also see TraceMethod and PutMethod directives
+#       Methods POST        
+#   </Route>
+#
+#   Serve gziped files if an equivalent file with a "*.gz" extension exists
+#
+      Compress gzip
+#
+#   WebSockets with an ESP handler
+#
+#   <Route ^/websockets/{controller}/{action}$>
+#       Prefix /websockets
+#       AddFilter               webSocketFilter
+#       AddHandler              espHandler
+#       Source                  websockets.c
+#       Target                  run $1-$2
+#
+#       # Optimal to have the frame limit smaller than the packet limit. This way complete frames can be transferred.
+#       # The Frame limit is a soft limit and can be exceeded. Outgoing messages are broken into frames of this size.
+#
+#       LimitWebSockets         50
+#       LimitWebSocketsMessage  2GB
+#       LimitWebSocketsPacket   8K
+#       LimitWebSocketsFrame    4K
+#       RequestTimeout          2days
+#       InactivityTimeout       1hour
+#       WebSocketsProtocol      chat
+#       WebSocketsPing          30sec
+#       IgnoreEncodingErrors    on
+#   </Route>
+#
+
+#
+#   Emergency DOS protection
+#   If under attack, these directives may be useful
+#
+#       Deny IPaddr-or-hosts
+#       LimitRequestsPerClient 10
+#       LimitParseTimeout 2sec
+#       LimitKeepAlive 20
+#       InactivityTimeout 15sec
+#
+
+#
+#   Include per-app configuration
+#
+Include apps/*.conf
+
+#
+#   Debug
+#
+#   LogRoutes

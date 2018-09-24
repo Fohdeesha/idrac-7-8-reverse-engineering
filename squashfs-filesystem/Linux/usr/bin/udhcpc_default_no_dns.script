@@ -1,0 +1,90 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+RESOLV_CONF="/etc/resolv.conf"
+SUBNET_CONF="/tmp/SUBNET_CONF"
+ROUTER_CONF="/tmp/ROUTER_CONF"
+IPADDR_CONF="/tmp/IPADDR_CONF"
+DOMAIN_CONF="/tmp/DOMAIN_CONF"
+DNS_CONF="/tmp/DNS_CONF"
+
+DNS_COUNT=1
+
+update_interface()
+{
+  [ -n "$broadcast" ] && BROADCAST="broadcast $broadcast"
+  [ -n "$subnet" ] && NETMASK="netmask $subnet"
+  /sbin/ifconfig $interface $ip $BROADCAST $NETMASK
+}
+
+update_routes()
+{
+  if [ -n "$router" ]
+  then
+    echo "deleting routes"
+    while /sbin/route del default gw 0.0.0.0 dev $interface
+    do :
+    done
+
+    for i in $router
+    do
+      /sbin/route add default gw $i dev $interface
+    done
+  fi
+}
+
+update_dns()
+{
+  echo -n > $RESOLV_CONF
+  [ -n "$domain" ] && echo domain $domain >> $RESOLV_CONF
+  for i in $dns
+  do
+    echo adding dns $i
+    echo nameserver $i >> $RESOLV_CONF
+  done
+}
+
+deconfig()
+{
+  /sbin/ifconfig $interface 0.0.0.0
+}
+
+echo parameter passed to script: $1
+
+if [ "$1" = "bound" ]
+then
+  echo bound command, writing subnet, router, ipaddr, dns to files in /tmp
+  /avct/sbin/avctifconfig $interface $ip netmask $subnet route $router dhcp_renew 
+elif [ "$1" = "renew" ]; then
+  echo renew command
+  /avct/sbin/avctifconfig $interface $ip netmask $subnet route $router dhcp_renew 
+elif [ "$1" = "deconfig" ]; then
+  echo deconfig command
+#  /avct/sbin/avctifconfig eth0 0.0.0.0
+fi
+
+#case "$1" in
+#  bound)
+#    update_interface;
+#    update_routes;
+#    update_dns;
+#  ;;
+
+#  renew)
+#    update_interface;
+#    update_routes;
+#    update_dns;
+#  ;;
+
+#  deconfig)
+#    deconfig;
+#  ;;
+
+#  *)
+#    echo "Usage: $0 {bound|renew|deconfig}"
+#    exit 1
+#    ;;
+#esac
+
+exit 0

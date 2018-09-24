@@ -1,0 +1,10 @@
+[Unit]
+Description=spi monitoring 
+After=dsm-sa-datamgr.service
+RequiresMountsFor=/flash/data1
+
+[Service]
+Type=oneshot
+ControlGroup=memory:/idrac/NC
+ExecStart=/etc/init.d/spi_monitor.sh
+

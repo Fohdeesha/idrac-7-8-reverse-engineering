@@ -1,0 +1,332 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _EMPObj {
+        s8 defaultRestoreSupport;
+        s8 defaultRestoreStatus;
+        s8 defaultRestoreRequireReboot;
+        u8 type;
+        u8 uiStatus;
+        u8 localCommandDisableStatus;
+        u8 ipv4State; 
+	u8 bladeFormFactor; 
+	u32 lccState;
+        s32 defaultRestoreTimeoutMSec;
+        s32 defaultRestoreTimeRemaining;
+        s32 defaultRestorePercentage;
+        s32 numPossibleActiveSessions;
+        s32 numCurrentlyActiveSessions;
+        u32 offsetDisplayName;
+        u32 offsetDescription;
+        u32 offsetVersion;
+        u32 offsetGUID;
+        u32 offsetUrl;
+        u32 offsetipv6Url;
+        u32 offsetBladeLocation;
+} EMPObj;
+
+
+typedef struct _EMPV6LANConfigObj {
+		u8 ipv6State; 
+		u8 ipSecState;
+		u8 ipv6AddrConfiguration; 
+		u8 ipv6DNSConfiguration; 
+		u8 IIDPrefixLength;     
+		u8 reserved[3]; 
+		u32 offsetLLAddress; 
+		u32 offsetSLAddress; 
+		u32 offsetGLAddress; 
+		u32	offsetGatewayAddress; 
+		u32 offsetDNS1Address; 
+		u32 offsetDNS2Address; 
+} EMPV6LANConfigObj;
+
+
+typedef struct _EMPSerialConfigObj {
+        u8 channelNumber;
+        s8 IPMIMessagingAccessMode;
+        s8 PEFAlertingEnable;
+        s8 channelAccessLevel;
+        s8 maxUsersSupported;
+        s8 currentEnabledUsers;
+        __BITMAP u8 authenTypeSupport;
+        __BITMAP u8 authenTypeEnableCallback;
+        __BITMAP u8 authenTypeEnableUser;
+        __BITMAP u8 authenTypeEnableOperator;
+        __BITMAP u8 authenTypeEnableAdmin;
+        __BITMAP u8 authenTypeEnableOEM;
+        __BITMAP u8 connectionModeSupport;
+        s8 connectionMode;
+        __BITMAP u8 connectionModeEnables;
+        s8 commSettingsFlowControl;
+        s8 commSettingsBitRate;
+        s8 commSettingsDTRHangUp;
+        s8 terminalModeParamOperation;
+        s8 terminalModeLineEditing;
+        s8 terminalModeDeleteControl;
+        s8 terminalModeEcho;
+        s8 terminalModeHandshake;
+        s8 terminalModeNLSeq;
+        s8 terminalModeInputNLSeq;
+		__BITMAP u32 bitRateCapabilities;
+        u8 reservedAlign[3];
+} EMPSerialConfigObj;
+
+typedef struct _EMPLANConfigObj {
+        u8 channelNumber;
+        s8 IPMIMessagingAccessMode;
+        s8 PEFAlertingEnable;
+        s8 channelAccessLevel;
+        s8 maxUsersSupported;
+        s8 currentEnabledUsers;
+        __BITMAP u8 authenTypeSupport;
+        __BITMAP u8 authenTypeEnableCallback;
+        __BITMAP u8 authenTypeEnableUser;
+        __BITMAP u8 authenTypeEnableOperator;
+        __BITMAP u8 authenTypeEnableAdmin;
+        __BITMAP u8 authenTypeEnableOEM;
+        __BITMAP u32 IPAddrSourceMsg;
+        __BITMAP u16 IPAddrSourceSupport;
+        s8 IPAddrSource;
+        s8 IPv4HeaderTimeToLive;
+        s8 IPv4HeaderFlags;
+        s8 IPv4HeaderPrecedence;
+        s8 IPv4HeaderServiceType;
+        s8 numAlertDests;
+        s16 VLANID;
+        s8 VLANIDEnable;
+        s8 VLANPriority;
+        u32 offsetIPAddress;
+        u32 offsetMACAddress;
+        u32 offsetSubnetMask;
+        u32 offsetDefaultGateway;
+        u32 offsetCommunityString;
+} EMPLANConfigObj;
+
+typedef struct _EMPLANAlertDestObj {
+        u8 destSelector;
+        u8 destType;
+        booln alertAck;
+        u8 ackTimeoutRetryInterval;
+        u8 retries;
+        u8 addressFormat;
+        u8 gatewaySelector;
+        u32 offsetAlertingIPAddr;
+        u32 offsetAlertingMACAddr;
+} EMPLANAlertDestObj;
+
+typedef struct _EMPLANAltDestListObj {
+        u8 channelNumber;
+        u8 numLANAlertDests;
+        u8 reservedAlign[2];
+        EMPLANAlertDestObj LANAlertDestList[-2];
+} EMPLANAltDestListObj;
+
+typedef struct _EMPUserObj {
+        u8 userID;
+        __BITMAP u8 userSettable;
+        booln currentState;
+        u8 maxUserNameLength;
+        u8 maxPasswordLength;
+	booln EnableWarning;
+	u8 reservedAlign[4];
+        __BITMAP u32 RACPriv;
+        u32 offsetUserName;
+} EMPUserObj;
+
+typedef struct _EMPUserListObj {
+        u8 numUsers;
+        u8 reservedAlign[3];
+        EMPUserObj userList[-2];
+} EMPUserListObj;
+
+typedef struct _EMPUserAccessObj {
+        u8 userID;
+        u8 channelNumber;
+        s16 channelMediumType;
+        s8 availability;
+        s8 authenEnable;
+        s8 messagingEnable;
+        u8 userAccessLevel;
+        __BITMAP u8 userAccessSettable;
+        u8 reservedAlign[3];
+        __BITMAP u32 payloadAccessCapabilities;
+        __BITMAP u32 payloadAccessSettings;
+} EMPUserAccessObj;
+
+typedef struct _EMPUserAccessListObj {
+        u8 numInstances;
+        u8 reservedAlign[3];
+        EMPUserAccessObj userAccessList[-2];
+} EMPUserAccessListObj;
+
+typedef struct _EMPChannelObj {
+        u8 channelNumber;
+        s16 channelMediumType;
+        u8 reservedAlign[1];
+} EMPChannelObj;
+
+typedef struct _EMPChannelListObj {
+        u8 numChannels;
+        u8 reservedAlign[3];
+        EMPChannelObj channelList[-2];
+} EMPChannelListObj;
+
+typedef struct _EMPPEFConfigObj {
+        s8 PEFVersion;
+        __BITMAP u8 PEFActionSupport;
+        s8 PEFControlEnable;
+        __BITMAP u8 PEFActionGlobalControl;
+        u8 numEventFilters;
+        u8 numAlertPolicyEntries;
+        u8 numAlertStrings;
+        s8 GUIDUsage;
+        u32 offsetSystemGUID;
+        u32 offsetVersion;
+} EMPPEFConfigObj;
+
+typedef struct _EMPPEFEventFilterObj {
+        u8 filterNumber;
+        u8 filterConfigType;
+        booln filterConfigEnable;
+        booln evtFltrActionDiagInt;
+        booln evtFltrActionOEM;
+        booln evtFltrActionPwrCycl;
+        booln evtFltrActionReset;
+        booln evtFltrActionPwrOff;
+        booln evtFltrActionAlert;
+        u8 alertPolicyNumber;
+        u8 eventSeverity;
+        u8 sensorType;
+        u8 eventTrigger;
+        u16 eventData1OffsetMask;
+        u8 reservedAlign[2];
+		u32 filterKey;
+		astring pefName[64];
+} EMPPEFEventFilterObj;
+
+typedef struct _EMPPEFEvtFltrListObj {
+        u8 numEventFilters;
+        u8 reservedAlign[3];
+        EMPPEFEventFilterObj eventFilterList[-2];
+} EMPPEFEvtFltrListObj;
+
+typedef struct _EMPPEFAltPlcyEntryObj {
+        u8 policyEntryNumber;
+        u8 policyNumber;
+        s8 entryEnable;
+        u8 policy;
+        u8 channelNumber;
+        u8 destSelector;
+        s8 evtSpecAltStr;
+        u8 altStrSetSelector;
+} EMPPEFAltPlcyEntryObj;
+
+typedef struct _EMPPEFAltPlcyEntryListObj {
+        u8 numAltPlcyEntries;
+        u8 reservedAlign[3];
+        EMPPEFAltPlcyEntryObj altPlcyEntryList[-2];
+} EMPPEFAltPlcyEntryListObj;
+
+typedef struct _EMPPEFAlertStringObj {
+        u8 alertStringSelector;
+        u8 eventFilterNum;
+        u8 alertStringSet;
+        u8 reservedAlign[1];
+        u32 offsetAlertString;
+} EMPPEFAlertStringObj;
+
+typedef struct _EMPPEFAltStrListObj {
+        u8 numAlertStrings;
+        u8 reservedAlign[3];
+        EMPPEFAlertStringObj alertStringList[-2];
+} EMPPEFAltStrListObj;
+
+typedef struct _EMPSOLConfigObj {
+        u8 channelNumber;
+        s8 SOLEnable;
+        s8 SOLAuthenForcePayloadEnc;
+        s8 SOLAuthenForcePayloadAuthen;
+        s8 SOLAuthenPrivilegeLevel;
+        s8 SOLBitRateNonVolatile;
+        s8 SOLBitRateVolatile;
+        s8 SOLRetryCount;
+        s32 SOLRetryInterval;
+        s32 SOLCharAccumInterval;
+        s32 SOLCharSendThreshold;
+        __BITMAP u32 bitRateCapabilities;
+        u8 SOLCharAccumIntUp;
+        u8 SOLCharSendThresholdUp;
+        u8 reservedAlign[2];
+} EMPSOLConfigObj;
+
+typedef struct _EMPNICConfigObj {
+        u8 channelNumber;
+        u8 reservedAlign[3];
+        __BITMAP u32 teamingModeCapabilities;
+        __BITMAP u32 teamingModeSettings;
+} EMPNICConfigObj;
+
+typedef struct _EMPChSecKeyObj {
+        u8 keyID;
+        u8 channelNumber;
+        s16 channelMediumType;
+		u8 keyLockStatus;
+		u8 reservedAlign[3];
+        u32 offsetKeyValue;
+} EMPChSecKeyObj;
+
+typedef struct _EMPChSecKeyListObj {
+        u8 numKeys;
+        u8 reservedAlign[3];
+        EMPChSecKeyObj keyList[-2];
+} EMPChSecKeyListObj;
+
+typedef struct _EMPSerialMuxConfigObj {
+        __BITMAP u8 serialMuxModeCapabilities;
+        __BITMAP u8 serialMuxModeSettings;
+        u8 serialConnectorIPMIChannelNum;
+        u8 serialConnectorNum;
+        booln IPMISerialPortSharing;
+        booln IPMISOL;
+        u8 serialControllerChannelNum;
+        u8 reservedAlign[3];
+} EMPSerialMuxConfigObj;
+
+typedef struct _EMPRACObj {
+		booln nicEnable;
+		u8 reservedAlign[2];
+        s32 httpsPortNum;
+        u32 offsetProductInfo;
+        u32 offsetDescription;
+        u32 offsetVersion;
+        u32 offsetName;
+        u32 offsetType;
+} EMPRACObj;
+
+typedef struct _CMCObj {
+		u8 type;
+		u8 ipAddrType;
+		u8 ipSource;
+		u8 uiStatus;
+		u32 offsetIPAddress;
+		u32 offsetVersion;
+		u32 offsetUrl;
+} CMCObj;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

@@ -1,0 +1,3174 @@
+#
+####General
+#
+gen_iDrac=Integrated Dell Remote Access Controller
+gen_iDrac7=Integrated Dell Remote Access Controller 7
+gen_iRac7=Integrated Remote Access Controller 7
+gen_support=Asistencia t&#233;cnica
+gen_help=Ayuda
+gen_about=Acerca de
+gen_genInfo=Informaci&#243;n general
+gen_backToTop=Volver al principio
+gen_attr=Atributo
+gen_val=Valor
+gen_enabled=Activado
+gen_disabled=Desactivado
+gen_timeout=Tiempo de espera
+gen_maxSessions=N.&#176; m&#225;x. de sesiones
+gen_actSessions=Sesiones activas
+gen_properties=Propiedades
+gen_none=Ninguno
+gen_settings=Configuraci&#243;n
+gen_logout=Desconectar
+gen_elements=Elementos
+gen_information=Informaci&#243;n
+gen_consoleRFQ=Consola (RFQ)
+gen_version=Versi&#243;n
+gen_allRightsReserv=Todos los derechos reservados.
+#
+gen_openSource=C&#243;digo fuente abierto
+gen_openSourceComp=Componentes de c&#243;digo fuente abierto
+gen_offer_2=Una porci&#243;n del software a continuaci&#243;n podr&#237;a estar compuesto de software con c&#243;digo fuente abierto, el cual puede utilizar de acuerdo con los t&#233;rminos y condiciones de la licencia espec&#237;fica por la cual est&#225; distribuido el software con c&#243;digo fuente abierto. Con ciertas licencias de software con c&#243;digo fuente abierto tambi&#233;n tiene derecho de obtener los archivos de c&#243;digo fuente correspondientes. Para este programa, puede encontrar los archivos de c&#243;digo fuente correspondientes en
+gen_openSrcPortal=http://opensource.dell.com
+gen_offer_2a=opensource.dell.com.
+gen_offer_toView=Para ver licencias de c&#243;digo abierto, haga clic en
+gen_offer_here=aqu&#237;.
+#
+gen_close=Cerrar
+gen_admin=Administrador
+gen_operator=Operador
+gen_user=Usuario
+gen_readOnly=S&#243;lo lectura
+gen_adminABB=Admin
+gen_iDRAC6Ent=Integrated Dell Remote Access Controller 7: Enterprise
+gen_iDRAC6Exp=Integrated Dell Remote Access Controller 7: Express
+gen_rac6Ent=Integrated Remote Access Controller 7: Enterprise
+gen_rac6Exp=Integrated Remote Access Controller 7: Express
+gen_rac6Base=Integrated Remote Access Controller 7: Base
+gen_contactProvider=Comun&#237;quese con su proveedor de servicio.
+gen_yes=S&#237;
+gen_no=No
+gen_true=verdadero
+gen_false=falso
+gen_forward_html_error=Error de env&#237;o de HTML
+gen_jumpto=Ir a:
+gen_OtherOptions=Opciones:
+gen_and=y
+gen_instructions=Instrucciones
+gen_tbl_instructions=Instrucciones:
+gen_iDrac6=iDRAC7
+gen_systemAlert=Alerta del sistema
+gen_supportURL=http://support.dell.com/
+gen_LearnMore=http://www.dell.com/learnmore/iDRAClicenses
+gen_LicensingPortal=http://www.dell.com/learnmore/iDRAClicenses
+gen_SelfServicePortal=http://www.dell.com/support/retail/lkm
+gen_error=Error
+gen_unauthorized=No autorizado
+gen_dismiss=Descartar
+gen_file=Archivo
+#
+####Mezzanine 
+#
+mezzanine_title=Tarjeta intermedia de E/S
+mezzanine_table_location=Ubicaci&#243;n
+mezzanine_table_status=Estado de presencia
+mezzanine_table_type=Tipo de tarjeta
+mezzanine_table_model=Nombre del modelo
+#
+####Licensed
+#
+feature_not_licensed=Esta funci&#243;n necesita una licencia de iDRAC Enterprise. Para m&#225;s detalles acerca de c&#243;mo obtener una licencia, visite la p&#225;gina Licencia.
+not_licensed=la licencia no est&#225; o ha expirado.
+#
+####Upload
+#
+upload_ad_ldap_cert_title=Certificado de CA del servicio de directorio
+upload_cert_title=Cargar certificado
+upload_krb_title=Archivo keytab de Kerberos
+#
+####Buttons
+#
+btn_idrac_reset=Restablecer el iDRAC
+btn_print=Imprimir
+btn_refresh=Actualizar
+btn_apply=Aplicar
+btn_applyChanges=Aplicar cambios
+btn_connect=Iniciar consola virtual
+btn_connectVM=Iniciar consola virtual
+btn_connectKVM=Iniciar consola virtual
+btn_saveAs=Guardar como
+btn_secSettings=Configuraci&#243;n de seguridad
+btn_configActDir=Configurar Active Directory
+btn_configLDAP=Configurar LDAP gen&#233;rico
+btn_config=Configurar
+btn_testSettings=Configuraci&#243;n de la prueba
+btn_back=Atr&#225;s
+btn_next=Siguiente
+btn_termModeSet=Configuraci&#243;n del modo de terminal
+btn_advSettings=Configuraci&#243;n avanzada
+btn_retSerOverLANConfig=Volver a la p&#225;gina Configuraci&#243;n de la comunicaci&#243;n en serie en la LAN
+btn_clearLog=Borrar registro
+btn_clearASR=Borrar pantalla de &#250;ltimo bloqueo
+btn_update=Actualizar
+btn_showGraph=Mostrar gr&#225;ficas
+btn_retPwrMon=Regresar a la p&#225;gina Supervisi&#243;n de alimentaci&#243;n
+btn_goBackSSLMainMenu=Volver al men&#250; principal de SSL
+btn_generate=Generar
+btn_ok=En buen estado
+btn_cancel=Cancelar
+btn_format=Inicializar
+btn_retNetConfPage=Volver a la p&#225;gina Configuraci&#243;n de la red
+btn_goBackUser=Volver a Usuarios
+btn_goBackUserMain=Volver al Men&#250; principal de usuarios
+btn_finish=Terminar
+btn_setDefault=Establecer los valores predeterminados
+btn_goBackPtfEvePage=Volver a la p&#225;gina Sucesos de plataforma
+btn_retSerPortConfig=Volver a la configuraci&#243;n del puerto serie
+btn_submit=Enviar
+btn_play=Reproducir
+btn_sendTestEmail=Enviar correo electr&#243;nico de prueba
+btn_send=Enviar
+btn_goBackEmailAlert=Volver a la p&#225;gina Destino de alertas por correo electr&#243;nico
+btn_startTest=Comenzar la prueba
+btn_sendTestTrap=Enviar captura de prueba
+btn_goBackPtfAlertDest=Volver a la p&#225;gina Destino de alertas de la plataforma
+btn_goBackDiagPage=Volver a la p&#225;gina Diagn&#243;sticos
+btn_upload=Cargar
+btn_goBackVirtualFlashMain=Atr&#225;s
+btn_rollback=Revertir
+btn_add=Agregar
+btn_edit=Editar
+btn_delete=Eliminar
+btn_tryagain=Intente de nuevo
+btn_login=Inicio de sesi&#243;n
+btn_retADConfig=Volver a la p&#225;gina Configuraci&#243;n y administraci&#243;n de Active Directory
+btn_retLDAPConfig=Volver a la p&#225;gina de Configuraci&#243;n y administraci&#243;n de LDAP gen&#233;rico
+btn_retSystemEventLog=Volver al Registro de sucesos del sistema
+btn_export=Exportar
+btn_email=Enviar por correo electr&#243;nico
+btn_save=Guardar
+btn_download=Descargar
+btn_defaultValue=Valor predeterminado
+btn_hide=Ocultar errores actuales
+btn_unhide=Mostrar errores
+btn_idracResetDefault=Restablecer iDRAC a la configuraci&#243;n predeterminada
+#
+####Login Page
+#
+log_logon=Inicio de sesi&#243;n
+log_logonInfo=Escriba el nombre de usuario y la contrase&#241;a y haga clic en Enviar.
+log_username=Nombre de usuario:
+log_password=Contrase&#241;a:
+log_domain=Dominio:
+log_thisDRAC= Este iDRAC
+log_verify=Verificando credenciales
+log_error=Error de inicio de sesi&#243;n
+log_fail=Fallaron las credenciales. Intente de nuevo.
+#
+adLog_password=Contrase&#241;a de Active Directory:
+#
+log_adlogonInfo=Escriba la contrase&#241;a de Active Directory y haga clic en Aceptar.
+log_adActDirPassword=Contrase&#241;a de Active Directory:
+#
+##Smart Card Login
+#
+sclog_smCardRemoved=RAC0100: La tarjeta inteligente ha sido retirada. No es posible tener m&#225;s comunicaciones.
+sclog_cardNotValid=RAC0101: La tarjeta inteligente insertada no es v&#225;lida o el lector de tarjeta inteligente no es compatible.
+sclog_pluginInstall=RAC0102: El complemento de inicio de sesi&#243;n de tarjeta inteligente no est&#225; instalado. Instale el complemento desde la interfaz gr&#225;fica de usuario web del iDRAC para iniciar sesi&#243;n con la tarjeta inteligente.
+sclog_smartCardlogin=Inicio de sesi&#243;n mediante tarjeta inteligente
+sclog_loginError=Error de inicio de sesi&#243;n ...
+sclog_insertSCard=Inserte la tarjeta inteligente, introduzca el PIN y haga clic en Enviar.
+sclog_browserNotSupport=RAC0103: Este explorador no admite el inicio de sesi&#243;n en el iDRAC mediante tarjeta inteligente. Use la versi&#243;n 7.0 o posterior de Internet Explorer para usar esta funci&#243;n.
+sclog_login=Inicio de sesi&#243;n
+sclog_pin=PIN:
+sclog_invalidPinErr=RAC0104: Se introdujo un PIN incorrecto.
+sclog_scReaderErr=RAC0105: No se puede detectar el lector de tarjeta inteligente. Revise si el lector est&#225; instalado correctamente.
+sclog_insertSCErr=RAC0106: No se puede detectar la tarjeta inteligente. Inserte correctamente la tarjeta inteligente.
+sclog_unsuppSCErr=RAC0107: No se puede reconocer la tarjeta inteligente insertada. Compruebe que los controladores correspondientes de CSP de la tarjeta inteligente est&#233;n instalados.
+sclog_noPinErr=Introduzca el PIN y haga clic en Enviar.
+sclog_invalidSCErr=RAC0108: Se present&#243; un error interno. Inserte una tarjeta inteligente v&#225;lida e intente de nuevo.
+#
+##SSO Login
+#
+sso_failed=RAC0109: Fall&#243; el inicio de sesi&#243;n &#250;nico... Intente el inicio de sesi&#243;n normal.
+sso_loading=Cargando... Espere por favor
+sso_error_title=RAC0110: Error de inicio de sesi&#243;n &#250;nico
+sso_logging_in=Iniciando sesi&#243;n... Espere por favor
+sso_login_error=RAC0111: Error de inicio de sesi&#243;n...
+sso_description=Descripci&#243;n
+sso_resolution=Resoluci&#243;n
+sso_error_descr=RAC0112: El complemento de 'Control de activaci&#243;n de inicio de sesi&#243;n web' no est&#225; instalado, est&#225; desactivado o no se est&#225; ejecutando.
+sso_resolution_1=Debe tener privilegios de administrador en este sistema para instalar el complemento.
+sso_resolution_2=Haga clic en Intentar de nuevo. Cuando se le pida que instale el complemento, haga clic en S&#237; o haga clic en Inicio de sesi&#243;n para iniciar sesi&#243;n manualmente desde la p&#225;gina de inicio de sesi&#243;n normal.
+sso_resolution_3=Aseg&#250;rese de que la configuraci&#243;n del explorador permita descargar e instalar los complementos del explorador.
+sso_resolution_4=Aseg&#250;rese de que el explorador sea compatible con el inicio de sesi&#243;n &#250;nico. Consulte la documentaci&#243;n del usuario para ver una lista de exploradores compatibles.
+sso_resolution_5=Es posible que el inicio de sesi&#243;n &#250;nico no funcione correctamente en clientes que ejecutan el sistema operativo Windows configurado con la seguridad mejorada de Internet Explorer. Para resolver este problema, consulte la documentaci&#243;n del sistema operativo de Microsoft o comun&#237;quese con el administrador.
+#
+### Tree View
+#
+tree_server=Servidor
+tree_overview=Descripci&#243;n general
+tree_system=Sistema
+tree_remoteaccess=Acceso remoto
+tree_batteries=Bater&#237;as
+tree_fans=Ventiladores
+tree_intrusion=Intromisi&#243;n
+tree_networkdevices=Dispositivos de red
+tree_fchbadevices=Dispositivos Fibre Channel
+tree_powersupplies=Suministros de energ&#237;a
+tree_removablestorage=Medios flash extra&#237;bles
+tree_temperatures=Temperaturas
+tree_voltages=Voltajes
+tree_powermonitoring=Supervisi&#243;n de alimentaci&#243;n
+tree_lcdstatus=Panel frontal
+tree_lcdled=Panel frontal
+tree_led=Panel frontal
+tree_cpu=CPU
+tree_console=Consola
+#
+tree_sysSummary=Resumen
+tree_sysDetails=Detalles
+tree_sysLogsSetting=Configuraci&#243;n
+tree_sysSnmpEmailSet=Configuraci&#243;n de SNMP y de correo electr&#243;nico
+#
+tree_idracSettings=Configuraci&#243;n de iDRAC 
+tree_idracSetProperties=Propiedades 
+tree_idracSetSystemWipe=Borrado del sistema
+#
+tree_idracSetNetwork=Red
+tree_idracSetSSL=SSL
+tree_idracServices=Servicios
+tree_idracSetCom=Comunicaci&#243;n interna
+tree_osiDRACpt=Paso de sistema operativo a iDRAC
+tree_idracSetKeyMgmt=Administraci&#243;n de claves
+#
+tree_idracSetuserAuth=Autentificaci&#243;n de usuario 
+tree_idracSetLocaluser=Usuarios locales 
+tree_idracSetDirSvc=Servicios de directorio
+tree_idracSetSmartcard=Tarjeta inteligente
+#
+tree_idracSetSessions=Sesiones 
+tree_hardware=Hardware
+#
+tree_storageSummary=Resumen
+tree_storageTopology=Topolog&#237;a
+#
+tree_storageCntrlName1=NombreDeControlador1
+tree_storageCntrlName2=NombreDeControlador2
+#
+tree_storageEncName1=NombreDeGabinete1
+tree_storageEncName2=NombreDeGabinete2
+#
+tree_sysLicenses=Licencias
+tree_sysPowerThermal=Alimentaci&#243;n / T&#233;rmico
+tree_sysTroubleShooting=Soluci&#243;n de problemas
+tree_sysUpdates=Actualizaci&#243;n del firmware del iDRAC
+#
+tree_sysPwrCfg=Configuraci&#243;n de la alimentaci&#243;n
+#
+tree_setupSrvProfile=Perfil de servidor
+#
+tree_sysTrbShootIdentify=Identificar
+tree_sysTrbShootDiag=Diagn&#243;stico
+tree_sysTrbShootVideoCapture=Captura de v&#237;deo
+#
+tree_sysUpdateFirmware=Firmware
+tree_sysUpdateAutoUpdate=Actualizaci&#243;n autom&#225;tica
+#
+#CEM GUI
+#
+tree_storage=Almacenamiento 
+tree_virtualdisks=Discos virtuales
+tree_physicaldisks=Discos f&#237;sicos
+tree_enclosures=Gabinetes
+tree_controllers=Controladores
+tree_topology=Vista de topolog&#237;a
+tree_pltUpdates=Actualizar
+tree_pltUpdateRollback=Actualizar y revertir
+tree_rollback=Revertir
+tree_jobqueue=Fila de trabajo en espera
+tree_backup_and_restore=Copia de seguridad y restaurar
+tree_memory=Memoria
+#
+###System->Properties->Summary
+#
+sys_prop=Propiedades
+sys_prop_sum_summary=Resumen
+sys_prop_sum_sysSummary=Resumen del sistema
+sys_prop_sum_sumTitle=Haga clic en el nombre del componente para obtener acceso m&#225;s r&#225;pidamente.
+sys_prop_sum_mainSystemChasis=Chasis del sistema principal
+sys_prop_sum_sysDetails=Detalles del sistema
+#
+sys_prop_sum_sysinfo=Informaci&#243;n del sistema
+sys_prop_sum_desc=Descripci&#243;n
+sys_prop_sum_biosver=Versi&#243;n del BIOS
+sys_prop_sum_servTag=Etiqueta de servicio
+sys_prop_sum_hostName=Nombre del host
+sys_prop_sum_osName=Nombre del sistema operativo
+sys_prop_sum_osVer=Versi&#243;n del sistema operativo
+sys_prop_sum_sysRev=Revisi&#243;n del sistema
+#
+sys_prop_sum_autoRecovery=Recuperaci&#243;n autom&#225;tica
+sys_prop_sum_recAction=Acci&#243;n de recuperaci&#243;n
+sys_prop_sum_initCountdown=Cuenta regresiva inicial
+sys_prop_sum_preCountdown=Cuenta regresiva actual
+#
+sys_prop_sum_RAC=Remote Access Controller
+sys_prop_sum_idracInformation=Informaci&#243;n del RAC
+sys_prop_sum_datetime=Fecha/Hora
+sys_prop_sum_fwVer=Versi&#243;n de firmware
+sys_prop_sum_fwUpdated=Firmware actualizado
+sys_prop_sum_hwVer=Versi&#243;n de hardware
+sys_prop_sum_macAddr=Direcci&#243;n MAC
+#
+sys_prop_sum_ipv4Info=Informaci&#243;n de IPv4
+sys_prop_sum_ipAddr=Direcci&#243;n IP actual
+sys_prop_sum_gateway=Puerta de enlace actual
+sys_prop_sum_subnetMask=M&#225;scara de subred actual
+sys_prop_sum_dhcpEnabled=DHCP activado
+#
+sys_prop_sum_ipv6Info=Informaci&#243;n de IPv6
+sys_prop_sum_ipAddr1=Direcci&#243;n IP actual 1
+sys_prop_sum_ipPreLen=Tama&#241;o del prefijo actual
+sys_prop_sum_ipGateway=Puerta de enlace IP actual
+sys_prop_sum_linkLocal=Direcci&#243;n de v&#237;nculo local
+sys_prop_sum_ipAddr2=Direcci&#243;n IP 2
+sys_prop_sum_ipAddr3=Direcci&#243;n IP 3
+sys_prop_sum_ipAddr4=Direcci&#243;n IP 4
+sys_prop_sum_ipAddr5=Direcci&#243;n IP 5
+sys_prop_sum_ipAddr6=Direcci&#243;n IP 6
+sys_prop_sum_ipAddr7=Direcci&#243;n IP 7
+sys_prop_sum_ipAddr8=Direcci&#243;n IP 8
+sys_prop_sum_ipAddr9=Direcci&#243;n IP 9
+sys_prop_sum_ipAddr10=Direcci&#243;n IP 10
+sys_prop_sum_ipAddr11=Direcci&#243;n IP 11
+sys_prop_sum_ipAddr12=Direcci&#243;n IP 12
+sys_prop_sum_ipAddr13=Direcci&#243;n IP 13
+sys_prop_sum_ipAddr14=Direcci&#243;n IP 14
+sys_prop_sum_ipAddr15=Direcci&#243;n IP 15
+sys_prop_sum_autoConfig=Configuraci&#243;n autom&#225;tica activada
+sys_prop_sum_ipv4Enabled=IPv4 activado
+sys_prop_sum_ipv6Enabled=IPv6 activado
+#
+sys_prop_sum_nic_mac=Direcciones MAC del NIC
+sys_prop_sum_embedded_nic_mac=Direcci&#243;n MAC del NIC incorporado
+sys_prop_sum_nic1=NIC1
+sys_prop_sum_nic2=NIC2
+sys_prop_sum_nic3=NIC3
+sys_prop_sum_nic4=NIC4
+sys_prop_sum_ethernet=Ethernet
+sys_prop_sum_iscsi=iSCSI
+sys_prop_sum_vmac=MAC virtual
+#
+sys_prop_sum_loading=Cargando... Espere por favor
+#
+sys_prop_sum_systemLocation=Ubicaci&#243;n del sistema
+sys_prop_sum_DataCenterName=Nombre del centro de datos
+sys_prop_sum_AisleName=Nombre del pasillo
+sys_prop_sum_RackName=Nombre del bastidor
+sys_prop_sum_RackSlot=Ranura del bastidor
+sys_prop_sum_SizeInU=Tama&#241;o del sistema administrado en U
+sys_prop_sum_ChassisName=Nombre del chasis
+sys_prop_sum_BladeSlotNumInChassis=N&#250;m. de ranura del servidor blade en el chasis
+sys_prop_sum_RangeErr=El valor de la ranura del bastidor no es v&#225;lido. Rango esperado: 1 a 255
+#
+### System->Setup->First Boot Device
+#
+sys_setup=Configuraci&#243;n
+sys_setup_firstbootdevice=Primer dispositivo de inicio
+sys_setup_firstbootdevice_title=Seleccione el primer dispositivo de inicio para este servidor y haga clic en Aplicar.
+sys_setup_bootonce=Iniciar una vez
+sys_setup_firstbootdevice_none=Inicio normal
+sys_setup_firstbootdevice_pxe=PXE
+sys_setup_firstbootdevice_hdd=Unidad de disco duro
+sys_setup_firstbootdevice_diagprt=Partici&#243;n de diagn&#243;stico
+sys_setup_firstbootdevice_cddvd=CD/DVD local
+sys_setup_firstbootdevice_bios=Configuraci&#243;n del BIOS
+sys_setup_firstbootdevice_vfdd=Disco flexible virtual
+sys_setup_firstbootdevice_vcddvd=CD/DVD/ISO virtual
+sys_setup_firstbootdevice_iscsi=iSCSI BEV del NIC
+sys_setup_firstbootdevice_fdd=Disco flexible local/medios primarios extra&#237;bles
+sys_setup_firstbootdevice_rfs=Recurso compartido de archivos remoto
+sys_setup_firstbootdevice_sd=Tarjeta SD local
+sys_setup_firstbootdevice_lcl=Lifecycle Controller
+sys_setup_firstbootdevice_bbm=Administrador de inicio de Bios
+sys_setup_firstbootdevice_vfPrefix=vFlash:
+sys_setup_firstbootdevice_error_bios=No se puede establecer el primer dispositivo de inicio. El BIOS del sistema es anticuado o es necesario reiniciar el servidor para que entren en vigor los cambios a los valores de configuraci&#243;n.
+#
+### System->Setup->Remote Syslog Settings
+#
+sys_setup_remoteSyslog=Configuraci&#243;n de registro de sistema remoto
+sys_setup_remoteSyslog_info=Utilice esta p&#225;gina para definir la configuraci&#243;n del registro de sistema remoto.
+sys_setup_remoteSyslog_enabled=Registro de sistema remoto activado
+sys_setup_remoteSyslog_server1=Servidor1 de registro de sistema
+sys_setup_remoteSyslog_server2=Servidor2 de registro de sistema
+sys_setup_remoteSyslog_server3=Servidor3 de registro de sistema
+sys_setup_remoteSyslog_port=N&#250;mero de puerto
+sys_setup_alert_remoteSyslog_port=RAC0113: El valor del puerto del registro de sistema remoto no es v&#225;lido. El rango v&#225;lido es 1-65535, 01-0177777 &#243; 0x1-0xFFFF.
+#
+### System->Power Management ->Power
+#
+sys_pwr_pwrManag=Alimentaci&#243;n
+sys_pwr_pwr=Alimentaci&#243;n
+sys_pwr_pwr_pwrControl=Control de alimentaci&#243;n
+sys_pwr_pwr_pwrContrTitle1=Aqu&#237; puede ver el estado de la alimentaci&#243;n del servidor.
+sys_pwr_pwr_pwrContrTitle2=Para ejecutar una operaci&#243;n de control de alimentaci&#243;n, seleccione la operaci&#243;n que necesita y haga clic en Aplicar.
+sys_pwr_pwr_pwrStatus=Estado de alimentaci&#243;n
+sys_pwr_pwr_pwrUnknown=DESCONOCIDO
+sys_pwr_pwr_off=APAGADO
+sys_pwr_pwr_on=ENCENDIDO
+sys_pwr_pwr_msg1=El sistema est&#225; apagado. No se puede recuperar la informaci&#243;n del sensor.
+#
+sys_pwr_pwr_pwrContrOpr=Operaciones de control de alimentaci&#243;n
+sys_pwr_pwr_pwrOnSys=Encender el sistema
+sys_pwr_pwr_pwrOffsys=Apagar el sistema
+sys_pwr_pwr_nmi=NMI (Interrupci&#243;n no enmascarable)
+sys_pwr_pwr_graceShut=Apagado ordenado
+sys_pwr_pwr_resetSys=Restablecer el sistema (reinicio mediante sistema operativo)
+sys_pwr_pwr_pwrCycleSys=Realizar ciclo de encendido del sistema (reinicio mediante suministro de energ&#237;a)
+#
+### System->Power Management ->Power Cap
+#
+sys_pwr_pwrbudget=L&#237;mite de alimentaci&#243;n
+sys_pwr_bud_pwrBudInfo=Informaci&#243;n de l&#237;mite de alimentaci&#243;n
+sys_pwr_bud_powerBudThres=L&#237;mite de alimentaci&#243;n
+sys_pwr_bud_valInWatts=Valor (en vatios)
+sys_pwr_bud_valInBTU=Valor (en BTU/h)
+sys_pwr_bud_minPot=Consumo m&#237;nimo de alimentaci&#243;n del sistema
+sys_pwr_bud_maxPot=Consumo m&#225;ximo de alimentaci&#243;n del sistema
+#
+sys_pwr_bud_thresInWatt=L&#237;mite de alimentaci&#243;n en vatios
+sys_pwr_bud_thresInBTU=L&#237;mite de alimentaci&#243;n en BTU/h
+sys_pwr_bud_thresInPerc=L&#237;mite de alimentaci&#243;n en porcentaje (de consumo de alimentaci&#243;n m&#225;ximo del sistema)
+#
+###Power Configuration
+#
+pwr_config=Configuraci&#243;n de la alimentaci&#243;n
+pwr_config_title=Configuraci&#243;n de la alimentaci&#243;n
+pwr_config_actPolicy_title=Pol&#237;tica de l&#237;mite de alimentaci&#243;n actualmente activa
+pwr_config_actPolicy_name=Origen
+pwr_config_actPolicy_pwrLimit=Pol&#237;tica de l&#237;mite de alimentaci&#243;n activa
+#
+pwr_config_budget_title=Pol&#237;tica de l&#237;mite de alimentaci&#243;n
+pwr_config_budget_info=El sistema podr&#237;a exceder la pol&#237;tica de l&#237;mite m&#225;ximo de alimentaci&#243;n durante un momento breve al iniciar con En caracterizaci&#243;n del sistema activado. Si no desea que esto suceda, desactive En caracterizaci&#243;n del sistema en el BIOS.
+pwr_config_budget_policy=Pol&#237;tica de l&#237;mite de alimentaci&#243;n
+pwr_config_budget_pEnable=Activar
+pwr_config_budget_pDisable=Desactivar
+pwr_config_budget_recLimit=Rango recomendado de la pol&#237;tica de l&#237;mite de alimentaci&#243;n
+pwr_config_budget_maxPwr=L&#237;mite superior
+pwr_config_budget_minPwr=L&#237;mite inferior
+pwr_config_budget_watts=Vatios
+pwr_config_budget_BTUHr=BTU/h
+pwr_config_budget_userDef=Pol&#237;tica de l&#237;mite de alimentaci&#243;n definida por el usuario
+pwr_config_budget_defMaxPwrWatts=L&#237;mite de alimentaci&#243;n (vatios)
+pwr_config_budget_defMaxPwrBTU=L&#237;mite de alimentaci&#243;n (BTU/h)
+pwr_config_budget_defMaxPwrPerct=% m&#225;ximo de l&#237;mite superior
+pwr_config_budget_pm3_warning=<b>La pol&#237;tica de l&#237;mite de la alimentaci&#243;n puede suprimirse ya que este dispositivo tambi&#233;n est&#225; administrado por OpenManage Power Center. Para administrar el dispositivo exclusivamente desde iDRAC, elimine la pol&#237;tica de l&#237;mite de la alimentaci&#243;n en OpenManage Power Center.</b>
+#
+pwr_config_pwrSupp_title=Opciones de suministro de energ&#237;a
+pwr_config_pwrSupp_redPolicy=Pol&#237;tica de redundancia
+pwr_config_pwrSupp_rapidOn=Repuesto din&#225;mico
+pwr_config_pwrSupp_rapidEnable=Activar
+pwr_config_pwrSupp_rapidDisable=Desactivar
+pwr_config_pwrSupp_primUnit=Unidad de suministro de energ&#237;a principal
+pwr_config_pwrSupp_PFC=Correcci&#243;n del factor de potencia
+pwr_config_pwrSupp_PFCEnable=Activar
+pwr_config_pwrSupp_PFCDisable=Desactivar
+pwr_config_pwrSupp_NotRedundant=No redundante
+pwr_config_pwrSupp_InputPowerRedundant=Alimentaci&#243;n redundante de entrada
+pwr_config_pwrSupp_PSURedundant=PSU redundante
+pwr_config_pwrSupp_NA=N/A
+#
+pwr_config_pcie_title=Asignaci&#243;n de alimentaci&#243;n de PCIe
+pwr_config_pcie_info=Los cambios de la asignaci&#243;n de alimentaci&#243;n se aplicar&#225;n la pr&#243;xima vez que el sistema se encienda. Valores de asignaci&#243;n v&#225;lidos (vatios): 100 a 500
+pwr_config_pcie_threshold=Umbral de alimentaci&#243;n (vatios)
+pwr_config_pcie_validateMsg=El valor del umbral de alimentaci&#243;n en vatios no es v&#225;lido. Introduzca un n&#250;mero entero dentro del rango: [100 a 500]
+#
+###System->Logs->System Event Log
+#
+sys_log_logs=Registros
+sys_log_eve_sysEveLog=Registro de sucesos del sistema
+sys_log_eve_title=El registro de sucesos del sistema contiene informaci&#243;n acerca del sistema administrado. Para ordenar el registro por columnas, haga clic en el encabezado de la columna.
+sys_log_eve_severity=Gravedad
+sys_log_eve_DateTime=Fecha/Hora
+sys_log_eve_desc=Descripci&#243;n
+sys_log_eve_adv_settings=Configuraci&#243;n avanzada del registro de sucesos del sistema
+sys_log_eve_oemeventfilteringenable=Filtro de sucesos de OEM activado
+sys_log_test_event=Suceso de prueba
+sys_log_enter_mesg_id=Id. de mensaje para  el suceso de prueba
+#
+###System->Logs->Post Code
+#
+sys_log_postcode=C&#243;digo de la POST
+sys_log_postcode_title=Esta p&#225;gina muestra el &#250;ltimo c&#243;digo de la POST del sistema.
+#
+###System->Logs->Last Crash
+#
+sys_log_crash_lastCrash=&#218;ltimo bloqueo
+sys_log_crash_lastCrashScr=Pantalla de &#250;ltimo bloqueo
+sys_log_crash_title=Puede consultar aqu&#237; una instant&#225;nea de la pantalla del &#250;ltimo bloqueo.
+sys_log_crash_info=La funci&#243;n de pantalla de &#250;ltimo bloqueo requiere que el sistema administrado est&#233; configurado con la funci&#243;n de recuperaci&#243;n autom&#225;tica.
+sys_log_crash_noImage=No hay imagen disponible
+#
+###System->Logs->Boot Capture
+#
+sys_log_lastboot=Captura de inicio
+sys_log_boot_cycle=Ciclo de captura de inicio
+sys_log_boot_title=Aqu&#237; puede revisar los registros de los &#250;ltimos 3 ciclos de inicio.
+sys_log_boot_3BootCycles=Ciclos de inicio
+sys_log_boot_norRcording=No hay registro disponible.
+sys_log_boot_capture1=Captura de inicio 1 (la m&#225;s reciente)
+sys_log_boot_capture2=Captura de inicio 2
+sys_log_boot_capture3=Captura de inicio 3 (la m&#225;s antigua)
+#
+###System->Alert Management -> Platform Events
+#
+sys_alt_altManage=Alertas
+sys_alt_ptf_eve=Sucesos de plataforma
+sys_alt_ptf_filtConf=Configuraci&#243;n de los filtros de sucesos de plataforma
+sys_alt_ptf_filtList=Lista de los filtros de sucesos de plataforma
+sys_alt_ptf_title=Seleccione los valores y haga clic en Aplicar.
+sys_alt_ptf_info=Nota: Activar o desactivar todas las alertas de correo electr&#243;nico y de captura de los filtros de sucesos de plataforma (PEF). Las alertas de captura se controlan por medio de la combinaci&#243;n de la opci&#243;n Activar alertas globales de los filtros de sucesos de plataforma en conjunto con las alertas de los filtros individuales en la Lista de filtros de sucesos de plataforma. Las alertas de correo electr&#243;nico se controlan &#250;nicamente con la opci&#243;n Activar las alertas globales de los filtros de sucesos de plataforma.
+sys_alt_ptf_enPtfEvefilteralert=Activar las alertas de filtros de sucesos de plataforma
+#
+sys_alt_enable=Activado
+sys_alt_disable=Desactivado
+sys_alt_filter=Filtro de alertas
+sys_alt_category=Categor&#237;a
+sys_alt_sev=Gravedad
+sys_alt_results=Configuraci&#243;n de alertas y del registro del sistema remoto
+sys_alt_alert=Alerta
+sys_alt_email=Correo electr&#243;nico
+sys_alt_SNMP=Captura SNMP
+sys_alt_IPMI=Alerta de IPMI
+sys_alt_remotesyslog=Registro del sistema remoto
+sys_alt_wsevent=Sucesos de WS
+sys_alt_pages=P&#225;gina
+sys_alt_system=Condici&#243;n del sistema
+sys_alt_storage=Almacenamiento
+sys_alt_config=Configuraci&#243;n
+sys_alt_audit=Auditor&#237;a
+sys_alt_updates=Actualizaciones
+sys_alt_work=Notas de trabajo
+sys_alt_info=Informativo
+sys_alt_warning=Advertencia
+sys_alt_critical=Cr&#237;tico
+sys_alt_filterMsg=Debe seleccionarse una entrada de los filtros Categor&#237;a y Gravedad.
+sys_alt_norecord=No se encontraron registros
+sys_alt_of=de
+#
+sys_alt_ptf_event=Suceso
+sys_alt_ptf_rebootsys=Reiniciar
+sys_alt_ptf_pwrCycSys=Ciclo de encendido
+sys_alt_ptf_pwrOffSys=Apagar
+sys_alt_ptf_genAlert=Generar alerta
+sys_alt_ptf_noAction=Sin acci&#243;n
+sys_alt_ptf_System=Sistema
+sys_alt_ptf_Action=Acci&#243;n
+#
+sys_alt_ptf_setPtfEve=Establecer sucesos de plataforma:
+sys_alt_ptf_setPtfTitle=Seleccione la acci&#243;n que desea establecer y haga clic en Aplicar. Para establecer las acciones predeterminadas, haga clic en Establecer los valores predeterminados.
+sys_alt_ptf_shutdown=Acci&#243;n de apagado
+sys_alt_ptf_none=Ninguno
+sys_alt_ptf_enable=Activar
+#
+sys_alt_ptf_fanCrasFilt=Filtro de declaraci&#243;n cr&#237;tica de ventilador
+sys_alt_ptf_voltCrasfilt=Filtro de declaraci&#243;n cr&#237;tica de voltaje
+sys_alt_ptf_disVoltCrasFilt=Filtro de declaraci&#243;n cr&#237;tica de voltaje discreto
+sys_alt_ptf_tempCrasFilt=Filtro de declaraci&#243;n cr&#237;tica de temperatura
+sys_alt_ptf_inCrasFilt=Filtro de declaraci&#243;n cr&#237;tica de intromisi&#243;n
+sys_alt_ptf_redDegFilt=Filtro de redundancia degradada
+sys_alt_ptf_redLostFilt=Filtro de redundancia perdida
+sys_alt_ptf_proCriFilt=Filtro de declaraci&#243;n cr&#237;tica de procesador
+sys_alt_ptf_pwrSupCriFilt=Filtro de declaraci&#243;n cr&#237;tica de suministro de energ&#237;a
+sys_alt_ptf_eveLogCriFilt=Filtro de declaraci&#243;n cr&#237;tica de registro de sucesos
+sys_alt_ptf_watLogCriFilt=Filtro de declaraci&#243;n cr&#237;tica de registro de vigilancia
+#
+#Overview->Server->Alerts->SNMP and Email Settings
+#
+snmp_trap_email_set_title=Configuraci&#243;n de correo electr&#243;nico y de capturas de SNMP
+snmp_trap_destList=Lista de destinos IP
+snmp_trap_destAddr=Direcci&#243;n de destino
+snmp_trap_ipv4_dest1=Destino1 de IPv4
+snmp_trap_ipv4_dest2=Destino2 de IPv4
+snmp_trap_ipv4_dest3=Destino3 de IPv4
+snmp_trap_ipv4_dest4=Destino4 de IPv4
+snmp_trap_ipv6_dest1=Destino1 de IPv6
+snmp_trap_ipv6_dest2=Destino2 de IPv6
+snmp_trap_ipv6_dest3=Destino3 de IPv6
+snmp_trap_ipv6_dest4=Destino4 de IPv6
+#
+#System->Alert Management -> Trap Settings
+#
+sys_alt_trapSettings=Configuraci&#243;n de capturas
+sys_alt_trap_ptfEeveAlertDest=Destinos de alertas de sucesos de plataforma
+sys_alt_trap_destList=Lista de destinos IPv4
+sys_alt_trap_destListv6=Lista de destinos IPv6
+sys_alt_trap_destConfSet=Cadena de comunidad
+sys_alt_trap_destListTitle=Introduzca el n&#250;mero del destino para establecer los valores.
+sys_alt_trap_destNumber=N&#250;mero de destino
+sys_alt_trap_state=Estado
+sys_alt_trap_destIpAddr=Direcci&#243;n IPv4 del destino
+sys_alt_trap_destIpv6Addr=Direcci&#243;n IPv6 del destino
+sys_alt_trap_dest1=Destino1
+sys_alt_trap_dest2=Destino2
+sys_alt_trap_dest3=Destino3
+sys_alt_trap_dest4=Destino4
+sys_alt_trap_testTrap=Probar captura SNMP
+sys_alt_trap_test_IPMI_Trap=Probar captura IPMI
+#
+sys_alt_trap_destConfSetTitle=Introduzca el nombre de comunidad del iDRAC. 
+sys_alt_trap_commString=Cadena de comunidad
+#
+#Set Platform Event Alert Destination
+#
+sys_alt_trap_setPtfEveAlertDest=Establecer destino de alertas de sucesos de plataforma
+sys_alt_trap_setPtfEveTitle=Seleccione los valores y haga clic en Aplicar.
+sys_alt_trap_setPtfEveInfo=Introduzca una cadena de comunidad SNMP v&#225;lida para poder usar esta funci&#243;n.
+sys_alt_trap_enDest=Activar destino
+sys_alt_trap_disDest=RAC0114: El destino est&#225; desactivado.
+sys_alt_trap_invSNMPIpAddr=RAC0115: La direcci&#243;n IP de destino no es v&#225;lida.\nRango esperado: [1.0.0.0 - 223.255.255.255 excluyendo: 127 (primer octeto), 0 &#243; 255 (&#250;ltimo octeto)].
+sys_alt_trap_invSNMPV6IpAddr=RAC0116: Direcci&#243;n IPv6 de destino no v&#225;lida.
+sys_alt_trap_destList2=Destino de IPv4
+sys_alt_trap_destList2v6=Destino de IPv6
+#
+###System->Alert Management -> Email Alert Settings
+#
+sys_alt_emailAlertSet=Configuraci&#243;n de alertas por correo electr&#243;nico
+sys_alt_email_alertDest=Destino de alertas por correo electr&#243;nico
+sys_alt_email_destEmailAddrs=Direcciones de correo electr&#243;nico de destino
+sys_alt_email_smtpServerAddr=Configuraci&#243;n de la direcci&#243;n del servidor SMTP (correo electr&#243;nico)
+sys_alt_email_enable_authentication=Activar autentificaci&#243;n
+sys_alt_email_username=Nombre de usuario
+sys_alt_email_password=Contrase&#241;a
+#
+sys_alt_email_destEmailAddrTitle=Haga clic en el n&#250;mero de la alerta por correo electr&#243;nico para establecer los valores.
+sys_alt_email_emailAlertNumber=N&#250;mero de la alerta por correo electr&#243;nico
+sys_alt_email_emailState=Estado
+sys_alt_email_destEmailAddr=Direcci&#243;n de correo electr&#243;nico de destino
+sys_alt_email_emaila1=Alerta por correo electr&#243;nico 1
+sys_alt_email_emaila2=Alerta por correo electr&#243;nico 2
+sys_alt_email_emaila3=Alerta por correo electr&#243;nico 3
+sys_alt_email_emaila4=Alerta por correo electr&#243;nico 4
+#
+sys_alt_email_smtpServerAddrTitle=Introduzca la direcci&#243;n SMTP y haga clic en Aplicar.
+sys_alt_email_smtp=Direcci&#243;n IP del servidor SMTP (correo electr&#243;nico) o nombre FQDN/DNS
+#
+sys_alt_email_setEmailAlert=Establecer alerta por correo electr&#243;nico:
+sys_alt_email_title=Seleccione los valores y haga clic en Aplicar. 
+sys_alt_email_info=Introduzca una direcci&#243;n IP v&#225;lida de servidor SMTP (correo electr&#243;nico) antes de usar esta funci&#243;n
+sys_alt_email_enableEmail=Activar alerta por correo electr&#243;nico
+sys_alt_email_destE-mailAddr= Direcci&#243;n de correo electr&#243;nico de destino
+sys_alt_email_emailDesc=Descripci&#243;n de correo electr&#243;nico
+sys_alt_email_testEmail=Correo electr&#243;nico de prueba
+#
+###System->Console -> Console Redirect
+#
+sys_con=Consola/Medios
+sys_con_redir_consRedirect=Consola virtual
+sys_con_redir_consRedirVirMedia=Consola virtual y medios virtuales
+sys_con_redir_consRedirVirmediaTitle=La p&#225;gina Consola virtual y medios virtuales muestra la configuraci&#243;n actual de la consola virtual y/o de los medios virtuales. 
+#
+sys_con_redir_consRedirection=Consola virtual
+sys_con_redir_consRedirEnabled=Consola virtual activada
+sys_con_redir_videoEncrEnabled=Cifrado de v&#237;deo activado
+sys_con_redir_MaxSess=N.&#176; m&#225;x. de sesiones
+sys_con_redir_actSess=Sesiones activas
+sys_con_redir_locServVideoEnabled=V&#237;deo del servidor local activado
+sys_con_redir_repPrePort=Puerto de presencia remota
+sys_con_redir_pluginType=Tipo de complemento
+sys_con_redir_nativeActiveX=ActiveX nativo (configurado por el usuario)
+sys_con_redir_javaUserConfig=Java (configurado por el usuario)
+sys_con_redir_javaAutoConfig=Java (configurado autom&#225;ticamente)
+sys_con_redir_consRedirectMsg=La consola virtual ha sido desactivada. &#191;Desea seguir usando la redirecci&#243;n de medios virtuales?
+sys_con_redir_title_ellipsis=...
+sys_con_redir_title_username=Usuario:
+sys_con_redir_title_slot=Ranura
+#
+sys_con_redir_virMedia=Medios virtuales
+sys_con_redir_attchDetachStatus=Adjuntar modo
+sys_con_redir_virMediaEncrEnabled=Cifrado de medios virtuales activado
+sys_con_redir_floppyEmulation=Emulaci&#243;n de disco flexible
+sys_con_redir_enableBootOnce=Opci&#243;n Iniciar una vez activada
+sys_con_redir_ConnectStatus=Estado de conexi&#243;n
+sys_con_redir_ConnStatus_Yes=Conectado
+sys_con_redir_ConnStatus_No=No conectado
+sys_con_redir_enableBootOnce=Activar el inicio una vez
+#
+###System->Console -> Configuration
+#
+sys_con_conf=Configuraci&#243;n
+sys_con_conf_tab=Red/Seguridad
+sys_con_conf_title=Use esta p&#225;gina para configurar los valores de la consola virtual del iDRAC7.
+sys_con_conf_note=No se admite el complemento Active-X de 64 bits en el iDRAC7 Enterprise
+sys_con_conf_consRedirection=Consola virtual
+sys_con_conf_virMedia=Medios virtuales
+sys_con_conf_repPrePort=Puerto de presencia remota
+sys_con_conf_pluginType=Tipo de complemento
+sys_con_conf_native=Nativo
+sys_con_conf_java=Java
+sys_con_conf_videoEncrEnabled=Cifrado de v&#237;deo activado
+sys_con_conf_locServVideoEnabled=V&#237;deo del servidor local activado
+sys_con_conf_remMediaAttcState=Estado de conexi&#243;n de medios remotos
+sys_con_conf_virMediaEncrEnabled=Cifrado de medios virtuales activado
+sys_con_conf_floppyEmulation=Emulaci&#243;n de disco flexible
+sys_con_conf_enableBootOnce=Activar el inicio una vez
+sys_con_conf_detach=Desconectar
+sys_con_conf_attach=Conectar
+sys_con_conf_autoAttach=Conectar autom&#225;ticamente
+sys_con_conf_sessionTimeout=Acci&#243;n predeterminada ante expiraci&#243;n del tiempo de espera de la solicitud de compartir sesi&#243;n
+sys_con_conf_fullaccess=Acceso total
+sys_con_conf_readonly=Acceso de s&#243;lo lectura
+sys_con_conf_denyaccess=Denegar acceso
+sys_con_conf_autoOsLock=Bloqueo de sistema autom&#225;tico
+#
+###System->vFlash
+#
+sys_vir_virtFlash=vFlash
+sys_vir_flas_unavailable=RAC0117: La tarjeta SD no est&#225; disponible.
+sys_vir_flas_title1=Se detect&#243; una tarjeta SD, no se reconoce el formato de acuerdo a la siguiente configuraci&#243;n. Haga clic en 'Inicializar' para formatear la tarjeta. 
+sys_vir_flas_title2=No se detect&#243; una tarjeta SD. Inserte una tarjeta SD de 256 MB o de mayor capacidad. 
+sys_vir_flas_info=Al inicializar borrar&#225; la informaci&#243;n existente en la tarjeta.
+sys_vir_flas_info_nonDellDetected=RAC0118: Se detect&#243; una tarjeta SD vFlash no admitida.
+sys_vir_flas_completed=Completado
+sys_vir_flas_fCompleted=La operaci&#243;n concluy&#243; satisfactoriamente.
+sys_vir_flas_browserExc=Se present&#243; una excepci&#243;n del explorador al tratar de cargar el archivo.\nLa excepci&#243;n es:
+sys_vir_flas_image=Imagen
+sys_vir_flas_action=Acci&#243;n
+sys_vir_flas_progress=Progreso
+sys_vir_flas_formatProgress=Progreso de la inicializaci&#243;n
+sys_vir_flas_formatImage=Inicializar imagen
+sys_vir_flas_createPart=Crear partici&#243;n
+sys_vir_flas_formatPart=Formatear partici&#243;n
+sys_vir_flas_writing=Escribiendo...
+sys_vir_flas_formatWait=Inicializando la imagen, espere por favor...
+sys_vir_flas_createWait=Creando la partici&#243;n, espere por favor...
+sys_vir_flas_formatPartWait=Formateando la partici&#243;n, espere por favor...
+sys_vir_flas_sdCardEnable=Activaci&#243;n de la tarjeta SD
+sys_vir_flas_inprogress=En curso
+#
+sys_vir_flas_sdCardProps=Tarjeta SD
+sys_vir_flas_managePartitions=Administrar
+sys_vir_flas_createEmptyPartition=Crear partici&#243;n vac&#237;a
+sys_vir_flas_createPartitionImage=Crear a partir de la imagen
+sys_vir_flas_formatPartition=Formatear
+sys_vir_flas_downloadPartition=Descargar
+sys_vir_flas_sdCardPropsTitle=Propiedades de tarjeta SD
+sys_vir_flas_managePartitionsTitle=Administrar particiones
+sys_vir_flas_createEmptyPartitionTitle=Crear partici&#243;n vac&#237;a
+sys_vir_flas_createPartitionImageTitle=Crear partici&#243;n a partir de un archivo de imagen
+sys_vir_flas_formatPartitionTitle=Formatear partici&#243;n
+sys_vir_flas_downloadPartitionTitle=Descargar partici&#243;n
+sys_vir_flas_virKeySize=Tama&#241;o de la partici&#243;n de vFlash
+sys_vir_flas_drive=Unidad vFlash
+sys_vir_flas_imgTooBig=RAC0119: Imagen no v&#225;lida. El tama&#241;o de la imagen cargada es mayor que el tama&#241;o de la partici&#243;n de vFlash.
+sys_vir_flas_partTooBig=RAC0120: El tama&#241;o seleccionado de la partici&#243;n excede el espacio disponible.
+sys_vir_flas_create_image_title=Las im&#225;genes que se carguen tienen un l&#237;mite de tama&#241;o de menos de 2 GB.
+sys_vir_flas_size=Tama&#241;o
+sys_vir_flas_avail_space=Espacio disponible
+sys_vir_flas_not_initialized=RAC0121: La tarjeta SD no est&#225; inicializada.
+sys_vir_flas_protected=Protegido contra escritura
+sys_vir_flas_health=Condici&#243;n
+sys_vir_flas_enabled=vFlash activado
+sys_vir_flas_partitions=Particiones
+sys_vir_flas_index=&#205;ndice
+sys_vir_flas_label=Etiqueta
+sys_vir_flas_emulation=Tipo de emulaci&#243;n
+sys_vir_flas_floppy=Disco flexible
+sys_vir_flas_hd=Disco duro
+sys_vir_flas_cd=CD
+sys_vir_flas_mb=MB
+sys_vir_flas_img_loc=Ubicaci&#243;n de imagen
+sys_vir_flas_options=Opciones
+sys_vir_flas_fmt_type=Tipo de formato
+sys_vir_flas_raw=SIN PROCESAR
+sys_vir_flas_ext2=EXT2
+sys_vir_flas_ext3=EXT3
+sys_vir_flas_fat16=FAT16
+sys_vir_flas_fat32=FAT32
+sys_vir_flas_download=Descargar
+sys_vir_flas_create_date=Fecha de creaci&#243;n
+sys_vir_flas_read_only=S&#243;lo lectura
+sys_vir_flas_attached=Conectado
+sys_vir_flas_delete=Eliminar
+sys_vir_flas_type=Tipo
+sys_vir_flas_status=Estatus
+sys_vir_flas_note=Nota:
+#
+sys_vir_flas_status_ok=En buen estado
+sys_vir_flas_status_warning=Advertencia
+sys_vir_flas_status_error=Error
+sys_vir_flas_unknown=DESCONOCIDO
+#
+sys_vir_flas_state_initialize=Inicializando
+sys_vir_flas_state_format=Formatear
+sys_vir_flas_state_delete=Eliminando
+sys_vir_flas_state_upload=Cargar
+sys_vir_flas_state_create=Crear
+sys_vir_flas_state_download=Descargando
+sys_vir_flas_state_in_use=En uso
+sys_vir_flas_state_idle=Inactivo
+sys_vir_flas_state_attach=Conectando
+sys_vir_flas_state_detach=Desconectando
+sys_vir_flas_state_na=N/A
+#
+sys_vir_flas_status_error_msg=RAC0122: Se detect&#243; un error cr&#237;tico en la tarjeta SD vFlash.
+sys_vir_flas_unknown_msg=RAC0123: Estado de vFlash desconocido.
+sys_vir_flas_bad_label_msg=RAC0124: Etiqueta no v&#225;lida: La etiqueta debe ser exclusivamente alfanum&#233;rica.
+sys_vir_flas_unique_label_msg=RAC0125: La etiqueta debe ser &#250;nica.
+sys_vir_flas_zero_label_msg=RAC0126: El valor de la etiqueta no es v&#225;lido. Rango esperado: De 1 a 6 caracteres alfanum&#233;ricos.
+sys_vir_flas_bad_size_msg=RAC0127: El tama&#241;o especificado debe ser un valor num&#233;rico no fraccionario.
+sys_vir_flas_zero_size_msg=El tama&#241;o especificado debe ser mayor a 1 MB.
+sys_vir_flas_max_size_msg=El tama&#241;o especificado supera el tama&#241;o m&#225;ximo de
+sys_vir_flas_unknown_error=RAC0128: Ocurri&#243; un error en vFlash.
+sys_vir_flas_initialize_error=RAC0129: Ocurri&#243; un error al inicializar la tarjeta SD.
+sys_vir_flas_create_error=RAC0130: Ocurri&#243; un error al crear la partici&#243;n.
+sys_vir_flas_delete_error=RAC0131: Ocurri&#243; un error al eliminar la partici&#243;n.
+sys_vir_flas_format_error=RAC0132: Ocurri&#243; un error al formatear la partici&#243;n.
+sys_vir_flas_download_error=RAC0133: Ocurri&#243; un error al descargar la partici&#243;n.
+sys_vir_flas_nondell_msg=RAC0134: Esta operaci&#243;n no est&#225; disponible para las tarjetas SD que no son vFlash.
+sys_vir_flas_error_detach=RAC0135: Ocurri&#243; un error al desconectar la partici&#243;n.
+sys_vir_flas_error_attach=RAC0136: Ocurri&#243; un error al conectar la partici&#243;n.
+sys_vir_flas_error_rostate=RAC0137: Ocurri&#243; un error al cambiar el estado de lectura-escritura de la partici&#243;n.
+#
+### Remote Access -> Properties -> iDRAC Information
+#
+rac_prop_info=Informaci&#243;n de iDRAC
+rac_prop_info_netSet=Configuraci&#243;n de red actual
+rac_prop_info_ipv4Set=Configuraci&#243;n IPv4 actual
+rac_prop_info_ipv6Set=Configuraci&#243;n IPv6 actual
+rac_prop_info_name=Nombre
+rac_prop_info_prodInfo=Informaci&#243;n de producto
+rac_prop_info_hardVer=Versi&#243;n de hardware
+rac_prop_info_fwVer=Versi&#243;n de firmware
+rac_prop_info_fwUpd=Firmware actualizado
+rac_prop_info_racTime=Hora del RAC
+rac_prop_info_noActSess=N&#250;mero posible de sesiones activas
+rac_prop_info_noCurrSess=N&#250;mero de sesiones actuales
+rac_prop_info_lanEnabled=LAN activada
+rac_prop_info_ipmiVer=Versi&#243;n de IPMI
+rac_prop_info_deviceType=Tipo de dispositivo
+rac_prop_info_interfaceTitle=Informaci&#243;n de la barra de t&#237;tulo de la interfaz de usuario
+rac_prop_info_it_auto=Autom&#225;tico
+rac_prop_info_it_dns=Nombre DNS del DRAC
+rac_prop_info_it_ipv4=Direcci&#243;n IPv4
+rac_prop_info_it_ipv6=Direcci&#243;n IPv6
+rac_prop_info_it_ip=Direcci&#243;n IP
+rac_prop_info_it_st=Etiqueta de servicio
+rac_prop_info_it_shn=Nombre de host del sistema
+rac_prop_info_it_custom=Personalizado
+rac_prop_info_it_invalid=El texto debe constar de caracteres alfanum&#233;ricos, espacios, barras, guiones bajos, dos puntos o puntos.
+rac_prop_info_it_custom_str=Escriba aqu&#237; una cadena personalizada
+rac_prop_info_it_err=N&#250;mero de barra de t&#237;tulo
+rac_unlicensed_if_reverted_msg=Interfaz de red revertida.
+rac_unlicensed_network_if=Interfaz de red sin licencia
+rac_unlicensed_network_login_instructional_text=La interfaz de red a la que est&#225; conectado no tiene licencia. Haga clic en Enviar para cambiar a una configuraci&#243;n admitida.
+#
+rac_prop_info_macAddr=Direcci&#243;n MAC
+rac_prop_info_dnsDomain=Nombre del dominio DNS
+rac_prop_info_nicSelMode=Modo de selecci&#243;n de NIC
+#
+rac_prop_info_ipv4Enabled=IPv4 activado
+rac_prop_info_dhcpEnabled=DHCP activado
+rac_prop_info_ipAddr=Direcci&#243;n IP actual
+rac_prop_info_gateway=Puerta de enlace actual
+rac_prop_info_subnetMask=M&#225;scara de subred actual
+#
+rac_prop_info_ipv6Enabled=IPv6 activado
+rac_prop_info_autoConfig=Configuraci&#243;n autom&#225;tica activada
+rac_prop_info_ipAddr1=Direcci&#243;n IP actual 1
+rac_prop_info_preLength=Tama&#241;o del prefijo actual
+rac_prop_info_ipGateway=Puerta de enlace IP actual
+rac_prop_info_linkLocal=Direcci&#243;n de v&#237;nculo local
+rac_prop_info_ipAddr2=Direcci&#243;n IP 2
+rac_prop_info_ipAddr3=Direcci&#243;n IP 3
+rac_prop_info_ipAddr4=Direcci&#243;n IP 4
+rac_prop_info_ipAddr5=Direcci&#243;n IP 5
+rac_prop_info_ipAddr6=Direcci&#243;n IP 6
+rac_prop_info_ipAddr7=Direcci&#243;n IP 7
+rac_prop_info_ipAddr8=Direcci&#243;n IP 8
+rac_prop_info_ipAddr9=Direcci&#243;n IP 9
+rac_prop_info_ipAddr10=Direcci&#243;n IP 10
+rac_prop_info_ipAddr11=Direcci&#243;n IP 11
+rac_prop_info_ipAddr12=Direcci&#243;n IP 12
+rac_prop_info_ipAddr13=Direcci&#243;n IP 13
+rac_prop_info_ipAddr14=Direcci&#243;n IP 14
+rac_prop_info_ipAddr15=Direcci&#243;n IP 15
+rac_prop_info_useDHCP=Usar DHCPv6 para obtener direcciones de servidor DNS
+rac_prop_info_preDNS=Servidor DNS preferido actual
+rac_prop_info_altDNS=Servidor DNS alternativo actual
+#
+### Remote Access -> Configuration -> Network
+#
+rac_conf_seconds=segundos
+rac_conf_network=Red
+rac_conf_net_netconfig=Configuraci&#243;n de la red
+rac_conf_net_title=Utilice esta p&#225;gina para definir la configuraci&#243;n de red del iDRAC.
+rac_conf_net_info=Los cambios en la configuraci&#243;n de la direcci&#243;n IP del NIC har&#225;n que se cierren todas las sesiones de usuarios y los usuarios deber&#225;n volver a conectarse a la interfaz web del iDRAC con la configuraci&#243;n actualizada de la direcci&#243;n IP. Todos los dem&#225;s cambios requieren que el NIC se restablezca, lo que puede provocar una breve interrupci&#243;n de la conectividad.
+rac_conf_net_netCardSet=Configuraci&#243;n de la red
+rac_conf_net_comSet=Valores comunes
+rac_conf_net_ipv4Set=Configuraci&#243;n de IPv4
+rac_conf_net_ipv6Set=Configuraci&#243;n de IPv6
+rac_conf_net_ipmiSet=Configuraci&#243;n de IPMI
+rac_conf_net_vlanSet=Configuraci&#243;n de VLAN
+rac_conf_net_enterprise=Enterprise
+rac_conf_net_express=Express
+rac_conf_net_base=Base
+#
+rac_conf_net_nicSel=Selecci&#243;n de NIC
+rac_conf_net_nicMTU=MTU del NIC
+rac_conf_net_macAddr=Direcci&#243;n MAC
+rac_conf_net_enableNIC=Activar el NIC
+rac_conf_net_autoNego=Negociaci&#243;n autom&#225;tica
+rac_conf_net_netSpeed=Velocidad de la red
+rac_conf_net_dupMode=Modo d&#250;plex
+rac_conf_net_dedicated=Dedicado
+rac_conf_net_shared=Compartido
+rac_conf_net_sharedFailover1=Compartido con protecci&#243;n contra fallas: LOM 2
+rac_conf_net_SharedFailover2=Compartido con protecci&#243;n contra fallas: Todos los LOM
+rac_conf_net_on=Encendido
+rac_conf_net_off=Apagado
+rac_conf_net_Full=Completo
+rac_conf_net_Half=Medio
+rac_conf_net_failover=Red con protecci&#243;n contra fallas
+rac_conf_net_none=Ninguno
+rac_conf_net_LOM1=LOM1
+rac_conf_net_LOM2=LOM2
+rac_conf_net_LOM3=LOM3
+rac_conf_net_LOM4=LOM4
+rac_conf_net_AllLOM=Todos los LOM
+rac_conf_net_dedicatedNicPref=NIC autodedicado
+rac_conf_net_activeNic=Interfaz del NIC activa
+
+#
+rac_conf_net_regiDRAC=Registrar el DRAC en DNS
+rac_conf_net_dnsiDRAC=Nombre DNS del DRAC
+rac_conf_net_useDHCPForDNSDomain=Configuraci&#243;n autom&#225;tica del nombre de dominio
+rac_conf_net_dnsDomain=Nombre de dominio DNS est&#225;tico
+#
+rac_conf_net_ipv4Enabled=Activar IPv4
+rac_conf_net_useDHCPForNIC=Activaci&#243;n de DHCP
+rac_conf_net_ipAddr=Direcci&#243;n IP est&#225;tica
+rac_conf_net_gateway=Puerta de enlace est&#225;tica
+rac_conf_net_subnetMask=M&#225;scara de subred est&#225;tica
+rac_conf_net_useDHCPForDNSServer=Usar DHCP para obtener direcciones de servidor DNS
+rac_conf_net_preDNSServer=Servidor DNS preferido est&#225;tico
+rac_conf_net_altDNSServer=Servidor DNS alternativo est&#225;tico
+#
+rac_conf_net_ipv6Enabled=Activar IPv6
+rac_conf_net_autoConfig=Activaci&#243;n de la configuraci&#243;n autom&#225;tica
+rac_conf_net_ipAddr1=Direcci&#243;n IP est&#225;tica 1
+rac_conf_net_preLength=Tama&#241;o del prefijo est&#225;tico
+rac_conf_net_ipGateway=Puerta de enlace est&#225;tica
+rac_conf_net_linkLocAddr=Direcci&#243;n de v&#237;nculo local
+rac_conf_net_ipAddr2=Direcci&#243;n IP 2
+rac_conf_net_ipAddr3=Direcci&#243;n IP 3
+rac_conf_net_ipAddr4=Direcci&#243;n IP 4
+rac_conf_net_ipAddr5=Direcci&#243;n IP 5
+rac_conf_net_ipAddr6=Direcci&#243;n IP 6
+rac_conf_net_ipAddr7=Direcci&#243;n IP 7
+rac_conf_net_ipAddr8=Direcci&#243;n IP 8
+rac_conf_net_ipAddr9=Direcci&#243;n IP 9
+rac_conf_net_ipAddr10=Direcci&#243;n IP 10
+rac_conf_net_ipAddr11=Direcci&#243;n IP 11
+rac_conf_net_ipAddr12=Direcci&#243;n IP 12
+rac_conf_net_ipAddr13=Direcci&#243;n IP 13
+rac_conf_net_ipAddr14=Direcci&#243;n IP 14
+rac_conf_net_ipAddr15=Direcci&#243;n IP 15
+#
+rac_conf_net_enableIPMI=Activar IPMI en la LAN
+rac_conf_net_chanPriLevel=L&#237;mite de nivel de privilegio del canal
+rac_conf_net_encrypKey=Clave de cifrado
+#
+rac_conf_net_enableVLANid=Activar identificaci&#243;n de VLAN
+rac_conf_net_vlanID=Identificaci&#243;n de VLAN
+rac_conf_net_priority=Prioridad
+#
+### Remote Access -> Configuration -> Network->Network Security
+#
+rac_conf_netw_security=Seguridad de la red
+rac_conf_netw_title=Utilice esta p&#225;gina para definir la configuraci&#243;n de la seguridad de la red.
+rac_conf_netw_ipREnabled=Rango IP activado
+rac_conf_netw_ipRAddr=Direcci&#243;n de rango IP
+rac_conf_netw_ipRSubnet=M&#225;scara de subred de rango IP
+rac_conf_netw_ipBEnabled=Bloqueo de IP activado
+rac_conf_netw_ipBFailCount=N&#250;mero de fallos de bloqueo de IP
+rac_conf_netw_ipBFailWin=Ventana de fallos de bloqueo de IP
+rac_conf_netw_ipBPenTime=Tiempo de penalizaci&#243;n de bloqueo de IP
+rac_conf_netw_seconds=Segundos
+#
+### Remote Access -> Configuration -> Users
+#
+rac_conf_users=Usuarios
+rac_conf_usr_title=Para configurar a un usuario, haga clic en el n&#250;mero de identificaci&#243;n de usuario.
+rac_conf_usr_iserID=Identificaci&#243;n de usuario
+rac_conf_usr_state=Estado
+rac_conf_usr_userName=Nombre de usuario
+rac_conf_usr_racPrv=iDRAC
+rac_conf_usr_ipmiLan=LAN
+rac_conf_usr_ipmiSerial=Puerto serie
+rac_conf_usr_serOverLan=Comunicaci&#243;n en serie en la LAN
+rac_conf_usr_Prv=Privilegio
+rac_conf_usr_ipmiSerial_Prv=Privilegio de usuario
+rac_conf_usr_serOverLan_Prv=Privilegio en la LAN
+rac_conf_usr_snmp=SNMP v3
+#
+#User Main Menu
+#
+rac_conf_usr_usrMainMenu=Men&#250; principal de usuarios:
+rac_conf_usr_usrMainTitle=Seleccione una de las siguientes opciones para configurar un usuario, cargar un certificado de usuario, ver un certificado de usuario, cargar un certificado de CA de confianza o ver un certificado de CA de confianza. 
+rac_conf_usr_usrConfig=Configuraci&#243;n de usuario
+rac_conf_usr_smrCardConfig=Configuraci&#243;n de la tarjeta inteligente
+rac_conf_usr_configUsr=Configurar usuario
+rac_conf_usr_uploadUsrCert=Cargar certificado de usuario
+rac_conf_usr_viewUsrCert=Ver certificado de usuario
+rac_conf_usr_uploadTrustCert=Cargar certificado de CA de confianza
+rac_conf_usr_viewTrustCert=Ver certificado de CA de confianza
+rac_conf_usr_sshKeyConfig=Configuraciones de clave SSH
+rac_conf_usr_uploadSshKey=Cargar claves SSH
+rac_conf_usr_viewSshKey=Ver/Eliminar claves SSH
+rac_conf_usr_viewSshRemove=Eliminar
+#
+#User Configuration
+#
+rac_conf_usr_configtitle=Utilice esta p&#225;gina para configurar el usuario seleccionado.
+rac_conf_usr_general=General
+rac_conf_usr_ipmiUsrPrv=Privilegios de usuario de IPMI
+rac_conf_usr_iDRACUsrPrv=Privilegios de usuario de iDRAC
+#
+rac_conf_usr_sshKeys=Claves SSH
+rac_conf_usr_sshKey1=Clave SSH 1
+rac_conf_usr_sshKey2=Clave SSH 2
+rac_conf_usr_sshKey3=Clave SSH 3
+rac_conf_usr_sshKey4=Clave SSH 4
+#
+rac_conf_usr_userID=Identificaci&#243;n de usuario
+rac_conf_usr_enableUsr=Activar el usuario
+rac_conf_usr_userName=Nombre del usuario
+rac_conf_usr_changePass=Cambiar contrase&#241;a
+rac_conf_usr_newPass=Contrase&#241;a nueva
+rac_conf_usr_confNewPass=Confirmar contrase&#241;a nueva
+#
+rac_conf_usr_maxLANusrPrv=Privilegio m&#225;ximo permitido de usuario de LAN
+rac_conf_usr_maxSerPortUsr=Privilegio m&#225;ximo permitido de usuario de puerto serie
+rac_conf_usr_enSerialOverLAN=Activar comunicaci&#243;n en serie en la LAN
+#
+rac_conf_usr_roles=Funciones
+rac_conf_usr_loginiDRAC=Inicio de sesi&#243;n
+rac_conf_usr_confiDRAC=Configurar
+rac_conf_usr_confUsers=Configurar usuarios
+rac_conf_usr_clearLog=Borrar registros
+rac_conf_usr_logs=Registros
+rac_conf_usr_excSerCmds=Control del sistema
+rac_conf_usr_accConsRedir=Acceder a la consola virtual
+rac_conf_usr_accVirMed=Acceder a los medios virtuales
+rac_conf_usr_testAlert=Operaciones del sistema
+rac_conf_usr_excDiaCmds=Depurar
+#
+#User Certificate upload
+#
+rac_conf_usr_certUpload=Carga del certificado de usuario: Identificaci&#243;n de usuario
+rac_conf_usr_uploadTitle=Seleccione el certificado que desea cargar. Haga clic en Aplicar para comenzar la transferencia.
+rac_conf_usr_uploadFilePath=Ruta de acceso del archivo
+#
+#SSH Keys
+#
+rac_conf_user_sshKeyUpload_File=Archivo
+rac_conf_user_sshKeyUpload_Text=Texto
+rac_conf_user_viewSshKeyTitle=Puede ver o eliminar las claves SSH de los usuarios.
+rac_conf_usr_sshKeyUpload=Cargar claves SSH
+rac_conf_usr_sshKeyUploadTitle=Seleccione las claves que desea cargar, o introd&#250;zcalas, y despu&#233;s haga clic en Aplicar para comenzar la transferencia.
+#
+#View User Certificate
+#
+rac_conf_user_viewUserCert=Ver certificado de usuario: Identificaci&#243;n de usuario
+rac_conf_user_viewUserCertTitle=Puede ver el certificado de usuario.
+rac_conf_user_certificate=Certificado
+#
+#Trusted CA Certificate Upload
+#
+rac_conf_user_trustCertUpload=Carga de certificado de CA de confianza: Identificaci&#243;n de usuario 
+rac_conf_user_trustCertTitle=Seleccione el certificado que desea cargar y haga clic en Aplicar para comenzar la transferencia.
+#
+#View Trusted CA Certificate
+#
+rac_conf_user_viewTrustUserCert=Ver certificado de CA de confianza: Identificaci&#243;n de usuario 
+rac_conf_user_viewTrustCertTitle=Puede ver el certificado de CA de confianza.
+#
+### Remote Access -> Configuration -> Active Directory
+#
+#
+rac_conf_role_group=Grupo de funciones
+rac_conf_act_Dir=Active Directory
+rac_conf_act_actDirConfig=Configuraci&#243;n y administraci&#243;n de Active Directory
+rac_conf_ad_cert=Certificado de CA de Active Directory
+rac_conf_act_DirTitle=La p&#225;gina Configuraci&#243;n y administraci&#243;n de Active Directory muestra la configuraci&#243;n actual de Active Directory para el iDRAC7.
+rac_conf_act_comSet=Valores comunes
+rac_conf_act_actdircert=Certificado de CA de Active Directory
+rac_conf_act_schSet=Configuraci&#243;n de esquema
+#
+rac_conf_act_actDiren=Active Directory activado
+rac_conf_act_schSel=Selecci&#243;n de esquema
+rac_conf_act_usrDomain=Nombre de dominio de usuario
+rac_conf_act_timeout=Tiempo de espera
+rac_conf_act_domContAddr1=Direcci&#243;n 1 del servidor controlador de dominio (FQDN o IP)
+rac_conf_act_domContAddr2=Direcci&#243;n 2 del servidor controlador de dominio (FQDN o IP)
+rac_conf_act_domContAddr3=Direcci&#243;n 3 del servidor controlador de dominio (FQDN o IP)
+rac_conf_act_enCertVal=Validaci&#243;n de certificado activada
+#
+rac_conf_act_cert=Certificado
+rac_conf_act_noValidCert=RAC0138: No se ha cargado un certificado v&#225;lido.
+#
+rac_conf_act_extSchSet=Configuraci&#243;n del esquema extendido
+rac_conf_act_idracName=Nombre de iDRAC
+rac_conf_act_idracDomain=Nombre de dominio de iDRAC
+rac_conf_act_stdSchSet=Configuraci&#243;n del esquema est&#225;ndar
+rac_conf_act_glCatSerAddr1=Direcci&#243;n 1 del servidor de cat&#225;logo global (FQDN o IP)
+rac_conf_act_glCatSerAddr2=Direcci&#243;n 2 del servidor de cat&#225;logo global (FQDN o IP)
+rac_conf_act_glCatSerAddr3=Direcci&#243;n 3 del servidor de cat&#225;logo global (FQDN o IP)
+rac_conf_act_stdSchRoleGroup=Grupos de funciones del esquema est&#225;ndar
+rac_conf_act_roleGroup=Grupos de funciones
+rac_conf_act_groupName=Nombre del grupo
+rac_conf_act_groupDomain=Dominio del grupo
+rac_conf_act_gropupPriv=Privilegio del grupo
+#
+rac_conf_test_passed=Pas&#243;
+rac_conf_test_disabled=Desactivado
+rac_conf_test_notrun=No ejecutado
+rac_conf_test_failed=Fallido
+rac_conf_test_notcfg=No configurado
+rac_conf_test_notapp=No aplicable
+#
+rac_conf_act_ssoEn=Inicio de sesi&#243;n &#250;nico activado
+rac_conf_act_ssoEn_alert=Aseg&#250;rese de haber cargado correctamente un archivo keytab v&#225;lido en el 'Paso 1 de la configuraci&#243;n de Active Directory'.
+#
+#Step 1 of 4
+#
+rac_conf_acts1_step1of4=Paso 1 de 4
+rac_conf_acts1_info=Esta p&#225;gina se usa para configurar el certificado digital que se utiliza durante el inicio de las conexiones SSL al comunicarse con el servidor de Active Directory (AD); estas comunicaciones utilizan LDAP mediante SSL (LDAPS). Cuando la validaci&#243;n de certificados est&#225; activada, es necesario cargar el certificado de la autoridad de certificados (CA) que emiti&#243; el certificado que utiliza el servidor de AD durante el inicio de las conexiones SSL. El certificado de CA se utiliza para validar la autenticidad del certificado que el servidor de AD proporcion&#243; durante el inicio de SSL.
+rac_conf_acts1_certSet=Configuraci&#243;n de certificados
+rac_conf_acts1_enCertVal=Activar validaci&#243;n de certificado
+rac_conf_acts1_uploadActDirCert=Cargar certificado de CA de Active Directory
+rac_conf_acts1_currActDirCert=Certificado actual de CA de Active Directory
+rac_conf_acts1_cert=Certificado
+rac_conf_acts1_noValidCert=RAC0139: No se ha cargado un certificado v&#225;lido.
+rac_conf_acts1_uploadKrbKeytab=Cargar archivo keytab de Kerberos
+#
+#Step 2 of 4
+#
+rac_conf_acts2_step2of4=Paso 2 de 4
+rac_conf_acts2_info=Esta p&#225;gina se usa para configurar la informaci&#243;n de ubicaci&#243;n de los servidores de Active Directory (AD) y las cuentas de usuario. Tambi&#233;n permite configurar la pol&#237;tica de tiempo de espera para tener acceso a AD. Cuando el modo AD est&#225; activado, se puede simplificar la sintaxis de inicio de sesi&#243;n si se configura el nombre DNS de cada dominio de AD que contenga las cuentas de usuario del iDRAC. Cada nombre de dominio configurado se agrega autom&#225;ticamente a un men&#250; desplegable en el cuadro de di&#225;logo de inicio de sesi&#243;n a fin de facilitar la selecci&#243;n durante el ingreso de las credenciales de inicio de sesi&#243;n. Tambi&#233;n es necesario configurar la ubicaci&#243;n de uno, dos o tres servidores de AD que se utilizar&#225;n durante el proceso de inicio de sesi&#243;n. El par&#225;metro de umbral del tiempo de espera controla el tiempo que el iDRAC esperar&#225; la recepci&#243;n de respuestas provenientes de AD durante el procesamiento de inicio de sesi&#243;n.
+rac_conf_acts2_comSet=Valores comunes
+rac_conf_acts2_enActDir=Habilitar Active Directory
+rac_conf_acts2_usrDomName=Nombre de dominio de usuario
+rac_conf_acts2_timeout=Tiempo de espera
+rac_conf_acts2_domContAddr1=Direcci&#243;n 1 del servidor controlador de dominio (FQDN o IP)
+rac_conf_acts2_domContAddr2=Direcci&#243;n 2 del servidor controlador de dominio (FQDN o IP)
+rac_conf_acts2_domContAddr3=Direcci&#243;n 3 del servidor controlador de dominio (FQDN o IP)
+rac_conf_acts2_seconds=segundos
+rac_conf_acts2_enSSO=Activar el inicio de sesi&#243;n &#250;nico
+#
+#Step 3 of 4
+#
+rac_conf_acts3_step3of4=Paso 3 de 4
+rac_conf_acts3_info=Esta p&#225;gina se usa para configurar el modo de esquema de Active Directory (AD). Cuando AD est&#225; activado (consulte el paso 2 de 4), es necesario configurar el uso del esquema est&#225;ndar o del esquema extendido. Cuando se usa el modo de esquema est&#225;ndar, la configuraci&#243;n predeterminada del esquema de AD de Microsoft proporciona todas las clases necesarias de objetos. Antes de usar el modo de esquema extendido, debe ejecutar las utilidades de Dell que agregan nuevas clases de objetos al esquema de AD y que tambi&#233;n extienden las capacidades del complemento MMC de Microsoft denominado Usuarios y equipos de Active Directory (ADUC) a fin de incluir la administraci&#243;n de las nuevas clases de objetos.
+rac_conf_acts3_schSel=Selecci&#243;n de esquema
+rac_conf_acts3_extSch=Esquema extendido
+rac_conf_acts3_stdSch=Esquema est&#225;ndar
+#
+#Step 4 of 4
+#
+rac_conf_acts4_step4of4=Paso 4 de 4
+rac_conf_acts4_info=Esta p&#225;gina se usa para configurar el nombre y la ubicaci&#243;n del objeto de dispositivo de iDRAC en Active Directory (AD). Cuando AD est&#225; activado y se usa el modo de esquema extendido, es necesario configurar el nombre com&#250;n (CN) del objeto de dispositivo en AD que representa el iDRAC. Tambi&#233;n es necesario configurar el nombre DNS del dominio que contiene dicho objeto de dispositivo.
+rac_conf_acts4_extSchSet=Configuraci&#243;n del esquema extendido
+rac_conf_acts4_idraNname=Nombre de iDRAC
+rac_conf_acts4_idracDom=Nombre de dominio de iDRAC
+#
+#Step 4a of 4
+#
+rac_conf_acts4a_step4aof4=Paso 4a de 4
+rac_conf_acts4a_info=Esta p&#225;gina se usa para configurar la ubicaci&#243;n de los servidores de cat&#225;logo global de Active Directory (AD) y de los grupos de privilegios que se usan para autorizar a los usuarios. Cuando AD est&#225; activado y se usa el modo de esquema est&#225;ndar, es necesario configurar la ubicaci&#243;n de uno, dos o tres servidores de cat&#225;logo global si las cuentas de usuario y grupos de funciones se localizan en dominios diferentes. Tambi&#233;n es necesario configurar los grupos de funciones que especifican la pol&#237;tica de autorizaci&#243;n de los usuarios de iDRAC bajo el modo de esquema est&#225;ndar.
+rac_conf_acts4a_roleGroup=Grupo de funciones
+#
+#
+#Step 4b of 4
+#
+rac_conf_acts4b_step4bof4=Paso 4b de 4
+rac_conf_acts4b_confRoleGroup=Configurar grupo de funciones
+rac_conf_acts4b_info=Esta p&#225;gina se usa para configurar cada grupo de funciones que se utiliza para controlar la pol&#237;tica de autorizaci&#243;n de usuarios en el modo de esquema est&#225;ndar. Cuando AD est&#225; activado y se usa el modo de esquema est&#225;ndar, es necesario configurar cada grupo de funciones para aplicar la pol&#237;tica de autorizaci&#243;n relacionada con el acceso a las funciones del iDRAC.
+rac_conf_acts4b_roleAndDomain=Nombre y dominio del grupo de funciones
+rac_conf_acts4b_groupName=Nombre del grupo
+rac_conf_acts4b_groupDomain=Dominio del grupo
+#
+rac_conf_acts4b_roleGroupPriv=Privilegios del grupo de funciones
+rac_conf_acts4b_roleGroupPrivLvl=Nivel de privilegio del grupo de funciones
+rac_conf_acts4b_loginiDRAC=Iniciar sesi&#243;n en iDRAC
+rac_conf_acts4b_confiDRAC=Configurar iDRAC
+rac_conf_acts4b_configUser=Configurar usuarios
+rac_conf_acts4b_clearLog=Borrar registros
+rac_conf_acts4b_excSerCmds=Ejecutar comandos de control del servidor
+rac_conf_acts4b_accConsRedir=Acceder a la consola virtual
+rac_conf_acts4b_accVirMed=Acceder a los medios virtuales
+rac_conf_acts4b_testAlert=Comprobar alertas
+rac_conf_acts4b_excDiagCmds=Ejecutar comandos de diagn&#243;stico
+#
+### Remote Access -> Configuration -> Active Directory->Test Settings
+#
+rac_conf_act_testActSet=Configuraci&#243;n de la prueba de Active Directory
+rac_conf_act_testUser=Usuario de prueba
+rac_conf_act_testUserName=Nombre de usuario de prueba
+rac_conf_act_testUserPass=Contrase&#241;a del usuario de prueba
+#
+rac_conf_act_testResult=Resultados de la prueba
+rac_conf_act_testDesc=Descripci&#243;n de la prueba
+rac_conf_act_result=Resultado
+rac_conf_act_pingDirServer=Enviar comando ping al servidor de directorio
+rac_conf_act_keytab_exists=El archivo keytab existe
+rac_conf_act_keytab_valid=El archivo keytab es v&#225;lido
+rac_conf_act_get_tgt=Obteniendo TGT del servidor
+rac_conf_act_dirSerDNSName=Nombre DNS del servidor de directorio
+rac_conf_act_dcDnsLookup=B&#250;squeda de directorio DNS
+rac_conf_act_gcDnsLookup=B&#250;squeda de cat&#225;logo global DNS
+rac_conf_act_conDirServer1UnEn=Conectarse al servidor de directorio 1 (sin cifrado)
+rac_conf_act_conDirServer2UnEn=Conectarse al servidor de directorio 2 (sin cifrado)
+rac_conf_act_conDirServer3UnEn=Conectarse al servidor de directorio 3 (sin cifrado)
+rac_conf_act_conDirServer4UnEn=Conectarse al servidor de directorio 4 (sin cifrado)
+rac_conf_act_conDirServer1SSL=Conectarse al servidor de directorio 1 (SSL)
+rac_conf_act_conDirServer2SSL=Conectarse al servidor de directorio 2 (SSL)
+rac_conf_act_conDirServer3SSL=Conectarse al servidor de directorio 3 (SSL)
+rac_conf_act_conDirServer4SSL=Conectarse al servidor de directorio 4 (SSL)
+rac_conf_act_conGCat1UnEn=Conectarse al cat&#225;logo global 1 (sin cifrado)
+rac_conf_act_conGCat2UnEn=Conectarse al cat&#225;logo global 2 (sin cifrado)
+rac_conf_act_conGCat3UnEn=Conectarse al cat&#225;logo global 3 (sin cifrado)
+rac_conf_act_conGCat4UnEn=Conectarse al cat&#225;logo global 4 (sin cifrado)
+rac_conf_act_conGCat1SSL=Conectarse al cat&#225;logo global 1 (SSL)
+rac_conf_act_conGCat2SSL=Conectarse al cat&#225;logo global 2 (SSL)
+rac_conf_act_conGCat3SSL=Conectarse al cat&#225;logo global 3 (SSL)
+rac_conf_act_conGCat4SSL=Conectarse al cat&#225;logo global 4 (SSL)
+rac_conf_act_certVal=Validaci&#243;n de certificado
+rac_conf_act_userAuthent=Autentificaci&#243;n de usuario
+rac_conf_act_userAuthor=Autorizaci&#243;n de usuario
+rac_conf_act_iDRACObjExist=El objeto del dispositivo iDRAC existe
+#
+rac_conf_act_testLog=Registro de la prueba
+#
+### Remote Access -> Configuration -> SSL
+#
+#
+rac_conf_ssl=SSL
+rac_conf_ssl_mainMenu=Men&#250; principal de SSL
+rac_conf_ssl_title=Seleccione una de las opciones siguientes para generar una solicitud de firma de certificado (CSR), cargar un certificado existente o ver el certificado del servidor actual. 
+rac_conf_ssl_option=Opci&#243;n
+rac_conf_ssl_genNewCSR=Generar una solicitud de firma de certificado (CSR)
+rac_conf_ssl_uploadCert=Cargar certificado del servidor
+rac_conf_ssl_viewCert=Ver certificado del servidor
+#
+#Generate Certificate Signing Request (CSR)
+#
+rac_conf_ssl_csr_genCSR=Generar una solicitud de firma de certificado (CSR)
+rac_conf_ssl_csr_title=Introduzca la informaci&#243;n en los siguientes campos y haga clic en Generar para crear una nueva solicitud de firma de certificado (CSR).
+rac_conf_ssl_csr_info=Generar una nueva CSR evita que los certificados creados con la CSR generada anteriormente se puedan cargar al iDRAC.
+rac_conf_ssl_csr_comName=Nombre com&#250;n
+rac_conf_ssl_csr_orgName=Nombre de la organizaci&#243;n
+rac_conf_ssl_csr_orgUnit=Unidad de organizaci&#243;n
+rac_conf_ssl_csr_locality=Localidad
+rac_conf_ssl_csr_stateName=Nombre del estado
+rac_conf_ssl_csr_countCode=C&#243;digo del pa&#237;s
+rac_conf_ssl_csr_email=Enviar por correo electr&#243;nico
+#
+#Certificate Upload
+#
+rac_conf_ssl_certUpload=Cargar certificado del servidor 
+rac_conf_ssl_certUploadTitle=Seleccione el certificado que desea cargar y haga clic en Aplicar para comenzar la transferencia. 
+rac_conf_ssl_certUploadInfo=Nota: El iDRAC se restablecer&#225; despu&#233;s de que el certificado se cargue correctamente. En ese momento, el iDRAC no estar&#225; disponible por unos cuantos minutos.
+rac_conf_ssl_certUploadFilePath=Ruta de acceso del archivo
+#
+#View Server Certificate
+#
+rac_conf_ssl_viewSerCertTitle=Aqu&#237; puede ver el certificado del servidor actual.
+rac_conf_ssl_cert=Certificado
+#
+### Remote Access -> Configuration -> Serial
+#
+#
+rac_conf_serial=Conexi&#243;n en serie
+rac_conf_ser_config=Configuraci&#243;n de la conexi&#243;n en serie
+rac_conf_ser_title=Utilice esta p&#225;gina para definir la configuraci&#243;n de la conexi&#243;n en serie.
+rac_conf_ser_info=El acceso de conexi&#243;n en serie del RAC e de IPMI se excluyen mutuamente. La activaci&#243;n de la conexi&#243;n en serie del RAC desactivar&#225; la conexi&#243;n en serie de IPMI.
+rac_conf_ser_ipmiSerial=Conexi&#243;n en serie de IPMI
+rac_conf_ser_racSerial=Conexi&#243;n en serie del RAC
+rac_conf_ser_baud9600=9600 bps
+rac_conf_ser_baud19=19,2 kbps
+rac_conf_ser_baud57=57,6 kbps
+rac_conf_ser_baud115=115,2 kbps
+#
+rac_conf_ser_conModeSet=Configuraci&#243;n del modo de conexi&#243;n
+rac_conf_ser_baudRate=Velocidad en baudios
+rac_conf_ser_flowContr=Control de flujo
+rac_conf_ser_chanPriLevel=L&#237;mite de nivel de privilegio del canal
+rac_conf_ser_basicMode=Modo b&#225;sico de conexi&#243;n directa
+rac_conf_ser_terminalMode=Modo de terminal de conexi&#243;n directa
+rac_conf_ser_rtsCTS=RTS/CTS (control de flujo del hardware)
+#
+rac_conf_ser_redirEn=Redireccionamiento activado
+rac_conf_ser_escKey=Tecla Esc
+rac_conf_ser_hisBufSize=Tama&#241;o de b&#250;fer de historial
+rac_conf_ser_loginCmd=Comando de inicio de sesi&#243;n
+#
+rac_conf_ser_valInvalid=El objeto especificado no es v&#225;lido.
+#
+#Terminal Mode Settings
+#
+rac_conf_ser_ter_modeSet=Configuraci&#243;n del modo de terminal
+rac_conf_ser_ter_title=Utilice esta p&#225;gina para definir la configuraci&#243;n del modo de terminal.
+rac_conf_ser_ter_lineEdit=Edici&#243;n de l&#237;nea
+rac_conf_ser_ter_delCont=Control de eliminaci&#243;n
+rac_conf_ser_ter_echoCont=Control del eco
+rac_conf_ser_ter_handshCont=Control del protocolo de enlace
+rac_conf_ser_ter_newlSeq=Nueva secuencia de l&#237;nea
+rac_conf_ser_ter_inlSeq=Introducir una nueva secuencia de l&#237;nea
+rac_conf_ser_ter_bmcOutputDel=El iDRAC produce el car&#225;cter &#38;lt;supr&#38;gt; cuando se recibe &#38;lt;retroceso&#38;gt; o &#38;lt;supr&#38;gt;.
+rac_conf_ser_ter_bmcOutputBksp=El iDRAC produce el car&#225;cter &#38;lt;retroceso&#38;gt;&#38;lt;espacio&#38;gt;&#38;lt;retroceso&#38;gt; cuando se recibe &#38;lt;retroceso&#38;gt; o &#38;lt;supr&#38;gt;.
+#
+#
+### Remote Access -> Configuration -> Serial Over LAN
+#
+#
+rac_conf_lan_serOverLAN=Comunicaci&#243;n en serie en la LAN
+rac_conf_lan_serOverLANConfig=Configuraci&#243;n de la comunicaci&#243;n en serie en la LAN
+rac_conf_lan_title=Utilice esta p&#225;gina para definir la configuraci&#243;n de la comunicaci&#243;n en serie en la LAN.
+rac_conf_lan_enSerOverLAN=Activar comunicaci&#243;n en serie en la LAN
+rac_conf_lan_baudRate=Velocidad en baudios
+rac_conf_lan_chanPriLevel=L&#237;mite de nivel de privilegio del canal
+#
+#Serial Over LAN Configuration Advanced Settings
+#
+rac_conf_lan_adv_serOverLANAdv=Configuraci&#243;n avanzada de la comunicaci&#243;n en serie en la LAN
+rac_conf_lan_adv_title=Utilice esta p&#225;gina para definir la configuraci&#243;n avanzada de la comunicaci&#243;n en serie en la LAN.
+rac_conf_lan_adv_chrAccInterval=Intervalo de acumulaci&#243;n de caracteres
+rac_conf_lan_adv_chrSendThres=Umbral de env&#237;o de caracteres
+#
+#
+### Remote Access -> Configuration -> Services
+#
+#
+rac_conf_ser_services=Servicios
+rac_conf_serv_title=Utilice esta p&#225;gina para configurar los servicios del iDRAC.
+rac_conf_ser_localConfig=Configuraci&#243;n local
+rac_conf_ser_webServer=Web Server
+rac_conf_ser_ssh=SSH
+rac_conf_ser_telnet=Telnet
+rac_conf_ser_rmtRACADM= RACADM remoto
+rac_conf_ser_snmpAgent=Agente SNMP
+rac_conf_ser_autoSysRecAgent=Agente de recuperaci&#243;n automatizada de sistemas
+#
+rac_conf_ser_disableROM=Desactivar la configuraci&#243;n local del iDRAC por medio de los valores del iDRAC
+rac_conf_ser_disableRACADM=Desactivar la configuraci&#243;n local del iDRAC por medio de la opci&#243;n RACADM
+#
+rac_conf_ser_httpPortNo=N&#250;mero de puerto HTTP
+rac_conf_ser_httpsPortNo=N&#250;mero de puerto HTTPS
+rac_conf_ser_seconds=x 5 ms
+rac_conf_ser_sslEncryption=Cifrado SSL
+rac_conf_ser_auto=Negociar autom&#225;ticamente
+rac_conf_ser_128=128 bits o m&#225;s
+#
+rac_conf_ser_portNo=N&#250;mero de puerto
+#
+rac_conf_ser_snmpComName=Nombre de comunidad SNMP
+#
+#
+### Remote Access -> Configuration -> Smart Card
+#
+#
+rac_conf_smt_smartCard=Tarjeta inteligente
+rac_conf_smt_configSmtCard=Configurar tarjeta inteligente
+rac_conf_smt_ttitle=Utilice esta p&#225;gina para configurar y administrar el inicio de sesi&#243;n mediante tarjeta inteligente del iDRAC.
+rac_conf_smt_info=La funci&#243;n de inicio de sesi&#243;n mediante tarjeta inteligente requiere la configuraci&#243;n del certificado de usuario local y/o de Active Directory.
+#
+rac_conf_smt_comSet=Valores comunes
+rac_conf_smt_configSmtCardSet=Configurar inicio de sesi&#243;n mediante tarjeta inteligente
+rac_conf_smt_enCRL=Activar la revisi&#243;n CRL para el inicio de sesi&#243;n mediante tarjeta inteligente
+rac_conf_smt_enableWithRemote=Activado con RACADM remoto
+#
+#
+### Remote Access -> Logs
+#
+#
+rac_log=Registros
+rac_log_rac=Registro del iDRAC
+rac_log_rac_title=El registro del iDRAC contiene informaci&#243;n sobre el hardware de iDRAC. Para ordenar el registro por columnas, haga clic en el encabezado de la columna. 
+rac_log_rac_dateTime=Fecha/Hora
+rac_log_rac_source=Origen
+rac_log_rac_desc=Descripci&#243;n
+rac_log_loading=Cargando el registro del iDRAC...
+#
+#
+### Remote Access -> Session Management
+#
+#
+rac_ses_Manag=Administraci&#243;n de sesiones
+rac_ses_ses=Sesiones
+rac_ses_ses_title=Utilice esta p&#225;gina para ver informaci&#243;n sobre las sesiones activas del iDRAC. Adem&#225;s, los administradores de iDRAC pueden hacer clic en el icono de la papelera para terminar una sesi&#243;n activa.
+rac_ses_ses_sessID=Id. de sesi&#243;n
+rac_ses_ses_usrName=Nombre del usuario
+rac_ses_ses_ipAddr=Direcci&#243;n IP
+rac_ses_ses_sessType=Tipo de sesi&#243;n
+rac_ses_ses_console=Consola
+rac_ses_ses_terminate=Terminar
+#
+#
+### Remote Access -> Diagnostics
+#
+#
+rac_dia_diagnos=Soluci&#243;n de problemas
+rac_dia_con=Consola de diagn&#243;sticos
+rac_dia_con_title=La consola de diagn&#243;sticos permite que los usuarios avanzados, o usuarios bajo la direcci&#243;n del personal de asistencia t&#233;cnica, diagnostiquen problemas relacionados con el hardware del iDRAC. Introduzca un comando de diagn&#243;stico y haga clic en Enviar.
+rac_dia_con_cmd=Comando
+rac_dia_identify=Identificar
+rac_dia_identifyServer=Identificar el servidor
+rac_dia_identifyTimeout=Tiempo de espera para identificar el servidor
+rac_dia_identify_title=Utilice esta p&#225;gina para identificar el servidor por medio del LED parpadeante de identificaci&#243;n del sistema.
+alert_reset_idracMsg=Advertencia: Est&#225; a punto de restablecer el iDRAC. Todas las sesiones existentes, incluyendo &#233;sta, se cerrar&#225;n. &#191;Est&#225; seguro de que desea continuar? 
+alert_reset_todefault_idracMsg=ADVERTENCIA: Est&#225; a punto de restablecer iDRAC a su configuraci&#243;n predeterminada. Todas las sesiones existentes, incluyendo &#233;sta, se cerrar&#225;n. La direcci&#243;n IP de iDRAC se restablecer&#225; a la direcci&#243;n IP est&#225;tica predeterminada. &#191;Est&#225; seguro de que desea continuar?
+#
+#
+### Remote Access -> Update
+#
+#
+rac_upd=Actualizar
+rac_upd_fmw=Firmware
+rac_upd_fmw_update=Actualizaci&#243;n del firmware
+rac_upd_fmw_title=Seleccione la imagen del firmware del iDRAC que desea cargar y despu&#233;s haga clic en Actualizar para comenzar la carga. Cuando la carga termine, comenzar&#225; la actualizaci&#243;n de firmware del iDRAC.
+rac_upd_fmw_fwImage=Imagen del firmware
+#
+rac_upd_fmw_updateProg=Progreso de la actualizaci&#243;n del firmware
+rac_upd_fmw_updateMsg1=El firmware del iDRAC se est&#225; actualizando. Este proceso puede tardar varios minutos. Cuando la actualizaci&#243;n concluya, vuelva a iniciar sesi&#243;n para usar la interfaz web del iDRAC.
+rac_upd_fmw_updateMsg2=Si abandona la p&#225;gina de progreso de actualizaci&#243;n del firmware, la ventana del explorador se cerrar&#225;. Tal vez no pueda tener acceso a la interfaz web del iDRAC sino hasta que la actualizaci&#243;n del firmware concluya.
+rac_upd_fmw_uploadImage=Cargando imagen...
+rac_upd_fmw_updateFirm=Actualizando firmware...
+#
+rac_upd_uploadStep1=Cargar (paso 1 de 3)
+rac_upd_rollbackStep1=Revertir (paso 1 de 3)
+rac_upd_upload=Cargar
+rac_upd_rollback=Revertir
+rac_upd_selectFile=Seleccionar el archivo a cargar
+rac_upd_filePath=Ruta de acceso del archivo
+rac_upd_switchFirmware=Conmutar al firmware en espera
+#
+rac_upd_step2=Estado (Paso 2 de 3)
+rac_upd_uploadedImage=Imagen cargada
+rac_upd_iDracConfigSet=Valores de configuraci&#243;n del iDRAC
+rac_upd_iDracFWImage=Imagen del firmware del iDRAC
+rac_upd_image=Imagen
+rac_upd_currVer=Versi&#243;n actual
+rac_upd_newVer=Versi&#243;n nueva
+rac_upd_preConfig=Conservar configuraci&#243;n
+rac_upd_sysRecImage=Imagen de recuperaci&#243;n de Lifecycle Controller
+rac_upd_confirmMsg=&#191;Est&#225; seguro de que desea continuar con la actualizaci&#243;n?
+rac_upd_uploadProgress=Carga del archivo en curso...
+rac_upd_cancelConfirmMsg=&#191;Est&#225; seguro de que desea cancelar la actualizaci&#243;n?
+rac_upd_fwUpdateProgress=La actualizaci&#243;n del firmware est&#225; en curso. Intente de nuevo m&#225;s tarde.
+rac_upd_fwUpdateCancelInfo= Haga clic en Cancelar para terminar la operaci&#243;n de actualizaci&#243;n o de reversi&#243;n.
+#
+rac_upd_step3=Actualizando (paso 3 de 3)
+rac_upd_updateProg=Progreso de la actualizaci&#243;n
+rac_upd_action=Acci&#243;n
+rac_upd_progress=Progreso
+rac_upd_writing=Actualizando&#8230;
+rac_upd_completed=Completado
+rac_upd_updatingImage=Actualizando la imagen, espere por favor
+rac_upd_fwImageSuccessMsg1=La imagen de firmware del iDRAC se ha actualizado correctamente.
+rac_upd_fwImageSuccessMsg2=El iDRAC se ha restablecido. No podr&#225; tener acceso al iDRAC con esta sesi&#243;n del explorador.
+rac_upd_fwImageSuccessMsg3=Cierre y con&#233;ctese nuevamente al iDRAC con una nueva sesi&#243;n del explorador.
+rac_upd_recImageSuccessMsg=La imagen de recuperaci&#243;n de Lifecycle Controller ha sido actualizada correctamente.
+rac_upd_updateTerm=RAC0304: La actualizaci&#243;n del firmware ha terminado.
+rac_upd_updateFail=RAC0140: Fall&#243; la actualizaci&#243;n del firmware.
+rac_upd_updateVFail=RAC0141: Fall&#243; la verificaci&#243;n de la actualizaci&#243;n del firmware.
+rac_upd_notValidFile=RAC0142: El archivo de imagen de firmware no es v&#225;lido para la actualizaci&#243;n de firmware del iDRAC.
+rac_upd_notInRecState=RAC0143: El iDRAC no est&#225; en estado de recuperaci&#243;n.
+rac_upd_failed=RAC0144: Fallido
+rac_upd_notInRec=RAC0145: No se encuentra en recuperaci&#243;n
+rac_upd_invPlatform=Esta imagen no es v&#225;lida para esta plataforma.
+#
+# PM
+#
+pm_image=Imagen
+pm_upd_currVer=Versi&#243;n actual
+pm_upd_newVer=Versi&#243;n nueva
+pm_upd_image=Imagen de subsistema de desarrollo de la marca
+pm_upd_failedMsg=Fall&#243; la carga de la imagen de subsistema de desarrollo de la marca
+pm_upd_NAMsg=No se permite la actualizaci&#243;n de la imagen de subsistema de desarrollo de la marca
+pm_upd_disabledMsg=El subsistema de desarrollo de la marca podr&#237;a estar desactivado
+pm_upd_successMsg=La imagen de subsistema de desarrollo de la marca ha sido actualizado correctamente.
+pm_upd_step2=Estado (2 de 3)
+pm_upd_rstiDRAC=Reinicie el iDRAC despu&#233;s de la actualizaci&#243;n
+pm_upd_uploadedImage=Imagen cargada
+pm_upd_step3=Actualizando (paso 3 de 3)
+#
+# System -> Properties -> WWN/MAC (flexAddress)
+#
+wwnmac_title=WWN/MAC
+wwnmac_location=Ubicaci&#243;n
+wwnmac_fabric=Red Fabric
+wwnmac_server_assigned=Asignado por servidor
+wwnmac_chassis_assigned=Asignados por chasis
+wwnmac_remote_assigned=Asignados de manera remota
+wwnmac_flexaddr_enabled=FlexAddress est&#225; activado
+wwnmac_flexaddr_disabled=FlexAddress est&#225; desactivado
+wwnmac_flexaddr_cmcLink=Haga clic aqu&#237; para ver la informaci&#243;n del CMC y activar FlexAddress.
+wwnmac_slotid=Identificaci&#243;n de ranura
+#
+# iDRAC Settings -> Properties -> Settings (NTP)
+#
+ntp_date_time=Fecha/Hora
+ntp_idrac_settings=Zona horaria y NTP
+ntp_time_zone=Zona horaria
+ntp_protocol_title=Protocolo de tiempo de red
+ntp_enable_ntp=Activar protocolo de tiempo de red (NTP)
+ntp_server1=Servidor NTP 1
+ntp_server2=Servidor NTP 2
+ntp_server3=Servidor NTP 3
+ntp_server4=Servidor NTP 4
+ntp_server_invalid=Servidor NTP no v&#225;lido
+ntp_server_configure=Se debe configurar por lo menos un servidor NTP.
+ntp_info_message=Los cambios realizados en la p&#225;gina podr&#237;an no reflejarse de inmediato. Al actualizar la p&#225;gina despu&#233;s de la demora correspondiente se mostrar&#225;n los nuevos valores.
+ntp_set_tz_error=No se pudo establecer la zona horaria.
+ntp_set_cfg_error=No se pudo establecer el NTP.
+#
+#
+rac_upd_rollbackConfirm=&#191;Est&#225; seguro de que desea revertir?
+rac_upd_rollbacksuccess=La imagen de firmware del iDRAC se ha revertido correctamente.
+rac_upd_rollbackFail=RAC0146: Fall&#243; la operaci&#243;n de reversi&#243;n del firmware.
+rac_upd_rollbackVer=Versi&#243;n de la reversi&#243;n
+rac_upd_rollbackImageNo=RAC0147: La reversi&#243;n del firmware no est&#225; disponible.
+#
+### Batteries -> Properties
+#
+#
+bat_prop_power_off=RAC0148: No se puede recuperar la informaci&#243;n de las bater&#237;as. El sistema est&#225; apagado.
+bat_prop_batteries=Bater&#237;as
+bat_prop_bat_title=Utilice esta p&#225;gina para ver la informaci&#243;n de la bater&#237;a.
+bat_prop_bat_indBatElem=Elementos de bater&#237;a individuales
+bat_prop_bat_status=Estatus
+bat_prop_bat_probName=Nombre de la sonda
+bat_prop_bat_reading=Estado
+#
+#
+### Fans -> Properties
+#
+#
+fan_prop_power_off=RAC0149: No se puede recuperar la informaci&#243;n del ventilador. El sistema est&#225; apagado.
+fan_prop_fan=Ventiladores
+fan_prop_fan_fanProb=Sondas del ventilador
+fan_prop_fan_info=Informaci&#243;n de las sondas del ventilador
+fan_prop_fan_title=Utilice esta p&#225;gina para ver la informaci&#243;n del ventilador. 
+fan_prop_fan_fanRedund=Redundancia de ventiladores
+fan_prop_fan_probList=Lista de sondas
+fan_prop_fan_redundStatus=Estado de redundancia
+fan_prop_fan_lost=Perdido
+fan_prop_fan_full=Completo
+#
+fan_prop_fan_warnThres=Umbral de advertencia
+fan_prop_fan_failThres=Umbral de falla
+fan_prop_fan_status=Estatus
+fan_prop_fan_probName=Nombre de la sonda
+fan_prop_fan_reading=Lectura
+fan_prop_fan_min=M&#237;n.
+fan_prop_fan_max=M&#225;x.
+#
+#
+### CPU
+#
+#
+cpu_probe_status=Estatus
+cpu_probe_name=Nombre de la sonda
+cpu_probe_reading=Estado
+cpu_prop_power_off=RAC0149: No se puede recuperar la informaci&#243;n del sensor de sonda de la CPU. El sistema est&#225; apagado.
+#
+#
+### Intrusion -> Properties
+#
+#
+int_prop_power_off=RAC0150: No se puede recuperar la informaci&#243;n del sensor de intromisi&#243;n. El sistema est&#225; apagado.
+int_prop_int=Intromisi&#243;n
+int_prop_int_info=Informaci&#243;n de intromisi&#243;n
+int_prop_int_title=Utilice esta p&#225;gina para ver la informaci&#243;n de intromisi&#243;n. 
+int_prop_int_status=Estatus
+int_prop_int_probName=Nombre de la sonda
+int_prop_int_state=Estado
+#
+#
+### Removable Flash Media -> Properties
+#
+#
+rems_prop_remStorage=Medios flash extra&#237;bles
+rems_prop_remStorage_off=RAC0151: No se puede recuperar la informaci&#243;n de los medios flash extra&#237;bles. El sistema est&#225; apagado.
+rems_prop_elm=Elementos de los medios flash extra&#237;bles
+rems_prop_elm_info=Informaci&#243;n de los medios flash extra&#237;bles
+rems_prop_elm_title=Utilice esta p&#225;gina para ver la informaci&#243;n de los medios flash extra&#237;bles. 
+rems_prop_elm_rmvsRedund=M&#243;dulo SD doble interno
+rems_prop_elm_indRmvsElem=Estado del m&#243;dulo SD interno
+#
+rems_prop_elm_redundStatus=Estado de redundancia
+#
+rems_prop_elm_status=Estatus
+rems_prop_elm_loc=Ubicaci&#243;n
+rems_prop_elm_onlineStatus=Estado en l&#237;nea
+#
+#
+### Power Supplies -> Properties
+#
+#
+pwrs_prop_power_off=RAC0152: No se puede recuperar la informaci&#243;n del suministro de energ&#237;a. El sistema est&#225; apagado.
+pwrs_prop_powerSupp=Suministros de energ&#237;a
+pwrs_prop_elm=Elementos del suministro de energ&#237;a
+pwrs_prop_elm_info=Informaci&#243;n de los suministros de energ&#237;a
+pwrs_prop_elm_title=Utilice esta p&#225;gina para ver la informaci&#243;n de suministro de energ&#237;a. 
+pwrs_prop_elm_pwrSupRedund=Redundancia de suministros de energ&#237;a
+pwrs_prop_elm_indPwrSupElem=Elementos individuales de suministro de energ&#237;a
+pwrs_prop_elm_pwrSupRedundPolicy=Pol&#237;tica de redundancia
+pwrs_prop_elm_pwrSupRedundPolicyYes=Redundancia del suministro de energ&#237;a
+pwrs_prop_elm_pwrSupRedundPolicyNo=Sin redundancia
+#
+pwrs_prop_elm_redundStatus=Estado de redundancia
+pwrs_prop_redundancyConfig=Las opciones de configuraci&#243;n est&#225;n disponibles a trav&#233;s de
+pwrs_prop_redundancyUnknown=Se desconoce la redundancia de alimentaci&#243;n.
+pwrs_prop_redundancyFull=La redundancia de alimentaci&#243;n est&#225; completa.
+pwrs_prop_redundancyDegraded=La redundancia de alimentaci&#243;n est&#225; degradada.
+pwrs_prop_redundancyLost=La redundancia de alimentaci&#243;n est&#225; perdida.
+pwrs_prop_powerConfig=Configuraci&#243;n de la alimentaci&#243;n
+pwrs_prop_goingToPowerConfig=Cargando la configuraci&#243;n de la alimentaci&#243;n...
+pwrs_prop_psStateAbsent=Ausente
+pwrs_prop_psStatePresence=Presente
+pwrs_prop_psStateFailure=Falla
+pwrs_prop_psStatePredictive=Falla predictiva
+pwrs_prop_psStateACLost=Se perdi&#243; la entrada
+pwrs_prop_psStateLostOutofrange=Se perdi&#243; la entrada o est&#225; fuera de rango
+pwrs_prop_psStatePresentOutofrange=Entrada presente est&#225; fuera de rango
+pwrs_prop_psStateConfigError=Error de configuraci&#243;n 
+pwrs_prop_psStateAbsentSysOff=El sistema est&#225; apagado
+pwrs_prop_psStatePresenceSysOff=El sistema est&#225; apagado
+#
+pwrs_prop_elm_health=Condici&#243;n
+pwrs_prop_elm_status=Estatus
+pwrs_prop_elm_loc=Ubicaci&#243;n
+pwrs_prop_elm_name=Nombre
+pwrs_prop_elm_type=Tipo
+pwrs_prop_elm_inWatt=Potencia de entrada
+pwrs_prop_elm_outWatt=Potencia de salida
+pwrs_prop_elm_maxWatt=Potencia m&#225;xima
+pwrs_prop_elm_onlineStatus=Estado en l&#237;nea
+pwrs_prop_elm_fwVer=Versi&#243;n del firmware
+pwrs_prop_elm_partno=N&#250;mero de parte
+#
+alert_pwrs_noRedundancyPolicy=RAC0153: Modo de alimentaci&#243;n no redundante: Revise el manual del hardware del sistema para conocer las implicaciones.
+alert_pwrs_degradedStatus=RAC0154: Modo de alimentaci&#243;n no redundante: El suministro de energ&#237;a secundario se ha degradado.
+#
+#
+### Temperatures-> Properties
+#
+#
+tem_prop_power_off=RAC0155: No se puede recuperar la informaci&#243;n de la temperatura. El sistema est&#225; apagado.
+tem_prop_temp=Temperaturas
+tem_prop_prob=Sondas de temperatura
+tem_prop_prob_info=Informaci&#243;n de las sondas de temperatura
+tem_prop_prob_title=Utilice esta p&#225;gina para ver la informaci&#243;n del sensor de temperatura.
+#
+tem_prop_prob_warnThres=Umbral de advertencia
+tem_prop_prob_failThres=Umbral de falla
+tem_prop_prob_status=Estatus
+tem_prop_prob_probeName=Nombre de la sonda
+tem_prop_prob_reading=Lectura
+tem_prop_prob_min=M&#237;n.
+tem_prop_prob_max=M&#225;x.
+#
+#
+### Voltages-> Properties
+#
+#
+vol_prop_power_off=RAC0156: No se puede recuperar la informaci&#243;n del voltaje. El sistema est&#225; apagado.
+vol_prop_volt=Voltajes
+vol_prop_prob=Sondas de voltaje
+vol_prop_prob_info=Informaci&#243;n de las sondas de voltaje
+vol_prop_prob_title=Utilice esta p&#225;gina para ver la informaci&#243;n de voltaje del sensor.
+vol_prop_prob_status=Estatus
+vol_prop_prob_probeName=Nombre de la sonda
+vol_prop_prob_reading=Lectura
+#
+#
+### Power Monitoring-> Properties
+#
+# Status heading
+pwm_prop_status=Estatus
+pwm_prop_powerControl=Control de alimentaci&#243;n:
+pwm_prop_iwantto=Seleccione ...
+pwm_prop_health=Condici&#243;n
+pwm_prop_serverStatus=Estado del servidor
+pwm_prop_realTimeReading=Lectura en tiempo real
+pwm_prop_powersupplyred=Redundancia del suministro de energ&#237;a
+pwm_prop_powercappolicy=Pol&#237;tica de l&#237;mite de alimentaci&#243;n
+pwm_prop_powercapActive=Activa
+pwm_prop_redundand_full=Completo
+pwm_prop_redundand_degraded=Degradado
+pwm_prop_redundand_lost=Perdido
+pwm_prop_redundand_disabled=Desactivado
+pwm_prop_psu_statusUnknown=Desconocido
+pwm_prop_psu_statusOk=En buen estado
+pwm_prop_psu_statusWarn=Advertencia
+pwm_prop_psu_statusCrit=Cr&#237;tico
+# Power heading
+pwm_prop_power=Alimentaci&#243;n
+pwm_prop_present=Presente
+pwm_prop_past=Pasado
+pwm_prop_failureThreshold=Umbral de falla
+pwm_prop_warningThreshold=Umbral de advertencia
+pwm_prop_currentReading=Lectura actual
+pwm_prop_budget=Pol&#237;tica de l&#237;mite de alimentaci&#243;n
+pwm_prop_history=Historial
+pwm_prop_lastHour=&#218;ltima hora
+pwm_prop_lastDay=&#218;ltimo d&#237;a
+pwm_prop_lastWeek=&#218;ltima semana
+pwm_prop_CMCwarningThreshold=Asignaci&#243;n de CMC 
+pwm_prop_power_units=Unidades de alimentaci&#243;n
+# Present Reading heading
+pwm_prop_presentReading=Lectura actual
+pwm_prop_probeName=Nombre de la sonda
+# PSU Readings heading
+pwm_prop_psuReadings=Lecturas de unidad de suministro de energ&#237;a
+pwm_prop_powerReadings=Lecturas de alimentaci&#243;n
+pwm_prop_psuName=Nombre
+# Cumulative Reading heading
+pwm_prop_cumulativeReading=Lectura acumulada
+pwm_prop_totalUsage=Uso total
+# Historical Peaks heading
+pwm_prop_historicalPeaks=Picos hist&#243;ricos
+pwm_prop_peakWatts=Vatios pico
+pwm_prop_peakWattsTime=Hora de vatios pico
+pwm_prop_peakAmps=Amperios pico
+pwm_prop_peakAmpsTime=Hora de amperios pico
+# Historical Trends heading
+pwm_prop_historicalTrends=Tendencias hist&#243;ricas
+pwm_prop_averageUsage=Uso promedio
+pwm_prop_maxPeak=Pico m&#225;ximo
+pwm_prop_maxPeakTime=Hora de pico m&#225;ximo
+pwm_prop_minPeak=Pico m&#237;nimo
+pwm_prop_minPeakTime=Hora de pico m&#237;nimo
+# System Headroom heading
+pwm_prop_systemHeadroom=Capacidad del sistema
+pwm_prop_statistic=Estad&#237;stica
+pwm_prop_instantaneous=Instant&#225;nea
+pwm_prop_peak=Pico
+# general terms
+pwm_prop_amps=Amperios
+pwm_prop_btuh=BTU/h
+pwm_prop_capacity=Capacidad
+pwm_prop_kwh=KWh
+pwm_prop_reading=Lectura
+pwm_prop_reset=Restablecer
+pwm_prop_since=Desde
+pwm_prop_time=Hora
+pwm_prop_hourly=Cada hora
+pwm_prop_utilization=% DE USO
+pwm_prop_volts=Voltios
+pwm_prop_watts=Vatios
+pwm_prop_watts_short=W
+pwm_prop_amps_short=A
+pwm_prop_av_watts=Vatios promedio
+pwm_prop_av_amps=Amperios promedio
+# Messages
+pwm_prop_pwr_resetAlert=Advertencia: Est&#225; a punto de restablecer las lecturas. &#191;Est&#225; seguro de que desea continuar?
+pwm_prop_power_off=RAC0157: No se puede recuperar la informaci&#243;n del sensor de alimentaci&#243;n. El sistema est&#225; apagado.
+pwm_err_powerGuage=Hubo un error al cambiar el medidor de alimentaci&#243;n
+pwm_err_min_threshold=Error de umbral m&#237;nimo
+pwm_err_max_threshold=Error de umbral m&#225;ximo
+pwrm_prop_sys_power_off=El sistema est&#225; apagado. No se puede recuperar la informaci&#243;n del sensor
+pwrm_prop_no_sensor=No se puede recuperar la informaci&#243;n del sensor
+pwrm_prop_no_policy=No hay pol&#237;tica establecida de l&#237;mite de alimentaci&#243;n
+#
+#
+### LCD Status-> Properties
+#
+#
+lcd_prop_lcd_status=Estado de la pantalla LCD
+lcd_prop_lcd=Pantalla LCD
+lcd_prop_lcd_main=Informaci&#243;n del panel frontal
+led_prop_led_main=Informaci&#243;n del panel frontal
+lcd_prop_lcd_feed=Se&#241;al directa del panel frontal
+lcdled_prop_lcdled_feed=Se&#241;al directa del panel frontal
+led_prop_lcd_feed=Se&#241;al directa del panel frontal
+lcd_prop_lcd_feed_info=Informaci&#243;n
+lcd_prop_lcd_feed_infomation=Los mensajes de error est&#225;n actualmente ocultos en la pantalla LCD. Seleccione Mostrar errores para mostrarlos.
+led_prop_led_feed_infomation=Los mensajes de error est&#225;n actualmente ocultos en los LED. Seleccione Mostrar errores para mostrarlos.
+lcd_prop_lcd_feed_instruction=Instrucciones:
+lcd_prop_lcd_feed_instructions1=Esto es una se&#241;al directa de lo que el panel frontal muestra actualmente. Utilice esta secci&#243;n para ocultar o mostrar los mensajes 
+lcd_prop_lcd_feed_instructions2= de error actuales de la pantalla LCD (esto no evita que los mensajes de error futuros aparezcan en la pantalla LCD).
+lcdled_prop_lcdled_feed_instructions=&#201;sta es una se&#241;al directa de lo que el panel frontal muestra actualmente. Utilice esta secci&#243;n para ocultar o mostrar los mensajes de error actuales de la pantalla LCD (esto no evita que los mensajes de error futuros aparezcan en la pantalla LCD). 
+lcd_prop_led_feed_instructions=Utilice esta secci&#243;n para ocultar o mostrar los mensajes de error actuales de los LED (esto no evita que aparezcan mensajes de error en los LED en el futuro). 
+lcd_prop_lcd_sysled=LED de identificaci&#243;n del sistema: 
+lcd_prop_lcd_screen=Pantalla LCD: 
+lcd_prop_lcd_setting=Definir mensaje de inicio: 
+lcd_prop_lcd_vconsole_indication=Activar indicaci&#243;n de consola virtual
+lcd_prop_lcd_setting_title=Configuraci&#243;n de la pantalla LCD
+lcd_prop_lcd_info=Instrucciones:
+lcd_prop_lcd_infomation=Utilice esta secci&#243;n para establecer el mensaje de inicio de la pantalla LCD. 
+lcd_prop_led_setting_title=Configuraci&#243;n de LED de identificaci&#243;n del sistema
+lcd_prop_led_info=Instrucciones:
+lcd_prop_led_infomation= Utilice esta secci&#243;n para identificar el servidor por medio del LED de identificaci&#243;n del sistema que parpadea.
+lcd_prop_led_timeout=Tiempo de espera del LED de identificaci&#243;n del sistema 
+lcd_prop_lcd_timeout=Tiempo de espera del parpadeo del LED de identificaci&#243;n del sistema
+lcd_prop_led_timeoutlength=Duraci&#243;n del tiempo de espera: 
+lcd_prop_led_timeout_action=Acciones...
+lcd_prop_led_timeout_blinkon=Activar parpadeo 
+lcd_prop_led_timeout_blinkoff=Desactivar parpadeo
+lcd_prop_led_timeout_1day=Activar parpadeo del tiempo de espera de 1 d&#237;a
+lcd_prop_led_timeout_1week=Activar parpadeo del tiempo de espera de 1 semana
+lcd_prop_led_timeout_1month=Activar parpadeo del tiempo de espera de 1 mes
+lcd_prop_led_second=Segundos
+lcd_prop_lcd_message=Mensaje de inicio de la pantalla LCD
+lcd_prop_lcd_title=El siguiente mensaje se muestra actualmente en la pantalla LCD del sistema.
+lcd_prop_lcd_blink=Activar parpadeo ahora del LED de identificaci&#243;n del sistema
+lcd_prop_lcd_blink_lcd=Activar parpadeo ahora del LED de identificaci&#243;n del sistema
+lcd_prop_lcd_unblink=LED de identificaci&#243;n del sistema
+lcd_prop_lcd_set_message=Definir mensaje de inicio 
+lcd_prop_lcd_text_description=Escriba aqu&#237; un mensaje personalizado
+lcd_prop_lcd_clear_events=Borrar errores del panel frontal
+lcd_prop_lcd_show_events=Mostrar errores del panel frontal
+lcd_prop_lcd_hide_events=Ocultar errores del panel frontal
+lcd_prop_lcd_temporary_change=Cambio temporal (aparece hasta que se borra en la pantalla LCD)
+lcd_prop_lcd_options_none=Ninguno
+lcd_prop_lcd_options_default=Predeterminado
+lcd_prop_lcd_options_service_tag=Etiqueta de servicio
+lcd_prop_lcd_options_system_name=Nombre del host
+lcd_prop_lcd_options_system_power=Alimentaci&#243;n del sistema
+lcd_prop_lcd_options_asset_tag=Etiqueta de propiedad
+lcd_prop_lcd_options_system_model=Modelo del sistema
+lcd_prop_lcd_options_temperature=Temperatura ambiente
+lcd_prop_lcd_options_mac_addr=Direcci&#243;n MAC del DRAC
+lcd_prop_lcd_options_ipv4_addr=Direcci&#243;n IPv4 del DRAC
+lcd_prop_lcd_options_ipv6_addr=Direcci&#243;n IPv6 del DRAC
+lcd_prop_lcd_options_custom=Definido por el usuario
+lcd_prop_lcd_show=Mostrar errores
+lcd_prop_lcd_default_custom_message=&#60;Crear mensaje de inicio definido por el usuario. (L&#237;mite de 62 caracteres)&#62;
+lcd_prop_lcd_undefined=No definido
+lcd_prop_tem_power_off=El sistema est&#225; apagado. No se puede recuperar la informaci&#243;n de la temperatura.
+lcd_prop_led_ledmsg_noerr=No se muestran errores
+lcd_prop_led_ledmsg_enabled=Identificaci&#243;n activada
+lcd_prop_led_ledmsg_erron=Errores en el servidor
+lcd_prop_led_ledmsg_erronenabled=Errores en el servidor.
+lcd_prop_led_ledinfo=Se trata de un avance en vivo del indicador que actualmente aparece en los LED del panel frontal. Use esta secci&#243;n para ocultar o mostrar los mensajes de error actuales del panel frontal (esto no evita que en el futuro aparezcan mensajes de error en el panel frontal).
+lcd_prop_led_ledleds=LED del panel frontal
+lcd_prop_led_ledsysid=Identificaci&#243;n del sistema
+lcd_prop_led_ledhealth=Condici&#243;n
+lcd_prop_led_ledelectrical=Errores el&#233;ctricos
+lcd_prop_led_ledmemory=Errores de memoria
+lcd_prop_led_ledhd=Discos duros
+lcd_prop_led_ledthermal=Errores t&#233;rmicos
+lcd_prop_led_ledpci=Errores de tarjeta PCI
+#
+#
+#testurls
+#
+test_title=Esta p&#225;gina contiene v&#237;nculos que se pueden usar para solicitar el documento XML directamente al servidor (en vez de pasar por las p&#225;ginas web).
+test_info=El siguiente campo y el v&#237;nculo bajo \"Reemplazar valores de CLP\" ofrecen una manera de establecer la variable AIM que se utiliza en SSH para determinar si debe ejecutar CLP o si debe mostrar la consola de Linux. Introduzca un usuario de sistema v&#225;lido del iDRAC para desactivar CLP y tener acceso a la consola de Linux por medio de SSH o ingrese \"racuser\" para activar CLP.
+test_click=Haga clic
+test_here=aqu&#237;
+test_toGetVal=para obtener el valor actual de la variable:
+test_reboot=para reiniciar el iDRAC.
+test_categories=Categor&#237;as:
+test_tempSensors=Sensores de temperatura
+#
+test_tempThreshold=Sensores del umbral de temperatura
+test_tempSensorMode=Obtener el modo del sensor de temperatura.
+test_lowTempWarn=Advertencia de temperatura baja.
+test_highTempWarn=Advertencia de temperatura alta.
+test_lowTempFail=Falla de temperatura baja.
+test_highTempFail=Falla de temperatura alta.
+test_temperatureSensor=Sensor de temperatura
+#
+test_issueSCLogin=Emitir inicio de sesi&#243;n de SC.
+test_ESPTesting=Prueba de ESP
+test_currValSysDesc=El valor actual de la descripci&#243;n del sistema es:
+test_setValSysDesc=Establecer el valor de mi descripci&#243;n del sistema
+test_newValSysDesc=El nuevo valor de la descripci&#243;n del sistema es:
+test_setValIDRAC=Establecer el valor del sistema de iDRAC
+test_fwlocation=Ubicaci&#243;n del firmware:
+#
+#
+####Alert &#38; Dynamic Messages
+#
+alert_enableConfirmVM=Las sesiones activas de medios virtuales se desconectar&#225;n moment&#225;neamente. &#191;Desea continuar?
+alert_enableConfirmVF=Las sesiones activas de vFlash se desconectar&#225;n moment&#225;neamente. &#191;Desea continuar?
+#
+alert_krbkeytabUploadErrValidationFailed=RAC0158: Fall&#243; la carga del archivo keytab de Kerberos.
+alert_sslCertUploadSuccess=El certificado se carg&#243; satisfactoriamente. Se restablecer&#225; el iDRAC ahora y todas las sesiones web de interfaz gr&#225;fica del usuario terminar&#225;n. Espere unos minutos antes de volver a conectarse al iDRAC.
+alert_sslCertUploadErrExistingCsrCantDetermine=RAC0159: Fall&#243; la carga del certificado: No hay CSR o clave privada pendiente.
+alert_sslCertUploadErrCsrValidationFailed=RAC0160: Fall&#243; la carga del certificado: No se pudo validar el certificado.
+alert_remote_launch=RAC0161: Debe tener privilegios para la consola virtual y el inicio de sesi&#243;n &#250;nico configurado para usar esta funci&#243;n.
+#
+alert_ADCertUploadErrUnabletoGetIssuerCert=RAC0162: Fall&#243; la carga del certificado. No se pudo obtener el certificado del emisor.
+alert_ADCertUploadErrUnableToGetCertCRL=RAC0163: Fall&#243; la carga del certificado. No se pudo obtener la CRL del certificado.
+alert_ADCertUploadErrUnableToDecryptCertSignature=RAC0164: Fall&#243; la carga del certificado. No se pudo descifrar la firma del certificado.
+alert_ADCertUploadErrUnableToDecryptCRLSignature=RAC0165: Fall&#243; la carga del certificado. No se pudo descifrar la firma de la CRL.
+alert_ADCertUploadErrUnableToDecodeIssuerPublicKey=RAC0166: Fall&#243; la carga del certificado. No se pudo descodificar la clave p&#250;blica del emisor.
+alert_ADCertUploadErrSignatureFailure=RAC0167: Fall&#243; la carga del certificado. Falla de firma del certificado.
+alert_ADCertUploadErrCRLSignatureFailure=RAC0168: Fall&#243; la carga del certificado. Falla de firma de la CRL.
+alert_ADCertUploadErrNotYetValid=RAC0169: Fall&#243; la carga del certificado: El certificado no es v&#225;lido.
+alert_ADCertUploadErrCRLNotYetValid=RAC0170: Fall&#243; la carga del certificado. La CRL no es v&#225;lida.
+alert_ADCertUploadErrCertHasExpired=RAC0171: Fall&#243; la carga del certificado. El certificado ha expirado.
+alert_ADCertUploadErrCRLHasExpired=RAC0172: Fall&#243; la carga del certificado. La CRL ha expirado.
+alert_ADCertUploadErrFormatNotBefore=RAC0173: Fall&#243; la carga del certificado. Error de formato en el campo notBefore del certificado.
+alert_ADCertUploadErrFormatNotAfter field=RAC0174: Fall&#243; la carga del certificado. Error de formato en el campo notAfter del certificado.
+alert_ADCertUploadErrFormatCRLLastUpdate=RAC0175: Fall&#243; la carga del certificado. Error de formato en el campo lastUpdate de CRL.
+alert_ADCertUploadErrFormatCRLNextUpdate=RAC0176: Fall&#243; la carga del certificado. Error de formato en el campo nextUpdate de CRL.
+alert_ADCertUploadErrOutOfMem=RAC0177: Fall&#243; la carga del certificado. Se agot&#243; la memoria.
+alert_ADCertUploadErrSelfSignedCert=RAC0178: Fall&#243; la carga del certificado. Certificado autofirmado.
+alert_ADCertUploadErrSelfSignedCertChain=RAC0179: Fall&#243; la carga del certificado. Certificado autofirmado en cadena de certificados.
+alert_ADCertUploadErrUnableToGetLocalIssuerCert=RAC0180: Fall&#243; la carga del certificado. No se pudo obtener el certificado del emisor local.
+alert_ADCertUploadErrUnableToVerifyFirstCert=RAC0181: Fall&#243; la carga del certificado. No se pudo verificar el primer certificado.
+alert_ADCertUploadErrCertChainTooLong=RAC0182: Fall&#243; la carga del certificado. La cadena de certificados es muy larga.
+alert_ADCertUploadErrcertRevoked=RAC0183: Fall&#243; la carga del certificado. El certificado est&#225; revocado.
+alert_ADCertUploadErrInvalidCACert=RAC0184: Fall&#243; la carga del certificado. El certificado de CA no es v&#225;lido.
+alert_ADCertUploadErrInvalidNonCACert=RAC0185: Fall&#243; la carga del certificado. Certificado ajeno a CA no v&#225;lido (tiene marcas de CA).
+alert_ADCertUploadErrPathLengthExceeded=RAC0186: Fall&#243; la carga del certificado. Se excedi&#243; la restricci&#243;n del tama&#241;o de la ruta de acceso.
+alert_ADCertUploadErrProxyPathLengthExceeded=RAC0187: Fall&#243; la carga del certificado. Se excedi&#243; la restricci&#243;n del tama&#241;o de la ruta de acceso del proxy.
+alert_ADCertUploadErrProxyCertNotAllowed=RAC0188: Fall&#243; la carga del certificado. No se permiten los certificados proxy, establezca el indicador apropiado.
+alert_ADCertUploadErrUnsupportedCertPurpose=RAC0189: Fall&#243; la carga del certificado. No se admite el prop&#243;sito del certificado.
+alert_ADCertUploadErrNotTrusted=RAC0190: Fall&#243; la carga del certificado. No es confiable.
+alert_ADCertUploadErrRejected=RAC0191: Fall&#243; la carga del certificado. Se rechaz&#243; el certificado.
+alert_ADCertUploadErrApplicationVerificationFailure=RAC0192: Fall&#243; la carga del certificado. Falla en la verificaci&#243;n de la aplicaci&#243;n.
+alert_ADCertUploadErrSubjectIssuerMismatch=RAC0193: Fall&#243; la carga del certificado. Incompatibilidad en el emisor del asunto.
+alert_ADCertUploadErrAuthoritySubjectKeyMismatch=RAC0194: Fall&#243; la carga del certificado. Incompatibilidad entre el identificador de autoridad y la clave del asunto.
+alert_ADCertUploadErrAuthorityIssuerSerialNumberMismatch=RAC0195: Fall&#243; la carga del certificado. Incompatibilidad entre el n&#250;mero de serie del emisor y la autoridad.
+alert_ADCertUploadErrKeyUsageCertSigning=RAC0196: Fall&#243; la carga del certificado. El uso de claves no incluye la firma del certificado.
+alert_ADCertUploadErrUnableToGetCRLIssuerCert=RAC0197: Fall&#243; la carga del certificado. No se pudo obtener el certificado del emisor de la CRL.
+alert_ADCertUploadErrUnhandledCriticalExtension=RAC0198: Fall&#243; la carga del certificado. Extensi&#243;n cr&#237;tica no controlada.
+alert_ADCertUploadErrKeyUsageCRLSigning=RAC0199: Fall&#243; la carga del certificado. El uso de claves no incluye la firma de la CRL.
+alert_ADCertUploadErrKeyUsageDigitalSignature=RAC0200: Fall&#243; la carga del certificado. El uso de claves no incluye la firma digital
+alert_ADCertUploadErrUnhandledCriticalCRLExtension=RAC0201: Fall&#243; la carga del certificado. Extensi&#243;n cr&#237;tica de la CRL no controlada.
+alert_ADCertUploadErrInvalidInconsistentCertExtension=RAC0202: Fall&#243; la carga del certificado debido a que la extensi&#243;n del certificado no es v&#225;lida o es incongruente.
+alert_ADCertUploadErrInvalidInconsistentCertPolicyExtension=RAC0203: Fall&#243; la carga del certificado debido a que la extensi&#243;n de la pol&#237;tica del certificado no es v&#225;lida o es incongruente.
+alert_ADCertUploadErrNoExplicitPolicy=RAC0204: Fall&#243; la carga del certificado. No hay pol&#237;tica expl&#237;cita.
+alert_ADCertUploadErrRFC3779ResourceNotSubsetParentResources=RAC0205: Fall&#243; la carga del certificado. El recurso RFC 3779 no es un subconjunto de los recursos primarios.
+#
+alert_ADCertUploadErrLoadingFile=RAC0206: Fall&#243; la carga del certificado: No es un archivo de certificado.
+alert_ADCertUploadErrGeneric=RAC0207: Fall&#243; la carga del certificado.
+alert_SSHKeyUploadErrGeneric=RAC0208: Fall&#243; la carga: Podr&#237;a ser causada por los datos de una clave no v&#225;lida.
+#
+alert_sslCertUploadErrCannotCopy=RAC0209: Fall&#243; la carga del certificado: el iDRAC no puede cargarse en este momento.
+alert_sessionNotValid=RAC0210: La sesi&#243;n ya no es v&#225;lida.\n Inicie sesi&#243;n nuevamente.
+alert_updateFailed=RAC0211: Fall&#243; Aplicar.
+alert_plsWait=Espere por favor
+alert_plsWaitUpdate=Espere por favor, actualizando
+alert_plsWaitUpload=Espere por favor, cargando
+alert_and=y
+alert_rebootConfirm=&#191;Est&#225; seguro de que desea reiniciar el iDRAC?
+#
+alert_noFileSpec=No se especific&#243; un archivo.
+alert_uploadComplete=Carga completa.
+alert_uploadFailed=Fall&#243; la carga.
+alert_imgValFailed=Fall&#243; la validaci&#243;n de la imagen.
+alert_updateComplete=Actualizaci&#243;n completa
+alert_updateRestart=Actualizaci&#243;n completa. El sistema reiniciar&#225; ahora.
+alert_areYouSureMsg=&#191;Est&#225; seguro de que desea continuar?
+alert_WebServerWarning=Advertencia de desactivaci&#243;n de Webserver
+alert_uploadNetworkError=Error de red. Fall&#243; la carga.
+alert_cdFileTypeError=Seleccione .iso para el tipo de emulaci&#243;n de CD.
+alert_hddFileTypeError=Seleccione .img para el tipo de emulaci&#243;n de disco flexible o disco duro.
+#
+alert_submit=Est&#225; a punto de ejecutar una acci&#243;n de control de servidor. &#191;Est&#225; seguro de que desea continuar?
+alert_reqFail=Fall&#243; la solicitud
+alert_enterValFoll=Introduzca un valor para lo siguiente:
+alert_enterAlphaNum=Introduzca un valor alfanum&#233;rico o un s&#237;mbolo v&#225;lido para lo siguiente (consulte la ayuda en l&#237;nea para obtener m&#225;s informaci&#243;n): 
+alert_invEmail=La direcci&#243;n de correo electr&#243;nico no es v&#225;lida.
+alert_nocharAnd=El car&#225;cter &#8220;&#38;&#8221; no se admite.
+#
+#
+#
+alert_userNameMustMore=El nombre de usuario debe tener m&#225;s de 
+alert_userNameMustLess=El nombre de usuario debe tener menos de 
+alert_userNamePrintable=El nombre de usuario debe tener s&#243;lo caracteres imprimibles y no debe tener espacios en blanco.
+alert_spaceError=No use espacios en blanco antes o despu&#233;s del Nombre del usuario.
+alert_passwordMustMore=La contrase&#241;a debe tener m&#225;s de 
+alert_passwordMustLess=La contrase&#241;a debe tener menos de 
+alert_passwordPrintable=La contrase&#241;a debe tener s&#243;lo caracteres imprimibles y no debe tener espacios en blanco.
+alert_chars=caracteres.
+alert_loginWaitMsg=Iniciando sesi&#243;n... espere por favor
+alert_verifyCredential=Verificando las credenciales
+alert_loginFailedVerify=RAC0212: Fall&#243; el inicio de sesi&#243;n. Verifique que el nombre de usuario y contrase&#241;a sean correctos.
+alert_missedUserName=RAC0213: Falta el nombre de usuario.
+alert_missedPassword=RAC0214: Falta la contrase&#241;a.
+alert_loginFailedPrv=RAC0215: Fall&#243; el inicio de sesi&#243;n: El usuario no tiene privilegio de 'Inicio de sesi&#243;n en el iDRAC'.
+alert_loginFailed=RAC0216: Fall&#243; el inicio de sesi&#243;n.
+alert_badResponse=RAC0217: El iDRAC no responde.
+alert_validateUserInput=Validando la informaci&#243;n que el usuario introdujo.
+alert_commFailed=La comunicaci&#243;n fall&#243;. 
+alert_sessionCtExceeded=RAC0218: Se alcanz&#243; el n&#250;mero m&#225;ximo de sesiones de usuario.
+#
+alert_pwrCmdFailed=RAC0219: El comando de alimentaci&#243;n fall&#243;.
+#
+######System->Power Managment->Power Cap
+#
+alert_invWattRange=El valor de los vatios no es v&#225;lido.
+alert_expWattRange=El valor de los vatios no es v&#225;lido. Rango esperado:
+alert_invBTURange=El valor de BTU no es v&#225;lido.
+alert_expBTURange=El valor de BTU no es v&#225;lido. Rango esperado:
+alert_invPercent=El porcentaje m&#225;ximo definido por el usuario no es v&#225;lido. Introduzca un n&#250;mero entero dentro del rango de 0 a 100.
+alert_expPercentRange=El porcentaje m&#225;ximo definido por el usuario no es v&#225;lido. El rango v&#225;lido es de 0 a 100.
+alert_confirmWattsMsg=El l&#237;mite de alimentaci&#243;n definido por el usuario es menor que el l&#237;mite inferior recomendado. Este l&#237;mite de alimentaci&#243;n se puede aplicar pero el sistema podr&#237;a usar m&#225;s alimentaci&#243;n que lo que implica este l&#237;mite.\n\nPresione Aceptar para continuar.
+alert_confirmBTUMsg=El l&#237;mite de alimentaci&#243;n definido por el usuario es menor que el l&#237;mite inferior recomendado. Este l&#237;mite de alimentaci&#243;n se puede aplicar pero el sistema podr&#237;a usar m&#225;s alimentaci&#243;n que lo que implica este l&#237;mite.\n\nPresione Aceptar para continuar.
+alert_invMaxWatt=El l&#237;mite de alimentaci&#243;n definido por el usuario debe ser menor que el l&#237;mite de alimentaci&#243;n superior recomendado.
+alert_invMaxBTU=El l&#237;mite de alimentaci&#243;n definido por el usuario debe ser menor que el l&#237;mite de alimentaci&#243;n superior recomendado.
+ 
+alert_invMaxBTU=El valor del umbral en BTU debe ser menor que el valor del l&#237;mite m&#225;ximo de alimentaci&#243;n.
+#
+#
+######System->Logs->System Event Log
+#
+alert_delLog=Est&#225; a punto de eliminar el contenido del registro. &#191;Est&#225; seguro de que desea continuar?
+#
+#
+######System->Logs->Alert Management->Traps Settings
+#
+alert_field=campo
+alert_notFound=no se encontr&#243;
+alert_invSMTP=RAC0220: Direcci&#243;n IP no v&#225;lida del servidor SMTP.
+#
+######System->Logs->Alert Management->Email Alert Settings
+#
+alert_emailTooLong=RAC0221: La direcci&#243;n de correo electr&#243;nico de destino es demasiado grande. El tama&#241;o m&#225;ximo permitido es de 64 caracteres.
+alert_destEmailInvalid=RAC0222: La direcci&#243;n de correo electr&#243;nico de destino no es v&#225;lida.
+alert_invEmailDesc=RAC0223: Introduzca un valor alfanum&#233;rico o un s&#237;mbolo v&#225;lido para lo siguiente (consulte la ayuda en l&#237;nea para obtener m&#225;s informaci&#243;n):
+alert_emailDesc=RAC0224: Descripci&#243;n de correo electr&#243;nico no v&#225;lida.
+alert_sendFailed=RAC0225: Fall&#243; el env&#237;o del correo de prueba.
+alert_sendReqProFailed=RAC0226: Fall&#243; el env&#237;o: Fall&#243; la solicitud de procesamiento.
+alert_sendSuccess=RAC0310: El correo de prueba se envi&#243; satisfactoriamente.
+#
+#System->Logs->Last Crash Screen
+#
+alert_clearASR=Est&#225; a punto de eliminar la pantalla de &#250;ltimo bloqueo. &#191;Est&#225; seguro de que desea continuar?
+#
+#System->vFlash
+#
+alert_sdCardNotDetected=RAC0227: No se detecta una tarjeta SD: Inserte una tarjeta SD de capacidad mayor a 256 MB.
+alert_sdCardDetected=RAC0228: Se detecta una tarjeta SD con un formato no reconocido. Haga clic en Inicializar para inicializar la tarjeta.
+alert_sdCardDetectedNP=RAC0229: Se detect&#243; una tarjeta SD, no se reconoce el formato de acuerdo a la siguiente configuraci&#243;n. Privilegios insuficientes para inicializar la tarjeta.
+alert_formatConfirm=RAC0230: Esta operaci&#243;n elimina todos los datos en la tarjeta SD. &#191;Desea continuar?
+alert_formatPartConfirm=RAC0231: Esta operaci&#243;n elimina todos los datos en la partici&#243;n. &#191;Desea continuar?
+alert_applyFormatConfirm=RAC0232: Esta operaci&#243;n podr&#237;a tomar unos minutos en completarse. Se reinicializa la partici&#243;n vFlash al tama&#241;o especificado, se borra toda la informaci&#243;n existente y se formatea una parte de la tarjeta SD. &#191;Desea continuar?
+alert_ImageUploadSucess=RAC0233: El archivo de imagen se carg&#243; satisfactoriamente.
+alert_ImageUploadBlock=RAC0234: La carga de la imagen de vFlash est&#225; en curso. Intente de nuevo m&#225;s tarde.
+alert_ImageUploadTimeout=RAC0235: La carga de la imagen de vFlash agot&#243; el tiempo de espera.
+alert_ImageUploadFailed=RAC0236: Imagen no v&#225;lida: La carga fall&#243;
+alert_uploadError=RAC0237: Ocurri&#243; un error al cargar la imagen de vFlash.
+alert_sdCardBusy=RAC0238: Otro proceso est&#225; utilizando vFlash actualmente. Intente de nuevo m&#225;s tarde.
+alert_sdlocked=RAC0239: La tarjeta SD est&#225; protegida contra escritura.
+alert_vFlashDisabled=RAC0240: vFlash est&#225; desactivada.
+alert_vFlashNoSpace=RAC0241: El tama&#241;o especificado supera el espacio disponible.
+alert_vFlashNoPart=RAC0242: La partici&#243;n seleccionada no existe.
+alert_vFlashHasPart=RAC0243: La partici&#243;n fall&#243;: Se present&#243; un conflicto de creaci&#243;n de partici&#243;n con otra sesi&#243;n.
+alert_vFlashLabelUnique=RAC0244: La etiqueta de la partici&#243;n debe ser &#250;nica.
+alert_vFlashPartBusy=RAC0245: Otro proceso est&#225; utilizando la partici&#243;n.
+alert_vFlashPartReadOnly=RAC0246: La partici&#243;n es de s&#243;lo lectura.
+alert_vFlashPartAttached=RAC0247: La partici&#243;n est&#225; conectada en este momento.
+alert_deleteConfirm=RAC0248: Esta operaci&#243;n eliminar&#225; la partici&#243;n permanentemente. &#191;Desea continuar?
+alert_vFlashPartsBusy=RAC0249: Otro proceso est&#225; utilizando una o m&#225;s particiones.
+alert_vFlashPartsReadOnly=RAC0250: Una o m&#225;s particiones son de s&#243;lo lectura.
+alert_vFlashPartsAttached=RAC0251: Una o m&#225;s particiones est&#225;n conectadas en este momento.
+alert_vFlashPartsDetached=RAC0252: Una o m&#225;s particiones est&#225;n desconectadas en este momento.
+alert_vFlashCancelConfirmMsg=&#191;Est&#225; seguro de que desea cancelar la carga?
+alert_sdnopartition=Las particiones no est&#225;n creadas. Para crear particiones, vaya a las p&#225;ginas Crear partici&#243;n vac&#237;a o Crear a partir de una imagen.
+alert_uploadInProgress=Una operaci&#243;n para cargar una partici&#243;n existente est&#225; en curso. Int&#233;ntelo de nuevo una vez que esta operaci&#243;n se haya completado. Para supervisar el progreso de esta operaci&#243;n, haga clic en Actualizar en la p&#225;gina Administrar particiones de vFlash.
+alert_note=Las im&#225;genes que se carguen tienen un l&#237;mite de tama&#241;o de menos de 2 GB. 
+alert_retry=Vuelva a intentar la operaci&#243;n 'Crear a partir de la imagen'.
+#
+#System->console/Media
+#
+alert_kvmDisabledWarning=La consola virtual ha sido desactivada. &#191;Desea seguir usando la redirecci&#243;n de medios virtuales?
+alert_kvmconfigKVMDisabledWarning=Est&#225; a punto de cambiar la configuraci&#243;n del dispositivo. Todas las sesiones de redirecci&#243;n existentes se cerrar&#225;n. &#191;Desea continuar?
+alert_formatCheck=Haga clic en Aplicar para activar la tarjeta SD antes de inicializar.
+alert_formatCheck_VFKEnable=Haga clic en Aplicar para desactivar vFlash antes de inicializar.
+#
+#Remote Access->Configuration->Network
+#
+alert_dataCallback=dataCallback no admite: 
+alert_invalidDNSDomain=Nombre del dominio DNS no v&#225;lido.
+alert_invalidDNSiDRAC=Nombre DNS del DRAC no v&#225;lido.
+#
+alert_invIPv4addr=RAC0253: La direcci&#243;n IP no es v&#225;lida. Rango esperado: [1.0.0.0 - 223.255.255.255 excluyendo: 127 (el primer octeto)].
+alert_invIPv4gateway=RAC0254: La direcci&#243;n de la puerta de enlace no es v&#225;lida. Rango esperado: [0.0.0.0 &#243; 1.0.0.0 - 223.255.255.255 excluyendo: 127 (el primer octeto)].
+alert_invIPv4netMask=RAC0255: La m&#225;scara de subred no es v&#225;lida. Los rangos esperados son: 255.XXX.0.0 [Clase A], 255.255.XXX.0 [Clase B], 255.255.255.XXX [Clase C] y XXX.0.0.0 [otros], donde XXX debe ser v&#225;lido (0,128,192,224,240,248,252,254).
+alert_invIPv4DNS1=RAC0256: La direcci&#243;n de servidor DNS preferida no es v&#225;lida. Rango esperado: [0.0.0.0 &#243; 1.0.0.0 - 223.255.255.255 excluyendo: 127 (el primer octeto)].
+alert_invIPv4DNS2=RAC0257: La direcci&#243;n de servidor DNS alternativa no es v&#225;lida. Rango esperado: [0.0.0.0 &#243; 1.0.0.0 - 223.255.255.255 excluyendo: 127 (el primer octeto)].
+alert_invIPv4DNS1and2=RAC0258: Direcci&#243;n IPv4 no v&#225;lida en DNS1 o DNS2.
+#
+alert_invIPv6addr=RAC0259: Direcci&#243;n IPv6 no v&#225;lida.
+alert_invIPv6Prefix=RAC0260: Longitud del prefijo de IPv6 no v&#225;lido. Rango esperado: 1-128.
+alert_invIPv6gateway=RAC0261: Direcci&#243;n de puerta de enlace IPv6 no v&#225;lida.
+alert_invIPv6DNS1=RAC0262: La direcci&#243;n de servidor DNS IPv6 preferida no es v&#225;lida.
+alert_invIPv6DNS2=RAC0263: La direcci&#243;n de servidor DNS IPv6 alternativa no es v&#225;lida.
+alert_invIPv6DNS1and2=RAC0264: Direcci&#243;n IPv6 inv&#225;lida en DNS1 o DNS2.
+#
+alert_vlanMand=RAC0265: Especifique la identificaci&#243;n de VLAN y la prioridad de VLAN.
+alert_invVLanId=RAC0266: Identificaci&#243;n de VLAN no v&#225;lida. Rango esperado: De 1 a 4094.
+alert_invVLanPri=RAC0267: Prioridad de VLAN no v&#225;lida. Rango esperado: De 0 a 7.
+#
+alert_nicDisabled=RAC0268: El NIC est&#225; desactivado.
+alert_nicMTUInvalid=RAC0269: La MTU del NIC no es v&#225;lida. Rango esperado: De 576 a 1500.
+alert_ipv4AndIPv6Disabled=RAC0270: IPv4 e IPv6 est&#225;n desactivados.
+alert_lock=RAC0271: Si contin&#250;a, se bloquear&#225; la cuenta del usuario.
+alert_okToContinue=Haga clic en \"Aceptar\" para continuar o en \"Cancelar\" para cambiar la configuraci&#243;n.
+alert_YesToContinue=Haga clic en "S&#237;" para continuar o en "No" para conservar la configuraci&#243;n sin cambios.
+#
+alert_nicWarnMsg1=RAC0272: La desactivaci&#243;n de NIC evitar&#225; que el usuario tenga acceso al iDRAC de manera remota por medio de la interfaz gr&#225;fica de usuario web, Racadm remoto, SSH y Telnet. Racadm local y la interfaz serie seguir&#225;n funcionando.
+alert_nicWarnMsg2=RAC0273: El acceso al iDRAC se limitar&#225; a la ejecuci&#243;n de la utilidad Racadm en el servidor local o por medio de la interfaz serie.
+alert_nicWarnMsg3=RAC0274: Consulte la documentaci&#243;n del usuario del iDRAC para obtener m&#225;s informaci&#243;n sobre c&#243;mo usar la utilidad Racadm o la interfaz serie.
+alert_nicWarnMsg4=RAC0275: Haga clic en Aceptar para desactivar el NIC. Haga clic en Cancelar para dejar el valor sin cambios.
+alert_nicWarnMsg5=RAC0276: Para guardar los cambios y actualizar esta p&#225;gina, haga clic en Aplicar.
+alert_ipv4WarnMsg=RAC0277: La desactivaci&#243;n de IPv4 impide el acceso al iDRAC por medio de una direcci&#243;n IPv4.
+alert_ipv6WarnMsg=RAC0278: La desactivaci&#243;n de IPv6 impide el acceso al iDRAC por medio de una direcci&#243;n IPv6.
+#
+alert_invEncryptKey=RAC0279: Clave de cifrado no v&#225;lida. Formato esperado: De 0 a 40 caracteres hexadecimales, n&#250;mero par de caracteres, y no se permiten espacios en blanco.
+#
+#Remote Access->Configuration->Network->Security Settings
+#
+alert_ipRangeInvalid=RAC0280: No es v&#225;lida la direcci&#243;n del rango IP. Rango esperado: De 0.0.0.0 a 255.255.255.255.
+alert_ipRangeSubnetInvalid=RAC0281: La m&#225;scara de subred IP no es v&#225;lida. Rango esperado: De 0.0.0.0 a 255.255.255.255.
+alert_ipBlockFCountVal=RAC0282: El n&#250;mero de fallos de bloqueo de IP no es v&#225;lido. Rango esperado: De 2 a 16.
+alert_ipBlockFWindowVal=RAC0283: La ventana de fallos de bloqueo de IP no es v&#225;lida. Rango esperado: De 10 a 65535.
+alert_ipBlockFPTime=RAC0284: El tiempo de penalizaci&#243;n de fallo de bloqueo de IP no es v&#225;lido. Rango esperado: De 10 a 65535.
+#
+#Remote Access->Configuration->Users
+#
+alert_noUserFound=No se encontraron usuarios.
+#
+#Remote Access->Configuration->Users->User Configuration
+#
+alert_userNameBlank=RAC0285: El nombre de usuario no debe estar vac&#237;o.
+alert_passwordBlank=RAC0286: Los campos Contrase&#241;a nueva y Confirmar contrase&#241;a nueva no deben estar vac&#237;os.
+alert_confPasswordBlank=RAC0287: El campo de confirmaci&#243;n de contrase&#241;a no puede dejarse en blanco.
+alert_notAlphaNumeric=RAC0288: Anotaci&#243;n no v&#225;lida: La anotaci&#243;n debe tener &#250;nicamente caracteres alfanum&#233;ricos y s&#237;mbolos v&#225;lidos.
+alert_passwordNotMatch=RAC0289: Los valores de los campos Contrase&#241;a nueva y Confirmar contrase&#241;a nueva no coinciden.
+alert_newPassword=Contrase&#241;a nueva
+alert_userName=Nombre del usuario
+alert_userNameSpace=RAC0290: El nombre de usuario no puede ser s&#243;lo un espacio en blanco.
+alert_userExist=Ya existe un usuario que tiene este nombre. Seleccione otro nombre de usuario.
+alert_userBadChars=RAC0291: El nombre de usuario no puede contener: /, \\, @, ., o \" (comillas).
+#
+#Remote Access->Configuration->Active Directory->Test Settings
+#
+alert_testUserName=Nombre de usuario de prueba
+alert_testUserPass=Contrase&#241;a del usuario de prueba
+alert_mustLess=debe tener menos de
+alert_mustPrintable=debe tener s&#243;lo caracteres imprimibles y no debe tener espacios en blanco.
+alert_mustPrintableOnly=debe contener &#250;nicamente caracteres que se puedan imprimir.
+alert_mustConfig=se debe configurar.
+#
+#Remote Access->Configuration->Active Directory-> Active Directory Configuration and Management
+#
+alert_noValCertLoaded=RAC0292: No se ha cargado un certificado v&#225;lido.
+alert_validCACertRequest=RAC0293: Cuando la validaci&#243;n de certificados est&#225; activada, se debe cargar un certificado de ra&#237;z v&#225;lido de una Autoridad de certificaci&#243;n (CA). El certificado de la CA se utiliza para verificar el certificado SSL del servidor de directorio.
+alert_roleGroup=Grupo de funciones
+#
+alert_nameMustLess=El nombre debe tener menos de
+alert_nameMustPrintable=El nombre debe tener s&#243;lo caracteres que se pueden imprimir y no debe tener espacios en blanco.
+alert_domainMustLess=El dominio debe tener menos de
+alert_domainMustPrintable=El dominio debe tener s&#243;lo caracteres que se pueden imprimir y no debe tener espacios en blanco.
+alert_errorNavigation=Error:Navegaci&#243;n m&#225;s all&#225; del final del asistente.
+#
+alert_atleastOneNonePriv=Debe configurarse por lo menos un grupo de funciones para permitir el acceso al iDRAC.
+alert_timeoutBetween=El tiempo de espera debe ser un n&#250;mero entero entre 
+alert_domainContSerAddr=Direcci&#243;n de servidor de controlador de dominio
+alert_atleastOneDomain=Se debe configurar por lo menos una direcci&#243;n de servidor de controlador de dominio.
+alert_globalCatSerAddr=Direcci&#243;n de servidor de cat&#225;logo global
+alert_atleastOneGlobalCat1=Se debe configurar por lo menos una direcci&#243;n de servidor de cat&#225;logo global si los grupos de funciones y los usuarios de inicio de sesi&#243;n se encuentran en distintos dominios.
+alert_atleastOneGlobalCat2=En este caso de dominio cruzado, s&#243;lo los grupos universales se pueden usar como grupos de funciones o como grupos de usuario anidados.
+alert_atleastOneRoleGroup=Se debe configurar por lo menos un grupo de funciones.
+alert_GDomainWithoutGroup=tiene un dominio de grupo configurado sin tener un nombre de grupo.
+alert_mustDomainConfig=debe tener el dominio configurado.
+#
+alert_iDRACMustConfig=Se debe configurar el nombre de iDRAC.
+alert_iDRACDomainConfig=Se debe configurar el dominio de iDRAC.
+#
+alert_userDomMustLess=El nombre de dominio de usuario debe tener menos de 
+alert_userDomPrintable=El nombre de dominio de usuario debe tener s&#243;lo caracteres que se pueden imprimir y no debe tener espacios en blanco.
+alert_reachMaxDomain=Ha alcanzado el n&#250;mero m&#225;ximo de dominios.\nDebe eliminar por lo menos uno dominio existente para poder agregar un nuevo dominio.
+alert_mustSelUserDomainUpdate=Debe seleccionar el nombre de dominio de usuario que desea actualizar.
+alert_mustSupplyVal=Debe proporcionar un valor.
+alert_mustSelUserDomainDelete=Debe seleccionar el nombre de dominio de usuario que desea eliminar.
+#
+#Remote Access->Configuration->Serial
+#
+alert_timeoutVal=El valor de tiempo de espera no es v&#225;lido. Rango esperado: [de 60 a 1920]
+alert_histBuffSize=El valor del tama&#241;o de b&#250;fer de historial no es v&#225;lido. Rango esperado: [de 1 a 8192]
+#
+#Remote Access->Configuration->Serial Over LAN->Advanced Settings
+#
+alert_charAccInterval=RAC0294: El valor del intervalo de acumulaci&#243;n de caracteres no es v&#225;lido. Rango esperado: De 1 a 255.
+alert_charThresholdVal=RAC0295: El valor de umbral de env&#237;o de caracteres no es v&#225;lido. Rango esperado: De 1 a 255.
+#
+#Remote Access->Configuration->Services
+#
+alert_enterCommName=Introduzca un valor para el nombre de comunidad.
+alert_invCommName=Error: Valor no v&#225;lido para el nombre de comunidad=, utilice &#250;nicamente un valor alfanum&#233;rico o s&#237;mbolo v&#225;lido. Consulte la ayuda en l&#237;nea para obtener m&#225;s informaci&#243;n.
+alert_invWebSerTimeout=El valor de tiempo de espera de Webserver no es v&#225;lido. Rango esperado: [60-10800, 01-025060, o 0x3C-0x2A30 segundos]
+alert_invSSHTimeout=El valor de tiempo de espera de SSH no es v&#225;lido. Rango esperado: [0 o 0x0, 60-10800, 01-025060 o 0x3C-0x2A30 segundos]
+alert_invTelTimeout=El valor de tiempo de espera de Telnet no es v&#225;lido. Rango esperado: [0 o 0x0, 60-10800, 01-025060 o 0x3C-0x2A30 segundos]
+alert_invWebHttpPort=El valor del puerto HTTP de Web Server no es v&#225;lido. Rango esperado: [de 1 a 65535, de 01 a 0177777 o de 0x1 a 0xFFFF]
+alert_invWebHttpsPort=El valor del puerto HTTPS de Web Server no es v&#225;lido. Rango esperado: [de 1 a 65535, de 01 a 0177777 o de 0x1 a 0xFFFF]
+alert_invSSHPort=El valor del puerto de SSH no es v&#225;lido. Rango esperado: [de 1 a 65535, de 01 a 0177777 o de 0x1 a 0xFFFF]
+alert_invTelPort=El valor del puerto de Telnet no es v&#225;lido. Rango esperado: [de 1 a 65535, de 01 a 0177777 o de 0x1 a 0xFFFF]
+alert_invKVMPort=El valor del puerto de presencia remota no es v&#225;lido. Rango esperado: [de 1 a 65535, de 01 a 0177777 o de 0x1 a 0xFFFF]
+alert_enterUniqPort=Introduzca n&#250;meros de puerto &#250;nicos.
+alert_modifyPort=Si modifica el cifrado SSL, los n&#250;meros de los puertos HTTP o HTTPS, terminar&#225; la sesi&#243;n actual de la interfaz gr&#225;fica de usuario.
+alert_closeBrowser=Espere unos minutos antes de abrir una nueva sesi&#243;n de interfaz gr&#225;fica de usuario. &#191;Est&#225; seguro de que desea continuar?
+alert_Continue=Haga clic en \"Aceptar\" para continuar.
+alert_DisableWebServer=Si desactiva Webserver finaliza la sesi&#243;n actual de la interfaz web y no podr&#225; iniciar sesi&#243;n en la interfaz web de iDRAC.  Tambi&#233;n se desactivar&#225;n otras interfaces de iDRAC tales como RACADM y WSMAN remoto.
+alert_AreYouSure=&#191;Est&#225; seguro de que desea continuar?
+#
+#
+#Remote Access->Configuration->Smart Card
+#
+alert_enableSmtCardMsg1=Al activar el inicio de sesi&#243;n mediante tarjeta inteligente se desactivan las siguientes interfaces: SSH, Telnet, conexi&#243;n en serie, IPMI en la LAN y RACADM remoto. 
+alert_enableSmtCardMsg2=Al activar el inicio de sesi&#243;n mediante tarjeta inteligente se desactivan las siguientes interfaces: SSH, Telnet, conexi&#243;n en serie, IPMI en la LAN.
+#
+#Remote Access->Configuration->Directory Service->Generic LDAP
+#
+alert_gl_serverAddr=Direcci&#243;n del servidor LDAP
+alert_gl_serverPortBetween=El valor del puerto del servidor LDAP gen&#233;rico no es v&#225;lido. Rango esperado: [de 1 a 65535, de 01 a 0177777 o de 0x1 a 0xFFFF]
+alert_gl_atleastOneSrv=Por lo menos una direcci&#243;n de servidor de LDAP gen&#233;rico debe estar configurada.
+alert_gl_atleastOneBaseDN=Se debe especificar el DN base que va a buscar.
+alert_gl_bindDN=DN de enlace
+alert_gl_bindPwd=Contrase&#241;a de enlace
+alert_gl_baseDN=DN base
+alert_gl_userlogin=Atributo de inicio de sesi&#243;n de usuario
+alert_gl_groupmem=Atributo de pertenencia a grupos
+alert_gl_search=Filtro de b&#250;squeda
+#
+### Remote Access -> Configuration -> LDAP
+#
+rac_conf_ldap=LDAP
+rac_conf_ldap_cert=Certificado de CA del servicio de directorio
+rac_conf_ldap_groupdn=DN de grupo
+rac_conf_ldap_config=Configuraci&#243;n y administraci&#243;n de LDAP gen&#233;rico
+rac_conf_ldap_title=La configuraci&#243;n y administraci&#243;n de LDAP gen&#233;rico muestra la configuraci&#243;n actual de LDAP gen&#233;rico para el iDRAC7.
+rac_conf_ldap_comSet=Valores comunes
+rac_conf_ldap_groupSet=Configuraci&#243;n de grupo
+rac_conf_ldap_enabled=Activar LDAP gen&#233;rico
+rac_conf_ldap_ldapEnabled=LDAP gen&#233;rico activado
+rac_conf_ldap_enCertVal=Validaci&#243;n de certificado activada
+rac_conf_ldap_serverAddr=Direcci&#243;n del servidor LDAP
+rac_conf_ldap_serverAddr_desc=El FQDN o la IP deben coincidir con el certificado del servidor cuando la validaci&#243;n de certificados est&#233; activada
+rac_conf_ldap_serverPort=Puerto del servidor LDAP
+rac_conf_ldap_serverPort_desc=S&#243;lo se admite el puerto SSL
+rac_conf_ldap_baseDnSearch=DN base a buscar
+rac_conf_ldap_baseDnSearch_desc=p. ej. dc=ejemplo,dc=com, requerido
+rac_conf_ldap_attrUserLogin=Atributo de inicio de sesi&#243;n de usuario
+rac_conf_ldap_attrUserLogin_desc=p.&#160;ej. id. &#250;nica
+rac_conf_ldap_attrGrpMem=Atributo de pertenencia a grupos
+rac_conf_ldap_attrGrpMem_desc=p.&#160;ej. miembro o miembro&#250;nico
+rac_conf_ldap_namesearch=Usar nombre distintivo para buscar pertenencia a grupos
+rac_conf_ldap_namesearch_desc=si no se selecciona, se usar&#225; el nombre de usuario
+rac_conf_ldap_attrBindDN=DN de enlace
+rac_conf_ldap_attrBindDN_desc=se requiere si no est&#225; permitido el enlace an&#243;nimo
+rac_conf_ldap_bindPwd=Contrase&#241;a de enlace
+rac_conf_ldap_bindPwd_desc=se requiere si no est&#225; permitido el enlace an&#243;nimo
+rac_conf_ldap_searchFilter=Filtro de b&#250;squeda
+rac_conf_ldap_searchFilter_desc=p. ej. objectclass=*, opcional
+rac_conf_ldap_session_timeout=Se acab&#243; el tiempo de espera de la sesi&#243;n web.
+#
+#Step 1 of 3
+#
+rac_conf_ldap1_step1of3=Paso 1 de 3
+rac_conf_ldap1_info=Esta p&#225;gina sirve para configurar el certificado digital que se utiliza durante el inicio de las conexiones SSL al comunicarse con un servidor gen&#233;rico de LDAP; estas comunicaciones utilizan LDAP mediante SSL (LDAPS). Cuando la validaci&#243;n de certificados est&#225; activada, es necesario cargar el certificado de la autoridad de certificados (CA) que emiti&#243; el certificado que utiliza el servidor de LDAP durante el inicio de las conexiones SSL. El certificado de la CA se utiliza para validar la autenticidad del certificado que el servidor LDAP proporciona durante el inicio de SSL.
+rac_conf_ldap1_certSet=Configuraci&#243;n de certificados
+rac_conf_ldap1_enCertVal=Activar validaci&#243;n de certificado
+rac_conf_ldap1_uploadLdapCert=Cargar certificado de CA del servicio de directorio
+rac_conf_ldap1_currLdapCert=Certificado de CA actual del servicio de directorio
+rac_conf_ldap1_cert=Certificado
+rac_conf_ldap1_noValidCert=RAC0296: No se ha cargado un certificado v&#225;lido.
+#
+#Step 2 of 3
+#
+rac_conf_ldap2_step2of3=Paso 2 de 3
+rac_conf_ldap2_info=Esta p&#225;gina se usa para configurar la informaci&#243;n de ubicaci&#243;n de los servidores de LDAP gen&#233;rico y las cuentas de usuario.
+rac_conf_ldap2_comSet=Valores comunes
+#
+#Step 3a of 3
+#
+rac_conf_ldap3a_step3aof3=Paso 3a de 3
+rac_conf_ldap3a_info=Esta p&#225;gina se usa para configurar los grupos de privilegios que se utilizan para autorizar usuarios. Cuando el LDAP gen&#233;rico est&#225; activado, es necesario configurar los grupos de funciones que especifican la pol&#237;tica de autorizaci&#243;n de los usuarios de iDRAC.
+#
+#Step 3b of 3
+#
+rac_conf_ldap3b_step3bof3=Paso 3b de 3
+rac_conf_ldap3b_info=Esta p&#225;gina se usa para configurar cada grupo de funciones que se utiliza para controlar la pol&#237;tica de autorizaci&#243;n de usuarios. Cuando LDAP gen&#233;rico est&#225; activado, es necesario configurar cada grupo de funciones para aplicar la pol&#237;tica de autorizaci&#243;n relacionada con el acceso a las funciones del iDRAC.
+#
+#
+### Remote Access -> Configuration -> LDAP ->Test Settings
+#
+rac_conf_ldap_testSet=Configuraci&#243;n de prueba de LDAP gen&#233;rico
+rac_conf_ldap_pingDirServer=Enviar comando ping al servidor de directorio
+rac_conf_ldap_dirSerDNSName=Nombre DNS del servidor de directorio
+rac_conf_ldap_conDirServer=Conexi&#243;n LDAP al servidor de directorio
+rac_conf_ldap_certVal=Validaci&#243;n de certificado
+rac_conf_ldap_userDNexist=Existencia de nombre distintivo de usuario
+rac_conf_ldap_userAuthent=Autentificaci&#243;n de usuario
+rac_conf_ldap_userAuthor=Autorizaci&#243;n de usuario
+#
+### Remote Access -> Configuration -> Directory Service
+#
+#
+rac_conf_dirservice_ms_ad=Microsoft Active Directory
+rac_conf_dirservice_gl=Servicio de directorio de LDAP gen&#233;rico
+rac_conf_dirservice=Servicio de directorio
+rac_conf_dirservice_title=S&#243;lo se puede usar un tipo de servicio de directorio a la vez:Active Directory o LDAP gen&#233;rico.
+rac_conf_dirservice_info=Prueba
+#
+#
+#Remote Access->Diagnostics
+#
+alert_cmdNotSupport=Este comando no se admite en la interfaz gr&#225;fica de usuario.
+alert_invIPAddrErr=ERROR: Direcci&#243;n IP no v&#225;lida.
+alert_ipBroadCastErr=ERROR: La direcci&#243;n IP es una direcci&#243;n de difusi&#243;n.
+alert_cmdSyntaxErr=ERROR: Sintaxis no v&#225;lida. El subcomando especificado no requiere opciones.
+alert_troubleshootingIdentifyTimeout=Introduzca un valor para el tiempo de espera entre 1 y 255 segundos. Si introduce un valor de 0 har&#225; que el indicador LED parpadee indefinidamente.
+#
+#Remote Access->Update
+#
+alert_uploadFwException=Se present&#243; una excepci&#243;n del explorador al tratar de cargar el archivo de firmware.\nLa excepci&#243;n es: 
+#
+#CMC Summary
+#
+cmc_cmc_title=CMC
+cmc_summary=Resumen
+cmc_option_button_title=Iniciar la interfaz web del CMC
+cmc_table_title=Chassis Management Controller
+cmc_accessibility=Accesibilidad
+cmc_fw_version=Versi&#243;n de firmware
+cmc_ip_address=Direcci&#243;n IP
+cmc_ipv6_address=Direcci&#243;n IPv6
+#
+#Country Names
+#
+count_AF=Afganist&#225;n
+count_AL=Albania
+count_DZ=Argelia
+count_AS=Samoa Americana
+count_AD=Andorra
+count_AO=Angola
+count_AI=Anguila
+count_AQ=Ant&#225;rtica
+count_AG=Antigua y Barbuda
+count_AR=Argentina
+count_AM=Armenia
+count_AW=Aruba
+count_AU=Australia
+count_AT=Austria
+count_AZ=Azerbaiy&#225;n
+count_BS=Bahamas
+count_BH=Bahrein
+count_BD=Bangladesh
+count_BB=Barbados
+count_BY=Bielorrusia
+count_BE=B&#233;lgica
+count_BZ=Belice
+count_BJ=Ben&#237;n
+count_BM=Bermudas
+count_BT=But&#225;n
+count_BO=Bolivia
+count_BA=Bosnia y Herzegovina
+count_BW=Botswana
+count_BV=Isla Bouvet
+count_BR=Brasil
+count_IO=Territorios Brit&#225;nicos del Oc&#233;ano &#205;ndico
+count_BN=Brunei
+count_BG=Bulgaria
+count_BF=Burkina Faso
+count_BI=Burundi
+count_KH=Camboya
+count_CM=Camer&#250;n
+count_CA=Canad&#225;
+count_CV=Cabo Verde
+count_KY=Islas Caim&#225;n
+count_CF=Rep&#250;blica Centroafricana
+count_TD=Chad
+count_CL=Chile
+count_CN=China
+count_CX=Isla de Christmas
+count_CC=Islas Cocos (Keeling)
+count_CO=Colombia
+count_KM=Comores
+count_CG=Congo
+count_CK=Islas Cook
+count_CR=Costa Rica
+count_CI=Costa de Marfil
+count_HR=Croacia (Hrvatska)
+count_CU=Cuba
+count_CY=Chipre
+count_CZ=Rep&#250;blica Checa
+count_CS=Checoslovaquia
+count_DK=Dinamarca
+count_DJ=Yibuti
+count_DM=Dominica
+count_DO=Rep&#250;blica Dominicana
+count_TP=Timor Oriental
+count_EC=Ecuador
+count_EG=Egipto
+count_SV=El Salvador
+count_GQ=Guinea Ecuatorial
+count_ER=Eritrea
+count_EE=Estonia
+count_ET=Etiop&#237;a
+count_FK=Islas Malvinas (Falkland)
+count_FO=Islas Faroe
+count_FJ=Fiji
+count_FI=Finlandia
+count_FX=Francia, Metropolitana
+count_FR=Francia
+count_GF=Guayana Francesa
+count_PF=Polinesia Francesa
+count_TF=Tierras Australes, Francia
+count_GA=Gab&#243;n
+count_GM=Gambia
+count_GE=Georgia
+count_DE=Alemania
+count_GH=Ghana
+count_GI=Gibraltar
+count_GB=Gran Breta&#241;a (Reino Unido)
+count_GR=Grecia
+count_GL=Groenlandia
+count_GD=Granada
+count_GP=Guadalupe
+count_GU=Guam
+count_GT=Guatemala
+count_GN=Guinea
+count_GW=Guinea-Bissau
+count_GY=Guyana
+count_HT=Hait&#237;
+count_HM=Islas Heard y McDonald
+count_HN=Honduras
+count_HK=Hong Kong
+count_HU=Hungr&#237;a
+count_IS=Islandia
+count_IN=India
+count_ID=Indonesia
+count_IR=Ir&#225;n
+count_IQ=Iraq
+count_IE=Irlanda
+count_IL=Israel
+count_IT=Italia
+count_JM=Jamaica
+count_JP=Jap&#243;n
+count_JO=Jordania
+count_KZ=Kazajist&#225;n
+count_KE=Kenia
+count_KI=Kiribati
+count_KP=Corea del Norte
+count_KR=Corea del Sur
+count_KW=Kuwait
+count_KG=Kirguizist&#225;n
+count_LA=Laos
+count_LV=Letonia
+count_LB=L&#237;bano
+count_LS=Lesotho
+count_LR=Liberia
+count_LY=Libia
+count_LI=Liechtenstein
+count_LT=Lituania
+count_LU=Luxemburgo
+count_MO=Macao
+count_MK=Macedonia
+count_MG=Madagascar
+count_MW=Malawi
+count_MY=Malasia
+count_MV=Maldivas
+count_ML=Mal&#237;
+count_MT=Malta
+count_MH=Islas Marshall
+count_MQ=Martinica
+count_MR=Mauritania
+count_MU=Mauricio
+count_YT=Mayotte
+count_MX=M&#233;xico
+count_FM=Micronesia
+count_MD=Moldavia
+count_MC=M&#243;naco
+count_MN=Mongolia
+count_MS=Montserrat
+count_MA=Marruecos
+count_MZ=Mozambique
+count_MM=Birmania
+count_NA=Namibia
+count_NR=Nauru
+count_NP=Nepal
+count_AN=Antillas Holandesas
+count_NL=Pa&#237;ses Bajos
+count_NT=Zona neutral
+count_NC=Nueva Caledonia
+count_NZ=Nueva Zelanda (Aotearoa)
+count_NI=Nicaragua
+count_NE=N&#237;ger
+count_NG=Nigeria
+count_NU=Niue
+count_NF=Isla de Norfolk
+count_MP=Islas Marianas del Norte
+count_NO=Noruega
+count_OM=Om&#225;n
+count_PK=Paquist&#225;n
+count_PW=Palau
+count_PA=Panam&#225;
+count_PG=Pap&#250;a-Nueva Guinea
+count_PY=Paraguay
+count_PE=Per&#250;
+count_PH=Filipinas
+count_PN=Pitcairn
+count_PL=Polonia
+count_PT=Portugal
+count_PR=Puerto Rico
+count_QA=Qatar
+count_RE=Reuni&#243;n
+count_RO=Rumania
+count_RU=Federaci&#243;n Rusa
+count_RW=Ruanda
+count_GS=Georgia del Sur e Islas Sandwich del Sur
+count_KN=San Crist&#243;bal y Nevis
+count_LC=Santa Luc&#237;a
+count_VC=San Vicente y Las Granadinas
+count_WS=Samoa
+count_SM=San Marino
+count_ST=Santo Tom&#233; y Pr&#237;ncipe
+count_SA=Arabia Saud&#237;
+count_SN=Senegal
+count_SC=Seychelles
+count_SL=Sierra Leona
+count_SG=Singapur
+count_SK=Rep&#250;blica Eslovaca
+count_SI=Eslovenia
+count_SB=Islas Salom&#243;n
+count_SO=Somalia
+count_ZA=Sud&#225;frica
+count_ES=Espa&#241;a
+count_LK=Sri Lanka
+count_SH=Santa Elena
+count_PM=St. Pierre y Miquel&#243;n
+count_SD=Sud&#225;n
+count_SR=Surinam
+count_SJ=Archipi&#233;lago de Svalbard e Isla Jan Mayen
+count_SZ=Suazilandia
+count_SE=Suecia
+count_CH=Suiza
+count_SY=Siria
+count_TW=Taiw&#225;n
+count_TJ=Tayikist&#225;n
+count_TZ=Tanzania
+count_TH=Tailandia
+count_TG=Togo
+count_TK=Tokelau
+count_TO=Tonga
+count_TT=Trinidad y Tobago
+count_TN=T&#250;nez
+count_TR=Turqu&#237;a
+count_TM=Turkmenist&#225;n
+count_TC=Islas Turks y Caicos
+count_TV=Tuvalu
+count_UM=Islas menores de Estados Unidos
+count_SU=URSS (anteriormente)
+count_UG=Uganda
+count_UA=Ucrania
+count_AE=Emiratos &#193;rabes Unidos
+count_UK=Reino Unido
+count_US=Estados Unidos
+count_UY=Uruguay
+count_UZ=Uzbekist&#225;n
+count_VU=Vanuatu
+count_VA=Ciudad Estado del Vaticano (Santa Sede)
+count_VE=Venezuela
+count_VN=Vietnam
+count_VG=Islas V&#237;rgenes (brit&#225;nicas)
+count_VI=Islas V&#237;rgenes (EE. UU.)
+count_WF=Islas Wallis y Futuna
+count_EH=Sahara Occidental
+count_YE=Yemen
+count_YU=Yugoslavia
+count_ZR=Zaire
+count_ZM=Zambia
+count_ZW=Zimbabue
+#
+###main page
+#
+main_sysDetails=Detalles del sistema
+#
+#Server Health
+#
+main_server_health=Condici&#243;n del servidor
+main_severity=Gravedad
+main_status=Estatus
+main_component=Componente
+main_batteries=Bater&#237;as
+main_fans=Ventiladores
+main_intrusion=Intromisi&#243;n
+main_removableFlashMedia=Medios flash extra&#237;bles
+main_powersupplies=Suministros de energ&#237;a
+main_temperatures=Temperaturas
+main_voltages=Voltajes
+main_vflash=vFlash
+#
+#Quick Launch Tasks
+#
+main_quick_launch_tasks=Tareas de inicio r&#225;pido
+main_pwrOnOff=Encender / Apagar
+main_pwrCycleSys=Realizar ciclo de encendido del sistema (reinicio mediante suministro de energ&#237;a)
+main_view_logs=Ver registros
+main_launch_viewer=Iniciar consola virtual
+main_view_sel_log=Ver el registro de sucesos del sistema
+main_view_rac_log=Ver el registro del iDRAC
+main_update_firmware=Actualizar el firmware
+main_idrac_reset=Restablecer el iDRAC
+main_idrac_reset_default=Restablecer iDRAC a la configuraci&#243;n predeterminada
+main_quick_launch_con=Consola de inicio r&#225;pido
+main_after_idrac_reset_message=Se est&#225; restableciendo el iDRAC, podr&#237;a tardar varios minutos para que el iDRAC se restablezca. No podr&#225; tener acceso al iDRAC con esta sesi&#243;n del explorador. Cierre y con&#233;ctese nuevamente al iDRAC con una nueva sesi&#243;n del explorador.
+main_after_idrac_reset_to_default_message=iDRAC puede tardar varios minutos en restablecerse. iDRAC se restablece a su configuraci&#243;n predeterminada y no conserva la direcci&#243;n IP que le proporcion&#243; DHCP.
+#
+#Server Information
+#
+main_server_information=Informaci&#243;n del servidor
+main_power_state=Estado de la alimentaci&#243;n
+main_system_model=Modelo del sistema
+main_system_revision=Revisi&#243;n del sistema
+main_system_host_name=Nombre de host del sistema
+main_operating_system=Sistema operativo
+main_operating_system_version=Versi&#243;n del sistema operativo
+main_service_tag=Etiqueta de servicio
+main_express_service_code=C&#243;digo de servicio r&#225;pido
+main_bios_version=Versi&#243;n del BIOS
+main_firmware_version=Versi&#243;n de firmware
+main_IPAddr=Direcciones IP
+main_MACAddr=Direcci&#243;n MAC del iDRAC
+main_LCC_firmware_version=Firmware de Lifecycle Controller
+main_Location=Ubicaci&#243;n
+main_Location_Datacenter=Centro de datos
+main_Location_Row=Fila
+main_Location_Rack=Bastidor 
+main_lcc_maser_disabled=Lifecycle Controller desactivado
+#
+#Recent Logged Events
+#
+main_recent_logged_events=Sucesos recientes registrados
+main_date_time=Fecha/Hora
+main_description=Descripci&#243;n
+#
+#DNS SRV Lookup
+#
+ad_dc_srv_lookup_domain=Buscar controladores de dominio con DNS
+ad_dc_srv_lookup_domain_enable=Buscar controladores de dominio con DNS
+ad_dc_srv_lookup_domain_login=Dominio de usuario de inicio de sesi&#243;n
+ad_dc_srv_lookup_userdomain_login=Dominio de usuario de inicio de sesi&#243;n
+ad_dc_srv_lookup_domain_specify=Especificar un dominio
+ad_dc_srv_lookup_domain_specify_ctrl=Especificar direcciones de controlador de dominio
+#
+ad_gc_srv_lookup_cat=Buscar servidores de cat&#225;logo global con DNS
+ad_gc_srv_lookup_cat_enable=Buscar servidores de cat&#225;logo global con DNS
+ad_gc_srv_lookup_domain_root=Nombre del dominio ra&#237;z
+ad_gc_srv_lookup_domain_specify=Especificar direcciones del servidor de cat&#225;logo global
+#
+alert_dcSrvLookupDomainNameMsg=Especificar un dominio
+alert_dcSrvLookupDomainNameConfigMsg=RAC0297: Especifique que se debe configurar una direcci&#243;n de controlador de dominio.
+alert_gcSrvRootDomainNameMsg=Nombre del dominio ra&#237;z
+alert_gcSrvRootDomainNameConfigMsg=RAC0298: Se debe configurar el Nombre del dominio ra&#237;z.
+#
+#Attached Media
+#
+attachedmedia_title=Medios conectados
+#
+#Remote File Share
+#
+remotefileshr_title=Recurso compartido de archivos remoto
+remotefileshr_pagedesc=RAC0299: No se puede obtener acceso a los recursos compartidos remotos con conexiones IPv6 por medio de esta funci&#243;n.
+remotefileshr_attachmode=Adjuntar modo
+remotefileshr_domainname=Nombre del dominio
+remotefileshr_username=Nombre del usuario
+remotefileshr_userpwd=Contrase&#241;a
+remotefileshr_image_loc=Ruta de acceso al archivo de imagen
+remotefileshr_status=Estado de conexi&#243;n
+remotefileshr_connect=Conectar
+remotefileshr_disconnect=Desconectar
+remotefileshr_invalid_dns=Nombre del dominio no v&#225;lido  No use los caracteres '/' y '\\'.
+remotefileshr_invalid_dnsUser=El Nombre del dominio y el Nombre del usuario combinados no pueden exceder la longitud m&#225;xima de 255 caracteres.
+#
+alert_rfs_busy_detach=RAC0300: Los medios virtuales est&#225;n desconectados u otro usuario utiliza actualmente la redirecci&#243;n de medios virtuales para la unidad de disco virtual seleccionada.
+#alert_rfs_general_error=RAC0301: La conexi&#243;n al recurso compartido de archivos remoto no est&#225; disponible.  Compruebe la configuraci&#243;n y vuelva a intentarlo.
+alert_rfs_general_error=Error de conexi&#243;n
+alert_rfs_invalid_password=La contrase&#241;a no puede contener cinco caracteres '\"', &#8220; ' &#8221;, &#8220;&#60;&#8221;, &#8220;&#62;&#8221; y &#8220;,&#8221;.
+alert_rfs_invalid_length=El nombre de usuario o la contrase&#241;a son demasiado largos. El tama&#241;o m&#225;ximo permitido es de 40 caracteres.
+#
+#Virtual Console Preview
+#
+remoteConPrv_title=Vista previa de la consola virtual
+remoteConPrv_options=Opciones
+remoteConPrv_launch=Iniciar
+remoteConPrv_settings=Configuraci&#243;n
+remoteConPrv_refresh=Actualizar
+remoteConPrv_noAmea=RAC0302: iDRAC Express no admite esta funci&#243;n.
+remoteConPrv_noConPrivilge=RAC0303: La consola virtual est&#225; desactivada y/o no tiene el privilegio de acceder a la consola virtual. Si est&#225; desactivada, vaya a la ficha Descripci&#243;n general de la >  consola del servidor > y seleccione la opci&#243;n Activado para activar la consola virtual.
+#
+alert_invDCSaddr1=Direcci&#243;n 1 de servidor de controlador de dominio no v&#225;lida
+alert_invDCSaddr2=Direcci&#243;n 2 de servidor de controlador de dominio no v&#225;lida
+alert_invDCSaddr3=Direcci&#243;n 3 de servidor de controlador de dominio no v&#225;lida
+#
+viewSEL_options=Opciones
+#
+###System->Properties->System Inventory
+#
+sys_prop_sum_sysInventory=Inventario del sistema
+sys_prop_inv_hwinventory=Inventario de hardware
+sys_prop_inv_fwinventory=Inventario de firmware
+sys_prop_inv_hwwinv_unavailable=No est&#225; disponible el inventario de hardware
+sys_prop_inv_fwinv_unavailable=No est&#225; disponible el inventario de firmware
+sys_prop_inv_fwVer=Versi&#243;n de firmware
+sys_prop_inv_type=Tipo
+sys_prop_inv_model=Modelo
+sys_prop_inv_manufacturer=Fabricante
+sys_prop_inv_size=Tama&#241;o
+sys_prop_inv_part_number=N&#250;mero de parte
+sys_prop_inv_serial_number=N&#250;mero de serie
+sys_prop_inv_name=Nombre
+sys_prop_inv_permanent_iscsi_mac=Direcci&#243;n MAC iSCSI permanente
+sys_prop_inv_permanent_mac_address=Direcci&#243;n MAC permanente
+sys_prop_inv_current_mac_address=Direcci&#243;n MAC actual
+sys_prop_inv_capacity=Capacidad
+sys_prop_inv_component=Componente
+sys_prop_inv_bios=Dell Server BIOS 12G
+sys_prop_inv_controller=Dell Lifecycle Controller 2
+sys_prop_inv_osdrv=DELL OS Drivers Pack
+sys_prop_inv_eth_nic1=Broadcom NetXtreme II Gigabit Ethernet 1
+sys_prop_inv_eth_nic2=Broadcom NetXtreme II Gigabit Ethernet 2
+sys_prop_inv_eth_nic3=Broadcom NetXtreme II Gigabit Ethernet 3
+sys_prop_inv_eth_nic4=Broadcom NetXtreme II Gigabit Ethernet 4
+sys_prop_inv_diag=Diagn&#243;sticos de 32 bits de Dell
+sys_prop_hw_error_row=No est&#225; disponible el inventario de hardware. Int&#233;ntelo de nuevo posteriormente.
+sys_prop_fw_error_row=No est&#225; disponible el inventario de firmware. Int&#233;ntelo de nuevo posteriormente.
+#
+#Dell Key Manager
+#
+sys_setup_dkm=Cifrado de clave
+dkm_ptitle=Dell Key Manager (DKM)
+dkm_back_btn=Volver a la p&#225;gina principal de DKM
+dkm_opions=Opciones
+dkm_notice=Aviso
+dkm_restart_system=El iDRAC no puede determinar si el sistema admite DKM. Reinicie el sistema para determinar si se admite al DKM.
+dkm_invalid_hardware=El sistema no contiene componentes de hardware v&#225;lidos para el DKM. El sistema requiere el firmware apropiado. Consulte el archivo L&#233;ame del iDRAC para ver los niveles apropiados.
+kms_ptitle=Configuraci&#243;n de servidores de DKM
+kms_primary=Servidor de administraci&#243;n de claves primario
+kms_secondary=Servidor de administraci&#243;n de claves secundario
+kms_address=Direcci&#243;n IP de la red
+kms_port=N&#250;mero de puerto
+kms_timeout=Tiempo de espera
+kms_view_certificate=Ver el certificado de CA cargado del servidor de administraci&#243;n de claves
+kms_certificate=Certificado
+kms_device_group_name_title=Nombre del grupo de dispositivos
+kms_device_group_name=Nombre del grupo de dispositivos
+kms_test_btn=Comprobar la conectividad
+kms_cfg_btn=Editar la configuraci&#243;n de los servidores de DKM
+kms_cfg_return_btn=Volver a Configuraci&#243;n de los servidores
+kms_upload_certificate=Cargar el certificado de CA del servidor de administraci&#243;n de claves
+kms_certificate_path=Ruta de acceso del certificado
+kms_test=Prueba de conexi&#243;n del servidor de administraci&#243;n de claves
+kms_test_result=Resultado de la prueba
+kms_test_pass=Pas&#243;
+kms_test_fail=Fallido
+alert_inv_kms_ip=Direcci&#243;n IP no v&#225;lida
+alert_inv_kms_timeout=El valor de tiempo de espera no es v&#225;lido. Rango esperado: [de 15 a 600 segundos]
+alert_inv_kms_port=El n&#250;mero de puerto no es v&#225;lido. Rango esperado: [de 1 a 65535]
+kmc_ptitle=Configuraci&#243;n de certificado de cliente de DKM
+kmc_pprompt=Seleccione la tarea apropiada de la administraci&#243;n de certificados y haga clic en Siguiente.
+kmc_new_csr=Generar una solicitud de firma de certificado (CSR)
+kmc_self_signed=Crear certificado autofirmado
+kmc_ca_signed=Cargar certificado firmado por CA
+kmc_view_cert=Ver el certificado de cliente de DKM cargado
+kmc_back_btn=Volver al men&#250; Configuraci&#243;n de certificado de cliente de DKM
+kmc_download=Descargar
+kmc_ss_title=Configuraci&#243;n del certificado autofirmado
+kmc_ss_svcTag=Utilizar la etiqueta de servicio
+kmc_ss_DNSName=Utilizar el nombre DNS
+kmc_ss_coustom=Utilizar un nombre personalizado
+kmc_ca_format=Formato del certificado
+kmc_ca_base=Base64
+kmc_ca_pkcs=PKCS12 cifrado
+kmc_ca_decr_pwd=Contrase&#241;a de descifrado
+kmc_ca_filePath=Ruta de acceso del archivo
+kmc_ca_message1=Cargando archivo. Espere por favor. Esto podr&#237;a tomar unos minutos en completarse.
+kmc_ca_message2=No hay certificado para cargar. Despl&#225;cese a un archivo v&#225;lido.
+kmc_ca_message3=El certificado que carg&#243; no es un archivo de certificado v&#225;lido. Despl&#225;cese a un archivo v&#225;lido.
+kmc_ca_message4=El certificado de DKM se carg&#243; satisfactoriamente.
+kmc_ca_message5=Despl&#225;cese a un archivo v&#225;lido por medio del bot&#243;n Examinar.
+alert_pkcs_pwd=La contrase&#241;a de descifrado no deber&#237;a estar vac&#237;a
+kmc_ss_cert_title=Certificado autofirmado
+alert_createComplete=Se cre&#243; satisfactoriamente
+alert_kmc_invalid_csr=Introduzca un valor v&#225;lido para lo siguiente (consulte la ayuda en l&#237;nea para obtener m&#225;s informaci&#243;n):
+alert_kms_same_addr=La direcci&#243;n del KMS primario y la del KMS secundario no deber&#237;a ser la misma
+rac_conf_kms_certUploadInfo=Tenga en cuenta que el iDRAC se restablecer&#225; despu&#233;s de que el certificado se cree correctamente. En ese momento, el iDRAC no estar&#225; disponible por unos cuantos minutos.
+alert_kms_tc_0=La prueba de conectividad termin&#243; correctamente.
+alert_kms_tc_1=Fall&#243; la prueba de conectividad. Aseg&#250;rese de que los perfiles de los KMS han sido configurados correctamente.
+alert_kms_tc_26=Fall&#243; la prueba de conectividad debido a un puerto no v&#225;lido.
+alert_kms_tc_27=Fall&#243; la prueba de conectividad debido a una direcci&#243;n IP no v&#225;lida.
+alert_kms_tc_29=Fall&#243; la prueba de conectividad porque el servidor KMS no est&#225; disponible o est&#225; ocupado.
+alert_kms_tc_41=Fall&#243; la prueba de conectividad debido a un certificado de servidor que no es de confianza.
+alert_kms_tc_42=Fall&#243; la prueba de conectividad debido a una falla en la conexi&#243;n del servidor KMS.
+alert_kms_tc_43=Fall&#243; la prueba de conectividad porque no se encontr&#243; el servidor KMS.
+alert_kms_tc_65=Fall&#243; la prueba de conectividad porque fall&#243; el protocolo de enlace con el servidor KMS.
+alert_kms_tc_68=Fall&#243; la prueba de conectividad debido a la expiraci&#243;n de un tiempo de espera de socket de SSL.
+alert_kms_tc_69=Fall&#243; la prueba de conectividad porque no se pudo esperar al socket.
+alert_kms_tc=Ocurri&#243; un error desconocido.
+alert_dkm_disabled=La funci&#243;n de Dell Key Manager no est&#225; activada en este momento, y por lo tanto, los v&#237;nculos de la interfaz de usuario no est&#225;n activos.
+#
+#
+#Licensing
+#
+lic_tabTitle=P&#225;ginas de licencias del iDRAC
+lic_title=Licencias
+lic_header=Informaci&#243;n de licencias del sistema
+lic_header_info=El administrador de licencias incorporado es responsable de descubrir y administrar los dispositivos de hardware que funcionan con licencia. Esta p&#225;gina representa los dispositivos descubiertos y las licencias asociadas a este sistema. Desde esta p&#225;gina, es posible administrar (importar, eliminar, reemplazar o exportar) las licencias digitales asociadas al hardware descubierto.
+lic_purchase1=Para administrar cambios a las licencias o comprar licencias nuevas, visite el
+lic_purchase2=portal de autoservicio de licencias
+lic_message1=Transfiriendo al portal de autoservicio...
+lic_stat=Estatus
+lic_dev_type=Tipo de dispositivo
+lic_lic_opt=Opciones de licencia
+lic_loc=Ubicaci&#243;n
+lic_info=Informaci&#243;n de licencia
+lic_devDesc=Descripci&#243;n del dispositivo
+lic_exp=Vencimiento
+lic_options=Opciones de licencia:
+lic_type=Tipo de licencia
+#
+lic_want=Seleccione ...
+lic_import=Importar
+lic_export=Exportar
+lic_delete=Eliminar
+lic_replace=Reemplazar
+lic_learn_more=Saber m&#225;s
+#
+lic_ent_lic=Licencia empresarial
+lic_desc=Descripci&#243;n:
+lic_dev=Dispositivo
+lic_exp_date=Fecha de vencimiento
+lic_dev_id=Identificaci&#243;n de dispositivo
+lic_ent_id=Identificaci&#243;n de derecho
+lic_serv_pack=Paquete de funcionalidad
+lic_undef1=A&#250;n no se defini&#243; la cadena.
+#
+lic_delete_confirm=&#191;Est&#225; seguro de que desea eliminar?
+lic_delete_failed=No se elimin&#243; la licencia.
+lic_delete_success=La licencia se elimin&#243; correctamente.
+lic_import_success=La licencia se import&#243; correctamente.
+lic_replace_success=La licencia se reemplaz&#243; correctamente.
+lic_import_failed=No se import&#243; la licencia.
+lic_replace_failed=No se reemplaz&#243; la licencia.
+lic_invalid_file=Entrada de archivo no v&#225;lida.
+lic_operation_failed=Fall&#243; la operaci&#243;n.
+lic_error_reason=El error pude deberse a los siguientes motivos:
+lic_error_code=C&#243;digo de error:
+lic_delete_override=&#191;Desea reemplazar los valores?
+lic_rec_action=Acci&#243;n recomendada
+lic_critical_alert=Mensaje de alerta cr&#237;tica
+lic_ok_msg=En buen estado
+lic_exp_notapp=No aplicable
+lic_exp_failed=Fall&#243; la operaci&#243;n de exportaci&#243;n de licencia
+lic_nolic_exp=No se encuentra disponible ninguna licencia para exportar
+lic_retrieve_failed=Los datos de licencia no fueron recuperados.
+#
+#
+###System->Logs->Work Notes
+#
+sys_log_worknotes=Notas de trabajo
+sys_worknotes_add_worknote=Agregar nota de trabajo
+sys_worknotes_title=La nota no puede tener m&#225;s de 50 caracteres.
+sys_worknotes_enter_worknote=Ingrese la nota de trabajo.
+sys_worknotes_btn_save=Guardar
+sys_worknotes_datatime=Fecha/Hora
+sys_worknotes_notes=Notas
+sys_worknotes_userid=Identificaci&#243;n de usuario
+sys_worknotes_description=Crear nueva nota de trabajo... (L&#237;mite de 255 caracteres)
+sys_worknotes_delete_worknote=Eliminar nota de trabajo
+sys_worknotes_manage_worknotes=Administrar notas de trabajo
+#
+#Recent Work Notes
+#
+main_recent_worknotes=Notas de trabajo recientes
+main_view_worknotes=Ver notas de trabajo
+#
+#Troubleshooting->Video Capture Screen
+#
+#vc_header1=Configurar v&#237;deo de bloqueo
+#vc_enable=Activar capturas de v&#237;deos de bloqueos.
+#vc_number=N&#250;mero de v&#237;deos de bloqueos para guardar.
+#
+vc_videoCap=Captura de v&#237;deo
+vc_info=Usar captura de inicio para reproducir o guardar los &#250;ltimos 3 registros de capturas de inicio. Para ver los v&#237;deos guardados, descargue el reproductor de capturas de v&#237;deo (ver a continuaci&#243;n).
+vc_info2=Usar captura de bloqueo para reproducir o guardar el &#250;ltimo registro de capturas de bloqueo. Para ver el v&#237;deo guardado, descargue el reproductor de capturas de v&#237;deo (ver a continuaci&#243;n).
+vc_info3=Descargue el reproductor de capturas de v&#237;deo para ver las capturas de v&#237;deo guardadas. El archivo descargado es un archivo comprimido que contiene videoplayer.exe (para Windows), videoplayer.sh (para Linux) y videoplayer.jar, que incluye los archivos de segundo plano necesarios para los reproductores.
+vc_nofiles=No hay registro disponible.
+#
+vc_boot_cap_title=Capturas de inicio
+vc_boot_capture1=Captura de inicio 1 (la m&#225;s reciente)
+vc_boot_capture2=Captura de inicio 2
+vc_boot_capture3=Captura de inicio 3 (la m&#225;s antigua)
+#
+vc_crash_cap_title=Capturas de bloqueos
+vc_crash_capture1=Captura de bloqueo
+vc_crash_capture2=Captura de bloqueo 2
+vc_crash_capture3=Captura de bloqueo 3 (la m&#225;s antigua)
+#
+vc_download_cap_title=Descargar el reproductor de capturas de v&#237;deo
+vc_playerBundle=videoplayer.zip
+#
+###System->Logs-LCL
+#
+sys_log_lcl=Registro de Lifecycle
+#
+sys_lcl_title=Registros
+sys_lcl_filter=Filtro de registros
+sys_lcl_basic_filter=Filtro de registros b&#225;sico
+sys_lcl_simple_filter=Filtro simple
+sys_lcl_advanced_filter=Filtro de registros avanzado
+sys_lcl_options=Opciones:
+sys_lcl_log_results=Resultados de registros
+sys_lcl_export=Exportar
+sys_lcl_log_type=Tipo de registro:
+sys_lcl_choose_type=Seleccione el tipo
+sys_lcl_status_level=Gravedad:
+sys_lcl_keyword_search=B&#250;squeda por palabras claves:
+sys_lcl_date=Fecha:
+sys_lcl_to=Hasta:
+sys_lcl_from=Desde:
+sys_lcl_categories=Categor&#237;as:
+sys_lcl_checked=Verificado
+sys_lcl_power_supplies=Suministros de energ&#237;a
+sys_lcl_intrusions=Intrusiones
+sys_lcl_critical=Cr&#237;tico
+sys_lcl_warning=Advertencia
+sys_lcl_information=Informaci&#243;n
+sys_lcl_hardware_change=Cambio de hardware
+sys_lcl_reboot=Reiniciar
+sys_lcl_config_change=Cambio de configuraci&#243;n
+sys_lcl_work_notes=Notas de trabajo
+sys_lcl_option=Opci&#243;n
+sys_lcl_admin_events=Eventos de administraci&#243;n:
+sys_lcl_time_frame=Plazo
+sys_lcl_last_week=&#218;ltima semana
+sys_lcl_last_month=&#218;ltimo mes
+sys_lcl_custom=Personalizado
+sys_lcl_status=Estatus
+sys_lcl_datetime=Fecha y hora
+sys_lcl_id=Identificaci&#243;n de mensaje
+sys_lcl_seq=N&#250;mero de secuencia de registro
+sys_lcl_summary=Resumen
+sys_lcl_comment=Comentario
+sys_lcl_pages=P&#225;gina
+sys_lcl_of=de
+sys_lcl_log_type_alllogs=Todos los registros
+sys_lcl_log_type_health=Condici&#243;n del sistema
+sys_lcl_log_type_storage=Almacenamiento
+sys_lcl_log_type_configuration=Configuraci&#243;n
+sys_lcl_log_type_audit=Auditor&#237;a
+sys_lcl_log_type_security=Seguridad
+sys_lcl_log_type_power_and_thermal=Alimentaci&#243;n y t&#233;rmico
+sys_lcl_log_type_licensing_and_warranty=Licencias y garant&#237;a
+sys_lcl_log_type_updates=Actualizaciones
+sys_lcl_log_type_worknotes=Notas de trabajo
+sys_lcl_log_invalid_date=Fecha no v&#225;lida. Introduzca fecha en el formato mm/dd/aaaa.
+sys_lcl_log_err_msg_enddate_before_startdate=La 'Fecha final' debe ser posterior a la 'Fecha inicial'.
+sys_lcl_log_detailed_description=Descripci&#243;n detallada
+sys_lcl_log_recommended_action=Acci&#243;n recomendada
+#
+###Network Devices
+#
+nic_properties=Propiedades de puerto
+nic_health_and_properties=Condici&#243;n y propiedades
+nic_link_connection=Conexi&#243;n de v&#237;nculo
+nic_mac_addresses=Direcciones MAC
+nic_capabilities=Capacidades
+### Not Used ### nic_capabilities_and_settings=Capacidades y configuraci&#243;n
+nic_settings_and_capabilities=Configuraci&#243;n y capacidades
+nic_statistics=Estad&#237;sticas
+nic_statistics_and_ethernet=Estad&#237;sticas: Ethernet
+nic_statistics_and_fcoe=Estad&#237;sticas: FCoE
+nic_receive_statistics=Recibir estad&#237;sticas
+nic_transmit_statistics=Transmitir estad&#237;sticas
+nic_ports_ant_partitioned_ports=Puertos y Puertos particionados
+nic_status=estatus
+nic_portid=Identificaci&#243;n de puerto 
+nic_port=Puerto 
+nic_partition=Partici&#243;n
+nic_protocol=Protocolo
+nic_PCIVendorID=Identificaci&#243;n del proveedor de PCI
+nic_PCISubVendorID=Identificaci&#243;n del proveedor secundario de PCI
+nic_PCIDeviceID=Identificaci&#243;n del dispositivo PCI
+nic_PCISubDeviceID=Identificaci&#243;n del dispositivo secundario PCI
+nic_ProductName=Nombre del producto
+nic_VendorName=Nombre del proveedor
+nic_number_of_ports=N&#250;mero de puertos
+nic_FamilyFirmwareVersion=Versi&#243;n del firmware de la familia
+nic_FamilyDriverVersion=Versi&#243;n del controlador de la familia
+nic_link_status=Estado del v&#237;nculo
+nic_os_driver_state=Estado del controlador del sistema operativo
+nic_number_of_pcie_functions=N&#250;mero de funciones PCIe
+nic_current_mac_addr=Direcci&#243;n MAC actual
+nic_iscsi_mac=MAC iSCSI
+nic_fcoe_protocol_mac=MAC del protocolo de inicializaci&#243;n FCoE (FIP)
+nic_wwpn=WWPN
+nic_fcoe_wwnn=FCoE WWNN
+nic_max_bandwidth=Ancho de banda m&#225;ximo
+nic_min_bandwidth=Ancho de banda m&#237;nimo
+nic_supported_port=Admitido por puerto
+nic_currently_enabled_per_port=Actualmente activado por puerto
+nic_link_duplex=V&#237;nculo d&#250;plex
+nic_link_speed=Velocidad de v&#237;nculo
+nic_auto_negotiated=Negociaci&#243;n autom&#225;tica
+nic_media_type=Tipo de medio
+nic_nic_mode=Modo de NIC
+nic_fcoe_offload_mode=Modo de descarga de FCoE
+nic_iscsi_offload_mod=Modo de descarga de iSCSI
+nic_transmit_flow_control_status=Estado del control de flujo de transmisi&#243;n
+nic_receive_flow_control_status=Estado del control de flujo de recepci&#243;n
+nic_rdma=RDMA
+nic_flex_addressing=Direccionamiento flexible
+nic_uefi=UEFI
+nic_iscsi_offload=Descarga de iSCSI
+nic_iscsi_boot=Inicio de iSCSI
+nic_boot_protocol=Protocolo de inicio admitido
+nic_tcp_chimney=TCP Chimney
+nic_fcoe=FCoE
+nic_management_pass_through=Paso de administraci&#243;n
+nic_fcoe_boot=Inicio de FCoE
+nic_pxe_boot=Inicio de PXE
+nic_sriov=SR-IOV
+nic_wake_on_lan=Encendido en LAN
+nic_energy_efficient_ethernet=Green Ethernet
+nic_partitioning=Creaci&#243;n de particiones
+nic_total_bytes_received=Total de bytes
+nic_total_bytes_transmitted=Total de bytes
+nic_total_unicast_bytes_received=Paquetes totales de unidifusi&#243;n
+nic_total_multicast_bytes_received=Paquetes totales de multidifusi&#243;n
+nic_total_broadcast_bytes_received=Paquetes totales de difusi&#243;n
+nic_total_unicast_bytes_transmitted=Paquetes totales de unidifusi&#243;n
+nic_total_multicast_bytes_transmitted=Paquetes totales de multidifusi&#243;n
+nic_total_broadcsat_bytes_transmitted=Paquetes totales de difusi&#243;n
+nic_false_carrier_detection=Detecci&#243;n de portador falso
+nic_fcoe_packets_received=Paquetes FCoE recibidos
+nic_fcoe_packets_transmitted=Paquetes FCoE transmitidos
+nic_fc_crc_error_count=Recuento de errores de CRC FC
+nic_fcoe_packets_dropped=Paquetes FCoE desechados
+nic_fcoe_link_failures=Fallas de v&#237;nculo virtual
+nic_fcs_error_packets_received=Errores de FCS
+nic_alignment_error_packets_received=Errores de alineaci&#243;n
+nic_false_carrier_packets_received=Paquetes recibidos con errores de portador falso
+nic_runt_frames_received=Errores de trama corta
+nic_jabber_error_frames_received=Errores de XMPP
+nic_discarded_packets=Paquetes descartados
+nic_single_collision_frames_transmitted=Tramas de colisi&#243;n &#250;nica
+nic_multiple_collision_frames_transnitted=Tramas de colisi&#243;n m&#250;ltiple
+nic_late_collision_frames_transmitted=Tramas de colisi&#243;n tard&#237;a
+nic_excessive_collision_frames_transmitted=Colisi&#243;n excesiva
+nic_world_wide_name=Nombre mundial
+nic_virtual_world_wide_name=Nombre mundial virtual
+nic_virtual_mac_addresses=Direcciones MAC virtuales
+nic_virtual_iscsi_mac=MAC de iSCSI virtual
+nic_virtual_ftp_mac=MAC FIP virtual
+nic_tcp_offload_engine=Motor de descarga de TCP (TOE)
+nic_data_center_bridging=Puenteo de centro de datos (DCB)
+nic_eswitch_mode=Modo eSwitch
+nic_total_pause_xoff_frames=Total de tramas XOFF de pausa
+nic_total_pause_xon_frames=Total de tramas XON de pausa
+nic_not_supported=No admitida
+nic_disabled=Desactivado
+nic_notcapable=No admitido
+nic_partition_statistics=Estad&#237;sticas de partici&#243;n NIC
+nic_lanunicast_rx_count=Paquetes de difusi&#243;n &#250;nica LAN recibidos
+nic_lanunicast_tx_count=Paquetes de difusi&#243;n &#250;nica LAN transmitidos
+nic_lanfcs_rx_errors=Errores de frame check sequence LAN
+#
+tree_altRecurrence=Recurrencia de alerta 
+#
+PCR=para FQDN cambia a la p&#225;gina de alertas
+#
+alert_destination1=Destino1 de alertas
+alert_destination2=Destino2 de alertas
+alert_destination3=Destino3 de alertas
+alert_destination4=Destino4 de alertas
+alert_destination5=Destino5 de alertas
+alert_destination6=Destino6 de alertas
+alert_destination7=Destino7 de alertas
+alert_destination8=Destino8 de alertas
+invalid_alert_destination=La destinaci&#243;n de alerta especificada no es v&#225;lida para
+#
+# SNMP Settings
+#
+snmp_trap_format=Formato de capturas SNMP
+snmp_format_snmpv1=SNMP v1
+snmp_format_snmpv2=SNMP v2
+snmp_protocol=Protocolo SNMP
+snmp_protocol_all=Todos (SNMP v1/v2/v3)
+snmp_format_v3=SNMP v3
+user_authentication_sha_1=SHA
+user_authentication_md5=MD5
+user_authentication_type=Tipo de autenticaci&#243;n
+user_privacy_type=Tipo de privacidad
+user_privacy_aes=AES
+user_privacy_des=DES
+snmp_enable_v3=Activar SNMP v3
+snmp_both_not_none_msg=Si el tipo de autenticaci&#243;n es Ninguno, para el Tipo de privacidad seleccione Ninguno.
+#
+#Default Credential
+#
+default_cred_warning_title=Advertencia de contrase&#241;a predeterminada
+default_cred_warning_msg=Aviso: Se recomienda no usar el nombre de usuario predeterminado (root) ni la contrase&#241;a ya que es un riesgo de seguridad.
+default_cred_info=Configure una contrase&#241;a nueva para el usuario "root". Se pueden hacer m&#225;s cambios en la p&#225;gina Autenticaci&#243;n de usuario despu&#233;s de conectarse al iDRAC. Para obtener m&#225;s informaci&#243;n de c&#243;mo cambiar la contrase&#241;a predeterminada, consulte la iDRAC7 User's Guide (Gu&#237;a del usuario de iDRAC7).
+default_cred_new_password=Nueva contrase&#241;a
+default_cred_confirm_password=Confirmar contrase&#241;a
+default_cred_user_name=Nombre de usuario: root
+default_cred_do_not_show=No volver a mostrar esta advertencia
+default_cred_change_password=Cambiar la contrase&#241;a predeterminada
+default_cred_keep_password=Mantener la contrase&#241;a predeterminada
+default_cred_continue=Continuar
+default_cred_ok=Aceptar
+default_cred_password_not_match=Las contrase&#241;as no coinciden.
+default_cred_updating_password=Actualizando la contrase&#241;a predeterminada...
+default_cred_change_err=Fall&#243; el cambio de la contrase&#241;a ya que otro usuario ha cambiado las credenciales predeterminadas.
+default_cred_update_err_title=No se pudo actualizar la contrase&#241;a predeterminada.
+default_cred_update_err=No se pudo configurar la contrase&#241;a nueva.
+default_cred_rec_response_title=Respuesta recomendada:
+default_cred_rec_response=Vaya a la p&#225;gina Autenticaci&#243;n de usuario y restablezca la contrase&#241;a de forma manual.
+default_cred_update_err_title=Error cr&#237;tico
+default_cred_enable=Activar
+default_cred_disable=Desactivar
+
+#################
+# FC
+####
+fc_worldwidenames=Nombres de &#225;mbito mundial
+fc_wwn=Nombre de nodo de &#225;mbito mundial
+fc_wwpn=Nombre de puerto de &#225;mbito mundial
+fc_vwwn=Nombre de nodo de &#225;mbito mundial virtual
+fc_vwwpn=Nombre de puerto de &#225;mbito mundial virtual
+fc_total_frames=Total de cuadros Fibre Channel
+fc_total_sequences=Secuencias de Fibre Channel
+fc_total_bytes_rx=Total de kilobytes recibidos
+fc_total_bytes_tx=Total de kilobytes transmitidos
+fc_ports=Puertos Fibre Channel
+fc_link_error=Errores de v&#237;nculo
+fc_os_driver_version=Versi&#243;n del controlador del sistema operativo
+fc_link_failures=Fallas de v&#237;nculo
+fc_signal_loss=Perdida de se&#241;al
+fc_invalid_CRC=CRC no v&#225;lido
+
+#################
+# MISC
+####
+idsdm_version=Versi&#243;n del firmware de IDSDM
+csr_dns_ip_change_warning=Esta acci&#243;n cerrar&#225; todas las sesiones de usuario y el usuario deber&#225; conectarse nuevamente a la interfaz basada en web del iDRAC. Estos cambios podr&#237;an causar una p&#233;rdida breve de conexi&#243;n y la sesi&#243;n actual de la Consola virtual no funcionar&#225;. El usuario deber&#225; iniciar la Consola virtual despu&#233;s de volver a conectar la interfaz basada en web del iDRAC.
+cert_cn_change_warning=Esta acci&#243;n causar&#225; que el iDRAC se reinicie y cierra todas las sesiones de usuario y origina, adem&#225;s, perdida de conectividad.
+##############
+# Ungraceful shutdown specific change
+#############
+ungraceful_shutdown_confirm_message=Para apagar el servidor, haga clic en la opci&#243;n Apagado ordenado. Si no puede hacerlo, aseg&#250;rese de salir de todos los programas que se ejecutan en este servidor, y que no haya tr&#225;fico de entrada y salida al almacenamiento compartido.\nLa incapacidad de hacerlo puede prevenir a todos los servidores en el chasis de acceder a los dispositivos de almacenamiento-compartido hasta dos minutos.\n\n&#191;Est&#225; seguro de que desea continuar?

@@ -1,0 +1,9 @@
+#%PAM-1.0
+auth    sufficient  pam_ldap_manager.so 
+auth    sufficient  pam_local_manager.so use_first_pass 
+auth    required    pam_auth_status.so caller=login sessiontype=CLP
+account sufficient	pam_ldap_manager.so privilege=0x01
+account sufficient	pam_local_manager.so privilege=0x01
+account required    pam_auth_status.so sessiontype=CLP
+session required    pam_auth_status.so caller=login sessiontype=CLP
+session required    pam_session_manager.so sessiontype=CLP maxsessions=4 caller=login

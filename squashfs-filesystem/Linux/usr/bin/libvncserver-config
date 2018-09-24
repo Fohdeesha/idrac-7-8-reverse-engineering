@@ -1,0 +1,78 @@
+#!/bin/sh
+
+prefix=/usr
+exec_prefix=/usr
+exec_prefix_set=no
+includedir=/usr/include
+libdir=/usr/lib
+
+# if this script is in the same directory as libvncserver-config.in, assume not installed
+if [ -f "`dirname "$0"`/libvncserver-config.in" ]; then
+  dir="`dirname "$0"`"
+  prefix="`cd "$dir"; pwd`"
+  includedir="$prefix"
+  libdir="$prefix/libvncserver/.libs $prefix/libvncclient/.libs"
+fi
+
+usage="\
+Usage: LibVNCServer-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--link] [--libs] [--cflags]"
+
+if test $# -eq 0; then
+      echo "${usage}" 1>&2
+      exit 1
+fi
+
+while test $# -gt 0; do
+  case "$1" in
+  -*=*) optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'` ;;
+  *) optarg= ;;
+  esac
+
+  case $1 in
+    --prefix=*)
+      prefix=$optarg
+      if test $exec_prefix_set = no ; then
+        exec_prefix=$optarg
+      fi
+      ;;
+    --prefix)
+      echo $prefix
+      ;;
+    --exec-prefix=*)
+      exec_prefix=$optarg
+      exec_prefix_set=yes
+      ;;
+    --exec-prefix)
+      echo $exec_prefix
+      ;;
+    --version)
+      echo 0.9.9
+      ;;
+    --cflags)
+      if [ "$includedir" != /usr/include ]; then
+	  includes=-I"$includedir"
+      fi
+      echo "$includes"
+      ;;
+    --libs)
+      libs=""
+      for dir in $libdir; do
+        libs="$libs -L$dir"
+        if [ "`uname`" = "SunOS" ]; then
+          # why only Solaris??
+          libs="$libs -R$dir"
+        fi
+      done
+      echo "$libs" -lvncserver -lvncclient -lnsl -lpthread -lz -lpng  -lresolv   
+      ;;
+    --link)
+      echo sh4-poky-linux-gcc -ml -m4 --sysroot=/home/jenkins/jenkins_slave_builds_prod/workspace/idrac-13g-ducati1.7-master-release-A-Rev/build-yocto-sh4/tmp/sysroots/idrac8
+      ;;
+    *)
+      echo "${usage}" 1>&2
+      exit 1
+      ;;
+  esac
+  shift
+done
+

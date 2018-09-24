@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+<% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7：存储 - 物理磁盘</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 	
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> 物理磁盘</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items"> 跳转至：<a class="popup-jump-bar" href="#PhysicalDisks" id="cc3">运行状况和属性</a> |<a class="popup-jump-bar" href="#Other" id="A14">其他选项</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>使用此页面可查看存储子系统中的物理磁盘列表及其属性。 物理磁盘位于机柜中，或连接在控制器上。 在 RAID 控制器上，物理磁盘用于创建虚拟磁盘。</p> 
+</div> 
+<div class="popup_subheader">
+<span id="BasicFilter"> 基本 / 高级物理磁盘筛选 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<p>通过下拉菜单可按机柜或虚拟磁盘对物理磁盘列表进行筛选。 单击<b>应用</b>。 单击<strong>取消</strong>以恢复下拉式菜单中的默认值。</p> 
+<p>单击<b>高级筛选</b>按下列条件对物理磁盘列表进行筛选。</p> 
+<ul> 
+<li>机柜</li> 
+<li>虚拟磁盘</li> 
+<li>组件状态</li> 
+<li>状态</li> 
+<li>总线协议</li> 
+<li>介质类型</li> 
+<li>电源状态</li> 
+<li>故障预测</li> 
+<li>安全状况</li> 
+<li>热备份</li> 
+<li>最小容量 (GB）</li> 
+<li>部件号</li> 
+<li>最小可用空间 (%)</li> 
+<li>产品 ID</li> 
+<li>序列号</li> 
+<li>制造商</li> 
+</ul> 
+<p>关于每项属性的信息，请参见 <a class="popup-jump-bar" href="#PhysicalDisks" id="cc4">运行状况和属性</a> 一节。 </p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="PhysicalDisks"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="PhysicalDisks">运行状况和属性 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>每个物理磁盘都会显示下列的基本属性。</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状况</b></span></td> 
+<td class="desc"> 
+<p>显示物理磁盘的运行状况。 可能的值： </p> 
+<ul> 
+<li>正常 <span class="status_ok"> &#8212; </span> 表示组件运行正常。</li> 
+<li>警告 <span class="status_noncritical"> &#8212; </span> 表示探测器或其它监测设备检测到组件的读数超过或低于可接受级别。 组件可能仍在运转，但是可能会发生故障。 组件也可能在受损的状态下工作。 </li> 
+<li>严重 <span class="status_critical"> &#8212; </span>表示组件已出现故障或即将故障。 组件需要立即加以关注并且可能需要更换。</li> 
+<li>无此信息 <span class="status_unknown"> &#8212; </span> 表示此组件的状态为未知。 </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名称</b></span></td> 
+<td class="desc"> 
+<p>显示物理磁盘的名称。 格式为物理磁盘 <连接器号>:<机柜 ID>:<磁盘号> .</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>状态</b></span></td> 
+<td class="desc"> 
+<p>显示物理磁盘的当前状态：</p> 
+<ul> 
+<li>就绪 - 表示物理磁盘工作正常。 如果磁盘已连接到 RAID 控制器，则“就绪（Ready）”状态表示虚拟磁盘可以使用物理磁盘。</li> 
+<li>联机 - 表示物理磁盘为某虚拟磁盘的一部分且工作正常。 </li> 
+<li>脱机 - 表示磁盘被包括在某虚拟磁盘中，但未在接收输入或输出。</li> 
+<li>非 RAID — 表示该物理磁盘被主机操作系统访问并受其控制。</li> 
+<li>外来 &#8212; 表示物理磁盘是从其它控制器上转移过来的，且其中包含了某虚拟磁盘的全部或一部分（外来配置）。</li> 
+<li>已移除 &#8212; 表示物理磁盘已被移除。 只有已成为虚拟磁盘的一部分的物理磁盘才会出现该状态。</li> 
+<li> 已阻止 &#8212; 表示控制器当前已阻止了物理磁盘，并不可在该磁盘上进行操作。</li> 
+<li> 故障 — 表示物理磁盘不可访问。</li> 
+<li> 未知 &#8212; 表示物理磁盘已出现故障，或处于不可用的状态。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>插槽号</b></span> </td> 
+<td class="desc"> 
+<p>表示驱动器所处的插槽号。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>大小</b></span></td> 
+<td class="desc"> 以千兆字节（GB）为单位显示物理磁盘大小。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>安全状况</b></span> </td> 
+<td class="desc"> 
+<p>表示物理磁盘是否为自加密磁盘（SED）。 可能的值：</p> 
+<ul> 
+<li>受保护 - 表示物理磁盘已加密。</li> 
+<li>已锁定 - 表示物理磁盘当前已加密但未被使用。</li> 
+<li>受外来密钥保护 &#8212; 表示磁盘被未知密钥锁定。</li> 
+<li>不支持 - 表示物理磁盘不支持加密。</li> 
+<li>无此信息 &#8212; 表示此组件的状态为未知。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>总线协议</b></span></td> 
+<td class="desc"><p>显示物理磁盘使用的技术。 可能的值： </p> 
+<ul> 
+<li>SAS &#8212; 表示串行连接 SCSI</li> 
+<li>SATA &#8212; 表示串行高级技术附件 (SATA) </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"><span><b>介质类型</b></span></td> 
+<td class="desc"> 
+<p>显示物理磁盘的介质类型。 可能的值：</p> 
+<ul> 
+<li>HDD &#8212;表示介质类型是硬盘驱动器。 HDD 是一种非易变性的存储设备，在高速旋转的、表面带有磁性的盘片上存储数字化编码的数据。</li> 
+<li>SSD &#8212; &#8212;表示介质类型是固态驱动器。 SSD 是一种使用固态记忆体永久性存储数据的数据存储设备。</li> 
+<li>无此信息 &#8212; 表示此组件的状态为未知。 </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>热备份</b></span></td> 
+<td class="desc"> 
+<p>表示磁盘是否被指派为热备份，以及热备份的类型。 可能的值：</p> 
+<ul> 
+<li>否 - 表示磁盘未被指派为热备份。</li> 
+<li>专用 - 表示磁盘被指派为专用热备份。</li> 
+<li>全局 - 表示磁盘被指派为全局热备份。</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_inner_content"><div><p>单击每个物理磁盘的“+”标记可在基本属性外显示下列高级属性。</p></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>操作状态</b></span></td> 
+<td class="desc"> 
+<p>仅当有基于进度的操作出现时显示：</p> 
+<ul> 
+<li>回写 — 表示数据正被从热备份复制到物理磁盘或反之。</li> 
+<li>清除 — 表示清除操作正在物理磁盘上执行。 如果物理磁盘所属的虚拟磁盘正在被慢速初始化，该物理磁盘的状态也会显示为“清除”。</li> 
+<li>重建 — 表示来自冗余虚拟磁盘的数据正在物理磁盘上重建。</li> 
+<li>不适用 — 表示没有正在执行的操作。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>电源状况</b></span></td> 
+<td class="desc"><p> 表示物理磁盘的旋转状况。 可能的值：</p> 
+<ul> 
+<li>降速 - 表示物理驱动器处于旋转降速的状态。</li> 
+<li>过渡 — 表示物理驱动器正从降速状态转为起转状态或反之。</li> 
+<li>起转 - 表示物理驱动器处于起转的状态。 </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>故障预测</b></span></td> 
+<td class="desc"> 
+<p>显示物理磁盘是否收到了 SMART 警告，并预测将会故障。 可能的值：是或否。同时参阅警报日志查看与 SMART 预测故障有关的警报。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>进度</b></span></td> 
+<td class="desc"> 
+<p>以百分比显示正在物理磁盘上执行的操作的状态。</p> 
+<p>如果没有进行任何操作，则显示 <b>不适用</b>. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>已用 RAID 磁盘空间</b></span></td> 
+<td class="desc"> 
+<p>以千兆字节 (GB) 数为单位显示控制器上虚拟磁盘使用的物理磁盘空间。</p> 
+<p>在某些情况下，即使已经使用了部分物理磁盘，属性的值仍显示为零 (0)。 这会出现在已用空间为 0.005 GB 或更少时。 计算已使用磁盘空间的算法将 0.005 GB 及以下的值舍入为 0 。 在 0.006 GB 和 0.009 GB 之间的已使用磁盘空间则舍入为 0.01 GB。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>可用 RAID 磁盘空间 </b> </span></td> 
+<td class="desc"> 
+<p>显示磁盘上的可用空间（以 GB 为单位）。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>协议速度</b></span> </td> 
+<td class="desc"> 
+<p>显示在开始旋转及与控制器初始通信期间磁盘所协议的数据传输速度（以每秒千兆字节为单位）。 该速度取决于磁盘的转速、控制器支持的速度、连接器上的控制器的当前速度以及机柜中的机柜管理模块 (EMM）的速度。 </p> 
+<p>如果协议速度不可用，则显示 <b>无此信息</b>.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>支持速度</b></span> </td> 
+<td class="desc"> 
+<p>显示设备支持的最高数据传输速率。 如果支持速度不可用，则显示 <b>无此信息</b>.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>SAS 地址</b></span> </td> 
+<td class="desc"> 
+<p>显示物理磁盘的 SAS 地址。 每个 SAS 磁盘的 SAS 地址都是唯一的。 如果不可用，则显示 <b>不适用</b>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>部件号</b></span> </td> 
+<td class="desc"> 
+<p>显示物理磁盘的片段部件识别号 (PPID）。 </p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>制造商</b></span> </td> 
+<td class="desc"> 
+<p>显示物理磁盘的制造商名称。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>产品 ID</b></span> </td> 
+<td class="desc"> 
+<p>显示磁盘的产品 ID。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>修订</b></span></td> 
+<td class="desc"> 
+<p>显示固件版本。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>序列号</b></span> </td> 
+<td class="desc"> 
+<p>显示磁盘的序列号。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>制造日</b></span> </td> 
+<td class="desc"> 
+<p>显示物理磁盘的制造日期。 如果使用的总线协议是 SATA，则显示零 (0)。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>制造周</b></span> </td> 
+<td class="desc"> 
+<p>显示物理磁盘的制造周。 如果使用的总线协议是 SATA，则显示零 (0)。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>制造年</b></span> </td> 
+<td class="desc"> 
+<p>显示物理磁盘的制造年份。 如果使用的总线协议是 SATA，则显示零 (0)。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>外型</b></span></td> 
+<td class="desc"> 以英寸为单位显示物理磁盘驱动器的物理大小和布局。 可能的值为 1.8，2.5，3.5。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>控制器</b></span></td> 
+<td class="desc"> 
+<p>单击控制器名链接可查看与此物理磁盘相关的控制器属性。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>机柜</b></span> </td> 
+<td class="desc"> 
+<p>单击机柜名链接可查看与此物理磁盘相关的机柜属性。 如果物理磁盘是直接连接到控制器，则不会显示此属性。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>查看此物理磁盘的虚拟磁盘</b></span></td> 
+<td class="desc"> 单击此链接可查看与此物理磁盘相关的虚拟磁盘。</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

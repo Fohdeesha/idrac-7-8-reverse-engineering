@@ -1,0 +1,130 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _OSInfo
+{
+        booln primaryOS;
+        u8 reservedAlign[2];
+        u32 offsetOsName;
+        u32 offsetOsVersion;
+} OSInfo;
+
+typedef struct _SystemInfo
+{
+        u32 objExtFlags;
+        u32 keyOffset;
+        u32 fqddOffset;
+        u32 friendlyFQDDOffset;
+        astring MarketingName[32];
+        astring SysProductName[32];
+        astring SysManufacturer[16];
+        astring ChassisManufacturer[16];
+        astring ChassisServiceTag[16];
+        astring ChassisAssetTag[64];
+        u8 ChassisBootUpState;
+        u8 ChassisPowerSupplyState;
+        u8 ChassisThermalState;
+        u8 ChassisSecurityStatus;
+        u8 ChassisSystemHeight;
+        u32 SysMemTotalSize;
+        u64 SysMemMaxSize;
+        u32 SysMemAvailableSize;
+        u8 SysMemPrimaryStatus;
+        u8 SysMemLocation;
+        u8 SysMemPurpose;
+        u8 SysMemErrorMethodology;
+        astring SysMemFailOverState[16];
+        astring SysMemRedundancyConfiguration[16];
+        astring SysMemErrorInfo[16];
+        u16 SysMemSocketsCurrentCapacity;
+        u16 SysMemSocketsMaximumCapacity;
+        astring BIOSVersion[16];
+        astring BIOSReleaseDate[16];
+        astring BaseBoardChassisSlot[16];
+        u16 SystemID;
+        astring SystemGUID[37];
+        astring smbiosGUID[37];
+        astring UUID[37];
+        astring HostName[256];
+        astring SysServiceTag[16];
+        astring ExpServiceCode[32];
+        astring SystemAssetTag[64];
+        astring PlatformModelName[32];
+        u8 SystemRevision;
+        astring ChassisName[64];
+        astring ChassisModelName[128];
+        astring SystemNodeId[36];
+        u8 BladeGeometry;
+        u8 PrimaryStatus;
+        u8 EnabledState;
+        u8 MaxCPUSockets;
+        u8 PopulatedCPUSockets;
+        u8 MaxPCIeSlots;
+        u8 PopulatedPCIeSlots;
+        s64 systemBootupTime;
+        s64 UpdateTime;
+        u8 PlatformType;
+        astring BoardPartNum[10];
+        astring BoardSerialNum[15];
+        astring CPLDVersion[16];
+        u8 tempRollupStatus;
+        u8 voltRollupStatus;
+        u8 fanRollupStatus;
+        u8 batteryRollupStatus;
+        u8 psuRollupStatus;
+        u8 CPURollupStatus;
+        astring Key[32];
+        astring FriendlyFQDDName[256];
+} SystemInfo;
+
+typedef struct _MemoryInfo
+{
+        u32 totalPhysMemorySize;
+        u32 availPhysMemorySize;
+        u32 totalPageFileSize;
+        u32 availPageFileSize;
+        u32 totalVirtualMemorySize;
+        u32 availVirtualMemorySize;
+} MemoryInfo;
+
+typedef struct _ClusterObj
+{
+        u32 clusterType;
+        u32 offsetClusterTypeDescr;
+        u32 offsetClusterName;
+} ClusterObj;
+
+typedef struct _ClusterMemberObj
+
+{
+        u32 offsetClusterMemberName;
+} ClusterMemberObj;
+
+
+typedef struct _SecurityGlobalObj
+{
+        u32 numUsers;
+} SecurityGlobalObj;
+
+
+typedef struct _SecurityUserObj
+{
+        u32 offsetUserName;
+} SecurityUserObj;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

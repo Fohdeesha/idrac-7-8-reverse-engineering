@@ -1,0 +1,401 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#DataSecurityLoSCapabilities.v1_0_0.DataSecurityLoSCapabilities",
+    "$ref": "#/definitions/DataSecurityLoSCapabilities",
+    "definitions": {
+        "AntiVirusScanTrigger": {
+            "type": "string",
+            "enum": [
+                "None",
+                "OnFirstRead",
+                "OnPatternUpdate",
+                "OnUpdate",
+                "OnRename"
+            ],
+            "enumDescriptions": {
+                "None": "No trigger.",
+                "OnFirstRead": "Trigger on first read.",
+                "OnPatternUpdate": "Trigger on antivirus pattern file update.",
+                "OnUpdate": "Trigger on object update.",
+                "OnRename": "Trigger on object rename."
+            },
+            "enumLongDescriptions": {
+                "None": "This enumeration literal specifies No trigger.",
+                "OnFirstRead": "This enumeration literal specifies to trigger on first read.",
+                "OnPatternUpdate": "This enumeration literal specifies to trigger on antivirus pattern file update.",
+                "OnUpdate": "This enumeration literal specifies to trigger on object update.",
+                "OnRename": "This enumeration literal specifies to trigger on object rename."
+            },
+            "description": "Types of antivirus scan triggers",
+            "longDescription": "The enumberation literals shall specify types of antivirus scan triggers."
+        },
+        "AuthenticationType": {
+            "type": "string",
+            "enum": [
+                "None",
+                "PKI",
+                "Ticket",
+                "Password"
+            ],
+            "enumDescriptions": {
+                "None": "No authentication.",
+                "PKI": "Public Key Infrastructure.",
+                "Ticket": "Ticket-based (e.g., Kerberos)",
+                "Password": "Password/shared-secret"
+            },
+            "enumLongDescriptions": {
+                "None": "This enumeration literal specifies No authentication.",
+                "PKI": "This enumeration literal specifies a Public Key Infrastructure. Customers with the highest assurance requirements roll PKI out to hosts and users (it is more common for hosts than users. User PKI-based authentication has significant operational complications and administrative overheads, e.g., smart cards may be involved.",
+                "Ticket": "This enumeration literal specifies Ticket-based (e.g., Kerberos): This is the most common class of authentication infrastructure used in enterprises. Kerberos is the best known example, and Windows usage of that via Active Directory is so widely deployed as to be a de facto standard. In other areas (e.g., academia) there are comparable ticket-based systems.",
+                "Password": "This enumeration literal specifies Password/shared-secret: Absent an distributed authentication infrastructure, this is what is typically done."
+            },
+            "description": "Enumeration of authentication algorithms.)",
+            "longDescription": "The enumeration literals shall specify authentication algorithms."
+        },
+        "DataSanitizationPolicy": {
+            "type": "string",
+            "enum": [
+                "None",
+                "Clear",
+                "CryptographicErase"
+            ],
+            "enumDescriptions": {
+                "None": "No sanitization.",
+                "Clear": "Sanitize data in all user-addressable storage locations for protection against simple non-invasive data recovery techniques.",
+                "CryptographicErase": "Leverages the encryption of target data by enabling sanitization of the target data's encryption key. This leaves only the ciphertext remaining on the media, effectively sanitizing the data by preventing read-access. For more information, see NIST800-88 and ISO/IEC 27040."
+            },
+            "enumLongDescriptions": {
+                "None": "This enumeration literal specifies no sanitization.",
+                "Clear": "This enumeration literal specifies to sanitize data in all user-addressable storage locations for protection against simple non-invasive data recovery techniques.",
+                "CryptographicErase": "This enumeration literal specifies to leverages the encryption of target data by enabling sanitization of the target data's encryption key. This leaves only the ciphertext remaining on the media, effectively sanitizing the data by preventing read-access. For more information, see NIST800-88 and ISO/IEC 27040."
+            },
+            "description": "Types of data sanitization policies",
+            "longDescription": "The enumberation literals shall specify types of data sanitization policies."
+        },
+        "DataSecurityLineOfService": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "Name": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name"},
+                        {"type": "null"}
+                    ],
+                    "description": "A friendly name for this line of service.",
+                    "longDescription": "If present, the name shall be a friendly name for this line of service."
+                },
+                "MediaEncryptionStrength": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/KeySize"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Key size for media encryption.",
+                    "longDescription": "The enumeration literal shall specify a key size in a symmetric encryption algorithm for media encryption."
+                },
+                "ChannelEncryptionStrength": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/KeySize"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Key size for transport channel encryption.",
+                    "longDescription": "The enumeration literal shall specify a key size in a symmetric encryption algorithm for transport channel encryption."
+                },
+                "HostAuthenticationType": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/AuthenticationType"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Authentication type for hosts (servers) or initiator endpoints.",
+                    "longDescription": "The enumeration literal shall specify the authentication type for hosts (servers) or initiator endpoints."
+                },
+                "UserAuthenticationType": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/AuthenticationType"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Authentication type for users (or programs).",
+                    "longDescription": "The enumeration literal shall specify the authentication type for users (or programs)."
+                },
+                "SecureChannelProtocol": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/SecureChannelProtocol"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Protocol that provide encrypted communication.",
+                    "longDescription": "The enumeration literal shall specify the protocol that provide encrypted communication."
+                },
+                "AntivirusScanPolicies": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/AntiVirusScanTrigger"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Policy for triggering an AntiVirus scan.",
+                    "longDescription": "The enumeration literal shall specify the policy for triggering an AntiVirus scan."
+                },
+                "AntivirusEngineProvider": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "AntiVirus provider.",
+                    "longDescription": "The value shall specify an AntiVirus provider."
+                },
+                "DataSanitizationPolicy": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/DataSanitizationPolicy"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Data sanitization policy.",
+                    "longDescription": "The enumeration literal shall specify the data sanitization policy."
+                }
+            },
+            "description": "Describe data security service level requirements.",
+            "longDescription": "This structure shall be used to describe data security service level requirements. "
+        },
+        "DataSecurityLoSCapabilities": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.v1_1_0.json#/definitions/Identifier"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value identifies this resource.  The value shall be unique within the managed ecosystem."
+                },
+                "SupportedMediaEncryptionStrengths": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/KeySize"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported key sizes for media encryption.",
+                    "longDescription": "The enumeration literal shall specify supported key sizes in a symmetric encryption algorithm (AES) for media encryption."
+                },
+                "SupportedChannelEncryptionStrengths": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/KeySize"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported key sizes for transport channel encryption.",
+                    "longDescription": "The enumeration literal shall specify supported key sizes in a symmetric encryption algorithm (AES) for transport channel encryption."
+                },
+                "SupportedHostAuthenticationTypes": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/AuthenticationType"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported authentication types for hosts (servers) or initiator endpoints.",
+                    "longDescription": "The enumeration literal shall specify supported authentication types for hosts (servers) or initiator endpoints."
+                },
+                "SupportedUserAuthenticationTypes": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/AuthenticationType"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported authentication types for users (or programs).",
+                    "longDescription": "The enumeration literal shall specify supported authentication types for users (or programs)."
+                },
+                "SupportedSecureChannelProtocols": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/SecureChannelProtocol"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported protocols that provide encrypted communication.",
+                    "longDescription": "The enumeration literal shall specify supported protocols that provide encrypted communication."
+                },
+                "SupportedAntivirusScanPolicies": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/AntiVirusScanTrigger"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported policies that trigger an AntiVirus scan.",
+                    "longDescription": "The enumeration literal shall specify supported policies that trigger an AntiVirus scan."
+                },
+                "SupportedAntivirusEngineProviders": {
+                    "type": "array",
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported AntiVirus providers.",
+                    "longDescription": "The entry values shall specify supported AntiVirus providers."
+                },
+                "SupportedDataSanitizationPolicies": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/DataSanitizationPolicy"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported data sanitization policies.",
+                    "longDescription": "The enumeration literal shall specify supported data sanitization policies."
+                },
+                "SupportedDataSecurityLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/DataSecurityLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Collection of known and supported DataSecurityLinesOfService.",
+                    "longDescription": "The collection shall contain supported DataSecurity service options."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "Describe data security capabilities.",
+            "longDescription": "This resource may be used to describe data security capabilities."
+        },
+        "KeySize": {
+            "type": "string",
+            "enum": [
+                "Bits_0",
+                "Bits_112",
+                "Bits_128",
+                "Bits_192",
+                "Bits_256"
+            ],
+            "enumDescriptions": {
+                "Bits_0": "No key.",
+                "Bits_112": "3DES 112 bit key.",
+                "Bits_128": "AES 128 bit key.",
+                "Bits_192": "AES 192 bit key.",
+                "Bits_256": "AES 256 bit key."
+            },
+            "enumLongDescriptions": {
+                "Bits_0": "This enumeration literal specifies that there is no key.",
+                "Bits_112": "This enumeration literal specifies a 3DES 112 bit key.",
+                "Bits_128": "This enumeration literal specifies an AES 128 bit key.",
+                "Bits_192": "This enumeration literal specifies an AES 192 bit key.",
+                "Bits_256": "This enumeration literal specifies an AES 256 bit key."
+            },
+            "description": "Enumeration of Key sizes in a symmetric encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)",
+            "longDescription": "The enumeration literals shall specify Key sizes in a symmetric encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)"
+        },
+        "SecureChannelProtocol": {
+            "type": "string",
+            "enum": [
+                "None",
+                "TLS",
+                "IPsec",
+                "RPCSEC_GSS"
+            ],
+            "enumDescriptions": {
+                "None": "No encryption.",
+                "TLS": "Transport Layer Security (TLS), as defined by IETF RFC 5246.",
+                "IPsec": "Internet Protocol Security (IPsec), as defined by IETF RFC 2401.",
+                "RPCSEC_GSS": "RPC access to the Generic Security Services Application Programming Interface (GSS-API), as defined by IETF RPC 2203."
+            },
+            "enumLongDescriptions": {
+                "None": "This enumeration literal specifies no encryption.",
+                "TLS": "This enumeration literal specifies Transport Layer Security (TLS), as defined by IETF RFC 5246.",
+                "IPsec": "This enumeration literal specifies Internet Protocol Security (IPsec), as defined by IETF RFC 2401.",
+                "RPCSEC_GSS": "This enumeration literal specifies RPC access to the Generic Security Services Application Programming Interface (GSS-API), as defined by IETF RPC 2203."
+            },
+            "description": "Types of Secure channel protocols",
+            "longDescription": "The enumeration literals shall specify types of Secure channel protocols."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

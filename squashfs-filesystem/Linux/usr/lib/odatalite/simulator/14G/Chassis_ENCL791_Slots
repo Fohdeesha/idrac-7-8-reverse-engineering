@@ -1,0 +1,131 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791",
+    "@odata.type": "#SlotsCollection.SlotsCollection",
+    "Name": "Slots Collection",
+    "Members@Message.ExtendedInfo": [ { "Message": "This collection contains ALL instances of SlotConfigs entity in the view of the Redfish service." } ],
+    "Members@odata.count": 40,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-4"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-5"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-6"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-7"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-8"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-4"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-5"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-6"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOMFan-1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOMFan-2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOMFan-3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOMFan-4"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-4"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-5"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-6"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-A1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-A2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-B1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-B2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-C1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-C2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-A1a"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-A1b"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-A2a"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-A2b"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-B1a"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-B1b"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-B2a"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-B2b"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/EC-1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/EC-2"
+        }
+    ]
+}

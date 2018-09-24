@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<script type="text/javascript"><% include "h_serverType.html" %></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link href="/css/popup.css" rel="stylesheet" type="text/css" />
+  <link href="/css/custom.css" rel="stylesheet" type="text/css" />
+  <link href="/css/icons.css" rel="stylesheet" type="text/css" />
+
+  <title>iDRAC7: Storage - Virtual Disks</title>
+  <script src="/js/prototype.js" type="text/javascript"></script>
+  <script src="/js/Clarity.js" type="text/javascript"></script>
+  <script src="h_common.js" type="text/javascript"></script>
+	
+	</head>
+<body onload="javascript:popUp.initialize(true);">
+
+  <div class="popup_container">
+    <script type="text/javascript">writeHelpHeader(<%=dracType %>); </script>
+    <div class="popup_content">
+      <div class="popup_content_top_right">
+        <div class="popup_content_top_left">
+          <div class="popup_content_top">
+          </div>
+        </div>
+      </div>
+      <div class="popup_content_right">
+        <div class="popup_content_left">
+          <div class="popup_content_middle">
+            <div class="popup_page_title">
+              				<span id="helpTitle"> Virtual Disks</span>
+               				<div class="popup_line">
+              </div>
+            </div>
+            <div class="popup-jump-bar">
+              <span class="popup-jump-items">Jump to:
+                <a id="cc3" href="#VirtualDisks" class="popup-jump-bar">Health and Properties</a>
+                |<a id="A14" href="#Other" class="popup-jump-bar">Other Options</a>
+              </span>
+              <div class="popup_jumpbar-line">
+              </div>
+            </div>
+            <div id="popup_overflow">
+              <a name="top"></a>
+        <div class="popup_inner_content">
+                <div>
+                  <p>Use this page to view the list of virtual disks present in 
+					the storage subsystem and their properties. </p>
+					</div>
+              <div class="popup_subheader">                
+                <span id="BasicFilter"> Basic / Advanced Virtual Disk Filter </span> 
+                <div class="popup_subheaderline">
+                </div>
+                </div>
+
+              	<div class="popup_inner_content"><p>Use the <b>Controller</b> drop-down menu to filter the list of virtual disks 
+				based on controllers. Click <b>Apply</b>.</p>
+					<p>Click <b>Advanced Filter</b> to filter the list of virtual disks 
+					based on:</p>
+								<ul>
+												<li>Controller</li>
+												<li>Status</li>
+												<li>State</li>
+												<li>Layout</li>
+												<li>Bus Protocol</li>
+												<li>Media 
+					Type</li>
+												<li>Read Policy</li>
+												<li>Write Policy</li>
+												<li>Bad Blocks Found</li>
+												<li>Secured</li>
+												<li>Disk Cache 
+					Policy</li>
+												<li>Enhanced Cache</li>
+												<li>Minimum Size (MB)</li>
+												<li>All or Part of Name</li>
+								</ul>
+								<p>For information about each 
+					property, see the
+								<a id="cc4" href="#VirtualDisks" class="popup-jump-bar">Health and Properties</a>
+                	section.</p>
+								<p>Click 
+								<strong>Cancel</strong> 
+								to restore the default values in the fields.</p></div>
+              
+              <div class="popup_subheader">
+                <a name="VirtualDisks"></a>
+                <div class="popup_backtotop">
+                  <a href="javascript:popUp.scrolltoTop()">Back to top</a>
+                </div>
+                <span id="VirtualDisks"> Health and Properties </span>
+                <div class="popup_subheaderline">
+                </div>
+              </div>
+					
+                 <div class="popup_inner_content">
+				 <div><p>The following basic properties are displayed for each 
+					virtual disk.</p>
+					</div>
+                 <div class="popup_infolist">
+
+                  <table>
+				                      <tr>
+                      <td  class="item" >
+                        <span><b>Status</b></span></td>
+                      <td class="desc">
+						<p>Displays the health of the virtual disk. Possible values: </p>
+						<ul>
+						<li>OK <span class="status_ok"> &#8212; </span> Indicates 
+						the component is working as expected.</li>
+						<li>Warning <span class="status_noncritical"> &#8212; </span> Indicates a probe or other 
+						monitoring device has detected a reading for the 
+						component that is above or below the acceptable level. 
+						The component may be functioning, but it can 
+						fail. The component may also be functioning in an 
+						impaired state.
+                                          </li>
+						<li>Critical <span class="status_critical"> &#8212; </span> Indicates the component has 
+						either failed or failure is imminent. The component 
+						requires immediate attention and may require 
+						replacement.</li>
+						<li>Information Not Available <span class="status_unknown"> &#8212; </span> Indicates 
+						the component status is not known.</li>
+
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item" >
+                        <span><b>Name</b></span></td>
+                      <td class="desc">
+						<p>Displays the name of the virtual disk.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td  class="item" >
+                        <span><b>State</b></span></td>
+                      <td class="desc">
+						<p>Displays the current state of the virtual disks.</p>
+						<ul>
+										<li>Online &#8212; Indicates the virtual disk 
+										is functioning optimally.</li>
+										<li>Degraded &#8212; Indicates a physical disk 
+										in a redundant virtual disk is not 
+										online.</li>
+										<li>Failed &#8212; Indicates the virtual disk 
+										has encountered one or more component failures and is not 
+										functioning.</li>
+										<li>Unknown &#8212; Indicates the state 
+										of the virtual disk is not known.</li>
+						</ul>
+                        <div>
+                           <div class="popup_note">
+                           </div>
+                       <span class="popup_bold">Note:</span> On some 
+							controllers, the virtual disk state is not updated 
+							until the controller performs an I/O operation.</div>
+						</td>
+                    </tr>
+                    <tr>
+                      <td  class="item" >
+                        <span><b>Layout</b></span></td>
+                      <td class="desc">
+						<p>Displays the RAID level.</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item" >
+				<span><b>Size</b></span>
+			</td>
+                      <td class="desc">
+						<p>Indicates the total capacity of the virtual disk (in 
+						MB or GB).</p></td>
+                    </tr>
+                   <tr>
+                      <td class="item" >
+                        <span><b>Media Type</b></span></td>
+						<td class="desc"> <p>Displays the media type of the physical disks present in the virtual disk. Possible values:</p>
+						<ul>
+						<li>HDD &#8212; Indicates the media type is a Hard Disk Drive. A HDD is a non-volatile 
+						storage device which stores digitally-encoded data on 
+						rapidly rotating platters with magnetic surfaces.</li>
+						<li>SSD &#8212; Indicates media type is a Solid State Drive. An SSD is a data storage 
+						device that uses solid-state memory to store persistent 
+						data.</li>
+						<li>Information Not Available — Indicates the 
+						information is not available.</li>
+						</ul>
+                        <div>
+                           <div class="popup_note">
+                           </div>
+                       <span class="popup_bold">Note:</span> You cannot have 
+							both HDD and SSD media on a virtual disk. Also, you 
+							cannot have both SAS and SATA drives on the virtual 
+							disk.</div>
+ 					</td>
+                    </tr>
+                    <tr>
+                      <td class="item" >
+                        <span><b>Read Policy</b></span>
+                      </td>
+                      <td class="desc">
+						<p>Displays the read policy that the controller is using 
+						for this virtual disk. Possible Values:</p>
+						<ul>
+										<li>Read Ahead &#8212; Indicates that for the 
+										given volume, the controller reads 
+										sequentially ahead of the requested data and 
+										stores the additional data in cache 
+										memory, anticipating a data 
+										requirement.&nbsp; This speeds up sequential data 
+										reads, but there is less 
+										improvement when accessing random data.</li>
+										<li>Adaptive Read Ahead &#8212; Indicates that 
+										for the given volume, the control uses the Read-Ahead cache policy if the 
+										two most recent disk accesses occurred 
+										in sequential sectors. If the read 
+										requests are random, the controller 
+										returns to No Read Ahead mode.</li>
+										<li>No Read Ahead &#8212; Indicates that for 
+										the given volume, no read ahead policy 
+										is used.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item" >
+                        <span><b>Write Policy</b></span></td>
+						<td class="desc"><p>Displays the write policy that the controller is using for this virtual disk. 
+						Possible values:</p>
+						<ul>
+										<li>Write Back &#8212; Indicates that for the 
+										given volume, the controller sends a 
+										data transfer completion signal to the 
+										host system when the controller cache has 
+										received all the data in a transaction. 
+										The controller then writes the cached 
+										data to the storage device in the 
+										background.</li>
+										<li>Write Through &#8212; Indicates that for 
+										the given volume, the controller sends a 
+										data transfer completion signal to the 
+										host system when the disk subsystem has 
+										received all the data in a transaction.</li>
+										<li>Force Write Back &#8212; When using 
+										force write-back caching, the write 
+										cache is enabled regardless of whether 
+										the controller has a battery. If the 
+										controller does not have a battery and 
+										force write-back caching is used, data 
+										loss may occur in the event of a power 
+										failure.</li>
+						</ul>
+						</td>
+                    </tr>
+                   <tr>
+                      <td class="item" ><span><b>Stripe Size</b></span></td>
+                      <td class="desc">
+						<p>Displays the stripe size of the virtual disk. The 
+						stripe size refers to the amount of space that each 
+						stripe consumes on a single disk. Possible values are 8 KB, 16 KB, 32 KB, 64 KB, 128 KB, 256 KB, 512 KB, 
+						or 1 MB.</p>
+						<p>If this value is not available, it 
+						displays <b>Information Not Available</b>.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item" >
+                        <span><b>Secured</b></span>
+                        </td>
+                        <td class="desc">Indicates whether a virtual disk is secured or not. Possible values: Yes and No.<br />
+						To secure the virtual disk,
+						Self-Encrypting Drives (SEDs) are required.</td>
+                    </tr>
+                    <tr>
+                      <td class="item" >
+                        <span><b>Remaining Redundancy</b></span>
+                        </td>
+						<td class="desc">Indicates the number of possible drives 
+						that can be lost before this virtual disk fails. 
+						Possible values: 0, 1, or 2.</td>
+                    </tr>
+                  </table>
+				  </div>
+				  </div>
+				  <div class="popup_inner_content"><div>
+                
+                 <p>Click the + sign to display the <b>Advanced Properties</b> 
+					for each virtual disk along with the basic properties.</p></div>
+				<div class="popup_infolist">
+				<table>
+				<tr>
+                      <td  class="item">
+                        <span><b>Bus Protocol</b></span></td>
+                      <td class="desc">
+						<p>Displays the technology that the physical disks 
+						included in the virtual disk are using. Possible values: </p>
+						<ul><li>SAS &#8212; Serial Attached SCSI</li>
+						
+						 <li>SATA &#8212; Serial Advanced Technology Attachment (SATA)</li>
+										</ul>
+						<p>By default, SAS is disabled and SATA is enabled.</p>
+						</td>
+                    </tr>
+				<tr>
+                      <td  class="item">
+                        <span><b>Operational State</b></span></td>
+                      <td class="desc">
+						<p>Displayed only 
+						when there is progress-based operation:</p>
+						<ul>
+										<li>Resyncing &#8212; Indicates a consistency 
+										check is being performed on the virtual 
+										disk.</li>
+										<li>Background Initialization &#8212; 
+										Indicates a background initialization is 
+										being performed on the virtual disk.</li>
+										<li>Initializing &#8212; Indicates the virtual 
+										disk is being initialized.</li>
+										<li>Re-constructing &#8212; Indicates the 
+										virtual disk configuration has changed. 
+										The physical disks included in the 
+										virtual disk are being modified to 
+										support the new configuration.</li>
+										<li>Not Applicable — Indicates there is 
+										no operation in-progress.</li>
+						</ul>
+						</td>
+                    </tr>
+                   
+                    <tr>
+                      <td class="item">
+                       <span><b>Disk Cache Policy</b></span></td>
+                      <td class="desc">
+						<p>Displays whether the disk cache policy of the physical disks that are part of the virtual disk is enabled 
+						or disabled. Possible values are:</p>
+						<ul>
+										<li>
+										Enabled — Indicates that the disk’s write cache is enabled. This 
+										increases performance and the 
+										probability of data loss if there is 
+										power loss.
+										</li>
+										<li>
+										Disabled — Indicates that the disk’s 
+										write cache is disabled. This decreases 
+										performance and the probability of data 
+										loss.</li>
+										<li>Default &#8212; Indicates that the disk is 
+										using its default write cache mode. For 
+										SATA disks, this is enabled and for SAS 
+										disks this is disabled.</li>
+										
+						</ul>
+						<p>For virtual disks based on SATA 
+						drives, the default disk cache policy is enabled; and 
+						for virtual disks based on SAS drives, it is disabled.</p>
+						</td>
+                    </tr>
+                   
+                    <tr>
+                      <td class="item">
+                       <span><b>Enhanced Cache</b></span></td>
+                      <td class="desc">
+						<p>Indicates whether the PERC controller is using the 
+						virtual disk as a secondary 
+						cache to improve random read 
+						performance. This property is
+						displayed only for 
+						SSC virtual disks. Possible values:</p>
+						<ul>
+										<li>Yes &#8212; Indicates virtual disk is 
+										being used as the secondary cache.</li>
+										<li>Not Applicable &#8212; Indicates secondary 
+										cache is not applicable.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Progress</b></span></td>
+                      <td class="desc">
+						<p>Displays the progress of an operation being performed on the virtual disk in percentage.</p>
+						
+						<p>If there is no operation in-progress, it 
+						displays <b>Not Applicable</b>. </p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Bad Blocks Found</b></span> </td>
+                        <td class="desc"><p>
+						Displays whether the virtual disk has bad blocks. 
+						Virtual disk bad blocks are due to bad blocks on one or 
+						more member physical disks. Read operation on the 
+						virtual disks having bad blocks may fail. Virtual disk 
+						bad blocks are discovered when the controller performs 
+						any operation that requires scanning the disk.
+						Possible values: </p>
+						<ul>
+										<li>Yes &#8212; Indicates 
+										virtual disk has bad blocks.</li>
+										<li>No &#8212; Indicates 
+										virtual disk does not have bad blocks.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Controller</b></span></td>
+                        <td class="desc">Click the controller name link to view the controller 
+						properties associated with this virtual disk.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>View Physical Disks</b></span></td>
+                        <td class="desc">Click this link to view the physical 
+						disks associated with this virtual disk.</td>
+                    </tr>
+                </table>
+                 </div>
+                 
+              </div>
+                
+              <script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+	</body>
+</html>

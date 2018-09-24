@@ -1,0 +1,15 @@
+[Unit]
+Description=Personality Module
+After=fullfw_app.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/avct/sbin/pm
+KillSignal=SIGKILL
+
+[Install]
+WantedBy=multi-user.target

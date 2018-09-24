@@ -1,0 +1,30 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata/TaskService/Tasks/Members/$entity",
+    "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ343-SLED946",
+    "@oem.nav.parentid": "/redfish/v1/TaskService/Tasks",
+    "@odata.type": "#Tasks.1.0.0.Task",
+    "Id": "SEQ343-SLED946",
+    "Name": "Task SEQ343-SLED946",
+    "TaskState": "Pending",
+    "StartTime": "2015-03-07T14:44+06:00",
+    "EndTime": "2015-03-07T14:45+06:00",
+    "TaskStatus": "OK",
+    "Messages": [
+        {
+            "MessageId": "Base.1.0.SoftwareInstallationPending",
+            "Message": "The Software ID 65F-1.1.10 is scheduled to be installed on NIC.Integrated.1-1-1.", 
+            "MessageArgs": [
+                "65F-1.1.10",
+                "NIC.Integrated.1-1-1"
+            ]
+        }
+    ],
+    "Oem": {
+        "EID:674": {
+            "TaskFor": [
+                { "odata.id": "/redfish/v1/SoftwareService/SoftwareInventory/165F-2.0.00" }
+            ]
+        }
+    }
+}

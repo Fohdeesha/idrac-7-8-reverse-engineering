@@ -1,0 +1,50 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Links/Members/entity",
+    "@odata.id": "/redfish/v1/Chassis/SLED947"  ,"@oem.nav.parentid": "/redfish/v1/Chassis",
+    "@odata.type": "#Chassis.1.0.0.Chassis",
+    "Id": "SLED947",
+	"Name": "Compute Sled",
+    "ChassisType": "Blade",
+    "Description": "A sled that fits into two slots.",
+    "Manufacturer": "Dell Inc.",
+    "Model": "PowerEdge DoubleDimSled",
+    "SKU": "SLED947",
+    "SerialNumber": "USE135ES77",
+    "Version": "1.0",
+    "PartNumber": "",
+    "AssetTag": "CustomerSpecifiedValue",
+    "Status": {
+        "State": "Enabled",
+        "Health": "Critical",
+        "HealthRollup": "Critical"
+    },
+    "Links": {
+        "ComputerSystems": [
+            {
+                "@odata.id": "https://192.168.148.50/redfish/v1/Systems/SLED947"
+            }
+        ],
+        "ContainedBy": {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791"
+        },
+        "ManagedBy": [
+            {
+                "@odata.id": "https://192.168.148.50/redfish/v1/Managers/SLED947"
+            }
+        ]
+    },
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "Dell#Chassis.1.0.0.Chassis",
+            "InSlot": [
+                {
+                    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-5"
+                },
+                {
+                    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-6"
+                }
+            ]
+        }
+    }
+}

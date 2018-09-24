@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellServiceRoot  v1.0.0 -->
+<!--# This schema complements to OEM section of Service Root Resource                   -->
+<!--# Copyright 2014-2016 Dell, Inc. or its subsidiaries.All Rights Reserved.             -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.1.0.0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
+
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellServiceRoot">
+      <EntityType Name="DellServiceRoot" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+	    <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+        <Annotation Term="OData.Description" String="This is the schema definition for the additional OEM properties to complement DMTF Service Root Schema."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an OEM Service Root for a Redfish implementation."/>
+      </EntityType>
+
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellServiceRoot.v1_0_0">
+
+      <EntityType Name="DellServiceRoot" BaseType="DellServiceRoot.DellServiceRoot">
+        <Annotation Term="OData.Description" String="This is the schema definition for the additional OEM properties to complement DMTF Service Root Schema."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an OEM Service Root for a Redfish implementation."/>
+      </EntityType>
+
+      <ComplexType Name="ServiceRootSummary">
+        <Property Name="ManagerMACAddress" Type="Edm.String">
+			<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+			<Annotation Term="OData.Description" String="Property to represent MAC Address of the iDRAC."/>
+			<Annotation Term="OData.LongDescription" String="The value of the property represents MAC Address of the iDRAC."/>
+		</Property>
+		<Property Name="ServiceTag" Type="Edm.String">
+			<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+			<Annotation Term="OData.Description" String="Property to represent ServiceTag of Computer System."/>
+			<Annotation Term="OData.LongDescription" String="The value of the property specifies the system service tag."/>
+		</Property>
+		<Property Name="IsBranded" Type="Edm.Int16">
+			<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+			<Annotation Term="OData.Description" String="Property to represent OEM system as DELL."/>
+			<Annotation Term="OData.LongDescription" String="The value of the property identifies OEM system as DELL."/>
+		</Property>
+	 </ComplexType>
+
+    </Schema>
+
+  </edmx:DataServices>
+</edmx:Edmx>

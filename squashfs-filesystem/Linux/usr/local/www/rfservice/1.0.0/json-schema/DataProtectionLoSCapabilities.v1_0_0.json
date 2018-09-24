@@ -1,0 +1,359 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#DataProtectionLoSCapabilities.v1_0_0.DataProtectionLoSCapabilities",
+    "$ref": "#/definitions/DataProtectionLoSCapabilities",
+    "definitions": {
+        "DataProtectionLineOfService": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "Name": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name"},
+                        {"type": "null"}
+                    ],
+                    "description": "A friendly name for this line of service.",
+                    "longDescription": "If present, the name shall be a friendly name for this line of service."
+                },
+                "RecoveryGeographicObjective": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/FailureDomainScope"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Geographic distribution scopes",
+                    "longDescription": "The value specifies the geograhic scope of the failure domain."
+                },
+                "RecoveryPointObjective": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Time interval defining how much source data that can be lost on failure.",
+                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify a bound on the the amount of source data that can be lost on failure."
+                },
+                "RecoveryTimeObjective": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/RecoveryAccessScope"},
+                        {"type": "null"}
+                    ],
+                    "units": "s",
+                    "readonly": false,
+                    "description": "Time to access an alternate replica.",
+                    "longDescription": "The maximum time required to access an alternate replica shall be less than this time interval."
+                },
+                "ReplicaType": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaType"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Type of replica.",
+                    "longDescription": "The type of replica shall conform to this value."
+                },
+                "MinLifetime": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Minimum lifetime (seconds) that replica must be maintained.",
+                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify the minimum supported lifetime. Note: The maximum number of replicas can be determined using this value together with the replicaSchedule."
+                },
+                "IsIsolated": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "The replica is in a separate fault domain.",
+                    "longDescription": "True shall indicate that the replica is in a separate fault domain from its source. The default value of this property is false."
+                },
+                "Schedule": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Schedule.v1_0_0.json#/definitions/Schedule"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "A schedule for making periodic point in time replicas.",
+                    "longDescription": "If a replica is made periodically, the value shall define the schedule."
+                },
+                "ReplicaAccessLocation": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Location.v1_0_0.json#/definitions/Location"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Location that supplies data access to the replica.",
+                    "longDescription": "This value shall be used if the data access location of the replica is required to be at a specific location.   Note 1: The location value may be granular.  Note 2: A value may be required for some regulatory compliance."
+                },
+                "ReplicaClassOfService": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/ClassOfService.json#/definitions/ClassOfService"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The replica's class of service.",
+                    "longDescription": "The value shall reference the class of service that defines the required service levels of the replica."
+                }
+            },
+            "description": "Describes a data protection service option.",
+            "longDescription": "This service option describes a replica that protects data from loss. The requirements must be met collectively by the communication path and the replica."
+        },
+        "DataProtectionLoSCapabilities": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.v1_1_0.json#/definitions/Identifier"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value shall be unique within the managed ecosystem."
+                },
+                "SupportedRecoveryGeographicObjectives": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/FailureDomainScope"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported types of failure domains.",
+                    "longDescription": "The value of each entry shall specify a supported failure domain."
+                },
+                "SupportedRecoveryPointObjectiveSeconds": {
+                    "type": "array",
+                    "items": {
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "units": "s"
+                    },
+                    "readonly": false,
+                    "description": "Supported time intervals defining how much source information can be lost on failure.",
+                    "longDescription": "The value of each entry shall specify a supported time interval defining the maximum source information that may be lost on failure"
+                },
+                "SupportedRecoveryTimeObjectives": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/RecoveryAccessScope"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported expectations for time to access an alternate replica.",
+                    "longDescription": "The value of each entry shall specify a supported expectation for time to access an alternate replica."
+                },
+                "SupportedReplicaTypes": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaType"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported replica types.",
+                    "longDescription": "The value of each entry shall specify a supported replica type"
+                },
+                "SupportedMinLifetime": {
+                    "type": "array",
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported minimum lifetime that replica must be maintained.",
+                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify the minimum lifetime or the replica."
+                },
+                "SupportsIsolated": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Allocating a replica in a separate fault domain is supported.",
+                    "longDescription": "A value of true shall indicate that allocating a replica in a separate fault domain is supported. The default value for this property is false."
+                },
+                "Links": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "type": [
+                                "array",
+                                "boolean",
+                                "number",
+                                "null",
+                                "object",
+                                "string"
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "properties": {
+                        "Oem": {
+                            "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                            "description": "Oem extension object.",
+                            "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
+                        },
+                        "SupportedReplicaOptions@odata.count": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/count"
+                        },
+                        "SupportedReplicaOptions@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "SupportedReplicaOptions": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "/redfish/v1/Schemas/ClassOfService.json#/definitions/ClassOfService"
+                            },
+                            "readonly": false,
+                            "description": "Collection of known and supported replica Classes of Service.",
+                            "longDescription": "The collection shall contain known and supported replica Classes of Service."
+                        }
+                    },
+                    "readonly": true,
+                    "description": "Contains links to other resources that are related to this resource.",
+                    "longDescription": "The value of this property shall contains links to other resources that are not contained in this resource."
+                },
+                "SupportedDataProtectionLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/DataProtectionLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Collection of known and supported DataProtectionLinesOfService.",
+                    "longDescription": "The collection shall contain known and supported DataProtectionLinesOfService."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "Describe data protection capabilities",
+            "longDescription": "The capabilities to protect data from loss by the use of a replica. The requirements shall be met collectively by the communication path and the replica. There should be one instance associated to a class of service for each replica. Each replica independently should have a class of service that describes its characteristics."
+        },
+        "FailureDomainScope": {
+            "type": "string",
+            "enum": [
+                "Server",
+                "Rack",
+                "RackGroup",
+                "Row",
+                "Datacenter",
+                "Region"
+            ],
+            "enumDescriptions": {
+                "Server": "A CPU/memory complex.",
+                "Rack": "A container for Servers, Networking, and Storage.",
+                "RackGroup": "A set of Racks that share common infrastructure.",
+                "Row": "An adjacent set of racks.",
+                "Datacenter": "A co-located set of servers, including network and storage that share communication, power, or cooling infrastructure.",
+                "Region": "A geographical or politically isolated set of resources."
+            },
+            "enumLongDescriptions": {
+                "Server": "Components of a CPU/memory complex that share the same infrastructure.",
+                "Rack": "A container within a datacenter that provides communication, power, or cooling to a set of components.",
+                "RackGroup": "A set of racks that may share common communication, power, or cooling.",
+                "Row": "A set of adjacent racks or rackgroups that may share common communication, power, or cooling.",
+                "Datacenter": "A facility that provides communication, power, or cooling infrastructure to a co-located set of servers, networking and storage.",
+                "Region": "A set of resources that are required to be either geographically or politically isolated from resources not in the resources."
+            },
+            "description": "Values of this enumeration represent a geographic scope of a failure domain.",
+            "longDescription": "The enumeration literals of this enumeration shall represent a geographic scope in which all components within that scope have similar vulnerabilities."
+        },
+        "RecoveryAccessScope": {
+            "type": "string",
+            "enum": [
+                "Immediate",
+                "Online",
+                "Nearline",
+                "Offline"
+            ],
+            "enumDescriptions": {
+                "Immediate": "Active access to synchronous replicas.",
+                "Online": "Passive access to replicas via the same front-end interconnect.",
+                "Nearline": "Access to replica via a different front-end interconnect. A restore step is required before recovery can commence.",
+                "Offline": "No direct connection to the replica. (i.e. To a bunker containing backup media.)"
+            },
+            "enumLongDescriptions": {
+                "Immediate": "Access to synchronous replicas shall be instantaneous.",
+                "Online": "Access to a synchronous replica shall be consistent with switching access to a different path the same front-end interconnect.  A restore step shall not be required.",
+                "Nearline": "Access to a replica shall be consistent with switching access to a different path through a different front-end interconnection infrastructure.  Some inconsistency may occur.  A restore step may be required before recovery can commence.",
+                "Offline": "Access to a replica may take a significant amount of time.  No direct connection to the replica is assumed. Some inconsistency loss may occur.  A restore step is likely to be required."
+            },
+            "description": "An enumeration that represents the relative time required to make a replica available as a source.",
+            "longDescription": "The enumeration literals shall represent the relative time required to make a replica available as a source. "
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

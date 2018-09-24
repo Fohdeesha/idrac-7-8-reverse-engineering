@@ -1,0 +1,17 @@
+[Unit]
+Description=osbmc lompt
+After=dm-stage2.service
+
+[Service]
+# simple enables it to run in background
+Type=simple
+ControlGroup=memory:/idrac/NC
+RemainAfterExit=Yes
+StandardOutput=journal
+StandardError=inherit
+
+EnvironmentFile=/etc/global.env
+ExecStart=-/etc/sysconfig/lompt.sh
+
+# DO NOT INSTALL
+# will be started by DM or osinet scripts

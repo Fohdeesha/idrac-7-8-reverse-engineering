@@ -1,0 +1,723 @@
+{default}
+[Usage]
+    show   [<options>] [<target>] [<properties>] 
+           [<propertyname>== <propertyvalue>]
+    set    [<options>] [<target>] <propertyname>=<value>
+    cd     [<options>] [<target>]
+    create [<options>] <target> [<property of new target>=<value>] 
+           [<property of new target>=<value>]
+    delete [<options>] <target>
+    exit   [<options>]
+    reset  [<options>] [<target>]
+    start  [<options>] [<target>]
+    stop   [<options>] [<target>]
+    version [<options>]
+    help   [<options>] [<help topics>]
+    load -source <URI> [<options>] [<target>]
+    dump -destination <URI> [<options>] [<target>]
+
+{cd}
+Description:
+    The cd (change default target) command is used to navigate the target 
+    address space of the implementation. The command changes the Current 
+    Default Target for the session. The new target address path is specified 
+    on the  command line using the standard CLP target syntax.
+Syntax:
+    cd [<options>] [<target>]
+Options:
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{create}
+Description:
+    The create command is used to create new target objects in the target 
+    address space of the implementation. Create is only supported in certain 
+    specific target profiles.
+Syntax:
+    create [<options>] <target> [<property of new target>=<value>]   
+           [<property of new target>=<value>]
+Options:
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-source
+    The source option is used to identify a Management Element or other   
+    data source which will provide initial values for the instance to be 
+    created.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{delete}
+Description:
+    The delete command is used to remove target. The delete is only
+    supported in certain specific target profiles.
+Syntax:
+    delete [<options>] <target>
+Options:
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-f, -force
+    Instructs verb to ignore warning condition that would prevent execution 
+    by default.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+      command line.
+
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{dump}
+Description:
+    The dump command is used to take a binary image from an ME and sent it 
+    to a specific location.
+Syntax:
+    dump -destination <URI> [<options>] [<target>]
+Options:
+-destination <URI>
+    The option destination tells the implementation the target to which it 
+    will transfer the binary image. The desired destination is specified as 
+    the argument to the destination option.
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-f, -force
+    Instructs verb to ignore warning condition that would prevent execution  
+    by default.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{exit}
+Description:
+      The exit command terminates the users current CLP session..
+Syntax:
+      exit [<options>]Options:
+-x, -examine
+      The examine option causes the Command Processor to examine 
+      command syntax only and provide feedback to the user on the 
+      command's validity and correctness.
+-h, -help
+      The help option causes the Command Processor to return text 
+      describing the proper use of the verb entered as the first term on the 
+      command line.
+-k, -keep
+       The keep option is used to request the Command Processor to retain 
+       status information for the job spawned in response to the command 
+       with which the option was included. In order to use the keep option to 
+       request that status for a command be preserved, it must be included as 
+       part of the initial command request.
+-o, -output
+       The output option controls the format of output returned by the 
+       Command Processor to the Client. This option has no effect on the 
+       execution of the command or the Managed Elements affected by the 
+       command.
+-v, -version
+       The version option causes the Command Processor to return the 
+       version of  the command verb that apprears as the first term on the 
+       command line.
+
+{help}
+Description:
+    The help command is used to display help to a user about the usage of a 
+    specific command or provide more details on a target.
+Syntax:
+    help [<options>] [<help topics>]
+Options:
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{load}
+Description:
+    The load command is used to take a binary image from a aspecific source 
+    location and place it at the specified target address.
+Syntax:
+    load -source <URI> [<options>] [<target>]
+Options:
+-source <URI>
+    This option tells the implementation the target from which it will 
+    transfer the binary image.
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-f, -force
+    Instructs verb to ignore warning condition that would prevent
+    execution by default.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{reset}
+Description:
+    The reset command resets the targets state.
+Syntax:
+    reset [<options>] [<target>]
+Options:
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-f, -force
+    Instructs verb to ignore warning condition that would prevent
+    execution by default.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{set}
+Description:
+    The set command is used to set the value of one or more of  a target 
+    properties. The command can accept a target and series of keyword=value 
+    pairs which it will try and apply.
+Syntax:
+    set [<options>] [<target>] <propertyname>=<value>
+Options:
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-f, -force
+    Instructs verb to ignore warning condition that would prevent
+    execution by default.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{show}
+Description:
+    The show command is used to display information about Managed 
+    Elements.It can be used to view information about a single Managed 
+    Element, a tree of Managed Elements, or Managed Elements matching 
+    a property value filter.
+Syntax:
+    show [<options>] [<target>] [<properties>] [<propertyname>== 
+    <propertyvalue>]
+Options:
+-a, all
+    The all option instructs the Command Processor to select all values 
+    where appropriate for the command. This option is only supported with the  
+    show command.
+-d, -display
+    The display option filters the information returned in Command Results. 
+    This option provides two levels of filtering.It enables filtering of results 
+    for  entire instances at the granularity of CIM class or at individual 
+    property value granularity. The display option also enables filtering 
+    results for an individual instance, allowing a user to restrict the results 
+    to the properties (or a subset) of the instance and/or the verbs (or a 
+    subset) supported for an instance.
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-f, -force
+    Instructs verb to ignore warning condition that would prevent 
+    execution by default.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-l, -level
+    The level option instructs the command verb to include 'n' number of 
+    levels in the scope of its execution. A level typically refers to the depth 
+    of  containment that is to be processed by the verb.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{start}
+Description:
+    The start command starts the target. If the target is in a state of running 
+    that is equal to or higher than the end state the command will return 
+    an error and not change the targets state.
+Syntax:
+    start [<options>] [<target>]
+Options:
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-f, -force
+    Instructs verb to ignore warning condition that would prevent
+    execution by default.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{stop}
+Description:
+    The stop command stops the target. If the target is in a state of running 
+    that is equal to or lower than the end state the command will return an 
+    error and not change the targets state.
+Syntax:
+    stop [<options>] [<target>]
+Options:
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-f, -force
+    Instructs verb to ignore warning condition that would prevent
+    execution by default.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+    part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{version}
+Description:
+    The version command is used to display the version of the SM CLP protocol 
+    which this implementation supports.
+Syntax:
+    version [<options>]
+Options:
+-x, -examine
+    The examine option causes the Command Processor to examine 
+    command syntax only and provide feedback to the user on the 
+    command's validity and correctness.
+-h, -help
+    The help option causes the Command Processor to return text 
+    describing the proper use of the verb entered as the first term on the 
+    command line.
+-k, -keep
+    The keep option is used to request the Command Processor to retain 
+    status information for the job spawned in response to the command 
+    with which the option was included. In order to use the keep option to 
+    request that status for a command be preserved, it must be included as 
+       part of the initial command request.
+-o, -output
+    The output option controls the format of output returned by the 
+    Command Processor to the Client. This option has no effect on the 
+    execution of the command or the Managed Elements affected by the 
+    command.
+-v, -version
+    The version option causes the Command Processor to return the 
+    version of  the command verb that apprears as the first term on the 
+    command line.
+-w, -wait
+    The wait option causes the Command Processor to not return the 
+    control immediately to the Client, instead the Command Processor will 
+    withhold all Command Response data and command input control 
+    until all jobs related to this command have completed. The wait option 
+    has no effect on the success or  failure of the command or spawned 
+    jobs.
+
+{all|a} 
+Description:
+    The all option instructs the Command Processor to select all values where 
+    appropriate for the command. This option is only supported with the show 
+    command. The all option has no arguments.
+Forms:
+    -all
+    -a
+    
+{destination}
+Description:
+    The destination option tells the implementation the target to which it will
+    transfer the binary image. The desired destination is specified as the 
+    argument to the destination option.
+Forms:
+    -destination
+    
+{display|d}
+Description:
+    The display option filters the information returned in Command Results.This 
+    option provides two levels of filtering. It enables filtering of results for
+    entire instances at the granularity of CIM class or at individual property 
+    value granularity. The display option also enables filtering results for an
+    individual instance, allowing a user to restrict the results to the 
+    properties (or a subset) of the instance and/or the verbs (or a subset) 
+    supported for an instance.
+Forms:
+    -d[isplay] <type>*[,<type>]
+Arguments:
+    all
+        Perform no filtering of results.
+    verbs
+        Display the commands that are valid for this target.
+    targets
+        Filters the command results to only include information about Managed 
+        Element instances.
+    properties
+        Can be used to filter the Command Results such that  information  about 
+        an instance is returned only if the instance has a property with the 
+        specified value or a property with the specified name. Filters the 
+        Command Results such that only those properties specified by name are 
+        returned. The properties are returned in the order indicated. If no 
+        property names are specified, all properties included in the Command 
+        Results will be returned.
+    associations
+        Filter the Command Results to only include information about 
+        associations.	
+
+{examine|x}
+Description:
+    The examine option causes the Command Processor to examine command syntax 
+    only and provide feedback to the user on the command's validity and 
+    correctness. The examine option has no arguments.
+Forms:
+    -examine
+    -x
+
+{force|f}
+Description:
+    The force option instructs verb to ignore warning condition that would 
+    prevent execution by default. The force option has no arguments.
+Forms:
+    -force
+    -f
+
+{help|h}
+Description:
+    The help option causes the Command Processor to return text describing the 
+    proper use of the verb entered as the first term on the command line. The 
+    help text includes a description of the verb and it's behavior and 
+    descriptions of all options supported by the verb. When the help option is 
+    specified, the command does not execute or cause any change to the target. 
+    The help option has no arguments.
+Forms:
+    -help
+    -h
+
+{keep|k}
+Description:
+    The keep option is used to request the Command Processor to retain status 
+    information for the job spawned in response to the command with which the 
+    option was included. In order to use the keep option to request that status 
+    for a command be preserved, it must be included as part of the initial 
+    command request.
+Forms:
+    -keep <m[.s]>
+    -k <m[.s]>
+Arguments: 
+    m.s
+        It is an amount of time specified as ‘minutes.seconds’
+
+{level|l}
+Description:
+    The level option instructs the command verb to include 'n' number of levels 
+    in the scope of its execution. A level typically refers to the depth of 
+    containment that is to be processed by the verb.
+Forms:
+    -level <n>
+    -l <n>
+Arguments: 
+    n
+        It is the number of levels to include in command scope.
+
+{output|o}
+Description:
+    The output option controls the format of output returned by the Command
+    Processor to the Client. This option has no effect on the execution of the 
+    command or the Managed Elements affected by the command.
+Forms:
+    -output <arguments>
+    -o <arguments>
+Arguments: 
+    format
+        Format controls the structure of the output text.
+    error/terse/verbose
+        Selects the level of detail included in the output.
+    language
+        Language selects the translation of text.
+    begin/end
+        When multiple items are returned in the output, begin/end control where
+        to start in the list.
+    order
+        When multiple items are returned in the output, order controls the order
+        of those items.
+    count
+        When multiple items are returned in the output, number controls the  
+        number of items returned. The default is all items.
+    number
+        Requests that a range of results be returned.
+
+{source}
+Description:
+    This option tells the implementation the target from which it will transfer
+    the binary image. The source of data is specified as the argument to the 
+    source option.
+Forms:
+    -source
+
+{version|v}
+Description:
+    The version option causes the Command Processor to return the version of the
+    command verb that apprears as the first term on the command line.
+    The version option has no arguments.
+ Forms:
+    -version
+    -v
+
+{wait|w}
+Description:
+    The wait option causes the Command Processor to not return the control
+    immediately to the Client, instead the Command Processor will withhold all
+    Command Response data and command input control until all jobs related to 
+    this command have completed. The wait option has no effect on the success or
+    failure of the command or spawned jobs.
+    The wait option has no arguments.
+Forms:
+    -wait
+    -w
+

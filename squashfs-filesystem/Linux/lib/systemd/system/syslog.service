@@ -1,0 +1,22 @@
+[Unit]
+Description=Syslog
+RequiresMountsFor=/flash/data0 /mmc1
+After=early-mount.service
+Requires=early-mount.service
+
+# for CPU Utilization
+After=fullfw_app.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+
+ExecStartPre=-/bin/sh -c "if [ ! -f /flash/data0/etc/services ]; then cp /etc/services.default /flash/data0/etc/services ; fi"
+ExecStart=/etc/init.d/systemd_syslog.sh
+ExecStop=/bin/killall syslogd
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,4 @@
+#!/bin/sh
+PLATFORMID=255
+echo ${PLATFORMID}
+exit ${PLATFORMID}

@@ -1,0 +1,32 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemas/Links/Members/$entity",
+    "@odata.id": "/redfish/v1/JsonSchemas/Chassis.1.0.0"  ,"@oem.nav.parentid": "/redfish/v1/JsonSchemas",
+    "@odata.type": "#JsonSchemaFile.1.0.0.JsonSchemaFile",
+    "Id": "Chassis.1.0.0",
+    "Name": "Chassis Schema File",
+    "Description": "Chassis Schema File Location",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "Chassis.1.0.0",
+    "Oem": {},
+    "Location": [
+        {
+            "Language": "en",
+            "ArchiveUri": "/<someuri>/Classes.gz",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/Chassis.1.0.0.json",
+            "ArchiveFile": "Chassis.1.0.0.json"
+        },
+        {
+            "Language": "zh",
+            "ArchiveUri": "/<someuri>/Classes.zh.gz",
+            "PublicationUri": "http://schemas.contoso.com/Chassis.1.0.0.zh.json",
+            "ArchiveFile": "Chassis.1.0.0.zh.json"
+        },
+        {
+            "Language": "xy",
+            "Uri": "/<someLocalUri>/Chassis.1.0.0.xy.json",
+            "PublicationUri": "http://schemas.contoso.com/Chassis.1.0.0.xy.json"
+        }
+    ]
+}

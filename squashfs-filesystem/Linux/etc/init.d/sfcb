@@ -1,0 +1,70 @@
+#!/bin/bash
+#
+# $Id: sfcb.init-redhat.in d10ba60 on Sun Jul 29 17:38:39 2012 -0400 by Dave Heller $
+#
+# chkconfig: 35 20 80
+#
+# description: Small Footprint CIM Broker Service
+#
+# processname: sfcbd
+#
+# config: /etc/sfcb/sfcb.cfg
+
+# Source function library.
+. /etc/init.d/functions
+
+echo $PATH | grep -q /usr/sbin ||PATH=/usr/sbin:$PATH
+
+if [ -z "$LD_LIBRARY_PATH" ] || echo $LD_LIBRARY_PATH | grep -qv '/usr/lib[/]*\($\|[:]\)'
+then
+	LD_LIBRARY_PATH=/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+	export LD_LIBRARY_PATH
+fi
+
+start() {
+	echo -n "Starting sfcb: "
+	daemon /usr/sbin/sfcbd -d &&
+	touch /var/lock/subsys/sfcb &&
+	return 0 ||
+	return 1
+}	
+
+stop() {
+	echo -n "Shutting down sfcb: "
+	killproc sfcbd &&
+	rm -f /var/lock/subsys/sfcb &&
+	return 0 || return 1
+}
+
+reload() {
+	echo -n "Reloading sfcb configuration: "
+	killproc sfcbd -HUP &&
+	return 0 || return 1
+}
+
+case "$1" in
+    start)
+	start
+	;;
+    stop)
+	stop
+	;;
+    status)
+	status sfcbd
+	;;
+    restart)
+    	stop
+	start
+	;;
+    reload)
+	reload
+	;;
+    condrestart)
+	[ -f /var/lock/subsys/sfcb ] && restart || :
+	;;
+    *)
+	echo "Usage: sfcb {start|stop|status|reload|restart|condrestart}"
+	exit 1
+	;;
+esac
+exit $?

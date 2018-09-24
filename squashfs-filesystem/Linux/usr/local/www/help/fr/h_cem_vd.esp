@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript"><% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7 : Stockage - Disques virtuels</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> Disques virtuels</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">Aller à : <a class="popup-jump-bar" href="#VirtualDisks" id="cc3">Disques virtuels</a> |<a class="popup-jump-bar" href="#Other" id="A14">Autres options</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Utilisez cette page pour afficher la liste des disques virtuels présents dans le sous-système de stockage et leurs propriétés. </p> 
+</div> 
+<div class="popup_subheader">
+<span id="BasicFilter"> Filtre de disque virtuel de base / avancé </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"><p>Utilisez le menu déroulant <b>Contrôleur</b> pour filtrer la liste des disques virtuels selon les contrôleurs. Cliquez sur <b>Appliquer</b>.</p> 
+<p>Cliquez sur <b>Filtre avancé</b> pour filtrer la liste des disques virtuels selon le ou les éléments suivants :</p> 
+<ul> 
+<li>Contrôleur</li> 
+<li>Condition</li> 
+<li>État</li> 
+<li>Disposition</li> 
+<li>Protocole du bus</li> 
+<li>Type de média</li> 
+<li>Règle de lecture</li> 
+<li>Règle d'écriture</li> 
+<li>Blocs endommagés trouvés</li> 
+<li>Sécurisé</li> 
+<li>Règles de cache du disque</li> 
+<li>Cache amélioré</li> 
+<li>Taille minimale (Mo)</li> 
+<li>Totalité ou partie du nom</li> 
+</ul> 
+<p>Pour plus d'informations sur chaque propriété, voir la section <a class="popup-jump-bar" href="#VirtualDisks" id="cc4">Disques virtuels</a>.</p> 
+<p>Cliquez sur <strong>Annuler</strong> pour restaurer les valeurs par défaut dans les champs.</p></div> 
+<div class="popup_subheader"> 
+<a name="VirtualDisks"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Retour au début</a> </div> 
+<span id="VirtualDisks"> Disques virtuels </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p>Les propriétés de base suivantes s'affichent pour chaque disque virtuel.</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Condition</b></span></td> 
+<td class="desc"> 
+<p>Affiche l'intégrité du disque virtuel. Valeurs possibles : </p> 
+<ul> 
+<li>OK <span class="status_ok"> &#8212; </span> indique que le composant fonctionne comme prévu.</li> 
+<li>Avertissement <span class="status_noncritical"> &#8212;</span> indique qu'un capteur ou autre périphérique de surveillance a détecté une lecture du composant supérieure ou inférieure au niveau acceptable. Le composant peut toujours fonctionner, mais il risque d'échouer. Ou encore, le composant peut fonctionner, mais de façon altérée. </li> 
+<li>Critique<span class="status_critical"> &#8212; </span> indique que le composant a échoué ou qu'un échec est imminent. Le composant doit être examiné immédiatement et devra peut-être être remplacé.</li> 
+<li>Informations non disponibles<span class="status_unknown"> &#8212; </span> Indique que la condition du composant est inconnue.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nom</b></span></td> 
+<td class="desc"> 
+<p>Affiche le nom du disque virtuel.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>État</b></span></td> 
+<td class="desc"> 
+<p>Affiche l'état actuel des disques virtuels.</p> 
+<ul> 
+<li>En ligne &#8212; Indique que le disque virtuel fonctionne de manière optimale.</li> 
+<li>Dégradé  &#8212; indique qu'un disque physique présent sur un disque virtuel redondant n'est pas en ligne.</li> 
+<li>Défaillant &#8212; Indique que le disque virtuel a rencontré une ou plusieurs défaillances de composant et qu'il ne fonctionne pas.</li> 
+<li>Inconnu &#8212; Indique que l'état du disque virtuel est inconnu.</li> 
+</ul> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">Remarque : </span>sur certains contrôleurs, la condition du disque virtuel n'est mise à jour que lorsque le contrôleur effectue une opération d'E/S.</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Disposition</b></span></td> 
+<td class="desc"> 
+<p>Affiche le niveau de RAID.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Taille</b></span> </td> 
+<td class="desc"> 
+<p>Indique la capacité totale du disque virtuel (en Mo ou Go).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Type de média</b></span></td> 
+<td class="desc"> 
+<p>Affiche le type de média des disques physiques présents sur le disque virtuel. Valeurs possibles :</p> 
+<ul> 
+<li>Disque dur &#8212; Indique que le média est un disque dur. Une baie de disques durs est un périphérique de stockage rémanent qui stocke des données encodées numériquement sur des plateaux à rotation rapide avec des surfaces magnétiques.</li> 
+<li>SSD &#8212; Indique que le média est un disque Solid State Drive. Un disque dur SSD est un périphérique de stockage de données qui utilise une mémoire à semi-conducteurs pour stocker les données persistantes.</li> 
+<li>Informations non disponibles — Indique que les informations ne sont pas disponibles.</li> 
+</ul> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">Remarque : </span>vous ne pouvez pas combiner des médias de type disque dur et disque SSD sur un disque virtuel. De même, vous ne pouvez pas combiner des disques SAS et SATA sur un disque virtuel.</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Règle de lecture</b></span> </td> 
+<td class="desc"> 
+<p>Affiche les règles de lecture utilisées par le contrôleur pour ce disque virtuel. Valeurs possibles :</p> 
+<ul> 
+<li>Lecture anticipée &#8212; Indique que, pour le volume donné, le contrôleur effectue une lecture anticipée des données demandées de manière séquentielle et stocke toutes les données supplémentaires dans la mémoire cache, anticipant ainsi une demande rapide de données.  Cela accélère les lectures de données séquentielles, mais les améliorations sont moins marquées lors de l'accès aléatoire aux données.</li> 
+<li>Lecture anticipée adaptative &#8212; Indique que pour le volume donné, la commande utilise la règle de cache de lecture anticipée si les deux derniers accès disque se sont produits dans des secteurs séquentiels. Si les demandes de lecture sont aléatoires, le contrôleur passe en mode Pas de lecture anticipée.</li> 
+<li>Pas de lecture anticipée &#8212; indique que, pour le volume donné, la règle Pas de lecture anticipée est utilisée.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Règle d'écriture</b></span></td> 
+<td class="desc"><p>Affiche la règle de lecture utilisée par le contrôleur pour ce disque virtuel. Valeurs possibles :</p> 
+<ul> 
+<li>Écriture différée &#8212; Indique que, pour le volume donné, le contrôleur envoie un signal d'achèvement du transfert de données au système hôte dès que le cache du contrôleur a reçu toutes les données d'une transaction. Le contrôleur procède alors à l'écriture des données mises en cache sur le périphérique de stockage en arrière-plan.</li> 
+<li>Écriture immédiate &#8212; indique que, pour le volume donné, le contrôleur envoie un signal d'achèvement du transfert de données au système hôte dès que le sous-système de disques a reçu toutes les données par transaction d'écriture.</li> 
+<li>Écriture différée forcée : lorsque vous utilisez le cache à écriture différée forcée, l'écriture sur le cache est activée, que le contrôleur ait une batterie ou non. Si le contrôleur n'a pas de batterie et que le cache à écriture différée forcée est utilisé, une perte de données peut se produire en cas de panne de courant.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"><span><b>Taille de bande</b></span></td> 
+<td class="desc"> 
+<p>Cette propriété affiche la taille des bandes du disque virtuel. La taille des bandes fait référence à la quantité d'espace utilisée par chaque bande sur un seul disque. Les valeurs possibles sont 8 Ko, 16 Ko, 32 Ko, 64 Ko, 128 Ko, 256 Ko, 512 Ko ou 1 Mo.</p> 
+<p>Si cette valeur n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Sécurisé</b></span> </td> 
+<td class="desc">Indique si un disque virtuel est sécurisé ou non. Les valeurs possibles sont Oui et Non.<br /> Pour sécuriser le disque virtuel, des disques autocryptables (SED) sont requis.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Redondance restante</b></span> </td> 
+<td class="desc">Indique le nombre possible de disques pouvant être perdus avant que le disque virtuel échoue. Les valeurs possibles sont les suivantes : 0, 1, ou 2.</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_inner_content"><div> 
+<p>Cliquez sur + pour afficher les <b>Propriétés avancées</b> et les propriétés de base de chaque disque virtuel.</p></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Protocole du bus</b></span></td> 
+<td class="desc"> 
+<p>Cette propriété affiche la technologie utilisée par les disques physiques inclus dans le disque virtuel. Valeurs possibles : </p> 
+<ul><li>SAS &#8212; Serial  Attached SCSI</li> 
+<li>SATA &#8212; Serial  Advanced Technology Attachment (connexion série de technologie avancée)</li> 
+</ul> 
+<p>Par défaut, SAS est désactivé et SATA est activé.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>État opérationnel</b></span></td> 
+<td class="desc"> 
+<p>Cette propriété n'est affichée que lorsqu'une opération de progression est en cours :</p> 
+<ul> 
+<li>En cours de resynchronisation &#8212; indique qu'une vérification de la cohérence est en cours d'exécution sur le disque virtuel.</li> 
+<li>Initialisation en arrière-plan &#8212; indique qu'une initialisation en arrière-plan du disque virtuel est en cours.</li> 
+<li>Initialisation &#8212; indique que le disque virtuel est en cours d'initialisation.</li> 
+<li>En cours de reconstruction &#8212; indique que la configuration du disque virtuel a changé. Les disques physiques du disque virtuel sont modifiés pour prendre en charge la nouvelle configuration.</li> 
+<li>Inapplicable : indique qu'il n'y a pas d'opération en cours.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Règles de cache du disque</b></span></td> 
+<td class="desc"> 
+<p>Cette propriété affiche si les règles de cache de disque pour les disques physiques faisant partie du disque virtuel sont activées ou désactivées. Les valeurs possibles sont les suivantes :</p> 
+<ul> 
+<li> Activé — Indique que le cache d'écriture du disque est activé. Ceci améliore les performances et accroît la probabilité de perte de données en cas de panne de courant. </li> 
+<li> Désactivé —  Indique que le cache d'écriture du disque est désactivé. Ceci réduit les performances et la probabilité de perte de données.</li> 
+<li>Par défaut &#8212; Indique que le disque utilise son mode de cache d'écriture par défaut. Cette option est activée dans le cas des disques SATA et désactivée dans le cas des disques SAS.</li> 
+</ul> 
+<p>La stratégie de cache de disque par défaut est activée dans le cas des disques virtuels à base de lecteurs SATA et désactivée dans le cas des disques virtuels à base de lecteurs SAS.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Cache amélioré</b></span></td> 
+<td class="desc"> 
+<p>Indique si le contrôleur PERC utilise le disque virtuel en tant que cache secondaire à des fins d'optimisation des performances de lecture. Cette propriété s'affiche uniquement pour les disques virtuels SSC. Valeurs possibles :</p> 
+<ul> 
+<li>Oui &#8212; indique que le disque virtuel est utilisé en tant que cache secondaire.</li> 
+<li>Inapplicable &#8212; indique que le cache secondaire est inapplicable.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Progression</b></span></td> 
+<td class="desc"> 
+<p>Affiche la progression d'une opération en cours d'exécution sur le disque virtuel en pourcentage.</p> 
+<p>Si aucune opération n'est en cours, elle affiche <b>Inapplicable</b>. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Blocs endommagés trouvés</b></span> </td> 
+<td class="desc"><p> Cette propriété affiche si le disque virtuel contient des blocs endommagés. Les blocs endommagés de disque virtuel proviennent de blocs endommagés sur un ou plusieurs disques physiques membres. L'opération de lecture de disques virtuels comportant des blocs endommagés peut échouer. Les blocs endommagés de disque virtuel sont découverts lorsque le contrôleur effectue des opérations nécessitant l'analyse du disque. Valeurs possibles : </p> 
+<ul> 
+<li>Oui &#8212; indique que le disque virtuel contient des blocs endommagés.</li> 
+<li>Non &#8212; indique que le disque virtuel ne contient pas de blocs endommagés.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Contrôleur</b></span></td> 
+<td class="desc">Cliquez sur le lien du nom du contrôleur pour afficher les propriétés du contrôleur associées à ce disque virtuel.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Afficher les disques physiques</b></span></td> 
+<td class="desc">Cliquez sur ce lien pour afficher les disques physiques associés à ce disque virtuel.</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

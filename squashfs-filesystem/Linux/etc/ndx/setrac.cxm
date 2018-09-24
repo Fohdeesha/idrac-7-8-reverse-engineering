@@ -1,0 +1,138 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+
+typedef struct _AttributeData
+{
+	booln delayed;
+	astring attributeValue[1024];
+}AttributeData;
+
+typedef struct _KVPData
+{
+	u32 count;
+	booln delayed;
+	astring kvps[4096];
+}KVPData;
+
+typedef struct _RACConfigRoot {
+    u32 objExtFlags;
+    u32 offsetFQDD;
+    u32 bPending;
+    u32 bCommitted;
+    u32 offsetJobID;
+    u32 jobStatus;
+    u32 bEIInProgress;
+}RACConfigRoot;
+
+typedef struct _RACConfigGroup {
+	u32 objExtFlags;
+	u32 offsetKey;
+	u32 offsetGroupName;
+	u32 groupType;
+	u32 offsetGroupDisplayName;
+	u32 offsetGroupDescription;
+} RACConfigGroup;
+
+typedef struct _Attribute {
+	u32 objExtFlags;
+	u32 offsetKey;
+	u32 type;
+	u32 accessType;
+	u32 offsetName;
+	u32 offsetDisplayName;
+	u32 offsetDefaultValue;
+        s32 currentValue;
+	u32 offsetCurrentValue;
+        s32 pendingValue;
+	u32 offsetPendingValue;
+	u32 offsetPossibleValues;
+	s32 minValue;
+	s32 maxValue;
+	u32 maxLength;
+	u32 displayOrder;
+} Attribute;
+
+typedef struct _IntAttribute
+{
+    u32 objExtFlags;
+    u32 offsetKey;
+    u32 subType;
+    u32 accessType;
+    u32 offsetName;
+    u32 offsetDisplayName;
+    s32 defaultValue;
+    s32 currentValue;
+    s32 pendingValue;
+    s32 minValue;
+    s32 maxValue;
+    u32 displayOrder;
+}IntAttribute;
+
+typedef struct _StrAttribute
+{
+    u32 objExtFlags;
+    u32 offsetKey;
+    u32 subType;
+    u32 accessType;
+    u32 offsetName;
+    u32 offsetDisplayName;
+    u32 offsetDefaultValue;
+    u32 offsetCurrentValue;
+    u32 offsetPendingValue;
+    u32 maxLength;
+    u32 displayOrder;
+}StrAttribute;
+
+typedef struct _PasswdAttribute
+{
+    u32 objExtFlags;
+    u32 offsetKey;
+    u32 type;
+    u32 accessType;
+    u32 offsetName;
+    u32 offsetDisplayName;
+    u32 offsetDefaultValue;
+    u32 offsetCurrentValue;
+    u32 offsetPendingValue;
+    u32 maxLength;
+    u32 displayOrder;
+}PasswdAttribute;
+
+typedef struct _EnumAttribute
+{
+    u32 objExtFlags;
+    u32 offsetKey;
+    u32 subType;
+    u32 accessType;
+    u32 offsetName;
+    u32 offsetDisplayName;
+    u32 offsetDefaultValue;
+    u32 offsetCurrentValue;
+    u32 offsetPendingValue;
+    u32 offsetPossibleValues;
+    u32 offsetPossibleIntValues;
+    u32 displayOrder;
+}EnumAttribute;
+
+typedef struct _SysConfigRoot {
+    u32 objExtFlags;
+    u32 offsetFQDD;
+}SysConfigRoot;
+ 
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

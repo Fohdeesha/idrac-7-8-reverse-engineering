@@ -1,0 +1,16 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.id": "/redfish/v1/Chassis/QSI3/Slots/Sled-3c", "@oem.nav.parentid": "/redfish/v1/Chassis/QSI3/Slots",
+    "@odata.type": "#Dell.Slots.1.0.0.Slot",
+    "Id": "Sled-3c",
+    "Name": "Sled-3c",
+    "SlotId": "3c",
+    "SlotGroup": "Sled",
+    "Occupied": true,
+    "SlotType": "Sled",
+    "SlotConfig": { "@odata.id": "/redfish/v1/Chassis/QSI3/SlotConfigs/QuarterSleds" },
+    "Contains": [
+        { "@odata.id": "/redfish/v1/Chassis/SLED945" }
+    ],
+    "Oem": {}
+}

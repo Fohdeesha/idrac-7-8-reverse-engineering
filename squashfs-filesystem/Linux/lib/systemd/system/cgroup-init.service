@@ -1,0 +1,17 @@
+[Unit]
+Description=Initializes cgroup hierarchy
+DefaultDependencies=no
+Before=systemd-tmpfiles-setup.service
+Before=sysinit.target
+Before=basic.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+#ControlGroup=memory:/idrac/
+Nice=-5
+ExecStart=/etc/init.d/cgroup-init.sh
+
+[Install]
+WantedBy=local-fs-pre.target
+WantedBy=local-fs.target

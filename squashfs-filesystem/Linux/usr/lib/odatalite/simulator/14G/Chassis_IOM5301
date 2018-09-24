@@ -1,0 +1,36 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Links/Members/entity",
+    "@odata.id": "/redfish/v1/Chassis/IOM5301"  ,"@oem.nav.parentid": "/redfish/v1/Chassis",
+    "@odata.type": "#Chassis.1.0.0.Chassis",
+    "Id": "IOM5301",
+	"Name": "Network IOM",
+    "ChassisType": "Module",
+    "Description": "An example instance of Chassis representing an IO module.",
+    "Manufacturer": "Dell Inc.",
+    "Model": "PowerEdge NetworkIOM",
+    "SKU": "IOM5301",
+    "SerialNumber": "USE135ES65",
+    "Version": "1.0",
+    "PartNumber": "",
+    "AssetTag": "CustomerSpecifiedValue",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Links": {
+        "ContainedBy": {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791"
+        }
+    },
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "Dell#Chassis.1.0.0.Chassis",
+            "InSlot": [
+                {
+                    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-A1a"
+                }
+            ]
+        }
+    }
+}

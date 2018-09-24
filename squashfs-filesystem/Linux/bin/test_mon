@@ -1,0 +1,30 @@
+#!/bin/sh
+
+pkill -9 appweb_monitor
+pkill -9 AppMonitor
+
+START=$(date)
+cnt=0
+
+while true ; do
+wpid=$(pgrep appweb)
+if [ -z ${wpid} ] ; then
+echo appweb not running
+break
+fi
+
+> /messages/messages
+
+sleep 30
+echo "=================================================";
+echo "Start  :" $START
+echo "Current:" $(date) 
+grep appweb /messages/messages
+echo "-------------------------------------------------";
+free | grep Mem:
+top -b -n1 | grep "appweb\|guiData\|fullfw" | grep -v grep
+done
+
+echo "start : $START"
+echo "finish: $(date)"
+

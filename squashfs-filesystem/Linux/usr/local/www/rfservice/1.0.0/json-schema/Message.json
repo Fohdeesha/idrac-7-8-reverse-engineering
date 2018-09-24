@@ -1,0 +1,27 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_2_0.json",
+    "title": "#Message",
+    "definitions": {
+        "Message": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {},
+            "description": "This type describes a Message returned by the Redfish service.",
+            "longDescription": "This type shall define a Message as described in the Redfish specification."
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}

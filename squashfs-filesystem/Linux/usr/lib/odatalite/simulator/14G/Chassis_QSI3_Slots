@@ -1,0 +1,23 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.id": "/redfish/v1/Chassis/QSI3/Slots",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/QSI3",
+    "@odata.type": "#SlotsCollection.SlotsCollection",
+    "Name": "Slots Collection",
+    "Members@Message.ExtendedInfo": [ { "Message": "This collection contains ALL instances of SlotConfigs entity in the view of the Redfish service." } ],
+    "Members@odata.count": 4,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/QSI3/Slots/Sled-3a"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/QSI3/Slots/Sled-3b"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/QSI3/Slots/Sled-3c"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/QSI3/Slots/Sled-3d"
+        }
+    ]
+}

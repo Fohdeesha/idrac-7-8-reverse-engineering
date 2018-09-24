@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+    <% include "h_serverType.html" %>
+
+</script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7 : Stockage - Contrôleurs</title> 
+<script src="/js/prototype.js" type="text/javascript"> 
+</script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle">Contrôleurs RAID</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">Aller à : <a class="popup-jump-bar" href="#Battery" id="cc1">Batterie du contrôleur</a> | <a class="popup-jump-bar" href="#Other" id="A14">Autres options</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+ 
+<div class="popup_inner_content"> 
+<div> 
+<p>Utilisez cette page pour vérifier l'intégrité et les propriétés du contrôleur RAID et de sa batterie. Le nom du contrôleur s'affiche dans un sous-onglet au format suivant :</p> 
+<p> &lt;controller model&gt; (fente PCI &lt;X&gt;) OU &lt;controller model&gt; (Intégré) </p> 
+<p>Par exemple, Adaptateur PERC H810 (fente PCI 1) ou PERC H310 Mini (intégré)<br /> 
+</p> 
+</div> 
+<div class="popup_subheader"> 
+<span id="Controller"> Intégrité et propriétés </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Condition</b></span></td> 
+<td class="desc"> 
+<p>Affiche l'intégrité du contrôleur.</p> 
+<ul> 
+<li> OK<span class="status_ok"> : </span>Indique que le composant fonctionne comme prévu.</li> 
+<li> Avertissement<span class="status_noncritical"> : </span>Indique qu'un capteur ou un autre périphérique de surveillance a détecté une lecture du contrôleur supérieure ou inférieure au niveau acceptable. Le composant peut toujours fonctionner, mais il risque d'échouer. Ou encore, le composant peut fonctionner, mais de façon altérée.</li> 
+<li>Critique<span class="status_critical"> : </span>Indique que le composant a échoué ou qu'un échec est imminent. Il doit être examiné immédiatement et devra peut-être être remplacé.</li> 
+<li>Information Non Disponible<span class="status_unknown"> : </span>Indique que la condition du composant est inconnue.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>État de la sécurité</b></span></td> 
+<td class="desc"> 
+<p>Indique si le contrôleur prend en charge le cryptage. Valeurs possibles :</p> 
+<ul> 
+<li>Inconnu : Indique que l'état de la sécurité du contrôleur est inconnu.</li> 
+<li>Cryptable : Indique que le contrôleur prend en charge le cryptage.</li> 
+<li>Clé de sécurité attribuée : Indique qu'une clé de sécurité est affectée au contrôleur.</li> 
+<li> Informations non disponibles : Indique que les informations ne sont pas disponibles.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Mode de cryptage</b></span></td> 
+<td class="desc"> 
+<p>Indique le mode de cryptage pris en charge. Valeurs possibles :</p> 
+<ul> 
+<li>Aucun : Indique qu'aucune clé de sécurité n'a été affectée au contrôleur.</li> 
+<li>Pris en charge avec LKM : Indique que le contrôleur utilise la gestion de clé locale (Local Key Management - LKM) pour le cryptage.</li> 
+<li> Informations non disponibles : Indique que les informations ne sont pas disponibles.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Logement PCI</b></span> </td> 
+<td class="desc"> Dans le cas des contrôleurs intégrés, cette propriété affiche le numéro de fente PCI sur le serveur où se trouve le contrôleur. Dans le cas de contrôleurs intégrés, cette propriété n'est pas affichée.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Version du micrologiciel</b></span> </td> 
+<td class="desc"> Affiche la version du micrologiciel actuellement installé sur le contrôleur.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Version du pilote</b></span></td> 
+<td class="desc"> Affiche la version du pilote actuellement installé sur le contrôleur.<br /> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">Remarque :</span> pour certains contrôleurs, si la version du pilote n'est pas obtenue, la propriété affiche <b>Inapplicable</b>.</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Taille de la mémoire cache</b></span></td> 
+<td class="desc"> Affiche la taille de la mémoire cache du contrôleur (en mégaoctets ou gigaoctets).</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Adresse SAS</b></span></td> 
+<td class="desc"> Affiche l'adresse SAS unique du contrôleur. Si celle-ci n'est pas disponible, la propriété affiche <b>Inapplicable</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Référence du fournisseur PCI</b></span></td> 
+<td class="desc"> Affiche la réf. du fournisseur du contrôleur.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Référence du sous-fournisseur PCI</b></span></td> 
+<td class="desc"> Affiche la réf. du fournisseur du contrôleur.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Référence du périphérique PCI</b></span> </td> 
+<td class="desc"> Affiche la réf. du périphérique du contrôleur.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Référence du sous-périphérique PCI</b></span></td> 
+<td class="desc"> Affiche la réf. du sous-périphérique du contrôleur.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Bus PCI</b></span></td> 
+<td class="desc"> Indique le numéro de bus du contrôleur.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Périphérique PCI</b></span></td> 
+<td class="desc"> Indique le numéro du périphérique du contrôleur.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Fonction PCI</b></span></td> 
+<td class="desc"> Indique le numéro de la fonction du contrôleur. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Type de fente</b></span></td> 
+<td class="desc"> Affiche le type de fente PCI du contrôleur. Par exemple, PCI Express x8. Si cette valeur n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Longueur du logement</b></span></td> 
+<td class="desc"> 
+<p>Affiche le type de la carte PCI. Valeurs possibles :</p> 
+<ul> 
+<li>Courte : Indique que le contrôleur est intégré.</li> 
+<li>Longue : Indique que le contrôleur n'est pas intégré.</li> 
+</ul> 
+<p>Si cette valeur n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Largeur du bus</b></span></td> 
+<td class="desc"> Affiche la largeur du bus du contrôleur. Par exemple, 8x ou x8. Si cette valeur n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Mode Recopie</b></span></td> 
+<td class="desc"> 
+<p>Indique si le mode Recopie est activé ou désactivé. Valeurs possibles :</p> 
+<ul> 
+<li>Activé : Indique que la copie automatique des données à partir d'un disque physique sur un disque de secours (en cas de panne prévue) ou à partir d'un disque de secours sur un disque physique (en cas de remplacement d'un disque dégradé) est activée.</li> 
+<li>Désactivé : Indique que le mode de recopie est désactivé.</li> 
+<li>Activé suite à une erreur SMART : Indique que la copie automatique des données d'un disque physique (faisant partie d'un disque virtuel) sur un disque de secours est activée en cas d'un échec prévu du disque physique.</li> 
+<li>Non pris en charge : Indique que le mode de recopie n'est pas pris en charge.</li> 
+</ul> 
+<p>Si le disque physique d'un disque virtuel tombe en panne, les données du disque en panne sont copiées sur le disque de secours désigné. Si vous remplacez le disque en panne par un nouveau disque physique et si vous avez défini le mode Recopie sur Activé, les données sont copiées à partir du disque de secours sur le nouveau disque. Si le micrologiciel du contrôleur est défini sur Activé avec erreur SMART, il commence automatiquement à copier les données du disque SMART du disque virtuel sur le disque de secours.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Taux de lecture cohérente</b></span></td> 
+<td class="desc"> Affiche le pourcentage des ressources du contrôleur consacrées à l'exécution d'une lecture cohérente sur les disques faisant partie du disque virtuel ou sur les disques de secours. Toutes les valeurs situées entre 0 et 100 sont valides.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>État de la lecture cohérente</b></span> </td> 
+<td class="desc"> 
+<p>Affiche la condition actuelle du processus de lecture cohérente. Valeurs possibles : </p> 
+<ul> 
+<li>En cours d'exécution : Indique que le processus de lecture cohérente est en cours d'exécution.</li> 
+<li>Arrêté : Indique que le processus de lecture cohérente est arrêté.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Mode de lecture cohérente</b></span></td> 
+<td class="desc"> 
+<p>Affiche si le mode de lecture cohérente du contrôleur est manuel, automatique ou désactivé. Valeurs possibles : </p> 
+<ul> 
+<li>Automatique : Indique qu'une lecture cohérente s'exécute en continu sur le système. Lorsqu'une itération d'une lecture cohérente est terminée, la lecture cohérente suivante est programmée pour démarrer dans un délai spécifié par le contrôleur. Vous ne pouvez pas démarrer ou arrêter manuellement la lecture cohérente dans ce mode. </li> 
+<li>Manuel : Indique que vous pouvez démarrer ou arrêter le processus de lecture cohérente. </li> 
+<li>Désactivé : Indique que le processus de lecture cohérente est désactivé.</li> 
+<li>Non pris en charge : Indique que le contrôleur ne prend pas en charge la lecture cohérente.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Taux de vérification de la cohérence</b> </span></td> 
+<td class="desc"> Affiche le pourcentage des ressources du système consacrées à la vérification de la cohérence sur un disque virtuel redondant. Cela détermine l'intégrité des données redondantes d'un disque virtuel. Le cas échéant, cette fonction reconstruit les informations redondantes. <br /> À 0 %, la vérification de la cohérence reçoit la priorité la plus basse du contrôleur, prend le plus de temps à se terminer et a le plus petit impact sur les performances du système. Un taux de vérification de la cohérence de 0 % ne signifie pas que le processus est arrêté ou en suspens. <span class="item"> <br /> 
+<br /> 
+</span>À 100%, la vérification de la cohérence reçoit la priorité la plus élevée du contrôleur, réduit le temps de la vérification et a le plus d'effet sur les performances du système.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Mode Vérification de la cohérence</b></span></td> 
+<td class="desc"> 
+<p>Affiche le mode Vérification de la cohérence du contrôleur. Valeurs possibles : </p> 
+<ul> 
+<li>Non pris en charge : Indique que le mode Vérification de la cohérence n'est pas pris en charge sur ce contrôleur.</li> 
+<li>Normal : Indique que le mode de cohérence est normal.</li> 
+<li>Arrêt sur erreur : Indique que le contrôleur abandonne l'opération de vérification de la cohérence en raison d'une erreur.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Taux de recréation</b></span></td> 
+<td class="desc"> Affiche le pourcentage de ressources du contrôleur dédiées à la recréation d'un disque défaillant. Durant une recréation, tout le contenu du disque physique est reconstruit. <br /> À 0 %, la recréation a la priorité la plus basse pour le contrôleur, prend le plus de temps et a le moins d'effet sur les performances du système. Un taux de recréation de 0 % ne signifie pas que la recréation est arrêtée ou en suspens. <br /> À 100 %, la recréation a la priorité la plus élevée pour le contrôleur, réduit le temps de recréation et a le plus d'effet sur les performances du système.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Taux d'initialisation en arrière-plan</b></span></td> 
+<td class="desc"> Affiche le pourcentage des ressources du contrôleur consacrées à l'initialisation en arrière-plan d'un disque virtuel une fois qu'il est créé. <br /> À 0 %, l'initialisation en arrière-plan a la priorité la plus basse pour le contrôleur, prend le plus de temps et a le moins d'effet sur les performances du système. Un taux d'initialisation en arrière-plan de 0 % ne signifie pas que l'initialisation en arrière-plan est arrêtée ou en suspens. <br /> 
+<br /> À 100%, l'initialisation en arrière-plan a la priorité la plus haute pour le contrôleur, réduit le temps d'initialisation en arrière-plan et a le plus d'effet sur les performances du système.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Taux de reconstruction</b></span> </td> 
+<td class="desc"> Affiche le pourcentage des ressources du contrôleur consacrées à la reconstruction d'un groupe de disques après l'ajout d'un disque physique ou la modification du niveau de RAID d'un disque virtuel résidant dans le groupe de disques. <br /> 
+<br /> À 0 %, la reconstruction a la priorité la plus basse pour le contrôleur, prend le plus de temps et a le moins d'effet sur les performances du système. Un taux de reconstruction de 0 % ne signifie pas que celle-ci est arrêtée ou en suspens. <br /> 
+<br /> À 100 %, la reconstruction a la priorité la plus élevée pour le contrôleur, réduit la durée de reconstruction et a le plus d'effet sur les performances du système.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Vitesse possible maximale</b></span></td> 
+<td class="desc"> Affiche la vitesse maximale à laquelle le périphérique peut transférer les données (en gigaoctets par seconde). Les valeurs possibles sont 0, 1,5, 3,0 ou 6,0. Si cette valeur n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Disque de secours rémanent</b></span></td> 
+<td class="desc"> 
+<p>Indique si le logement correspondant au disque de secours est persistant ou non. Valeurs possibles :</p> 
+<ul> 
+<li>Activé : Indique que le logement correspondant au disque de rechange est persistant. Tout lecteur dans le logement fonctionne comme lecteur de secours s'il est qualifié pour être un lecteur de secours. Si le lecteur contient des données étrangères, elles sont écrasées. </li> 
+<li>Désactivé : Indique que le logement correspondant au lecteur de secours n'est pas persistent. Si le lecteur est retiré du logement et qu'un autre le remplace, le logement cesse de fonctionner comme lecteur de secours. Vous devez de nouveau manuellement affecter le lecteur en tant que lecteur de secours.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Paramètre d'équilibrage de charge</b></span></td> 
+<td class="desc"> 
+<p>Cette propriété permet d'utiliser automatiquement les ports ou les connecteurs du contrôleur raccordés à la même enceinte pour acheminer les requêtes d'E/S.<br /> Valeurs possibles :</p> 
+<ul> 
+<li>Automatique : indique que le paramètre d'équilibrage de charge est activé.</li> 
+<li>Aucun : indique que le paramètre d'équilibrage de charge est désactivé.</li> 
+<li>Non pris en charge : indique que l'équilibrage de charge n'est pas pris en charge.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Cache préservé</b></span></td> 
+<td class="desc"> 
+<p>Indique si le contrôleur est doté d'une mémoire cache préservée ou ajoutée. La condition du contrôleur est affichée comme étant <b>dégradée</b> si le contrôleur est doté d'un cache préservé.<br /> Valeurs possibles : </p> 
+<ul> 
+<li>Présent</li> 
+<li>Absent</li> 
+</ul> 
+<p>Si cette valeur n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Intervalles d'arrêt de la rotation</b></span></td> 
+<td class="desc"> Affiche le délai en minutes après lequel les disques de secours et les lecteurs non configurés ralentiront.<br /> Toute valeur entre 30 et 1440 est valide.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Arrêter la rotation des disques non configurés</b></span></td> 
+<td class="desc"> 
+<p>Indique si le ralentissement de la rotation des disques non configurés est activé ou désactivé. Valeurs possibles :</p> 
+<ul> 
+<li>Activé : Indique que l'arrêt de la rotation est activé si les disques non configurés restent sans surveillance durant un intervalle de temps spécifié.</li> 
+<li>Désactivé : Indique que l'arrêt de la rotation est désactivé.</li> 
+</ul> 
+<p>Si cette valeur n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Arrêt de la rotation des disques de secours</b></span></td> 
+<td class="desc"> 
+<p>Indique si l'arrêt de la rotation des disques de secours est activé ou pas. Valeurs possibles :</p> 
+<ul> 
+<li>Activé : Indique que l'arrêt de la rotation du disque de secours est activé si aucune opération de lecture/écriture n'a lieu sur le disque de secours pendant un certain laps de temps.</li> 
+<li>Désactivé : indique que l'arrêt de la rotation est désactivé.</li> 
+</ul> 
+<p>Si cette valeur n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Mode de charge/décharge</b></span></td> 
+<td class="desc"> 
+<p>Affiche le mode Charge/Décharge de la batterie. Valeurs possibles :</p> 
+<ul> 
+<li>Automatique : Indique que le contrôleur effectue un cycle de charge/décharge automatique en fonction du temps défini.</li> 
+<li>Avertissement : Indique que le contrôleur avertit qu'un cycle de charge/décharge est dû mais ne le lancera pas automatiquement. Le cycle de charge/décharge dépasse les 90 jours par défaut.</li> 
+<li>Non pris en charge : Indique que le mode Charge/Décharge n'est pas pris en charge par ce contrôleur.</li> 
+<li>Désactivé : Indique que le mode Charge/Décharge est désactivé.</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+<div class="popup_subheader"> 
+ 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Retour au début</a> </div> 
+<span id="Controller_Battery">Batterie du contrôleur</span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Les propriétés suivantes sont affichées uniquement si le contrôleur possède une batterie.</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Condition</b></span></td> 
+<td class="desc"> 
+<p>Affiche l'intégrité de la batterie.</p> 
+<ul> 
+<li> OK<span class="status_ok"> : </span>Indique que le composant fonctionne comme prévu.</li> 
+<li>Avertissement<span class="status_noncritical"> : </span>Indique qu'un capteur ou autre périphérique de surveillance a détecté une lecture du contrôleur supérieure ou inférieure au niveau acceptable. Le composant peut toujours fonctionner, mais il risque d'échouer. Ou encore, le composant peut fonctionner, mais de façon altérée.</li> 
+<li>Critique<span class="status_critical"> : </span>Indique que le composant a échoué ou qu'un échec est imminent. Il doit être examiné immédiatement et devra peut-être être remplacé.</li> 
+<li>Informations Non Disponibles<span class="status_unknown"> : </span>Indique que la condition du composant est inconnue.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nom</b></span></td> 
+<td class="desc"> Affiche le nom de la batterie présente dans le contrôleur.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>État</b></span></td> 
+<td class="desc"> 
+<p>Affiche la condition actuelle de la batterie. Ce champ peut afficher les conditions suivantes : </p> 
+<ul> 
+<li>Prête : Indique que la batterie fonctionne normalement.</li> 
+<li>Dégradée : Indique que la batterie a besoin d'être reconditionnée (cycle d'alimentation).</li> 
+<li>En cours de chargement : Indique que la batterie est en phase de chargement du cycle d'alimentation.</li> 
+<li>Manquante : Indique que le contrôleur n'a pas de batterie.</li> 
+<li>Déchargée : Indique que la batterie est presque déchargée et doit être reconditionnée. </li> 
+<li>A échoué : indique que la batterie a échoué et doit être remplacée. </li> 
+<li>Inconnue : Indique que la condition de la batterie n'est pas disponible.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Condition de la capacité prévue</b></span></td> 
+<td class="desc"> 
+<p>Affiche la capacité de charge de la batterie. Valeurs possibles : </p> 
+<ul> 
+<li>Prête : Indique que la batterie peut être entièrement chargée.</li> 
+<li>Panne : Indique que la batterie ne peut pas être chargée et a besoin d'être remplacée. </li> 
+<li>Inconnue : Indique que la batterie termine un cycle de charge/décharge. La capacité de la charge de la batterie ne peut pas être déterminée tant que le cycle de charge/décharge n'est pas terminé.</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

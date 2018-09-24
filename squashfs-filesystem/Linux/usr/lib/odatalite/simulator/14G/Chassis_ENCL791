@@ -1,0 +1,55 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791",
+    "@oem.nav.parentid": "/redfish/v1/Chassis",
+    "@odata.type": "#Chassis.1.0.0.Chassis",
+    "Id": "ENCL791",
+    "Name": "Modular chassis enclosure",
+    "ChassisType": "Enclosure",
+    "Description": "An example instance of Chassis representing an enclosure with slots for compute/storage sleds, IOM, PSU and PCIe.",
+    "Manufacturer": "Dell Inc.",
+    "Model": "PowerEdge FX5s",
+    "SKU": "ENCL791",
+    "SerialNumber": "2M220100SL",
+    "Version": "1.0",
+    "PartNumber": "",
+    "AssetTag": "CustomerSpecifiedValue",
+    "IndicatorLED": "Lit",
+    "Status": {
+        "State": "Enabled",
+        "Health": "Critical",
+        "HealthRollup": "Critical"
+    },
+    "Thermal": {
+        "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal"
+    },
+    "Power": {
+        "@odata.id": "/redfish/v1/Chassis/ENCL791/Power"
+    },
+    "Links": {
+        "ManagedBy": [
+            {
+                "@odata.id": "/redfish/v1/Managers/ENCL791.1"
+            }
+        ],
+        "Oem": {}
+    },
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "#Dell.Chassis.0.0.1.Chassis",
+            "SlotConfigs": {
+                "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs"
+            },
+            "Slots": {
+                "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots"
+            },
+			"ControlPanel": {
+				"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel"
+			},
+            "Intrusion": {
+                "@odata.id": "/redfish/v1/Chassis/ENCL791/Intrusion"
+            }
+        }
+    }
+}

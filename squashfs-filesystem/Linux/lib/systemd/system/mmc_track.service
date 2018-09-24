@@ -1,0 +1,9 @@
+[Unit]
+Description=mmc tracking
+After=dsm-sa-datamgr.service
+RequiresMountsFor=/flash/data0 /flash/data1
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+ExecStart=/sbin/mmc_stats

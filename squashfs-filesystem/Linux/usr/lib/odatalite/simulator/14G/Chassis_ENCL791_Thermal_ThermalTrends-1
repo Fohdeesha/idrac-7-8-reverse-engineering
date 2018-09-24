@@ -1,0 +1,21 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/ENCL791/Thermal/ThermalTrends-1/$entity",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal/ThermalTrends-1",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/Thermal",
+    "@odata.type": "Dell#ThermalTrendsCollection.ThermalTrendsCollection",
+    "Id": "ThermalTrends-1",
+    "Name": "Thermal Trends Collection",
+    "Members@odata.count": "3",
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal/ThermalTrends-1/LastHour"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal/ThermalTrends-1/LastDay"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal/ThermalTrends-1/LastWeek"
+        }
+    ]
+}

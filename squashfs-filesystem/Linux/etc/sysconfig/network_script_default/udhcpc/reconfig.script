@@ -1,0 +1,75 @@
+#!/bin/sh
+
+OLD_CONF_DIR=/tmp/network_config
+OLD_CONF_FILE=iDRACnet.old
+
+UDHCPC_SCRIPT=/etc/sysconfig/network_script/udhcpc/osinet.script
+
+
+############################################################
+# Read committed settings (from last run of iDRACNet script)
+############################################################
+if [[ -e ${OLD_CONF_DIR}/${OLD_CONF_FILE} ]]; then
+    echo "Reading committed configuration..."
+    source ${OLD_CONF_DIR}/${OLD_CONF_FILE}
+else
+    echo "Failed to read committed configuration."
+fi
+
+
+up() {
+    PID=$(pidof udhcpc)
+    
+    # Determine configuration interface name
+    if [[ "${OLD_NET_MODE}" == "0" ]]; then
+        DEV_IFNAME="eth0"
+    else
+        DEV_IFNAME="bond0"
+    fi
+    
+    if [ "${PID}" == "" ]; then
+        echo "Starting DHCPv4 client..."
+        udhcpc -i ${DEV_IFNAME} -s ${UDHCPC_SCRIPT} &
+    fi
+}
+
+
+down() {
+    PID=$(pidof udhcpc)
+    
+    if [ "${PID}" != "" ]; then
+        killall udhcpc
+    fi
+    
+    # Build configuration string
+    CONFIG="iDRAC inet dhcp_renew add 0.0.0.0 netmask 0.0.0.0 route 0.0.0.0"
+
+    if [ "${OLD_V4_DNS_FROM_DHCP_ENABLED}" == "yes" ]; then
+        CONFIG="${CONFIG} dns1 0.0.0.0 dns2 0.0.0.0"
+    fi
+    
+    echo "Configuration command line: ${CONFIG}"
+    
+    /avct/sbin/avctifconfig ${CONFIG}
+}
+
+restart() {
+    sed -i -e 's/OLD_IFACE_ENABLED=yes/OLD_IFACE_ENABLED=no/g' ${OLD_CONF_DIR}/${OLD_CONF_FILE}
+    sh /etc/sysconfig/iDRACnet.sh
+}
+
+case "$1" in
+up)
+    up
+    ;;
+down)
+    down
+    ;;
+restart)
+    restart
+    ;;
+*)
+    echo $"Usage: $0 {up|down|restart}"
+    exit 1
+esac
+

@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FQDDConversionSchema_Level2>
+  <!-- PD (Full FQDD) in Enclosure -->
+  <!-- PD (Full FQDD) in Backplane -->
+  <!-- Virtual Disk on Integrated RAID controller -->
+  <!-- Virtual Disk on add-in RAID controller -->
+  <!-- Direct Attach Disk -->
+  <disk>
+    <!-- PD (Full FQDD) in Enclosure -->
+    <!-- PD (Full FQDD) in Backplane -->
+    <!-- Virtual Disk on Integrated RAID controller in Modular system -->
+    <enclosure>
+      <raid>
+        <!-- PD (Full FQDD) in enclosure - RAID -->
+
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:RAID.Slot.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" raid="RAIDSlot1">
+          <Format>Disk %s in Enclosure %s on Connector %s of RAID Controller in Slot %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDSlot1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:RAID.Integrated.1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" raid="RAIDInt1">
+          <Format>Disk %s in Enclosure %s on Connector %s of Integrated RAID Controller %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDInt1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:RAID.Mezzanine.1A -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" raid="RAIDMez1">
+          <Format>Disk %s in Enclosure %s on Connector %s of RAID Controller in Mezzanine %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDMez1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" raid="RAIDChassInt1">
+          <Format>Disk %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s Virtual Adapter %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt1.1</Arg>
+          <Arg>RAIDChassInt1.4</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" raid="RAIDChassInt2">
+          <Format>Disk %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt2.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:RAID.ChassisSlot.1-1-0-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" raid="RAIDChassSlot1">
+          <Format>Disk %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s Virtual Adapter %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot1.1</Arg>
+          <Arg>RAIDChassSlot1.4</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:RAID.ChassisSlot.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" raid="RAIDChassSlot2">
+          <Format>Disk %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot2.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:RAID.Embedded.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" raid="RAIDEmb1">
+          <Format>Disk %s in Enclosure %s on Connector %s of Embedded RAID Controller %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDEmb1.1</Arg>
+        </Instance>
+        
+
+        <!-- PD (Full FQDD) in backplane - RAID -->
+
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:RAID.Slot.1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" raid="RAIDSlot1">
+          <Format>Disk %s in Backplane %s of RAID Controller in Slot %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>RAIDSlot1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:RAID.Integrated.1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" raid="RAIDInt1">
+          <Format>Disk %s in Backplane %s of Integrated RAID Controller %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>RAIDInt1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:RAID.Mezzanine.1A -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" raid="RAIDMez1">
+          <Format>Disk %s in Backplane %s of RAID Controller in Mezzanine %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>RAIDMez1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:RAID.Embedded.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" raid="RAIDEmb1">
+          <Format>Disk %s in Backplane %s of Embedded RAID Controller %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>RAIDEmb1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" raid="RAIDChassInt1">
+          <Format>Disk %s in Backplane %s of Chassis Integrated RAID %s Virtual Adapter %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>RAIDChassInt1.1</Arg>
+          <Arg>RAIDChassInt1.4</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:RAID.ChassisIntegrated.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" raid="RAIDChassInt2">
+          <Format>Disk %s in Backplane %s of Chassis Integrated RAID %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>RAIDChassInt2.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:RAID.ChassisSlot.1-1-0-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" raid="RAIDChassSlot1">
+          <Format>Disk %s in Backplane %s of RAID in Chassis Slot %s Virtual Adapter %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>RAIDChassSlot1.1</Arg>
+          <Arg>RAIDChassSlot1.4</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:RAID.ChassisSlot.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" raid="RAIDChassSlot2">
+          <Format>Disk %s in Backplane %s of RAID in Chassis Slot %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>RAIDChassSlot2.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:RAID.Modular.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" raid="RAIDMod1">
+          <Format>Disk %s in Backplane %s of Integrated RAID Controller %s in Front Chassis Slot %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>RAIDMod1.2</Arg>
+          <Arg>RAIDMod1.1</Arg>
+        </Instance>
+      </raid>
+
+      <nonraid>
+        <!-- PD (Full FQDD) in enclosure - NONRAID -->
+
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:NONRAID.Slot.1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" nonraid="NonRAIDSlot1">
+          <Format>Disk %s in Enclosure %s on Connector %s of Storage Controller in Slot %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDSlot1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:NONRAID.Integrated.1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" nonraid="NonRAIDInt1">
+          <Format>Disk %s in Enclosure %s on Connector %s of Integrated Storage Controller %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDInt1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-2:Enclosure.External.1-1:NONRAID.Mezzanine.1A -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" nonraid="NonRAIDMez1">
+          <Format>Disk %s in Enclosure %s on Connector %s of Storage Controller in Mezzanine %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDMez1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.External.1-1:NONRAID.Embedded.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCExt1" nonraid="NonRAIDEmb1">
+          <Format>Disk %s in Enclosure %s on Connector %s of Embedded Storage Controller %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDEmb1.1</Arg>
+        </Instance>
+        
+
+        <!-- PD (Full FQDD) in backplance - NONRAID-->
+
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:NONRAID.Slot.1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" nonraid="NonRAIDSlot1">
+          <Format>Disk %s in Backplane %s of Storage Controller in Slot %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>NonRAIDSlot1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:NONRAID.Integrated.1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" nonraid="NonRAIDInt1">
+          <Format>Disk %s in Backplane %s of Integrated Storage Controller %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>NonRAIDInt1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1:Enclosure.Internal.1-1:NONRAID.Mezzanine.1A -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" nonraid="NonRAIDMez1">
+          <Format>Disk %s in Backplane %s of Storage Controller in Mezzanine %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>NonRAIDMez1.1</Arg>
+        </Instance>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:NONRAID.Embedded.1-1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" nonraid="NonRAIDEmb1">
+          <Format>Disk %s in Backplane %s of Embedded Storage Controller %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+          <Arg>NonRAIDEmb1.1</Arg>
+        </Instance>
+      </nonraid>
+
+      <pcieextender>
+        <!-- Disk.Bay.1-1:Enclosure.Internal.1-1:PCIeExtender.Slot.1 -->
+        <Instance disk="DISKBay1" enclosure="ENCInt1" pcieextender="PCIEEXTSlot1">
+          <Format>PCIe SSD in Slot %s in Bay %s</Format>
+          <Arg>DISKBay1.1</Arg>
+          <Arg>ENCInt1.2</Arg>
+        </Instance>
+      </pcieextender>
+    </enclosure>
+
+    <!-- Direct Attached Disks on RAID Controller -->
+    <!-- Virtual Disks on RAID Controller -->
+
+    <raid>
+      <!-- Direct Attached Disks on RAID Controller -->
+
+      <!-- Disk.Direct.1-1:RAID.Slot.1 -->
+      <Instance disk="DISKDir1" raid="RAIDSlot1">
+        <Format>Disk %s on RAID Controller in Slot %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>RAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:RAID.Integrated.1 -->
+      <Instance disk="DISKDir1" raid="RAIDInt1">
+        <Format>Disk %s on Integrated RAID Controller %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>RAIDInt1.1</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:RAID.Mezzanine.1A -->
+      <Instance disk="DISKDir1" raid="RAIDMez1">
+        <Format>Disk %s on RAID Controller in Mezzanine %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>RAIDMez1.1</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:RAID.Embedded.1-1 -->
+      <Instance disk="DISKDir1" raid="RAIDEmb1">
+        <Format>Disk %s on Embedded RAID Controller %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>RAIDEmb1.1</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+      <Instance disk="DISKDir1" raid="RAIDChassInt1">
+        <Format>Disk %s on Chassis Integrated RAID %s Virtual Adapter %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>RAIDChassInt1.1</Arg>
+        <Arg>RAIDChassInt1.4</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:RAID.ChassisIntegrated.1-1 -->
+      <Instance disk="DISKDir1" raid="RAIDChassInt2">
+        <Format>Disk %s on Chassis Integrated RAID %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>RAIDChassInt2.1</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:RAID.ChassisSlot.1-1-0-1 -->
+      <Instance disk="DISKDir1" raid="RAIDChassSlot1">
+        <Format>Disk %s on RAID in Chassis Slot %s Virtual Adapter %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>RAIDChassSlot1.1</Arg>
+        <Arg>RAIDChassSlot1.4</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:RAID.ChassisSlot.1-1 -->
+      <Instance disk="DISKDir1" raid="RAIDChassSlot2">
+        <Format>Disk %s on RAID in Chassis Slot %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>RAIDChassSlot2.1</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:RAID.Modular.1-1 -->
+      <Instance disk="DISKDir1" raid="RAIDMod1">
+        <Format>Disk %s on Integrated RAID Controller %s in Front Chassis Slot %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>RAIDMod1.2</Arg>
+        <Arg>RAIDMod1.1</Arg>
+      </Instance>
+
+      <!-- Virtual Disks on RAID Controller -->
+
+      <!-- Disk.Virtual.1-1:RAID.Slot.1 -->
+      <Instance disk="DISKVirt1" raid="RAIDSlot1">
+        <Format>Virtual Disk %s on RAID Controller in Slot %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>RAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:RAID.Integrated.1 -->
+      <Instance disk="DISKVirt1" raid="RAIDInt1">
+        <Format>Virtual Disk %s on Integrated RAID Controller %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>RAIDInt1.1</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:RAID.Mezzanine.1A -->
+      <Instance disk="DISKVirt1" raid="RAIDMez1">
+        <Format>Virtual Disk %s on RAID Controller in Mezzanine %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>RAIDMez1.1</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:RAID.Embedded.1-1 -->
+      <Instance disk="DISKVirt1" raid="RAIDEmb1">
+        <Format>Virtual Disk %s on Embedded RAID Controller %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>RAIDEmb1.1</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+      <Instance disk="DISKVirt1" raid="RAIDChassInt1">
+        <Format>Virtual Disk %s on Chassis Integrated RAID %s Virtual Adapter %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>RAIDChassInt1.1</Arg>
+        <Arg>RAIDChassInt1.4</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:RAID.ChassisIntegrated.1-1 -->
+      <Instance disk="DISKVirt1" raid="RAIDChassInt2">
+        <Format>Virtual Disk %s on Chassis Integrated RAID %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>RAIDChassInt2.1</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:RAID.ChassiSlot.1-1-0-1 -->
+      <Instance disk="DISKVirt1" raid="RAIDChassSlot1">
+        <Format>Virtual Disk %s on RAID in Chassis Slot %s Virtual Adapter %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>RAIDChassSlot1.1</Arg>
+        <Arg>RAIDChassSlot1.4</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:RAID.ChassiSlot.1-1 -->
+      <Instance disk="DISKVirt1" raid="RAIDChassSlot2">
+        <Format>Virtual Disk %s on RAID in Chassis Slot %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>RAIDChassSlot2.1</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:RAID.Modular.1-1 -->
+      <Instance disk="DISKVirt1" raid="RAIDMod1">
+        <Format>Virtual Disk %s on Integrated RAID Controller %s in Front Chassis Slot %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>RAIDMod1.2</Arg>
+        <Arg>RAIDMod1.1</Arg>
+      </Instance>
+    </raid>
+    
+    <!-- Direct Attached Disks on non-RAID Controller -->
+    <!-- Virtual Disks on non-RAID Controller -->
+
+    <nonraid>
+      <!-- Direct Attached Disks on non-RAID Controller -->
+
+      <!-- Disk.Direct.1-1:NONRAID.Slot.1 -->
+      <Instance disk="DISKDir1" nonraid="NonRAIDSlot1">
+        <Format>Disk %s on Storage Controller in Slot %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>NonRAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:NONRAID.Integrated.1 -->
+      <Instance disk="DISKDir1" nonraid="NonRAIDInt1">
+        <Format>Disk %s on Integrated Storage Controller %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>NonRAIDInt1.1</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:NONRAID.Mezzanine.1A -->
+      <Instance disk="DISKDir1" nonraid="NonRAIDMez1">
+        <Format>Disk %s on Storage Controller in Mezzanine %s</Format>
+        <Arg>DISKDir1.1</Arg>
+        <Arg>NonRAIDMez1.1</Arg>
+      </Instance>
+      <!-- Disk.Direct.1-1:NONRAID.Embedded.1-1 -->
+      <Instance disk="DISKDir1" nonraid="NonRAIDEmb1">
+        <Format>Disk %s on Embedded Storage Controller %s</Format>
+        <Arg>DISKDir1.2</Arg>
+        <Arg>NonRAIDEmb1.1</Arg>
+      </Instance>
+
+      <!-- Virtual Disks on non-RAID Controller -->
+
+      <!-- Disk.Virtual.1-1:NONRAID.Slot.1 -->
+      <Instance disk="DISKVirt1" nonraid="NonRAIDSlot1">
+        <Format>Virtual Disk %s on Storage Controller in Slot %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>NonRAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:NONRAID.Integrated.1 -->
+      <Instance disk="DISKVirt1" nonraid="NonRAIDInt1">
+        <Format>Virtual Disk %s on Integrated Storage Controller %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>NonRAIDInt1.1</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:NONRAID.Mezzanine.1A -->
+      <Instance disk="DISKVirt1" nonraid="NonRAIDMez1">
+        <Format>Virtual Disk %s on Storage Controller in Mezzanine %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>NonRAIDMez1.1</Arg>
+      </Instance>
+      <!-- Disk.Virtual.1-1:NONRAID.Embedded.1-1 -->
+      <Instance disk="DISKVirt1" nonraid="NonRAIDEmb1">
+        <Format>Virtual Disk %s on Embedded Storage Controller %s</Format>
+        <Arg>DISKVirt1.1</Arg>
+        <Arg>NonRAIDEmb1.1</Arg>
+      </Instance>
+    </nonraid>
+    <ahci>
+      <!-- Disk.Direct.1-1:AHCI.Embedded.1-1 -->
+      <Instance disk="DISKDir1" ahci="AHCIEmb1">
+	<Format>Disk %s on Embedded AHCI Controller %s</Format>
+	 <Arg>DISKDir1.2</Arg>
+	 <Arg>AHCIEmb1.1</Arg>
+      </Instance>
+    </ahci>
+  </disk>
+
+  <cache>
+    <cpu>
+      <Instance cache="CacheInt1" cpu="CPUSock1">
+        <Format>CPU %s %s Cache</Format>
+        <Arg>CPUSock1.1</Arg>
+        <Arg>CacheInt1.1</Arg>
+      </Instance>
+    </cpu>
+  </cache>
+
+  <usc>
+    <lc>
+      <Instance usc="USCEmb1" lc="LCEmb1">
+        <Format>Unified Server Configurator</Format>
+      </Instance>
+    </lc>
+  </usc>
+
+  <diagnostics>
+    <lc>
+      <Instance diagnostics="DIAGSEmb1" lc="LCEmb1">
+        <Format>Embedded Diagnostics</Format>
+      </Instance>
+    </lc>
+  </diagnostics>
+
+  <driverpack>
+    <lc>
+      <Instance driverpack="DRIVERPACKEmb1" lc="LCEmb1">
+        <Format>Embedded OS Driver Pack</Format>
+      </Instance>
+    </lc>
+  </driverpack>
+
+  <!-- RAID & non-RAID Controller Drivers -->
+  <driver>
+    <raid>
+      <!-- RAID Controller Drivers -->
+
+      <!-- Driver.Software.1:RAID.Slot.1 -->
+      <Instance driver="DRIVERSoftware1" raid="RAIDSlot1">
+        <Format>Driver of RAID Controller in Slot %s</Format>
+        <Arg>RAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Driver.Software.1:RAID.Integrated.1 -->
+      <Instance driver="DRIVERSoftware1" raid="RAIDInt1">
+        <Format>Driver of Integrated RAID Controller %s</Format>
+        <Arg>RAIDInt1.1</Arg>
+      </Instance>
+      <!-- Driver.Software.1:RAID.Mezzanine.1A -->
+      <Instance driver="DRIVERSoftware1" raid="RAIDMez1">
+        <Format>Driver of RAID Controller in Mezzanine %s</Format>
+        <Arg>RAIDMez1.1</Arg>
+      </Instance>
+      <!-- Driver.Software.1:RAID.Embedded.1-1 -->
+      <Instance driver="DRIVERSoftware1" raid="RAIDEmb1">
+        <Format>Driver of Embedded RAID Controller %s</Format>
+        <Arg>RAIDEmb1.1</Arg>
+      </Instance>
+      <!-- Driver.Software.1:RAID.ChassisIntegrated.1-1-0-1 -->
+      <Instance driver="DRIVERSoftware1" raid="RAIDChassInt1">
+        <Format>Driver of Chassis Integrated RAID %s Virtual Adapter %s</Format>
+        <Arg>RAIDChassInt1.1</Arg>
+        <Arg>RAIDChassInt1.4</Arg>
+      </Instance>
+      <!-- Driver.Software.1:RAID.ChassisIntegrated.1-1 -->
+      <Instance driver="DRIVERSoftware1" raid="RAIDChassInt2">
+        <Format>Driver of Chassis Integrated RAID %s</Format>
+        <Arg>RAIDChassInt2.1</Arg>
+      </Instance>
+      <!-- Driver.Software.1:RAID.ChassisSlot.1-1-0-1 -->
+      <Instance driver="DRIVERSoftware1" raid="RAIDChassSlot1">
+        <Format>Driver of RAID in Chassis Slot %s Virtual Adapter %s</Format>
+        <Arg>RAIDChassSlot1.1</Arg>
+        <Arg>RAIDChassSlot1.4</Arg>
+      </Instance>
+      <!-- Driver.Software.1:RAID.ChassisSlot.1-1 -->
+      <Instance driver="DRIVERSoftware1" raid="RAIDChassSlot2">
+        <Format>Driver of RAID in Chassis Slot %s</Format>
+        <Arg>RAIDChassSlot2.1</Arg>
+      </Instance>
+      <!-- Driver.Software.1:RAID.Modular.1-1 -->
+      <Instance driver="DRIVERSoftware1" raid="RAIDMod1">
+        <Format>Driver of Integrated RAID Controller %s in Front Chassis Slot %s</Format>
+        <Arg>RAIDMod1.2</Arg>
+        <Arg>RAIDMod1.1</Arg>
+      </Instance>
+    </raid>
+
+    <nonraid>
+      <!-- Non-RAID Controller Drivers -->
+
+      <!-- Driver.Software.1:NONRAID.Slot.1-1 -->
+      <Instance driver="DRIVERSoftware1" nonraid="NonRAIDSlot1">
+        <Format>Driver of Storage Controller in Slot %s</Format>
+        <Arg>NonRAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Driver.Software.1:NONRAID.Integrated.1-1 -->
+      <Instance driver="DRIVERSoftware1" nonraid="NonRAIDInt1">
+        <Format>Driver of Integrated Storage Controller %s</Format>
+        <Arg>NonRAIDInt1.1</Arg>
+      </Instance>
+      <!-- Driver.Software.1:NONRAID.Mezzanine.1A -->
+      <Instance driver="DRIVERSoftware1" nonraid="NonRAIDMez1">
+        <Format>Driver of Storage Controller in Mezzanine %s</Format>
+        <Arg>NonRAIDMez1.1</Arg>
+      </Instance>
+      <!-- Driver.Software.1:RAID.Embedded.1-1 -->
+      <Instance driver="DRIVERSoftware1" nonraid="NonRAIDEmb1">
+        <Format>Driver of Embedded Storage Controller %s</Format>
+        <Arg>NonRAIDEmb1.1</Arg>
+      </Instance>
+    </nonraid>
+  </driver>
+
+  <!-- EMM -->
+  <emm>
+    <enclosure>
+      <raid>
+        <!-- EMM.Slot.1:Enclosure.External.1-1:RAID.Slot.1 -->
+        <Instance emm="EMMSlot1" enclosure="ENCExt1" raid="RAIDSlot1">
+          <Format>EMM %s in Enclosure %s on Connector %s of RAID Controller in Slot %s</Format>
+          <Arg>EMMSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDSlot1.1</Arg>
+        </Instance>
+        <!-- EMM.Slot.1:Enclosure.External.1-1:RAID.Integrated.1 -->
+        <Instance emm="EMMSlot1" enclosure="ENCExt1" raid="RAIDInt1">
+          <Format>EMM %s in Enclosure %s on Connector %s of Integrated RAID Controller %s</Format>
+          <Arg>EMMSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDInt1.1</Arg>
+        </Instance>
+        <!-- EMM.Slot.1:Enclosure.External.1-1:RAID.Embedded.1 -->
+        <Instance emm="EMMSlot1" enclosure="ENCExt1" raid="RAIDEmb1">
+          <Format>EMM %s in Enclosure %s on Connector %s of Embedded RAID Controller %s</Format>
+          <Arg>EMMSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDEmb1.1</Arg>
+        </Instance>
+        <!-- EMM.Slot.1:Enclosure.External.1-1:RAID.Mezzanine.1A -->
+        <Instance emm="EMMSlot1" enclosure="ENCExt1" raid="RAIDMez1">
+          <Format>EMM %s in Enclosure %s on Connector %s of RAID Controller in Mezzanine %s</Format>
+          <Arg>EMMSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDMez1.1</Arg>
+        </Instance>
+        <!-- EMM.Slot.1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+        <Instance emm="EMMSlot1" enclosure="ENCExt1" raid="RAIDChassInt1">
+          <Format>EMM %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s Virtual Adapter %s</Format>
+          <Arg>EMMSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt1.1</Arg>
+          <Arg>RAIDChassInt1.4</Arg>
+        </Instance>
+        <!-- EMM.Slot.1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1 -->
+        <Instance emm="EMMSlot1" enclosure="ENCExt1" raid="RAIDChassInt2">
+          <Format>EMM %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s</Format>
+          <Arg>EMMSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt2.1</Arg>
+        </Instance>
+        <!-- EMM.Slot.1:Enclosure.External.1-1:RAID.ChassisSlot.1-1-0-1 -->
+        <Instance emm="EMMSlot1" enclosure="ENCExt1" raid="RAIDChassSlot1">
+          <Format>EMM %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s Virtual Adapter %s</Format>
+          <Arg>EMMSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot1.1</Arg>
+          <Arg>RAIDChassSlot1.4</Arg>
+        </Instance>
+        <!-- EMM.Slot.1:Enclosure.External.1-1:RAID.ChassisSlot.1-1 -->
+        <Instance emm="EMMSlot1" enclosure="ENCExt1" raid="RAIDChassSlot2">
+          <Format>EMM %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s</Format>
+          <Arg>EMMSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot2.1</Arg>
+        </Instance>
+      </raid>
+    </enclosure>
+  </emm>
+
+  <!-- Temperature Sensors on RAID & non-RAID Controllers in External Enclosure -->
+  <tempsensor>
+    <enclosure>
+      <raid>
+        <!-- Temperature Sensors on RAID Controllers in External Enclosure -->
+
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:RAID.Slot.1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" raid="RAIDSlot1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of RAID Controller in Slot %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDSlot1.1</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:RAID.Integrated.1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" raid="RAIDInt1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of Integrated RAID Controller %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDInt1.1</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:RAID.Mezzanine.1A -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" raid="RAIDMez1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of RAID Controller in Mezzanine %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDMez1.1</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" raid="RAIDChassInt1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s Virtual Adapter %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt1.1</Arg>
+          <Arg>RAIDChassInt1.4</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" raid="RAIDChassInt2">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt2.1</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:RAID.ChassisSlot.1-1-0-1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" raid="RAIDChassSlot1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s Virtual Adapter %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot1.1</Arg>
+          <Arg>RAIDChassSlot1.4</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:RAID.ChassisSlot.1-1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" raid="RAIDChassSlot2">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot2.1</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:RAID.Embedded.1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" raid="RAIDEmb1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of Embedded RAID Controller %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDEmb1.1</Arg>
+        </Instance>
+      </raid>
+
+      <nonraid>
+        <!-- Temperature Sensors on non-RAID Controllers in External Enclosure -->
+
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:NONRAID.Slot.1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" nonraid="NonRAIDSlot1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of Storage Controller in Slot %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDSlot1.1</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:NONRAID.Integrated.1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" nonraid="NonRAIDInt1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of Integrated Storage Controller %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDInt1.1</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:NONRAID.Mezzanine.1A -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" nonraid="NonRAIDMez1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of Storage Controller in Mezzanine %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDMez1.1</Arg>
+        </Instance>
+        <!-- TempSensor.Embedded.1:Enclosure.External.1-1:NONRAID.Embedded.1 -->
+        <Instance tempsensor="TEMPSensor1" enclosure="ENCExt1" nonraid="NonRAIDEmb1">
+          <Format>Temperature Sensor %s in Enclosure %s on Connector %s of Embedded Storage Controller %s</Format>
+          <Arg>TEMPSensor1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDEmb1.1</Arg>
+        </Instance>
+
+      </nonraid>
+    </enclosure>
+  </tempsensor>
+
+  <!-- PSUs for RAID & Storage Controllers in External Enclosures -->
+  <psu>
+    <enclosure>
+      <raid>
+        <!-- PSUs for RAID Controllers in External Enclosures -->
+
+        <!-- PSU.Slot.1:Enclosure.External.1-1:RAID.Slot.1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" raid="RAIDSlot1">
+          <Format>PSU %s in Enclosure %s on Connector %s of RAID Controller in Slot %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDSlot1.1</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:RAID.Integrated.1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" raid="RAIDInt1">
+          <Format>PSU %s in Enclosure %s on Connector %s of Integrated RAID Controller %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDInt1.1</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:RAID.Mezzanine.1A -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" raid="RAIDMez1">
+          <Format>PSU %s in Enclosure %s on Connector %s of RAID Controller in Mezzanine %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDMez1.1</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:RAID.Embedded.1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" raid="RAIDEmb1">
+          <Format>PSU %s in Enclosure %s on Connector %s of Embedded RAID Controller %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDEmb1.1</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" raid="RAIDChassInt1">
+          <Format>PSU %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s Virtual Adapter %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt1.1</Arg>
+          <Arg>RAIDChassInt1.4</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" raid="RAIDChassInt2">
+          <Format>PSU %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt2.1</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:RAID.ChassisSlot.1-1-0-1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" raid="RAIDChassSlot1">
+          <Format>PSU %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s Virtual Adapter %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot1.1</Arg>
+          <Arg>RAIDChassSlot1.4</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:RAID.ChassisSlot.1-1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" raid="RAIDChassSlot2">
+          <Format>PSU %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot2.1</Arg>
+        </Instance>
+      </raid>
+
+      <nonraid>
+        <!-- PSUs for non-RAID Controllers in External Enclosures -->
+
+        <!-- PSU.Slot.1:Enclosure.External.1-1:NONRAID.Slot.1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" nonraid="NonRAIDSlot1">
+          <Format>PSU %s in Enclosure %s on Connector %s of Storage Controller in Slot %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDSlot1.1</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:NONRAID.Integrated.1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" nonraid="NonRAIDInt1">
+          <Format>PSU %s in Enclosure %s on Connector %s of Integrated Storage Controller %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDInt1.1</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:NONRAID.Mezzanine.1A -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" nonraid="NonRAIDMez1">
+          <Format>PSU %s in Enclosure %s on Connector %s of Storage Controller in Mezzanine %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDMez1.1</Arg>
+        </Instance>
+        <!-- PSU.Slot.1:Enclosure.External.1-1:NONRAID.Embedded.1 -->
+        <Instance psu="PSUSlot1" enclosure="ENCExt1" nonraid="NonRAIDEmb1">
+          <Format>PSU %s in Enclosure %s on Connector %s of Embedded Storage Controller %s</Format>
+          <Arg>PSUSlot1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDEmb1.1</Arg>
+        </Instance>
+      </nonraid>
+    </enclosure>
+  </psu>
+
+  <!-- Fans for RAID & non-RAID Controllers in External Enclosures -->
+  <fan>
+    <enclosure>
+      <raid>
+        <!-- Fans for RAID Controllers in External Enclosures -->
+
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:RAID.Slot.1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" raid="RAIDSlot1">
+          <Format>Fan %s in Enclosure %s on Connector %s of RAID Controller in Slot %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDSlot1.1</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:RAID.Integrated.1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" raid="RAIDInt1">
+          <Format>Fan %s in Enclosure %s on Connector %s of Integrated RAID Controller %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDInt1.1</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:RAID.Mezzanine.1A -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" raid="RAIDMez1">
+          <Format>Fan %s in Enclosure %s on Connector %s of RAID Controller in Mezzanine %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDMez1.1</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:RAID.Embedded.1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" raid="RAIDEmb1">
+          <Format>Fan %s in Enclosure %s on Connector %s of Embedded RAID Controller %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDEmb1.1</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" raid="RAIDChassInt1">
+          <Format>Fan %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s Virtual Adapter %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt1.1</Arg>
+          <Arg>RAIDChassInt1.4</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:RAID.ChassisIntegrated.1-1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" raid="RAIDChassInt2">
+          <Format>Fan %s in Enclosure %s on Connector %s of Chassis Integrated RAID %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassInt2.1</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:RAID.ChassisSlot.1-1-0-1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" raid="RAIDChassSlot1">
+          <Format>Fan %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s Virtual Adapter %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot1.1</Arg>
+          <Arg>RAIDChassSlot1.4</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:RAID.ChassisSlot.1-1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" raid="RAIDChassSlot2">
+          <Format>Fan %s in Enclosure %s on Connector %s of RAID in Chassis Slot %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>RAIDChassSlot2.1</Arg>
+        </Instance>
+      </raid>
+
+      <nonraid>
+        <!-- Fans for non-RAID Controllers in External Enclosures -->
+
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:NONRAID.Slot.1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" nonraid="NonRAIDSlot1">
+          <Format>Fan %s in Enclosure %s on Connector %s of Storage Controller in Slot %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDSlot1.1</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:NONRAID.Integrated.1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" nonraid="NonRAIDInt1">
+          <Format>Fan %s in Enclosure %s on Connector %s of Integrated Storage Controller %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDInt1.1</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:NONRAID.Mezzanine.1A -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" nonraid="NonRAIDMez1">
+          <Format>Fan %s in Enclosure %s on Connector %s of Storage Controller in Mezzanine %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDMez1.1</Arg>
+        </Instance>
+        <!-- Fan.Embedded.1:Enclosure.External.1-1:NONRAID.Embedded.1 -->
+        <Instance fan="FanEmb1" enclosure="ENCExt1" nonraid="NonRAIDEmb1">
+          <Format>Fan %s in Enclosure %s on Connector %s of Embedded Storage Controller %s</Format>
+          <Arg>FanEmb1.1</Arg>
+          <Arg>ENCExt1.2</Arg>
+          <Arg>ENCExt1.1</Arg>
+          <Arg>NonRAIDEmb1.1</Arg>
+        </Instance>
+      </nonraid>
+    </enclosure>
+  </fan>
+
+  <!-- Batteries for RAID & Storage Controllers -->
+  <battery>
+    <raid>
+      <!-- Batteries for RAID Controllers -->
+
+      <!-- Battery.Integrated.1:RAID.Slot.1 -->
+      <Instance battery="BATTInt1" raid="RAIDSlot1">
+        <Format>Battery on RAID Controller in Slot %s</Format>
+        <Arg>RAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:RAID.Integrated.1 -->
+      <Instance battery="BATTInt1" raid="RAIDInt1">
+        <Format>Battery on Integrated RAID Controller %s</Format>
+        <Arg>RAIDInt1.1</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:RAID.Mezzanine.1A -->
+      <Instance battery="BATTInt1" raid="RAIDMez1">
+        <Format>Battery on RAID Controller in Mezzanine %s</Format>
+        <Arg>RAIDMez1.1</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:RAID.Embedded.1 -->
+      <Instance battery="BATTInt1" raid="RAIDEmb1">
+        <Format>Battery on Embedded RAID Controller %s</Format>
+        <Arg>RAIDEmb1.1</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:RAID.ChassisIntegrated.1-1-0-1 -->
+      <Instance battery="BATTInt1" raid="RAIDChassInt1">
+        <Format>Battery on Chassis Integrated RAID %s Virtual Adapter %s</Format>
+        <Arg>RAIDChassInt1.1</Arg>
+        <Arg>RAIDChassInt1.4</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:RAID.ChassisIntegrated.1-1 -->
+      <Instance battery="BATTInt1" raid="RAIDChassInt2">
+        <Format>Battery on Chassis Integrated RAID %s</Format>
+        <Arg>RAIDChassInt2.1</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:RAID.ChassisSlot.1-1-0-1 -->
+      <Instance battery="BATTInt1" raid="RAIDChassSlot1">
+        <Format>Battery on RAID in Chassis Slot %s Virtual Adapter %s</Format>
+        <Arg>RAIDChassSlot1.1</Arg>
+        <Arg>RAIDChassSlot1.4</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:RAID.ChassisSlot.1-1 -->
+      <Instance battery="BATTInt1" raid="RAIDChassSlot2">
+        <Format>Battery on RAID in Chassis Slot %s</Format>
+        <Arg>RAIDChassSlot2.1</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:RAID.Modular.1-1 -->
+      <Instance battery="BATTInt1" raid="RAIDMod1">
+        <Format>Battery on Integrated RAID Controller %s in Front Chassis Slot %s</Format>
+        <Arg>RAIDMod1.2</Arg>
+        <Arg>RAIDMod1.1</Arg>
+      </Instance>
+    </raid>
+
+    <nonraid>
+      <!-- Batteries for Storage Controllers -->
+
+      <!-- Battery.Integrated.1:NONRAID.Slot.1 -->
+      <Instance battery="BATTInt1" nonraid="NonRAIDSlot1">
+        <Format>Battery on Storage Controller in Slot %s</Format>
+        <Arg>NonRAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:NONRAID.Integrated.1 -->
+      <Instance battery="BATTInt1" nonraid="NonRAIDInt1">
+        <Format>Battery on Integrated Storage Controller %s</Format>
+        <Arg>NonRAIDInt1.1</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:NONRAID.Mezzanine.1A -->
+      <Instance battery="BATTInt1" nonraid="NonRAIDMez1">
+        <Format>Battery on Storage Controller in Mezzanine %s</Format>
+        <Arg>NonRAIDMez1.1</Arg>
+      </Instance>
+      <!-- Battery.Integrated.1:NONRAID.Embedded.1 -->
+      <Instance battery="BATTInt1" nonraid="NonRAIDEmb1">
+        <Format>Battery on Embedded Storage Controller %s</Format>
+        <Arg>NonRAIDEmb1.1</Arg>
+      </Instance>
+    </nonraid>
+  </battery>
+
+  <!-- RAID & Storage Controllers on Enclosures -->
+  <enclosure>
+    <raid>
+      <!-- RAID Controllers on External Enclosures -->
+
+      <!-- Enclosure.External.1-1:RAID.Slot.1 -->
+      <Instance enclosure="ENCExt1" raid="RAIDSlot1">
+        <Format>Enclosure %s on Connector %s of RAID Controller in Slot %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>RAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:RAID.Integrated.1 -->
+      <Instance enclosure="ENCExt1" raid="RAIDInt1">
+        <Format>Enclosure %s on Connector %s of Integrated RAID Controller %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>RAIDInt1.1</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:RAID.Mezzanine.1A -->
+      <Instance enclosure="ENCExt1" raid="RAIDMez1">
+        <Format>Enclosure %s on Connector %s of RAID Controller in Mezzanine %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>RAIDMez1.1</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:RAID.Embedded.1 -->
+      <Instance enclosure="ENCExt1" raid="RAIDEmb1">
+        <Format>Enclosure %s on Connector %s of Embedded RAID Controller %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>RAIDEmb1.1</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+      <Instance enclosure="ENCExt1" raid="RAIDChassInt1">
+        <Format>Enclosure %s on Connector %s of Chassis Integrated RAID %s Virtual Adapter %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>RAIDChassInt1.1</Arg>
+        <Arg>RAIDChassInt1.4</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:RAID.ChassisIntegrated.1-1 -->
+      <Instance enclosure="ENCExt1" raid="RAIDChassInt2">
+        <Format>Enclosure %s on Connector %s of Chassis Integrated RAID %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>RAIDChassInt2.1</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:RAID.ChassisSlot.1-1-0-1 -->
+      <Instance enclosure="ENCExt1" raid="RAIDChassSlot1">
+        <Format>Enclosure %s on Connector %s of RAID in Chassis Slot %s Virtual Adapter %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>RAIDChassSlot1.1</Arg>
+        <Arg>RAIDChassSlot1.4</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:RAID.ChassisSlot.1-1 -->
+      <Instance enclosure="ENCExt1" raid="RAIDChassSlot2">
+        <Format>Enclosure %s on Connector %s of RAID in Chassis Slot %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>RAIDChassSlot2.1</Arg>
+      </Instance>
+
+      <!-- RAID Controllers on Internal Enclosures -->
+
+      <!-- Enclosure.Internal.1-1:RAID.Slot.1 -->
+      <Instance enclosure="ENCInt1" raid="RAIDSlot1">
+        <Format>Backplane %s on Connector %s of RAID Controller in Slot %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>RAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:RAID.Integrated.1 -->
+      <Instance enclosure="ENCInt1" raid="RAIDInt1">
+        <Format>Backplane %s on Connector %s of Integrated RAID Controller %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>RAIDInt1.1</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:RAID.Mezzanine.1A -->
+      <Instance enclosure="ENCInt1" raid="RAIDMez1">
+        <Format>Backplane %s on Connector %s of RAID Controller in Mezzanine %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>RAIDMez1.1</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:RAID.Embedded.1 -->
+      <Instance enclosure="ENCInt1" raid="RAIDEmb1">
+        <Format>Backplane %s on Connector %s of Embedded RAID Controller %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>RAIDEmb1.1</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:RAID.ChassisIntegrated.1-1-0-1 -->
+      <Instance enclosure="ENCInt1" raid="RAIDChassInt1">
+        <Format>Backplane %s on Connector %s of Chassis Integrated RAID %s Virtual Adapter %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>RAIDChassInt1.1</Arg>
+        <Arg>RAIDChassInt1.4</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:RAID.ChassisIntegrated.1-1 -->
+      <Instance enclosure="ENCInt1" raid="RAIDChassInt2">
+        <Format>Backplane %s on Connector %s of Chassis Integrated RAID %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>RAIDChassInt2.1</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:RAID.ChassisSlot.1-1-0-1 -->
+      <Instance enclosure="ENCInt1" raid="RAIDChassSlot1">
+        <Format>Backplane %s on Connector %s of RAID in Chassis Slot %s Virtual Adapter %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>RAIDChassSlot1.1</Arg>
+        <Arg>RAIDChassSlot1.4</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:RAID.ChassisSlot.1-1 -->
+      <Instance enclosure="ENCInt1" raid="RAIDChassSlot2">
+        <Format>Backplane %s on Connector %s of RAID in Chassis Slot %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>RAIDChassSlot2.1</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:RAID.Modular.1-1 -->
+      <Instance enclosure="ENCInt1" raid="RAIDMod1">
+        <Format>Backplane %s on Connector %s of Integrated RAID Controller %s in Front Chassis Slot %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>RAIDMod1.2</Arg>
+        <Arg>RAIDMod1.1</Arg>
+      </Instance>
+    </raid>
+
+    <nonraid>
+      <!-- Non-RAID Controllers on External Enclosures -->
+
+      <!-- Enclosure.External.1-1:NONRAID.Slot.1 -->
+      <Instance enclosure="ENCExt1" nonraid="NonRAIDSlot1">
+        <Format>Enclosure %s on Connector %s of Storage Controller in Slot %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>NonRAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:NONRAID.Integrated.1 -->
+      <Instance enclosure="ENCExt1" nonraid="NonRAIDInt1">
+        <Format>Enclosure %s on Connector %s of Integrated Storage Controller %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>NonRAIDInt1.1</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:NONRAID.Mezzanine.1A -->
+      <Instance enclosure="ENCExt1" nonraid="NonRAIDMez1">
+        <Format>Enclosure %s on Connector %s of Storage Controller in Mezzanine %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>NonRAIDMez1.1</Arg>
+      </Instance>
+      <!-- Enclosure.External.1-1:NONRAID.Embedded.1 -->
+      <Instance enclosure="ENCExt1" nonraid="NonRAIDEmb1">
+        <Format>Enclosure %s on Connector %s of Embedded Storage Controller %s</Format>
+        <Arg>ENCExt1.2</Arg>
+        <Arg>ENCExt1.1</Arg>
+        <Arg>NonRAIDEmb1.1</Arg>
+      </Instance>
+
+      <!-- Non-RAID Controllers on Internal Enclosures -->
+
+      <!-- Enclosure.Internal.1-1:NONRAID.Slot.1 -->
+      <Instance enclosure="ENCInt1" nonraid="NonRAIDSlot1">
+        <Format>Backplane %s on Connector %s of Storage Controller in Slot %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>NonRAIDSlot1.1</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:NONRAID.Integrated.1 -->
+      <Instance enclosure="ENCInt1" nonraid="NonRAIDInt1">
+        <Format>Backplane %s on Connector %s of Integrated Storage Controller %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>NonRAIDInt1.1</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:NONRAID.Mezzanine.1A -->
+      <Instance enclosure="ENCInt1" nonraid="NonRAIDMez1">
+        <Format>Backplane %s on Connector %s of Storage Controller in Mezzanine %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>NonRAIDMez1.1</Arg>
+      </Instance>
+      <!-- Enclosure.Internal.1-1:NONRAID.Embedded.1 -->
+      <Instance enclosure="ENCInt1" nonraid="NonRAIDEmb1">
+        <Format>Backplane %s on Connector %s of Embedded Storage Controller %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>ENCInt1.1</Arg>
+        <Arg>NonRAIDEmb1.1</Arg>
+      </Instance>
+    </nonraid>
+
+    <pcieextender>
+      <!-- PCIe SSD Backplane -->
+
+      <!-- Enclosure.Internal.1-1:PCIeExtender.Slot.1 -->
+      <Instance enclosure="ENCInt1" pcieextender="PCIEEXTSlot1">
+        <Format>Backplane %s of PCIe Extender in PCIe Slot %s</Format>
+        <Arg>ENCInt1.2</Arg>
+        <Arg>PCIEEXTSlot1.1</Arg>
+      </Instance>
+    </pcieextender>
+
+  </enclosure>
+</FQDDConversionSchema_Level2>

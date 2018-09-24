@@ -1,0 +1,212 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _FRUIPMIObj 
+{
+        u8 FRUInfoSrcStd;
+        u8 FRUState;
+        u16 sdrRecID;
+        u8 devAccAddr;
+        u8 FRUDevIDSlaveAddr;
+        u8 FRUDevType;
+        u8 accessLUN;
+        u8 busID;
+        u8 channelNum;
+        u8 FRUEntityID;
+        u8 FRUEntityInstance;
+        u32 offsetDevStr;
+        u32 offsetDevName;
+} FRUIPMIObj;
+
+typedef struct _FRUSMBIOSObj 
+{
+        u8 FRUInfoSrcStd;
+        u8 FRUState;
+        u8 SMBIOSStructType;
+        u8 SMBIOSStructHandle;
+        u8 reservedAlign[4];
+        s64 manufUTCTime;
+        u32 offsetDevName;
+        u32 offsetManufacturer;
+        u32 offsetSerialNumber;
+        u32 offsetAssetTag;
+        u32 offsetPartNumber;
+        u32 offsetManufDateTimeStr;
+} FRUSMBIOSObj;
+
+typedef struct _FRUCfgFileObj 
+{
+        u8 FRUInfoSrcStd;
+        u8 FRUState;
+        u8 reservedAlign[2];
+        u32 FRUID;
+        s64 manufUTCTime;
+        u32 offsetDevName;
+        u32 offsetManufacturer;
+        u32 offsetSerialNumber;
+        u32 offsetAssetTag;
+        u32 offsetPartNumber;
+        u32 offsetManufDateTimeStr;
+} FRUCfgFileObj;
+
+typedef struct _FRUElementObj 
+{
+        u8 elementType;
+        u8 reservedAlign[3];
+        u32 offsetElementContent;
+} FRUElementObj;
+
+typedef struct _FRUInternalUseObj 
+{
+        u16 sdrRecID;
+        u8 reservedAlign[2];
+        u8 formatVersion;
+        u8 boardInfoPartNumChecksum;
+        u8 chassisInfoPartNumChecksum;
+        u8 prodInfoPartNumChecksum;
+        u32 DellFormatPresence;
+        u32 headerLen;
+        u8 headerRev;
+        u8 headerFlags;
+        u8 featureFlags;
+        u8 elementCount;
+        FRUElementObj elementList[-1];
+} FRUInternalUseObj;
+
+typedef struct _FRUChassisInfoObj 
+{
+        u16 sdrRecID;
+        u8 reservedAlign[2];
+        u8 formatVersion;
+        u8 areaLen;
+        u8 chassisType;
+        u8 areaChecksum;
+        u32 offsetChassisPartNum;
+        u32 offsetChassisSerNum;
+} FRUChassisInfoObj;
+
+typedef struct _FRUBoardInfoObj 
+{
+        u16 sdrRecID;
+        u8 reservedAlign[2];
+        u8 formatVersion;
+        u8 areaLen;
+        u8 langCode;
+        u8 areaChecksum;
+        u32 manufDateTime;
+        s64 manufUTCTime;
+        u32 offsetBoardManuf;
+        u32 offsetBoardProdName;
+        u32 offsetBoardSerNum;
+        u32 offsetBoardPartNum;
+        u32 offsetRevisionLevel;
+        u32 offsetFRUFileID;
+        u32 offsetManufDateTimeStr;
+} FRUBoardInfoObj;
+
+typedef struct _FRUProdInfoObj 
+{
+        u16 sdrRecID;
+        u8 reservedAlign[2];
+        u8 formatVersion;
+        u8 areaLen;
+        u8 langCode;
+        u8 areaChecksum;
+        u32 offsetProdManuf;
+        u32 offsetProdName;
+        u32 offsetProdPartModelNum;
+        u32 offsetProdVer;
+        u32 offsetProdSerNum;
+        u32 offsetServiceTag;
+        u32 offsetFRUFileID;
+} FRUProdInfoObj;
+
+typedef struct _FRUPSRecObj 
+{
+        u8 recID;
+        u8 recTypeID;
+        u8 recFormatVer;
+        u8 recLen;
+        u8 recChecksum;
+        u8 headerChecksum;
+        u8 inrushCurrent;
+        u8 inrushInterval;
+        u16 overallCapacity;
+        u16 peakVA;
+        u16 lowEndInputVolRange1;
+        u16 highEndInputVolRange1;
+        u16 lowEndInputVolRange2;
+        u16 highEndInputVolRange2;
+        u8 lowEngInputFreqRange;
+        u8 highEngInputFreqRange;
+        u8 acDropoutTolerance;
+        u8 binaryFlags;
+        u8 peakWattage;
+        u8 combinedWattage;
+        u8 predictiveFailTachLower;
+        u8 reservedAlign[1];
+} FRUPSRecObj;
+
+typedef struct _FRUDCOutputRecObj 
+{
+        u8 recID;
+        u8 recTypeID;
+        u8 recFormatVer;
+        u8 recLen;
+        u8 recChecksum;
+        u8 headerChecksum;
+        u16 nominalVolt;
+        u8 outputInfo;
+        u8 reservedAlign[3];
+        u16 maxNegVoltDev;
+        u16 maxPosVoltDev;
+        u16 rippleNoisePk;
+        u16 minCurrDraw;
+} FRUDCOutputRecObj;
+
+typedef struct _FRUDCLoadRecObj 
+{
+        u8 recID;
+        u8 recTypeID;
+        u8 recFormatVer;
+        u8 recLen;
+        u8 recChecksum;
+        u8 headerChecksum;
+        u16 nominalVolt;
+        u8 voltReq;
+        u8 reservedAlign[3];
+        u16 specMinVolt;
+        u16 specMaxVolt;
+        u16 minCurrLoad;
+        u16 maxCurrLoad;
+} FRUDCLoadRecObj;
+
+typedef struct _FRUMultiRecObj 
+{
+        u16 sdrRecID;
+        u8 psRecCount;
+        u8 dcOutputRecCount;
+        u8 dcLoadRecCount;
+        u8 reservedAlign[3];
+        FRUPSRecObj psRecList[-4];
+        FRUDCOutputRecObj dcOutputRecList[-4];
+        FRUDCLoadRecObj dcLoadRecList[-4];
+} FRUMultiRecObj;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------
+

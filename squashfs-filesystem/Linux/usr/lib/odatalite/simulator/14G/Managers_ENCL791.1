@@ -1,0 +1,247 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Managers/Members/$entity",
+    "@odata.id": "/redfish/v1/Managers/ENCL791.1"  ,"@oem.nav.parentid": "/redfish/v1/Managers",
+    "@odata.type": "#Manager.1.0.0.Manager",
+    "Id": "ENCL791.1",
+    "Name": "EC.Active",
+    "Description": "TODO: content here could be the Help text.",
+    "ManagerType": "EnclosureManager",
+    "ServiceEntryPointUUID": "92384634-2938-2342-8820-489239905423",
+    "UUID": "00000000-0000-0000-0000-000000000000",
+    "DateTime": "2015-03-13T04:14:33+06:00",
+    "DateTimeLocalOffset": "+06:00",
+    "Status": {
+        "State": "Enabled",
+        "Health": "Critical",
+        "HealthRollup": "Critical"
+    },
+    "FaultList": [
+        {
+            "Message": "This is a sample message that can indicate why a component health status is not OK.",
+            "MessageID": "CMC0007",
+            "MessageArgs": [ 
+                "sample" 
+            ],
+            "FQDD": "CMC.Embedded.1"
+        },
+        {
+            "Message": "This is a sample message that can indicate why a component health status is not OK.",
+            "MessageID": "CMC0004",
+            "MessageArgs": [ 
+                "sample" 
+            ],
+            "FQDD": "CMC.Embedded.1"
+        }
+    ],
+    "GraphicalConsole": {
+        "ServiceEnabled": true,
+        "MaxConcurrentSessions": 2,
+        "ConnectTypesSupported": [
+            "KVMIP"
+        ]
+    },
+    "SerialConsole": {
+        "ServiceEnabled": true,
+        "MaxConcurrentSessions": 1,
+        "ConnectTypesSupported": [
+            "Telnet",
+            "SSH",
+            "IPMI"
+        ]
+    },
+    "CommandShell": {
+        "ServiceEnabled": true,
+        "MaxConcurrentSessions": 4,
+        "ConnectTypesSupported": [
+            "Telnet",
+            "SSH"
+        ]
+    },
+    "NetworkProtocol": {
+        "@odata.id": "/redfish/v1/Managers/ENCL791.1#/NetworkProtocol",
+        "@odata.type": "#ManagerNetworkProtocol.1.0.0.ManagerNetworkProtocol",
+        "Id": "NetworkProtocol",
+        "Name": "Manager Network Protocol",
+        "Description": "Manager Network Service Status",
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK"
+        },
+        "HostName": "mymanager",
+        "FQDN": "mymanager.mydomain.com",
+        "HTTP": {
+            "ProtocolEnabled": true,
+            "Port": 80
+        },
+        "HTTPS": {
+            "ProtocolEnabled": true,
+            "Port": 443
+        },
+        "IPMI": {
+            "ProtocolEnabled": true,
+            "Port": 623
+        },
+        "SSH": {
+            "ProtocolEnabled": true,
+            "Port": 22
+        },
+        "SNMP": {
+            "ProtocolEnabled": true,
+            "Port": 161
+        },
+        "VirtualMedia": {
+            "ProtocolEnabled": true,
+            "Port": 17988
+        },
+        "SSDP": {
+            "ProtocolEnabled": true,
+            "Port": 1900,
+            "NotifyMulticastIntervalSeconds": 600,
+            "NotifyTTL": 5,
+            "NotifyIPv6Scope": "Site"
+        },
+        "Telnet": {
+            "ProtocolEnabled": true,
+            "Port": 23
+        },
+        "KVMIP": {
+            "ProtocolEnabled": true,
+            "Port": 5288
+        },
+        "Oem": {}
+    },
+    "EthernetInterfaces": {
+        "@odata.id": "/redfish/v1/Managers/ENCL791.1#/EthernetInterfaces",
+        "@odata.type": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
+        "Name": "Ethernet Network Interface Collection",
+        "Description": "Collection of EthernetInterfaces for this Manager",
+        "Members@odata.count": 1,
+        "Members": [
+            {
+                "@odata.id": "/redfish/v1/Managers/ENCL791.1#/EthernetInterfaces/NIC.Embedded.1",
+                "@odata.type": "#EthernetInterface.1.0.0.EthernetInterface",
+                "Id": "NIC.Embedded.1",
+                "Name": "Manager Ethernet Interface",
+                "Description": "TODO: content here could be the Help text.",
+                "Status": {
+                    "State": "Enabled",
+                    "Health": "OK"
+                },
+                "InterfaceEnabled": true,
+                "PermanentMACAddress": "AA:BB:CC:DD:EE:FF",
+                "MACAddress": "AA:BB:CC:DD:EE:FF",
+                "SpeedMbps": 1000,
+                "AutoNeg": true,
+                "FullDuplex": true,
+                "MTUSize": 1500,
+                "HostName": "MyHostName",
+                "FQDN": "MyHostName.MyDomainName.com",
+                "MaxIPv6StaticAddresses": 1,
+                "VLAN": {
+                    "VLANEnable": true,
+                    "VLANId": 101
+                },
+                "IPv4Addresses": [
+                    {
+                        "Address": "192.168.0.10",
+                        "SubnetMask": "255.255.252.0",
+                        "AddressOrigin": "DHCP",
+                        "Gateway": "192.168.0.1",
+                        "Oem": {}
+                    }
+                ],
+                "IPv6AddressPolicyTable": [
+                    {
+                        "Prefix": "::1/128",
+                        "Precedence": 50,
+                        "Label": 0
+                    }
+                ],
+                "IPv6StaticAddresses": [
+                    {
+                        "Address": "fe80::1ec1:deff:fe6f:1e24",
+                        "PrefixLength": 16
+                    }
+                ],
+                "IPv6DefaultGateway": "fe80::1ec1:deff:fe6f:1e24",
+                "IPv6Addresses": [
+                    {
+                        "Address": "fe80::1ec1:deff:fe6f:1e24",
+                        "PrefixLength": 64,
+                        "AddressOrigin": "SLAAC",
+                        "AddressState": "Preferred",
+                        "Oem": {}
+                    }
+                ],
+                "NameServers": [
+                    "TheNameServer"
+                ],
+                "Oem": {}
+            }
+        ]
+    },
+    "LogServices": {
+        "@odata.id": "/redfish/v1/Managers/ENCL791.1/LogServices"
+    },
+    "FirmwareVersion": "1.20",
+    "Links": {
+        "ManagerForServers": [
+            {
+                "@odata.id": "/redfish/v1/Systems/Manager.ENCL791.1"
+            }
+        ],
+        "ManagerForChassis": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/ENCL791"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/Manager.ENCL791.1"
+            }
+        ]
+    },
+    "Redundancy": {
+        "@odata.id": "/redfish/v1/Managers/ENCL791.1#/Redundancy",
+        "MemberId": "Redundancy",
+        "Mode": "Failover",
+        "MaxNumSupported": 2,
+        "MinNumNeeded": 1,
+        "Status": {
+            "State": "Online",
+            "Health": "OK"
+        },
+        "RedundancySet": [
+            {
+                "@odata.id": "/redfish/v1/Managers/ENCL791.1"
+            },
+            {
+                "@odata.id": "/redfish/v1/Managers/ENCL791.2"
+            }
+        ]
+    },
+    "Actions": {
+        "#Manager.Reset": {
+            "target": "/redfish/v1/Managers/ENCL791.1/Actions/Manager.Reset",
+            "ResetType@Redfish.AllowableValues": [
+                "GracefulRestart"
+            ]
+        },
+        "#Manager.1.0.0.ForceFailover": {
+            "target": "/redfish/v1/Managers/ENCL791.1/Actions/Manager.ForceFailover"
+        },
+        "#Manager.1.0.0.ModifyRedundancySet": {
+            "target": "/redfish/v1/Managers/ENCL791.1/Actions/Manager.ModifyRedundancySet"
+        },
+        "Oem": {}
+    },
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "Dell#Chassis.1.0.0.Chassis",
+            "Links": {
+                "Chassis": {
+                    "@odata.id": "/redfish/v1/Chassis/Manager.ENCL791.1"
+                }
+            }
+        }
+    }
+}

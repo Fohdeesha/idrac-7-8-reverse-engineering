@@ -1,0 +1,1 @@
+../../usr/bin/revoke_all_features.sh

@@ -1,0 +1,20 @@
+[Unit]
+Description=Remove debug files on A-Rev builds
+DefaultDependencies=no
+Before=sysinit.target
+Before=setup-flash.service
+After=early-mount.service
+Requires=early-mount.service
+RequiresMountsFor=/flash/data0
+
+# on arev firmware, if /flash/data0/debug/ dir exists, remove it to prevent any
+# potential security issues of executing code from there
+ConditionPathExists=/flash/data0/debug
+ConditionPathExists=/etc/arev_fw
+
+[Service]
+Type=oneshot
+ExecStart=/bin/rm -rf /flash/data0/debug
+
+[Install]
+WantedBy=local-fs.target

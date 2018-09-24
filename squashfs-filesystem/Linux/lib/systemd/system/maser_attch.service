@@ -1,0 +1,14 @@
+[Unit]
+Description=Attach maser
+After=aps.service
+After=verify_maser.service
+PartOf=aps.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/global.env
+
+ExecStart=/etc/sysapps_script/S_4100a_maser_impop.sh start
+
+[Install]
+WantedBy=multi-user.target

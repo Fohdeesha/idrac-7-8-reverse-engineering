@@ -1,0 +1,15 @@
+[Unit]
+Description=Load IPMI drivers
+DefaultDependencies=no
+Before=sysinit.target
+Before=basic.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Nice=-5
+ExecStart=/etc/init.d/modules.sh ipmi
+
+[Install]
+WantedBy=local-fs-pre.target
+WantedBy=local-fs.target

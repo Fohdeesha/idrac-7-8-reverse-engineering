@@ -1,0 +1,25 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata/TaskService/Tasks/Members/$entity",
+    "@odata.id": "/redfish/v1/TaskService/Tasks/1"  ,"@oem.nav.parentid": "/redfish/v1/TaskService/Tasks",
+    "@odata.type": "#Tasks.1.0.0.Task",
+    "Id": "1",
+    "Name": "Task 1",
+    "TaskState": "Completed",
+    "StartTime": "2012-03-07T14:44+06:00",
+    "EndTime": "2012-03-07T14:45+06:00",
+    "TaskStatus": "OK",
+    "Messages": [
+        {
+            "MessageId": "Base.1.0.PropertyNotWriteable",
+            "RelatedProperties": [
+                "SKU"
+            ],
+            "Message": "The property SKU is a read only property and cannot be assigned a value",
+            "MessageArgs": [
+                "SKU"
+            ],
+            "Severity": "Warning"
+        }
+    ]
+}

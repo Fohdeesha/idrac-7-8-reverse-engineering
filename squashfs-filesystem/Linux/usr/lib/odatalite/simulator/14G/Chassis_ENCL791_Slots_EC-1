@@ -1,0 +1,19 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/Slots",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/EC-1",
+    "@odata.type": "#Slots.1.0.0.Slot",
+    "Id": "EC-1",
+    "Name": "EC-1",
+    "SlotId": "1",
+    "SlotGroup": "EC",
+    "Occupied": true,
+    "SlotType": "EC",
+    "SlotConfig": { "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/ECSlots" },
+    "Contains": [
+        { 
+            "@odata.id": "/redfish/v1/Chassis/Manager.ENCL791.1"
+        }
+    ],
+    "Oem": {}
+}

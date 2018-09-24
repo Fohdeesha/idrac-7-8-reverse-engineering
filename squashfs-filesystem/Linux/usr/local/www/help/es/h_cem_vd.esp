@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript"><% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Discos virtuales de almacenamiento</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> Discos virtuales</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">Ir a: <a class="popup-jump-bar" href="#VirtualDisks" id="cc3">Discos virtuales</a> |<a class="popup-jump-bar" href="#Other" id="A14">Otras opciones</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Use esta página para ver la lista de discos virtuales presentes en el subsistema de almacenamiento y sus propiedades. </p> 
+</div> 
+<div class="popup_subheader">
+<span id="BasicFilter"> Filtro de disco virtual básico/avanzado </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"><p>Use el menú desplegable del<b>controlador</b> para filtrar la lista de discos virtuales según los controladores. Haga clic en <b>Aplicar</b>.</p> 
+<p>Haga clic en <b>Filtro avanzado</b> para filtrar la lista de discos virtuales según lo siguiente:</p> 
+<ul> 
+<li>Controlador</li> 
+<li>Estatus</li> 
+<li>Estado</li> 
+<li>Diseño</li> 
+<li>Protocolo del bus</li> 
+<li>Tipo de medio</li> 
+<li>Política de lectura</li> 
+<li>Política de escritura</li> 
+<li>Bloques dañados encontrados</li> 
+<li>Seguro</li> 
+<li>Política de caché de disco</li> 
+<li>Caché mejorado</li> 
+<li>Tamaño mínimo (MB)</li> 
+<li>Todo el nombre o parte de éste</li> 
+</ul> 
+<p>Para obtener información sobre cada propiedad, consulte la sección <a class="popup-jump-bar" href="#VirtualDisks" id="cc4">Discos Virtuales</a>.</p> 
+<p>Haga clic en <strong>Cancelar</strong> para restaurar los valores predeterminados en los campos.</p></div> 
+<div class="popup_subheader"> 
+<a name="VirtualDisks"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Volver al principio</a> </div> 
+<span id="VirtualDisks"> Discos virtuales </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p>Para cada disco virtual, se visualizan las siguientes propiedades básicas.</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Estatus</b></span></td> 
+<td class="desc"> 
+<p>Muestra la condición del disco virtual. Posibles valores: </p> 
+<ul> 
+<li>Buen estado<span class="status_ok"> &#8212;</span>: indica que el componente funciona según lo previsto.</li> 
+<li>Advertencia <span class="status_noncritical"> &#8212;</span>: indica que una sonda u otro dispositivo de supervisión ha detectado una lectura del controlador que se encuentra por encima o por debajo del nivel aceptable. El componente puede estar en funcionamiento, pero puede fallar. Es posible que el componente también esté funcionando en un estado de deterioro. </li> 
+<li>Crítico<span class="status_critical"> &#8212;</span>: indica que el componente ha fallado o que la falla es inminente. Este requiere atención inmediata y es posible que deba reemplazarse.</li> 
+<li>Información no disponible <span class="status_unknown"> &#8212; </span> indica que se desconoce el estado del componente.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nombre</b></span></td> 
+<td class="desc"> 
+<p>muestra el nombre del disco virtual.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Estado</b></span></td> 
+<td class="desc"> 
+<p>muestra el estado actual de los discos virtuales.</p> 
+<ul> 
+<li>En línea &#8212;: indica que el disco virtual está funcionando de forma óptima.</li> 
+<li>Degradado&#8212;: indica que el disco físico en un disco virtual redundante no se encuentra en línea.</li> 
+<li>Fallido &#8212;: indica que el disco virtual ha encontrado una o más fallas en el componente y que no se encuentra en funcionamiento.</li> 
+<li>Desconocido &#8212; indica que se desconoce el estado del disco virtual.</li> 
+</ul> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">Nota: </span>en algunos controladores, no se actualiza el estado del disco virtual hasta que el controlador realiza una operación E/S.</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Diseño</b></span></td> 
+<td class="desc"> 
+<p>muestra el nivel RAID.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Tamaño</b></span> </td> 
+<td class="desc"> 
+<p>indica la capacidad total del disco virtual (en MB o GB).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Tipo de medio</b></span></td> 
+<td class="desc"> 
+<p>muestra el tipo de medio de los discos físicos presentes en el disco virtual. Posibles valores:</p> 
+<ul> 
+<li>HDD&#8212;: indica que el tipo de soporte es una unidad de disco duro (HDD). La unidad de disco duro es un dispositivo de almacenamiento no volátil que almacena datos codificados digitalmente en bandejas de rotación rápida con superficies magnéticas.</li> 
+<li>SSD &#8212;: indica que el tipo de soporte es una unidad de estado continuo (SSD). Una SSD es un dispositivo de almacenamiento de datos que usa una memoria en estado sólido para almacenar datos persistentes.</li> 
+<li>Información no disponible — Indica que la información no está disponible.</li> 
+</ul> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">Nota:</span> no puede tener HDD y SSD en un disco virtual. Además, no puede haber unidades SAS y SATA en el disco virtual.</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Política de lectura</b></span> </td> 
+<td class="desc"> 
+<p>muestra la política de lectura que el controlador utiliza para este disco virtual. Posibles valores:</p> 
+<ul> 
+<li>Lectura anticipada&#8212;: indica que según el volumen determinado, el controlador realiza una lectura anticipada de manera secuencial de los datos solicitados y almacenará los datos adicionales en la memoria caché, para anticiparse a cualquier solicitud rápida de datos.  Esto acelera la lectura de datos secuencial pero resulta en un menor rendimiento al acceder datos aleatorios.</li> 
+<li>Lectura anticipada adaptativa&#8212;: indica que según el volumen determinado, el control usa la política de lectura anticipada adaptativa si los dos accesos más recientes al disco ocurren en sectores secuenciales. Si las solicitudes de lectura son aleatorias, el controlador regresa al modo Sin lectura anticipada.</li> 
+<li>Sin lectura anticipada&#8212;: indica que según el volumen determinado, no se utiliza la política de lectura anticipada.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Política de escritura</b></span></td> 
+<td class="desc"><p>muestra la política de escritura que el controlador utiliza para este disco virtual. Posibles valores:</p> 
+<ul> 
+<li>Escritura no simultánea&#8212;: indica que según el volumen determinado, el controlador envía al sistema host una señal que indica que finalizó la transferencia de datos cuando el controlador cache ha recibido todos los datos en una transacción. Luego, el controlador escribe los datos en caché al dispositivo de almacenamiento en segundo plano.</li> 
+<li>Escritura simultánea&#8212;: indica que según el volumen determinado, el controlador envía al sistema host una señal que indica que finalizó transferencia de datos cuando el subsistema del disco ha recibido todos los datos en una transacción.</li> 
+<li>Forzar escritura no simultánea&#8212; cuando se utiliza la opción forzar escritura no simultánea en caché, el caché de escritura se activa, independientemente de que el controlador tenga batería. Si el controlador no tiene batería y se utiliza la opción forzar escritura no simultánea en caché, se pueden perder datos si ocurre una falla de alimentación.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"><span><b>Tamaño de la sección</b></span></td> 
+<td class="desc"> 
+<p>muestra el tamaño de la sección de un disco virtual. El tamaño de la sección se refiere a la cantidad de espacio que la sección ocupa en un solo disco. Los valores posibles son: 8 KB, 16 KB, 32 KB, 64 KB, 128 KB, 256 KB, 512 KB, o 1 MB.</p> 
+<p>Si este valor no está disponible, se muestra <b>Información no disponible</b>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Seguro</b></span> </td> 
+<td class="desc">indica si un disco virtual es seguro o no. Posibles valores: Sí o No.<br /> Para asegurar el disco virtual, se necesitan unidades de autocifrado (Self-Encrypting Drives, SED).</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Redundancia restante</b></span> </td> 
+<td class="desc">indica la cantidad de posibles unidades que pueden perderse antes de que este disco virtual falle. Posibles valores: 0, 1 ó 2.</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_inner_content"><div> 
+<p>Haga clic en el símbolo + para visualizar las <b>Propiedades avanzadas</b> de cada disco virtual, junto con las propiedades básicas.</p></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Protocolo del bus</b></span></td> 
+<td class="desc"> 
+<p>muestra la tecnología que los discos físico incluyeron en el disco virtual que utilizan. Posibles valores: </p> 
+<ul><li>SAS &#8212; SCSI conectado en serie</li> 
+<li>SATA &#8212; Serial Advanced Technology Attachment (Conexión serie de tecnología avanzada)</li> 
+</ul> 
+<p>De manera predeterminada, SAS se desactiva y SATA se activa.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Estado operativo</b></span></td> 
+<td class="desc"> 
+<p>Se visualiza sólo cuando hay una operación basada en el progreso:</p> 
+<ul> 
+<li>Resincronización&#8212;: indica que se está realizando una revisión de congruencia en el disco virtual.</li> 
+<li>Inicialización de segundo plano&#8212;: indica que se está realizando una inicialización de segundo plano en el disco virtual.</li> 
+<li>Inicializando&#8212;: indica que el disco virtual se está inicializando.</li> 
+<li>Reconstruyendo&#8212;: indica que la configuración del disco virtual ha cambiado. Los discos físicos incluidos en el disco virtual se están modificando para admitir la nueva configuración.</li> 
+<li>No aplicable: indica que no hay una operación en progreso.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Política de caché de disco</b></span></td> 
+<td class="desc"> 
+<p>muestra si la política de caché de disco de los discos físicos que no forman parte del disco virtual está activada o desactivada. Los valores posibles son:</p> 
+<ul> 
+<li> Activado — indica que el caché de escritura del disco está activado. Esto aumenta el rendimiento y la probabilidad de pérdida de datos si hay una pérdida de alimentación. </li> 
+<li> Desactivado — indica que el caché de escritura del disco está desactivado. Esto disminuye el rendimiento y la probabilidad de perdida de datos.</li> 
+<li>Predeterminado &#8212; indica que el disco está usando el modo de caché de escritura predeterminado. Para los discos SATA se activa y para los discos SAS se desactiva.</li> 
+</ul> 
+<p>Para los discos virtuales basados en unidades de SATA, la política de caché de disco predeterminada esta activada; y para los discos virtuales basados en unidades de SAS, está desactivada.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Caché mejorado</b></span></td> 
+<td class="desc"> 
+<p>indica si el controlador PERC utiliza el disco virtual como caché secundario para mejorar el rendimiento de lectura aleatoria. Esta propiedad se visualiza sólo en el caso de los discos virtuales SSC. Posibles valores:</p> 
+<ul> 
+<li>Sí &#8212;: indica que el disco virtual se utiliza como caché secundario.</li> 
+<li>No aplicable&#8212;: indica que el caché secundario no es aplicable.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Progreso</b></span></td> 
+<td class="desc"> 
+<p>Muestra el progreso en porcentaje de una operación realizada en el disco virtual.</p> 
+<p>Si no hay una operación en progreso, muestra la opción<b>No aplicable</b>. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Bloques dañados encontrados</b></span> </td> 
+<td class="desc"><p> muestra si el disco virtual tiene bloques dañados. Los bloques dañados de los discos virtuales se deben a bloques dañados en uno o más discos físicos del miembro. La operación de lectura en discos virtuales con bloques dañados puede fallar. Los bloques dañados de los discos virtuales se detectan cuando el controlador realiza cualquier operación en la que se deba digitalizar el disco. Posibles valores: </p> 
+<ul> 
+<li>Sí&#8212;: indica que el disco virtual tiene bloques dañados.</li> 
+<li>No&#8212;: indica que el disco virtual no tiene bloques dañados.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Controlador</b></span></td> 
+<td class="desc">Haga clic en el vínculo del nombre del controlador para ver las propiedades del controlador relacionadas con este disco virtual.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Ver discos físicos</b></span></td> 
+<td class="desc">Haga clic en este vínculo para ver los discos físicos relacionados con este disco virtual.</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

@@ -1,0 +1,21 @@
+[Unit]
+Description=Debug service - Preinit
+DefaultDependencies=no
+Before=basic.target
+Before=sysinit.target
+Before=setup-flash.service
+After=early-mount.service
+Requires=early-mount.service
+RequiresMountsFor=/flash/data0
+
+# only execute this for XREV builds. Represents a security issue to allow this on a-rev.
+ConditionPathExists=/flash/data0/debug/preinit.sh
+ConditionPathExists=/etc/xrev_fw
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/global.env
+ExecStart=-/flash/data0/debug/preinit.sh
+
+[Install]
+WantedBy=local-fs.target

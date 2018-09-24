@@ -1,0 +1,3 @@
+[libdefaults]
+allow_weak_crypto = 0
+

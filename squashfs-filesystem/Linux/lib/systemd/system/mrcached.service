@@ -1,0 +1,16 @@
+[Unit]
+Description=MR Cache Daemon
+After=maser_attch.service
+After=aps.service
+After=verify_maser.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/usr/sbin/mrcached
+
+[Install]
+WantedBy=multi-user.target

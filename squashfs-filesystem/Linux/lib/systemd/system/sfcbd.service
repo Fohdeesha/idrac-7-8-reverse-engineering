@@ -1,0 +1,19 @@
+[Unit]
+Description=sfcbd
+After=osinet.service
+PartOf=appweb.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+#Restart=on-failure
+#disable timeout for now
+TimeoutStartSec=0
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStartPre=/bin/cp -a /var/interop /var/volatile/
+ExecStart=/usr/sbin/sfcbd -d
+TimeoutStopSec=2
+
+[Install]
+WantedBy=multi-user.target

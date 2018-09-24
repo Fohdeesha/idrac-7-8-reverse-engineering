@@ -1,0 +1,18 @@
+[Unit]
+Description=racadm ipmiextd
+After=aim.service
+After=maser_attch.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/usr/sbin/ipmiextd
+KillSignal=SIGINT
+RestartSec=1
+Restart=on-failure
+TimeoutStopSec=2
+
+[Install]
+WantedBy=multi-user.target

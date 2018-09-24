@@ -1,0 +1,19 @@
+[Unit]
+Description=APS
+After=osinet.service
+After=driver-load-usb.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+
+#ExecStartPre=/etc/sysapps_script/S_4000_APS.sh init
+#ExecStart=/sbin/avct_server
+ExecStart=-/etc/sysapps_script/S_4000_APS.sh start
+ExecStop=/etc/sysapps_script/S_4000_APS.sh stop
+
+[Install]
+WantedBy=multi-user.target

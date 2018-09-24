@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellJob  v1.0.0                                                     -->
+<!--# This is DELL OEM Schema.                                                             -->
+<!--# Copyright 2014-2016 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0" />
+    </edmx:Reference>
+    <edmx:Reference Uri="/redfish/v1/Schemas/Message_v1.xml">
+        <edmx:Include Namespace="Message"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellJob">
+            <EntityType Name="DellJob" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+                <Annotation Term="OData.Description" String="This resource contains information about a specific configuration Job scheduled by or being executed by a Redfish service's Job Service."/>
+                <Annotation Term="OData.LongDescription" String="This resource shall be used to represent a Job for a Redfish implementation."/>
+            </EntityType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellJob.v1_0_0">
+            <EntityType Name="DellJob" BaseType="DellJob.DellJob">
+                <Property Name="JobState" Type="DellJob.v1_0_0.JobState">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The State of the Job."/>
+                    <Annotation Term="OData.LongDescription" String="The value of the property specifies the State of the Job."/>
+                </Property>
+                <Property Name="MessageId" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The Message Id of the Job."/>
+                    <Annotation Term="OData.LongDescription" String="The value of this property the Message Id of the Job."/>
+                </Property>
+                <Property Name="Message" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The status Message for the Job."/>
+                    <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the status message for the Job."/>
+                </Property>
+				<Property Name="MessageArgs" Type="Collection(Edm.String)" Nullable="false">
+					<Annotation Term="OData.Description" String="This array of message arguments are substituted for the arguments in the message."/>
+					<Annotation Term="OData.LongDescription" String="This property shall contain the message substitution arguments for the specific message referenced by the MessageId and shall only be included if the MessageId is present."/>
+				</Property>
+                <Property Name="StartTime" Type="Edm.String">
+					<Annotation Term="Redfish.RequiredOnCreate" Bool="false"/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property represents start time of Job."/>
+                    <Annotation Term="OData.LongDescription" String="This property will be defined as a String that will contain a timestamp in Edm.DateTime format. TIME_NOW is a default value that implies apply pending configuration now. This property will be required when creating a job with future timestamp."/>
+                </Property>
+                <Property Name="EndTime" Type="Edm.String">
+					<Annotation Term="Redfish.RequiredOnCreate" Bool="false"/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property represents End time of Job."/>
+                    <Annotation Term="OData.LongDescription" String="This is the timestamp until when the service will wait for a job to complete. If a job did not complete within this time, it will be killed and marked as failed. TIME_NA is a default value that implies EndTime is not applicable. It is optional for clients to specify this property when creating a job."/>
+                </Property>
+		<Property Name="CompletionTime" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property represents completion time of Job."/>
+                    <Annotation Term="OData.LongDescription" String="The value of this property represents when the job was completed."/>
+                </Property>
+                <Property Name="PercentComplete" Type="Edm.Int64" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The percentage completion of the Job."/>
+                    <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the percentage completion of the Job."/>
+		    <Annotation Term="Validation.Minimum" Int="0"/>
+		    <Annotation Term="Validation.Maximum" Int="100"/>
+                </Property>
+		<Property Name="JobType" Type="DellJob.v1_0_0.JobType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property represent configuration type of job."/>
+                    <Annotation Term="OData.LongDescription" String="The value of this property will be one of the possible configuration type of job."/>
+                </Property>
+                <Property Name="TargetSettingsURI" Type="Edm.String">
+		    <Annotation Term="Redfish.RequiredOnCreate"/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property will be resource uri of settings object."/>
+                    <Annotation Term="OData.LongDescription" String="The value of this property will be the URI of a target resource on which the configuration is being applied. This property will be required when creating a job. This Property will be null on GET operation."/>
+                </Property>
+            </EntityType>
+           <EnumType Name="JobState">
+	      <Member Name="New">
+                <Annotation Term="OData.Description" String="A job is in newly created state"/>
+              </Member>
+	      <Member Name="Scheduled">
+                <Annotation Term="OData.Description" String="A job is in scheduled state"/>
+              </Member>
+	      <Member Name="Running">
+                <Annotation Term="OData.Description" String="A job is in running state"/>
+              </Member>
+              <Member Name="Completed">
+                <Annotation Term="OData.Description" String="A job is in completed state"/>
+              </Member>
+           </EnumType>
+           <EnumType Name="JobType">
+              <Member Name="FirmwareUpdate">
+                <Annotation Term="OData.Description" String="A firmware update job"/>
+              </Member>
+              <Member Name="FirmwareRollback">
+                <Annotation Term="OData.Description" String="A firmware rollback job"/>
+              </Member>
+              <Member Name="RepositoryUpdate">
+                <Annotation Term="OData.Description" String="A update job from a repository"/>
+              </Member>
+              <Member Name="RebootPowerCycle">
+                <Annotation Term="OData.Description" String="A power cycle job"/>
+              </Member>
+              <Member Name="RebootForce">
+                <Annotation Term="OData.Description" String="A graceful reboot job with forced shutdown"/>
+              </Member>
+              <Member Name="RebootNoForce">
+                <Annotation Term="OData.Description" String="A graceful reboot job without forced shutdown"/>
+              </Member>
+              <Member Name="Shutdown">
+                <Annotation Term="OData.Description" String="A shutdown job"/>
+              </Member>
+              <Member Name="RAIDConfiguration">
+                <Annotation Term="OData.Description" String="A RAID configuration job"/>
+              </Member>
+              <Member Name="BIOSConfiguration">
+                <Annotation Term="OData.Description" String="A BIOS configuration job"/>
+              </Member>
+              <Member Name="NICConfiguration">
+                <Annotation Term="OData.Description" String="A NIC configuration job"/>
+              </Member>
+              <Member Name="FCConfiguration">
+                <Annotation Term="OData.Description" String="A FC configuration job"/>
+              </Member>
+              <Member Name="iDRACConfiguration">
+                <Annotation Term="OData.Description" String="A iDRAC configuration job"/>
+              </Member>
+              <Member Name="SystemInfoConfiguration">
+                <Annotation Term="OData.Description" String="A system info configuration job"/>
+              </Member>
+              <Member Name="InbandBIOSConfiguration">
+                <Annotation Term="OData.Description" String="A inband BIOS configuration job"/>
+              </Member>
+              <Member Name="ExportConfiguration">
+                <Annotation Term="OData.Description" String="A server configuration profile export job"/>
+              </Member>
+              <Member Name="ImportConfiguration">
+                <Annotation Term="OData.Description" String="A server configuration profile import job"/>
+              </Member>
+              <Member Name="RemoteDiagnostics">
+                <Annotation Term="OData.Description" String="A factory installed job"/>
+              </Member>
+              <Member Name="RealTimeNoRebootConfiguration">
+                <Annotation Term="OData.Description" String="A real time configuration job without reboot"/>
+              </Member>
+              <Member Name="LCLogExport">
+                <Annotation Term="OData.Description" String="A lifecyle controller log export job"/>
+              </Member>
+              <Member Name="HardwareInventoryExport">
+                <Annotation Term="OData.Description" String="A hardware inventory export job"/>
+              </Member>
+              <Member Name="FactoryConfigurationExport">
+                <Annotation Term="OData.Description" String="A factory configuration export job"/>
+              </Member>
+              <Member Name="LiceneImport">
+                <Annotation Term="OData.Description" String="A license import job"/>
+              </Member>
+              <Member Name="LicenseExport">
+                <Annotation Term="OData.Description" String="A license export job"/>
+              </Member>
+              <Member Name="ThermalHistoryExport">
+                <Annotation Term="OData.Description" String="A thermal history export job"/>
+              </Member>
+              <Member Name="LCConfig">
+                <Annotation Term="OData.Description" String="A lifecyle controller attribute configuration job"/>
+              </Member>
+              <Member Name="LCExport">
+                <Annotation Term="OData.Description" String="A lifecyle controller log export job"/>
+              </Member>
+              <Member Name="Unknown">
+                <Annotation Term="OData.Description" String="A unknown job"/>
+              </Member>
+        </EnumType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

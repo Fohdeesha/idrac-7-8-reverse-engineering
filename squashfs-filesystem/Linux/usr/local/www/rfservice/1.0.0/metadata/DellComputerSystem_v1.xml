@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellComputerSystem v1.0.0                                             -->
+<!--# This is DELL OEM Schema.                                                             -->
+<!--# Copyright 2014-2016 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/DellBootSources_v1.xml">
+    <edmx:Include Namespace="DellBootSources"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellComputerSystem">
+      <EntityType Name="DellComputerSystem" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+        <Annotation Term="OData.Description" String="This resource contains the Dell specific Redfish implementation for ComputerSystem."/>
+        <Annotation Term="OData.LongDescription" String="This resource contains the Dell specific Redfish implementation for ComputerSystem."/>
+      </EntityType>    
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellComputerSystem.v1_0_0">
+      <EntityType Name="DellComputerSystem" BaseType="DellComputerSystem.DellComputerSystem">
+        <NavigationProperty Name="BootOrder" Type="DellBootSources.DellBootSources" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to the BootSources settings associated with this system."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be a link to a resource of type BootSources that lists the BootSources settings for this system."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+		</NavigationProperty>
+      </EntityType>   
+    </Schema>
+
+</edmx:DataServices>
+</edmx:Edmx>

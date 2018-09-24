@@ -1,0 +1,21 @@
+[Unit]
+Description=OSINET INIT
+DefaultDependencies=no
+#Wants=systemd-tmpfiles-setup.service
+After=systemd-tmpfiles-setup.service
+Requires=setup-flash.service
+After=setup-flash.service
+RequiresMountsFor=/flash/data0 /tmp
+
+# for CPU utilization
+After=fullfw_app.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Nice=-5
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/init.d/osinet.sh start
+
+[Install]
+WantedBy=sysinit.target

@@ -1,0 +1,593 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#StorageReplicaInfo.v1_0_0",
+    "definitions": {
+        "ConsistencyState": {
+            "type": "string",
+            "enum": [
+                "Consistent",
+                "Inconsistent"
+            ],
+            "enumDescriptions": {
+                "Consistent": "Consistent.",
+                "Inconsistent": "Not consistent."
+            },
+            "enumLongDescriptions": {
+                "Consistent": "This enumeration literal shall indicate that the source and target shall be consistent.",
+                "Inconsistent": "This enumeration literal shall indicate that the source and target are not required to be consistent."
+            },
+            "description": "The values of ConsistencyState indicate the consistency type used by the source and its associated target group.",
+            "longDescription": "ConsistencyState enumeration literals may be used to describe the consistency type used by the source and its associated target group."
+        },
+        "ConsistencyStatus": {
+            "type": "string",
+            "enum": [
+                "Consistent",
+                "InProgress",
+                "Disabled",
+                "InError"
+            ],
+            "enumDescriptions": {
+                "Consistent": "Consistent.",
+                "InProgress": "Becoming consistent.",
+                "Disabled": "Consistency disabled.",
+                "InError": "Consistency error."
+            },
+            "enumLongDescriptions": {
+                "Consistent": "This enumeration literal shall indicate that the source and target are consistent.",
+                "InProgress": "This enumeration literal shall indicate that the source and target are becoming consistent.",
+                "Disabled": "This enumeration literal shall indicate that the source and target have consistency disabled.",
+                "InError": "This enumeration literal shall indicate that the source and target are not consistent."
+            },
+            "description": "The values of ConsistencyStatus indicate the current status of consistency. Consistency may have been disabled or might be experiencing an error condition.",
+            "longDescription": "ConsistencyStatus enumeration literals may be used to indicate the current status of consistency. Consistency may have been disabled or may be experiencing an error condition."
+        },
+        "ConsistencyType": {
+            "type": "string",
+            "enum": [
+                "SequentiallyConsistent"
+            ],
+            "enumDescriptions": {
+                "SequentiallyConsistent": "Sequentially consistent."
+            },
+            "enumLongDescriptions": {
+                "SequentiallyConsistent": "This enumeration literal shall indicate that the source and target shall be sequentially consistent."
+            },
+            "description": "The values of ConsistencyType indicates the consistency type used by the source and its associated target group.",
+            "longDescription": "ConsistencyType enumeration literals indicate the consistency type used by the source and its associated target group."
+        },
+        "ReplicaInfo": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "ReplicaPriority": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ReplicaPriority"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The priority of background copy engine I/O to be managed relative to host I/O operations during a sequential background copy operation.",
+                    "longDescription": "The enumeration literal shall specify the priority of background copy engine I/O to be managed relative to host I/O operations during a sequential background copy operation."
+                },
+                "ReplicaReadOnlyAccess": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ReplicaReadOnlyAccess"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "This property specifies whether the source, the target, or both elements are read only to the host.",
+                    "longDescription": "The enumeration literal shall specify whether the source, the target, or both elements are read only to the host."
+                },
+                "UndiscoveredElement": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/UndiscoveredElement"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "This property specifies whether the source, the target, or both elements involved in a copy operation are undiscovered.",
+                    "longDescription": "The enumeration literal shall specify whether the source, the target, or both elements involved in a copy operation are undiscovered. An element is considered undiscovered if its object model is not known to the service performing the copy operation."
+                },
+                "WhenSynced": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "The point in time that the Elements were synchronized.",
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the elements were synchronized."
+                },
+                "SyncMaintained": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "Synchronization is maintained.",
+                    "longDescription": "If true, Synchronization shall be maintained. The default value for this property is false."
+                },
+                "ReplicaRecoveryMode": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ReplicaRecoveryMode"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "Describes whether the copy operation continues after a broken link is restored.",
+                    "longDescription": "The enumeration literal shall specify whether the copy operation continues after a broken link is restored."
+                },
+                "ReplicaUpdateMode": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ReplicaUpdateMode"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "Describes whether the target elements will be updated synchronously or asynchronously.",
+                    "longDescription": "The enumeration literal shall specify whether the target elements will be updated synchronously or asynchronously."
+                },
+                "PercentSynced": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "readonly": true,
+                    "description": "Specifies the percent of the work completed to reach synchronization.",
+                    "longDescription": "Specifies the percent of the work completed to reach synchronization. Shall not be instantiated if implementation is not capable of providing this information.  If related to a group, then PercentSynced shall be an average of the PercentSynced across all members of the group."
+                },
+                "FailedCopyStopsHostIO": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "If true, the storage array tells host to stop sending data to source element if copying to a remote element fails.",
+                    "longDescription": "If true, the storage array shall stop receiving data to the source element if copying to a remote element fails. The default value for this property is false."
+                },
+                "WhenActivated": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "units": "%",
+                    "readonly": true,
+                    "description": "Specifies when point-in-time copy was taken or when the replication relationship is activated, reactivated, resumed or re-established.",
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the point-in-time copy was taken or when the replication relationship is activated, reactivated, resumed or re-established. This property shall be null if the implementation is not capable of providing this information."
+                },
+                "WhenDeactivated": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "units": "%",
+                    "readonly": true,
+                    "description": "Specifies when the replication relationship is deactivated.",
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is deactivated. Do not instantiate this property if implementation is not capable of providing this information."
+                },
+                "WhenEstablished": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "units": "%",
+                    "readonly": true,
+                    "description": "Specifies when the replication relationship is established.",
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is established. Do not instantiate this property if implementation is not capable of providing this information."
+                },
+                "WhenSuspended": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "units": "%",
+                    "readonly": true,
+                    "description": "Specifies when the replication relationship is suspended.",
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is suspended. Do not instantiate this property if implementation is not capable of providing this information."
+                },
+                "WhenSynchronized": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "units": "%",
+                    "readonly": true,
+                    "description": "Specifies when the replication relationship is synchronized.",
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is synchronized. Do not instantiate this property if implementation is not capable of providing this information."
+                },
+                "ReplicaSkewBytes": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By",
+                    "readonly": true,
+                    "description": "Applies to Adaptive mode and it describes maximum number of bytes the SyncedElement (target) can be out of sync.",
+                    "longDescription": "Applies to Adaptive mode and it describes maximum number of bytes the SyncedElement (target) can be out of sync. If the number of out-of-sync bytes exceeds the skew value, ReplicaUpdateMode shall be switched to synchronous."
+                },
+                "ReplicaType": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ReplicaType"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "ReplicaType describes the intended outcome of the replication.",
+                    "longDescription": "The ReplicaType enumeration literal shall describe the intended outcome of the replication."
+                },
+                "ReplicaProgressStatus": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ReplicaProgressStatus"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The status of the session with respect to Replication activity.",
+                    "longDescription": "The ReplicaProgressStatus enumeration literal shall specify the status of the session with respect to Replication activity."
+                },
+                "ReplicaState": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ReplicaState"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "ReplicaState describes the state of the relationship with respect to Replication activity.",
+                    "longDescription": "The ReplicaState enumeration literal shall specify the state of the relationship with respect to Replication activity."
+                },
+                "RequestedReplicaState": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ReplicaState"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The last requested or desired state for the relationship.",
+                    "longDescription": "The last requested or desired state for the relationship. The actual state of the relationship shall be represented by ReplicaState. When RequestedState reaches the requested state, this property shall be null."
+                },
+                "ConsistencyEnabled": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "True if consistency is enabled.",
+                    "longDescription": "If true, consistency shall be enabled across the source and its associated target replica(s). The default value for this property is false."
+                },
+                "ConsistencyType": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ConsistencyType"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "Indicates the consistency type used by the source and its associated target group.",
+                    "longDescription": "The ConsistencyType enumeration literal shall indicate the consistency type used by the source and its associated target group."
+                },
+                "ConsistencyState": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ConsistencyState"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The current state of consistency.",
+                    "longDescription": "The ConsistencyState enumeration literal shall indicate the current state of consistency."
+                },
+                "ConsistencyStatus": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ConsistencyStatus"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The current status of consistency.",
+                    "longDescription": "The ConsistencyStatus enumeration literal shall specify the current status of consistency. Consistency may have been disabled or is experiencing an error condition."
+                },
+                "ReplicaRole": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ReplicaRole"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The source or target role of this replica.",
+                    "longDescription": "The ReplicaRole enumeration literal shall represent the source or target role of this replica as known to the containing resource."
+                },
+                "Replica": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.v1_0_0.json#/definitions/Resource"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The resource that is the source of this replica.",
+                    "longDescription": "The value shall reference the resource that is the source of this replica."
+                }
+            },
+            "description": "Defines the characteristics of a replica.",
+            "longDescription": "The value shall define the characteristics of a replica."
+        },
+        "ReplicaPriority": {
+            "type": "string",
+            "enum": [
+                "Low",
+                "Same",
+                "High",
+                "Urgent"
+            ],
+            "enumDescriptions": {
+                "Low": "Copy engine I/O lower priority than host I/O.",
+                "Same": "Copy engine I/O has the same priority as host I/O.",
+                "High": "Copy engine I/O has higher priority than host I/O.",
+                "Urgent": "Copy operation to be performed as soon as possible, regardless of the host I/O requests."
+            },
+            "enumLongDescriptions": {
+                "Low": "Copy engine I/O shall have a lower priority than host I/O.",
+                "Same": "Copy engine I/O shall have the same priority as host I/O.",
+                "High": "Copy engine I/O shall have a higher priority than host I/O.",
+                "Urgent": "Regardless of the host I/O requests, the Copy operation shall be performed as soon as possible."
+            },
+            "description": "ReplicaPriority allows the priority of background copy engine I/O to be managed relative to host I/O operations during a sequential background copy operation.",
+            "longDescription": "The enumeration literals of the ReplicaPriority enumeration may be used to specify the priority of background copy engine I/O relative to host I/O operations during a sequential background copy operation."
+        },
+        "ReplicaProgressStatus": {
+            "type": "string",
+            "enum": [
+                "Completed",
+                "Dormant",
+                "Initializing",
+                "Preparing",
+                "Synchronizing",
+                "Resyncing",
+                "Restoring",
+                "Fracturing",
+                "Splitting",
+                "FailingOver",
+                "FailingBack",
+                "Detaching",
+                "Aborting",
+                "Mixed",
+                "Suspending",
+                "RequiresFracture",
+                "RequiresResync",
+                "RequiresActivate",
+                "Pending",
+                "RequiresDetach",
+                "Terminating",
+                "RequiresSplit",
+                "RequiresResume"
+            ],
+            "enumDescriptions": {
+                "Completed": "The request is completed. Data flow is idle.",
+                "Dormant": "Indicates that the data flow is inactive, suspended or quiesced.",
+                "Initializing": "In the process of establishing source/replica relationship and the data flow has not started.",
+                "Preparing": "Preparation in progress.",
+                "Synchronizing": "Sync in progress.",
+                "Resyncing": "Resync in progess.",
+                "Restoring": "Restore in progress.",
+                "Fracturing": "Fracture in progress.",
+                "Splitting": "Split in progress.",
+                "FailingOver": "In the process of switching source and target.",
+                "FailingBack": "Undoing the result of failover.",
+                "Detaching": "Detach in progress.",
+                "Aborting": "Abort in progress.",
+                "Mixed": "Applies to groups with element pairs with different statuses. Generally, the individual statuses need to be examined.",
+                "Suspending": "The copy operation is in the process of being suspended.",
+                "RequiresFracture": "The requested operation has completed, however, the synchronization relationship needs to be fractured before further copy operations can be issued.",
+                "RequiresResync": "The requested operation has completed, however, the synchronization relationship needs to be resynced before further copy operations can be issued.",
+                "RequiresActivate": "The requested operation has completed, however, the synchronization relationship needs to be activated before further copy operations can be issued.",
+                "Pending": "The flow of data has stopped momentarily due to limited bandwidth or a busy system.",
+                "RequiresDetach": "The requested operation has completed, however, the synchronization relationship needs to be detached before further copy operations can be issued.",
+                "Terminating": "The relationship is in the process of terminating.",
+                "RequiresSplit": "The requested operation has completed, however, the synchronization relationship needs to be split before further copy operations can be issued.",
+                "RequiresResume": "The requested operation has completed, however, the synchronization relationship needs to be resumed before further copy operations can be issued."
+            },
+            "enumLongDescriptions": {
+                "Completed": "This enumeration literal shall indicate that the request is completed. Data flow is idle.",
+                "Dormant": "This enumeration literal shall indicate that the data flow is inactive, suspended or quiesced.",
+                "Initializing": "This enumeration literal shall indicate that replication is in the process of establishing source/replica relationship and the data flow has not started.",
+                "Preparing": "This enumeration literal shall indicate that replication has preparation in progress.",
+                "Synchronizing": "This enumeration literal shall indicate that replication has synchronization in progress.",
+                "Resyncing": "This enumeration literal shall indicate that replication has resynchronization in progess.",
+                "Restoring": "This enumeration literal shall indicate that replication has a restore in progress.",
+                "Fracturing": "This enumeration literal shall indicate that replication has a fracture in progress.",
+                "Splitting": "This enumeration literal shall indicate that replication has a split in progress.",
+                "FailingOver": "This enumeration literal shall indicate that replication is in the process of switching source and target.",
+                "FailingBack": "This enumeration literal shall indicate that replication is undoing the result of failover.",
+                "Detaching": "This enumeration literal shall indicate that replication has a detach in progress.",
+                "Aborting": "This enumeration literal shall indicate that replication has an abort in progress.",
+                "Mixed": "This enumeration literal shall indicate that replication status is mixed across element pairs in a replication group. Generally, the individual statuses need to be examined.",
+                "Suspending": "This enumeration literal shall indicate that replication has a copy operation in the process of being suspended.",
+                "RequiresFracture": "This enumeration literal shall indicate that the requested operation has completed, however, the synchronization relationship needs to be fractured before further copy operations can be issued.",
+                "RequiresResync": "This enumeration literal shall indicate that the requested operation has completed, however, the synchronization relationship needs to be resynced before further copy operations can be issued.",
+                "RequiresActivate": "This enumeration literal shall indicate that the requested operation has completed, however, the synchronization relationship needs to be activated before further copy operations can be issued.",
+                "Pending": "This enumeration literal shall indicate that the flow of data has stopped momentarily due to limited bandwidth or a busy system.",
+                "RequiresDetach": "This enumeration literal shall indicate that the requested operation has completed, however, the synchronization relationship needs to be detached before further copy operations can be issued.",
+                "Terminating": "This enumeration literal shall indicate that the replication relationship is in the process of terminating.",
+                "RequiresSplit": "This enumeration literal shall indicate that the requested operation has completed, however, the synchronization relationship needs to be split before further copy operations can be issued.",
+                "RequiresResume": "This enumeration literal shall indicate that the requested operation has completed, however, the synchronization relationship needs to be resumed before further copy operations can be issued."
+            },
+            "description": "Values of ReplicaProgressStatus describe the status of the session with respect to Replication activity.",
+            "longDescription": "ReplicaProgressStatus enumeration literals may be used to describe the status of the session with respect to Replication activity."
+        },
+        "ReplicaReadOnlyAccess": {
+            "type": "string",
+            "enum": [
+                "SourceElement",
+                "ReplicaElement",
+                "Both"
+            ],
+            "enumDescriptions": {
+                "SourceElement": "The source element.",
+                "ReplicaElement": "The replica element. ",
+                "Both": "Both the source and the target elements are read only to the host."
+            },
+            "enumLongDescriptions": {
+                "SourceElement": "The source element shall be read-only to the host.",
+                "ReplicaElement": "The replica element shall be read-only to the host.",
+                "Both": "Both the source and the target elements shall be read only to the host."
+            },
+            "description": "Values of ReplicaReadOnlyAccess specify whether the source, the target, or both elements are read only to the host.",
+            "longDescription": "The enumeration literals may be used to specify whether the source, the target, or both elements are read-only to the host."
+        },
+        "ReplicaRecoveryMode": {
+            "type": "string",
+            "enum": [
+                "Automatic",
+                "Manual"
+            ],
+            "enumDescriptions": {
+                "Automatic": "Copy operation resumes automatically.",
+                "Manual": "ReplicaState is set to Suspended after the link is restored. It is required to issue the Resume operation to continue."
+            },
+            "enumLongDescriptions": {
+                "Automatic": "The copy operation shall resume automatically.",
+                "Manual": "The ReplicaState shall be set to Suspended after the link is restored. It is required to issue the Resume operation to continue."
+            },
+            "description": "Values of ReplicaRecoveryMode describe whether the copy operation continues after a broken link is restored.",
+            "longDescription": "The enumeration literals may be used to specify whether the copy operation continues after a broken link is restored."
+        },
+        "ReplicaRole": {
+            "type": "string",
+            "enum": [
+                "Source",
+                "Target"
+            ],
+            "enumDescriptions": {
+                "Source": "The source element.",
+                "Target": "The target element. "
+            },
+            "enumLongDescriptions": {
+                "Source": "This enumeration literal shall indicate a source element.",
+                "Target": "This enumeration literal shall indicate target element."
+            },
+            "description": "Values of ReplicaRole specify whether the resource is a source of replication or the target of replication.",
+            "longDescription": "The enumeration literals may be used to specify whether the resource is a source of replication or the target of replication."
+        },
+        "ReplicaState": {
+            "type": "string",
+            "enum": [
+                "Initialized",
+                "Unsynchronized",
+                "Synchronized",
+                "Broken",
+                "Fractured",
+                "Split",
+                "Inactive",
+                "Suspended",
+                "Failedover",
+                "Prepared",
+                "Aborted",
+                "Skewed",
+                "Mixed",
+                "Partitioned",
+                "Invalid",
+                "Restored"
+            ],
+            "enumDescriptions": {
+                "Initialized": " The link to enable replication is established and source/replica elements are associated, but the data flow has not started. ",
+                "Unsynchronized": "Not all the source element data has been copied to the target element. ",
+                "Synchronized": "For the Mirror, Snapshot, or Clone replication, the target represents a copy of the source. ",
+                "Broken": "The relationship is non-functional due to errors in the source, the target, the path between the two or space constraints. ",
+                "Fractured": "Target is split from the source. ",
+                "Split": "The target element was gracefully (or systematically) split from its source element -- consistency is guaranteed. ",
+                "Inactive": "Data flow has stopped, writes to source element will not be sent to target element. ",
+                "Suspended": "Data flow between the source and target elements has stopped. Writes to source element are held until the relationship is Resumed. ",
+                "Failedover": "Reads and writes are sent to the target element. Source element is not reachable. ",
+                "Prepared": "Initialization is completed, however, the data flow has not started. ",
+                "Aborted": "The copy operation is aborted with the Abort operation. Use the Resync Replica operation to restart the copy operation. ",
+                "Skewed": "The target has been modified and is no longer synchronized with the source element or the point-in-time view. ",
+                "Mixed": "Applies to the ReplicaState of GroupSynchronized. It indicates the StorageSynchronized relationships of the elements in the groups have different ReplicaState values. ",
+                "Partitioned": "State of replication relationship can not be determined, for example, due to a connection problem. ",
+                "Invalid": "The array is unable to determine the state of the replication relationship, for example, after the connection is restored; however, either source or target elements have an unknown status. ",
+                "Restored": "It indicates the source element was restored from the target element."
+            },
+            "enumLongDescriptions": {
+                "Initialized": "This enumeration literal shall indicate that the link to enable replication is established and source/replica elements are associated, but the data flow has not started.",
+                "Unsynchronized": "This enumeration literal shall indicate that not all the source element data has been copied to the target element.",
+                "Synchronized": "This enumeration literal shall indicate that for Mirror, Snapshot, or Clone replication, the target represents a copy of the source.",
+                "Broken": " This enumeration literal shall indicate that the relationship is non-functional due to errors in the source, the target, the path between the two or space constraints.",
+                "Fractured": "This enumeration literal shall indicate that the Target is split from the source. The target may not be consistent.",
+                "Split": "This enumeration literal shall indicate that the target element was gracefully (or systematically) split from its source element -- consistency shall be guaranteed.",
+                "Inactive": "This enumeration literal shall indicate that data flow has stopped, writes to source element shall not be sent to target element.",
+                "Suspended": "This enumeration literal shall indicate that the data flow between the source and target elements has stopped. Writes to source element shall be held until the relationship is Resumed.",
+                "Failedover": "This enumeration literal shall indicate that the reads and writes are sent to the target element. The source element may not be reachable.",
+                "Prepared": "This enumeration literal shall indicate that initialization is completed, however, the data flow has not started.",
+                "Aborted": "This enumeration literal shall indicate that the copy operation is aborted with the Abort operation. The Resync Replica operation can be used to restart the copy operation.",
+                "Skewed": "This enumeration literal shall indicate that the target has been modified and is no longer synchronized with the source element or the point-in-time view.",
+                "Mixed": "This enumeration literal shall indicate the ReplicaState of GroupSynchronized. The value indicates the StorageSynchronized relationships of the elements in the group have different ReplicaState values.",
+                "Partitioned": "This enumeration literal shall indicate that the state of replication relationship can not be determined, for example, due to a connection problem.",
+                "Invalid": "This enumeration literal shall indicate that the storage server is unable to determine the state of the replication relationship, for example, after the connection is restored; however, either source or target elements have an unknown status.",
+                "Restored": "This enumeration literal shall indicate that the source element was restored from the target element."
+            },
+            "description": "Values of ReplicaState describe the state of the relationship with respect to Replication activity.",
+            "longDescription": "ReplicaState enumeration literals may be used to describe the state of the relationship with respect to Replication activity."
+        },
+        "ReplicaType": {
+            "type": "string",
+            "enum": [
+                "Mirror",
+                "Snapshot",
+                "Clone",
+                "TokenizedClone"
+            ],
+            "enumDescriptions": {
+                "Mirror": "Create and maintain a copy of the source.",
+                "Snapshot": "Create a point in time, virtual copy of the source.",
+                "Clone": "Create a point in time, full copy the source.",
+                "TokenizedClone": "Create a token based clone."
+            },
+            "enumLongDescriptions": {
+                "Mirror": "This enumeration literal shall indicate that replication shall create and maintain a copy of the source.",
+                "Snapshot": "This enumeration literal shall indicate that replication shall create a point in time, virtual copy of the source.",
+                "Clone": "This enumeration literal shall indicate that replication shall create a point in time, full copy the source.",
+                "TokenizedClone": "This enumeration literal shall indicate that replication shall create a token based clone."
+            },
+            "description": "Values of ReplicaType describe the intended outcome of the replication.",
+            "longDescription": "The enumeration literals may be used to specify the intended outcome of the replication."
+        },
+        "ReplicaUpdateMode": {
+            "type": "string",
+            "enum": [
+                "Active",
+                "Synchronous",
+                "Asynchronous",
+                "Adaptive"
+            ],
+            "enumDescriptions": {
+                "Active": "Active-Active (i.e. bidirectional) synchronous updates.",
+                "Synchronous": "Synchronous updates.",
+                "Asynchronous": "Asynchronous updates.",
+                "Adaptive": "Allows implementation to switch between synchronous and asynchronous modes."
+            },
+            "enumLongDescriptions": {
+                "Active": "This enumeration literal shall indicate Active-Active (i.e. bidirectional) synchronous updates.",
+                "Synchronous": "This enumeration literal shall indicate Synchronous updates.",
+                "Asynchronous": "This enumeration literal shall indicate Asynchronous updates.",
+                "Adaptive": "This enumeration literal shall indicate that an implementation may switch between synchronous and asynchronous modes."
+            },
+            "description": "Values of ReplicaUpdateMode describe whether the target elements will be updated synchronously or asynchronously.",
+            "longDescription": "The enumeration literals may be used to specify whether the target elements will be updated synchronously or asynchronously."
+        },
+        "UndiscoveredElement": {
+            "type": "string",
+            "enum": [
+                "SourceElement",
+                "ReplicaElement"
+            ],
+            "enumDescriptions": {
+                "SourceElement": "The source element is undiscovered.",
+                "ReplicaElement": "The replica element is undiscovered."
+            },
+            "enumLongDescriptions": {
+                "SourceElement": "This enumeration literal shall indicate that the source element is undiscovered.",
+                "ReplicaElement": "This enumeration literal shall indicate that the replica element is undiscovered."
+            },
+            "description": "Values of UndiscoveredElement specify whether the source, the target, or both elements involved in a copy operation are undiscovered. An element is considered undiscovered if its object model is not known to the service performing the copy operation.",
+            "longDescription": "The enumeration literals may be used to specify whether the source, the target, or both elements involved in a copy operation are undiscovered. An element shall be considered undiscovered if its object model is not known to the service performing the copy operation."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

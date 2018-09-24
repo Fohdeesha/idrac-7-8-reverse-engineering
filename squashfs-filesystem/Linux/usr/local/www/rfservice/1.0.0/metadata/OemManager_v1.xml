@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--############################################################################################       -->
+<!--# Redfish Schema:  OemManager  v1.1.0 -->
+<!--# This schema complements to Oem section of Manager.This details the actions for the Server Configuration Profile export, import and preview. -->
+<!--# Copyright 2014-2017 Dell, Inc. or its subsidiaries.  All Rights Reserved.                 							   						-->
+<!--# See the full Dell copyright policy																							 -->
+<!--#############################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
+    
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_674_Manager">
+
+      <EntityType Name="OemManager" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+        <Annotation Term="OData.Description" String="OemManager contains properties of additional actions to complement the Manager DMTF schema."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent Oem Manager actions for a Redfish implementation."/>
+      </EntityType>
+
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_674_Manager.v1_0_0">
+
+      <EntityType Name="OemManager" BaseType="OemManager.OemManager">
+ 
+        <Property Name="OemActions" Type="OemManager.v1_0_0.OemActions" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The available actions for this resource."/>
+          <Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
+        </Property>
+
+      </EntityType>
+
+      <ComplexType Name="OemActions">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+      </ComplexType>
+	
+	 <Action Name="ExportSystemConfiguration" IsBound="true">
+        <Parameter Name="OemManager" Type="OemManager.v1_0_0.OemActions"/>
+		<Parameter Name="ExportFormat" Type="OemManager.ExportFormat" Nullable="false">
+          <Annotation Term="OData.Description" String="XML format"/>
+		  <Annotation Term="OData.LongDescription" String="XML format"/>
+        </Parameter>				
+        <Parameter Name="ExportUse" Type="OemManager.ExportUse" Nullable="false">
+          <Annotation Term="OData.Description" String="Type of Export intended for use :Default =0, Clone=1 , Replace=2."/>
+        </Parameter>		
+        <Parameter Name="IncludeInExport" Type="OemManager.IncludeInExport" Nullable="false">
+          <Annotation Term="OData.Description" String="Extra information to include in the export like 
+				Default, Include read only, Include password hash values, Include read only and password hash values."/>
+        </Parameter>
+		 <Parameter Name="ShareParameters" Type="OemManager.ShareParameters" Nullable="false">
+          <Annotation Term="OData.Description" String="Share parameters are listed."/>
+		  <Annotation Term="Redfish.Required"/>
+        </Parameter>
+        <Annotation Term="OData.Description" String="This action is used to export System Configuration attributes."/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform an export System Configuration attributes."/>
+      </Action>
+	
+	<Action Name="ImportSystemConfiguration" IsBound="true">
+        <Parameter Name="OemManager" Type="OemManager.v1_0_0.OemActions"/>
+		<Parameter Name="ShareParameters" Type="OemManager.ShareParameters" Nullable="false">
+          <Annotation Term="OData.Description" String="Share parameters are listed."/>
+		  <Annotation Term="Redfish.Required"/>
+        </Parameter>
+		<Parameter Name="ImportBuffer" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="Buffer content to perform Import. This is reqired for localstore only and not required for CIFS/NFS style Import."/>
+		  
+        </Parameter>
+		<Parameter Name="ShutdownType" Type="OemManager.ShutdownType" Nullable="false">
+          <Annotation Term="OData.Description" String="Type of shut down before performing import operation."/>
+		  
+        </Parameter>        
+        <Parameter Name="HostPowerState" Type="OemManager.HostPowerState" Nullable="false">
+          <Annotation Term="OData.Description" String="Type of host power state after performing import operation."/>
+		  
+        </Parameter>
+				
+		<Parameter Name="TimeToWait" Type="Edm.Int16" Nullable="false">
+          <Annotation Term="OData.Description" String="The time to wait for the host to shut down. Default and minimum value is 300 seconds. Maximum value is 3600 seconds."/>
+		  <Annotation Term="Validation.Minimum" Int="300"/>          
+          <Annotation Term="Validation.Maximum" Int="3600"/>          
+          <Annotation Term="Measures.Unit" String="s"/>  
+        </Parameter>        
+        
+        <Annotation Term="OData.Description" String="This action is used to import System Configuration attributes."/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform an import System Configuration attributes."/>
+    </Action>
+	
+	<Action Name="ImportSystemConfigurationPreview" IsBound="true">
+        <Parameter Name="OemManager" Type="OemManager.v1_0_0.OemActions"/>
+		<Parameter Name="ShareParameters" Type="OemManager.ShareParameters" Nullable="false">
+          <Annotation Term="OData.Description" String="Share parameters are listed."/>
+		  <Annotation Term="Redfish.Required"/>
+        </Parameter>
+		<Parameter Name="ImportBuffer" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="Buffer content to perform Import. This is reqired for localstore only and not required for CIFS/NFS style Import."/>
+		  
+        </Parameter>
+		
+        <Annotation Term="OData.Description" String="This action is used to import System Configuration Preview."/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform an import System Configuration Preview."/>
+    </Action>
+	
+	<EntityType Name="ShareParameters">
+        <Property Name="IPAddress" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="The IP address of the target export server."/>
+        </Property>
+		
+        <Property Name="ShareName" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="The directory path to the mount point."/>
+        </Property>
+		
+        <Property Name="FileName" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="The target output file name."/>
+		  <Annotation Term="Redfish.Required"/>
+        </Property>
+		
+        <Property Name="ShareType" Type="OemManager.ShareType" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Type of share like  NFS, CIFS"/>
+        </Property>
+		
+        <Property Name="Username" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="User name for the target export server."/>
+        </Property>
+		
+        <Property Name="Password" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Password for the target export server."/>
+        </Property>
+
+        <Property Name="Workgroup" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="WorkGroup name if it is needed."/>
+        </Property>
+		
+		<Property Name="Target" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="To identify the component for Export. It identifies the one or more FQDDs .Selective list of FQDDs should be given in comma separated format . Default = ALL."/>
+        </Property>
+
+	</EntityType>
+	
+	 <!-- This type defines the type of ShareType that given resource to perform import or export operation. -->
+      <EnumType Name="ShareType">
+        <Member Name="NFS">
+          <Annotation Term="OData.Description" String="Share type is of NFS type."/>
+        </Member>
+        <Member Name="CIFS">
+          <Annotation Term="OData.Description" String="Share type is of CIFS type."/>
+        </Member>        	
+      </EnumType>
+	  
+	  <!-- This type defines the type of export intended for use.-->
+      <EnumType Name="ExportUse">
+        <Member Name="Default"></Member>
+        <Member Name="Clone"></Member>
+        <Member Name="Replace"></Member>      
+      </EnumType>
+
+	  <EnumType Name="IncludeInExport">
+	    <Member Name="Default"></Member>
+        <Member Name="IncludeReadOnly"></Member>
+		<Member Name="IncludePasswordHashValues"></Member>
+      </EnumType>
+	
+      <!-- This type defines the type of shut down -->
+      <EnumType Name="ShutdownType">
+        <Member Name="Graceful"></Member>
+        <Member Name="Forced"></Member>
+		<Member Name="NoReboot"></Member>                  
+      </EnumType>
+
+      <EnumType Name="HostPowerState">
+        <Member Name="On"></Member>
+        <Member Name="Off"></Member>		                  
+      </EnumType>
+
+	  <EnumType Name="ExportFormat">
+	    <Member Name="XML"></Member>
+ 	  </EnumType>
+	  
+    </Schema>
+	
+	<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_674_Manager.v1_1_0">
+	  <EntityType Name="OemManager" BaseType="OemManager.v1_0_0.OemManager"/>
+	
+	  <Action Name="ResetToDefaults" IsBound="true">
+        <Parameter Name="OemManager" Type="OemManager.v1_0_0.OemActions"/>
+        <Annotation Term="OData.Description" String="This action is used to reset the Manager attributes to default."/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform a reset of the Manager attributes to their default values."/>
+      </Action>
+	
+	  <Action Name="ClearPending" IsBound="true">
+        <Parameter Name="OemManager" Type="OemManager.v1_0_0.OemActions"/>
+        <Annotation Term="OData.Description" String="This action is used to clear the pending values."/>
+        <Annotation Term="OData.LongDescription" String="This action is used to clear the pending values of Manager."/>
+      </Action>	
+
+	  <EntityType Name="OemManager" BaseType="OemManager.v1_0_0.OemManager">
+        <Property Name="AttributeRegistry" Type="Edm.String">
+           <Annotation Term="OData.Description" String="The Resource ID of the Attribute Registry for the OEM Manager Attributes resource."/>
+          <Annotation Term="OData.LongDescription" String="The reference to the Attribute Registry that lists the metadata describing the Oem Manager attribute settings in this resource."/>
+        </Property>
+		      
+      </EntityType>
+	  
+	  <Property Name="Attributes" Type="OemManager.v1_1_0.Attributes" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the manufacturer/provider specific list of Manager attributes."/>
+          <Annotation Term="OData.LongDescription" String="Manager Attribute settings appear as additional properties in this object, and can be looked up in the Attribute Registry by their AttributeName."/>
+      </Property>
+	  
+	  <ComplexType Name="Attributes">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="Redfish.DynamicPropertyPatterns">
+          <Collection>
+            <Record>
+              <PropertyValue Property="Pattern" String="[A-Za-z0-9]+"/>
+              <PropertyValue Property="Type" String="Edm.Primitive"/>
+            </Record>
+          </Collection>
+        </Annotation>
+      </ComplexType>	
+	
+	  <EntityType Name="ShareParameters" BaseType="OemManager.ShareParameters">
+  		
+		<Property Name="ProxySupport" Type="OemManager.v1_1_0.ProxySupport" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Proxy Support to be Enabled or Disabled."/>
+        </Property>
+		
+		<Property Name="ProxyType" Type="OemManager.v1_1_0.ProxyType" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Type of Proxy HTTP or SOCKS4."/>
+        </Property>
+		
+		<Property Name="ProxyServer" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Proxy Server address."/>
+        </Property>
+		
+		<Property Name="ProxyUserName" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Proxy Server User Name."/>
+        </Property>
+		
+		<Property Name="ProxyPassword" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Proxy Server Password."/>
+        </Property>
+		
+		<Property Name="ProxyPort" Type="Edm.Int16" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Proxy Port address."/>
+        </Property>
+		
+	  </EntityType>
+	  
+	  <!-- This type defines the type of ShareType that given resource to perform import or export operation. -->
+      <EnumType Name="ShareType" BaseType="OemManager.ShareType">
+        <Member Name="HTTP">
+          <Annotation Term="OData.Description" String="Share type is of HTTP type."/>
+        </Member>
+        <Member Name="HTTPS">
+          <Annotation Term="OData.Description" String="Share type is of HTTPS type."/>
+        </Member>		
+      </EnumType>
+	  
+	  <EnumType Name="ExportFormat" BaseType="OemManager.ExportFormat">
+	    <Member Name="JSON"></Member>   
+	  </EnumType>
+	  
+	  <EnumType Name="ProxySupport">
+        <Member Name="Disabled">
+          <Annotation Term="OData.Description" String="Proxy Support is Disabled."/>
+        </Member>
+        <Member Name="EnabledProxyDefault">
+          <Annotation Term="OData.Description" String="Proxy Support to be Enabled and set to default."/>
+        </Member>
+         <Member Name="Enabled">
+          <Annotation Term="OData.Description" String="Proxy Support is Enabled."/>
+        </Member>        	
+      </EnumType>
+	  
+	  <EnumType Name="ProxyType">
+        <Member Name="HTTP">
+          <Annotation Term="OData.Description" String="Proxy type is of HTTP type."/>
+        </Member>
+        <Member Name="SOCKS4">
+          <Annotation Term="OData.Description" String="Proxy type is of SOCKS4 type."/>
+        </Member>               	
+      </EnumType>
+	  
+	</Schema>
+    
+</edmx:DataServices>
+</edmx:Edmx>
+

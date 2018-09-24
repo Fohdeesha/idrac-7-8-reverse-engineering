@@ -1,0 +1,430 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/ENCL791/Power/$entity",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Power"  ,"@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791",
+    "@odata.type": "#Power.1.0.0.Power",
+    "Id": "Power",
+    "Name": "Enclosure Power",
+    "PowerControl": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerControl/1",
+            "MemberId": "1",
+			"Name": "Chassis Power Control",
+            "PowerConsumedWatts": 119,
+            "PowerRequestedWatts": 0,
+            "PowerAvailableWatts": 0,
+            "PowerCapacityWatts": 0,
+            "PowerAllocatedWatts": 0,
+            "PowerMetrics": {
+                "IntervalInMin": 0,
+                "MinConsumedWatts": 0,
+                "MaxConsumedWatts": 0,
+                "AverageConsumedWatts": 0
+            },
+            "PowerLimit": {
+                "LimitInWatts": 900,
+                "LimitException": "LogEventOnly",
+                "CorrectionInMs": 0
+	        },
+            "RelatedItem": [ 
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791"}
+            ],
+    	    "Status": {
+	            "State": "Enabled",
+	            "Health": "OK"
+	        },
+            "Oem": {
+                "EID:674": {
+                    "UpperThresholdCritical": 986,
+                    "HeadroomWatts": 778,
+                    "PeakHeadroomWatts": 618,
+                    "EnergyConsumptionKWH": 302.821,
+                    "EnergyConsumptionStartTime": "Wed Nov 5 06:07:41 2014",
+                    "PowerLimit": {
+                        "LimitLowerBoundWatts": 300,
+                        "LimitUpperBoundWatts": 1000
+                    },
+                    "PowerMetrics": {
+                        "StartTime": "Wed Nov 5 06:07:42 2014",
+                        "MinPeakWatts": 0,
+                        "MinPeakWattsTime": null,
+                        "MaxPeakWatts": 282,
+                        "MaxPeakWattsTime": "Thu Oct 8 22:08:48 2015",
+                        "PowerTrends": {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power/PowerTrends-1"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "Voltages": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Voltages/1",
+            "MemberId": "1",
+            "Name": "VRM1 Voltage",
+            "SensorNumber": 11,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingVolts": 12,
+            "UpperThresholdNonCritical": 12.5,
+            "UpperThresholdCritical": 13,
+            "UpperThresholdFatal": 15,
+            "LowerThresholdNonCritical": 11.5,
+            "LowerThresholdCritical": 11,
+            "LowerThresholdFatal": 10,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 20,
+            "PhysicalContext": "VoltageRegulator",
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Systems/HL3F942" },
+                {"@odata.id": "/redfish/v1/Systems/JL3G942" },
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ]
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Voltages/2",
+            "MemberId": "2",
+            "Name": "VRM2 Voltage",
+            "SensorNumber": 12,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingVolts": 5,
+            "UpperThresholdNonCritical": 5.5,
+            "UpperThresholdCritical": 7,
+            "LowerThresholdNonCritical": 4.75,
+            "LowerThresholdCritical": 4.5,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 20,
+            "PhysicalContext": "VoltageRegulator",
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Systems/HL3F942" },
+                {"@odata.id": "/redfish/v1/Systems/JL3G942" },
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ]
+        }
+    ],
+    "PowerSupplies": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/1",
+            "MemberId": "1",
+            "Name": "Power Supply Bay 1",
+            "Status": {
+                "State": "Enabled",
+                "Health": "Warning"
+            },
+            "Oem": {},
+            "PowerSupplyType": "DC",
+            "LineInputVoltageType": "DCNeg48V",
+            "LineInputVoltage": -48,
+            "PowerCapacityWatts": 400,
+            "LastPowerOutputWatts": 192,
+            "Model": "499253-B21",
+            "FirmwareVersion": "1.00",
+            "SerialNumber": "1z0000001",
+            "PartNumber": "1z0000001A3a",
+            "SparePartNumber": "0000001A3a",
+            "RelatedItem": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Redundancy": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Redundancy/1" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Power.1.0.0.Power",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-1"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/2",
+            "MemberId": "2",
+            "Name": "Power Supply Bay 2",
+            "Status": {
+                "State": "Enabled",
+                "Health": "Warning"
+            },
+            "Oem": {},
+            "PowerSupplyType": "AC",
+            "LineInputVoltageType": "ACMidLine",
+            "LineInputVoltage": 220,
+            "PowerCapacityWatts": 400,
+            "LastPowerOutputWatts": 190,
+            "Model": "499253-B21",
+            "FirmwareVersion": "1.00",
+            "SerialNumber": "1z0000001",
+            "PartNumber": "1z0000001A3a",
+            "SparePartNumber": "0000001A3a",
+            "RelatedItem": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Redundancy": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Redundancy/2" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Power.1.0.0.Power",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-2"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/3",
+            "MemberId": "3",
+            "Name": "Power Supply Bay 3",
+            "Status": {
+                "State": "Enabled",
+                "Health": "Warning"
+            },
+            "Oem": {},
+            "PowerSupplyType": "AC",
+            "LineInputVoltageType": "ACMidLine",
+            "LineInputVoltage": 220,
+            "PowerCapacityWatts": 400,
+            "LastPowerOutputWatts": 190,
+            "Model": "499253-B21",
+            "FirmwareVersion": "1.00",
+            "SerialNumber": "1z0000001",
+            "PartNumber": "1z0000001A3a",
+            "SparePartNumber": "0000001A3a",
+            "RelatedItem": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Redundancy": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Redundancy/3" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Power.1.0.0.Power",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-3"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/4",
+            "MemberId": "4",
+            "Name": "Power Supply Bay 4",
+            "Status": {
+                "State": "Enabled",
+                "Health": "Warning"
+            },
+            "Oem": {},
+            "PowerSupplyType": "DC",
+            "LineInputVoltageType": "DCNeg48V",
+            "LineInputVoltage": -48,
+            "PowerCapacityWatts": 400,
+            "LastPowerOutputWatts": 192,
+            "Model": "499253-B21",
+            "FirmwareVersion": "1.00",
+            "SerialNumber": "1z0000001",
+            "PartNumber": "1z0000001A3a",
+            "SparePartNumber": "0000001A3a",
+            "RelatedItem": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Redundancy": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Redundancy/1" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Power.1.0.0.Power",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-4"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/5",
+            "MemberId": "5",
+            "Name": "Power Supply Bay 5",
+            "Status": {
+                "State": "Enabled",
+                "Health": "Warning"
+            },
+            "Oem": {},
+            "PowerSupplyType": "AC",
+            "LineInputVoltageType": "ACMidLine",
+            "LineInputVoltage": 220,
+            "PowerCapacityWatts": 400,
+            "LastPowerOutputWatts": 190,
+            "Model": "499253-B21",
+            "FirmwareVersion": "1.00",
+            "SerialNumber": "1z0000001",
+            "PartNumber": "1z0000001A3a",
+            "SparePartNumber": "0000001A3a",
+            "RelatedItem": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Redundancy": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Redundancy/2" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Power.1.0.0.Power",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-5"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/6",
+            "MemberId": "6",
+            "Name": "Power Supply Bay 6",
+            "Status": {
+                "State": "Enabled",
+                "Health": "Warning"
+            },
+            "Oem": {},
+            "PowerSupplyType": "AC",
+            "LineInputVoltageType": "ACMidLine",
+            "LineInputVoltage": 220,
+            "PowerCapacityWatts": 400,
+            "LastPowerOutputWatts": 190,
+            "Model": "499253-B21",
+            "FirmwareVersion": "1.00",
+            "SerialNumber": "1z0000001",
+            "PartNumber": "1z0000001A3a",
+            "SparePartNumber": "0000001A3a",
+            "RelatedItem": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Redundancy": [
+              { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Redundancy/3" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Power.1.0.0.Power",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-6"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "Redundancy": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Redundancy/1",
+            "MemberId": "1",
+            "Name": "PowerSupply Redundancy Group 1",
+            "Mode": "Failover",
+            "MaxNumSupported": 2,
+            "MinNumNeeded": 1,
+            "RedundancySet": [
+                { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/1" },
+                { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/4" }
+            ],
+            "Status": {
+                "State": "Online",
+                "Health": "OK"
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Redundancy/2",
+            "MemberId": "2",
+            "Name": "PowerSupply Redundancy Group 2",
+            "Mode": "Failover",
+            "MaxNumSupported": 2,
+            "MinNumNeeded": 1,
+            "RedundancySet": [
+                { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/2" },
+                { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/5" }
+            ],
+            "Status": {
+                "State": "Online",
+                "Health": "OK"
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/Redundancy/3",
+            "MemberId": "3",
+            "Name": "PowerSupply Redundancy Group 3",
+            "Mode": "Failover",
+            "MaxNumSupported": 2,
+            "MinNumNeeded": 1,
+            "RedundancySet": [
+                { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/3" },
+                { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/6" }
+            ],
+            "Status": {
+                "State": "Online",
+                "Health": "OK"
+            }
+        }
+    ],
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "#Dell.Power.1.0.0.Power",
+            "PowerSupplySummary": {
+                "Status": {
+                    "HealthRollup": "Critical"
+                },
+                "FaultList": [
+                    {
+                        "Message": "Power supply 2 is operating at 110 volts, and could cause a circuit breaker fault.",
+                        "MessageID": "PSU0007",
+                        "MessageArgs": [ 
+                            "2" 
+                        ],
+                        "FQDD": "PSU.Slot.2"
+                    },
+                    {
+                        "Message": "The power input for power supply 2 is lost.",
+                        "MessageID": "PSU0004",
+                        "MessageArgs": [ 
+                            "2" 
+                        ],
+                        "FQDD": "PSU.Slot.2"
+                    }
+                ]
+            },
+            "VoltageSummary": {
+                "Status": {
+                    "HealthRollup": "Critical"
+                },
+                "FaultList": [
+                    {
+                        "Message": "This is a sample message that can indicate why a component health status is not OK.",
+                        "MessageID": "VRM0007",
+                        "MessageArgs": [ 
+                            "sample" 
+                        ],
+                        "FQDD": "VRM.Slot.1"
+                    },
+                    {
+                        "Message": "This is a sample message that can indicate why a component health status is not OK.",
+                        "MessageID": "VRM0004",
+                        "MessageArgs": [ 
+                            "sample" 
+                        ],
+                        "FQDD": "VRM.Slot.1"
+                    }
+                ]
+            }
+        }
+    }
+}

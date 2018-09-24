@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript"><% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: ストレージ概要</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> ストレージ概要</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">移動先 :  <a class="popup-jump-bar" href="#Alerts" id="cc3">最近のストレージイベントのログ</a> |<a class="popup-jump-bar" href="#Other" id="A14">その他のオプション</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>このページから、ストレージコンポーネントおよび最近ログ記録されたイベントの概要を表示します。 このページは 30 秒毎に自動的に更新されます。</p> 
+</div> 
+<div class="popup_subheader"> 
+<span id="Storage_summary"> ストレージ概要 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<p>この項では、ストレージサブシステム内の物理ディスクを、状態に基づいてグループ分けした円グラフで表示しています。 また、システム内の使用可能なディスクの概要も提供します。</p> 
+<ul> 
+<li>物理ディスク</li> 
+<li>仮想ディスク</li> 
+<li>グローバルホットスペア</li> 
+<li>専用ホットスペア</li> 
+</ul> 
+<p> それぞれのページを表示するには、<b>物理ディスク</b> または <b>仮想ディスク</b> のリンクをクリックします。</p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Alerts"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">トップに戻る</a> </div> 
+<span id="Alerts"> 最近のストレージイベントのログ</span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>この項では、最新のストレージイベント 10 件をリスト表示します。</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>重大度</b></span> </td> 
+<td class="desc"> 
+<p> イベントの重大度を表示します。</p> 
+<ul> 
+<li><span class="status_ok"> &#8212;</span> 情報<br></br></li> 
+<li><span class="status_noncritical"> &#8212; </span> 警告<br></br></li> 
+<li><span class="status_critical">&#8212; </span> 重要<br></br></li> 
+<li><span class="status_unknown">&#8212; </span>情報が使用できません</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>日付/時刻</b></span> </td> 
+<td class="desc"> イベントが発生した日時を表示します。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>説明</b></span> </td> 
+<td class="desc"> 
+<p> イベントの簡単な説明を表示します。</p> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

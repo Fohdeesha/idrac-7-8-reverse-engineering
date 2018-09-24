@@ -1,0 +1,25 @@
+[Unit]
+Description=avct_wsman
+After=dm-stage2.service
+After=sfcbd.service
+PartOf=appweb.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+#disable timeout for now
+TimeoutStartSec=0
+#MemoryLimit=10M
+
+LimitSTACK=65536
+Environment=PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib
+
+StandardOutput=journal
+StandardError=inherit
+
+ExecStart=/sbin/avct_wsman -r0 -m -v -e
+
+[Install]
+WantedBy=multi-user.target
+#S_7012_smash_apps.sh avct_wsman

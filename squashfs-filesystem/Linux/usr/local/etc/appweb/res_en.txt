@@ -1,0 +1,3195 @@
+#
+####General
+#
+gen_iDrac=Integrated Dell Remote Access Controller
+gen_iDrac7=Integrated Dell Remote Access Controller 7
+gen_iRac7=Integrated Remote Access Controller 7
+gen_support=Support
+gen_help=Help
+gen_about=About
+gen_genInfo=General Information
+gen_backToTop=Back to Top
+gen_attr=Attribute
+gen_val=Value
+gen_enabled=Enabled
+gen_disabled=Disabled
+gen_timeout=Timeout
+gen_maxSessions=Max Sessions
+gen_actSessions=Active Sessions
+gen_properties=Properties
+gen_none=None
+gen_settings=Settings
+gen_logout=Logout
+gen_elements=Elements
+gen_information=Information
+gen_consoleRFQ=Console (RFQ)
+gen_version=Version
+gen_allRightsReserv=All rights reserved.
+#
+gen_openSource=Open Source
+gen_openSourceComp=Open Source Components
+gen_offer_2=A portion of the software below may consist of open source software, which you can use as per the terms and conditions of the specific license under which the open source software is distributed.  For certain open source software licenses, you are also entitled to obtain the corresponding source files.  You may find corresponding source files for this program at
+gen_openSrcPortal=http://opensource.dell.com
+gen_offer_2a=opensource.dell.com.
+gen_offer_toView=To view open source licenses, click
+gen_offer_here=here.
+#
+gen_close=Close
+gen_admin=Administrator
+gen_operator=Operator
+gen_user=User
+gen_readOnly=Read Only
+gen_adminABB=Admin
+gen_iDRAC6Ent=Integrated Dell Remote Access Controller 7 - Enterprise
+gen_iDRAC6Exp=Integrated Dell Remote Access Controller 7 - Express
+gen_rac6Ent=Integrated Remote Access Controller 7 - Enterprise
+gen_rac6Exp=Integrated Remote Access Controller 7 - Express
+gen_rac6Base=Integrated Remote Access Controller 7 - Base
+gen_contactProvider=Contact your Service Provider.
+gen_yes=Yes
+gen_no=No
+gen_true=true
+gen_false=false
+gen_forward_html_error=Forwarding html error
+gen_jumpto=Jump to:
+gen_OtherOptions=Options:
+gen_and=and
+gen_instructions=Instructions
+gen_tbl_instructions=Instructions:
+gen_iDrac6=iDRAC7
+gen_systemAlert=System Alert
+gen_supportURL=http://support.dell.com/
+gen_LearnMore=http://www.dell.com/learnmore/iDRAClicenses
+gen_LicensingPortal=http://www.dell.com/learnmore/iDRAClicenses
+gen_SelfServicePortal=http://www.dell.com/support/retail/lkm
+gen_error=Error
+gen_warning=Warning
+gen_unauthorized=Unauthorized
+gen_dismiss=Dismiss
+gen_file=File
+#
+####Mezzanine 
+#
+mezzanine_title=I/O Mezzanine Card
+mezzanine_table_location=Location
+mezzanine_table_status=Presence Status
+mezzanine_table_type=Card Type
+mezzanine_table_model=Model Name
+#
+####Licensed
+#
+feature_not_licensed=This feature requires an iDRAC Enterprise license. For more details on how to obtain a license, visit License Page.
+not_licensed=license is missing or expired.
+#
+####Upload
+#
+upload_ad_ldap_cert_title=Directory Service CA Certificate
+upload_cert_title=Upload Certificate
+upload_krb_title=Kerberos Keytab
+#
+####Buttons
+#
+btn_idrac_reset=Reset iDRAC
+btn_print=Print
+btn_refresh=Refresh
+btn_apply=Apply
+btn_applyChanges=Apply Changes
+btn_connect=Launch Virtual Console
+btn_connectVM=Launch Virtual Console
+btn_connectKVM=Launch Virtual Console
+btn_saveAs=Save As
+btn_secSettings=Security Settings
+btn_configActDir=Configure Active Directory
+btn_configLDAP=Configure Generic LDAP
+btn_config=Configure
+btn_testSettings=Test Settings
+btn_back=Back
+btn_next=Next
+btn_termModeSet=Terminal Mode Settings
+btn_advSettings=Advanced Settings
+btn_retSerOverLANConfig=Back to Serial Over LAN Configuration Page
+btn_clearLog=Clear Log
+btn_clearASR=Clear Last Crash Screen
+btn_update=Update
+btn_showGraph=Show Graph
+btn_retPwrMon=Return to Power Monitoring Page
+btn_goBackSSLMainMenu=Back to SSL Main Menu
+btn_generate=Generate
+btn_ok=OK
+btn_cancel=Cancel
+btn_format=Initialize
+btn_retNetConfPage=Back to Network Configuration Page
+btn_goBackUser=Back to Users
+btn_goBackUserMain=Back to User Main Menu
+btn_finish=Finish
+btn_setDefault=Set to Default
+btn_goBackPtfEvePage=Back to Platform Events Page
+btn_retSerPortConfig=Back to Serial Port Configuration
+btn_submit=Submit
+btn_play=Play
+btn_sendTestEmail=Send Test E-mail
+btn_send=Send
+btn_goBackEmailAlert=Back to E-mail Alert Destination Page
+btn_startTest=Start Test
+btn_sendTestTrap=Send Test Trap
+btn_goBackPtfAlertDest=Back to Platform Alert Destination Page
+btn_goBackDiagPage=Back to Diagnostics Page
+btn_upload=Upload
+btn_goBackVirtualFlashMain=Back
+btn_rollback=Rollback
+btn_add=Add
+btn_edit=Edit
+btn_delete=Delete
+btn_tryagain=Try Again
+btn_login=Login
+btn_retADConfig=Back to Active Directory Configuration and Management Page
+btn_retLDAPConfig=Back to Generic LDAP Configuration and Management Page
+btn_retSystemEventLog=Back to System Event Log
+btn_export=Export
+btn_email=E-mail
+btn_save=Save
+btn_download=Download
+btn_defaultValue=Default Value
+btn_hide=Hide Current Errors
+btn_unhide=Unhide Errors
+btn_idracResetDefault=Reset iDRAC to Default Settings
+#
+####Login Page
+#
+log_logon=Login
+log_logonInfo=Type the Username and Password and click Submit.
+log_username=Username:
+log_password=Password:
+log_domain=Domain:
+log_thisDRAC= This iDRAC
+log_verify=Verifying credentials
+log_error=Login Error
+log_fail=Credentials failed. Please try again.
+#
+adLog_password=Active Directory Password:
+#
+log_adlogonInfo=Type the Active Directory password and click OK.
+log_adActDirPassword=Active Directory Password:
+#
+##Smart Card Login
+#
+sclog_smCardRemoved=RAC0100: The Smart Card is removed. Further communication is not possible.
+sclog_cardNotValid=RAC0101: The inserted Smart Card is not valid or the Smart Card reader is not supported.
+sclog_pluginInstall=RAC0102: The Smart Card Logon plug-in is not installed. Install the plug-in from the iDRAC Web GUI to log in using Smart Card.
+sclog_smartCardlogin=Smart Card Login
+sclog_loginError=Login Error....
+sclog_insertSCard=Insert Smart Card, enter the PIN, and click Submit.
+sclog_browserNotSupport=RAC0103: This browser does not support Smart Card logon on iDRAC. Use Internet Explorer version 7.0 or later to use this feature.
+sclog_login=Login
+sclog_pin=PIN:
+sclog_invalidPinErr=RAC0104: An incorrect PIN was entered.
+sclog_scReaderErr=RAC0105: The Smart Card reader cannot be detected. Check whether the reader is installed correctly.
+sclog_insertSCErr=RAC0106: The Smart Card cannot be detected. Insert the Smart Card correctly.
+sclog_unsuppSCErr=RAC0107: The inserted Smart Card cannot be recognized. Ensure that the correct Smart Card CSP drivers are installed.
+sclog_noPinErr=Enter your PIN and click Submit.
+sclog_invalidSCErr=RAC0108: An internal error is encountered. Insert a valid Smart Card and try again.
+#
+##SSO Login
+#
+sso_failed=RAC0109: Single Sign-On failed...  Try normal login.
+sso_loading=Loading...  Please wait
+sso_error_title=RAC0110: Single Sign-On Error
+sso_logging_in=Logging in... Please wait
+sso_login_error=RAC0111: Login Error...
+sso_description=Description
+sso_resolution=Resolution
+sso_error_descr=RAC0112: The 'Web Login Enablement Control' plug-in is not installed, is disabled, or is not running.
+sso_resolution_1=You must have administrative privileges on this system to install the plug-in.
+sso_resolution_2=Click Try Again. When prompted to install the plug-in, click Yes or click Login to login manually from normal login page.
+sso_resolution_3=Ensure that your browser settings allow you to download and install the browser plug-ins.
+sso_resolution_4=Ensure that your browser supports Single Sign-On.  See the user documentation for a list of supported browsers.
+sso_resolution_5=Single Sign-On may not function properly on clients running Windows operating system configured with Internet Explorer Enhanced Security. To resolve this issue, see your Microsoft operating system documentation or contact your administrator.
+#
+### Tree View
+#
+tree_server=Server
+tree_overview=Overview
+tree_system=System
+tree_remoteaccess=Remote Access
+tree_batteries=Batteries
+tree_fans=Fans
+tree_intrusion=Intrusion
+tree_networkdevices=Network Devices
+tree_fchbadevices=Fibre Channel Devices
+tree_powersupplies=Power Supplies
+tree_removablestorage=Removable Flash Media
+tree_temperatures=Temperatures
+tree_voltages=Voltages
+tree_powermonitoring=Power Monitoring
+tree_lcdstatus=Front Panel
+tree_lcdled=Front Panel
+tree_led=Front Panel
+tree_cpu=CPU
+tree_console=Console
+#
+tree_sysSummary=Summary
+tree_sysDetails=Details
+tree_sysLogsSetting=Settings
+tree_sysSnmpEmailSet=SNMP and E-mail Settings
+#
+tree_idracSettings=iDRAC Settings 
+tree_idracSetProperties=Properties 
+tree_idracSetSystemWipe=System Wipe
+#
+tree_idracSetNetwork=Network
+tree_idracSetSSL=SSL
+tree_idracServices=Services
+tree_idracSetCom=Internal Communication
+tree_osiDRACpt=OS to iDRAC Pass-through
+tree_idracSetKeyMgmt=Key Management
+#
+tree_idracSetuserAuth=User Authentication 
+tree_idracSetLocaluser=Local Users 
+tree_idracSetDirSvc=Directory Services
+tree_idracSetSmartcard=Smartcard
+#
+tree_idracSetSessions=Sessions   
+tree_hardware=Hardware
+#
+tree_storageSummary=Summary
+tree_storageTopology=Topology
+#
+tree_storageCntrlName1=ControllerName1
+tree_storageCntrlName2=ControllerName2
+#
+tree_storageEncName1=EnclosureName1
+tree_storageEncName2=EnclosureName2
+#
+tree_sysLicenses=Licenses
+tree_sysPowerThermal=Power / Thermal
+tree_sysTroubleShooting=Troubleshooting
+tree_sysUpdates=iDRAC Firmware Update
+#
+tree_sysPwrCfg=Power Configuration
+#
+tree_setupSrvProfile=Server Profile
+#
+tree_sysTrbShootIdentify=Identify
+tree_sysTrbShootDiag=Diagnostics
+tree_sysTrbShootVideoCapture=Video Capture
+#
+tree_sysUpdateFirmware=Firmware
+tree_sysUpdateAutoUpdate=Automatic Update
+#
+#CEM GUI
+#
+tree_storage=Storage 
+tree_virtualdisks=Virtual Disks
+tree_physicaldisks=Physical Disks
+tree_enclosures=Enclosures
+tree_controllers=Controllers
+tree_topology=Topology View
+tree_pltUpdates=Update
+tree_pltUpdateRollback=Update and Rollback
+tree_rollback=Rollback
+tree_jobqueue=Job Queue
+tree_backup_and_restore=Backup and Restore
+tree_memory=Memory
+tree_serverProfile=Server Profile
+tree_backup_and_export=Backup and Export
+tree_import=Import
+#
+###System->Properties->Summary
+#
+sys_prop=Properties
+sys_prop_sum_summary=Summary
+sys_prop_sum_sysSummary=System Summary
+sys_prop_sum_sumTitle=Click the component name for faster access.
+sys_prop_sum_mainSystemChasis=Main System Chassis
+sys_prop_sum_sysDetails=System Details
+#
+sys_prop_sum_sysinfo=System Information
+sys_prop_sum_desc=Description
+sys_prop_sum_biosver=BIOS Version
+sys_prop_sum_servTag=Service Tag
+sys_prop_sum_hostName=Host Name
+sys_prop_sum_osName=OS Name
+sys_prop_sum_osVer=OS Version
+sys_prop_sum_sysRev=System Revision
+#
+sys_prop_sum_autoRecovery=Auto Recovery
+sys_prop_sum_recAction=Recovery Action
+sys_prop_sum_initCountdown=Initial Countdown
+sys_prop_sum_preCountdown=Current Countdown
+#
+sys_prop_sum_RAC=Remote Access Controller
+sys_prop_sum_idracInformation=RAC Information
+sys_prop_sum_datetime=Date/Time
+sys_prop_sum_fwVer=Firmware Version
+sys_prop_sum_fwUpdated=Firmware Updated
+sys_prop_sum_hwVer=Hardware Version
+sys_prop_sum_macAddr=MAC Address
+#
+sys_prop_sum_ipv4Info=IPv4 Information
+sys_prop_sum_ipAddr=Current IP Address
+sys_prop_sum_gateway=Current Gateway
+sys_prop_sum_subnetMask=Current Subnet Mask
+sys_prop_sum_dhcpEnabled=DHCP Enabled
+#
+sys_prop_sum_ipv6Info=IPv6 Information
+sys_prop_sum_ipAddr1=Current IP Address 1
+sys_prop_sum_ipPreLen=Current Prefix Length
+sys_prop_sum_ipGateway=Current IP Gateway
+sys_prop_sum_linkLocal=Link Local Address
+sys_prop_sum_ipAddr2=IP Address 2
+sys_prop_sum_ipAddr3=IP Address 3
+sys_prop_sum_ipAddr4=IP Address 4
+sys_prop_sum_ipAddr5=IP Address 5
+sys_prop_sum_ipAddr6=IP Address 6
+sys_prop_sum_ipAddr7=IP Address 7
+sys_prop_sum_ipAddr8=IP Address 8
+sys_prop_sum_ipAddr9=IP Address 9
+sys_prop_sum_ipAddr10=IP Address 10
+sys_prop_sum_ipAddr11=IP Address 11
+sys_prop_sum_ipAddr12=IP Address 12
+sys_prop_sum_ipAddr13=IP Address 13
+sys_prop_sum_ipAddr14=IP Address 14
+sys_prop_sum_ipAddr15=IP Address 15
+sys_prop_sum_autoConfig=Autoconfig Enabled
+sys_prop_sum_ipv4Enabled=IPv4 Enabled
+sys_prop_sum_ipv6Enabled=IPv6 Enabled
+#
+sys_prop_sum_nic_mac=NIC MAC Addresses
+sys_prop_sum_embedded_nic_mac=Embedded NIC MAC Addresses
+sys_prop_sum_nic1=NIC1
+sys_prop_sum_nic2=NIC2
+sys_prop_sum_nic3=NIC3
+sys_prop_sum_nic4=NIC4
+sys_prop_sum_ethernet=Ethernet
+sys_prop_sum_iscsi=iSCSI
+sys_prop_sum_vmac=Virtual MAC
+#
+sys_prop_sum_loading=Loading...  Please wait
+#
+sys_prop_sum_systemLocation=System Location
+sys_prop_sum_DataCenterName=Data Center Name
+sys_prop_sum_AisleName=Aisle Name
+sys_prop_sum_RackName=Rack Name
+sys_prop_sum_RackSlot=Rack Slot
+sys_prop_sum_SizeInU=Size of Managed System in U
+sys_prop_sum_ChassisName=Chassis Name
+sys_prop_sum_BladeSlotNumInChassis=Blade Slot Num In Chassis
+sys_prop_sum_RangeErr=The rack slot value is invalid. Expected range: 1-255
+#
+### System->Setup->First Boot Device
+#
+sys_setup=Setup
+sys_setup_firstbootdevice=First Boot Device
+sys_setup_firstbootdevice_title=Select the first boot device for this server, and click Apply.
+sys_setup_bootonce=Boot Once
+sys_setup_firstbootdevice_none=Normal Boot
+sys_setup_firstbootdevice_pxe=PXE
+sys_setup_firstbootdevice_hdd=Hard Disk Drive
+sys_setup_firstbootdevice_diagprt=Diagnostic Partition
+sys_setup_firstbootdevice_cddvd=Local CD/DVD
+sys_setup_firstbootdevice_bios=BIOS Setup
+sys_setup_firstbootdevice_vfdd=Virtual Floppy
+sys_setup_firstbootdevice_vcddvd=Virtual CD/DVD/ISO
+sys_setup_firstbootdevice_iscsi=NIC BEV iSCSI
+sys_setup_firstbootdevice_fdd=Local Floppy/Primary Removable Media
+sys_setup_firstbootdevice_rfs=Remote File Share
+sys_setup_firstbootdevice_sd=Local SD Card
+sys_setup_firstbootdevice_lcl=Lifecycle Controller
+sys_setup_firstbootdevice_bbm=BIOS Boot Manager
+sys_setup_firstbootdevice_vfPrefix=vFlash:
+sys_setup_firstbootdevice_error_bios=First Boot Device cannot be set. Either the system BIOS is out-of-date, or the server needs a reboot for the settings to take effect.
+#
+### System->Setup->Remote Syslog Settings
+#
+sys_setup_remoteSyslog=Remote Syslog Settings
+sys_setup_remoteSyslog_info=Use this page to configure the Remote Syslog settings.
+sys_setup_remoteSyslog_enabled=Remote Syslog Enabled
+sys_setup_remoteSyslog_server1=Syslog Server1
+sys_setup_remoteSyslog_server2=Syslog Server2
+sys_setup_remoteSyslog_server3=Syslog Server3
+sys_setup_remoteSyslog_port=Port Number
+sys_setup_alert_remoteSyslog_port=RAC0113: Remote Syslog Port value is invalid. Valid range is 1-65535, 01-0177777, or 0x1-0xFFFF.
+#
+### System->Power Management ->Power
+#
+sys_pwr_pwrManag=Power
+sys_pwr_pwr=Power
+sys_pwr_pwr_pwrControl=Power Control
+sys_pwr_pwr_pwrContrTitle1=Here, you can view your server's power status.
+sys_pwr_pwr_pwrContrTitle2=To perform a power control operation, select the operation you need and click Apply.
+sys_pwr_pwr_pwrStatus=Power Status
+sys_pwr_pwr_pwrUnknown=UNKNOWN
+sys_pwr_pwr_off=OFF
+sys_pwr_pwr_on=ON
+sys_pwr_pwr_msg1=The system is powered off. Unable to retrieve sensor information.
+#
+sys_pwr_pwr_pwrContrOpr=Power Control Operations
+sys_pwr_pwr_pwrOnSys=Power On System
+sys_pwr_pwr_pwrOffsys=Power Off System
+sys_pwr_pwr_nmi=NMI (Non-Masking Interrupt)
+sys_pwr_pwr_graceShut=Graceful Shutdown
+sys_pwr_pwr_resetSys=Reset System (warm boot)
+sys_pwr_pwr_pwrCycleSys=Power Cycle System (cold boot)
+#
+### System->Power Management ->Power Cap
+#
+sys_pwr_pwrbudget=Power Cap
+sys_pwr_bud_pwrBudInfo=Power Cap Information
+sys_pwr_bud_powerBudThres=Power Cap
+sys_pwr_bud_valInWatts=Value (in Watts)
+sys_pwr_bud_valInBTU=Value (in BTU/hr)
+sys_pwr_bud_minPot=System Minimum Power Consumption
+sys_pwr_bud_maxPot=System Maximum Power Consumption
+#
+sys_pwr_bud_thresInWatt=Power Cap in Watts
+sys_pwr_bud_thresInBTU=Power Cap in BTU/hr
+sys_pwr_bud_thresInPerc=Power Cap in Percentage (of System Maximum Power Consumption)
+#
+###Power Configuration
+#
+pwr_config=Power Configuration
+pwr_config_title=Power Configuration
+pwr_config_actPolicy_title=Currently Active Power Cap Policy
+pwr_config_actPolicy_name=Source
+pwr_config_actPolicy_pwrLimit=Active Power Cap Policy
+#
+pwr_config_budget_title=Power Cap Policy
+pwr_config_budget_info=The system may exceed the maximum power cap policy for a brief moment while booting up with the In System Characterization enabled. If you do not want this to happen, disable the In System Characterization in the BIOS.
+pwr_config_budget_policy=Power Cap Policy
+pwr_config_budget_pEnable=Enable
+pwr_config_budget_pDisable=Disable
+pwr_config_budget_recLimit=Recommended Power Cap Policy Range
+pwr_config_budget_maxPwr=Upper Bound
+pwr_config_budget_minPwr=Lower Bound
+pwr_config_budget_watts=Watts
+pwr_config_budget_BTUHr=BTU/Hr
+pwr_config_budget_userDef=User Defined Power Cap Policy
+pwr_config_budget_defMaxPwrWatts=Power Cap (Watts)
+pwr_config_budget_defMaxPwrBTU=Power Cap (BTU/hr)
+pwr_config_budget_defMaxPwrPerct=Maximum % of Upper Bound
+pwr_config_budget_pm3_warning=This power policy will be applied until PM3's next scheduled update. Remove power policy for this device from PM3 to manage exclusively from iDRAC
+pwr_config_budget_maxPowerCap=Maximum Power Cap
+pwr_config_budget_minPowerCap=Minimum Power Cap
+pwr_config_budget_defMaxPwrCapPerct=Power Cap (%)
+#
+pwr_config_pwrSupp_title=Power Supply Options
+pwr_config_pwrSupp_redPolicy=Redundancy Policy
+pwr_config_pwrSupp_rapidOn=Hot Spare
+pwr_config_pwrSupp_rapidEnable=Enable
+pwr_config_pwrSupp_rapidDisable=Disable
+pwr_config_pwrSupp_primUnit=Primary Power Supply Unit
+pwr_config_pwrSupp_PFC=Power Factor Correction
+pwr_config_pwrSupp_PFCEnable=Enable
+pwr_config_pwrSupp_PFCDisable=Disable
+pwr_config_pwrSupp_NotRedundant=Not Redundant
+pwr_config_pwrSupp_InputPowerRedundant=Input Power Redundant
+pwr_config_pwrSupp_PSURedundant=PSU Redundant
+pwr_config_pwrSupp_NA=N/A
+#
+pwr_config_pcie_title=PCIe Power Allocation
+pwr_config_pcie_info=Changes to the power allocation will occur the next time the system powers up. Valid allocation values (Watts): 100 - 500
+pwr_config_pcie_threshold=Power Threshold (Watts)
+pwr_config_pcie_validateMsg=The Power Threshold value in Watts is invalid. Enter a whole number in the range: [100 - 500]
+#
+###System->Logs->System Event Log
+#
+sys_log_logs=Logs
+sys_log_eve_sysEveLog=System Event Log
+sys_log_eve_title=The System Event Log contains information about the managed system. To sort the log by column, click a column header.
+sys_log_eve_severity=Severity
+sys_log_eve_DateTime=Date/Time
+sys_log_eve_desc=Description
+sys_log_eve_adv_settings=System Event Log Advanced Settings
+sys_log_eve_oemeventfilteringenable=OEM Event Filtering Enabled
+sys_log_test_event=Test Event
+sys_log_enter_mesg_id=Message ID to Test Event:
+#
+###System->Logs->Post Code
+#
+sys_log_postcode=Post Code
+sys_log_postcode_title=This page shows the last system post code.
+#
+###System->Logs->Last Crash
+#
+sys_log_crash_lastCrash=Last Crash
+sys_log_crash_lastCrashScr=Last Crash Screen
+sys_log_crash_title=You can view a snapshot of the last crash screen, here.
+sys_log_crash_info=The last crash screen feature requires the managed system with the auto recovery feature configured.
+sys_log_crash_noImage=No Image Available
+#
+###System->Logs->Boot Capture
+#
+sys_log_lastboot=Boot Capture
+sys_log_boot_cycle=Boot Capture Cycle
+sys_log_boot_title=You can review recordings of the last 3 boot cycles, here.
+sys_log_boot_3BootCycles=Boot Cycles
+sys_log_boot_norRcording=No Recording Available.
+sys_log_boot_capture1=Boot capture 1 (latest)
+sys_log_boot_capture2=Boot capture 2
+sys_log_boot_capture3=Boot capture 3 (oldest)
+#
+###System->Alert Management -> Platform Events
+#
+sys_alt_altManage=Alerts
+sys_alt_ptf_eve=Platform Events
+sys_alt_ptf_filtConf=Platform Event Filters Configuration
+sys_alt_ptf_filtList=Platform Event Filters List
+sys_alt_ptf_title=Select values and click Apply.
+sys_alt_ptf_info=Note: Enable or disable all Platform Event Filter (PEF) trap and E-mail alerts. Trap alerts are controlled by the combination of global Enable Platform Event Filter Alerts option and individual filter alerts under Platform Event Filters List. E-mail alerts are controlled only by the global Enable Platform Event Filter Alerts option.
+sys_alt_ptf_enPtfEvefilteralert=Enable Platform Event Filter Alerts
+#
+sys_alt_enable=Enabled
+sys_alt_disable=Disabled
+sys_alt_filter=Alerts Filter
+sys_alt_category=Category
+sys_alt_sev=Severity
+sys_alt_results=Alerts and Remote System Log Configuration
+sys_alt_alert=Alert
+sys_alt_email=Email
+sys_alt_SNMP=SNMP Trap
+sys_alt_IPMI=IPMI Alert
+sys_alt_remotesyslog=Remote System Log
+sys_alt_wsevent=WS Eventing
+sys_alt_pages=Page
+sys_alt_system=System Health
+sys_alt_storage=Storage
+sys_alt_config=Configuration
+sys_alt_audit=Audit
+sys_alt_updates=Updates
+sys_alt_work=Work Notes
+sys_alt_info=Informational
+sys_alt_warning=Warning
+sys_alt_critical=Critical
+sys_alt_filterMsg=An entry must be selected from Category and Severity filters.
+sys_alt_norecord=No records found
+sys_alt_of=of
+#
+sys_alt_ptf_event=Event
+sys_alt_ptf_rebootsys=Reboot
+sys_alt_ptf_pwrCycSys=Power Cycle
+sys_alt_ptf_pwrOffSys=Power Off
+sys_alt_ptf_genAlert=Generate Alert
+sys_alt_ptf_noAction=No Action
+sys_alt_ptf_System=System
+sys_alt_ptf_Action=Action
+#
+sys_alt_ptf_setPtfEve=Set Platform Events:
+sys_alt_ptf_setPtfTitle=Select the action to be set and click Apply. To set default actions, click Set to Default.
+sys_alt_ptf_shutdown=Shutdown Action
+sys_alt_ptf_none=None
+sys_alt_ptf_enable=Enable
+#
+sys_alt_ptf_fanCrasFilt=Fan Critical Assert Filter
+sys_alt_ptf_voltCrasfilt=Voltage Critical Assert Filter
+sys_alt_ptf_disVoltCrasFilt=Discrete Voltage Critical Assert Filter
+sys_alt_ptf_tempCrasFilt=Temperature Critical Assert Filter
+sys_alt_ptf_inCrasFilt=Intrusion Critical Assert Filter
+sys_alt_ptf_redDegFilt=Redundancy Degraded Filter
+sys_alt_ptf_redLostFilt=Redundancy Lost Filter
+sys_alt_ptf_proCriFilt=Processor Critical Assert Filter
+sys_alt_ptf_pwrSupCriFilt=Power Supply Critical Assert Filter
+sys_alt_ptf_eveLogCriFilt=Event Log Critical Assert Filter
+sys_alt_ptf_watLogCriFilt=Watch Log Critical Assert Filter
+#
+#Overview->Server->Alerts->SNMP and Email Settings
+#
+snmp_trap_email_set_title=SNMP Traps and E-mail Settings
+snmp_trap_destList=IP Destination List
+snmp_trap_destAddr=Destination Address
+snmp_trap_ipv4_dest1=IPv4 Destination1
+snmp_trap_ipv4_dest2=IPv4 Destination2
+snmp_trap_ipv4_dest3=IPv4 Destination3
+snmp_trap_ipv4_dest4=IPv4 Destination4
+snmp_trap_ipv6_dest1=IPv6 Destination1
+snmp_trap_ipv6_dest2=IPv6 Destination2
+snmp_trap_ipv6_dest3=IPv6 Destination3
+snmp_trap_ipv6_dest4=IPv6 Destination4
+#
+#System->Alert Management -> Trap Settings
+#
+sys_alt_trapSettings=Trap Settings
+sys_alt_trap_ptfEeveAlertDest=Platform Event Alert Destinations
+sys_alt_trap_destList=IPv4 Destination List
+sys_alt_trap_destListv6=IPv6 Destination List
+sys_alt_trap_destConfSet=Community String
+sys_alt_trap_destListTitle=Enter the destination number to set the values.
+sys_alt_trap_destNumber=Destination Number
+sys_alt_trap_state=State
+sys_alt_trap_destIpAddr=Destination IPv4 Address
+sys_alt_trap_destIpv6Addr=Destination IPv6 Address
+sys_alt_trap_dest1=Destination1
+sys_alt_trap_dest2=Destination2
+sys_alt_trap_dest3=Destination3
+sys_alt_trap_dest4=Destination4
+sys_alt_trap_testTrap=Test SNMP Trap
+sys_alt_trap_test_IPMI_Trap=Test IPMI Trap
+#
+sys_alt_trap_destConfSetTitle=Enter the iDRAC community name. 
+sys_alt_trap_commString=Community String
+#
+#Set Platform Event Alert Destination
+#
+sys_alt_trap_setPtfEveAlertDest=Set Platform Event Alert Destination
+sys_alt_trap_setPtfEveTitle=Select values and click Apply.
+sys_alt_trap_setPtfEveInfo=Enter a valid SNMP Community String prior to using this feature.
+sys_alt_trap_enDest=Enable Destination
+sys_alt_trap_disDest=RAC0114: Destination is disabled.
+sys_alt_trap_invSNMPIpAddr=RAC0115: The Destination IP Address is invalid.\nExpected range: [1.0.0.0 - 223.255.255.255 excluding: 127 (first octet), 0 or 255 (last octet)].
+sys_alt_trap_invSNMPV6IpAddr=RAC0116: Invalid Destination IPv6 Address.
+sys_alt_trap_destList2=IPv4 Destination
+sys_alt_trap_destList2v6=IPv6 Destination
+#
+###System->Alert Management -> Email Alert Settings
+#
+sys_alt_emailAlertSet=E-mail Alert Settings
+sys_alt_email_alertDest=E-mail Alert Destination
+sys_alt_email_destEmailAddrs=Destination E-mail Addresses
+sys_alt_email_smtpServerAddr=SMTP (E-Mail) Server Address Settings
+sys_alt_email_enable_authentication=Enable Authentication
+sys_alt_email_username=Username
+sys_alt_email_password=Password
+#
+sys_alt_email_destEmailAddrTitle=Click the E-mail Alert Number to set the values.
+sys_alt_email_emailAlertNumber=E-mail Alert Number
+sys_alt_email_emailState=State
+sys_alt_email_destEmailAddr=Destination E-mail Address
+sys_alt_email_emaila1=E-mail Alert 1
+sys_alt_email_emaila2=E-mail Alert 2
+sys_alt_email_emaila3=E-mail Alert 3
+sys_alt_email_emaila4=E-mail Alert 4
+#
+sys_alt_email_smtpServerAddrTitle=Enter the SMTP Address and click Apply.
+sys_alt_email_smtp=SMTP (E-mail) Server IP Address or FQDN / DNS Name
+#
+sys_alt_email_setEmailAlert=Set E-mail Alert:
+sys_alt_email_title=Select values and click Apply. 
+sys_alt_email_info=Enter a valid SMTP (E-mail) Server IP Address before using this feature
+sys_alt_email_enableEmail=Enable E-mail Alert
+sys_alt_email_destE-mailAddr= Destination E-mail Address
+sys_alt_email_emailDesc=E-mail Description
+sys_alt_email_testEmail=Test E-mail
+#
+###System->Console -> Console Redirect
+#
+sys_con=Console/Media
+sys_con_redir_consRedirect=Virtual Console
+sys_con_redir_consRedirVirMedia=Virtual Console and Virtual Media
+sys_con_redir_consRedirVirmediaTitle=The Virtual Console and Virtual Media page displays the current Virtual Console and/or Virtual Media settings. 
+#
+sys_con_redir_consRedirection=Virtual Console
+sys_con_redir_consRedirEnabled=Virtual Console Enabled
+sys_con_redir_videoEncrEnabled=Video Encryption Enabled
+sys_con_redir_MaxSess=Max Sessions
+sys_con_redir_actSess=Active Sessions
+sys_con_redir_locServVideoEnabled=Local Server Video Enabled
+sys_con_redir_repPrePort=Remote Presence Port
+sys_con_redir_pluginType=Plug-in Type
+sys_con_redir_nativeActiveX=Native-ActiveX (User-configured)
+sys_con_redir_javaUserConfig=Java (User-configured)
+sys_con_redir_javaAutoConfig=Java (Auto-configured)
+sys_con_redir_consRedirectMsg=Virtual Console has been disabled. Do you want to continue using Virtual Media redirection?
+sys_con_redir_title_ellipsis=...
+sys_con_redir_title_username=User:
+sys_con_redir_title_slot=Slot
+#
+sys_con_redir_virMedia=Virtual Media
+sys_con_redir_attchDetachStatus=Attach Mode
+sys_con_redir_virMediaEncrEnabled=Virtual Media Encryption Enabled
+sys_con_redir_floppyEmulation=Floppy Emulation
+sys_con_redir_enableBootOnce=Boot Once Enabled
+sys_con_redir_ConnectStatus=Connection Status
+sys_con_redir_ConnStatus_Yes=Connected
+sys_con_redir_ConnStatus_No=Not connected
+sys_con_redir_enableBootOnce=Enable Boot Once
+#
+###System->Console -> Configuration
+#
+sys_con_conf=Configuration
+sys_con_conf_tab=Network/Security
+sys_con_conf_title=Use this page to configure the iDRAC7 Virtual Console settings.
+sys_con_conf_note=64-Bit Active-X plug-in is not supported for iDRAC7 Enterprise
+sys_con_conf_consRedirection=Virtual Console
+sys_con_conf_virMedia=Virtual Media
+sys_con_conf_repPrePort=Remote Presence Port
+sys_con_conf_pluginType=Plug-in Type
+sys_con_conf_native=Native
+sys_con_conf_java=Java
+sys_con_conf_videoEncrEnabled=Video Encryption Enabled
+sys_con_conf_locServVideoEnabled=Local Server Video Enabled
+sys_con_conf_remMediaAttcState=Remote Media Attached State
+sys_con_conf_virMediaEncrEnabled=Virtual Media Encryption Enabled
+sys_con_conf_floppyEmulation=Floppy Emulation
+sys_con_conf_enableBootOnce=Enable Boot Once
+sys_con_conf_detach=Detach
+sys_con_conf_attach=Attach
+sys_con_conf_autoAttach=Auto Attach
+sys_con_conf_sessionTimeout=Default action upon session sharing request timeout
+sys_con_conf_fullaccess=Full access
+sys_con_conf_readonly=Read Only access
+sys_con_conf_denyaccess=Deny access
+sys_con_conf_autoOsLock=Automatic System Lock
+#
+###System->vFlash
+#
+sys_vir_virtFlash=vFlash
+sys_vir_flas_unavailable=RAC0117: SD card is unavailable.
+sys_vir_flas_title1=SD card detected, unrecognized format according to the settings below. Click 'Initialize' to format the card. 
+sys_vir_flas_title2=SD card not detected. Please insert an SD card of size 256MB or greater. 
+sys_vir_flas_info=Initializing will erase existing data on the card.
+sys_vir_flas_info_nonDellDetected=RAC0118: Unsupported vFlash SD card detected.
+sys_vir_flas_completed=Completed
+sys_vir_flas_fCompleted=The operation has been completed successfully.
+sys_vir_flas_browserExc=A browser exception has occurred while trying to upload the file.\nThe exception is:
+sys_vir_flas_image=Image
+sys_vir_flas_action=Action
+sys_vir_flas_progress=Progress
+sys_vir_flas_formatProgress=Initialize Progress
+sys_vir_flas_formatImage=Initialize Image
+sys_vir_flas_createPart=Create Partition
+sys_vir_flas_formatPart=Format Partition
+sys_vir_flas_writing=Writing...
+sys_vir_flas_formatWait=Initializing image, please wait...
+sys_vir_flas_createWait=Creating partition, please wait...
+sys_vir_flas_formatPartWait=Formatting partition, please wait...
+sys_vir_flas_sdCardEnable=SD Card Enable
+sys_vir_flas_inprogress=In Progress
+#
+sys_vir_flas_sdCardProps=SD Card
+sys_vir_flas_managePartitions=Manage
+sys_vir_flas_createEmptyPartition=Create Empty Partition
+sys_vir_flas_createPartitionImage=Create from Image
+sys_vir_flas_formatPartition=Format
+sys_vir_flas_downloadPartition=Download
+sys_vir_flas_sdCardPropsTitle=SD Card Properties
+sys_vir_flas_managePartitionsTitle=Manage Partitions
+sys_vir_flas_createEmptyPartitionTitle=Create Empty Partition
+sys_vir_flas_createPartitionImageTitle=Create Partition from Image File
+sys_vir_flas_formatPartitionTitle=Format Partition
+sys_vir_flas_downloadPartitionTitle=Download Partition
+sys_vir_flas_virKeySize=vFlash Partition Size
+sys_vir_flas_drive=vFlash Drive
+sys_vir_flas_imgTooBig=RAC0119: Invalid Image. Uploaded image size is greater than the selected vFlash partition size.
+sys_vir_flas_partTooBig=RAC0120: The selected partition size exceeds the available space.
+sys_vir_flas_create_image_title=Uploaded images are limited to a size less than 2 GB.
+sys_vir_flas_size=Size
+sys_vir_flas_avail_space=Available Space
+sys_vir_flas_not_initialized=RAC0121: SD card is not initialized.
+sys_vir_flas_protected=Write Protected
+sys_vir_flas_health=Health
+sys_vir_flas_enabled=vFlash Enabled
+sys_vir_flas_partitions=Partitions
+sys_vir_flas_index=Index
+sys_vir_flas_label=Label
+sys_vir_flas_emulation=Emulation Type
+sys_vir_flas_floppy=Floppy
+sys_vir_flas_hd=Hard Disk
+sys_vir_flas_cd=CD
+sys_vir_flas_mb=MB
+sys_vir_flas_img_loc=Image Location
+sys_vir_flas_options=Options
+sys_vir_flas_fmt_type=Format Type
+sys_vir_flas_raw=RAW
+sys_vir_flas_ext2=EXT2
+sys_vir_flas_ext3=EXT3
+sys_vir_flas_fat16=FAT16
+sys_vir_flas_fat32=FAT32
+sys_vir_flas_download=Download
+sys_vir_flas_create_date=Date Created
+sys_vir_flas_read_only=Read-Only
+sys_vir_flas_attached=Attached
+sys_vir_flas_delete=Delete
+sys_vir_flas_type=Type
+sys_vir_flas_status=Status
+sys_vir_flas_note=Note:
+#
+sys_vir_flas_status_ok=OK
+sys_vir_flas_status_warning=Warning
+sys_vir_flas_status_error=Error
+sys_vir_flas_unknown=UNKNOWN
+#
+sys_vir_flas_state_initialize=Initializing
+sys_vir_flas_state_format=Format
+sys_vir_flas_state_delete=Deleting
+sys_vir_flas_state_upload=Upload
+sys_vir_flas_state_create=Create
+sys_vir_flas_state_download=Downloading
+sys_vir_flas_state_in_use=In Use
+sys_vir_flas_state_idle=Idle
+sys_vir_flas_state_attach=Attaching
+sys_vir_flas_state_detach=Detaching
+sys_vir_flas_state_na=NA
+#
+sys_vir_flas_status_error_msg=RAC0122: Detected critical error on the vFlash SD card.
+sys_vir_flas_unknown_msg=RAC0123: vFlash status is unknown.
+sys_vir_flas_bad_label_msg=RAC0124: Invalid label: Label must be exclusively alphanumeric.
+sys_vir_flas_unique_label_msg=RAC0125: The Label must be unique.
+sys_vir_flas_zero_label_msg=RAC0126: The label value is invalid. Expected range: 1-6 alphanumeric characters.
+sys_vir_flas_bad_size_msg=RAC0127: The specified size must be a non-fractional numeric value.
+sys_vir_flas_zero_size_msg=The specified size must be greater than 1 MB.
+sys_vir_flas_max_size_msg=The specified size exceeds the maximum size of
+sys_vir_flas_unknown_error=RAC0128: An error has occurred in vFlash.
+sys_vir_flas_initialize_error=RAC0129: An error has occurred while initializing the SD card.
+sys_vir_flas_create_error=RAC0130: An error has occurred while creating a partition.
+sys_vir_flas_delete_error=RAC0131: An error has occurred while deleting a partition.
+sys_vir_flas_format_error=RAC0132: An error has occurred while formatting a partition.
+sys_vir_flas_download_error=RAC0133: An error has occurred while downloading a partition.
+sys_vir_flas_nondell_msg=RAC0134: This operation is unavailable for non-vFlash SD cards.
+sys_vir_flas_error_detach=RAC0135: An error has occurred while detaching a partition.
+sys_vir_flas_error_attach=RAC0136: An error has occurred while attaching a partition.
+sys_vir_flas_error_rostate=RAC0137: An error has occurred while changing the read-write state for the partition.
+#
+### Remote Access -> Properties -> iDRAC Information
+#
+rac_prop_info=iDRAC Information
+rac_prop_info_netSet=Current Network Settings
+rac_prop_info_ipv4Set=Current IPv4 Settings
+rac_prop_info_ipv6Set=Current IPv6 Settings
+rac_prop_info_name=Name
+rac_prop_info_prodInfo=Product Information
+rac_prop_info_hardVer=Hardware Version
+rac_prop_info_fwVer=Firmware Version
+rac_prop_info_fwUpd=Firmware Updated
+rac_prop_info_racTime=RAC Time
+rac_prop_info_noActSess=Number of Possible Active Sessions
+rac_prop_info_noCurrSess=Number of Current Sessions
+rac_prop_info_lanEnabled=LAN Enabled
+rac_prop_info_ipmiVer=IPMI Version
+rac_prop_info_deviceType=Device Type
+rac_prop_info_interfaceTitle=User Interface Title Bar Information
+rac_prop_info_it_auto=Auto
+rac_prop_info_it_dns=DNS DRAC Name
+rac_prop_info_it_ipv4=IPv4 Address
+rac_prop_info_it_ipv6=IPv6 Address
+rac_prop_info_it_ip=IP Address
+rac_prop_info_it_st=Service Tag
+rac_prop_info_it_shn=System Host Name
+rac_prop_info_it_custom=Custom
+rac_prop_info_it_invalid=Text must be alpha-numeric characters, blank, dash, underscore, colon, or period.
+rac_prop_info_it_custom_str=Type a custom string here
+rac_prop_info_it_err=Title Bar Number
+rac_unlicensed_if_reverted_msg=Network interface reverted.
+rac_unlicensed_network_if=Unlicensed Network Interface
+rac_unlicensed_network_login_instructional_text=The network interface that you are connected to is not licensed. Click Submit to change to a supported configuration.
+#
+rac_prop_info_macAddr=MAC Address
+rac_prop_info_dnsDomain=DNS Domain Name
+rac_prop_info_nicSelMode=NIC Selection Mode
+#
+rac_prop_info_ipv4Enabled=IPv4 Enabled
+rac_prop_info_dhcpEnabled=DHCP Enabled
+rac_prop_info_ipAddr=Current IP Address
+rac_prop_info_gateway=Current Gateway
+rac_prop_info_subnetMask=Current Subnet Mask
+#
+rac_prop_info_ipv6Enabled=IPv6 Enabled
+rac_prop_info_autoConfig=Autoconfig Enabled
+rac_prop_info_ipAddr1=Current IP Address 1
+rac_prop_info_preLength=Current Prefix Length
+rac_prop_info_ipGateway=Current IP Gateway
+rac_prop_info_linkLocal=Link Local Address
+rac_prop_info_ipAddr2=IP Address 2
+rac_prop_info_ipAddr3=IP Address 3
+rac_prop_info_ipAddr4=IP Address 4
+rac_prop_info_ipAddr5=IP Address 5
+rac_prop_info_ipAddr6=IP Address 6
+rac_prop_info_ipAddr7=IP Address 7
+rac_prop_info_ipAddr8=IP Address 8
+rac_prop_info_ipAddr9=IP Address 9
+rac_prop_info_ipAddr10=IP Address 10
+rac_prop_info_ipAddr11=IP Address 11
+rac_prop_info_ipAddr12=IP Address 12
+rac_prop_info_ipAddr13=IP Address 13
+rac_prop_info_ipAddr14=IP Address 14
+rac_prop_info_ipAddr15=IP Address 15
+rac_prop_info_useDHCP=Use DHCPv6 to obtain DNS Server Addresses
+rac_prop_info_preDNS=Current Preferred DNS Server
+rac_prop_info_altDNS=Current Alternate DNS Server
+#
+### Remote Access -> Configuration -> Network
+#
+rac_conf_seconds=seconds
+rac_conf_network=Network
+rac_conf_net_netconfig=Network Configuration
+rac_conf_net_title=Use this page to configure the iDRAC network settings.
+rac_conf_net_info=Changes to the NIC IP address settings will close all user sessions and the user must reconnect to the iDRAC Web-based interface using the updated IP address settings. All other changes requires the NIC to be reset, which may cause a brief loss in connectivity.
+rac_conf_net_netCardSet=Network Settings
+rac_conf_net_comSet=Common Settings
+rac_conf_net_dhcpSet=DHCP Provisioning
+rac_conf_net_dhcpEnableProv=Enable DHCP Provisioning
+rac_conf_net_dhcp_enable=Enable Always
+rac_conf_net_dhcp_onetime=Enable Once
+rac_conf_net_dhcp_once_restart=Enable Once After Reset
+rac_conf_net_dhcp_disable=Disable
+rac_conf_net_ipv4Set=IPv4 Settings
+rac_conf_net_ipv6Set=IPv6 Settings
+rac_conf_net_ipmiSet=IPMI Settings
+rac_conf_net_vlanSet=VLAN Settings
+rac_conf_net_enterprise=Enterprise
+rac_conf_net_express=Express
+rac_conf_net_base=Base
+#
+rac_conf_net_nicSel=NIC Selection
+rac_conf_net_nicMTU=NIC MTU
+rac_conf_net_macAddr=MAC Address
+rac_conf_net_enableNIC=Enable NIC
+rac_conf_net_autoNego=Auto Negotiation
+rac_conf_net_netSpeed=Network Speed
+rac_conf_net_dupMode=Duplex Mode
+rac_conf_net_dedicated=Dedicated
+rac_conf_net_shared=Shared
+rac_conf_net_sharedFailover1=Shared with Failover: LOM 2
+rac_conf_net_SharedFailover2=Shared with Failover: All LOMs
+rac_conf_net_on=On
+rac_conf_net_off=Off
+rac_conf_net_Full=Full
+rac_conf_net_Half=Half
+rac_conf_net_failover=Failover Network
+rac_conf_net_none=None
+rac_conf_net_LOM1=LOM1
+rac_conf_net_LOM2=LOM2
+rac_conf_net_LOM3=LOM3
+rac_conf_net_LOM4=LOM4
+rac_conf_net_AllLOM=All LOMs
+rac_conf_net_dedicatedNicPref=Auto Dedicated NIC
+rac_conf_net_activeNic=Active NIC Interface
+
+#
+rac_conf_net_regiDRAC=Register DRAC on DNS
+rac_conf_net_dnsiDRAC=DNS DRAC Name
+rac_conf_net_useDHCPForDNSDomain=Auto Config Domain Name
+rac_conf_net_dnsDomain=Static DNS Domain Name
+#
+rac_conf_net_ipv4Enabled=Enable IPv4
+rac_conf_net_useDHCPForNIC=DHCP Enable
+rac_conf_net_ipAddr=Static IP Address
+rac_conf_net_gateway=Static Gateway
+rac_conf_net_subnetMask=Static Subnet Mask
+rac_conf_net_useDHCPForDNSServer=Use DHCP to obtain DNS server addresses
+rac_conf_net_preDNSServer=Static Preferred DNS Server
+rac_conf_net_altDNSServer=Static Alternate DNS Server
+#
+rac_conf_net_ipv6Enabled=Enable IPv6
+rac_conf_net_autoConfig=Autoconfiguration Enable
+rac_conf_net_ipAddr1=Static IP Address 1
+rac_conf_net_preLength=Static Prefix Length
+rac_conf_net_ipGateway=Static Gateway
+rac_conf_net_linkLocAddr=Link Local Address
+rac_conf_net_ipAddr2=IP Address 2
+rac_conf_net_ipAddr3=IP Address 3
+rac_conf_net_ipAddr4=IP Address 4
+rac_conf_net_ipAddr5=IP Address 5
+rac_conf_net_ipAddr6=IP Address 6
+rac_conf_net_ipAddr7=IP Address 7
+rac_conf_net_ipAddr8=IP Address 8
+rac_conf_net_ipAddr9=IP Address 9
+rac_conf_net_ipAddr10=IP Address 10
+rac_conf_net_ipAddr11=IP Address 11
+rac_conf_net_ipAddr12=IP Address 12
+rac_conf_net_ipAddr13=IP Address 13
+rac_conf_net_ipAddr14=IP Address 14
+rac_conf_net_ipAddr15=IP Address 15
+#
+rac_conf_net_enableIPMI=Enable IPMI Over LAN
+rac_conf_net_chanPriLevel=Channel Privilege Level Limit
+rac_conf_net_encrypKey=Encryption Key
+#
+rac_conf_net_enableVLANid=Enable VLAN ID
+rac_conf_net_vlanID=VLAN ID
+rac_conf_net_priority=Priority
+#
+### Remote Access -> Configuration -> Network->Network Security
+#
+rac_conf_netw_security=Network Security
+rac_conf_netw_title=Use this page to configure the network security settings.
+rac_conf_netw_ipREnabled=IP Range Enabled
+rac_conf_netw_ipRAddr=IP Range Address
+rac_conf_netw_ipRSubnet=IP Range Subnet Mask
+rac_conf_netw_ipBEnabled=IP Blocking Enabled
+rac_conf_netw_ipBFailCount=IP Blocking Fail Count
+rac_conf_netw_ipBFailWin=IP Blocking Fail Window
+rac_conf_netw_ipBPenTime=IP Blocking Penalty Time
+rac_conf_netw_seconds=Second(s)
+#
+### Remote Access -> Configuration -> Users
+#
+rac_conf_users=Users
+rac_conf_usr_title=To configure a user, click on the User ID number.
+rac_conf_usr_iserID=User ID
+rac_conf_usr_state=State
+rac_conf_usr_userName=UserName
+rac_conf_usr_racPrv=iDRAC
+rac_conf_usr_ipmiLan=LAN
+rac_conf_usr_ipmiSerial=Serial Port
+rac_conf_usr_serOverLan=Serial Over LAN
+rac_conf_usr_Prv=Privilege
+rac_conf_usr_ipmiSerial_Prv=User Privilege
+rac_conf_usr_serOverLan_Prv=LAN Privilege
+rac_conf_usr_snmp=SNMP v3
+#
+#User Main Menu
+#
+rac_conf_usr_usrMainMenu=User Main Menu:
+rac_conf_usr_usrMainTitle=Select one of the following options to configure a User, upload a User Certificate, view a User Certificate, upload a Trusted CA Certificate, or view a Trusted CA Certificate. 
+rac_conf_usr_usrConfig=User Configuration
+rac_conf_usr_smrCardConfig=Smart Card Configuration
+rac_conf_usr_configUsr=Configure User
+rac_conf_usr_uploadUsrCert=Upload User Certificate
+rac_conf_usr_viewUsrCert=View User Certificate
+rac_conf_usr_uploadTrustCert=Upload Trusted CA Certificate
+rac_conf_usr_viewTrustCert=View Trusted CA Certificate
+rac_conf_usr_sshKeyConfig=SSH Key Configurations
+rac_conf_usr_uploadSshKey=Upload SSH Key(s)
+rac_conf_usr_viewSshKey=View/Remove SSH Key(s)
+rac_conf_usr_viewSshRemove=Remove
+#
+#User Configuration
+#
+rac_conf_usr_configtitle=Use this page to configure the selected user.
+rac_conf_usr_general=General
+rac_conf_usr_ipmiUsrPrv=IPMI User Privileges
+rac_conf_usr_iDRACUsrPrv=iDRAC User Privileges
+#
+rac_conf_usr_sshKeys=SSH Keys
+rac_conf_usr_sshKey1=SSH Key 1
+rac_conf_usr_sshKey2=SSH Key 2
+rac_conf_usr_sshKey3=SSH Key 3
+rac_conf_usr_sshKey4=SSH Key 4
+#
+rac_conf_usr_userID=User ID
+rac_conf_usr_enableUsr=Enable User
+rac_conf_usr_userName=User Name
+rac_conf_usr_changePass=Change Password
+rac_conf_usr_newPass=New Password
+rac_conf_usr_confNewPass=Confirm New Password
+#
+rac_conf_usr_maxLANusrPrv=Maximum LAN User Privilege Granted
+rac_conf_usr_maxSerPortUsr=Maximum Serial Port User Privilege Granted
+rac_conf_usr_enSerialOverLAN=Enable Serial Over LAN
+#
+rac_conf_usr_roles=Roles
+rac_conf_usr_loginiDRAC=Login
+rac_conf_usr_confiDRAC=Configure
+rac_conf_usr_confUsers=Configure Users
+rac_conf_usr_clearLog=Clear Logs
+rac_conf_usr_logs=Logs
+rac_conf_usr_excSerCmds=System Control
+rac_conf_usr_accConsRedir=Access Virtual Console
+rac_conf_usr_accVirMed=Access Virtual Media
+rac_conf_usr_testAlert=System Operations
+rac_conf_usr_excDiaCmds=Debug
+#
+#User Certificate upload
+#
+rac_conf_usr_certUpload=User Certificate Upload: User ID
+rac_conf_usr_uploadTitle=Select the certificate to upload. Click Apply to begin the transfer.
+rac_conf_usr_uploadFilePath=File Path
+#
+#SSH Keys
+#
+rac_conf_user_sshKeyUpload_File=File
+rac_conf_user_sshKeyUpload_Text=Text
+rac_conf_user_viewSshKeyTitle=You can view or remove the users SSH key(s).
+rac_conf_usr_sshKeyUpload=Upload SSH Key(s)
+rac_conf_usr_sshKeyUploadTitle=Select the Key(s) to upload, or enter Key(s), then click Apply to begin transfer.
+#
+#View User Certificate
+#
+rac_conf_user_viewUserCert=View User Certificate: User ID
+rac_conf_user_viewUserCertTitle=You can view the user certificate.
+rac_conf_user_certificate=Certificate
+#
+#Trusted CA Certificate Upload
+#
+rac_conf_user_trustCertUpload=Trusted CA Certificate Upload: User ID 
+rac_conf_user_trustCertTitle=Select the certificate to upload and click Apply to begin the transfer.
+#
+#View Trusted CA Certificate
+#
+rac_conf_user_viewTrustUserCert=View Trusted CA Certificate: User ID 
+rac_conf_user_viewTrustCertTitle=You can view the trusted CA certificate.
+#
+### Remote Access -> Configuration -> Active Directory
+#
+#
+rac_conf_role_group=Role Group
+rac_conf_act_Dir=Active Directory
+rac_conf_act_actDirConfig=Active Directory Configuration and Management
+rac_conf_ad_cert=Active Directory CA Certificate
+rac_conf_act_DirTitle=The Active Directory Configuration and Management page displays the current iDRAC7 Active Directory settings.
+rac_conf_act_comSet=Common Settings
+rac_conf_act_actdircert=Active Directory CA Certificate
+rac_conf_act_schSet=Schema Settings
+#
+rac_conf_act_actDiren=Active Directory Enabled
+rac_conf_act_schSel=Schema Selection
+rac_conf_act_usrDomain=User Domain Name
+rac_conf_act_timeout=Timeout
+rac_conf_act_domContAddr1=Domain Controller Server Address 1 (FQDN or IP)
+rac_conf_act_domContAddr2=Domain Controller Server Address 2 (FQDN or IP)
+rac_conf_act_domContAddr3=Domain Controller Server Address 3 (FQDN or IP)
+rac_conf_act_enCertVal=Certificate Validation Enabled
+#
+rac_conf_act_cert=Certificate
+rac_conf_act_noValidCert=RAC0138: A valid certificate is not loaded.
+#
+rac_conf_act_extSchSet=Extended Schema Settings
+rac_conf_act_idracName=iDRAC Name
+rac_conf_act_idracDomain=iDRAC Domain Name
+rac_conf_act_stdSchSet=Standard Schema Settings
+rac_conf_act_glCatSerAddr1=Global Catalog Server Address 1 (FQDN or IP)
+rac_conf_act_glCatSerAddr2=Global Catalog Server Address 2 (FQDN or IP)
+rac_conf_act_glCatSerAddr3=Global Catalog Server Address 3 (FQDN or IP)
+rac_conf_act_stdSchRoleGroup=Standard Schema Role Groups
+rac_conf_act_roleGroup=Role Groups
+rac_conf_act_groupName=Group Name
+rac_conf_act_groupDomain=Group Domain
+rac_conf_act_gropupPriv=Group Privilege
+#
+rac_conf_test_passed=Passed
+rac_conf_test_disabled=Disabled
+rac_conf_test_notrun=Not Run
+rac_conf_test_failed=Failed
+rac_conf_test_notcfg=Not Configured
+rac_conf_test_notapp=Not Applicable
+#
+rac_conf_act_ssoEn=Single Sign-On Enabled
+rac_conf_act_ssoEn_alert=Ensure that you have successfully uploaded a valid keytab in 'Step 1 of Active Directory configuration'.
+#
+#Step 1 of 4
+#
+rac_conf_acts1_step1of4=Step 1 of 4
+rac_conf_acts1_info=This page is used to configure the digital certificate used during initiation of SSL connections when communicating with the Active Directory (AD) server; these communications use LDAP over SSL (LDAPS). When certificate validation is enabled, it is necessary to upload the certificate of the Certificate Authority (CA) that issued the certificate used by the AD server during initiation of SSL connections. The CA's certificate is used to validate the authenticity of the certificate provided by the AD server during SSL initiation.
+rac_conf_acts1_certSet=Certificate Settings
+rac_conf_acts1_enCertVal=Enable Certificate Validation
+rac_conf_acts1_uploadActDirCert=Upload Active Directory CA Certificate
+rac_conf_acts1_currActDirCert=Current Active Directory CA Certificate
+rac_conf_acts1_cert=Certificate
+rac_conf_acts1_noValidCert=RAC0139: A valid certificate is not loaded.
+rac_conf_acts1_uploadKrbKeytab=Upload Kerberos Keytab
+#
+#Step 2 of 4
+#
+rac_conf_acts2_step2of4=Step 2 of 4
+rac_conf_acts2_info=This page is used to configure location information about Active Directory (AD) servers and user accounts. It also allows configuration of AD access timeout policy. When AD mode is enabled, the login syntax can be simplified by configuring the DNS name of each AD domain that contains iDRAC user accounts. Each configured domain name is automatically added to a drop-down menu in the login dialog for easy selection during entry of login credentials. It is also necessary to configure the location of one, two, or three AD servers to be used during login processing. The Timeout threshold parameter controls the time iDRAC will wait for responses from AD during login processing.
+rac_conf_acts2_comSet=Common Settings
+rac_conf_acts2_enActDir=Enable Active Directory
+rac_conf_acts2_usrDomName=User Domain Name
+rac_conf_acts2_timeout=Timeout
+rac_conf_acts2_domContAddr1=Domain Controller Server Address 1 (FQDN or IP)
+rac_conf_acts2_domContAddr2=Domain Controller Server Address 2 (FQDN or IP)
+rac_conf_acts2_domContAddr3=Domain Controller Server Address 3 (FQDN or IP)
+rac_conf_acts2_seconds=seconds
+rac_conf_acts2_enSSO=Enable Single Sign-On
+#
+#Step 3 of 4
+#
+rac_conf_acts3_step3of4=Step 3 of 4
+rac_conf_acts3_info=This page is used to configure the Active Directory (AD) schema mode. When AD is enabled (see Step 2 of 4), it is necessary to configure to use either the standard or the extended schema. When using the standard schema mode, all the necessary object classes are provided by Microsoft's default configuration of the AD schema. Before using the extended schema mode, you must execute Dell utility programs that add new object classes to the AD schema and also extend the capabilities of Microsoft's MMC snap-in named Active Directory Users and Computers (ADUC) to include management of the new object classes.
+rac_conf_acts3_schSel=Schema Selection
+rac_conf_acts3_extSch=Extended Schema
+rac_conf_acts3_stdSch=Standard Schema
+#
+#Step 4 of 4
+#
+rac_conf_acts4_step4of4=Step 4 of 4
+rac_conf_acts4_info=This page is used to configure the name and location of the iDRAC device object in Active Directory (AD). When AD is enabled and extended schema mode is used, it is necessary to configure the common name (cn) of the device object in AD that represents the iDRAC. It is also necessary to configure the DNS name of the domain that contains that device object.
+rac_conf_acts4_extSchSet=Extended Schema Settings
+rac_conf_acts4_idraNname=iDRAC Name
+rac_conf_acts4_idracDom=iDRAC Domain Name
+#
+#Step 4a of 4
+#
+rac_conf_acts4a_step4aof4=Step 4a of 4
+rac_conf_acts4a_info=This page is used to configure the location of Active Directory (AD) Global Catalog server(s) and privilege groups used to authorize users.  When AD is enabled and standard schema mode is used, it is necessary to configure the location of one, two, or three Global Catalog servers if the user accounts and the role groups are in different domains. It is also necessary to configure Role Group(s) used that specify authorization policy for iDRAC users under the standard schema mode.
+rac_conf_acts4a_roleGroup=Role Group
+#
+#
+#Step 4b of 4
+#
+rac_conf_acts4b_step4bof4=Step 4b of 4
+rac_conf_acts4b_confRoleGroup=Config Role Group
+rac_conf_acts4b_info=This page is used to configure each Role Group used to control authorization policy for users under the standard schema mode.  When AD is enabled and standard schema mode is used, it is necessary to configure each Role Group to enforce authorization policy regarding access to iDRAC features.
+rac_conf_acts4b_roleAndDomain=Role Group Name and Domain
+rac_conf_acts4b_groupName=Group Name
+rac_conf_acts4b_groupDomain=Group Domain
+#
+rac_conf_acts4b_roleGroupPriv=Role Group Privileges
+rac_conf_acts4b_roleGroupPrivLvl=Role Group Privilege Level
+rac_conf_acts4b_loginiDRAC=Login to iDRAC
+rac_conf_acts4b_confiDRAC=Configure iDRAC
+rac_conf_acts4b_configUser=Configure Users
+rac_conf_acts4b_clearLog=Clear Logs
+rac_conf_acts4b_excSerCmds=Execute Server Control Commands
+rac_conf_acts4b_accConsRedir=Access Virtual Console
+rac_conf_acts4b_accVirMed=Access Virtual Media
+rac_conf_acts4b_testAlert=Test Alerts
+rac_conf_acts4b_excDiagCmds=Execute Diagnostic Commands
+#
+### Remote Access -> Configuration -> Active Directory->Test Settings
+#
+rac_conf_act_testActSet=Test Active Directory Settings
+rac_conf_act_testUser=Test User
+rac_conf_act_testUserName=Test User Name
+rac_conf_act_testUserPass=Test User Password
+#
+rac_conf_act_testResult=Test Results
+rac_conf_act_testDesc=Test Description
+rac_conf_act_result=Result
+rac_conf_act_pingDirServer=Ping Directory Server
+rac_conf_act_keytab_exists=Keytab file exists
+rac_conf_act_keytab_valid=Keytab file is valid
+rac_conf_act_get_tgt=Getting TGT from server
+rac_conf_act_dirSerDNSName=Directory Server DNS Name
+rac_conf_act_dcDnsLookup=DNS Directory Lookup
+rac_conf_act_gcDnsLookup=DNS Global Catalog Lookup
+rac_conf_act_conDirServer1UnEn=Connect to Directory Server 1 (Unencrypted)
+rac_conf_act_conDirServer2UnEn=Connect to Directory Server 2 (Unencrypted)
+rac_conf_act_conDirServer3UnEn=Connect to Directory Server 3 (Unencrypted)
+rac_conf_act_conDirServer4UnEn=Connect to Directory Server 4 (Unencrypted)
+rac_conf_act_conDirServer1SSL=Connect to Directory Server 1 (SSL)
+rac_conf_act_conDirServer2SSL=Connect to Directory Server 2 (SSL)
+rac_conf_act_conDirServer3SSL=Connect to Directory Server 3 (SSL)
+rac_conf_act_conDirServer4SSL=Connect to Directory Server 4 (SSL)
+rac_conf_act_conGCat1UnEn=Connect to Global Catalog 1 (Unencrypted)
+rac_conf_act_conGCat2UnEn=Connect to Global Catalog 2 (Unencrypted)
+rac_conf_act_conGCat3UnEn=Connect to Global Catalog 3 (Unencrypted)
+rac_conf_act_conGCat4UnEn=Connect to Global Catalog 4 (Unencrypted)
+rac_conf_act_conGCat1SSL=Connect to Global Catalog 1 (SSL)
+rac_conf_act_conGCat2SSL=Connect to Global Catalog 2 (SSL)
+rac_conf_act_conGCat3SSL=Connect to Global Catalog 3 (SSL)
+rac_conf_act_conGCat4SSL=Connect to Global Catalog 4 (SSL)
+rac_conf_act_certVal=Certificate Validation
+rac_conf_act_userAuthent=User Authentication
+rac_conf_act_userAuthor=User Authorization
+rac_conf_act_iDRACObjExist=iDRAC Device Object Exists
+#
+rac_conf_act_testLog=Test Log
+#
+### Remote Access -> Configuration -> SSL
+#
+#
+rac_conf_ssl=SSL
+rac_conf_ssl_mainMenu=SSL Main Menu
+rac_conf_ssl_title=Select one of the following options to generate a Certificate Signing Request (CSR), upload an existing certificate, or view the current server certificate. 
+rac_conf_ssl_option=Option
+rac_conf_ssl_genNewCSR=Generate Certificate Signing Request (CSR)
+rac_conf_ssl_uploadCert=Upload Server Certificate
+rac_conf_ssl_viewCert=View Server Certificate
+#
+#Generate Certificate Signing Request (CSR)
+#
+rac_conf_ssl_csr_genCSR=Generate Certificate Signing Request (CSR)
+rac_conf_ssl_csr_title=Enter the information in the following fields and click Generate to create a new Certificate Signing Request (CSR).
+rac_conf_ssl_csr_info=Generating a new CSR prevents certificates that are created with the previously generated CSR from being uploaded to iDRAC.
+rac_conf_ssl_csr_comName=Common Name
+rac_conf_ssl_csr_orgName=Organization Name
+rac_conf_ssl_csr_orgUnit=Organization Unit
+rac_conf_ssl_csr_locality=Locality
+rac_conf_ssl_csr_stateName=State Name
+rac_conf_ssl_csr_countCode=Country Code
+rac_conf_ssl_csr_email=E-mail
+#
+#Certificate Upload
+#
+rac_conf_ssl_certUpload=Upload Server Certificate 
+rac_conf_ssl_certUploadTitle=Select the certificate to upload and click Apply to begin the transfer.  
+rac_conf_ssl_certUploadInfo=Note: iDRAC will resets after the certificate is uploaded successfully. At this time, iDRAC will not be available for few minutes.
+rac_conf_ssl_certUploadFilePath=File Path
+#
+#View Server Certificate
+#
+rac_conf_ssl_viewSerCertTitle=You can view the current server certificate here.
+rac_conf_ssl_cert=Certificate
+#
+### Remote Access -> Configuration -> Serial
+#
+#
+rac_conf_serial=Serial
+rac_conf_ser_config=Serial Configuration
+rac_conf_ser_title=Use this page to configure the serial settings.
+rac_conf_ser_info=RAC and IPMI serial access are mutually exclusive. Enabling RAC Serial will disable IPMI Serial.
+rac_conf_ser_ipmiSerial=IPMI Serial
+rac_conf_ser_racSerial=RAC Serial
+rac_conf_ser_baud9600=9600 bps
+rac_conf_ser_baud19=19.2 kbps
+rac_conf_ser_baud57=57.6 kbps
+rac_conf_ser_baud115=115.2 kbps
+#
+rac_conf_ser_conModeSet=Connection Mode Settings
+rac_conf_ser_baudRate=Baud Rate
+rac_conf_ser_flowContr=Flow Control
+rac_conf_ser_chanPriLevel=Channel Privilege Level Limit
+rac_conf_ser_basicMode=Direct Connect Basic Mode
+rac_conf_ser_terminalMode=Direct Connect Terminal Mode
+rac_conf_ser_rtsCTS=RTS/CTS (Hardware Flow Control)
+#
+rac_conf_ser_redirEn=Redirect Enabled
+rac_conf_ser_escKey=Escape Key
+rac_conf_ser_hisBufSize=History Buffer Size
+rac_conf_ser_loginCmd=Login Command
+#
+rac_conf_ser_valInvalid=The specified object is not valid.
+#
+#Terminal Mode Settings
+#
+rac_conf_ser_ter_modeSet=Terminal Mode Settings
+rac_conf_ser_ter_title=Use this page to configure terminal mode settings.
+rac_conf_ser_ter_lineEdit=Line Editing
+rac_conf_ser_ter_delCont=Delete Control
+rac_conf_ser_ter_echoCont=Echo Control
+rac_conf_ser_ter_handshCont=Handshaking Control
+rac_conf_ser_ter_newlSeq=New Line Sequence
+rac_conf_ser_ter_inlSeq=Input New Line Sequence
+rac_conf_ser_ter_bmcOutputDel=iDRAC outputs a &lt;del&gt; character when &lt;bksp&gt; or &lt;del&gt; is received.
+rac_conf_ser_ter_bmcOutputBksp=iDRAC outputs a &lt;bksp&gt;&lt;sp&gt;&lt;bksp&gt; character when &lt;bksp&gt; or &lt;del&gt; is received.
+#
+#
+### Remote Access -> Configuration -> Serial Over LAN
+#
+#
+rac_conf_lan_serOverLAN=Serial Over LAN
+rac_conf_lan_serOverLANConfig=Serial Over LAN Configuration
+rac_conf_lan_title=Use this page to configure Serial Over LAN settings.
+rac_conf_lan_enSerOverLAN=Enable Serial Over LAN
+rac_conf_lan_baudRate=Baud Rate
+rac_conf_lan_chanPriLevel=Channel Privilege Level Limit
+#
+#Serial Over LAN Configuration Advanced Settings
+#
+rac_conf_lan_adv_serOverLANAdv=Serial Over LAN Configuration Advanced Settings
+rac_conf_lan_adv_title=Use this page to configure the Serial Over LAN Advanced Settings.
+rac_conf_lan_adv_chrAccInterval=Character Accumulate Interval
+rac_conf_lan_adv_chrSendThres=Character Send Threshold
+#
+#
+### Remote Access -> Configuration -> Services
+#
+#
+rac_conf_ser_services=Services
+rac_conf_serv_title=Use this page to configure iDRAC services.
+rac_conf_ser_localConfig=Local Configuration
+rac_conf_ser_webServer=Web Server
+rac_conf_ser_ssh=SSH
+rac_conf_ser_telnet=Telnet
+rac_conf_ser_rmtRACADM= Remote RACADM
+rac_conf_ser_snmpAgent=SNMP Agent
+rac_conf_ser_autoSysRecAgent=Automated System Recovery Agent
+#
+rac_conf_ser_disableROM=Disable iDRAC Local Configuration using iDRAC Settings
+rac_conf_ser_disableRACADM=Disable iDRAC Local Configuration using RACADM
+#
+rac_conf_ser_httpPortNo=HTTP Port Number
+rac_conf_ser_httpsPortNo=HTTPS Port Number
+rac_conf_ser_seconds=x 5ms
+rac_conf_ser_sslEncryption=SSL Encryption
+rac_conf_ser_auto=Auto Negotiate
+rac_conf_ser_128=128-bit or higher
+#
+rac_conf_ser_portNo=Port Number
+#
+rac_conf_ser_snmpComName=SNMP Community Name
+#
+#
+### Remote Access -> Configuration -> Smart Card
+#
+#
+rac_conf_smt_smartCard=Smart Card
+rac_conf_smt_configSmtCard=Configure Smart Card
+rac_conf_smt_ttitle=Use this page to configure and manage iDRAC Smart Card Logon.
+rac_conf_smt_info=The Smart Card logon feature requires the configuration of the local and/or Active Directory user certificate.
+#
+rac_conf_smt_comSet=Common Settings
+rac_conf_smt_configSmtCardSet=Configure Smart Card Logon
+rac_conf_smt_enCRL=Enable CRL check for Smart Card Logon
+rac_conf_smt_enableWithRemote=Enabled with Remote Racadm
+#
+#
+### Remote Access -> Logs
+#
+#
+rac_log=Logs
+rac_log_rac=iDRAC Log
+rac_log_rac_title=iDRAC log contains information about iDRAC hardware. To sort the log by column, click a column header. 
+rac_log_rac_dateTime=Date/Time
+rac_log_rac_source=Source
+rac_log_rac_desc=Description
+rac_log_loading=Loading iDRAC Log...
+#
+#
+### Remote Access -> Session Management
+#
+#
+rac_ses_Manag=Session Management
+rac_ses_ses=Sessions
+rac_ses_ses_title=Use this page to view information about the active iDRAC sessions. Additionally, iDRAC administrators can click on the trash can icon to terminate an active session.
+rac_ses_ses_sessID=Session ID
+rac_ses_ses_usrName=User Name
+rac_ses_ses_ipAddr=IP Address
+rac_ses_ses_sessType=Session Type
+rac_ses_ses_console=Console
+rac_ses_ses_terminate=Terminate
+#
+#
+### Remote Access -> Diagnostics
+#
+#
+rac_dia_diagnos=Troubleshooting
+rac_dia_con=Diagnostics Console
+rac_dia_con_title=The Diagnostic Console allows advanced users or users under the direction of technical support to diagnose issues relating to iDRAC hardware. Enter a diagnostic command and click Submit.
+rac_dia_con_cmd=Command
+rac_dia_identify=Identify
+rac_dia_identifyServer=Identify Server
+rac_dia_identifyTimeout=Identify Server Timeout
+rac_dia_identify_title=Use this page to identify the server by its blinking System ID LED.
+alert_reset_idracMsg=Warning: You are about to reset the iDRAC. All existing sessions, including this one, will be closed. Are you sure you want to continue? 
+alert_reset_todefault_idracMsg=Warning: You are about to reset the iDRAC to its default settings. All existing sessions, including this one, will be closed. The iDRAC IP address will reset to the default static IP address. Are you sure you want to continue?
+#
+#
+### Remote Access -> Update
+#
+#
+rac_upd=Update
+rac_upd_fmw=Firmware
+rac_upd_fmw_update=Firmware Update
+rac_upd_fmw_title=Select iDRAC firmware image to upload and click Update to begin the upload. When the upload is completed, iDRAC firmware update begins.
+rac_upd_fmw_fwImage=Firmware Image
+#
+rac_upd_fmw_updateProg=Firmware Update Progress
+rac_upd_fmw_updateMsg1=The iDRAC firmware is being updated. This process will take several minutes. When the update is completed, log in again to use the iDRAC Web-based interface.
+rac_upd_fmw_updateMsg2=If you leave the firmware update progress page, the browser window will close. You may not be able to access the iDRAC Web-based interface until the firmware update has completed.
+rac_upd_fmw_uploadImage=Uploading image ...
+rac_upd_fmw_updateFirm=Updating firmware ...
+#
+rac_upd_uploadStep1=Upload (Step 1 of 3)
+rac_upd_rollbackStep1=Rollback (Step 1 of 3)
+rac_upd_upload=Upload
+rac_upd_rollback=Rollback
+rac_upd_selectFile=Select the file to upload
+rac_upd_filePath=File Path
+rac_upd_switchFirmware=Switch over to the standby firmware
+#
+rac_upd_step2=Status (Step 2 of 3)
+rac_upd_uploadedImage=Uploaded Image
+rac_upd_iDracConfigSet=iDRAC Configuration Settings
+rac_upd_iDracFWImage=iDRAC Firmware Image
+rac_upd_image=Image
+rac_upd_currVer=Current Version
+rac_upd_newVer=New Version
+rac_upd_preConfig=Preserve Configuration
+rac_upd_sysRecImage=Lifecycle Controller Recovery Image
+rac_upd_confirmMsg=Are you sure you want to proceed with the update?
+rac_upd_uploadProgress=File upload in progress...
+rac_upd_cancelConfirmMsg=Are you sure you want to cancel the update?
+rac_upd_fwUpdateProgress=Firmware update is in progress. Please try again later.
+rac_upd_fwUpdateCancelInfo= Click Cancel to terminate the update or rollback operation.
+#
+rac_upd_step3=Updating (Step 3 of 3)
+rac_upd_updateProg=Update Progress
+rac_upd_action=Action
+rac_upd_progress=Progress
+rac_upd_writing=Updating...
+rac_upd_completed=Completed
+rac_upd_updatingImage=Updating the image, please wait
+rac_upd_fwImageSuccessMsg1=iDRAC firmware image has been updated successfully.
+rac_upd_fwImageSuccessMsg2=iDRAC has been reset. You will not be able to access iDRAC with this browser session.
+rac_upd_fwImageSuccessMsg3=You must close and reconnect to iDRAC using new browser session.
+rac_upd_recImageSuccessMsg=Lifecycle Controller Recovery Image has been updated successfully.
+rac_upd_updateTerm=RAC0304: Firmware update is terminated.
+rac_upd_updateFail=RAC0140: Firmware update has failed.
+rac_upd_updateVFail=RAC0141: Firmware update verification failed.
+rac_upd_notValidFile=RAC0142: The firmware image file is not valid for iDRAC firmware update.
+rac_upd_notInRecState=RAC0143: iDRAC is not in recovery state.
+rac_upd_failed=RAC0144: Failed
+rac_upd_notInRec=RAC0145: Not in recovery
+rac_upd_invPlatform=This image is invalid for this platform.
+#
+# PM
+#
+pm_image=Image
+pm_upd_currVer=Current Version
+pm_upd_newVer=New Version
+pm_upd_image=Branding Subsystem Image
+pm_upd_failedMsg=Branding Subsystem Image Upload Failed
+pm_upd_NAMsg=Branding Subsystem Image Update Not Allowed
+pm_upd_disabledMsg=Branding Subsystem may be disabled
+pm_upd_successMsg=Branding Subsystem Image has been updated successfully.
+pm_upd_step2=Status (2 of 3)
+pm_upd_rstiDRAC=Reboot iDRAC after Update
+pm_upd_uploadedImage=Uploaded Image
+pm_upd_step3=Updating (Step 3 of 3)
+#
+# System -> Properties -> WWN/MAC (flexAddress)
+#
+wwnmac_title=WWN/MAC
+wwnmac_location=Location
+wwnmac_fabric=Fabric
+wwnmac_server_assigned=Server-Assigned
+wwnmac_chassis_assigned=Chassis-Assigned
+wwnmac_remote_assigned=Remote-Assigned
+wwnmac_flexaddr_enabled=FlexAddress is enabled
+wwnmac_flexaddr_disabled=FlexAddress is disabled
+wwnmac_flexaddr_cmcLink=Click here to see CMC information to Enable FlexAddress.
+wwnmac_slotid=Slot ID
+#
+# iDRAC Settings -> Properties -> Settings (NTP)
+#
+ntp_date_time=Date/Time
+ntp_idrac_settings=Time Zone and NTP
+ntp_time_zone=Time Zone
+ntp_protocol_title=Network Time Protocol
+ntp_enable_ntp=Enable Network Time Protocol (NTP)
+ntp_server1=NTP Server 1
+ntp_server2=NTP Server 2
+ntp_server3=NTP Server 3
+ntp_server4=NTP Server 4
+ntp_server_invalid=Invalid NTP Server
+ntp_server_configure=At least one NTP Server must be configured.
+ntp_info_message=Setting changes on the page may not be reflected immediately.  Refreshing the page after an appropriate delay will display the new values.
+ntp_set_tz_error=Unable to set the time zone.
+ntp_set_cfg_error=Unable to set the NTP.
+#
+#
+rac_upd_rollbackConfirm=Are you sure you want to Rollback?
+rac_upd_rollbacksuccess=iDRAC firmware image has been rolled back successfully.
+rac_upd_rollbackFail=RAC0146: Firmware rollback has failed.
+rac_upd_rollbackVer=Rollback Version
+rac_upd_rollbackImageNo=RAC0147: Rollback firmware is not available.
+#
+### Batteries -> Properties
+#
+#
+bat_prop_power_off=RAC0148: Unable to retrieve the batteries information. The system is powered off.
+bat_prop_batteries=Batteries
+bat_prop_bat_title=Use this page to view battery information.
+bat_prop_bat_indBatElem=Individual Battery Elements
+bat_prop_bat_status=Status
+bat_prop_bat_probName=Probe Name
+bat_prop_bat_reading=State
+#
+#
+### Fans -> Properties
+#
+#
+fan_prop_power_off=RAC0149: Unable to retrieve the fan information. The system is powered off.
+fan_prop_fan=Fans
+fan_prop_fan_fanProb=Fan Probes
+fan_prop_fan_info=Fan Probes Information
+fan_prop_fan_title=Use this page to view fan information. 
+fan_prop_fan_fanRedund=Fan Redundancy
+fan_prop_fan_probList=Probe List
+fan_prop_fan_redundStatus=Redundancy Status
+fan_prop_fan_lost=Lost
+fan_prop_fan_full=Full
+#
+fan_prop_fan_warnThres=Warning Threshold
+fan_prop_fan_failThres=Failure Threshold
+fan_prop_fan_status=Status
+fan_prop_fan_probName=Probe Name
+fan_prop_fan_reading=Reading
+fan_prop_fan_min=Min
+fan_prop_fan_max=Max
+#
+#
+### CPU
+#
+#
+cpu_probe_status=Status
+cpu_probe_name=Probe Name
+cpu_probe_reading=State
+cpu_prop_power_off=RAC0149: Unable to retrieve the CPU probe sensor information. The system is powered off.
+#
+#
+### Intrusion -> Properties
+#
+#
+int_prop_power_off=RAC0150: Unable to retrieve the intrusion sensor information. The system is powered off.
+int_prop_int=Intrusion
+int_prop_int_info=Intrusion Information
+int_prop_int_title=Use this page to view intrusion information. 
+int_prop_int_status=Status
+int_prop_int_probName=Probe Name
+int_prop_int_state=State
+#
+#
+### Removable Flash Media -> Properties
+#
+#
+rems_prop_remStorage=Removable Flash Media
+rems_prop_remStorage_off=RAC0151: Unable to retrieve the removable flash media information. The system is powered off.
+rems_prop_elm=Removable Flash Media Elements
+rems_prop_elm_info=Removable Flash Media Information
+rems_prop_elm_title=Use this page to view Removable Flash Media information. 
+rems_prop_elm_rmvsRedund=Internal Dual SD Module
+rems_prop_elm_indRmvsElem=Internal SD Module Status
+#
+rems_prop_elm_redundStatus=Redundancy Status
+#
+rems_prop_elm_status=Status
+rems_prop_elm_loc=Location
+rems_prop_elm_onlineStatus=Online Status
+#
+#
+### Power Supplies -> Properties
+#
+#
+pwrs_prop_power_off=RAC0152: Unable to retrieve the power supply information. The system is powered off.
+pwrs_prop_powerSupp=Power Supplies
+pwrs_prop_elm=Power Supply Elements
+pwrs_prop_elm_info=Power Supplies Information
+pwrs_prop_elm_title=Use this page to view power supply information. 
+pwrs_prop_elm_pwrSupRedund=Power Supplies Redundancy
+pwrs_prop_elm_indPwrSupElem=Individual Power Supply Elements
+pwrs_prop_elm_pwrSupRedundPolicy=Redundancy Policy
+pwrs_prop_elm_pwrSupRedundPolicyYes=Power Supply Redundancy
+pwrs_prop_elm_pwrSupRedundPolicyNo=No Redundancy
+#
+pwrs_prop_elm_redundStatus=Redundancy Status
+pwrs_prop_redundancyConfig=Configuration options are available through
+pwrs_prop_redundancyUnknown=Power redundancy is unknown.
+pwrs_prop_redundancyFull=Power redundancy is full.
+pwrs_prop_redundancyDegraded=Power redundancy is degraded.
+pwrs_prop_redundancyLost=Power redundancy is lost.
+pwrs_prop_powerConfig=Power Configuration
+pwrs_prop_goingToPowerConfig=Going to power Configuration...
+pwrs_prop_psStateAbsent=Absent
+pwrs_prop_psStatePresence=Present
+pwrs_prop_psStateFailure=Failure
+pwrs_prop_psStatePredictive=Predictive failure
+pwrs_prop_psStateACLost=Input lost
+pwrs_prop_psStateLostOutofrange=Input lost or out-of-range
+pwrs_prop_psStatePresentOutofrange=Input present out-of-range
+pwrs_prop_psStateConfigError=Configuration error  
+pwrs_prop_psStateAbsentSysOff=System is powered off
+pwrs_prop_psStatePresenceSysOff=System is powered off
+#
+pwrs_prop_elm_health=Health
+pwrs_prop_elm_status=Status
+pwrs_prop_elm_loc=Location
+pwrs_prop_elm_name=Name
+pwrs_prop_elm_type=Type
+pwrs_prop_elm_inWatt=Input Wattage
+pwrs_prop_elm_outWatt=Output Wattage
+pwrs_prop_elm_maxWatt=Max Wattage
+pwrs_prop_elm_onlineStatus=Online Status
+pwrs_prop_elm_fwVer=FW Version
+pwrs_prop_elm_partno=Part Number
+#
+alert_pwrs_noRedundancyPolicy=RAC0153: Non-redundant power mode: Check the system hardware manual for implications.
+alert_pwrs_degradedStatus=RAC0154: Non-redundant power mode: Secondary power supply has degraded.
+#
+#
+### Temperatures-> Properties
+#
+#
+tem_prop_power_off=RAC0155: Unable to retrieve the temperature information. The system is powered off.
+tem_prop_temp=Temperatures
+tem_prop_prob=Temperature Probes
+tem_prop_prob_info=Temperature Probes Information
+tem_prop_prob_title=Use this page to view temperature sensor information.
+#
+tem_prop_prob_warnThres=Warning Threshold
+tem_prop_prob_failThres=Failure Threshold
+tem_prop_prob_status=Status
+tem_prop_prob_probeName=Probe Name
+tem_prop_prob_reading=Reading
+tem_prop_prob_min=Min
+tem_prop_prob_max=Max
+#
+#
+### Voltages-> Properties
+#
+#
+vol_prop_power_off=RAC0156: Unable to retrieve the voltage information. The system is powered off.
+vol_prop_volt=Voltages
+vol_prop_prob=Voltage Probes
+vol_prop_prob_info=Voltage Probes Information
+vol_prop_prob_title=Use this page to view sensor voltage information.
+vol_prop_prob_status=Status
+vol_prop_prob_probeName=Probe Name
+vol_prop_prob_reading=Reading
+#
+#
+### Power Monitoring-> Properties
+#
+# Status heading
+pwm_prop_status=Status
+pwm_prop_powerControl=Power Control:
+pwm_prop_iwantto=Select...
+pwm_prop_health=Health
+pwm_prop_serverStatus=Server Status
+pwm_prop_realTimeReading=Real-Time Reading
+pwm_prop_powersupplyred=Power Supply Redundancy
+pwm_prop_powercappolicy=Power Cap Policy
+pwm_prop_powercapActive=Active
+pwm_prop_redundand_full=Full
+pwm_prop_redundand_degraded=Degraded
+pwm_prop_redundand_lost=Lost
+pwm_prop_redundand_disabled=Disabled
+pwm_prop_psu_statusUnknown=Unknown
+pwm_prop_psu_statusOk=OK
+pwm_prop_psu_statusWarn=Warning
+pwm_prop_psu_statusCrit=Critical
+# Power heading
+pwm_prop_power=Power
+pwm_prop_present=Present
+pwm_prop_past=Past
+pwm_prop_failureThreshold=Failure Threshold
+pwm_prop_warningThreshold=Warning Threshold
+pwm_prop_currentReading=Current Reading
+pwm_prop_budget=Power Cap Policy
+pwm_prop_history=History
+pwm_prop_lastHour=Last Hour
+pwm_prop_lastDay=Last Day
+pwm_prop_lastWeek=Last Week
+pwm_prop_CMCwarningThreshold=CMC Allocation 
+pwm_prop_power_units=Power Units
+# Present Reading heading
+pwm_prop_presentReading=Present Reading
+pwm_prop_probeName=Probe Name
+# PSU Readings heading
+pwm_prop_psuReadings=Power Supply Unit Readings
+pwm_prop_powerReadings=Power Readings
+pwm_prop_psuName=Name
+# Cumulative Reading heading
+pwm_prop_cumulativeReading=Cumulative Reading
+pwm_prop_totalUsage=Total Usage
+# Historical Peaks heading
+pwm_prop_historicalPeaks=Historical Peaks
+pwm_prop_peakWatts=Peak Watts
+pwm_prop_peakWattsTime=Peak Watts Time
+pwm_prop_peakAmps=Peak Amps
+pwm_prop_peakAmpsTime=Peak Amps Time
+# Historical Trends heading
+pwm_prop_historicalTrends=Historical Trends
+pwm_prop_averageUsage=Average Usage
+pwm_prop_maxPeak=Max Peak
+pwm_prop_maxPeakTime=Max Peak Time
+pwm_prop_minPeak=Min Peak
+pwm_prop_minPeakTime=Min Peak Time
+# System Headroom heading
+pwm_prop_systemHeadroom=System Headroom
+pwm_prop_statistic=Statistic
+pwm_prop_instantaneous=Instantaneous
+pwm_prop_peak=Peak
+# general terms
+pwm_prop_amps=Amps
+pwm_prop_btuh=BTU/hr
+pwm_prop_capacity=Capacity
+pwm_prop_kwh=kWh
+pwm_prop_reading=Reading
+pwm_prop_reset=Reset
+pwm_prop_since=Since
+pwm_prop_time=Time
+pwm_prop_hourly=HOURLY
+pwm_prop_utilization=% UTILIZATION
+pwm_prop_volts=Volts
+pwm_prop_watts=Watts
+pwm_prop_watts_short=W
+pwm_prop_amps_short=A
+pwm_prop_av_watts=Average Watts
+pwm_prop_av_amps=Average Amps
+# Messages
+pwm_prop_pwr_resetAlert=Warning: You are about to reset the reading(s). Are you sure you want to continue?
+pwm_prop_power_off=RAC0157: Unable to retrieve the power sensor information. The system is powered off.
+pwm_err_powerGuage=Error changing power guage.
+pwm_err_min_threshold=Minimum Threshold Error
+pwm_err_max_threshold=Maximum Threshold Error
+pwrm_prop_sys_power_off=The system is powered off. Unable to retrieve sensor information
+pwrm_prop_no_sensor=Unable to retrieve sensor information
+pwrm_prop_no_policy=No Power Cap Policy Set
+#
+#
+### LCD Status-> Properties
+#
+#
+lcd_prop_lcd_status=LCD Status
+lcd_prop_lcd=LCD
+lcd_prop_lcd_main=Front Panel Information
+led_prop_led_main=Front Panel Information
+lcd_prop_lcd_feed=Live Front Panel Feed
+lcdled_prop_lcdled_feed=Live Front Panel Feed
+led_prop_lcd_feed=Live Front Panel Feed
+lcd_prop_lcd_feed_info=Information
+lcd_prop_lcd_feed_infomation=Error messages are currently hidden on the LCD. Select Unhide Errors to display them.
+led_prop_led_feed_infomation=Error messages are currently hidden on the LED(s). Select Unhide Errors to display them.
+lcd_prop_lcd_feed_instruction=Instructions:
+lcd_prop_lcd_feed_instructions1=This is a live feed of the current display on the Front Panel. Use this section to hide or unhide the current error 
+lcd_prop_lcd_feed_instructions2= messages from the LCD screen (this does not prevent future error messages from appearing on the LCD).
+lcdled_prop_lcdled_feed_instructions=This is a live feed is what is currently displayed on the Front Panel. Use this section to hide or unhide current error messages from the LCD screen (this does not prevent future error from appearing on the LCD). 
+lcd_prop_led_feed_instructions=Use this section to hide or unhide current error messages from the LED(s) (this does not prevent future error messages from appearing on the LED(s)). 
+lcd_prop_lcd_sysled=System ID LED: 
+lcd_prop_lcd_screen=LCD Screen: 
+lcd_prop_lcd_setting=Set Home Message: 
+lcd_prop_lcd_vconsole_indication=Enable Virtual Console Indication
+lcd_prop_lcd_setting_title=LCD Settings
+lcd_prop_lcd_info=Instructions:
+lcd_prop_lcd_infomation=Use this section to set the LCD home message. 
+lcd_prop_led_setting_title=System ID LED Settings
+lcd_prop_led_info=Instructions:
+lcd_prop_led_infomation= Use this section to identify the server by its blinking System ID LED.
+lcd_prop_led_timeout=Timeout System ID LED 
+lcd_prop_lcd_timeout=Timeout System ID LED Blink
+lcd_prop_led_timeoutlength=Timeout Length: 
+lcd_prop_led_timeout_action=Actions...
+lcd_prop_led_timeout_blinkon=Blink On 
+lcd_prop_led_timeout_blinkoff=Blink Off
+lcd_prop_led_timeout_1day=Blink On 1 Day Timeout
+lcd_prop_led_timeout_1week=Blink On 1 Week Timeout
+lcd_prop_led_timeout_1month=Blink On 1 Month Timeout
+lcd_prop_led_second=Second(s)
+lcd_prop_lcd_message=LCD Home Message
+lcd_prop_lcd_title=The following message is currently displayed on the System's LCD.
+lcd_prop_lcd_blink=Blink System ID LED Now
+lcd_prop_lcd_blink_lcd=Blink System ID LED Now
+lcd_prop_lcd_unblink=System ID LED
+lcd_prop_lcd_set_message=Set Home message 
+lcd_prop_lcd_text_description=Type a custom message here
+lcd_prop_lcd_clear_events=Clear errors from the Front Panel
+lcd_prop_lcd_show_events=Show errors from the Front Panel
+lcd_prop_lcd_hide_events=Hide errors from the Front Panel
+lcd_prop_lcd_temporary_change=Temporary change (appears until cleared on the LCD)
+lcd_prop_lcd_options_none=None
+lcd_prop_lcd_options_default=Default
+lcd_prop_lcd_options_service_tag=Service Tag
+lcd_prop_lcd_options_system_name=Host Name
+lcd_prop_lcd_options_system_power=System Power
+lcd_prop_lcd_options_asset_tag=Asset Tag
+lcd_prop_lcd_options_system_model=System Model
+lcd_prop_lcd_options_temperature=Ambient Temperature
+lcd_prop_lcd_options_mac_addr=DRAC MAC Address
+lcd_prop_lcd_options_ipv4_addr=DRAC IPv4 Address
+lcd_prop_lcd_options_ipv6_addr=DRAC IPv6 Address
+lcd_prop_lcd_options_custom=User Defined
+lcd_prop_lcd_show=Unhide Errors
+lcd_prop_lcd_default_custom_message=<Create User Defined Home Message. (62 Character Limit)>
+lcd_prop_lcd_undefined=Undefined
+lcd_prop_tem_power_off=The system is powered off. Unable to retrieve temperature information.
+lcd_prop_led_ledmsg_noerr=No Errors Displayed
+lcd_prop_led_ledmsg_enabled=Identify Enabled
+lcd_prop_led_ledmsg_erron=Errors On Server
+lcd_prop_led_ledmsg_erronenabled=Errors on Server.
+lcd_prop_led_ledinfo=This is a live feed of the indicator that is currently displayed on the front panel LEDs. Use this section to hide or unhide the current error messages from the front panel (this does not prevent future error messages from appearing on the front panel).
+lcd_prop_led_ledleds=Front Panel LEDs
+lcd_prop_led_ledsysid=System ID
+lcd_prop_led_ledhealth=Health
+lcd_prop_led_ledelectrical=Electrical Errors
+lcd_prop_led_ledmemory=Memory Errors
+lcd_prop_led_ledhd=Hard-drives
+lcd_prop_led_ledthermal=Thermal Errors
+lcd_prop_led_ledpci=PCI Card Errors
+#
+#
+#testurls
+#
+test_title=This page contains links that can be used to request XML document directly from the server (instead of going through the web pages).
+test_info=The following field and the link under \"CLP Override\" provide a way to set the AIM variable used by ssh to determine if it should run CLP or show the Linux console. Enter a valid iDRAC system user to disable CLP and access the Linux Console through SSH or enter \"racuser\" to enable CLP.
+test_click=Click
+test_here=here
+test_toGetVal=to get the current value of the variable:
+test_reboot=to reboot the iDRAC.
+test_categories=Categories:
+test_tempSensors=Temp Sensors
+#
+test_tempThreshold=Temperature Threshold Sensors
+test_tempSensorMode=Get temperature sensor mode.
+test_lowTempWarn=Low temperature warning.
+test_highTempWarn=High temperature warning.
+test_lowTempFail=Low temperature failure.
+test_highTempFail=High temperature failure.
+test_temperatureSensor=Temperature Sensor
+#
+test_issueSCLogin=Issue SC login.
+test_ESPTesting=ESP testing
+test_currValSysDesc=Current value for sysDesc is:
+test_setValSysDesc=Set value to My sysDesc
+test_newValSysDesc=New value for sysDesc is:
+test_setValIDRAC=Set value to iDRAC System
+test_fwlocation=Firmware Location:
+#
+#
+####Alert & Dynamic Messages
+#
+alert_enableConfirmVM=Any active Virtual Media session will be disconnected momentarily. Do you want to continue?
+alert_enableConfirmVF=Any active vFlash session will be disconnected momentarily. Do you want to continue?
+#
+alert_krbkeytabUploadErrValidationFailed=RAC0158: Uploading kerberos keytab has failed.
+alert_sslCertUploadSuccess=The certificate was uploaded successfully. The iDRAC will now reset and all Web GUI sessions will terminate. Wait for a few minutes before logging back to iDRAC.
+alert_sslCertUploadErrExistingCsrCantDetermine=RAC0159: Certificate upload failed: No pending CSR or private key.
+alert_sslCertUploadErrCsrValidationFailed=RAC0160: Certificate upload failed: Cannot validate the certificate.
+alert_remote_launch=RAC0161: You must have Virtual Console privileges and Single Sign-On login configured to use this feature.
+#
+alert_ADCertUploadErrUnabletoGetIssuerCert=RAC0162: Certificate upload failed. Unable to get issuer certificate.
+alert_ADCertUploadErrUnableToGetCertCRL=RAC0163: Certificate upload failed. Unable to get certificate CRL.
+alert_ADCertUploadErrUnableToDecryptCertSignature=RAC0164: Certificate upload failed. Unable to decrypt certificate's signature.
+alert_ADCertUploadErrUnableToDecryptCRLSignature=RAC0165: Certificate upload failed. Unable to decrypt CRL's signature.
+alert_ADCertUploadErrUnableToDecodeIssuerPublicKey=RAC0166: Certificate upload failed. Unable to decode issuer public key.
+alert_ADCertUploadErrSignatureFailure=RAC0167: Certificate upload failed. Certificate signature failure.
+alert_ADCertUploadErrCRLSignatureFailure=RAC0168: Certificate upload failed. CRL signature failure.
+alert_ADCertUploadErrNotYetValid=RAC0169: Certificate upload failed: Certificate is not valid.
+alert_ADCertUploadErrCRLNotYetValid=RAC0170: Certificate upload failed. CRL is not valid.
+alert_ADCertUploadErrCertHasExpired=RAC0171: Certificate upload failed. Certificate has expired.
+alert_ADCertUploadErrCRLHasExpired=RAC0172: Certificate upload failed. CRL has expired.
+alert_ADCertUploadErrFormatNotBefore=RAC0173: Certificate upload failed. Format error in certificate's notBefore field.
+alert_ADCertUploadErrFormatNotAfter field=RAC0174: Certificate upload failed. Format error in certificate's notAfter field.
+alert_ADCertUploadErrFormatCRLLastUpdate=RAC0175: Certificate upload failed. Format error in CRL's lastUpdate field.
+alert_ADCertUploadErrFormatCRLNextUpdate=RAC0176: Certificate upload failed. Format error in CRL's nextUpdate field.
+alert_ADCertUploadErrOutOfMem=RAC0177: Certificate upload failed. Out of memory.
+alert_ADCertUploadErrSelfSignedCert=RAC0178: Certificate upload failed. Self-signed certificate.
+alert_ADCertUploadErrSelfSignedCertChain=RAC0179: Certificate upload failed. Self-signed certificate in certificate chain.
+alert_ADCertUploadErrUnableToGetLocalIssuerCert=RAC0180: Certificate upload failed. Unable to get local issuer certificate.
+alert_ADCertUploadErrUnableToVerifyFirstCert=RAC0181: Certificate upload failed. Unable to verify the first certificate.
+alert_ADCertUploadErrCertChainTooLong=RAC0182: Certificate upload failed. Certificate chain too long.
+alert_ADCertUploadErrcertRevoked=RAC0183: Certificate upload failed. Certificate revoked.
+alert_ADCertUploadErrInvalidCACert=RAC0184: Certificate upload failed. Invalid CA certificate.
+alert_ADCertUploadErrInvalidNonCACert=RAC0185: Certificate upload failed. Invalid non-CA certificate (has CA markings).
+alert_ADCertUploadErrPathLengthExceeded=RAC0186: Certificate upload failed. Path length constraint exceeded.
+alert_ADCertUploadErrProxyPathLengthExceeded=RAC0187: Certificate upload failed. Proxy path length constraint exceeded.
+alert_ADCertUploadErrProxyCertNotAllowed=RAC0188: Certificate upload failed. Proxy certificates not allowed, set the appropriate flag.
+alert_ADCertUploadErrUnsupportedCertPurpose=RAC0189: Certificate upload failed. Unsupported certificate purpose.
+alert_ADCertUploadErrNotTrusted=RAC0190: Certificate upload failed. Not trusted.
+alert_ADCertUploadErrRejected=RAC0191: Certificate upload failed. Certificate rejected.
+alert_ADCertUploadErrApplicationVerificationFailure=RAC0192: Certificate upload failed. Application verification failure.
+alert_ADCertUploadErrSubjectIssuerMismatch=RAC0193: Certificate upload failed. Subject issuer mismatch.
+alert_ADCertUploadErrAuthoritySubjectKeyMismatch=RAC0194: Certificate upload failed. Authority and subject key identifier mismatch.
+alert_ADCertUploadErrAuthorityIssuerSerialNumberMismatch=RAC0195: Certificate upload failed. Authority and issuer serial number mismatch.
+alert_ADCertUploadErrKeyUsageCertSigning=RAC0196: Certificate upload failed. Key usage does not include certificate signing.
+alert_ADCertUploadErrUnableToGetCRLIssuerCert=RAC0197: Certificate upload failed. Unable to get CRL issuer certificate.
+alert_ADCertUploadErrUnhandledCriticalExtension=RAC0198: Certificate upload failed. Unhandled critical extension.
+alert_ADCertUploadErrKeyUsageCRLSigning=RAC0199: Certificate upload failed. Key usage does not include CRL signing.
+alert_ADCertUploadErrKeyUsageDigitalSignature=RAC0200: Certificate upload failed. Key usage does not include digital signature.
+alert_ADCertUploadErrUnhandledCriticalCRLExtension=RAC0201: Certificate upload failed. Unhandled critical CRL extension.
+alert_ADCertUploadErrInvalidInconsistentCertExtension=RAC0202: Certificate upload failed due to invalid or inconsistent certificate extension.
+alert_ADCertUploadErrInvalidInconsistentCertPolicyExtension=RAC0203: Certificate upload failed due to invalid or inconsistent certificate policy extension.
+alert_ADCertUploadErrNoExplicitPolicy=RAC0204: Certificate upload failed. No explicit policy.
+alert_ADCertUploadErrRFC3779ResourceNotSubsetParentResources=RAC0205: Certificate upload failed. RFC 3779 resource not subset of parent's resources.
+#
+alert_ADCertUploadErrLoadingFile=RAC0206: Certificate upload failed: Not a certificate file.
+alert_ADCertUploadErrGeneric=RAC0207: Certificate upload failed.
+alert_SSHKeyUploadErrGeneric=RAC0208: Upload failed: May be due to invalid key data.
+#
+alert_sslCertUploadErrCannotCopy=RAC0209: Certificate upload failed: iDRAC unable to upload at this time.
+alert_sessionNotValid=RAC0210: Your session is no longer valid.\n  Login again.
+alert_updateFailed=RAC0211: Apply failed.
+alert_plsWait=Please Wait
+alert_plsWaitUpdate=Please wait, updating
+alert_plsWaitUpload=Please wait, uploading
+alert_and=and
+alert_rebootConfirm=Are you sure you want to reboot iDRAC?
+#
+alert_noFileSpec=No file was specified.
+alert_uploadComplete=Upload complete.
+alert_uploadFailed=Upload Failed!
+alert_imgValFailed=Image validation failed.
+alert_updateComplete=Update complete
+alert_updateRestart=Update complete.  The system will now restart.
+alert_areYouSureMsg=Are you sure you want to proceed?
+alert_WebServerWarning=Webserver Disable Warning
+alert_uploadNetworkError=Network error. Upload failed.
+alert_cdFileTypeError=Select .iso for CD emulation type.
+alert_hddFileTypeError=Select .img for Floppy/HDD emulation type.
+#
+alert_submit=You are about to execute a server control action. Are you sure you want to continue?
+alert_reqFail=Request Failed
+alert_enterValFoll=Enter a value for the following:
+alert_enterAlphaNum=Enter an alphanumeric value or a valid symbol for the following (see the online Help for more information): 
+alert_invEmail=The e-mail address is invalid.
+alert_nocharAnd=Character '&' is not supported.
+#
+#
+#
+alert_userNameMustMore=The Username must contain more than 
+alert_userNameMustLess=The Username must contain less than 
+alert_userNamePrintable=The Username must contain only printable characters and no white space.
+alert_spaceError=Do not use whitespace before or after the User Name.
+alert_passwordMustMore=The Password must contain more than 
+alert_passwordMustLess=The Password must contain less than 
+alert_passwordPrintable=The Password must contain only printable characters and no white space.
+alert_chars=characters.
+alert_loginWaitMsg=Logging in ... please wait
+alert_verifyCredential=Verifying Credentials
+alert_loginFailedVerify=RAC0212: Login failed. Verify that username and password is correct.
+alert_missedUserName=RAC0213: Missing Username.
+alert_missedPassword=RAC0214: Missing Password.
+alert_loginFailedPrv=RAC0215: Login failed: User does not have 'Login to iDRAC' privilege.
+alert_loginFailed=RAC0216: Login failed.
+alert_badResponse=RAC0217: iDRAC is not responding.
+alert_validateUserInput=Validating user input.
+alert_commFailed=Communication Failed. 
+alert_sessionCtExceeded=RAC0218: The maximum number of user sessions is reached.
+#
+alert_pwrCmdFailed=RAC0219: Power command failed.
+#
+######System->Power Managment->Power Cap
+#
+alert_invWattRange=The Threshold in Watts value is invalid.
+alert_expWattRange=Maximum Power limit in Watts value is invalid. Expected range:
+alert_invBTURange=The Threshold in BTU value is invalid.\nEnter a whole number in the range:
+alert_expBTURange=The Threshold in BTU value is invalid. Expected range:
+alert_invPercent=The Threshold in Percentage value is invalid.\nEnter a whole number in the range: [0 - 100]
+alert_expPercentRange=The Threshold in Percentage value is invalid. Expected range: [0 - 100]
+alert_confirmWattsMsg=Maximum Threshold limit in Watts value is less than recommended value.\nDo you want to continue?
+alert_confirmBTUMsg=Maximum Threshold limit in BTU value is less than recommended value.\nDo you want to continue?
+alert_invMaxWatt=The Threshold in Watts value should be less than maximum power limit value
+alert_invMaxBTU=The Threshold in BTU value should be less than maximum power limit value
+ 
+alert_invMaxBTU=The Threshold in BTU value should be less than maximum power limit value.
+#
+#
+######System->Logs->System Event Log
+#
+alert_delLog=You are about to delete the contents of the log. Are you sure you want to continue?
+#
+#
+######System->Logs->Alert Management->Traps Settings
+#
+alert_field=field
+alert_notFound=not found
+alert_invSMTP=RAC0220: Invalid SMTP Server IP Address.
+#
+######System->Logs->Alert Management->Email Alert Settings
+#
+alert_emailTooLong=RAC0221: The Destination E-mail Address is too long. The maximum length is 64 characters.
+alert_destEmailInvalid=RAC0222: The Destination E-mail Address is invalid.
+alert_invEmailDesc=RAC0223: Enter an alphanumeric value or a valid symbol for the following (see the online help for more information):
+alert_emailDesc=RAC0224: Invalid e-mail description.
+alert_sendFailed=RAC0225: Sending the test mail failed.
+alert_sendReqProFailed=RAC0226: Send Failed:  Request processing failed.
+alert_sendSuccess=RAC0310: The test mail was successfully sent.
+#
+#System->Logs->Last Crash Screen
+#
+alert_clearASR=You are about to delete the Last Crash Screen. Are you sure you want to continue?
+#
+#System->vFlash
+#
+alert_sdCardNotDetected=RAC0227: SD card is not detected: Insert an SD Card of size greater than 256MB.
+alert_sdCardDetected=RAC0228: SD Card is detected with an unrecognized format. Click Initialize to initialize the card.
+alert_sdCardDetectedNP=RAC0229: SD card detected, unrecognized format according to the settings below. Insufficient privileges to initialize the card.
+alert_formatConfirm=RAC0230: This operation erases all data in the SD Card. Do you want to continue?
+alert_formatPartConfirm=RAC0231: This operation erases all data in the partition. Do you want to continue?
+alert_applyFormatConfirm=RAC0232: This operation may take a few minutes to complete. It re-initializes the vFlash partition to the specified size, erases all existing data, and formats a part of the SD card. Do you want to continue?
+alert_ImageUploadSucess=RAC0233: Image file uploaded successfully.
+alert_ImageUploadBlock=RAC0234: vFlash image upload is in-progress. Try again later.
+alert_ImageUploadTimeout=RAC0235: vFlash image upload timed out.
+alert_ImageUploadFailed=RAC0236: Invalid image: Upload failed
+alert_uploadError=RAC0237: An error occurred while uploading the vFlash image.
+alert_sdCardBusy=RAC0238: vFlash is currently in-use by another process. Try again later.
+alert_sdlocked=RAC0239: SD Card is write-protected.
+alert_vFlashDisabled=RAC0240: vFlash is disabled.
+alert_vFlashNoSpace=RAC0241: The specified size exceeds the available space.
+alert_vFlashNoPart=RAC0242: The selected partition does not exist.
+alert_vFlashHasPart=RAC0243: Partition failed: A partitioning conflict has occurred with another session.
+alert_vFlashLabelUnique=RAC0244: The partition label must be unique.
+alert_vFlashPartBusy=RAC0245: The partition is in-use by another process.
+alert_vFlashPartReadOnly=RAC0246: Partition is read-only.
+alert_vFlashPartAttached=RAC0247: The partition is currently attached.
+alert_deleteConfirm=RAC0248: This operation deletes the partition permanently. Do you want to continue?
+alert_vFlashPartsBusy=RAC0249: One or more partitions are in-use by another process.
+alert_vFlashPartsReadOnly=RAC0250: One or more partitions are read-only.
+alert_vFlashPartsAttached=RAC0251: One or more partitions are currently attached.
+alert_vFlashPartsDetached=RAC0252: One or more partitions are currently detached.
+alert_vFlashCancelConfirmMsg=Are you sure you want to cancel the upload?
+alert_sdnopartition=Partitions are not created. To create partitions, go to the Create Empty Partition or Create from Image pages.
+alert_uploadInProgress=An existing partition upload operation is in-progress. Try again once this operation has completed. To monitor the progress of this operation, click  Refresh located on the vFlash Manage Partitions page.
+alert_note=Uploaded images are limited to a size less than 2 GB. 
+alert_retry=Retry 'Create from Image' operation.
+#
+#System->console/Media
+#
+alert_kvmDisabledWarning=Virtual Console has been disabled. Do you want to continue using Virtual Media redirection?
+alert_kvmconfigKVMDisabledWarning=You are about to change device configuration. All existing redirection sessions will be closed. Do you want to continue?
+alert_formatCheck=Click Apply to enable SD card before initializing.
+alert_formatCheck_VFKEnable=Click Apply to disable vFlash before initializing.
+#
+#Remote Access->Configuration->Network
+#
+alert_dataCallback=dataCallback does not handle: 
+alert_invalidDNSDomain=Invalid DNS Domain Name.
+alert_invalidDNSiDRAC=Invalid DNS DRAC Name.
+#
+alert_invIPv4addr=RAC0253: The IP Address is invalid. Expected range: [1.0.0.0 - 223.255.255.255 excluding: 127 (first octet)].
+alert_invIPv4gateway=RAC0254: The Gateway Address is invalid. Expected range: [0.0.0.0 or 1.0.0.0 - 223.255.255.255 excluding: 127 (first octet)].
+alert_invIPv4netMask=RAC0255: The Subnet Mask is invalid. Expected ranges are: 255.XXX.0.0 [Class A],  255.255.XXX.0 [Class B], 255.255.255.XXX [Class C], and XXX.0.0.0 [others], where XXX  must be valid (0,128,192,224,240,248,252,254).
+alert_invIPv4DNS1=RAC0256: The Preferred DNS Server Address is invalid. Expected range: [0.0.0.0 or 1.0.0.0 - 223.255.255.255 excluding: 127 (first octet)].
+alert_invIPv4DNS2=RAC0257: The Alternate DNS Server Address is invalid. Expected range: [0.0.0.0 or 1.0.0.0 - 223.255.255.255 excluding: 127 (first octet)].
+alert_invIPv4DNS1and2=RAC0258: Invalid IPv4 in DNS1 or DNS2.
+#
+alert_invIPv6addr=RAC0259: Invalid IPv6 address.
+alert_invIPv6Prefix=RAC0260: Invalid IPv6 prefix length. Expected range: 1-128.
+alert_invIPv6gateway=RAC0261: Invalid IPv6 gateway address.
+alert_invIPv6DNS1=RAC0262: The Preferred IPv6 DNS Server Address is invalid.
+alert_invIPv6DNS2=RAC0263: The Alternate IPv6 DNS Server Address is invalid.
+alert_invIPv6DNS1and2=RAC0264: Invalid IPv6 in DNS1 or DNS2.
+#
+alert_vlanMand=RAC0265: Specify the VLAN ID and VLAN Priority.
+alert_invVLanId=RAC0266: Invalid VLAN ID. Expected range: 1-4094.
+alert_invVLanPri=RAC0267: Invalid VLAN Priority. Expected range: 0-7.
+#
+alert_nicDisabled=RAC0268: NIC is disabled.
+alert_nicMTUInvalid=RAC0269: The NIC MTU is invalid. Expected range: 576-1500.
+alert_ipv4AndIPv6Disabled=RAC0270: IPv4 and IPv6 are disabled.
+alert_lock=RAC0271: Continuing will lock user account.
+alert_okToContinue=Click \"OK\" to continue or \"Cancel\" to change the settings.
+alert_YesToContinue=Click \"Yes\" to continue or \"No\" to keep settings unchanged.
+#
+alert_nicWarnMsg1=RAC0272: Disabling NIC will prevent the user from accessing the  iDRAC remotely through Web GUI, Remote Racadm, Ssh, and Telnet. Local Racadm and serial interface will continue to work.
+alert_nicWarnMsg2=RAC0273: iDRAC access will be limited to running the Racadm utility on the local server or using the serial interface.
+alert_nicWarnMsg3=RAC0274: See the iDRAC user documentation for more information on using the Racadm utility or the serial interface.
+alert_nicWarnMsg4=RAC0275: Click OK to disable the NIC. Click Cancel to keep the setting unchanged.
+alert_nicWarnMsg5=RAC0276: To save the changes and update this page, click Apply.
+alert_ipv4WarnMsg=RAC0277: Disabling IPv4 prevents access to iDRAC using an IPv4 address.
+alert_ipv6WarnMsg=RAC0278: Disabling IPv6 prevents access to iDRAC using an IPv6 address.
+#
+alert_invEncryptKey=RAC0279: Invalid Encryption Key. Expected format: 0 to 40 characters, even number of characters and no blank spaces are allowed.
+#
+#Remote Access->Configuration->Network->Security Settings
+#
+alert_ipRangeInvalid=RAC0280: The IP Range Address is invalid. Expected range: 0.0.0.0 - 255.255.255.255.
+alert_ipRangeSubnetInvalid=RAC0281: The IP Subnet Mask is invalid. Expected range: 0.0.0.0 - 255.255.255.255.
+alert_ipBlockFCountVal=RAC0282: IP Blocking Fail Count is invalid. Expected range: 2-16.
+alert_ipBlockFWindowVal=RAC0283: IP Blocking Fail Window is invalid. Expected range: 10-65535.
+alert_ipBlockFPTime=RAC0284: IP Blocking Fail Penalty Time is invalid. Expected range: 10-65535.
+#
+#Remote Access->Configuration->Users
+#
+alert_noUserFound=No users Found.
+#
+#Remote Access->Configuration->Users->User Configuration
+#
+alert_userNameBlank=RAC0285: User name cannot be empty.
+alert_passwordBlank=RAC0286: New Password and Confirm New Password fields cannot be empty.
+alert_confPasswordBlank=RAC0287: Confirm password cannot be blank.
+alert_notAlphaNumeric=RAC0288: Invalid entry: Entry must be exclusively alphanumeric characters and valid symbols.
+alert_passwordNotMatch=RAC0289: Values in New Password and Confirm New Password fields do not match.
+alert_newPassword=New Password
+alert_userName=User Name
+alert_userNameSpace=RAC0290: The username cannot be only whitespace.
+alert_userExist=A user with this name already exists. Select a different Username.
+alert_userBadChars=RAC0291: The user name cannot contain: /, \\, @, ., or \" (quotation mark).
+#
+#Remote Access->Configuration->Active Directory->Test Settings
+#
+alert_testUserName=Test Username
+alert_testUserPass=Test User Password
+alert_mustLess=must contain less than
+alert_mustPrintable=must contain only printable characters and no white space.
+alert_mustPrintableOnly=must contain only printable characters.
+alert_mustConfig=must be configured.
+#
+#Remote Access->Configuration->Active Directory-> Active Directory Configuration and Management
+#
+alert_noValCertLoaded=RAC0292: A valid certificate is not loaded.
+alert_validCACertRequest=RAC0293: When certificate validation is enabled, a valid root Certificate Authority (CA) certificate must be uploaded. The CA certificate is used to verify the directory server SSL certificate.
+alert_roleGroup=Role Group
+#
+alert_nameMustLess=Name must contain less than
+alert_nameMustPrintable=Name must contain only printable characters and no white space.
+alert_domainMustLess=Domain must contain less than
+alert_domainMustPrintable=Domain must contain only printable characters and no white space.
+alert_errorNavigation=Error - navigation beyond wizard end.
+#
+alert_atleastOneNonePriv=At least one role group must be configured that allows access to iDRAC.
+alert_timeoutBetween=Timeout must be an integer between 
+alert_domainContSerAddr=Domain Controller Server Address
+alert_atleastOneDomain=At least one Domain Controller Server Address must be configured.
+alert_globalCatSerAddr=Global Catlog Server Address
+alert_atleastOneGlobalCat1=At least one Global Catalog Server Address must be configured if the role groups and login users are different domains.
+alert_atleastOneGlobalCat2=In this cross domain case, only universal groups can be used as the role groups or nested user groups.
+alert_atleastOneRoleGroup=At least one Role Group must be configured.
+alert_GDomainWithoutGroup=has a Group Domain configured without having a Group Name.
+alert_mustDomainConfig=must have its Domain configured.
+#
+alert_iDRACMustConfig=iDRAC Name must be configured.
+alert_iDRACDomainConfig=iDRAC Domain must be configured.
+#
+alert_userDomMustLess=The User Domain Name must contain less than 
+alert_userDomPrintable=The User Domain Name must contain only printable characters and no white space.
+alert_reachMaxDomain=You have reached the maximum number of domains.\nYou must delete at least one existing domain before adding a new domain.
+alert_mustSelUserDomainUpdate=You must select a User Domain Name to update.
+alert_mustSupplyVal=You must provide a value.
+alert_mustSelUserDomainDelete=You must select a User Domain Name to delete.
+#
+#Remote Access->Configuration->Serial
+#
+alert_timeoutVal=The Timeout value is invalid. Expected range: [60-1920]
+alert_histBuffSize=The History Buffer Size value is invalid. Expected range: [1-8192]
+#
+#Remote Access->Configuration->Serial Over LAN->Advanced Settings
+#
+alert_charAccInterval=RAC0294: The Character Accumulate Interval value is invalid. Expected range: 1-255.
+alert_charThresholdVal=RAC0295: The Character Send Threshold value is invalid. Expected range: 1-255.
+#
+#Remote Access->Configuration->Services
+#
+alert_enterCommName=Please enter a value for the Community Name.
+alert_invCommName=Error: Invalid value for Community Name=, only use an alphanumeric or valid symbol. See the online Help for more information.
+alert_invWebSerTimeout=The Webserver Timeout value is invalid. Expected range: [60-10800, 01-025060, or 0x3C-0x2A30 seconds]
+alert_invSSHTimeout=The SSH Timeout value is invalid. Expected range: [0 or 0x0, 60-10800, 01-025060 or 0x3C-0x2A30 seconds]
+alert_invTelTimeout=The Telnet Timeout value is invalid. Expected range: [0 or 0x0, 60-10800, 01-025060 or 0x3C-0x2A30 seconds]
+alert_invWebHttpPort=The Webserver HTTP Port value is invalid. Expected range: [1-65535, 01-0177777, or 0x1-0xFFFF]
+alert_invWebHttpsPort=The Webserver HTTPS Port value is invalid. Expected range: [1-65535, 01-0177777, or 0x1-0xFFFF]
+alert_invSSHPort=The SSH Port value is invalid. Expected range: [1-65535, 01-0177777, or 0x1-0xFFFF]
+alert_invTelPort=The Telnet Port value is invalid. Expected range: [1-65535, 01-0177777, or 0x1-0xFFFF]
+alert_invKVMPort=The Remote Presence Port value is invalid. Expected range: [1-65535, 01-0177777, or 0x1-0xFFFF]
+alert_enterUniqPort=Please enter unique port numbers.
+alert_modifyPort=Modifying the SSL Encryption, HTTP or HTTPS port numbers will terminate the current GUI session.
+alert_closeBrowser=Please wait a few minutes before opening a new GUI session. Are you sure you want to continue?
+alert_Continue=Click \"OK\" to continue.
+alert_DisableWebServer=Disabling the Webserver terminates the current Web interface session and you cannot log in to iDRAC Web interface.  Also, other iDRAC interfaces such as remote RACADM and WSMAN will be disabled.
+alert_AreYouSure=Are you sure you want to continue?
+#
+#
+#Remote Access->Configuration->Smart Card
+#
+alert_enableSmtCardMsg1=Enabling Smart Card Logon disables the following interfaces: SSH, Telnet, Serial, IPMI Over LAN and Remote RACADM. 
+alert_enableSmtCardMsg2=Enabling Smart Card Logon disables the following interfaces: SSH, Telnet, Serial, IPMI Over LAN.
+#
+#Remote Access->Configuration->Directory Service->Generic LDAP
+#
+alert_gl_serverAddr=LDAP Server Address
+alert_gl_serverPortBetween=The Generic LDAP Server Port value is invalid. Expected range: [1-65535, 01-0177777, or 0x1-0xFFFF]
+alert_gl_atleastOneSrv=At least one Generic LDAP Server Address must be configured.
+alert_gl_atleastOneBaseDN=Base DN to Search must be specified.
+alert_gl_bindDN=Bind DN
+alert_gl_bindPwd=Bind Password
+alert_gl_baseDN=Base DN
+alert_gl_userlogin=Attribute of User Login
+alert_gl_groupmem=Attribute of Group Membership
+alert_gl_search=Search Filter
+#
+### Remote Access -> Configuration -> LDAP
+#
+rac_conf_ldap=LDAP
+rac_conf_ldap_cert=Directory Service CA Certificate
+rac_conf_ldap_groupdn=Group DN
+rac_conf_ldap_config=Generic LDAP Configuration and Management
+rac_conf_ldap_title=The Generic LDAP Configuration and Management displays the current iDRAC7 Generic LDAP settings.
+rac_conf_ldap_comSet=Common Settings
+rac_conf_ldap_groupSet=Group Settings
+rac_conf_ldap_enabled=Enable Generic LDAP
+rac_conf_ldap_ldapEnabled=Generic LDAP Enabled
+rac_conf_ldap_enCertVal=Certificate Validation Enabled
+rac_conf_ldap_serverAddr=LDAP Server Address
+rac_conf_ldap_serverAddr_desc=FQDN or IP, must match the server certificate if certificate validation is enabled
+rac_conf_ldap_serverPort=LDAP Server Port
+rac_conf_ldap_serverPort_desc=Only SSL port is supported
+rac_conf_ldap_baseDnSearch=Base DN to Search
+rac_conf_ldap_baseDnSearch_desc=e.g. dc=example,dc=com, required
+rac_conf_ldap_attrUserLogin=Attribute of User Login
+rac_conf_ldap_attrUserLogin_desc=e.g. uid
+rac_conf_ldap_attrGrpMem=Attribute of Group Membership
+rac_conf_ldap_attrGrpMem_desc=e.g. member or uniquemember
+rac_conf_ldap_namesearch=Use Distinguished Name to Search Group Membership
+rac_conf_ldap_namesearch_desc=if unchecked, username will be used
+rac_conf_ldap_attrBindDN=Bind DN
+rac_conf_ldap_attrBindDN_desc=required if anonymous bind is not allowed
+rac_conf_ldap_bindPwd=Bind Password
+rac_conf_ldap_bindPwd_desc=required if anonymous bind is not allowed
+rac_conf_ldap_searchFilter=Search Filter
+rac_conf_ldap_searchFilter_desc=e.g. objectclass=*, optional
+rac_conf_ldap_session_timeout=The Web session has timed out.
+#
+#Step 1 of 3
+#
+rac_conf_ldap1_step1of3=Step 1 of 3
+rac_conf_ldap1_info=This page is used to configure the digital certificate used during initiation of SSL connections when communicating with an generic LDAP server; these communications use LDAP over SSL (LDAPS). When certificate validation is enabled, it is necessary to upload the certificate of the Certificate Authority (CA) that issued the certificate used by the LDAP server during initiation of SSL connections. The CA's certificate is used to validate the authenticity of the certificate provided by the LDAP server during SSL initiation.
+rac_conf_ldap1_certSet=Certificate Settings
+rac_conf_ldap1_enCertVal=Enable Certificate Validation
+rac_conf_ldap1_uploadLdapCert=Upload Directory Service CA Certificate
+rac_conf_ldap1_currLdapCert=Current Directory Service CA Certificate
+rac_conf_ldap1_cert=Certificate
+rac_conf_ldap1_noValidCert=RAC0296: A valid certificate is not loaded.
+#
+#Step 2 of 3
+#
+rac_conf_ldap2_step2of3=Step 2 of 3
+rac_conf_ldap2_info=This page is used to configure location information about generic LDAP servers and user accounts.
+rac_conf_ldap2_comSet=Common Settings
+#
+#Step 3a of 3
+#
+rac_conf_ldap3a_step3aof3=Step 3a of 3
+rac_conf_ldap3a_info=This page is used to configure the privilege groups used to authorize users.  When Generic LDAP is enabled, it is necessary to configure Role Group(s) used that specify authorization policy for iDRAC users.
+#
+#Step 3b of 3
+#
+rac_conf_ldap3b_step3bof3=Step 3b of 3
+rac_conf_ldap3b_info=This page is used to configure each Role Group used to control authorization policy for users.  When Generic LDAP is enabled, it is necessary to configure each Role Group to enforce authorization policy regarding access to iDRAC features.
+#
+#
+### Remote Access -> Configuration -> LDAP ->Test Settings
+#
+rac_conf_ldap_testSet=Test Generic LDAP Settings
+rac_conf_ldap_pingDirServer=Ping Directory Server
+rac_conf_ldap_dirSerDNSName=Directory Server DNS Name
+rac_conf_ldap_conDirServer=LDAP connection to the Directory Server
+rac_conf_ldap_certVal=Certificate Validation
+rac_conf_ldap_userDNexist=User DN existence
+rac_conf_ldap_userAuthent=User Authentication
+rac_conf_ldap_userAuthor=User Authorization
+#
+### Remote Access -> Configuration -> Directory Service
+#
+#
+rac_conf_dirservice_ms_ad=Microsoft Active Directory
+rac_conf_dirservice_gl=Generic LDAP Directory Service
+rac_conf_dirservice=Directory Service
+rac_conf_dirservice_title=Only one type of directory service, Active Directory or generic LDAP can be used at a time.
+rac_conf_dirservice_info=Test
+#
+#
+#Remote Access->Diagnostics
+#
+alert_cmdNotSupport=This command is not supported from the GUI.
+alert_invIPAddrErr=ERROR: Invalid IP address.
+alert_ipBroadCastErr=ERROR: IP address is broadcast address.
+alert_cmdSyntaxErr=ERROR: Invalid syntax. The specified subcommand does not require any options.
+alert_troubleshootingIdentifyTimeout=Please enter a timeout value between 1 and 255 seconds. Entering a value of 0 will cause the LED to blink indefinitely.
+#
+#Remote Access->Update
+#
+alert_uploadFwException=A browser exception has occurred while trying to upload the firmware file.\nThe exception is: 
+#
+#CMC Summary
+#
+cmc_cmc_title=CMC
+cmc_summary=Summary
+cmc_option_button_title=Launch the CMC Web Interface
+cmc_table_title=Chassis Management Controller
+cmc_accessibility=Accessibility
+cmc_fw_version=Firmware Version
+cmc_ip_address=IP Address
+cmc_ipv6_address=IPv6 Address
+#
+#Country Names
+#
+count_AF=Afghanistan
+count_AL=Albania
+count_DZ=Algeria
+count_AS=American Samoa
+count_AD=Andorra
+count_AO=Angola
+count_AI=Anguilla
+count_AQ=Antarctica
+count_AG=Antigua and Barbuda
+count_AR=Argentina
+count_AM=Armenia
+count_AW=Aruba
+count_AU=Australia
+count_AT=Austria
+count_AZ=Azerbaijan
+count_BS=Bahamas
+count_BH=Bahrain
+count_BD=Bangladesh
+count_BB=Barbados
+count_BY=Belarus
+count_BE=Belgium
+count_BZ=Belize
+count_BJ=Benin
+count_BM=Bermuda
+count_BT=Bhutan
+count_BO=Bolivia
+count_BA=Bosnia and Herzegovina
+count_BW=Botswana
+count_BV=Bouvet Island
+count_BR=Brazil
+count_IO=British Indian Ocean Territory
+count_BN=Brunei Darussalam
+count_BG=Bulgaria
+count_BF=Burkina Faso
+count_BI=Burundi
+count_KH=Cambodia
+count_CM=Cameroon
+count_CA=Canada
+count_CV=Cape Verde
+count_KY=Cayman Islands
+count_CF=Central African Republic
+count_TD=Chad
+count_CL=Chile
+count_CN=China
+count_CX=Christmas Island
+count_CC=Cocos (Keeling) Islands
+count_CO=Colombia
+count_KM=Comoros
+count_CG=Congo
+count_CK=Cook Islands
+count_CR=Costa Rica
+count_CI=Cote D'Ivoire (Ivory Coast)
+count_HR=Croatia (Hrvatska)
+count_CU=Cuba
+count_CY=Cyprus
+count_CZ=Czech Republic
+count_CS=Czechoslovakia
+count_DK=Denmark
+count_DJ=Djibouti
+count_DM=Dominica
+count_DO=Dominican Republic
+count_TP=East Timor
+count_EC=Ecuador
+count_EG=Egypt
+count_SV=El Salvador
+count_GQ=Equatorial Guinea
+count_ER=Eritrea
+count_EE=Estonia
+count_ET=Ethiopia
+count_FK=Falkland Islands (Malvinas)
+count_FO=Faroe Islands
+count_FJ=Fiji
+count_FI=Finland
+count_FX=France, Metropolitan
+count_FR=France
+count_GF=French Guiana
+count_PF=French Polynesia
+count_TF=French Southern Territories
+count_GA=Gabon
+count_GM=Gambia
+count_GE=Georgia
+count_DE=Germany
+count_GH=Ghana
+count_GI=Gibraltar
+count_GB=Great Britain (UK)
+count_GR=Greece
+count_GL=Greenland
+count_GD=Grenada
+count_GP=Guadeloupe
+count_GU=Guam
+count_GT=Guatemala
+count_GN=Guinea
+count_GW=Guinea-Bissau
+count_GY=Guyana
+count_HT=Haiti
+count_HM=Heard and McDonald Islands
+count_HN=Honduras
+count_HK=Hong Kong
+count_HU=Hungary
+count_IS=Iceland
+count_IN=India
+count_ID=Indonesia
+count_IR=Iran
+count_IQ=Iraq
+count_IE=Ireland
+count_IL=Israel
+count_IT=Italy
+count_JM=Jamaica
+count_JP=Japan
+count_JO=Jordan
+count_KZ=Kazakhstan
+count_KE=Kenya
+count_KI=Kiribati
+count_KP=Korea (North)
+count_KR=Korea (South)
+count_KW=Kuwait
+count_KG=Kyrgyzstan
+count_LA=Laos
+count_LV=Latvia
+count_LB=Lebanon
+count_LS=Lesotho
+count_LR=Liberia
+count_LY=Libya
+count_LI=Liechtenstein
+count_LT=Lithuania
+count_LU=Luxembourg
+count_MO=Macau
+count_MK=Macedonia
+count_MG=Madagascar
+count_MW=Malawi
+count_MY=Malaysia
+count_MV=Maldives
+count_ML=Mali
+count_MT=Malta
+count_MH=Marshall Islands
+count_MQ=Martinique
+count_MR=Mauritania
+count_MU=Mauritius
+count_YT=Mayotte
+count_MX=Mexico
+count_FM=Micronesia
+count_MD=Moldova
+count_MC=Monaco
+count_MN=Mongolia
+count_MS=Montserrat
+count_MA=Morocco
+count_MZ=Mozambique
+count_MM=Myanmar
+count_NA=Namibia
+count_NR=Nauru
+count_NP=Nepal
+count_AN=Netherlands Antilles
+count_NL=Netherlands
+count_NT=Neutral Zone
+count_NC=New Caledonia
+count_NZ=New Zealand (Aotearoa)
+count_NI=Nicaragua
+count_NE=Niger
+count_NG=Nigeria
+count_NU=Niue
+count_NF=Norfolk Island
+count_MP=Northern Mariana Islands
+count_NO=Norway
+count_OM=Oman
+count_PK=Pakistan
+count_PW=Palau
+count_PA=Panama
+count_PG=Papua New Guinea
+count_PY=Paraguay
+count_PE=Peru
+count_PH=Philippines
+count_PN=Pitcairn
+count_PL=Poland
+count_PT=Portugal
+count_PR=Puerto Rico
+count_QA=Qatar
+count_RE=Reunion
+count_RO=Romania
+count_RU=Russian Federation
+count_RW=Rwanda
+count_GS=S. Georgia and S. Sandwich Isls.
+count_KN=Saint Kitts and Nevis
+count_LC=Saint Lucia
+count_VC=Saint Vincent and the Grenadines
+count_WS=Samoa
+count_SM=San Marino
+count_ST=Sao Tome and Principe
+count_SA=Saudi Arabia
+count_SN=Senegal
+count_SC=Seychelles
+count_SL=Sierra Leone
+count_SG=Singapore
+count_SK=Slovak Republic
+count_SI=Slovenia
+count_SB=Solomon Islands
+count_SO=Somalia
+count_ZA=South Africa
+count_ES=Spain
+count_LK=Sri Lanka
+count_SH=St. Helena
+count_PM=St. Pierre and Miquelon
+count_SD=Sudan
+count_SR=Suriname
+count_SJ=Svalbard and Jan Mayen Islands
+count_SZ=Swaziland
+count_SE=Sweden
+count_CH=Switzerland
+count_SY=Syria
+count_TW=Taiwan
+count_TJ=Tajikistan
+count_TZ=Tanzania
+count_TH=Thailand
+count_TG=Togo
+count_TK=Tokelau
+count_TO=Tonga
+count_TT=Trinidad and Tobago
+count_TN=Tunisia
+count_TR=Turkey
+count_TM=Turkmenistan
+count_TC=Turks and Caicos Islands
+count_TV=Tuvalu
+count_UM=US Minor Outlying Islands
+count_SU=USSR (former)
+count_UG=Uganda
+count_UA=Ukraine
+count_AE=United Arab Emirates
+count_UK=United Kingdom
+count_US=United States
+count_UY=Uruguay
+count_UZ=Uzbekistan
+count_VU=Vanuatu
+count_VA=Vatican City State (Holy See)
+count_VE=Venezuela
+count_VN=Viet Nam
+count_VG=Virgin Islands (British)
+count_VI=Virgin Islands (U.S.)
+count_WF=Wallis and Futuna Islands
+count_EH=Western Sahara
+count_YE=Yemen
+count_YU=Yugoslavia
+count_ZR=Zaire
+count_ZM=Zambia
+count_ZW=Zimbabwe
+#
+###main page
+#
+main_sysDetails=System Details
+#
+#Server Health
+#
+main_server_health=Server Health
+main_severity=Severity
+main_status=Status
+main_component=Component
+main_batteries=Batteries
+main_fans=Fans
+main_intrusion=Intrusion
+main_removableFlashMedia=Removable Flash Media
+main_powersupplies=Power Supplies
+main_temperatures=Temperatures
+main_voltages=Voltages
+main_vflash=vFlash
+#
+#Quick Launch Tasks
+#
+main_quick_launch_tasks=Quick Launch Tasks
+main_pwrOnOff=Power ON / OFF
+main_pwrCycleSys=Power Cycle System (cold boot)
+main_view_logs=View Logs
+main_launch_viewer=Launch Virtual Console
+main_view_sel_log=View System Event Log
+main_view_rac_log=View iDRAC Log
+main_update_firmware=Update Firmware
+main_idrac_reset=Reset iDRAC
+main_idrac_reset_default=Reset iDRAC to Default Settings
+main_quick_launch_con=Quick Launch Console
+main_after_idrac_reset_message=iDRAC is resetting, it may take several minutes for iDRAC to reset. You will not be able to access the iDRAC with this browser session. Please close and reconnect to the iDRAC using new browser session.
+main_after_idrac_reset_to_default_message=It may take several minutes for iDRAC to reset. The iDRAC resets to its default setting and does not retain the IP address that was provided by DHCP.
+main_sysidledonoff=System ID LED ON/OFF
+main_sysidled=System ID LED
+main_sysidledalert=You are about to execute a server control action. Are you sure you want to continue?
+#
+#Server Information
+#
+main_server_information=Server Information
+main_power_state=Power State
+main_system_model=System Model
+main_system_revision=System Revision
+main_system_host_name=System Host Name
+main_operating_system=Operating System
+main_operating_system_version=Operating System Version
+main_service_tag=Service Tag
+main_express_service_code=Express Service Code
+main_bios_version=BIOS Version
+main_firmware_version=Firmware Version
+main_IPAddr=IP Address(es)
+main_MACAddr=iDRAC MAC Address
+main_LCC_firmware_version=Lifecycle Controller Firmware
+main_Location=Location
+main_Location_Datacenter=Datacenter
+main_Location_Row=Row
+main_Location_Rack=Rack  
+main_lcc_maser_disabled=Lifecycle Controller Disabled
+#
+#Recent Logged Events
+#
+main_recent_logged_events=Recent Logged Events
+main_date_time=Date/Time
+main_description=Description
+#
+#DNS SRV Lookup
+#
+ad_dc_srv_lookup_domain=Look Up Domain Controllers with DNS
+ad_dc_srv_lookup_domain_enable=Look Up Domain Controllers with DNS
+ad_dc_srv_lookup_domain_login=User Domain from Login
+ad_dc_srv_lookup_userdomain_login=User Domain from Login
+ad_dc_srv_lookup_domain_specify=Specify a Domain
+ad_dc_srv_lookup_domain_specify_ctrl=Specify Domain Controller Addresses
+#
+ad_gc_srv_lookup_cat=Look Up Global Catalog Servers with DNS
+ad_gc_srv_lookup_cat_enable=Look Up Global Catalog Servers with DNS
+ad_gc_srv_lookup_domain_root=Root Domain Name
+ad_gc_srv_lookup_domain_specify=Specify Global Catalog Server Addresses
+#
+alert_dcSrvLookupDomainNameMsg=Specify a Domain
+alert_dcSrvLookupDomainNameConfigMsg=RAC0297: Specify a Domain Controller Address must be configured.
+alert_gcSrvRootDomainNameMsg=Root Domain Name
+alert_gcSrvRootDomainNameConfigMsg=RAC0298: Root Domain Name must be configured.
+#
+#Attached Media
+#
+attachedmedia_title=Attached Media
+#
+#Remote File Share
+#
+remotefileshr_title=Remote File Share
+remotefileshr_pagedesc=RAC0299: Remote file shares with IPv6 connections cannot be accessed using this feature.
+remotefileshr_attachmode=Attach Mode
+remotefileshr_domainname=Domain Name
+remotefileshr_username=User Name
+remotefileshr_userpwd=Password
+remotefileshr_image_loc=Image File Path
+remotefileshr_status=Connection Status
+remotefileshr_connect=Connect
+remotefileshr_disconnect=Disconnect
+remotefileshr_invalid_dns=Invalid Domain Name.  Do not use '/' and '\\' characters.
+remotefileshr_invalid_dnsUser=The combined Domain Name and User Name has exceeded the maximum length of 255 characters.
+#
+alert_rfs_busy_detach=RAC0300: Virtual Media is detached or Virtual Media redirection for the selected virtual disk drive is already in-use by another user.
+#alert_rfs_general_error=RAC0301: Remote File Share connection is unavailable.  Check the settings and try again.
+alert_rfs_general_error=Connection Failure
+alert_rfs_invalid_password=Password cannot contain '\"', ''', '<', '>' and ',' characters.
+alert_rfs_invalid_length=User name or password is too long. The maximum length is 40 characters.
+alert_rfs_virtualMedia_error=Either Virtual Media is detached or Virtual Media redirection for the selected virtual disk drive is already in use by another user.
+#
+#Virtual Console Preview
+#
+remoteConPrv_title=Virtual Console Preview
+remoteConPrv_options=Options
+remoteConPrv_launch=Launch
+remoteConPrv_settings=Settings
+remoteConPrv_refresh=Refresh
+remoteConPrv_noAmea=RAC0302: iDRAC Express does not support this feature.
+remoteConPrv_noConPrivilge=RAC0303: Virtual Console is disabled and/or you do not have the Access Virtual Console privilege. If it is disabled, go to Overview >  Server > Virtual Console and select the Enabled option to enable Virtual Console.
+#
+alert_invDCSaddr1=Invalid Domain Controller Server Address 1
+alert_invDCSaddr2=Invalid Domain Controller Server Address 2
+alert_invDCSaddr3=Invalid Domain Controller Server Address 3
+#
+viewSEL_options=Options
+#
+###System->Properties->System Inventory
+#
+sys_prop_sum_sysInventory=System Inventory
+sys_prop_inv_hwinventory=Hardware Inventory
+sys_prop_inv_fwinventory=Firmware Inventory
+sys_prop_inv_hwwinv_unavailable=Hardware Inventory is unavailable
+sys_prop_inv_fwinv_unavailable=Firmware Inventory is unavailable
+sys_prop_inv_fwVer=Firmware Version
+sys_prop_inv_type=Type
+sys_prop_inv_model=Model
+sys_prop_inv_manufacturer=Manufacturer
+sys_prop_inv_size=Size
+sys_prop_inv_part_number=Part Number
+sys_prop_inv_serial_number=Serial Number
+sys_prop_inv_name=Name
+sys_prop_inv_permanent_iscsi_mac=Permanent iSCSI MAC Address
+sys_prop_inv_permanent_mac_address=Permanent MAC Address
+sys_prop_inv_current_mac_address=Current MAC Address
+sys_prop_inv_capacity=Capacity
+sys_prop_inv_component=Component
+sys_prop_inv_bios=Dell Server BIOS 12G
+sys_prop_inv_controller=Dell Lifecycle Controller 2
+sys_prop_inv_osdrv=Dell OS Drivers Pack
+sys_prop_inv_eth_nic1=Broadcom NetXtreme II Gigabit Ethernet 1
+sys_prop_inv_eth_nic2=Broadcom NetXtreme II Gigabit Ethernet 2
+sys_prop_inv_eth_nic3=Broadcom NetXtreme II Gigabit Ethernet 3
+sys_prop_inv_eth_nic4=Broadcom NetXtreme II Gigabit Ethernet 4
+sys_prop_inv_diag=Dell 32 Bit Diagnostics
+sys_prop_hw_error_row=Hardware Inventory is unavailable. Try again at a later time.
+sys_prop_fw_error_row=Firmware Inventory is unavailable. Try again at a later time.
+#
+#Dell Key Manager
+#
+sys_setup_dkm=Key Encryption
+dkm_ptitle=Dell Key Manager (DKM)
+dkm_back_btn=Return to DKM Main Page
+dkm_opions=Options
+dkm_notice=Notice
+dkm_restart_system=iDRAC cannot determine if the system can support DKM.  Restart the system to determine if DKM is supported.
+dkm_invalid_hardware=The system does not have valid hardware components for DKM.  The system requires appropriate firmware.  See the iDRAC readme for the appropriate levels.
+kms_ptitle=DKM Server Settings
+kms_primary=Primary Key Management Server
+kms_secondary=Secondary Key Management Server
+kms_address=Network IP Address
+kms_port=Port Number
+kms_timeout=Timeout
+kms_view_certificate=View the uploaded Key Management Server CA Certificate
+kms_certificate=Certificate
+kms_device_group_name_title=Device Group Name
+kms_device_group_name=Device Group Name
+kms_test_btn=Test Connectivity
+kms_cfg_btn=Edit DKM Server Settings
+kms_cfg_return_btn=Return to View Server Settings
+kms_upload_certificate=Upload Key Management Server CA Certficate
+kms_certificate_path=Certificate Path
+kms_test=Key Management Server Connection Test
+kms_test_result=Test Result
+kms_test_pass=Passed
+kms_test_fail=Failed
+alert_inv_kms_ip=Invalid IP Address
+alert_inv_kms_timeout=The Timeout value is invalid. Expected range: [15-600 seconds]
+alert_inv_kms_port=The Port Number is invalid. Expected range: [1-65535]
+kmc_ptitle=DKM Client Certificate Settings
+kmc_pprompt=Select the appropriate certificate management task and click Next.
+kmc_new_csr=Generate Certificate Signing Request (CSR)
+kmc_self_signed=Create Self Signed Certificate
+kmc_ca_signed=Upload CA Signed Certificate
+kmc_view_cert=View the uploaded DKM Client Certificate
+kmc_back_btn=Return to DKM Client Certificate Settings Menu
+kmc_download=Download
+kmc_ss_title=Self Signed Certificate Settings
+kmc_ss_svcTag=Use Service Tag
+kmc_ss_DNSName=Use DNS Name
+kmc_ss_coustom=Use Custom Name
+kmc_ca_format=Certificate Format
+kmc_ca_base=Base64
+kmc_ca_pkcs=PKCS12 Encrypted
+kmc_ca_decr_pwd=Decryption Password
+kmc_ca_filePath=File Path
+kmc_ca_message1=Uploading file. Please wait.  This may take a few minutes to complete.
+kmc_ca_message2=No certificate to upload. Please browse to a valid file.
+kmc_ca_message3=The certificate you uploaded is not a valid certificate file. Please browse to a valid file.
+kmc_ca_message4=DKM certificate uploaded successfully.
+kmc_ca_message5=Please browse valid file through browse button.
+alert_pkcs_pwd=Decryption Password should not be empty
+kmc_ss_cert_title=Self Signed Certificate
+alert_createComplete=Created Successfully
+alert_kmc_invalid_csr=Enter a valid value for the following (see the online Help for more information):
+alert_kms_same_addr=Primary KMS Address and Secondary KMS Address should not be the same
+rac_conf_kms_certUploadInfo=Note that the iDRAC will reset after the certificate is created successfully. At this time, the iDRAC will not be available for a few minutes.
+alert_kms_tc_0=Test Connectivity successfull.
+alert_kms_tc_1=Test Connectivity failed. Please make sure that your KMS profiles have been configured correctly.
+alert_kms_tc_26=Test Connectivity failed due to invalid port.
+alert_kms_tc_27=Test Connectivity failed due to invalid IP.
+alert_kms_tc_29=Test Connectivity failed bacause KMS is not availible or busy.
+alert_kms_tc_41=Test Connectivity failed due to untrusted server certificate.
+alert_kms_tc_42=Test Connectivity failed due to  KMS server connection failure.
+alert_kms_tc_43=Test Connectivity failed because KMS server not found.
+alert_kms_tc_65=Test Connectivity failed because handshake with KMS failed.
+alert_kms_tc_68=Test Connectivity failed due to SSL socket timeout.
+alert_kms_tc_69=Test Connectivity failed because wait on the socket could not be done.
+alert_kms_tc=Unknown error occurred.
+alert_dkm_disabled=The Dell Key Manager feature is not enabled at this time, and therefore the user interface links are not active.
+#
+#
+#Licensing
+#
+lic_tabTitle=iDrac Licensing Pages
+lic_title=Licensing
+lic_header=System Licensing Information
+lic_header_info=The embedded license manager is responsible for discovering and managing licensable hardware devices. This page represents the discovered devices and licenses associated with this system.  From this page, you can manage (import, delete, replace, or export) the digital licenses associated with the discovered hardware.
+lic_purchase1=To manage changes to or purchase new licenses visit the
+lic_purchase2=License Self-Service Portal
+lic_message1=Transfering to self service portal...
+lic_stat=Status
+lic_dev_type=Device Type
+lic_lic_opt=License Options
+lic_loc=Location
+lic_info=License Information
+lic_devDesc=Device Description
+lic_exp=Expiration
+lic_options=License Options:
+lic_type=License Type
+#
+lic_want=Select...
+lic_import=Import
+lic_export=Export
+lic_delete=Delete
+lic_replace=Replace
+lic_learn_more=Learn More
+#
+lic_ent_lic=Enterprise License
+lic_desc=Description:
+lic_dev=Device
+lic_exp_date=Expiration Date
+lic_dev_id=Device ID
+lic_ent_id=Entitlement ID
+lic_serv_pack=Servicability Pack
+lic_undef1=String not yet defined.
+#
+lic_delete_confirm=Are you sure you want to delete?
+lic_delete_failed=The license was not deleted.
+lic_delete_success=The license was successfully deleted.
+lic_import_success=The license was successfully imported.
+lic_replace_success=The license was successfully replaced.
+lic_import_failed=The license was not imported.
+lic_replace_failed=The license was not replaced.
+lic_invalid_file=Invalid file input.
+lic_operation_failed=The operation failed.
+lic_error_reason=The error may have occurred due to the following reasons:
+lic_error_code=Error Code:
+lic_delete_override=Do you want to override?
+lic_rec_action=Recommended Action
+lic_critical_alert=Critical Alert Message
+lic_ok_msg=OK
+lic_exp_notapp=Not Applicable
+lic_exp_failed=License export operation failed
+lic_nolic_exp=No license available to export
+lic_retrieve_failed=The license data was not retrieved.
+#
+#
+###System->Logs->Work Notes
+#
+sys_log_worknotes=Work Notes
+sys_worknotes_add_worknote=Add Work Note
+sys_worknotes_title=The note cannot be more than 50 characters.
+sys_worknotes_enter_worknote=Enter work note.
+sys_worknotes_btn_save=Save
+sys_worknotes_datatime=Date / Time
+sys_worknotes_notes=Notes
+sys_worknotes_userid=User ID
+sys_worknotes_description=Create new work note... (255 Character Limit)
+sys_worknotes_delete_worknote=Deleting Work Note
+sys_worknotes_manage_worknotes=Manage Work Notes
+#
+#Recent Work Notes
+#
+main_recent_worknotes=Recent Work Notes
+main_view_worknotes=View Work Notes
+#
+#Troubleshooting->Video Capture Screen
+#
+#vc_header1=Configure Crash Video
+#vc_enable=Enable Crash Video Captures.
+#vc_number=Number of Crash Videos to save.
+#
+vc_videoCap=Video Capture
+vc_info=Use boot capture to play or save the last 3 boot capture recordings. To view saved videos download, the Video Capture Player (see below).
+vc_info2=Use crash capture to play or save the last crash capture recording. To view the saved video, download the Video Capture Player (see below).
+vc_info3=Download the Video Capture Player to view the saved video captures. The download is a zip file containing videoplayer.exe (for windows), videoplayer.sh (for Linux), and videoplayer.jar containing the background files needed for the players.
+vc_nofiles=No Recording Available.
+#
+vc_boot_cap_title=Boot Captures
+vc_boot_capture1=Boot capture 1 (latest)
+vc_boot_capture2=Boot capture 2
+vc_boot_capture3=Boot capture 3 (oldest)
+#
+vc_crash_cap_title=Crash Captures
+vc_crash_capture1=Crash capture
+vc_crash_capture2=Crash capture 2
+vc_crash_capture3=Crash capture 3 (oldest)
+#
+vc_download_cap_title=Download Video Capture Player
+vc_playerBundle=videoplayer.zip
+#
+###System->Logs-LCL
+#
+sys_log_lcl=Lifecycle Log
+#
+sys_lcl_title=Logs
+sys_lcl_filter=Log Filter
+sys_lcl_basic_filter=Basic Log Filter
+sys_lcl_simple_filter=Simple Filter
+sys_lcl_advanced_filter=Advanced Log Filter
+sys_lcl_options=Options:
+sys_lcl_log_results=Log Results
+sys_lcl_export=Export
+sys_lcl_log_type=Log Type:
+sys_lcl_choose_type=Choose Type
+sys_lcl_status_level=Severity:
+sys_lcl_keyword_search=Keyword Search:
+sys_lcl_date=Date:
+sys_lcl_to=To:
+sys_lcl_from=From:
+sys_lcl_categories=Categories:
+sys_lcl_checked=Checked
+sys_lcl_power_supplies=Power Supplies
+sys_lcl_intrusions=Instrusions
+sys_lcl_critical=Critical
+sys_lcl_warning=Warning
+sys_lcl_information=Information
+sys_lcl_hardware_change=Hardware change
+sys_lcl_reboot=Reboot
+sys_lcl_config_change=Config change
+sys_lcl_work_notes=Work Notes
+sys_lcl_option=Option
+sys_lcl_admin_events=Admin Events:
+sys_lcl_time_frame=Time Frame:
+sys_lcl_last_week=Last Week
+sys_lcl_last_month=Last Month
+sys_lcl_custom=Custom
+sys_lcl_status=Status
+sys_lcl_datetime=Date and Time
+sys_lcl_id=Message ID
+sys_lcl_seq=Log Sequence Number
+sys_lcl_summary=Summary
+sys_lcl_comment=Comment
+sys_lcl_pages=Page
+sys_lcl_of=of
+sys_lcl_log_type_alllogs=All Logs
+sys_lcl_log_type_health=System Health
+sys_lcl_log_type_storage=Storage
+sys_lcl_log_type_configuration=Configuration
+sys_lcl_log_type_audit=Audit
+sys_lcl_log_type_security=Security
+sys_lcl_log_type_power_and_thermal=Power and thermal
+sys_lcl_log_type_licensing_and_warranty=Licensing and warranty
+sys_lcl_log_type_updates=Updates
+sys_lcl_log_type_worknotes=Work notes
+sys_lcl_log_invalid_date=Invalid date. Enter a date in the mm/dd/yyyy format.
+sys_lcl_log_err_msg_enddate_before_startdate='To date' must be after the 'From date'.
+sys_lcl_log_err_msg_invalid_day=Invalid day. Enter a valid day of month.
+sys_lcl_log_err_msg_invalid_month=Invalid month. Enter a valid month of year.
+sys_lcl_log_err_msg_invalid_year=Invalid year.
+sys_lcl_log_detailed_description=Detailed Description
+sys_lcl_log_recommended_action=Recommended Action
+#
+###Network Devices
+#
+nic_properties=Port Properties
+nic_health_and_properties=Health and Properties
+nic_link_connection=Link connection
+nic_mac_addresses=MAC Addresses
+nic_capabilities=Capabilities
+### Not Used ### nic_capabilities_and_settings=Capabilities and Settings
+nic_settings_and_capabilities=Settings and Capabilities
+nic_statistics=Statistics
+nic_statistics_and_ethernet=Statistics: Ethernet
+nic_statistics_and_fcoe=Statistics: FCoE
+nic_receive_statistics=Receive Statistics
+nic_transmit_statistics=Transmit Statistics
+nic_ports_ant_partitioned_ports=Ports and Partitioned Ports
+nic_status=status
+nic_portid=Port ID 
+nic_port=Port 
+nic_partition=Partition
+nic_protocol=Protocol
+nic_PCIVendorID=PCI Vendor ID
+nic_PCISubVendorID=PCI Sub Vendor ID
+nic_PCIDeviceID=PCI Device ID
+nic_PCISubDeviceID=PCI Sub Device ID
+nic_ProductName=Product Name
+nic_VendorName=Vendor Name
+nic_number_of_ports=Number of Ports
+nic_FamilyFirmwareVersion=Family Firmware Version
+nic_FamilyDriverVersion=Family Driver Version
+nic_link_status=Link Status
+nic_os_driver_state=OS Driver State
+nic_number_of_pcie_functions=Number of PCIe Functions
+nic_current_mac_addr=Current MAC Address
+nic_iscsi_mac=iSCSI MAC
+nic_fcoe_protocol_mac=FCoE Initialization Protocol (FIP) MAC
+nic_wwpn=WWPN
+nic_fcoe_wwnn=FCoE WWNN
+nic_max_bandwidth=Maximum Bandwidth
+nic_min_bandwidth=Minimum Bandwidth
+nic_supported_port=Supported per Port
+nic_currently_enabled_per_port=Currently Enabled per Port
+nic_link_duplex=Link Duplex
+nic_link_speed=Link Speed
+nic_auto_negotiated=Auto Negotiation
+nic_media_type=Media Type
+nic_nic_mode=NIC Mode
+nic_fcoe_offload_mode=FCoE Offload Mode
+nic_iscsi_offload_mod=iSCSI Offload Mode
+nic_transmit_flow_control_status=Transmit Flow Control Status
+nic_receive_flow_control_status=Receive Flow Control Status
+nic_rdma=RDMA
+nic_flex_addressing=Flex Addressing
+nic_uefi=UEFI
+nic_iscsi_offload=iSCSI Offload
+nic_iscsi_boot=iSCSI Boot
+nic_boot_protocol=Supported Boot Protocol
+nic_tcp_chimney=TCP Chimney
+nic_fcoe=FCoE
+nic_management_pass_through=Management Pass Through
+nic_fcoe_boot=FCoE Boot
+nic_pxe_boot=PXE Boot
+nic_sriov=SR-IOV
+nic_wake_on_lan=Wake On LAN
+nic_energy_efficient_ethernet=Energy Efficient Ethernet
+nic_partitioning=Partitioning
+nic_total_bytes_received=Total Bytes
+nic_total_bytes_transmitted=Total Bytes
+nic_total_unicast_bytes_received=Total Unicast Packets
+nic_total_multicast_bytes_received=Total Multicast Packets
+nic_total_broadcast_bytes_received=Total Broadcast Packets
+nic_total_unicast_bytes_transmitted=Total Unicast Packets
+nic_total_multicast_bytes_transmitted=Total Multicast Packets
+nic_total_broadcsat_bytes_transmitted=Total Broadcast Packets
+nic_false_carrier_detection=False Carrier Detection
+nic_fcoe_packets_received=FCoE Packets Received
+nic_fcoe_packets_transmitted=FCoE Packets Transmitted
+nic_fc_crc_error_count=FC CRC Error Count
+nic_fcoe_packets_dropped=FCoE Packets Dropped
+nic_fcoe_link_failures=Virtual Link Failures
+nic_fcs_error_packets_received=FCS Errors
+nic_alignment_error_packets_received=Alignment Errors
+nic_false_carrier_packets_received=False Carrier Error Packets Received
+nic_runt_frames_received=Runt Errors
+nic_jabber_error_frames_received=Jabber Errors
+nic_discarded_packets=Discarded Packets
+nic_single_collision_frames_transmitted=Single Collision Frames
+nic_multiple_collision_frames_transnitted=Multiple Collision Frames
+nic_late_collision_frames_transmitted=Late Collision Frames
+nic_excessive_collision_frames_transmitted=Excessive Collision
+nic_world_wide_name=World Wide Name
+nic_virtual_world_wide_name=Virtual World Wide Name
+nic_virtual_mac_addresses=Virtual MAC Addresses
+nic_virtual_iscsi_mac=Virtual iSCSI MAC
+nic_virtual_ftp_mac=Virtual FIP-MAC
+nic_tcp_offload_engine=TCP Offload Engine (TOE)
+nic_data_center_bridging=Data Center Bridging (DCB)
+nic_eswitch_mode=eSwitch Mode
+nic_total_pause_xoff_frames=Total Pause XOFF Frames
+nic_total_pause_xon_frames=Total Pause XON Frames
+nic_not_supported=Not Supported
+nic_disabled=Disabled
+nic_notcapable=Not Capable
+nic_partition_statistics=NIC Partition Statistics
+nic_lanunicast_rx_count=LAN Unicast Packets Received
+nic_lanunicast_tx_count=LAN Unicast Packets Transmitted
+nic_lanfcs_rx_errors=LAN Frame Check Sequence Errors
+#
+tree_altRecurrence=Alert Recurrence 
+#
+#PCR for FQDN changes to alert page
+#
+alert_destination1=Alert Destination1
+alert_destination2=Alert Destination2
+alert_destination3=Alert Destination3
+alert_destination4=Alert Destination4
+alert_destination5=Alert Destination5
+alert_destination6=Alert Destination6
+alert_destination7=Alert Destination7
+alert_destination8=Alert Destination8
+invalid_alert_destination=The specified alert destination is invalid for
+#
+# SNMP Settings
+#
+snmp_trap_format=SNMP Trap Format
+snmp_format_snmpv1=SNMP v1
+snmp_format_snmpv2=SNMP v2
+snmp_protocol=SNMP Protocol
+snmp_protocol_all=All (SNMP v1/v2/v3)
+snmp_format_v3=SNMP v3
+user_authentication_sha_1=SHA
+user_authentication_md5=MD5
+user_authentication_type=Authentication type
+user_privacy_type=Privacy type
+user_privacy_aes=AES
+user_privacy_des=DES
+snmp_enable_v3=Enable SNMP v3
+snmp_both_not_none_msg=If Authentication Type is None, select Privacy Type as None.
+#
+#Default Credential
+#
+default_cred_warning_title=Default Password Warning
+default_cred_warning_msg=Warning: It is recommended not to use the default user name (root) and password as it is a security risk.
+default_cred_info=Configure a new password for the "root" user. Further changes can be done using  the User Authentication page after logging in to iDRAC. For more information on changing the default password, see the iDRAC7 User's Guide.
+default_cred_new_password=New Password
+default_cred_confirm_password=Confirm Password
+default_cred_user_name=User Name: root
+default_cred_do_not_show=Do not show this warning again
+default_cred_change_password=Change Default Password
+default_cred_keep_password=Keep Default Password
+default_cred_continue=Continue
+default_cred_ok=OK
+default_cred_password_not_match=Passwords do not match.
+default_cred_updating_password=Updating default password...
+default_cred_change_err=Password change failed as another user has changed the default credentials.
+default_cred_update_err_title=Failed to update the default password.
+default_cred_update_err=Failed to configure the new password.
+default_cred_rec_response_title=Recommended Response:
+default_cred_rec_response=Navigate to the User Authentication page and reset the password manually.
+default_cred_update_err_title=Critical Error
+default_cred_enable=Enable
+default_cred_disable=Disable
+
+#################
+# FC
+####
+fc_worldwidenames=World Wide Names
+fc_wwn=World Wide Node Name
+fc_wwpn=World Wide Port Name
+fc_vwwn=Virtual World Wide Node Name
+fc_vwwpn=Virtual World Wide Port Name
+fc_total_frames=Total Fibre Channel Frames
+fc_total_sequences=Fibre Channel Sequences
+fc_total_bytes_rx=Total Kilobytes Received
+fc_total_bytes_tx=Total Kilobytes Transmitted
+fc_ports=Fibre Channel Ports
+fc_link_error=Link Errors
+fc_os_driver_version=OS Driver Version
+fc_link_failures=Link Failures
+fc_signal_loss=Loss Of Signal
+fc_invalid_CRC=Invalid CRCs
+
+#################
+# MISC
+####
+idsdm_version=IDSDM Firmware Version
+csr_dns_ip_change_warning=This action closes all user sessions and the user must reconnect to the iDRAC Web interface. These changes may cause brief loss in connectivity and the existing Virtual Console session may not work. After reconnecting to iDRAC Web interface, launch the Virtual Console session again.
+cert_cn_change_warning=This action will cause iDRAC to reboot and closes all user sessions and will cause brief loss in connectivity.
+##############
+# Ungraceful shutdown specific change
+#############
+ungraceful_shutdown_confirm_message=To turn off the server, click the Graceful Shutdown option. If you are unable to do so, make sure to exit all the programs running on this server, and there is no inbound and outbound traffic to the shared storage.\nInability to do so may prevent all the servers in the chassis from accessing the shared-storage devices for up to two minutes.\n\nAre you sure you want to continue?
+

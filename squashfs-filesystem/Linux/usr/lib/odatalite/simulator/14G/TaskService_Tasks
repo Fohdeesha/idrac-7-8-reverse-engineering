@@ -1,0 +1,48 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#TaskService/Tasks/$entity",
+    "@odata.type": "#TasksCollection.TaskCollection",
+    "Name": "Task Collection",
+    "Members@odata.count": "13",
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/1"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ343-SLED946"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ344-SLED946"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ351-SLED946"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ352-SLED946"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ353-SLED946"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ354-SLED946"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ641-SLED941"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ642-SLED942"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ643-SLED943"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ644-SLED944"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ645-SLED945"
+        },
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/SEQ646-SLED946"
+        }
+    ]
+}

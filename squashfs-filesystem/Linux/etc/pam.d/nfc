@@ -1,0 +1,8 @@
+auth            sufficient      pam_ldap_manager.so
+auth            sufficient      pam_local_manager.so use_first_pass
+auth            required        pam_auth_status.so sessiontype=QuickSync
+account         sufficient      pam_ldap_manager.so privilege=0x0010
+account         sufficient      pam_local_manager.so privilege=0x0010
+account         required        pam_auth_status.so sessiontype=QuickSync
+session         required        pam_auth_status.so sessiontype=QuickSync
+

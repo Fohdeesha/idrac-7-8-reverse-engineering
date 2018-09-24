@@ -1,0 +1,9 @@
+#%PAM-1.0
+auth		sufficient	pam_session_manager.so sessiontype=vMedia
+auth		sufficient	pam_local_manager.so use_first_pass
+auth		required	pam_auth_status.so sessiontype=vMedia
+account		sufficient	pam_session_manager.so sessiontype=vMedia privilege=0x40
+account		sufficient	pam_local_manager.so privilege=0x40
+account		required	pam_auth_status.so sessiontype=vMedia
+session		required	pam_auth_status.so sessiontype=vMedia
+session		required	pam_session_manager.so sessiontype=vMedia

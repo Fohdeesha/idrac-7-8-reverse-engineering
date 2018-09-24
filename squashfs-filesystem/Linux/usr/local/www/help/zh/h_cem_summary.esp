@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript"><% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: 存储摘要</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> 存储概览</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">跳转至： <a class="popup-jump-bar" href="#Alerts" id="cc3">最近记入日志的存储事件</a> |<a class="popup-jump-bar" href="#Other" id="A14">其它选项</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>使用此页面查看存储组件的概要及近期载入日志的事件。 此页每 30 秒自动刷新一次。</p> 
+</div> 
+<div class="popup_subheader">
+<span id="Storage_summary"> 存储摘要 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<p>此节提供了存储子系统中的物理磁盘基于其状态分组的饼图。 另外，还提供系统中可用磁盘的摘要：</p> 
+<ul> 
+<li>物理磁盘</li> 
+<li>虚拟磁盘</li> 
+<li>全局热备份</li> 
+<li>专用热备份</li> 
+</ul> 
+<p> 单击 <b>物理磁盘</b> 或 <b>虚拟磁盘</b> 链接以查看相应的页面。</p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Alerts"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="Alerts"> 近期载入日志的存储事件</span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>此节列出最近发生的 10 个存储事件。</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>严重性</b></span> </td> 
+<td class="desc"> 
+<p> 显示事件的严重性级别：</p> 
+<ul> 
+<li><span class="status_ok"> &#8212;</span> 信息告知<br></br></li> 
+<li><span class="status_noncritical"> &#8212; </span> 警告<br></br></li> 
+<li><span class="status_critical">&#8212; </span> 严重<br></br></li> 
+<li><span class="status_unknown">&#8212; </span>无此信息</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>日期 / 时间</b></span> </td> 
+<td class="desc"> 显示时间发生的日期和时间。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>说明</b></span> </td> 
+<td class="desc"> 
+<p> 对事件给予简短的说明。</p> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

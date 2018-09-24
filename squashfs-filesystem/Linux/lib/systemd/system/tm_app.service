@@ -1,0 +1,25 @@
+[Unit]
+Description=tm app
+Wants=aim.service
+After=aim.service
+RequiresMountsFor=/flash/data0
+
+# cpu utilization
+After=fullfw_app.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+Restart=on-failure
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStartPre=/bin/mount --bind /flash/data0/tm/localtime /etc/localtime
+ExecStartPre=/usr/sbin/tm_zoneinfo.sh /etc/zoneinfo/ /tmp/zonelist.dat
+ExecStart=/usr/bin/tm
+ExecStopPost=/bin/umount /etc/localtime
+KillSignal=SIGKILL
+TimeoutStopSec=2
+
+[Install]
+WantedBy=multi-user.target

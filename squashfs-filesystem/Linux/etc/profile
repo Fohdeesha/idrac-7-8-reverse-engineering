@@ -1,0 +1,9 @@
+# /etc/profile: system-wide .profile file for the Bourne shells
+export PS1="[SH7757 \w]\$ " 
+export SFCC_CLIENT=SfcbLocal
+alias ll='ls -l' 
+alias du='du -h' 
+alias df='df -h' 
+alias rm='rm -i' 
+ulimit -c unlimited
+

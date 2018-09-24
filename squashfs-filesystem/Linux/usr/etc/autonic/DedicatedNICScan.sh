@@ -1,0 +1,1 @@
+../../bin/DedicatedNICScan.sh

@@ -1,0 +1,47 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Links/Members/entity",
+    "@odata.id": "/redfish/v1/Chassis/SLED943"  ,"@oem.nav.parentid": "/redfish/v1/Chassis",
+    "@odata.type": "#Chassis.1.0.0.Chassis",
+    "Id": "SLED943",
+	"Name": "Compute Sled",
+    "ChassisType": "Blade",
+    "Description": "A sled that fits into half of a slot with an interposer.",
+    "Manufacturer": "Dell Inc.",
+    "Model": "PowerEdge QuarterDimSled",
+    "SKU": "SLED943",
+    "SerialNumber": "USE135ES77",
+    "Version": "1.0",
+    "PartNumber": "",
+    "AssetTag": "CustomerSpecifiedValue",
+    "Status": {
+        "State": "Enabled",
+        "Health": "Critical",
+        "HealthRollup": "Critical"
+    },
+    "Links": {
+        "ComputerSystems": [
+            {
+                "@odata.id": "https://192.168.148.46/redfish/v1/Systems/SLED943"
+            }
+        ],
+        "ContainedBy": {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791"
+        },
+        "ManagedBy": [
+            {
+                "@odata.id": "https://192.168.148.46/redfish/v1/Managers/SLED943"
+            }
+        ]
+    },
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "Dell#Chassis.1.0.0.Chassis",
+            "InSlot": [
+                {
+                    "@odata.id": "/redfish/v1/Chassis/QSI3/Slots/Sled-3a"
+                }
+            ]
+        }
+    }
+}

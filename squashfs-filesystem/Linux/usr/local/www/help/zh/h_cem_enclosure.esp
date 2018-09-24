@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+    <% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7：存储 - 机柜</title> 
+<script src="/js/prototype.js" type="text/javascript">     
+</script> 
+<script src="/js/Clarity.js" type="text/javascript">        
+</script> 
+<script src="h_common.js" type="text/javascript">
+        
+</script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+        
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> 机柜 </span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">跳转至：<a class="popup-jump-bar" href="#EnclosureSummary" id="cc7">机柜摘要</a> | <a class="popup-jump-bar" href="#Enclosure" id="cc1">运行状况和属性</a> | <a class="popup-jump-bar" href="#Fans" id="cc3">风扇</a> | <a class="popup-jump-bar" href="#PowerSupplies" id="cc4">电源设备</a> | <a class="popup-jump-bar" href="#TempProbes" id="cc5">温度探测器</a> | <a class="popup-jump-bar" href="#EMM" id="cc6">机柜管理模块</a> | <a class="popup-jump-bar" href="#Other" id="A14">其他选项</a></span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p> 使用此页面查看机柜或背板的运行状况和属性。 此页面提供了存储系统中所有机柜的摘要视图和详细信息（按这些机柜连接的控制器分组）。 与机柜或背板相关的控制器的名称以如下格式显示在选项卡中：</p> 
+<p>&lt;控制器型号&gt; （PCI 插槽 &lt;X&gt;） 或 &lt;控制器型号&gt;（嵌入式） </p> 
+<p>例如：PERC H810 适配器（PCI 插槽 1 ）或 PERC H310 Mini（嵌入式）</p> 
+<p> 机柜或背板的名称按照以下格式显示在子选项卡上： </p> 
+<p> 如果是背板， 背板（&lt;连接器 ID&gt;:&lt;布线次序&gt;），其中连线顺序是托架 ID  。 例如，背板 (0:0) </p> 
+<p> 如果是机柜&lt;机柜型号名称&gt; （&lt;连接器 ID&gt;:&lt;布线次序&gt;），其中连线顺序是在菊花链中的顺序。 例如，MD1200 (1:0) </p> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>注：</span>如果是背板，则此页只显示<b>机柜摘要</b>和<b>运行状况及属性</b>部分。 </div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EnclosureSummary"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="EnclosureSummary"> 机柜摘要 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"><p> 此部分显示了机柜或背板中物理磁盘的饼图及其状态。 还会显示机柜或背板中空闲插槽的总数及其插槽索引。 </p> 
+<p> 要查看当前选择的机柜或背板中的物理磁盘，可单击 <b>“查看物理磁盘”</b>。 随后会显示<b>物理磁盘</b>页面，并自动应用相应的筛选程序。<br /> 
+</p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Enclosure"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="Enclosure"> 运行状况和属性 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状况</b></span> </td> 
+<td class="desc"> 
+<p> 显示机柜或背板的运行状况。 可能的值： </p> 
+<ul><li> 正常 <span class="status_ok"> &#8212; </span> 表示组件运行正常。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> 表示探测器或其它监测设备检测到组件的读数超过或低于可接受级别。 组件可能仍在运转，但是可能会发生故障。 组件也可能在受损的状态下工作。 </li> 
+<li> 严重 <span class="status_critical"> &#8212; </span> 表示组件已出现故障或即将故障。 组件需要立即加以关注并且可能需要更换。</li> 
+<li> 无此信息 <span class="status_unknown"> &#8212; </span> 表示此组件的状态为未知。</li></ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>连接器</b></span> </td> 
+<td class="desc"> 显示机柜或背板所连接的控制器端口号。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>机柜位置</b></span></td> 
+<td class="desc"> 显示分配给机柜的机柜 ID。 控制器上所连机柜的索引号码从 0 开始。 <br /> 对于背板，则显示为 <b>“不适用”</b>。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>托架 ID</b></span></td> 
+<td class="desc"> 显示背板的托架 ID。 对于外部机柜，将显示<b>“不适用”</b>。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>固件版本</b></span> </td> 
+<td class="desc"> 显示机柜固件版本。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>SAS 地址</b></span> </td> 
+<td class="desc"> 显示 SAS 机柜或背板的唯一 SAS 地址。 如果不可用，则显示 <b>“不适用”</b>。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>冗余路径</b></span> </td> 
+<td class="desc"> 
+<p> 表示是否已检测到机柜的冗余路径配置。 可能的值： </p> 
+<ul> 
+<li> 存在 </li> 
+<li> 不存在 </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>服务标签</b></span> </td> 
+<td class="desc"> 显示机柜的服务标签编号。 联系服务提供商时将需要此编号。 将该编号与附于机柜上的服务标签上的编号进行匹配以使用该编号来确定您环境中的特定机柜。 例如，如果您有多个机柜，并且其中一个发生故障，可使用该服务标签编号来确定发生故障的机柜。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b> 资产标签</b></span> </td> 
+<td class="desc"> 显示机柜的资产标签信息。 </td> 
+</tr> 
+</table> 
+<br></br> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>注：</span>如果是背板，则不会显示 <b>冗余路径</b>、<b>服务标签</b>和<b>资产标签</b>属性。 </div> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Fans"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="Fans"> 风扇 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状况</b></span> </td> 
+<td class="desc"> 
+<p> 显示风扇的运行状况。 可能的值： </p> 
+<ul> 
+<li> 正常 <span class="status_ok"> &#8212; </span> 表示组件运行正常。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> 表示探测器或其它监测设备检测到组件的读数超过或低于可接受级别。 组件可能仍在运转，但是可能会发生故障。 组件也可能在受损的状态下工作。 </li> 
+<li> 严重 <span class="status_critical"> &#8212; </span> 表示组件已出现故障或即将故障。 组件需要立即加以关注并且可能需要更换。</li> 
+<li>无此信息<span class="status_unknown"> &#8212; </span> 表示此组件的状态为未知。 </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名称</b></span> </td> 
+<td class="desc"> 以“风扇 &lt;索引&gt; ”的格式显示风扇名称。 例如，风扇 1。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>速度</b></span> </td> 
+<td class="desc"> 
+<p> 指示风扇速度。 可能的值： </p> 
+<ul> 
+<li> 快速 </li> 
+<li> 中速 </li> 
+<li> 慢速 </li> 
+<li> 已停止 </li> 
+<li> 无此信息</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="PowerSupplies"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="PowerSupplies"> 电源设备 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状况</b></span> </td> 
+<td class="desc"> 
+<p> 显示电源的运行状况。 可能的值： </p> 
+<ul> 
+<li> 正常 <span class="status_ok"> &#8212; </span> 表示组件运行正常。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> 表示探测器或其它监测设备检测到组件的读数超过或低于可接受级别。 组件可能仍在工作，但可能会发生故障。 组件也可能在受损的状态下工作。 </li> 
+<li> 严重 <span class="status_critical"> &#8212; </span> 表示组件已出现故障或即将故障。 组件需要立即加以关注并且可能需要更换。</li> 
+<li> 无此信息 <span class="status_unknown"> &#8212; </span>表示此组件的状态为未知。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名称</b></span> </td> 
+<td class="desc"> 以“电源设备 &lt;索引&gt;”的格式显示电源设备的名称。 例如，电源设备 1。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>部件号</b></span> </td> 
+<td class="desc"> 显示电源设备的部件号。 <br /> 对于固件为 E.17 或更高版本的 PowerVault 22xS 机柜，不会显示该属性。 </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="TempProbes"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="TempProbes"> 温度探测器 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> 温度探测器监控机柜的温度。 每个温度探测器都有一个警告阈值和故障阈值。 该警告阈值指示机柜正接近不可接受的高温或低温。 故障阈值指示机柜已达到危险温度，可能会导致损害和数据丢失。 </p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span> 
+</span><span><b>状况</b></span> </td> 
+<td class="desc"> 
+<p> 显示温度探测器的运行状况。 可能的值： </p> 
+<ul> 
+<li> 正常 <span class="status_ok"> &#8212; </span> 表示组件运行正常。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> 表示探测器或其它监测设备检测到组件的读数超过或低于可接受级别。 组件可能仍在工作，但可能会发生故障。 组件也可能在受损的状态下工作。 </li> 
+<li> 严重 <span class="status_critical"> &#8212; </span> 表示组件已出现故障或即将故障。 组件需要立即加以关注并且可能需要更换。</li> 
+<li> 无此信息 <span class="status_unknown"> &#8212; </span> 表示此组件的状态为未知。</li> 
+</ul> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>注：</span>在某些机柜上，在显示当前机柜温度和温度探测器状态前可能会出现短暂延迟。 </div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名称</b></span> </td> 
+<td class="desc"> 以“温度探测器&lt;索引&gt;”的格式显示温度探测器的名称。 例如，温度探测器 0。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>读数</b></span> </td> 
+<td class="desc"> 显示温度探测器报告的当前机柜温度（单位为摄氏度）。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>最小警告阈值</b></span> </td> 
+<td class="desc"> 显示当前设置的最小警告阈值温度（单位为摄氏度）。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>最大警告阈值</b></span> </td> 
+<td class="desc"> 显示当前设置的最大警告阈值温度（单位为摄氏度）。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>最小故障阈值</b></span> </td> 
+<td class="desc"> 显示当前设置的最小故障阈值温度（单位为摄氏度）。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>最大故障阈值</b></span> </td> 
+<td class="desc"> 显示当前设置的最大故障阈值温度（单位为摄氏度）。 </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EMM"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="EMM"> 机柜管理模块 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> 该部分显示安装于机柜中的机柜管理模块 (EMM) 的信息。 机柜可包含一个或多个 EMM。 EMM 模块监测机柜的以下组件： </p> 
+<ul> 
+<li> 风扇 </li> 
+<li> 电源设备 </li> 
+<li> 温度探测器 </li> 
+<li> 插入或移除物理磁盘 </li> 
+<li> 机柜上的 LED </li> 
+</ul> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状况</b></span> </td> 
+<td class="desc"> 
+<p> 显示 EMM 运行状况。 可能的值： </p> 
+<ul> 
+<li> 正常 <span class="status_ok"> &#8212; </span> 表示组件运行正常。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> 表示探测器或其它监测设备检测到组件的读数超过或低于可接受级别。 组件可能仍在运转，但是可能会发生故障。 组件也可能在受损的状态下工作。 </li> 
+<li> 严重 <span class="status_critical"> &#8212; </span> 表示组件已出现故障或即将故障。 组件需要立即加以关注并且可能需要更换。</li> 
+<li> 无此信息 <span class="status_unknown"> &#8212; </span> 表示此组件的状态为未知。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名称</b></span> </td> 
+<td class="desc"> 
+<p> 以 “EMM &lt;索引&gt; ”格式显示 EMM 名称。 例如，EMM 1。 </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>部件号</b></span> </td> 
+<td class="desc"> 显示 EMM 模块的部件号。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>固件版本</b></span> </td> 
+<td class="desc"> 显示 EMM 上可用的固件版本。 机柜中的所有 EMM 模块均必须拥有相同的固件级别。 </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                                        writeHelpOtherBegin();
+                                        writeHelpOtherEnd();
+                                    
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

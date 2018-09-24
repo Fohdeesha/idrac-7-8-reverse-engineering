@@ -1,0 +1,75 @@
+#!/bin/sh
+
+usage() 
+{
+    echo "usage: $0 [-h] [-f] [-u uuidfile] " 1>&2 
+}
+
+args=`getopt fhu: $*`
+rc=$?
+
+if [ $rc = 127 ]
+then
+    echo "warning: getopt not found ...continue without syntax check"
+    args=$*
+elif [ $rc != 0 ]
+then
+    usage $0
+    exit 1
+fi
+
+set -- $args
+
+while [ -n "$1" ]
+do
+  case $1 in
+      -h) help=1; 
+	  shift;;
+      -f) force=1
+	  shift;;
+      -u) uuidfile=$2
+	  shift 2;;
+      --) shift;
+	  break;;
+      **) break;;
+  esac
+done
+
+if [ "$help" = "1" ]
+then
+    usage
+    echo -e "\t-h display help message"
+    echo -e "\t-f force uuid file creation"
+    echo -e "\t-u specify uuid file name [/var/lib/sfcb/uuid]"
+    echo
+    echo "Use to create a universally unique identifier for sfcb."
+    exit 0
+fi
+
+if [ -z "$uuidfile" ]
+then
+    uuidfile=/var/lib/sfcb/uuid
+fi
+
+if [ -z "$force" ] && [ -f $uuidfile ]
+then 
+    echo Creating new uid file $uuidfile, your old file will be overwritten.
+    echo Do you want to proceed "(type yes to continue)"
+
+    read response
+
+    if [ x$response = x ] || [ $response != yes ]
+    then
+	echo Keeping old data
+	exit 2
+    fi
+fi
+
+which uuidgen > /dev/null 2>&1
+if [ $? = 0 ]
+then
+    echo sfcb-`uuidgen` > $uuidfile
+else
+    echo Warning: uuidgen not found, creating dummy uuid
+    echo sfcb-`dnsdomainname`:5988 > $uuidfile
+fi

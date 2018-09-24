@@ -1,0 +1,18 @@
+#
+####General
+#
+gen_iDrac=Integrated Remote Access Controller
+gen_iDrac7=Integrated Remote Access Controller 7
+gen_iDRAC6Ent=Integrated Remote Access Controller 7 - Enterprise
+gen_iDRAC6Exp=Integrated Remote Access Controller 7 - Express
+gen_rac6Ent=Integrated Remote Access Controller 7 - Enterprise
+gen_rac6Exp=Integrated Remote Access Controller 7 - Express
+gen_supportURL=
+rac_conf_acts3_info=This page is used to configure the Active Directory (AD) schema mode. When AD is enabled (see Step 2 of 4), it is necessary to configure to use either the standard or the extended schema. When using the standard schema mode, all the necessary object classes are provided by Microsoft's default configuration of the AD schema. Before using the extended schema mode, you must execute utility programs that add new object classes to the AD schema and also extend the capabilities of Microsoft's MMC snap-in named Active Directory Users and Computers (ADUC) to include management of the new object classes.
+sys_prop_sum_RAC=Remote Access Controller
+gen_LearnMore=/public/support.html 
+gen_LicensingPortal=/public/support.html 
+gen_SelfServicePortal=/public/support.html
+sys_prop_inv_bios=Server BIOS 12G
+sys_prop_inv_controller=Lifecycle Controller
+sys_prop_inv_diag=32 Bit Diagnostics

@@ -1,0 +1,13 @@
+[Unit]
+Description=Load USB drivers
+DefaultDependencies=no
+After=fullfw_app.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Nice=-5
+ExecStart=/etc/init.d/modules.sh usb
+
+[Install]
+WantedBy=basic.target

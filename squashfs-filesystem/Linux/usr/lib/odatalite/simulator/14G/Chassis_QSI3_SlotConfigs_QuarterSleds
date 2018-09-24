@@ -1,0 +1,17 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.id": "/redfish/v1/Chassis/QSI3/SlotConfigs/QuarterSleds",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/QSI3/SlotConfigs",
+    "@odata.type": "#Dell.Slots.1.0.0.SlotConfig",
+    "Id": "QuarterSleds",
+    "Name": "QuarterSleds",
+    "Row": "2",
+    "Column": "2",
+    "Location": "Front",
+    "Orientation": "Vertical",
+    "FirstSlotNamePattern": "1a",
+    "SequenceOrder": [
+        "TLRA"
+    ],
+    "Oem": {}
+}

@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<script type="text/javascript">
+    <% include "h_serverType.html" %>
+</script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Script-Type" content="text/javascript" />
+ <link href="/css/popup.css" rel="stylesheet" type="text/css" />
+ <link href="/css/custom.css" rel="stylesheet" type="text/css" />
+ <link href="/css/icons.css" rel="stylesheet" type="text/css" />
+
+  <title>iDRAC7: Storage - Controllers</title>
+  
+<script src="/js/prototype.js" type="text/javascript"> </script>       
+<script src="/js/Clarity.js" type="text/javascript"></script>        
+<script src="h_common.js" type="text/javascript"></script>
+
+	</head>
+<body onload="javascript:popUp.initialize(true);">
+
+  <div class="popup_container">
+    <script type="text/javascript">writeHelpHeader(<%=dracType %>); </script>
+    <div class="popup_content">
+      <div class="popup_content_top_right">
+        <div class="popup_content_top_left">
+          <div class="popup_content_top">
+          </div>
+        </div>
+      </div>
+      <div class="popup_content_right">
+        <div class="popup_content_left">
+          <div class="popup_content_middle">
+            <div class="popup_page_title">
+            <span id="helpTitle">RAID Controllers</span>
+             <div class="popup_line">
+              </div>
+            </div>
+            <div class="popup-jump-bar">
+              <span class="popup-jump-items">
+              Jump to:
+                <a id="cc1" href="#Battery" class="popup-jump-bar">Controller Battery</a>
+                | <a id="A14" href="#Other" class="popup-jump-bar">Other Options</a>
+              </span>
+              <div class="popup_jumpbar-line">
+              </div>
+            </div>
+            <div id="popup_overflow">
+              <a name="top"></a>
+              <div class="popup_inner_content">
+                <div>
+                  <p>Use this page to view the health and properties of the RAID 
+					controller and its battery. The name of the controller is 
+					displayed as a sub-tab in the following format:</p>
+					<p>&lt;controller model&gt; (PCI Slot &lt;X&gt;) OR &lt;controller model&gt; 
+					(Embedded) </p>
+					<p>For example, PERC H810 Adapter (PCI Slot 1 ) or PERC H310 
+					Mini (Embedded)<br />
+					</p>
+					</div>
+                       <div class="popup_subheader">                       
+                        <span id="Controller"> Health and Properties </span>
+                        <div class="popup_subheaderline">
+                        </div>
+                           </div>
+
+					
+					<div class="popup_inner_content">
+					<div></div>
+                <div class="popup_infolist">
+                  <table>
+                    <tr>
+                      <td class="item">
+                        <span><b>Status</b></span></td>
+                      <td class="desc" >
+						<p>Displays the health of the controller.</p>
+						<ul>
+						<li> OK <span class="status_ok"> &#8212; </span> Indicates the component is working as expected.</li>
+						<li> Warning <span class="status_noncritical"> &#8212; </span> Indicates a probe or other monitoring device has detected a reading for the controller that is above or below the acceptable level. 
+						The component may be functioning, but it can fail. The component may also be functioning in an 
+						impaired state.</li>
+						<li>Critical <span class="status_critical"> &#8212; </span> Indicates the component has either failed or failure is imminent. It requires immediate attention and 
+						may require replacement.</li>
+						<li>Information Not Available<span class="status_unknown"> &#8212; </span> Indicates the component status is not known.</li>
+
+						</ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Security Status</b></span></td>
+                      <td class="desc" >
+						<p>Indicates whether the controller supports encryption. 
+						Possible values:</p>
+						<ul>
+							<li>Unknown &#8212; Indicates controller security status is unknown.</li>
+							<li>Encryption Capable &#8212; Indicates the controller supports encryption.</li>
+							<li>Security Key Assigned &#8212; Indicates a security key is assigned to the controller.</li>
+							 <li> Information Not Available &#8212; Indicates the information is not available.</li>
+						</ul>
+						</td>
+                    </tr>
+					<tr>
+                      <td class="item">
+                        <span><b>Encryption Mode</b></span></td>
+                      <td class="desc" >
+						<p>Indicates the supported encryption mode. 
+						Possible values:</p>
+						<ul>
+							<li>None &#8212; Indicates a security key is not assigned to the controller.</li>
+							<li>Supported With LKM &#8212; Indicates the controller is using Local Key Management (LKM) for encryption.</li>
+							<li> Information Not Available &#8212; Indicates the information is not available.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>PCI Slot</b></span>
+                       </td>
+                      <td class="desc" >
+						For integrated controllers, displays the PCI slot number 
+						on the server where the controller is located. In case 
+						of embedded controllers, this property is not displayed.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                      <span><b>Firmware Version</b></span>
+                      </td>
+                      <td class="desc" >
+						Displays the firmware version currently 
+						installed on the controller.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Driver Version</b></span></td>
+                      <td class="desc" >
+						Displays the driver version currently 
+						installed on the controller.<br />
+                        <div>
+                           <div class="popup_note">
+                           </div>
+                       <span class="popup_bold">Note:</span> For some controllers, 
+							if the driver version is not obtained, it displays <b>Not Applicable</b>.</div>
+                       </td>
+                    </tr>
+                       <tr>
+                       <td class="item">
+                        <span><b>Cache Memory Size</b></span></td>
+                       <td class="desc" >
+						Displays the cache memory size (in megabytes or 
+						gigabytes) of the controller.</td>
+                       </tr>
+                   <tr>
+                      <td class="item" >
+                        <span><b>SAS Address</b></span></td>
+                      <td class="desc" >
+						Displays the unique SAS address of the controller.
+						If it is not available, it displays 
+						<b>Not Applicable</b>.</td>
+                    </tr>
+                    <tr>
+                      <td class="item" >
+                        <span><b>PCI Vendor ID</b></span></td>
+                      <td class="desc" >
+						Displays the controller vendor ID.</td>
+                    </tr>
+                    <tr>
+                      <td class="item" >
+                        <span><b>PCI Subvendor ID</b></span></td>
+                      <td class="desc" >
+						Displays the controller sub vendor ID.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                      <span><b>PCI Device ID</b></span> </td>
+                      <td class="desc" >
+						Displays the controller device ID.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>PCI Subdevice ID</b></span></td>
+                      <td class="desc">
+						Displays the controller sub device ID.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>PCI Bus</b></span></td>
+                      <td class="desc">
+						Indicates the bus number of the controller.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>PCI Device</b></span></td>
+                      <td class="desc">
+						Indicates the device number of the controller.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>PCI Function</b></span></td>
+                      <td class="desc">
+						Indicates the function number of the controller. </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Slot Type</b></span></td>
+                      <td class="desc" >
+						Displays the PCI slot type of the controller. For 
+						example, PCI Express x8. If it is 
+						not available, it displays <b>Information Not Available</b>.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Slot Length</b></span></td>
+                      <td class="desc">
+						<p>Displays the PCI card form factor. Possible values:</p>
+						<ul>
+										<li>Short &#8212; Indicates the controller is 
+										embedded.</li>
+										<li>Long &#8212; Indicates the controller is 
+										not embedded.</li>
+						</ul>
+						<p>If the value is not available, it displays <b>Information Not Available</b>.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Bus Width</b></span></td>
+                      <td class="desc" >
+						Displays the bus width of the controller. For example, 
+						8x or x8. If the value is not available, it displays <b>Information Not Available</b>.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Copyback Mode</b></span></td>
+                      <td class="desc">
+						<p>Indicates whether copyback mode is enabled or 
+						disabled. Possible values:</p>
+						<ul>
+										<li>On &#8212; Indicates that automatic copying 
+										of data from a physical disk to a hot 
+										spare (in case of predictive failure) or 
+										from a hot spare to a physical disk (in 
+										case of replacement of a degraded disk) 
+										is enabled.</li>
+										<li>Off &#8212; Indicates that copyback mode is disabled.</li>
+										<li>On with SMART error &#8212; Indicates that automatic 
+										copying of data from a physical disk 
+										(participating in a virtual disk) to 
+										a hot spare is enabled in case of 
+										predictive failure of the physical disk.</li>
+										<li>Not supported &#8212; 
+										Indicates that copyback mode is not supported.</li>
+						</ul>
+						<p>If the physical disk in a virtual disk fails, the 
+						data on the failed disk is copied to the assigned hot 
+						spare. If you replace the failed disk with a new 
+						physical disk and if you have set the copyback mode to 
+						On, the data is copied from the erstwhile hot spare to 
+						the new disk. If set to On with SMART error, the 
+						controller firmware automatically starts copying data 
+						from the SMART-enabled disk in the virtual disk to the 
+						hot spare.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Patrol Read Rate</b></span></td>
+                      <td class="desc">
+						Displays the percentage of the controller’s resources 
+						dedicated to perform a patrol read on disks 
+						participating in a virtual disk or host spares. Any 
+						value between 0 to 100 is valid.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Patrol Read State</b></span> </td>
+                      <td class="desc">
+						<p>Displays the current state of the patrol read process. 
+						Possible values: </p>
+						<ul>
+						<li>Running &#8212; Indicates patrol read process is currently 
+						running.</li>
+						<li>Stopped &#8212; Indicates patrol read process is stopped.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Patrol Read Mode</b></span></td>
+                      <td class="desc">
+						<p>Displays whether the patrol read mode for the 
+						controller is manual, automatic, or disabled. Possible 
+						values: </p>
+						<ul>
+						<li>Automatic &#8212; Indicates a patrol read runs continuously on 
+						the system. When one iteration of the patrol read is 
+						complete, the next patrol read is scheduled to start 
+						within a period of time specified by the controller. You 
+						cannot manually start or stop 
+						the patrol read in this mode. </li>
+						<li>Manual &#8212; Indicates that you can start or stop the patrol 
+						read process. </li>
+						<li>Disabled &#8212; Indicates the patrol read process is 
+						disabled.</li>
+						<li>Not supported &#8212; Indicates controller does not 
+						support patrol read.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Check Consistency Rate</b> </span></td>
+                      <td class="desc">
+						Displays the percentage of the system&#39;s resources 
+						dedicated to perform a check consistency on a 
+						redundant virtual disk. This determines the integrity of 
+						a virtual disk&#39;s redundant data. When necessary, this 
+						feature rebuilds the redundant information. <br />
+						At 0%, the check consistency has the lowest priority for the controller, takes 
+						the most time to complete, and has 
+						the least impact to system performance. A check 
+						consistency rate 
+						of 0% does not mean that the process is stopped or 
+						paused. 
+						<span class="item"> <br />
+						<br />
+						</span>At 100%, the check consistency is the highest priority for 
+						the controller, minimizes the time, and has the most impact to system 
+						performance.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Check Consistency Mode</b></span></td>
+                      <td class="desc">
+						<p>Displays the check consistency mode for the 
+						controller.
+						Possible values: </p>
+						<ul>
+						<li>Not supported &#8212; Indicates the consistency check mode 
+						is not supported on this controller.</li>
+						<li>Normal &#8212; Indicates the consistency mode is normal.</li>
+						<li>Stop On Error &#8212; Indicates the controller aborts the 
+						check consistency operation due to an error.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Rebuild Rate</b></span></td>
+                      <td class="desc">
+						Displays the percentage of the controller&#39;s resources 
+						dedicated to rebuild a failed disk. During a rebuild, 
+						all the physical disk contents are reconstructed. <br />
+						At 0%, the rebuild has the lowest priority for the controller, takes 
+						the most time to complete, and has 
+						the least impact to system performance. A rebuild rate 
+						of 0% does not mean that the rebuild is stopped or 
+						paused. 
+						<br />
+						At 100%, the rebuild is the highest priority for 
+						the controller, minimizes the rebuild time, and has the most impact to system 
+						performance.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>BGI Rate</b></span></td>
+                      <td class="desc">
+						Displays the percentage of the controller&#39;s resources 
+						dedicated to perform the background initialization 
+						(BGI) of a virtual disk after it is created. <br />
+						At 0%, the 
+						background initialization has the lowest priority 
+						for the controller, takes the most time to complete, 
+						and has the least impact to system 
+						performance. A background initialization rate of 0% does 
+						not mean that the background initialization is stopped 
+						or paused. <br />
+						<br />
+						At 100%, the background initialization is the 
+						highest priority for the controller, minimizes the 
+						background initialization time, and has the most impact to system performance.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Reconstruct Rate</b></span> </td>
+                      <td class="desc">
+						Displays the percentage of the controller&#39;s resources 
+						dedicated to reconstruct a disk group after adding a 
+						physical disk or changing the RAID level of a virtual 
+						disk residing on the disk group. <br />
+						<br />
+						At 0%, the reconstruct 
+						has the lowest priority for the controller, takes the most time to complete, and 
+						has the least impact to system performance. A 
+						reconstruct rate of 0% does not mean that the 
+						reconstruct is stopped or paused. <br />
+						<br />
+						At 100%, the reconstruct is the highest priority 
+						for the controller, minimizes the reconstruct time, 
+						and has the most impact to system 
+						performance.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Max Capable Speed</b></span></td>
+                      <td class="desc">
+						Displays the maximum speed with which the device can 
+						transfer data (in gigabytes per second). Possible 
+						values are 0, 1.5, 3.0, or 6.0. If the value is not 
+						available, 
+						it displays <b>Information Not Available</b>.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Persistent Hotspare</b></span></td>
+                      <td class="desc" >
+						<p>Indicates whether the slot corresponding to the hot 
+						spare drive is persistent or not. Possible values:</p>
+						<ul>
+						<li>Enabled &#8212; Indicates the slot corresponding to the hot spare drive 
+						is persistent. Any drive in the slot functions as a hot 
+						spare if the drive is qualified to be a hot spare. If 
+						the drive contains foreign data, it is overwritten.
+                                          </li>
+						<li>Disabled &#8212; Indicates the slot corresponding to the hot spare drive 
+						is not persistent. If the drive is removed from the slot 
+						and any drive is inserted, the slot stops functioning as a 
+						hot spare. You must manually assign the drive as a 
+						hot spare again.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Load Balance Setting</b></span></td>
+                      <td class="desc" >
+						<p>Indicates the ability to automatically use both 
+						controller ports or connectors connected to the same 
+						enclosure to route I/O requests.<br />
+						Possible values:</p>
+						<ul>
+										<li>Auto — Indicates load balance 
+										setting is enabled.</li>
+										<li>None — Indicates load balance 
+										setting is disabled.</li>
+										<li>Unsupported — Indicates load balance 
+										is unsupported.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Preserved Cache</b></span></td>
+                      <td class="desc">
+						<p>Indicates whether the controller has preserved or 
+						pinned cache. The controller status is displayed as 
+						<b>Degraded</b> if the controller has preserved cache.<br />
+						Possible values: </p>
+						<ul>
+										<li>Present</li>
+										<li>Not present</li>
+						</ul>
+						<p>If the value is not available, it displays <b>Information Not Available</b>.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Time Interval for Spin Down</b></span></td>
+                      <td class="desc">
+						Displays the time interval in minutes after which the 
+						hot spares and the unconfigured drives spins down.<br />
+						Any value between 30 to 1440 is valid.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Spin Down Unconfigured Drives</b></span></td>
+                      <td class="desc">
+						<p>Indicates whether spin down for the unconfigured disks 
+						is enabled or disabled.
+						Possible values:</p>
+						<ul>
+						<li>Enabled — Indicates spin down is enabled if the 
+						unconfigured disks are unattended for a specified interval of time.</li>
+						<li>Disabled — Indicates spin down is disabled.</li>
+						</ul>
+						<p>If the value is not available, it displays <b>Information Not Available</b>.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Spin Down Hotspares</b></span></td>
+                      <td class="desc" >
+						<p>Indicates whether spindown for hot spares is 
+						enabled or not.
+						Possible values:</p>
+						<ul>
+						<li>Enabled — Indicates spin down is enabled if 
+						no read-write operation takes place on the hot spare in 
+						a specified interval of time.</li>
+						<li>Disabled — Indicates spin down is disabled.</li>
+						</ul>
+						<p>If the value is not available, it displays <b>Information Not Available</b>.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Learn Mode</b></span></td>
+                      <td class="desc">
+						<p>Displays the learn mode of the battery. Possible 
+						values:</p>
+						<ul>
+						<li>Automatic &#8212; Indicates the controller performs an automatic 
+						learn cycle based on the time set.</li>
+						<li>Warn &#8212; Indicates the controller warns about the 
+						learn cycle due but does not start the learn cycle automatically. The 
+						learn 
+						cycle is past the default 90 days.</li>
+						<li>Not supported &#8212; Indicates the learn mode is not 
+						supported on this controller.</li>
+						<li>Disabled — Indicates learn mode 
+						is disabled.</li>
+						</ul>
+						</td>
+                    </tr>
+                    </table>
+                </div>
+              <div class="popup_subheader">
+                <a name="Battery"></a>
+                <div class="popup_backtotop">
+                  <a href="javascript:popUp.scrolltoTop()">Back to top</a>
+                </div>
+                <span id="Controller_Battery">Controller Battery</span>
+                <div class="popup_subheaderline">
+                </div>
+              </div>
+              <div class="popup_inner_content">
+                <div>
+					<p>The following properties are displayed only if the 
+					controller has a battery.</p>
+					</div>
+				<div class="popup_infolist">
+                  <table>
+                    <tr>
+                      <td class="item">
+                        <span><b>Status</b></span></td>
+                      <td class="desc">
+						<p>Displays the health of the battery.</p>
+						<ul>
+						<li> OK <span class="status_ok"> &#8212; </span> Indicates 
+						the component is working as expected.</li>
+						<li>Warning <span class="status_noncritical"> &#8212; </span> Indicates a probe or other 
+						monitoring device has detected a reading for the 
+						controller that is above or below the acceptable level. 
+						The component may be functioning, but it can 
+						fail. The component may also be functioning in an 
+						impaired state.</li>
+						<li>Critical <span class="status_critical"> &#8212; </span> Indicates the 
+						component has either failed or failure is 
+						imminent. It requires immediate attention and may 
+						require replacement.</li>
+						<li>Information Not Available <span class="status_unknown"> &#8212; </span> Indicates 
+						the component status is not known.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Name</b></span></td>
+                      <td class="desc">
+						Displays the name of the battery present in the 
+						controller.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>State</b></span></td>
+                      <td class="desc">
+						<p>Displays the current status of the battery. Possible 
+						states are: </p>
+						<ul>
+						<li>Ready &#8212; Indicates the battery is functioning normally.</li>
+						<li>Degraded &#8212; Indicates the battery needs to be reconditioned (learn cycle).</li>
+						<li>Charging &#8212; Indicates the battery is undergoing the recharge phase of the battery 
+						learn cycle.</li>
+						<li>Missing &#8212; Indicates the controller is missing a battery.</li>
+						<li>Power Low &#8212; Indicates the battery charge is low and the battery needs 
+						reconditioning. </li>
+						<li>Failed &#8212; Indicates the battery has failed and needs 
+						replacement. </li>
+						<li>Unknown &#8212; Indicates the battery state is not available.</li>
+						</ul>
+						</td>
+                    </tr>
+                    #<tr>
+                   #   <td class="item">
+                   #     <span><b>Predicted Capacity Status</b></span></td>
+                   #   <td class="desc">
+		#				<p>Displays the charge capacity of the battery. Possible 
+		#				values: </p>
+		#				<ul>
+		#				<li>Ready &#8212; Indicates the battery can be charged to full capacity.</li>
+		#				<li>Failed &#8212; Indicates the battery cannot be charged and needs to be replaced. </li>
+		#				<li>Unknown &#8212; Indicates the battery is completing a 
+		#				learn cycle. The 
+		#				charge capacity of the battery cannot be determined 
+		#				until the learn cycle is complete.</li>
+		#				</ul>
+		#				</td>
+                #    </tr>
+                    </table>
+                   </div>
+                </div>
+              </div>
+              <script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+	</body>
+</html>

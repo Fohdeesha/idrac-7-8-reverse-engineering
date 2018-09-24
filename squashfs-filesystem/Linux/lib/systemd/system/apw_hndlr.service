@@ -1,0 +1,15 @@
+[Unit]
+Description=Appweb vflash handler
+After=osinet.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/C
+# do not restart. socket activated
+#Restart=on-failure
+EnvironmentFile=/etc/global.env
+LimitSTACK=65536
+ExecStart=/usr/local/bin/apwHdlrAgent
+KillSignal=SIGTERM
+
+# do not install. socket activated

@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+    <% include "h_serverType.html" %>
+
+</script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7：存储 &#8212; 控制器</title> 
+<script src="/js/prototype.js" type="text/javascript"> 
+</script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle">RAID 控制器</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">跳转到：<a class="popup-jump-bar" href="#Battery" id="cc1">控制器电池</a> | <a class="popup-jump-bar" href="#Other" id="A14">其他选项</a></span><div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+ 
+<div class="popup_inner_content"> 
+<div> 
+<p>使用此页面查看 RAID 控制器及其电池的运行状况和属性。控制器的名称作为子标签并以下列格式显示：</p> 
+<p>&lt;控制器型号&gt;（PCI 插槽 &lt;X&gt;）或 &lt;控制器型号&gt;（嵌入式）</p> 
+<p>例如：PERC H810 适配器（PCI 插槽 1）或 PERC H310 Mini（嵌入式）<br /> 
+</p> 
+</div> 
+<div class="popup_subheader"> 
+<span id="Controller"> 运行状况和属性 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状态</b></span></td> 
+<td class="desc"> 
+<p>显示控制器的运行状况。</p> 
+<ul> 
+<li> 正常<span class="status_ok"> &#8212; </span>表示组件运行正常。</li> 
+<li> 警告<span class="status_noncritical"> &#8212; </span>表示探测器或其它监测设备检测到控制器的读数超过或低于可接受级别。组件可能仍在运转，但是可能会发生故障。组件也可能在受损的状态下工作。</li> 
+<li>严重<span class="status_critical"> &#8212; </span>表示组件已出现故障或即将故障。需要立即加以关注而且可能需要更换。</li> 
+<li>无此信息<span class="status_unknown"> &#8212; </span>表示此组件的状态为未知。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>安全状况</b></span></td> 
+<td class="desc"> 
+<p>表示控制器是否支持加密。可能的值：</p> 
+<ul> 
+<li>未知 &#8212; 表示控制器安全状态未知。</li> 
+<li>可加密 &#8212; 表示控制器支持加密。</li> 
+<li>分配的安全密钥 &#8212; 表示已为控制器分配了一个安全密钥。</li> 
+<li> 无此信息 &#8212; 表示此组件的状态为未知。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>加密模式</b></span></td> 
+<td class="desc"> 
+<p>表示支持的加密模式。可能的值：</p> 
+<ul> 
+<li>无 &#8212; 表示未对控制器分配安全密钥。</li> 
+<li>通过 LKM 支持 &#8212; 表示控制器使用本地密钥管理 (LKM) 进行加密。</li> 
+<li> 无此信息 &#8212; 表示此组件的状态为未知。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI 插槽</b></span> </td> 
+<td class="desc"> 对于集成的控制器，显示控制器所在的服务器内的 PCI 插槽编号。如果是嵌入式控制器，则不会显示此属性。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>固件版本</b></span> </td> 
+<td class="desc"> 显示控制器上当前安装的固件版本。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>驱动程序版本</b></span></td> 
+<td class="desc"> 显示控制器上当前安装的驱动程序版本。<br /> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">注：</span>对于有些控制器，如果未获得驱动程序版本，它会显示<b>不适用</b>。</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>高速缓存存储器大小</b></span></td> 
+<td class="desc"> 显示控制器高速缓存的大小（以兆字节或千兆字节为单位）。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>SAS 地址</b></span></td> 
+<td class="desc"> 显示控制器唯一的 SAS 地址。如果不适用，则显示<b>不适用</b>。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI 经销商 ID</b></span></td> 
+<td class="desc"> 显示控制器经销商 ID。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI 子经销商 ID</b></span></td> 
+<td class="desc"> 显示控制器子经销商 ID。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI 设备 ID</b></span> </td> 
+<td class="desc"> 显示控制器设备 ID。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI 子设备 ID</b></span></td> 
+<td class="desc"> 显示控制器子设备 ID。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI 总线</b></span></td> 
+<td class="desc"> 显示控制器的总线编号。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI 设备</b></span></td> 
+<td class="desc"> 显示控制器的设备号。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI 功能</b></span></td> 
+<td class="desc"> 显示控制器的功能编号。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>插槽类型</b></span></td> 
+<td class="desc"> 显示控制器的 PCI 插槽类型。例如：PCI Express x8。如果不可用，则会显示<b>无此信息</b>。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>插槽长度</b></span></td> 
+<td class="desc"> 
+<p>显示 PCI 卡外形。可能的值：</p> 
+<ul> 
+<li>短 &#8212; 表示控制器为嵌入式。</li> 
+<li>长 &#8212; 表示控制器为非嵌入式。</li> 
+</ul> 
+<p>如果该值不可用，则会显示<b>无此信息</b>。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>总线宽度</b></span></td> 
+<td class="desc"> 显示控制器的总线宽度。例如：8x 或 x8。如果该值不可用，则会显示<b>无此信息</b>。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>回写模式</b></span></td> 
+<td class="desc"> 
+<p>表示回写模式已启用还是已禁用。可能的值：</p> 
+<ul> 
+<li>开启 &#8212; 表示启用自动将数据从物理磁盘复制到热备用（以备发生可预测故障）或从热备用复制到物理磁盘（以备更换降级的磁盘）。</li> 
+<li>关闭 &#8212; 表示已禁用回写模式。</li> 
+<li>带 SMART 错误开启 &#8212; 表示已启用在可预测物理磁盘故障的情况下自动从一个物理磁盘（加入了一个虚拟磁盘）复制数据至热备用。</li> 
+<li>不支持 &#8212; 表示不支持回写模式。</li> 
+</ul> 
+<p>如果虚拟磁盘中的物理磁盘发生故障，故障磁盘上的数据将复制到分配的热备用上。如果您将故障磁盘更换为新的物理磁盘，并将回写模式设置为“开启”，则数据将从之前的热备用复制到新磁盘。如果设置为“带 SMART 错误开启”，则控制器固件会自动开始将数据从虚拟磁盘中启用了 SMART 的磁盘复制到热备用。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>巡检读取率</b></span></td> 
+<td class="desc"> 显示专用于对加入虚拟磁盘或主机备用的磁盘执行巡检读取的控制器资源百分比。介于 0 到 100 之间的任何值均有效。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>巡检读取状态</b></span> </td> 
+<td class="desc"> 
+<p>显示巡检读取过程当前状态。可能的值：</p> 
+<ul> 
+<li>正在运行 &#8212; 表示巡检读取过程当前正在运行。</li> 
+<li>已停止 &#8212; 表示巡检读取进程已停止。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>巡检读取模式</b></span></td> 
+<td class="desc"> 
+<p>显示控制器的巡检读取模式是手动、自动、还是已禁用。可能的值：</p> 
+<ul> 
+<li>自动 &#8212; 表示巡检读取在系统上持续运行。当巡检读取完成一迭代后，下一次巡检读取会计划在控制器指定的时间内启动。在此模式下不能手动开始或停止巡检读取。</li> 
+<li>手动 &#8212; 表示可以启动或停止巡检读取过程。</li> 
+<li>已禁用 &#8212; 表示巡检读取过程已禁用。</li> 
+<li>不支持 &#8212; 表示控制器不支持巡检读取。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>检查一致性率</b> </span></td> 
+<td class="desc"> 显示专用于在冗余虚拟磁盘上执行检查一致性的系统资源的百分比。它可确定虚拟磁盘冗余数据的完整性。如有必要，此功能可重建冗余信息。<br /> 设为 0% 时，检查一致性任务对于控制器来说具有最低优先权，因此会需要最长时间来完成，并且对系统性能的影响最小。检查一致性率为 0% 并不代表该过程已停止或暂停。<span class="item"> <br /> 
+<br /> 
+</span>设为 100% 时，检查一致性任务对于控制器来说具有最高优先权，因此会将时间缩到最短，并且对系统性能的影响最大。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>检查一致性模式</b></span></td> 
+<td class="desc"> 
+<p>显示控制器的检查一致性模式。可能的值：</p> 
+<ul> 
+<li>不支持 &#8212; 表示此控制器上不支持一致性检查模式。</li> 
+<li>正常 &#8212; 表示一致性模式为正常。</li> 
+<li>出错时停止 &#8212; 表示控制器会由于错误而异常中断检查一致性操作。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>重建率</b></span></td> 
+<td class="desc"> 显示专用于重建故障磁盘的控制器资源的百分比。在重建期间，所有物理磁盘内容会被重新构建。<br /> 设为 0% 时，重建任务对于控制器来说具有最低优先权，因此会需要最长时间来完成，并且对系统性能的影响最小。重建率为 0% 并不代表重建任务已停止或暂停。<br /> 设为 100% 时，重建任务对于控制器来说具有最高优先权，因此会将重建时间缩到最短，并且对系统性能的影响最大。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>BGI 率</b></span></td> 
+<td class="desc"> 显示在创建虚拟磁盘后专用于执行其后台初始化 (BGI)  的控制器资源百分比。<br /> 设为 0% 时，后台初始化任务对于控制器来说具有最低优先权，因此会需要最长时间来完成，并且对系统性能的影响最小。后台初始化率为 0% 并不代表后台初始化任务已停止或暂停。<br /> 
+<br /> 设为 100% 时，后台初始化任务对于控制器来说具有最高优先权，因此会将后台初始化时间缩到最短，并且对系统性能的影响最大。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>重新构建率</b></span> </td> 
+<td class="desc"> 显示在添加物理磁盘或更改磁盘组中虚拟磁盘的 RAID 级别后，专用于重新构建磁盘组的控制器资源百分比。<br /> 
+<br /> 设为 0% 时，重新构建任务对于控制器来说具有最低优先权，因此会需要最长时间来完成，并且对系统性能的影响最小。重新构建率为 0% 并不代表重新构建任务已停止或暂停。<br /> 
+<br /> 设为 100% 时，重新构建任务对于控制器来说具有最高优先权，因此会将重新构建时间缩到最短，并且对系统性能的影响最大。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>最大允许速度</b></span></td> 
+<td class="desc"> 显示设备传输数据的最大速度（单位为每秒千兆字节）。可能的值为 0、1.5、3.0 或 6.0。如果该值不可用，则会显示<b>无此信息</b>。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>持续热备用</b></span></td> 
+<td class="desc"> 
+<p>表示与热备用驱动器对应的插槽是否为持续的。可能的值：</p> 
+<ul> 
+<li>已启用 &#8212; 表示与热备用驱动器对应的插槽是持续的。插槽中的任何符合热备用的驱动器都会作为热备用运行。如果驱动器含有外部数据，将覆盖这些数据。</li> 
+<li>已禁用 &#8212; 表示与热备用驱动器对应的插槽不是持续的。如果从插槽中卸下了驱动器并插入了任何驱动器，则插槽停止作为热备用运行。您必须手动重新将驱动器设定为热备用。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>负载平衡设置</b></span></td> 
+<td class="desc"> 
+<p>表示自动使用连接至同一机柜的两个控制器端口或连接器对 I/O 请求进行路由的能力。<br /> 可能的值：</p> 
+<ul> 
+<li>自动 — 表示已启用负载平衡设置。</li> 
+<li>无 — 表示已禁用负载平衡设置。</li> 
+<li>不支持 — 表示不支持负载平衡设置。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>保留高速缓存</b></span></td> 
+<td class="desc"> 
+<p>表示控制器是否具有保留或固定高速缓存。如果控制器具有保留高速缓存，则控制器的状态将显示为<b>降级</b> 。<br /> 可能的值：</p> 
+<ul> 
+<li>存在</li> 
+<li>不存在</li> 
+</ul> 
+<p>如果该值不可用，则会显示<b>无此信息</b>。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>旋转减慢的时间间隔</b></span></td> 
+<td class="desc"> 显示以分钟表示的时间间隔，在此时间间隔之后，热备用和未配置的驱动器将旋转减慢。<br /> 介于 30 到 1440 之间的任何值均有效。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>旋转减慢未配置的磁盘</b></span></td> 
+<td class="desc"> 
+<p>表示已启用或已禁用对未配置磁盘的旋转减慢。可能的值：</p> 
+<ul> 
+<li>已启用 — 表示在指定时间间隔内对未配置的磁盘没有执行任何活动时旋转减慢。</li> 
+<li>已禁用 — 表示已禁用旋转减慢。</li> 
+</ul> 
+<p>如果该值不可用，则会显示<b>无此信息</b>。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>旋转减慢热备用</b></span></td> 
+<td class="desc"> 
+<p>表示已启用或已禁用热备用的旋转减慢。可能的值：</p> 
+<ul> 
+<li>已启用 — 表示在指定时间间隔内对热备用没有进行读/写操作时启动旋转减慢。</li> 
+<li>已禁用 — 表示已禁用旋转减慢。</li> 
+</ul> 
+<p>如果该值不可用，则会显示<b>无此信息</b>。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>记忆模式</b></span></td> 
+<td class="desc"> 
+<p>显示电池的记忆模式。可能的值：</p> 
+<ul> 
+<li>自动 &#8212; 表示控制器基于设置的时间执行自动的记忆周期。</li> 
+<li>警告 &#8212; 表示控制器对将到的记忆周期发出警告，但不会自动启动记忆周期。记忆周期已超过默认的 90 天。</li> 
+<li>不支持 &#8212; 表示此控制器不支持记忆模式。</li> 
+<li>已禁用 — 表示记忆模式已禁用。</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+<div class="popup_subheader"> 
+ 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="Controller_Battery">控制器电池</span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>仅当控制器带有电池时显示以下属性。</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状态</b></span></td> 
+<td class="desc"> 
+<p>显示电池的运行状况。</p> 
+<ul> 
+<li> 正常<span class="status_ok"> &#8212; </span>表示组件运行正常。</li> 
+<li>警告<span class="status_noncritical"> &#8212; </span>表示探测器或其它监测设备检测到控制器的读数超过或低于可接受级别。组件可能仍在运转，但是可能会发生故障。组件也可能在受损的状态下工作。</li> 
+<li>严重<span class="status_critical"> &#8212; </span>表示组件已出现故障或即将故障。需要立即加以关注而且可能需要更换。</li> 
+<li>无此信息<span class="status_unknown"> &#8212; </span>表示此组件的状态为未知。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名称</b></span></td> 
+<td class="desc"> 显示控制器中存在的电池的名称。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>状态</b></span></td> 
+<td class="desc"> 
+<p>显示电池的当前状况。可能的状态为：</p> 
+<ul> 
+<li>就绪 &#8212; 表示电池正常工作。</li> 
+<li>降级 &#8212; 表示电池需要修复（记忆周期）。</li> 
+<li>正在充电 &#8212; 表示电池正处于电池记忆周期中的充电阶段。</li> 
+<li>缺少 &#8212; 表示控制器缺少电池。</li> 
+<li>电力不足 &#8212; 表示电池电力不足和电池需要修复。</li> 
+<li>失效 &#8212; 表示电池已经故障并需要更换。</li> 
+<li>未知 &#8212; 表示电池状态不可用。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>预计电量状况</b></span></td> 
+<td class="desc"> 
+<p>显示电池的充电量。可能的值：</p> 
+<ul> 
+<li>就绪 &#8212; 表示可以将电池充电至满载电量。</li> 
+<li>故障 &#8212; 表示电池不能充电并且需要更换。</li> 
+<li>未知 &#8212; 表示电池正在完成记忆周期。在记忆周期完成前无法确定电池充电量。</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

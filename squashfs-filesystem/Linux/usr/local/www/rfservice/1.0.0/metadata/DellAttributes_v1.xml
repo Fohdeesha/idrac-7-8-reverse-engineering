@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellAttributes  v1.0.0                                              -->
+<!--# This is DELL OEM Schema.                                                             -->
+<!--# Copyright 2014-2016 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+    </edmx:Reference>
+
+    <edmx:DataServices>
+
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellAttributes">
+            <EntityType Name="DellAttributes" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+                <Annotation Term="OData.Description" String="DellAttributes contains properties of additional properties to complement the Attribute Registry DMTF schema. It contains attributes surrounding attribute registry and Actions needed to perform changes to settings, which typically doesn't require a manager reset to apply."/>
+                <Annotation Term="OData.LongDescription" String="This resource shall be used to represent Oem attributes for a Redfish implementation."/>
+            </EntityType>
+        </Schema>
+
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellAttributes.v1_0_0">
+            <EntityType Name="DellAttributes" BaseType="DellAttributes.DellAttributes">
+				<Property Name="AttributeRegistry" Type="Edm.String">
+				  <Annotation Term="OData.Description" String="The Resource ID of the Attribute Registry for the manager Attributes resource."/>
+				  <Annotation Term="OData.LongDescription" String="The reference to the Attribute Registry that lists the metadata describing the manager attribute settings in this resource."/>
+				</Property>
+				<Property Name="Attributes" Type="DellAttributes.v1_0_0.Attributes" Nullable="false">
+				  <Annotation Term="OData.Description" String="This is the manufacturer/provider specific list of manager attributes."/>
+				  <Annotation Term="OData.LongDescription" String="Manager Attribute settings appear as additional properties in this object, and can be looked up in the Attribute Registry by their AttributeName."/>
+				</Property>
+			</EntityType>
+
+			<ComplexType Name="Attributes">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="Redfish.DynamicPropertyPatterns">
+				  <Collection>
+					<Record>
+					  <PropertyValue Property="Pattern" String="[A-Za-z0-9]+"/>
+					  <PropertyValue Property="Type" String="Edm.Primitive"/>
+					</Record>
+				  </Collection>
+				</Annotation>
+			</ComplexType>
+
+        </Schema>
+
+    </edmx:DataServices>
+</edmx:Edmx>

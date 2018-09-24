@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!-- Copyright 2015-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+		<edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+	</edmx:Reference>
+
+	<edmx:DataServices>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Location.v1_0_0">
+
+			<ComplexType Name="Location">
+				<Annotation Term="OData.Description" String="The location of a resource."/>
+				<Annotation Term="OData.LongDescription" String="The location of a resource. For more information see RFC4514."/>
+				<Property Name="Country" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Country"/>
+					<Annotation Term="OData.LongDescription" String="The ISO 3166-1 alpha-2 ASCII country code or ISO 3166-1 numeric country code of the country in which the part is installed."/>
+				</Property>
+				<Property Name="Territory" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Territory"/>
+					<Annotation Term="OData.LongDescription" String="Name of the territory in the country. Not all countries use this in addresses. India and China do."/>
+				</Property>
+				<Property Name="State" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="State"/>
+					<Annotation Term="OData.LongDescription" String="Name of the state in the country or territory."/>
+				</Property>
+				<Property Name="City" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="City"/>
+					<Annotation Term="OData.LongDescription" String="Name of the town or city in which the part is installed."/>
+				</Property>
+				<Property Name="Address1" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Address1"/>
+					<Annotation Term="OData.LongDescription" String="Free form 1st address line for the location."/>
+				</Property>
+				<Property Name="Address2" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Address2"/>
+					<Annotation Term="OData.LongDescription" String="Free form 2nd address line for the location."/>
+				</Property>
+				<Property Name="Address3" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Address3"/>
+					<Annotation Term="OData.LongDescription" String="Free form 3rd address line for the location."/>
+				</Property>
+				<Property Name="PostalCode" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Postal code (or zip code)"/>
+					<Annotation Term="OData.LongDescription" String="Postal code (or zip code)"/>
+				</Property>
+				<Property Name="Building" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Name of the building."/>
+					<Annotation Term="OData.LongDescription" String="Name of the building in which the part is installed."/>
+				</Property>
+				<Property Name="Room" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Name or number of the room."/>
+					<Annotation Term="OData.LongDescription" String="Name or number of the room in which the part is installed."/>
+				</Property>
+				<Property Name="Row" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Row name or number."/>
+					<Annotation Term="OData.LongDescription" String="Row name or number in which the part is installed."/>
+				</Property>
+				<Property Name="Rack" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Rack name or number."/>
+					<Annotation Term="OData.LongDescription" String="Rack name or number. If Row is specified, this should be the rack number within the row, otherwise it may have a more global meaning."/>
+				</Property>
+				<Property Name="Shelf" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Shelf or unit name or number."/>
+					<Annotation Term="OData.LongDescription" String="Shelf or unit name or number. If Rack is specified, this should be the shelf number within the rack, otherwise it may have a more global meaning."/>
+				</Property>
+				<Property Name="Item" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Item position."/>
+					<Annotation Term="OData.LongDescription" String="Item position. If Shelf is specified, this should be the slot number within the shelf, otherwise it may have a more global meaning."/>
+				</Property>
+				<Property Name="GPSCoords" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="The GPS coordinates of the part."/>
+					<Annotation Term="OData.LongDescription" String="The GPS coordinates of the part. If furnished, this shall be expressed in the format '[-][nn]n.nnnnnn, [-][nn]n.nnnnn', i.e. two numbers, either positive or negative, with six decimal places of precision, comma-separated."/>
+				</Property>
+				<Property Name="OtherLocationInfo" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Other free form text describing the item's location."/>
+					<Annotation Term="OData.LongDescription" String="Other free form text describing the item's location."/>
+				</Property>
+			</ComplexType>
+
+    </Schema>
+
+  </edmx:DataServices>
+</edmx:Edmx>

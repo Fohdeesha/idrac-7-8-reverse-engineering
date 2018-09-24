@@ -1,0 +1,17 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/FanSlots",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/SlotConfigs",
+    "@odata.type": "#Slots.1.0.0.SlotConfig",
+    "Id": "FanSlots",
+    "Name": "Fan slot configuration",
+    "Row": "1",
+    "Column": "6",
+    "Location": "Rear",
+    "Orientation": "Horizontal",
+    "FirstSlotNamePattern": "1",
+    "SequenceOrder": [
+        "TLRA"
+    ],
+    "Oem": {}
+}

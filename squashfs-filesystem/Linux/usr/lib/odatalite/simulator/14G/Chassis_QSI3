@@ -1,0 +1,52 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+    "@odata.id": "/redfish/v1/Chassis/QSI3", "@oem.nav.parentid": "/redfish/v1/Chassis",
+    "@odata.type": "#Chassis.1.0.0.Chassis",
+    "Id": "QSI3",
+    "Name": "Quarter Sled interposer",
+    "ChassisType": "Expansion",
+    "Description": "An example instance of Chassis representing an interposer container for quarter size Sleds",
+    "Manufacturer": "Dell Inc.",
+    "Model": "Interposer",
+    "SKU": "QSI3",
+    "SerialNumber": "2M220100SL",
+    "Version": "1.0",
+    "PartNumber": "",
+    "AssetTag": "CustomerSpecifiedValue",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Links": {
+        "ContainedBy": {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791"
+        },
+        "ComputerSystems": [
+            {
+                "@odata.id": "/redfish/v1/Systems/QSI3"
+            }
+        ],
+        "Oem": {}
+    },
+    
+    "SlotConfigs": {
+        "@odata.id": "/redfish/v1/Chassis/QSI3/SlotConfigs"
+    },
+    "Slots": {
+        "@odata.id": "/redfish/v1/Chassis/QSI3/Slots"
+    },
+        
+    "Oem": { 
+        "EID:674": {
+            "InSlot": [
+                {
+                    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-3"
+                },
+                {
+                    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-4"
+                }
+            ]
+        }
+    }
+}

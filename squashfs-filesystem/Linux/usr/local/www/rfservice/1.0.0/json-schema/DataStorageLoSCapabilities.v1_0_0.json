@@ -1,0 +1,227 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#DataStorageLoSCapabilities.v1_0_0.DataStorageLoSCapabilities",
+    "$ref": "#/definitions/DataStorageLoSCapabilities",
+    "definitions": {
+        "AccessCapability": {
+            "type": "string",
+            "enum": [
+                "Read",
+                "WriteMany",
+                "WriteOnce",
+                "AppendOnly",
+                "Streaming"
+            ],
+            "enumDescriptions": {
+                "Read": "Read.",
+                "WriteMany": "WriteMany.",
+                "WriteOnce": "WriteOnce.",
+                "AppendOnly": "AppendOnly.",
+                "Streaming": "Streaming."
+            },
+            "enumLongDescriptions": {
+                "Read": "This enumeration literal specifies Read access.",
+                "WriteMany": "This enumeration literal specifies WriteMany access.",
+                "WriteOnce": "This enumeration literal specifies WriteOnce access.",
+                "AppendOnly": "This enumeration literal specifies AppendOnly access.",
+                "Streaming": "This enumeration literal specifies Streaming access."
+            },
+            "description": "Types of access.",
+            "longDescription": "The enumeration literals may be used to specify types of access."
+        },
+        "DataStorageLineOfService": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "Name": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name"},
+                        {"type": "null"}
+                    ],
+                    "description": "A friendly name for this line of service.",
+                    "longDescription": "If present, the name shall be a friendly name for this line of service."
+                },
+                "RecoveryTimeObjectives": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/DataProtectionLoSCapabilities.v1_0_0.json#/definitions/RecoveryAccessScope"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Expectations for time to access the primary store after disaster recover.",
+                    "longDescription": "The enumeration literal specifies the time after a disaster that the client shall regain conformant service level access to the primary store, typical values are 'immediate' or 'offline'. The expectation is that the services required to implement this capability are part of the advertising system."
+                },
+                "ProvisioningPolicy": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/ProvisioningPolicy"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Provisioning policy for storage.",
+                    "longDescription": "The enumeration literal shall define the provisioning policy for storage."
+                },
+                "IsSpaceEfficient": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "True implies compression or deduplication of storage.",
+                    "longDescription": "A value of true shall indicate that the storage is compressed or deduplicated. The default value for this property is false."
+                }
+            },
+            "description": "Describe data storage capabilities.",
+            "longDescription": "This structure may be used to describe a service option covering storage provisioning and availability."
+        },
+        "DataStorageLoSCapabilities": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.v1_1_0.json#/definitions/Identifier"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value shall be unique within the managed ecosystem."
+                },
+                "SupportedAccessCapabilities": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/AccessCapability"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported access capabilities.",
+                    "longDescription": "Each entry specifies a storage access capability."
+                },
+                "SupportedRecoveryTimeObjectives": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/DataProtectionLoSCapabilities.v1_0_0.json#/definitions/RecoveryAccessScope"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Supported expectations for time to access the primary store after recovery.",
+                    "longDescription": "This collection specifies supported expectations for time to access the primary store after recovery."
+                },
+                "SupportedProvisioningPolicies": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/ProvisioningPolicy"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Thin allows over allocation of storage.",
+                    "longDescription": "This collection specifies supported storage allocation policies."
+                },
+                "SupportsSpaceEfficiency": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Allows compression or deduplication of storage.",
+                    "longDescription": "The value specifies whether storage compression or deduplication is supported. The default value for this property is false."
+                },
+                "SupportedDataStorageLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/DataStorageLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Collection of known and supported DataStorageLinesOfService.",
+                    "longDescription": "The collection shall contain known and supported DataStorageLinesOfService."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "Describe data storage capabilities.",
+            "longDescription": "Each instance of DataStorageLoSCapabilities describes capabilities of the system to support various data storage service options."
+        },
+        "ProvisioningPolicy": {
+            "type": "string",
+            "enum": [
+                "Fixed",
+                "Thin"
+            ],
+            "enumDescriptions": {
+                "Fixed": "Storage is fully allocated",
+                "Thin": "Storage may be over allocated."
+            },
+            "enumLongDescriptions": {
+                "Fixed": "This enumeration literal specifies storage shall be fully allocated.",
+                "Thin": "This enumeration literal specifies storage may be over allocated."
+            },
+            "description": "Space provisioning policy.",
+            "longDescription": "The enumeration literals may be used to specify space provisioning policy."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

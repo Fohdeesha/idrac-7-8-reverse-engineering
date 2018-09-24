@@ -1,0 +1,6 @@
+[Unit]
+Description=Common Logging Mechanism: Log Rotate
+
+[Service]
+Type=oneshot
+ExecStart=/bin/dell_logrotate

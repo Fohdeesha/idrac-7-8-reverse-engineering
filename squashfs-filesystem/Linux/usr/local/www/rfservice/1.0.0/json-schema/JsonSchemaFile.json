@@ -1,0 +1,30 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_2_0.json",
+    "title": "#JsonSchemaFile.JsonSchemaFile",
+    "$ref": "#/definitions/JsonSchemaFile",
+    "definitions": {
+        "JsonSchemaFile": {
+            "anyOf": [
+                {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/JsonSchemaFile.v1_0_0.json#/definitions/JsonSchemaFile"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/JsonSchemaFile.v1_0_2.json#/definitions/JsonSchemaFile"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/JsonSchemaFile.v1_0_3.json#/definitions/JsonSchemaFile"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/JsonSchemaFile.v1_0_4.json#/definitions/JsonSchemaFile"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/JsonSchemaFile.v1_1_0.json#/definitions/JsonSchemaFile"
+                }
+            ]
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}

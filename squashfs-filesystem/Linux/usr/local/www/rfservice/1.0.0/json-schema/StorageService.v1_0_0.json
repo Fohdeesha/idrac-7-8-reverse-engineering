@@ -1,0 +1,385 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#StorageService.v1_0_0.StorageService",
+    "$ref": "#/definitions/StorageService",
+    "definitions": {
+        "SetEncryptionKey": {
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Friendly action name"
+                },
+                "target": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to invoke action"
+                }
+            },
+            "description": "This action is used to set the encryption key for the storage subsystem.",
+            "longDescription": "This defines the name of the custom action supported on this resource."
+        },
+        "Protocol": {
+            "type": "string",
+            "enum": [
+                "PCIe",
+                "AHCI",
+                "UHCI",
+                "SAS",
+                "SATA",
+                "USB",
+                "NVMe",
+                "FC",
+                "iSCSI",
+                "FCoE",
+                "NVMeOverFabrics",
+                "SMB",
+                "NFSv3",
+                "NFSv4",
+                "HTTP",
+                "HTTPS",
+                "FTP",
+                "SFTP"
+            ],
+            "enumDescriptions": {
+                "PCIe": "PCI Express (Vendor Proprietary)",
+                "AHCI": "Advanced Host Controller Interface",
+                "UHCI": "Universal Host Controller Interface",
+                "SAS": "Serial Attached SCSI",
+                "SATA": "Serial AT Attachment",
+                "USB": "Universal Serial Bus",
+                "NVMe": "Non-Volatile Memory Express",
+                "FC": "Fibre Channel",
+                "iSCSI": "Internet SCSI",
+                "FCoE": "Fibre Channel over Ethernet",
+                "NVMeOverFabrics": "NVMe over Fabrics",
+                "SMB": "Server Message Block (aka CIFS Common Internet File System)",
+                "NFSv3": "Network File System version 3",
+                "NFSv4": "Network File System version 4",
+                "HTTP": "Hypertext Transport Protocol",
+                "HTTPS": "Secure Hypertext Transport Protocol",
+                "FTP": "File Transfer Protocol",
+                "SFTP": "Secure File Transfer Protocol"
+            },
+            "enumLongDescriptions": {
+                "PCIe": "This value shall mean that this device conforms to the PCI-SIG PCI Express Base Specification only beyond that is uses some vendor proprietary mechanism to communicate.",
+                "AHCI": "This value shall mean that this device conforms to the Intel Advanced Host Controller Interface Specification.",
+                "UHCI": "This value shall mean that this device conforms to the Intel Universal Host Controller Interface Specification, Enhanced Host Controller Interface Specification, or the Extensible Host Controller Interface specification.",
+                "SAS": "This value shall mean that this device conforms to the T10 SAS Protocol Layer Specification.",
+                "SATA": "This value shall mean that this device conforms to the Serial ATA International Organization Serial ATA Specification.",
+                "USB": "This value shall mean that this device conforms to the USB Implementers Forum Universal Serial Bus Specification.",
+                "NVMe": "This value shall mean that this device conforms to the Non-Volatile Memory Host Controller Interface Specification Specification.",
+                "FC": "This value shall mean that this device conforms to the T11 Fibre Channel Physical and Signaling Interface Specification.",
+                "iSCSI": "This value shall mean that this device conforms to the IETF Internet Small Computer Systems Interface (iSCSI) Specification.",
+                "FCoE": "This value shall mean that this device conforms to the T11 FC-BB-5 Specification.",
+                "NVMeOverFabrics": "This value shall mean that this device conforms to the NVM Express over Fabrics Specification.",
+                "SMB": "This value shall mean that this device conforms to the Microsoft Server Message Block Protocol.",
+                "NFSv3": "This value shall mean that this device conforms to the Network File System protocol as defined by RFC 1813.",
+                "NFSv4": "This value shall mean that this device conforms to the Network File System protocol as defined by RFC 3010 or RFC 5661.",
+                "HTTP": "This value shall mean that this device conforms to the Hypertext Transfer protocol as defined by RFC 2068 or RFC 2616.",
+                "HTTPS": "This value shall mean that this device conforms to the Hypertext Transfer protocol as defined by RFC 2068 or RFC 2616 utilizing Transport Layer Security as specified by RFC 5246 or RFC 6176.",
+                "FTP": "This value shall mean that this device conforms to the File Transfer protocol as defined by RFC 114.",
+                "SFTP": "This value shall mean that this device conforms to the File Transfer protocol as defined by RFC 114 utilizing Transport Layer Security as specified by RFC 5246 or RFC 6176."
+            }
+        },
+        "StorageService": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.v1_1_0.json#/definitions/Identifier"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value identifies this resource.  The value shall be unique within the managed ecosystem."
+                },
+                "Status": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Status"},
+                        {"type": "null"}
+                    ]
+                },
+                "Links": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "type": [
+                                "array",
+                                "boolean",
+                                "number",
+                                "null",
+                                "object",
+                                "string"
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "properties": {
+                        "Oem": {
+                            "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                            "description": "Oem extension object.",
+                            "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
+                        },
+                        "HostingSystem": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/ComputerSystem.json#/definitions/ComputerSystem"},
+                                {"type": "null"}
+                            ],
+                            "description": "The hosting system.",
+                            "longDescription": "The value shall reference the ComputerSystem that hosts this service."
+                        },
+                        "DefaultClassOfService": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/ClassOfService.json#/definitions/ClassOfService"},
+                                {"type": "null"}
+                            ],
+                            "readonly": false,
+                            "description": "The default class of service for entities allocated by this storage service.",
+                            "longDescription": "If present, this property shall reference the default class of service for entities allocated by this storage service. This default may be overridden by the DefaultClassOfService property values within contained StoragePools."
+                        },
+                        "DataProtectionLoSCapabilities": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/DataProtectionLoSCapabilities.json#/definitions/DataProtectionLoSCapabilities"},
+                                {"type": "null"}
+                            ],
+                            "readonly": false,
+                            "description": "The data protection capabilities of this service.",
+                            "longDescription": "The value shall reference the data protection capabilities of this service."
+                        },
+                        "DataSecurityLoSCapabilities": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/DataSecurityLoSCapabilities.json#/definitions/DataSecurityLoSCapabilities"},
+                                {"type": "null"}
+                            ],
+                            "readonly": false,
+                            "description": "The data security capabilities of this service.",
+                            "longDescription": "The value shall reference the data security capabilities of this service."
+                        },
+                        "DataStorageLoSCapabilities": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/DataStorageLoSCapabilities.json#/definitions/DataStorageLoSCapabilities"},
+                                {"type": "null"}
+                            ],
+                            "readonly": false,
+                            "description": "The data storage capabilities of this service.",
+                            "longDescription": "The value shall reference the data storage capabilities of this service."
+                        },
+                        "IOConnectivityLoSCapabilities": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/IOConnectivityLoSCapabilities.json#/definitions/IOConnectivityLoSCapabilities"},
+                                {"type": "null"}
+                            ],
+                            "readonly": false,
+                            "description": "The IO connectivity capabilities of this service.",
+                            "longDescription": "The value shall reference the IO connectivity capabilities of this service."
+                        },
+                        "IOPerformanceLoSCapabilities": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/IOPerformanceLoSCapabilities.json#/definitions/IOPerformanceLoSCapabilities"},
+                                {"type": "null"}
+                            ],
+                            "readonly": false,
+                            "description": "The IO performance capabilities of this service.",
+                            "longDescription": "The value shall reference the IO performance capabilities of this service."
+                        }
+                    },
+                    "readonly": true,
+                    "description": "Contains links to other resources that are related to this resource."
+                },
+                "Actions": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "type": [
+                                "array",
+                                "boolean",
+                                "number",
+                                "null",
+                                "object",
+                                "string"
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "properties": {
+                        "Oem": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                                    "type": [
+                                        "array",
+                                        "boolean",
+                                        "number",
+                                        "null",
+                                        "object",
+                                        "string"
+                                    ],
+                                    "description": "This property shall specify a valid odata or Redfish property."
+                                }
+                            },
+                            "additionalProperties": true,
+                            "properties": {}
+                        },
+                        "#StorageService.SetEncryptionKey": {
+                            "$ref": "#/definitions/SetEncryptionKey"
+                        }
+                    },
+                    "readonly": true,
+                    "description": "The available actions for this resource.",
+                    "longDescription": "The Actions property shall contain the available actions for this resource."
+                },
+                "StorageGroups": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/StorageGroupCollection.json#/definitions/StorageGroupCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "StorageGroups.",
+                    "longDescription": "The value of each enty in the array shall reference a StorageGroup."
+                },
+                "ClientEndpointGroups": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Client endpoint groups.",
+                    "longDescription": "The value of each entry in the array shall reference an EndpointGroup."
+                },
+                "ServerEndpointGroups": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Server endpoint groups.",
+                    "longDescription": "The value of each entry in the array shall reference a EndpointGroup."
+                },
+                "Volumes": {
+                    "$ref": "/redfish/v1/Schemas/VolumeCollection.json#/definitions/VolumeCollection",
+                    "readonly": false,
+                    "description": "Volumes.",
+                    "longDescription": "An array of references to Volumes managed by this storage service."
+                },
+                "FileSystems": {
+                    "$ref": "/redfish/v1/Schemas/FileSystemCollection.json#/definitions/FileSystemCollection",
+                    "readonly": false,
+                    "description": "FileSystems.",
+                    "longDescription": "An array of references to FileSystems managed by this storage service."
+                },
+                "StoragePools": {
+                    "$ref": "/redfish/v1/Schemas/StoragePoolCollection.json#/definitions/StoragePoolCollection",
+                    "readonly": true,
+                    "description": "StoragePools.",
+                    "longDescription": "An array of references to StoragePools."
+                },
+                "Drives": {
+                    "$ref": "/redfish/v1/Schemas/DriveCollection.json#/definitions/DriveCollection",
+                    "readonly": true,
+                    "description": "The set of drives managed by this storage service.",
+                    "longDescription": "A collection that indicates all the drives managed by this storage service."
+                },
+                "Endpoints": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/EndpointCollection.json#/definitions/EndpointCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "Endpoints.",
+                    "longDescription": "The value of each enty in the array shall reference an Endpoint managed by this service."
+                },
+                "Redundancy@odata.count": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/count"
+                },
+                "Redundancy@odata.navigationLink": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "Redundancy": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "/redfish/v1/Schemas/Redundancy.json#/definitions/Redundancy"
+                    },
+                    "readonly": true,
+                    "description": "Redundancy information for the storage subsystem"
+                },
+                "ClassesOfService": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The ClassesOfService that all storage in this StorageService can support.",
+                    "longDescription": "The value of each enty in the array shall reference a ClassOfService supported by this service."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "Collection of resources that are managed and exposed to hosts as a group.",
+            "longDescription": "Collection of resources that the system can make available to one or more host systems.  The collection can contain: block, file, or object storage; local system access points through which the collection is made available; hosts, or host access points to which the collection is made available."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

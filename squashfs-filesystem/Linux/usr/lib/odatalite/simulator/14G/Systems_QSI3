@@ -1,0 +1,21 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Systems/Members/$entity",
+    "@odata.id": "/redfish/v1/Systems/QSI3"  ,"@oem.nav.parentid": "/redfish/v1/Systems",
+    "@odata.type": "#ComputerSystem.1.0.0.ComputerSystem",
+    "Id": "QSI3",
+    "Name": "Computer System",
+    "Links": {
+        "Chassis": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/QSI3"
+            }
+        ]
+    },
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "http://Dell.com/Schema#Dell.ComputerSystem",
+            "CPLDVersion": "2.0"
+        }
+    }
+}

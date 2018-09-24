@@ -1,0 +1,150 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _tag_TeamType
+{
+        u32 bitMap;
+} TeamType;
+
+typedef struct _MemoryRange
+{
+        u64 startAddr;
+        u64 endAddr;
+} MemoryRange;
+
+typedef struct _NetworkAdapterObj
+{
+        u8 busNumber;
+        u8 deviceNumber;
+        u8 functionNumber;
+        u8 typeNetworkComponent;
+        u32 ifType;
+        u32 nicStatus;
+        u8 ifAdminStatus;
+        u8 ifOperStatus;
+        u8 linkStatus;
+        u8 duplex;
+        u16 irq;
+        u8 reservedAlign[2];
+        u32 dma;
+        u32 baseAddress;
+        u32 numMemRanges;
+        MemoryRange memRanges[4];
+        u64 baseMemAddr;
+        u64 speed;
+        u32 mtu;
+        u32 portNum;
+        TeamType uTeamType;
+        u32 nicTOECapability;
+        u32 nicRDMACapability;
+        u32 niciSCSICapability;
+        booln isTOEEnable;
+        booln isRDMAEnable;
+        booln isiSCSIEnable;
+        u8 reservedAlign2[2];
+        u32 offsetIfDescription;
+        u32 offsetOSAdapterDescription;
+        u32 offsetOSAdapterVendor;
+        u32 offsetOSAdapterProductName;
+        u32 offsetSlotName;
+        u32 offsetDriverName;
+        u32 offsetDriverVersion;
+        u32 offsetImagePath;
+        u32 offsetServiceName;
+        u32 offsetFirmwareVersion;
+        u32 offsetCurrentMACAddr;
+        u32 offsetPermanentMACAddr;
+        u32 offsetIPAddress;
+        u32 offsetSubNetMask;
+        u32 offsetDHCPServer;
+        u32 offsetDefaultGateway;
+        u32 offsetIPv6Address;
+        u32 offsetDHCPv6Server;
+        u32 offsetDefaultIPv6Gateway;
+} NetworkAdapterObj;
+
+typedef struct _IPv4Address
+{
+        __BITMAP u32 flags;
+        u32 offsetIPAddress;
+        u32 offsetSubNetMask;
+} IPv4Address;
+
+typedef struct _IPv6Address
+{
+        u8 scope;
+        u8 prefixLen;
+        u8 reservedAlign[2];
+        u32 offsetIPv6Address;
+} IPv6Address;
+
+typedef struct _IPAddressObj
+{
+        u16 type;
+        u8 reservedAlign[2];
+        IPv4Address ipv4Addr;
+        IPv6Address ipv6Addr;
+} IPAddressObj;
+
+typedef struct _IPAddressListObj
+{
+        u8 numIPAddrs;
+        u8 numIPv4Addrs;
+        u8 numIPv6Addrs;
+        u8 reservedAlign[1];
+        IPAddressObj addrList[-4];
+} IPAddressListObj;
+
+typedef struct _NetworkAdapterStatsObj
+{
+        u64 rxGoodFrames;
+        u64 rxBadFrames;
+        u64 rxAlignmentErrors;
+        u64 rxFCSErrors;
+        u64 rxFrameTooLongs;
+        u64 rxInternalMACRxErrors;
+        u64 txGoodFrames;
+        u64 txBadFrames;
+        u64 txCollisions;
+        u64 txSingleCollisionFrames;
+        u64 txMultipleCollisionFrames;
+        u64 txDeferredTransmits;
+        u64 txLateCollisions;
+        u64 txExcessiveCollisions;
+        u64 txCarrierSenseErrors;
+        u64 txInternalMACTxErrors;
+        u64 rxBytes;
+        u64 rxTotalPackets;
+        u64 rxUnicastPackets;
+        u64 rxMulticastPackets;
+        u64 rxBroadcastPackets;
+        u64 rxDiscardedPackets;
+        u64 rxErrorPackets;
+        u64 rxUnknownProtocols;
+        u64 txBytes;
+        u64 txTotalPackets;
+        u64 txUnicastPackets;
+        u64 txMulticastPackets;
+        u64 txBroadcastPackets;
+        u64 txDiscardedPackets;
+        u64 txErrorPackets;
+        u64 txQueueLength;
+} NetworkAdapterStatsObj;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------
+

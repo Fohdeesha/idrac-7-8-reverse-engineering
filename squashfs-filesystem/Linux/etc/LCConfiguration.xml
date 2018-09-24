@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FQDD Name="LifecycleController.Embedded.1">
+  <ConfigGroup Index="1" Name="LCAttributes" GroupType="0x4100" DisplayName="Lifecycle Controller Attributes" Description="Lifecycle Controller Attributes">
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1501" HideFrom="DCS">
+      <Name>CollectSystemInventoryOnRestart</Name>
+      <DisplayName Lang="en-US">Collect System Inventory on Restart</DisplayName>
+      <DefaultValue IntVal="1">Enabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disabled</PossibleValue> 
+        <PossibleValue IntVal="1">Enabled</PossibleValue> 
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1502" HideFrom="DCS">
+      <Name>PartConfigurationUpdate</Name>
+      <DisplayName Lang="en-US">Part Configuration Update</DisplayName>
+      <DefaultValue IntVal="1">Apply always</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disabled</PossibleValue> 
+        <PossibleValue IntVal="1">Apply always</PossibleValue> 
+        <PossibleValue IntVal="2">Apply only if firmware match</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1503" HideFrom="DCS">
+      <Name>PartFirmwareUpdate</Name>
+      <DisplayName Lang="en-US">Part Firmware Update</DisplayName>
+      <DefaultValue IntVal="2">Match firmware of replaced part</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disable</PossibleValue> 
+        <PossibleValue IntVal="1">Allow version upgrade only</PossibleValue> 
+        <PossibleValue IntVal="2">Match firmware of replaced part</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1504" HideFrom="DCS">
+      <Name>LifecycleControllerState</Name>
+      <DisplayName Lang="en-US">Lifecycle Controller State</DisplayName>
+      <DefaultValue IntVal="1">Enabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disabled</PossibleValue> 
+        <PossibleValue IntVal="1">Enabled</PossibleValue> 
+        <PossibleValue IntVal="2">Recovery</PossibleValue> 
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="3" RO="true" DisplayOrder="1505" HideFrom="DCS">
+      <Name>SystemID</Name>
+      <DisplayName Lang="en-US">SYSID</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="1506" HideFrom="DCS">
+      <Name>Licensed</Name>
+      <DisplayName Lang="en-US">Licensed</DisplayName>
+      <DefaultValue IntVal="0">No</DefaultValue> 
+      <PossibleValues>
+        <PossibleValue IntVal="0">No</PossibleValue> 
+        <PossibleValue IntVal="1">Yes</PossibleValue> 
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Address" MaxLength="64" RO="true" DisplayOrder="1507" HideFrom="DCS">
+      <Name>CMCIP</Name>
+      <DisplayName Lang="en-US">CMC IP Address</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="1508" HideFrom="DCS">
+      <Name>AutoDiscovery</Name>
+      <DisplayName Lang="en-US">Auto Discovery</DisplayName>
+      <DefaultValue IntVal="0">Off</DefaultValue>
+      <PossibleValues>
+      <PossibleValue IntVal="0">Off</PossibleValue> 
+      <PossibleValue IntVal="1">On</PossibleValue>         
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="1509" HideFrom="DCS">
+      <Name>DiscoveryFactoryDefaults</Name>
+      <DisplayName Lang="en-US">Discovery Factory Defaults</DisplayName>
+      <DefaultValue IntVal="0">Off</DefaultValue>
+      <PossibleValues>
+      <PossibleValue IntVal="0">Off</PossibleValue> 
+      <PossibleValue IntVal="1">On</PossibleValue>         
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1510" HideFrom="DCS">
+      <Name>IPChangeNotifyPS</Name>
+      <DisplayName Lang="en-US">IPChangeNotifyPS</DisplayName>
+      <DefaultValue IntVal="0">Off</DefaultValue>
+      <PossibleValues>
+      <PossibleValue IntVal="0">Off</PossibleValue> 
+      <PossibleValue IntVal="1">On</PossibleValue>         
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1511" HideFrom="DCS">
+      <Name>VirtualAddressManagement</Name>
+      <DisplayName Lang="en-US">VirtualAddressManagement</DisplayName>
+      <DefaultValue IntVal="0">Console</DefaultValue>
+      <PossibleValues>
+      <PossibleValue IntVal="0">Console</PossibleValue> 
+      <PossibleValue IntVal="1">FlexAddress</PossibleValue>         
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="32" DisplayOrder="1512" HideFrom="DCS">
+      <Name>VirtualAddressManagementApplication</Name>
+      <DisplayName Lang="en-US">VirtualAddressManagementApplication</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="255" DisplayOrder="1513" HideFrom="DCS">
+      <Name>ProvisioningServer</Name>
+      <DisplayName Lang="en-US">Provisioning Server</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1514" HideFrom="DCS">
+      <Name>LaunchSSM</Name>
+      <DisplayName Lang="en-US">Launch SSM</DisplayName>
+      <DefaultValue IntVal="0">Disabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disabled</PossibleValue> 
+        <PossibleValue IntVal="1">Enabled</PossibleValue> 
+      </PossibleValues>
+    </ConfigItem>
+     <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1515" HideFrom="DCS">
+      <Name>BootToMaser</Name>
+      <DisplayName Lang="en-US">Boot To Maser</DisplayName>
+      <DefaultValue IntVal="0">Disabled</DefaultValue>
+      <PossibleValues>
+      <PossibleValue IntVal="0">Disabled</PossibleValue> 
+      <PossibleValue IntVal="1">Enabled</PossibleValue>         
+      </PossibleValues>
+    </ConfigItem>
+     <ConfigItem Type="String" MaxLength="255" DisplayOrder="1516" HideFrom="DCS">
+      <Name>VolumeLabel</Name>
+      <DisplayName Lang="en-US">Volume Label</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+     <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1517" HideFrom="DCS">
+      <Name>LCWipe</Name>
+      <DisplayName Lang="en-US">LC Wipe</DisplayName>
+      <DefaultValue IntVal="0">No</DefaultValue>
+      <PossibleValues>
+      <PossibleValue IntVal="0">No</PossibleValue> 
+      <PossibleValue IntVal="1">Yes</PossibleValue>         
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1518" HideFrom="DCS">
+      <Name>PartReplacement</Name>
+      <DisplayName Lang="en-US">Part Replacement</DisplayName>
+      <DefaultValue IntVal="1">Enabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disabled</PossibleValue> 
+        <PossibleValue IntVal="1">Enabled</PossibleValue> 
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1519" HideFrom="DCS">
+      <Name>CSIORLaunched</Name>
+      <DisplayName Lang="en-US">CSIOR Launched</DisplayName>
+      <DefaultValue IntVal="0">Not Complete</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="1">Completed</PossibleValue> 
+        <PossibleValue IntVal="0">Not Complete</PossibleValue> 
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1520" HideFrom="DCS">
+      <Name>UEFIStateFlag</Name>
+      <DisplayName Lang="en-US">UEFI State Flag</DisplayName>
+      <DefaultValue IntVal="0">Normal Boot</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Normal Boot</PossibleValue> 
+        <PossibleValue IntVal="1">GUI</PossibleValue> 
+        <PossibleValue IntVal="2">Reserved</PossibleValue>
+        <PossibleValue IntVal="3">MASER In Recovery</PossibleValue>
+        <PossibleValue IntVal="4">Reserved</PossibleValue>
+        <PossibleValue IntVal="5">Launch SSM</PossibleValue>
+        <PossibleValue IntVal="6">System Wipe</PossibleValue>
+        <PossibleValue IntVal="7">CSIOR</PossibleValue>
+        <PossibleValue IntVal="8">MASER Disabled</PossibleValue>
+        <PossibleValue IntVal="80">Override</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1521" HideFrom="DCS">
+      <Name>BIOSRTDRequested</Name>
+      <DisplayName Lang="en-US">BIOS Reset To Defaults Requested</DisplayName>
+      <DefaultValue IntVal="0">False</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">False</PossibleValue> 
+        <PossibleValue IntVal="1">True</PossibleValue> 
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1522" HideFrom="DCS">
+      <Name>AutoUpdate</Name>
+      <DisplayName Lang="en-US">Automatic Update Feature</DisplayName>
+      <DefaultValue IntVal="0">Disabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disabled</PossibleValue> 
+        <PossibleValue IntVal="1">Enabled</PossibleValue> 
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1523" HideFrom="DCS">
+      <Name>AutoBackup</Name>
+      <DisplayName Lang="en-US">Automatic Backup Feature</DisplayName>
+      <DefaultValue IntVal="0">Disabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disabled</PossibleValue> 
+        <PossibleValue IntVal="1">Enabled</PossibleValue> 
+      </PossibleValues>
+  </ConfigItem>
+  <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1524" HideFrom="DCS">
+      <Name>AutoRestore</Name>
+      <DisplayName Lang="en-US">Automatic Restore Feature</DisplayName>
+      <DefaultValue IntVal="1">Enabled</DefaultValue>
+      <PossibleValues>
+          <PossibleValue IntVal="0">Disabled</PossibleValue> 
+          <PossibleValue IntVal="1">Enabled</PossibleValue> 
+      </PossibleValues>
+  </ConfigItem>
+  <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1525" HideFrom="DCS">
+	<Name>DiagsJobScheduled</Name>
+	<DisplayName Lang="en-US">Diags Job Scheduled</DisplayName>
+	<DefaultValue IntVal="0">False</DefaultValue>
+	<PossibleValues>
+	<PossibleValue IntVal="0">False</PossibleValue>
+	<PossibleValue IntVal="1">True</PossibleValue>
+	</PossibleValues>
+  </ConfigItem>
+  <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1526" HideFrom="DCS">
+	<Name>BiosSSMUnoptimized</Name>
+	<DisplayName Lang="en-US">Bios SSM Unoptimized Flag</DisplayName>
+	<DefaultValue IntVal="0">False</DefaultValue>
+	<PossibleValues>
+	<PossibleValue IntVal="0">False</PossibleValue>
+	<PossibleValue IntVal="1">True</PossibleValue>
+	</PossibleValues>
+  </ConfigItem>
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="LCFunctions" GroupType="0x4101" DisplayName="Lifecycle Controller Functions" Description="Lifecycle Controller Functions">
+  </ConfigGroup>
+</FQDD>

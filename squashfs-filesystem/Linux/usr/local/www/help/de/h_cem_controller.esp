@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+    <% include "h_serverType.html" %>
+
+</script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Speicher-Controller</title> 
+<script src="/js/prototype.js" type="text/javascript"> 
+</script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle">RAID-Controller</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items"> Springen zu: <a class="popup-jump-bar" href="#Battery" id="cc1">Controller-Batterie</a> | <a class="popup-jump-bar" href="#Other" id="A14">Weitere Optionen</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+ 
+<div class="popup_inner_content"> 
+<div> 
+<p>Verwenden Sie diese Seite, um den Funktionszustand und die Eigenschaften des RAID-Controllers und seiner Batterie anzuzeigen. Der Controller-Name wird als Unterregister im folgenden Format angezeigt:</p> 
+<p> &lt;Controller-Modell&gt; (PCI-Steckplatz &lt;X&gt;) ODER &lt;Controller-Modell&gt; (Integriert) </p> 
+<p>Zum Beispiel PERC H810 Adapter (PCI-Steckplatz 1) oder PERC H310 Mini (Integriert)<br /> 
+</p> 
+</div> 
+<div class="popup_subheader"> 
+<span id="Controller"> Funktionszustand und Eigenschaften </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Status</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Funktionszustand des Controllers an.</p> 
+<ul> 
+<li> OK<span class="status_ok"> &#8211; </span>Zeigt an, dass die Komponente wie erwartet funktioniert.</li> 
+<li> Warnung<span class="status_noncritical"> &#8211; </span>Zeigt an, dass eine Sonde oder ein anderes Überwachungsgerät einen Messwert für die Komponente erkannt hat, der über oder unter dem erlaubten Grenzwert liegt. Die Komponente funktioniert vielleicht, kann aber ausfallen. Die Funktionsfähigkeit der Komponente ist eventuell beeinträchtigt.</li> 
+<li>Kritisch<span class="status_critical"> &#8211; </span>Zeigt an, dass die Komponente entweder fehlerhaft ist oder ein Fehler droht. Die Komponente erfordert sofortige Aufmerksamkeit und muss eventuell ersetzt werden.</li> 
+<li>Informationen nicht verfügbar<span class="status_unknown"> &#8211; </span>Zeigt an, dass der Komponentenstatus nicht bekannt ist.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Sicherheitsstatus</b></span></td> 
+<td class="desc"> 
+<p>Zeigt an, ob der Controller Verschlüsselung unterstützt oder nicht. Mögliche Werte sind:</p> 
+<ul> 
+<li>Unbekannt &#8211; zeigt an, dass der Sicherheitsstatus des Controllers unbekannt ist.</li> 
+<li>Verschlüsselungsfähig &#8211; Zeigt an, ob der Controller Datenverschlüsselung unterstützt.</li> 
+<li>Sicherheitsschlüssel zugewiesen &#8211; Zeigt an, dass ein Sicherheitsschlüssel dem Controller zugewiesen wurde.</li> 
+<li>Informationen nicht verfügbar &#8211; Zeigt an, dass die Informationen nicht verfügbar sind.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Verschlüsselungsmodus</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den unterstützten Verschlüsselungsmodus an. Mögliche Werte sind:</p> 
+<ul> 
+<li>Keine &#8211; Zeigt an, dass ein Sicherheitsschlüssel dem Controller nicht zugewiesen wurde.</li> 
+<li>Unterstützung von LKM &#8211; Zeigt an, dass der Controller die lokale Schlüsselverwaltung (LKM) für die Verschlüsselung verwendet.</li> 
+<li>Informationen nicht verfügbar &#8211; Zeigt an, dass die Informationen nicht verfügbar sind.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI-Steckplatz</b></span> </td> 
+<td class="desc"> Zeigt für integrierte Controller die PCI-Steckplatznummer auf dem Server an, wo der Controller sich befindet. Im Falle integrierter Controller wird diese Eigenschaft nicht angezeigt.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Firmware-Version</b></span> </td> 
+<td class="desc"> Zeigt die derzeit auf dem Controller installierte Firmware-Version an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Treiberversion</b></span></td> 
+<td class="desc"> Zeigt die derzeit auf dem Controller installierte Treiberversion an.<br /> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">Anmerkung:</span> Für einige Controller wird im Fall, dass die Treiberversion nicht ermittelt wurde, <b>Nicht zutreffend</b> angezeigt.</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Cache-Speicher-Größe</b></span></td> 
+<td class="desc"> Zeigt die Cache-Speicher-Größe (in Megabyte oder Gigabyte) des Controllers an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>SAS-Adresse</b></span></td> 
+<td class="desc"> Zeigt die spezifische SAS-Adresse des Controllers an. Wenn sie nicht verfügbar ist, wird <b>Nicht zutreffend</b> angezeigt.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI-Hersteller-ID</b></span></td> 
+<td class="desc"> Zeigt die Hersteller-ID des Controllers an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI-Unterhersteller-ID</b></span></td> 
+<td class="desc"> Zeigt die Unterhersteller-ID des Controllers an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI-Geräte-ID</b></span> </td> 
+<td class="desc"> Zeigt die Controller-Geräte-ID an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI-Untergeräte-ID</b></span></td> 
+<td class="desc"> Zeigt die Controller-Untergeräte-ID an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI-Bus</b></span></td> 
+<td class="desc"> Gibt die Bus-Nummer des Controllers an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI-Geräte</b></span></td> 
+<td class="desc"> Gibt die Geräte-Nummer des Controllers an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>PCI-Funktion</b></span></td> 
+<td class="desc"> Gibt die Funktion-Nummer des Controllers an. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Steckplatztyp</b></span></td> 
+<td class="desc"> Zeigt den PCI-Steckplatztyp des Controllers an. Zum Beispiel PCI Express x8. Ist er nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Steckplatzlänge</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den PCI-Kartenformfaktor an. Mögliche Werte sind:</p> 
+<ul> 
+<li>Kurz &#8211; Zeigt an, dass der Controller eingebettet ist.</li> 
+<li>Lang &#8211; Zeigt an, dass der Controller nicht eingebettet ist.</li> 
+</ul> 
+<p>Ist die Angabe nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Busbreite</b></span></td> 
+<td class="desc"> Zeigt die Busbreite des Controllers an. Zum Beispiel „8x“ oder „x8“. Ist die Angabe nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Rückkopiemodus</b></span></td> 
+<td class="desc"> 
+<p>Gibt an, ob der Rückkopiemodus aktiviert oder deaktiviert ist. Mögliche Werte sind:</p> 
+<ul> 
+<li>Ein &#8211; Gibt an, dass das Kopieren von Daten von einer physischen Festplatte auf ein Ersatzgerät (im Falle eines vorhergesagten Fehlers) oder von einem Ersatzgerät auf eine physische Festplatte (im Fall des Ersatzes einer herabgesetzten Festplatte) aktiviert ist.</li> 
+<li>Aus &#8211; Gibt an, dass der Rückkopiermodus deaktiviert ist.</li> 
+<li>On mit SMART-Fehler &#8211; Zeigt an, dass das automatische Kopieren von Daten von einer physischen Festplatte (die Teil einer virtuellen Festplatte ist) zu einem Hotspare im Fall eines vorhersehbaren Fehlers der physischen Festplatte aktiviert ist.</li> 
+<li>Nicht unterstützt &#8211; Gibt an, dass der Rückkopiermodus nicht unterstützt ist.</li> 
+</ul> 
+<p>Wenn die physische Festplatte in einer virtuellen Festplatte einen Fehler aufweist, werden die Daten auf der fehlerhaften Festplatte zum zugewiesenen Hotspare kopiert. Wenn Sie die fehlerhafte Festplatte durch eine neue physische Festplatte ersetzen und den Rückkopiemodus aktiviert haben, werden die Daten vom früheren Hotspare zur neuen Festplatte kopiert. Wenn Sie „An mit SMART-Fehler“ aktivieren, kopiert die Controller-Firmware automatisch Daten von der SMART-aktivierten Festplatte auf der virtuellen Festplatte zum Hotspare.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Patrol Read-Rate</b></span></td> 
+<td class="desc"> Zeigt den Prozentsatz der Controller-Ressourcen an, die für Patrol Read auf Festplatten dediziert sind, die zu virtuellen Festplatten oder Hotspares gehören. Jeder Wert zwischen 0 und 100 ist gültig.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Patrol Read-Zustand</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt den aktuellen Zustand des Patrol Read-Prozesses an. Mögliche Werte sind: </p> 
+<ul> 
+<li>Läuft &#8211; Zeigt an, dass der Patrol Read-Vorgang derzeit ausgeführt wird.</li> 
+<li>Gestoppt &#8211; Gibt an, dass der Patrol Read-Vorgang angehalten ist.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Patrol Read-Modus</b></span></td> 
+<td class="desc"> 
+<p>Zeigt an, ob der Patrol Read-Modus für den Controller manuell, automatisch oder deaktiviert ist. Mögliche Werte sind: </p> 
+<ul> 
+<li>Automatisch &#8211; Zeigt an, dass der Patrol Read-Vorgang fortlaufend auf dem System ausgeführt wird. Wenn eine Wiederholung des Patrol Read-Tasks abgeschlossen ist, wird der Startzeitpunkt des nächsten Patrol Read-Tasks innerhalb eines vom Controller festgelegten Zeitraums eingeplant. Sie können den Patrol Read in diesem Modus nicht manuell starten oder stoppen. </li> 
+<li>Manuell &#8211; Zeigt an, dass Sie den Patrol Read-Vorgang starten oder anhalten können. </li> 
+<li>Deaktiviert &#8211; Zeigt an, dass der Patrol Read-Prozess deaktiviert ist.</li> 
+<li>Nicht unterstützt &#8211; Zeigt an, dass der Controller Patrol Read nicht unterstützt.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Übereinstimmungsüberprüfungsrate einstellen</b> </span></td> 
+<td class="desc"> Zeigt den Prozentsatz der Ressourcen des Systems&#39; an, die der Ausführung einer Übereinstimmungsüberprüfung auf einer redundanten virtuellen Festplatte dediziert sind. Dies legt die Integrität der redundanten Daten einer virtuellen Festplatte fest&#39;. Wenn es erforderlich ist, erstellt diese Funktion die redundanten Informationen erneut. <br /> Bei 0% hat die Übereinstimmungsüberprüfung die geringste Priorität für den Controller, dauert am längsten und hat die geringste Auswirkung auf die Systemleistung. Eine Übereinstimmungsüberprüfungsrate von 0 % bedeutet nicht, dass der Prozess gestoppt oder angehalten wird. <span class="item"> <br /> 
+<br /> 
+</span>Bei 100% hat die Übereinstimmungsüberprüfung die höchste Priorität für den Controller, dauert am kürzesten und hat die größte Auswirkung auf die Systemleistung.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Übereinstimmungsüberprüfungs-Modus</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Übereinstimmungsüberprüfungsmodus für den Controller an. Mögliche Werte sind: </p> 
+<ul> 
+<li>Nicht unterstützt &#8211; Zeigt an, dass der Übereinstimmungsprüfung-Modus nicht auf diesem Controller unterstützt ist.</li> 
+<li>Normal &#8211; Der Konsistenzüberprüfungsmodus arbeitet wie vorgesehen.</li> 
+<li>Bei Fehler anhalten &#8211; Zeigt an, dass der Controller die Konsistenzüberprüfung aufgrund eines Fehlers abbricht.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Neuerstellungsrate</b></span></td> 
+<td class="desc"> Zeigt den Prozentsatz der Ressourcen des Controller&#39;s an, die der Neuerstellung einer fehlerhaften Festplatte dediziert sind. Während eines Neuaufbaus werden alle physischen Festplatteninhalte neu aufgebaut. <br /> Bei 0% hat die Neuerstellung die geringste Priorität für den Controller, dauert am längsten und hat die geringste Auswirkung auf die Systemleistung. Eine Neuerstellungsrate von 0% bedeutet nicht, dass die Neuerstellung gestoppt oder angehalten wird. <br /> Bei 100% hat die Neuerstellung die höchste Priorität für den Controller, dauert am kürzesten und hat die größte Auswirkung auf die Systemleistung.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Hintergrundinitialisierungsrate</b></span></td> 
+<td class="desc"> Zeigt den Prozentsatz der Ressourcen des Controller&#39;s an, die der Ausführung der Hintergrundinitialisierung (BGI) einer virtuellen Festplatte nach ihrer Erstellung dediziert sind. <br /> Bei 0% hat die Hintergrundinitialisierung die geringste Priorität für den Controller, dauert am längsten und hat die geringste Auswirkung auf die Systemleistung. Eine Hintergrundinitialisierungsrate von 0% bedeutet nicht, dass die Hintergrundinitialisierung gestoppt oder angehalten wird. <br /> 
+<br /> Bei 100% hat die Hintergrundinitialisierung die höchste Priorität für den Controller, dauert am kürzesten und hat die größte Auswirkung auf die Systemleistung.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Rekonstruktionsrate einstellen</b></span> </td> 
+<td class="desc"> Zeigt den Prozentsatz der Ressourcen des Controller&#39;s an, die der Neuerstellung einer Festplattengruppe dediziert sind, nachdem eine physische Festplatte hinzugefügt wurde oder die RAID-Stufe einer virtuellen Festplatte auf der Festplattengruppe geändert wurde. <br /> 
+<br /> Bei 0% hat die Rekonstruktion die geringste Priorität für den Controller, dauert am längsten und hat die geringste Auswirkung auf die Systemleistung. Eine Rekonstruktionsrate von 0 % bedeutet nicht, dass die Rekonstruktion gestoppt oder angehalten wird. <br /> 
+<br /> Bei 100% hat die Rekonstruktion die höchste Priorität für den Controller, dauert am kürzesten und hat die größte Auswirkung auf die Systemleistung.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Maximale Geschwindigkeit</b></span></td> 
+<td class="desc"> Zeigt die Maximale Geschwindigkeit an, mit der das Gerät Daten (in Gigabyte pro Sekunde) übertragen kann. Die folgenden Werte sind möglich: 0, 1.0, 0.5 und 3.6. Ist die Angabe nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Beständiger Hotspare</b></span></td> 
+<td class="desc"> 
+<p>Zeigt an, ob der dem Hotspare-Laufwerk entsprechende Steckplatz beständig ist oder nicht. Mögliche Werte sind:</p> 
+<ul> 
+<li>Aktiviert &#8211; Zeigt an, ob der auf dem Hotspare-Laufwerk entsprechende Steckplatz beständig ist. Jedes Laufwerk im Steckplatz funktioniert als Hotspare, wenn das Laufwerk als Hotspare gekennzeichnet ist. Wenn das Laufwerk Fremddaten enthält, werden diese überschrieben. </li> 
+<li>Deaktiviert &#8211; Zeigt an, dass der dem Hotspare-Laufwerk entsprechende Steckplatz nicht beständig ist. Falls das Laufwerk vom Steckplatz entfernt wird und irgendein Laufwerk eingefügt wird, ist die Hotspare-Funktion des Steckplatzes beendet. Sie müssen das Laufwerk manuell wieder als Hotspare zuweisen.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Einstellungen des Load Balancer</b></span></td> 
+<td class="desc"> 
+<p>Zeigt die Fähigkeit an, automatisch beide Controllerports oder -Konnektoren, die mit dem gleichen Gehäuse verbunden sind, zum Senden von E/A-Aufforderungen zu verwenden.<br /> Mögliche Werte sind:</p> 
+<ul> 
+<li>Auto &#8211; Gibt an, dass die Ladeausgleicheinstellung aktiviert ist.</li> 
+<li>Keine &#8211; Gibt an, dass die Ladeausgleicheinstellung deaktiviert ist.</li> 
+<li>Nicht unterstützt &#8211; Gibt an, dass der Ladeausgleich nicht unterstützt ist.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Beibehaltenen Cache</b></span></td> 
+<td class="desc"> 
+<p>Zeigt an, ob der Controller einen beibehaltenen oder fixierten Cache hat. Der Controllerstatus wird als <b>Herabgesetzt</b> angezeigt, wenn der Controller einen beibehaltenen Cache hat.<br /> Mögliche Werte sind: </p> 
+<ul> 
+<li>Vorhanden</li> 
+<li>Nicht vorhanden</li> 
+</ul> 
+<p>Ist die Angabe nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Zeitraum für Spindown</b></span></td> 
+<td class="desc"> Zeigt den Zeitintervall in Minuten an, nach dem die Ersatzgeräte und unkonfigurierten Laufwerke heruntergefahren werden.<br /> Jeder Wert zwischen 30 und 1440 ist gültig.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Spindown von nicht konfigurierten Festplatten</b></span></td> 
+<td class="desc"> 
+<p>Gibt an, ob das Herunterfahren für die unkonfigurierten Festplatten aktiviert oder deaktiviert ist. Mögliche Werte sind:</p> 
+<ul> 
+<li>Aktiviert &#8211; Gibt an, dass das Herunterfahren aktiviert ist, falls die unkonfigurierten Festplatten für ein angegebenes Zeitintervall unbeaufsichtigt sind.</li> 
+<li>Deaktiviert &#8211; Gibt an, dass das Herunterfahren deaktiviert ist.</li> 
+</ul> 
+<p>Ist die Angabe nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Spindown Hotspares</b></span></td> 
+<td class="desc"> 
+<p>Gibt an, ob das Herunterfahren für Ersatzgeräte aktiviert ist oder nicht. Mögliche Werte sind:</p> 
+<ul> 
+<li>Aktiviert &#8211; Gibt an, dass das Herunterfahren aktiviert ist, falls während einem angegebenen Zeitintervall kein Lese-/Schreibvorgang auf dem Ersatzgerät stattfindet.</li> 
+<li>Deaktiviert &#8211; Gibt an, dass das Herunterfahren deaktiviert ist.</li> 
+</ul> 
+<p>Ist die Angabe nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Lernmodus</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den aktuellen Lernmodus einer Batterie an. Mögliche Werte sind:</p> 
+<ul> 
+<li>Automatisch &#8211; Gibt an, dass der Controller einen automatischen Lernzyklus basierend auf der eingestellten Zeit ausführt.</li> 
+<li>Warnung &#8211; Gibt an, dass der Controller den bevorstehenden Lernzyklus ankündigt, ihn aber nicht automatisch startet. Der Lernzyklus hat den 90-Tage-Standard überschritten.</li> 
+<li>Nicht unterstützt &#8211; Zeigt an, dass der Lernmodus nicht auf diesem Controller unterstützt wird.</li> 
+<li>Deaktiviert &#8211; Zeigt an, dass der Lernmodus deaktiviert ist.</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+<div class="popup_subheader"> 
+ 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Zurück zum Seitenanfang</a> </div> 
+<span id="Controller_Battery">Controller-Batterie</span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Die folgenden Eigenschaften werden für den Controller angezeigt, sollte er über eine Batterie verfügen.</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Status</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Funktionszustand der Batterie an.</p> 
+<ul> 
+<li> OK<span class="status_ok"> &#8211; </span>Zeigt an, dass die Komponente wie erwartet funktioniert.</li> 
+<li>Warnung<span class="status_noncritical"> &#8211; </span>Zeigt an, dass eine Sonde oder ein anderes Überwachungsgerät einen Messwert für die Komponente erkannt hat, der über oder unter dem erlaubten Grenzwert liegt. Die Komponente funktioniert vielleicht, kann aber ausfallen. Die Funktionsfähigkeit der Komponente ist eventuell beeinträchtigt.</li> 
+<li>Kritisch<span class="status_critical"> &#8211; </span>Zeigt an, dass die Komponente entweder fehlerhaft ist oder ein Fehler droht. Die Komponente erfordert sofortige Aufmerksamkeit und muss eventuell ersetzt werden.</li> 
+<li>Informationen nicht verfügbar<span class="status_unknown"> &#8211; </span>Zeigt an, dass der Komponentenstatus nicht bekannt ist.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Name</b></span></td> 
+<td class="desc"> Zeigt den Namen der vorhandenen Batterie im Controller an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Zustand</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den aktuellen Status der Batterie an. Folgende Zustände sind möglich: </p> 
+<ul> 
+<li>Bereit &#8211; Zeigt an, dass die Batterie erwartungsgemäß funktioniert.</li> 
+<li>Herabgesetzt &#8211; Zeigt an, dass die Batterie überholt werden muss (Lernzyklus).</li> 
+<li>Lädt &#8211; Zeigt an, dass die Batterie derzeit die Neuladephase im Rahmen des Batterie-Lernzyklus durchläuft.</li> 
+<li>Fehlend &#8211; Zeigt an, dass dem Controller eine Batterie fehlt.</li> 
+<li>Niedrigstrom &#8211; Zeigt an, dass die Batterieladung niedrig ist und die Batterie überholt werden muss. </li> 
+<li>Fehlerhaft &#8211; Zeigt an, dass die Batterie fehlerhaft ist und ersetzt werden muss. </li> 
+<li>Unbekannt &#8211; Zeigt an, dass der Batteriestatus nicht verfügbar ist.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Erwarteter Kapazitätsstatus</b></span></td> 
+<td class="desc"> 
+<p>Zeigt die Ladekapazität der Batterie an. Mögliche Werte sind: </p> 
+<ul> 
+<li>Bereit &#8211; Zeigt an, dass die Batterie auf die volle Kapazität aufgeladen werden kann.</li> 
+<li>Fehlgeschlagen &#8211; Zeigt an, dass die Batterie nicht geladen werden konnte und ausgetauscht werden muss. </li> 
+<li>Unbekannt &#8211; Zeigt an, dass die Batterie einen Lernzyklus durchläuft. Die Ladekapazität der Batterie kann erst festgestellt werden, wenn der Lernzyklus abgeschlossen ist.</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

@@ -1,0 +1,29 @@
+<% 
+
+setHeader("Cache-control:no-storemv", true);
+//tell the browser anything already cached is expired  
+setHeader("Expires:-1", true);
+setHeader("Content-Type:text/xml", true);
+
+trace(" in vfkupload.esp\n");
+
+if (request["REQUEST_METHOD"] == "POST") {
+	trace(" REQUEST_METHOD == POST\n");
+	length = 0;
+	var result = "success";
+	for (f in files) {
+		trace("FILENAME: " + files[f].FILENAME + "\n"); 
+		trace("CLIENT_FILENAME: " + files[f].CLIENT_FILENAME + "\n"); 
+		trace("SIZE: " + files[f].SIZE + "\n"); 
+        }
+        // 
+        //write("  <root>");
+        //write("     <status>ok</status>");
+        //write("</root>");
+	return;
+}
+%>
+<root>
+<statusMessage>Get not supported, use post.</statusMessage>
+<status>error</status>
+</root>

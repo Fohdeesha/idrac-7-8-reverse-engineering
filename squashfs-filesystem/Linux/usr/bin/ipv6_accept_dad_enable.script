@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# Usage:
+# <script> <no parameter>
+# 	Set ipv6 dad per AIM_DAD variable, or to default if the variable
+#	doesn't exist
+# <script> status
+#	Display the value of the AIM_DAD variable, or "unset" if the variable
+#	does not exist
+# <script> n
+#	Set both AIM variable and IP6 dad to the value "n"
+
+enable=$1
+PROC_DIR=/proc/sys/net/ipv6/conf
+AIM_DAD=os_int_accept_dad
+
+# Possible values for DAD (IPv6 Duplicate Address Detection)
+DAD_STATE_DISABLED=0
+DAD_STATE_ENABLED=1
+DAD_STATE_RFC=2
+
+DAD_STATE_DEFAULT=$DAD_STATE_DISABLED
+DAD_VALUE_MIN=$DAD_STATE_DISABLED
+DAD_VALUE_MAX=$DAD_STATE_RFC
+
+enable=$1
+
+if [ ! -z "$enable" ]; then
+	if [ "$enable" == "status" ]; then
+		dad=`/avct/sbin/aim_config_get_int $AIM_DAD`
+		if [ -z "$dad" ]
+		then
+			echo unset
+		else
+			echo $dad
+		fi
+		exit 0
+	fi
+
+	if [ $enable -ge $DAD_VALUE_MIN -a $enable -le $DAD_VALUE_MAX ]
+	then
+		dad=$enable
+	else
+		echo $0: Invalid value for accept_dad:$enable
+		exit 1
+	fi
+	/avct/sbin/aim_config_set_int $AIM_DAD $dad 1
+else
+	dad=`/avct/sbin/aim_config_get_int $AIM_DAD`
+
+	if [ -z "$dad" ]; then
+		# if AIM variable does not exist, check RFC compliance request from u-boot
+		dad2=`/bin/grep accept-dad /proc/cmdline`
+		if [ -z "$dad2" ]; then
+		# not requested to be RFC compliant (IPv6 Ready Logo test)
+			dad=$DAD_STATE_DEFAULT
+		else
+		# requested to be RFC compliant (IPv6 Ready Logo test)
+			dad=$DAD_STATE_RFC
+		fi
+	fi
+	/avct/sbin/aim_config_set_int $AIM_DAD $dad 1
+fi
+
+files=$(find $PROC_DIR -name accept_dad)
+
+for file in $files
+do
+	val=$(cat $file)
+	echo "$file - $val ($dad)"
+	if [ "$val" != -1 ]; then
+		echo $dad > $file
+	fi
+done
+

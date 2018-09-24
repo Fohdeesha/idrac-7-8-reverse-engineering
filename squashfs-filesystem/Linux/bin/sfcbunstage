@@ -1,0 +1,87 @@
+#!/bin/sh
+
+usage() 
+{
+    echo "usage: $0 [-h] [-n namespace] [ -s stagingdir] [ -r regfile ] [ mof ... ]  " 1>&2 
+}
+
+
+args=`getopt hr:s:n: $*`
+rc=$?
+
+if [ $rc = 127 ]
+then
+    echo "warning: getopt not found ...continue without syntax check"
+    args=$*
+elif [ $rc != 0 ]
+then
+    usage $0
+    exit 1
+fi
+
+set -- $args
+
+while [ -n "$1" ]
+do
+  case $1 in
+      -h) help=1; 
+	  shift;;
+      -n) namespace=$2 
+	  shift 2;;
+      -s) stagingdir=$2
+	  shift 2;;
+      -r) regfile=$2
+	  shift 2;;
+      --) shift;
+	  break;;
+      **) break;;
+  esac
+done
+
+if [ "$help" = "1" ]
+then
+    usage
+    echo -e "\t-h display help message"
+    echo -e "\t-n specify CIM namespace [root/cimv2]"
+    echo -e "\t-s specify staging directory [/var/lib/sfcb/stage]"
+    echo -e "\t-r specify sfcb registration file "
+    echo
+    echo Use this command to remove registration files from the sfcb staging area.
+    exit 0
+fi
+
+if [ -z "$*" ] && [ -z "$regfile" ]
+then
+    usage $0
+    exit 1
+fi
+
+if [ -z "$namespace" ]
+then
+    namespace=root/cimv2
+fi
+
+if [ -z "$stagingdir" ]
+then
+    stagingdir=${DESTDIR}/var/lib/sfcb/stage
+fi
+
+if [ -n "$regfile" ]
+then
+    
+    if test -d $stagingdir/regs
+    then
+	rm -f $stagingdir/regs/$regfile ||
+	echo "Error: could not remove registration file " 1>&2
+    fi
+fi
+
+if [ -n "$*" ]
+then
+    if test -d $stagingdir/mofs/$namespace
+    then
+	cd $stagingdir/mofs/$namespace
+	rm -f $* ||
+	echo "Error: could not remove schema files " 1>&2    
+    fi
+fi

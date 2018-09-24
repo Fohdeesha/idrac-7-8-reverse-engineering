@@ -1,0 +1,27 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2012 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _SMReqHeaderSet
+{
+	ObjID objID;
+	u32 setType;
+} SMReqHeaderSet;
+
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------
+

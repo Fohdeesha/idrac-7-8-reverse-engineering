@@ -1,0 +1,270 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#FileShare.v1_0_0.FileShare",
+    "$ref": "#/definitions/FileShare",
+    "definitions": {
+        "AccessCapability": {
+            "type": "string",
+            "enum": [
+                "Read",
+                "Write",
+                "Execute"
+            ],
+            "enumDescriptions": {
+                "Read": "Read access is allowed by the file share.",
+                "Write": "Write access is allowed by the file share.",
+                "Execute": "Execute access is allowed by the file share."
+            },
+            "enumLongDescriptions": {
+                "Read": "This value shall indicate that Read access is allowed by the file share.",
+                "Write": "This value shall indicate that Write access is allowed by the file share.",
+                "Execute": "This value shall indicate that Execute access is allowed by the file share."
+            },
+            "description": "Indicates the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute.",
+            "longDescription": "The values shall indicate the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute."
+        },
+        "FileShare": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "FileSharePath": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "A path to an exported file or directory on the file system where this file share is hosted.",
+                    "longDescription": "The value of this property shall be a path (relative to the file system root) to the exported file or directory on the file system where this file share is hosted."
+                },
+                "FileSharingProtocols": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/FileSystem.v1_0_0.json#/definitions/FileProtocol"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": true,
+                    "description": "An array of file sharing protocols supported by this file share.",
+                    "longDescription": "This property shall be an array containing entries for the file sharing protocols supported by this file share. Each entry shall specify a file sharing protocol supported by the file system."
+                },
+                "Status": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Status"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "Indicates the status of the file share.",
+                    "longDescription": "This value of this property shall indicate the status of the file share."
+                },
+                "DefaultAccessPrivileges": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/AccessCapability"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": true,
+                    "description": "An array of default access privileges for the file share. The types of default access can include Read, Write, and/or Execute.",
+                    "longDescription": "The value of this property shall be an array containing entries for the default access privileges for the file share. Each entry shall specify a defaul access privilege. The types of default access can include Read, Write, and/or Execute."
+                },
+                "ExecuteSupport": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "Execute access is supported by the file share.",
+                    "longDescription": "The value of this property shall indicate whether Execute access is supported by the file share. The default value for this property is false."
+                },
+                "RootAccess": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "Root access is allowed by the file share.",
+                    "longDescription": "The value of this property shall indicate whether Root access is allowed by the file share. The default value for this property is false."
+                },
+                "WritePolicy": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaUpdateMode"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "Defines how writes are replicated to the shared source.",
+                    "longDescription": "The value of this property shall define how writes are replicated to the shared source."
+                },
+                "CASupported": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Continuous Availability is supported. Client/Server mediated recovery from network and server failure with application transparency. ",
+                    "longDescription": "The value of this property shall indicate that Continuous Availability is supported. Client/Server mediated recovery from network and server failure with application transparency. This property shall be NULL unless the FileSharingProtocols property includes SMB.  The default value for this property is false."
+                },
+                "FileShareTotalQuotaBytes": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By",
+                    "description": "The maximum number of bytes that may be used by this file share.",
+                    "longDescription": "If present, the value of this property shall indicate the maximum number of bytes that may be consumed by this file share."
+                },
+                "FileShareRemainingQuotaBytes": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By",
+                    "description": "The number of remaining bytes that may be used by this file share.",
+                    "longDescription": "If present, the value of this property shall indicate the remaining number of bytes that may be consumed by this file share."
+                },
+                "LowSpaceWarningThresholdPercents": {
+                    "type": "array",
+                    "items": {
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "units": "%",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "readonly": false,
+                    "description": "An array of low space warning threshold percentages for the file share.",
+                    "longDescription": "This property shall be an array containing entries for the percentages of file share capacity at which low space warning events are be issued. A LOW_SPACE_THRESHOLD_WARNING event shall be triggered each time the remaining file share capacity value becomes less than one of the values in the array. The following shall be true: Across all CapacitySources entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes)"
+                },
+                "FileShareQuotaType": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/QuotaType"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Specifies the type of quota enforcement.",
+                    "longDescription": "If FileShareQuotaType is present, a value of Soft shall specify that quotas are not enforced, and a value of Hard shall specify that writes shall fail if the space consumed would exceed the value of the FileShareTotalQuotaBytes property."
+                },
+                "Links": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "type": [
+                                "array",
+                                "boolean",
+                                "number",
+                                "null",
+                                "object",
+                                "string"
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "properties": {
+                        "Oem": {
+                            "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                            "description": "Oem extension object.",
+                            "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
+                        },
+                        "ClassOfService": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/ClassOfService.json#/definitions/ClassOfService"},
+                                {"type": "null"}
+                            ],
+                            "readonly": false,
+                            "description": "A link to the ClassOfService for this file share.",
+                            "longDescription": "This value shall be a link to the ClassOfService for this file share."
+                        },
+                        "FileSystem": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/FileSystem.json#/definitions/FileSystem"},
+                                {"type": "null"}
+                            ],
+                            "readonly": true,
+                            "description": "A link to the file system containing the file share.",
+                            "longDescription": "The value shall be a link to the file system containing the file share."
+                        }
+                    },
+                    "readonly": true,
+                    "description": "Contains links to other resources that are related to this resource.",
+                    "longDescription": "This property shall contain links to other resources that are related to this resource."
+                },
+                "EthernetInterfaces": {
+                    "$ref": "/redfish/v1/Schemas/EthernetInterfaceCollection.json#/definitions/EthernetInterfaceCollection",
+                    "readonly": true,
+                    "description": "A link to the collection of Ethernet interfaces that provide access to this file share.",
+                    "longDescription": "The value shall be a link to an EthernetInterfaceCollection with members that provide access to the file share."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "An instance of a shared set of files with a common directory structure.",
+            "longDescription": "This resource shall be used to represent a shared set of files with a common directory structure."
+        },
+        "QuotaType": {
+            "type": "string",
+            "enum": [
+                "Soft",
+                "Hard"
+            ],
+            "enumDescriptions": {
+                "Soft": "Quotas are enabled but not enforced.",
+                "Hard": "Quotas are enabled and enforced."
+            },
+            "enumLongDescriptions": {
+                "Soft": "This value shall indicate that quotas are enabled but not enforced.",
+                "Hard": "This value shall indicate that quotas are enabled and enforced."
+            },
+            "description": "Indicates whether quotas are enabled and enforced by this file share. A value of Soft means that quotas are enabled but not enforced, and a value of Hard means that quotas are enabled and enforced.",
+            "longDescription": "The value shall indicate whether quotas are enabled and enforced by this file share. If QuotaType is present, a value of Soft shall mean that quotas are enabled but not enforced, and a value of Hard shall mean that quotas are enabled and enforced."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

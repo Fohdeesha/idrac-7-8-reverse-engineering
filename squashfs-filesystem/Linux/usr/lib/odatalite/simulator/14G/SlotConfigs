@@ -1,0 +1,39 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#SlotConfigsCollection",
+    "@odata.id": "/redfish/v1/SlotConfigs",
+    "@oem.nav.parentid": "/redfish/v1",
+    "@odata.type": "#Dell.SlotConfigsCollection.1.0.0.SlotConfigsCollection",
+    "Id": "SlotConfigs",
+    "Name": "Slot Configuration Collection",
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/SledSlots"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/FanSlots"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/IOMFanSlots"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/PSUSlots"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/DirectIOMSlots"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/StorageIOMSlots"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/FlexIOMSlots"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/ECSlots"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/QSI3/SlotConfigs/QuarterSleds"
+        }
+    ],
+    "Oem": {}
+}

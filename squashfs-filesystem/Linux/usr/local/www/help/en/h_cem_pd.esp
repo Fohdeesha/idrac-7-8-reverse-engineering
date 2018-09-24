@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<script type="text/javascript">
+<% include "h_serverType.html" %></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link href="/css/popup.css" rel="stylesheet" type="text/css" />
+  <link href="/css/custom.css" rel="stylesheet" type="text/css" />
+  <link href="/css/icons.css" rel="stylesheet" type="text/css" />
+  <title>iDRAC7: Storage - Physical Disks</title>
+  <script src="/js/prototype.js" type="text/javascript"></script>
+  <script src="/js/Clarity.js" type="text/javascript"></script>
+  <script src="h_common.js" type="text/javascript"></script>
+	</head>
+<body onload="javascript:popUp.initialize(true);">
+<div class="popup_container">
+    <script type="text/javascript">writeHelpHeader(<%=dracType %>); 	</script>
+    <div class="popup_content">
+      <div class="popup_content_top_right">
+        <div class="popup_content_top_left">
+          <div class="popup_content_top">
+          </div>
+        </div>      
+	</div>
+      <div class="popup_content_right">
+        <div class="popup_content_left">
+          <div class="popup_content_middle">
+            <div class="popup_page_title">
+              				<span id="helpTitle"> Physical Disks</span>
+               <div class="popup_line">
+              </div>
+            </div>
+            <div class="popup-jump-bar">
+              <span class="popup-jump-items">
+			  Jump to:
+                <a id="cc3" href="#PhysicalDisks" class="popup-jump-bar">Health and Properties</a>
+                |<a id="A14" href="#Other" class="popup-jump-bar">Other Options</a>
+              </span>
+              <div class="popup_jumpbar-line">
+              </div>
+            </div>
+            <div id="popup_overflow">
+              <a name="top"></a>
+            <div class="popup_inner_content">
+                <div>
+                  <p>Use this page to view the list of physical disks present in the 
+					storage subsystem and its properties. Physical disks 
+					reside within an enclosure or are attached to the 
+					controller. On a RAID controller, physical disks are used to 
+					create virtual disks.</p>
+				</div>
+                <div class="popup_subheader">               
+                <span id="BasicFilter"> Basic / Advanced Physical Disk Filter </span> 
+                <div class="popup_subheaderline">
+                </div>
+                </div>
+
+              	<div class="popup_inner_content">
+				<p>Use the drop-down menus to filter the list of physical disks based on 
+				Enclosures or Virtual Disks. Click <b>Apply</b>. 
+				Click <strong>Cancel</strong> 
+				to restore the default value in the drop-down menu.</p>
+					<p>Click <b>Advanced Filter</b> to filter the list of 
+					physical disks 
+					based on one or more of the following:</p>
+				<ul>
+								<li>Enclosure</li>
+								<li>Virtual Disks</li>
+								<li>Component Status</li>
+								<li>State</li>
+								<li>Bus Protocol</li>
+								<li>Media 
+					Type</li>
+								<li>Power Status</li>
+								<li>Failure Predicted</li>
+								<li>Security Status</li>
+								<li>Hotspare</li>
+								<li>Minimum Size (GB)</li>
+								<li>Part Number</li>
+								<li>Minimum Free Space 
+					(%)</li>
+								<li>Product ID</li>
+								<li>Serial Number</li>
+								<li>Manufacturer</li>
+				</ul>
+				<p>For information about each 
+					property, see the <a id="cc4" href="#PhysicalDisks" class="popup-jump-bar">Health and Properties</a>
+                             		section. </p>
+									</div>
+              
+              <div class="popup_subheader">
+                <a name="PhysicalDisks"></a>
+				<div class="popup_backtotop">
+								<a href="javascript:popUp.scrolltoTop()">Back to top</a>
+				</div>
+				<span id="PhysicalDisks">Health and Properties </span>
+				<div class="popup_subheaderline">
+				</div>
+              </div>
+			<div class="popup_inner_content">
+					<div>
+					<p>The following basic properties are displayed for each 
+					physical disk.</p>
+					</div>
+                <div class="popup_infolist">
+
+                  <table>
+				                      <tr>
+                      <td  class="item" >
+                        <span><b>Status</b></span></td>
+                      <td class="desc">
+						<p>Displays the health of the physical disk. Possible 
+						values: </p>
+						<ul>
+						<li>OK <span class="status_ok"> &#8212; </span> Indicates 
+						the component is working as expected.</li>
+						<li>Warning <span class="status_noncritical"> &#8212; </span> Indicates a probe or other 
+						monitoring device has detected a reading for the 
+						component that is above or below the acceptable level. 
+						The component may be functioning, but it can 
+						fail. The component may also be functioning in an 
+						impaired state. </li>
+						<li>Critical <span class="status_critical"> &#8212; </span> Indicates the component has 
+						either failed or failure is imminent. The component 
+						requires immediate attention and may require 
+						replacement.</li>
+						<li>Information Not Available <span class="status_unknown"> &#8212; </span> Indicates 
+						the component status is not known. </li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item" >
+                        <span><b>Name</b></span></td>
+                      <td class="desc">
+						<p>Displays the name of the physical disk. The format is 
+						Physical Disk &lt;connector number&gt;:&lt;enclosure ID&gt;:&lt;disk number&gt;.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td  class="item">
+                        <span><b>State</b></span></td>
+                      <td class="desc">
+						<p>Displays the current state of the physical disks:</p>
+						<ul>
+										<li>Ready &#8212; Indicates the physical disk is functioning normally. 
+										If the disk is attached to a RAID 
+										controller, Ready state indicates that 
+										the virtual disk can use the physical 
+										disk.</li>
+										<li>Online &#8212; Indicates the physical disk is part of a virtual disk 
+										and is functioning normally. 
+										</li>
+										<li>Offline &#8212; 
+										Indicates the disk is included in a 
+										virtual disk, but it is not receiving 
+										input or output.</li>
+										<li>Non-RAID — 
+										Indicates the physical drive is 
+										accessible 
+										and controlled by the host operating 
+										system.</li>
+										<li>Foreign &#8212; Indicates the physical disk 
+										is moved from 
+										another controller and contains all or 
+										some portion of a virtual disk (foreign 
+										configuration.)</li>
+										<li>Removed &#8212; Indicates 
+										the physical disk is removed. This 
+										state only applies to physical disks 
+										that are part of a virtual disk.</li>
+										<li>
+										Blocked &#8212; Indicates the controller 
+										has currently blocked the physical disk  
+										and operations are not allowed on the 
+										physical disk.</li>
+										<li>
+										Failed — Indicates the physical disk is 
+										not accessible.</li>
+										<li>
+										Unknown &#8212; Indicates the 
+										physical disk has failed or is unusable.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+				<span><b>Slot Number</b></span>
+			</td>
+                      <td class="desc">
+						<p>Indicates the slot number where the drive is located.</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+				<span><b>Size</b></span></td>
+                      <td class="desc">
+						Displays the size of the physical disk in gigabytes (GB).</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Security Status</b></span>
+                      </td>
+                      <td class="desc">
+						<p>Indicates whether the physical disk 
+						is a Self Encryption Disk (SED). Possible values:</p>
+						<ul>
+										<li>Secured &#8212;
+										Indicates the physical disk is encrypted.</li>
+										<li>Locked &#8212; 
+										Indicates the physical disk is currently 
+										encrypted but is not used.</li>
+										<li>Secured by Foreign Key &#8212;
+										Indicates the physical disk is locked 
+										using an unknown key.</li>
+										<li>Not Capable &#8212;
+										Indicates the physical disk does not 
+										support encryption.</li>
+										<li>Information Not Available &#8212; Indicates the 
+										information is not available.</li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item"  >
+                        <span><b>Bus Protocol</b></span></td>
+						<td class="desc"><p>Displays the technology that the physical 
+						disk is using. Possible values: </p>
+						<ul>
+										<li>SAS &#8212; Indicates Serial Attached SCSI</li>
+										<li>SATA &#8212; Indicates Serial Advanced Technology Attachment (SATA) 
+										</li>
+						</ul>
+						</td>
+                    </tr>
+                   <tr>
+                      <td class="item"><span><b>Media Type</b></span></td>
+                      <td class="desc">
+						<p>Displays the media type of the physical disk. 
+						Possible values:</p>
+						<ul>
+										<li>HDD &#8212; Indicates media type is 
+										a Hard Disk Drive. A HDD is a non-volatile storage 
+						device that stores digitally-encoded data on rapidly 
+						rotating platters with magnetic surfaces.</li>
+										<li>SSD &#8212; Indicates media type is 
+										a Solid State Drive. An SSD is a data storage device 
+						that uses solid-state memory to store persistent data.</li>
+										<li>Information Not Available &#8212; 
+										Indicates the information is not 
+										available.
+                      </li>
+						</ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Hot Spare</b></span></td>
+                      <td class="desc">
+						<p>Indicates whether the disk is assigned as a hot 
+						spare and the type of hot spare. Possible values:</p>
+						<ul>
+										<li>No &#8212; Indicates 
+										the disk is not assigned as a hot spare.</li>
+										<li>Dedicated &#8212;
+										Indicates the disk is assigned as a 
+										dedicated hot spare.</li>
+										<li>Global &#8212; Indicates the disk is 
+										assigned as a global hot spare.</li>
+						</ul>
+						</td>
+                    </tr>
+                  </table>
+				  </div>
+			</div>
+                
+                	
+			<div class="popup_inner_content"><div><p>For each physical disk, click the + sign to display the following advanced 
+			properties along with the basic properties.</p></div>
+			<div class="popup_infolist">
+		          <table>
+				    <tr>
+                      <td  class="item">
+                        <span><b>Operational State</b></span></td>
+                      <td class="desc">
+						<p>Displayed only 
+						when there is progress-based operation:</p>
+						<ul>
+										<li>Copyback — 
+										Indicates data is being 
+						copied from a hot spare to the physical disk or vice 
+						versa.</li>
+										<li>Clear — Indicates a clear operation 
+										is in-progress on the 
+						physical disk. A physical disk may also display the 
+						Clear state if the physical disk is a member of a 
+						virtual disk that is being slow initialized.</li>
+										<li>Rebuilding — Indicates the data from a redundant virtual disk is 
+						currently being rebuilt onto the physical disk.</li>
+										<li>Not Applicable — Indicates there is 
+										no operation in-progress.</li>
+						</ul>
+						</td>
+                    					</tr>
+				                      <tr>
+                      <td  class="item" >
+                        <span><b>Power Status</b></span></td>
+                      <td class="desc"><p>
+						Indicates the spin status of the physical 
+						drives. Possible values:</p>
+						<ul>
+										<li>Spun Down &#8212; Indicates 
+										the physical drive is in 
+										the spun down state.</li>
+										<li>Transition — Indicates the physical 
+										drive is changing from the spun down 
+										state to spun up state or vice versa.</li>
+										<li>Spun Up &#8212; Indicates the physical drive is in 
+										the spun up state. </li>
+						</ul>
+						</td>
+                    </tr>
+                    <tr>
+                      <td  class="item">
+                        <span><b>Failure Predicted</b></span></td>
+                      <td class="desc">
+						<p>Displays whether the physical disk has 
+						received a SMART alert and is predicted to 
+						fail. Possible values: Yes or No. Also, see the Alert 
+						Log for alerts pertaining to a 
+						SMART predictive failure.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Progress</b></span></td>
+                      <td class="desc">
+						<p>Displays status for an operation being performed on the physical disk 
+						in percentage.</p>
+						
+						<p>If there is no operation in-progress, it 
+						displays <b>Not Applicable</b>. </p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Used RAID Disk Space</b></span></td>
+                      <td class="desc">
+						<p>Displays the physical disk space used by the virtual disks on the controller 
+						in gigabytes (GB).</p>
+						<p>In certain cases, the property displays a value of zero (0) even though a portion of 
+						the physical disk is used. This occurs when the 
+						used space is 0.005 GB or less. The algorithm for 
+						calculating the used disk space rounds a value of 0.005 
+						GB or less to 0. Used disk space that is between 0.006 
+						GB and 0.009 GB is rounded up to 0.01 GB.</p>
+						</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+			<span><b>Available RAID Disk Space </b> </span></td>
+                      <td class="desc">
+						<p>Displays the available space on the disk (in 
+						GB).</p></td>
+                    </tr>
+                    <tr>
+                      <td  class="item">
+                        <span><b>Negotiated Speed</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the data transfer speed that the disk 
+						negotiated while spinning up and during initial 
+						communication with the controller  
+						(in gigabytes per second). This speed is 
+						dependent on the speed of the disk, the capable speed of 
+						the controller, the current speed of the controller on 
+						that connector, and the speed of the Enclosure 
+						Management Module (EMM) on the enclosure. </p>
+						<p>If the negotiated speed is not available, it displays 
+						<b>Information Not Available</b>.</p></td>
+                    </tr>
+                   <tr>
+                      <td class="item">
+                        <span><b>Capable Speed</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the highest possible speed that the device can 
+						transfer data. If the capable speed is not available, it displays 
+						<b>Information Not Available</b>.</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>SAS Address</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the SAS address of the physical disk. The SAS 
+						address is unique to each SAS disk. 
+						If it is not available, it displays <b>Not Applicable</b>.</p> </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Part Number</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the Piece Part Identification (PPID) of the 
+						physical disk. </p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Manufacturer</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the physical disk&#39;s manufacturer name.</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Product ID</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the disk's product ID.</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Revision</b></span></td>
+                      <td class="desc">
+						<p>Displays the firmware version.</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Serial Number</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the disk's serial number.</p> </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Manufactured Day</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the day when the physical 
+						disk was manufactured. If the bus protocol used is SATA, 
+						it displays zero (0).</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Manufactured Week</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the week when the physical 
+						disk was manufactured. If the bus protocol used is SATA, 
+						it displays zero (0).</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Manufactured Year</b></span>
+			</td>
+                      <td class="desc">
+						<p>Displays the year when the physical disk was 
+						manufactured. If the bus protocol used is SATA, it 
+						displays zero (0).</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Form Factor</b></span></td>
+                      <td class="desc">
+						Indicates the physical size and layout of the physical 
+						disk drive in inches. Possible values are 1.8, 2.5, or 
+						3.5.</td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Controller</b></span></td>
+                      <td class="desc">
+						<p>Click the controller name link to view the controller properties 
+						associated with this physical disk.</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Enclosure</b></span>
+			</td>
+                      <td class="desc">
+						<p>Click the enclosure name link to view the enclosure properties 
+						associated with this physical disk. If the physical disk 
+						is directly attached to the controller, this property is 
+						not displayed.</p></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>View Virtual Disks for this Physical Disk</b></span></td>
+                      <td class="desc">
+						Click this link to view the virtual disks associated 
+						with this physical disk.</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+                
+              <script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	</div>
+  </div>
+	</body>
+</html>

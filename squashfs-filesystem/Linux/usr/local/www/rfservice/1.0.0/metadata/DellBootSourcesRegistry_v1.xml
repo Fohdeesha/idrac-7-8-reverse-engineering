@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellBootSourcesRegistry  v1.0.0                                     -->
+<!--# This is DELL OEM Schema.                                                             -->
+<!--# Copyright 2014-2016 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/AttributeRegistry_v1.xml">
+    <edmx:Include Namespace="AttributeRegistry"/>
+    <edmx:Include Namespace="AttributeRegistry.v1_0_0" />
+	<edmx:Include Namespace="AttributeRegistry.v1_0_1" />
+  </edmx:Reference>
+  
+  <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellBootSourcesRegistry">
+
+      <EntityType Name="DellBootSourcesRegistry" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+        <Annotation Term="OData.Description" String="An BootSources Registry is a set of key-value pairs which are specific to a particular implementation or product, such that creating standardized property names would be impractical.  This schema describes the structure of a Registry, and also includes mechanisms for building user interfaces (menus) allowing consistent navigation of the contents."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an BootSources registry for a Redfish implementation."/>
+      </EntityType>
+ 
+    </Schema>
+    
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellBootSourcesRegistry.v1_0_0">
+
+      <EntityType Name="DellBootSourcesRegistry" BaseType="DellBootSourcesRegistry.DellBootSourcesRegistry">       
+        <Property Name="Language" Type="Edm.String" Nullable="false" >
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This is the RFC 5646 compliant language code for the registry."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be a string consisting of an RFC 5646 language code"/>
+          <Annotation Term="Redfish.Required"/>
+        </Property>
+        <Property Name="RegistryVersion" Type="Edm.String" Nullable="false" >
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This is the BootSources registry version which is used in the middle portion of a BootSourcesRegistry."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be the version of this BootSources registry. The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification."/>
+          <Annotation Term="Redfish.Required"/>
+        </Property>
+        <Property Name="OwningEntity" Type="Edm.String" Nullable="false" >
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This is the organization or company that publishes this registry."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be a string that represents the publisher of this registry."/>
+          <Annotation Term="Redfish.Required"/>
+        </Property>
+        <Property Name="SupportedSystems" Type="Collection(AttributeRegistry.v1_0_0.SupportedSystems)" Nullable="false" >
+          <Annotation Term="OData.Description" String="Array of systems supported by this BootSources registry."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing a list of systems supported by this BootSources registry."/>
+        </Property>
+        <Property Name="RegistryEntries" Type="DellBootSourcesRegistry.v1_0_0.RegistryEntries" Nullable="false" >
+          <Annotation Term="OData.Description" String="List of all attributes and their metadata for this component."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall a list of all attributes for this component, along with their possible values, dependencies, and other metadata."/>
+        </Property>
+      </EntityType>
+
+      <ComplexType Name="RegistryEntries">
+        <Property Name="Attributes" Type="Collection(DellBootSourcesRegistry.v1_0_0.Attributes)" Nullable="false" >
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The array containing the attributes and their possible values."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing the attributes and their possible values and other metadata."/>
+        </Property>
+        <Property Name="Menus" Type="Collection(AttributeRegistry.v1_0_0.Menus)" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The array containing the attributes menus and their hierarchy."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing the attributes menus and their hierarchy."/>
+        </Property>
+        <Property Name="Dependencies" Type="Collection(AttributeRegistry.v1_0_0.Dependencies)" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The array containing a list of dependencies of attributes on this component."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing a list of dependencies of attributes on this component."/>
+        </Property>
+      </ComplexType>
+
+      <ComplexType Name="Attributes" BaseType="AttributeRegistry.v1_0_0.Attributes">
+         <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+		 <Property Name="Entry" Type="Collection(DellBootSourcesRegistry.v1_0_0.Entry)" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The array containing possible values for attributes of type 'OrderedList'."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing the possible values of an attribute of type 'OrderedList'."/>
+        </Property>
+      </ComplexType>
+
+	  <ComplexType Name="Entry">
+        <Property Name="Enabled" Type="Edm.Boolean">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The attribute that is used set if the boot device is Enabled."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be used to indicate if the boot device is Enabled."/>          
+        </Property>
+        <Property Name="Id" Type="Edm.String" Nullable="false">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The device ID fo the boot device."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the device ID for the boot device."/>
+        </Property>
+        <Property Name="Index" Type="Edm.Int64">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The index number of the boot device in the boot order list."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the index number of the boot device in the boot order list."/>
+        </Property>
+        <Property Name="Name" Type="Edm.String" Nullable="false">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The fully qualified device descriptor (FQDD) of the boot device."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the fully qualified device descriptor (FQDD) of the boot device."/>
+        </Property>  
+        <Property Name="DisplayName" Type="Edm.String" Nullable="false">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The display name of the boot device."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the display name of the boot device."/>
+        </Property>  		
+      </ComplexType>
+
+   </Schema>
+  
+</edmx:DataServices>
+</edmx:Edmx>

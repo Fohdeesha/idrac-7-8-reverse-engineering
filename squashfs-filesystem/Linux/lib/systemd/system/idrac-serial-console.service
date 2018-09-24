@@ -1,0 +1,32 @@
+[Unit]
+Description=Developer Shell
+Documentation=man:sulogin(8)
+DefaultDependencies=no
+Conflicts=shutdown.target
+Before=shutdown.target
+ConditionPathExists=/etc/xrev_fw
+
+[Service]
+Type=simple
+#ControlGroup=memory:/idrac/NC
+Environment=HOME=/home/root USER=root
+WorkingDirectory=/home/root
+
+ExecStartPre=-/bin/echo -e '\\nWelcome to developer console!\\nType "journalctl -b" to view system logs. Type "systemctl reboot" to reboot.'
+ExecStart=-/bin/sh
+
+RestartSec=1
+Restart=always
+StandardInput=tty-force
+StandardOutput=inherit
+StandardError=inherit
+KillMode=process
+IgnoreSIGPIPE=no
+
+# Bash ignores SIGTERM, so we send SIGHUP instead, to ensure that bash
+# terminates cleanly.
+KillSignal=SIGHUP
+
+[Install]
+WantedBy=getty.target
+WantedBy=emergency.target

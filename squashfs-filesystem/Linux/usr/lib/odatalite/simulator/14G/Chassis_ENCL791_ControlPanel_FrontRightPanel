@@ -1,0 +1,55 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#ControlPanel/Members/Chassis/ENCL791/ControlPanel/$entity",
+	"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontRightPanel",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/ControlPanel",
+    "@odata.type": "#Dell.ControlPanel.1.0.0.ControlPanel",
+    "Id": "FrontRightPanel",
+    "Name": "Front right control panel",
+    "Description": "Control panel located at the right side in front of the chassis enclosure.",
+    "Status": {
+        "Health": "Ok"
+    },
+    "Configurations": [
+        {
+			"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontRightPanel#/Configurations/QuickSync",
+			"@odata.type": "#Dell.ControlPanel.1.0.0.Configurations",
+			"Id": "QuickSync",
+            "Access": "Readonly",
+            "InactivityTimerEnablement": "Disabled",
+            "InactivityTimeoutSeconds": 600,
+            "ReadAuthentication": "Enabled",
+            "Status": {
+                "Health": "Ok",
+                "State": "Enabled"
+            },
+            "WifiState": "Enabled"
+        }
+    ],
+    "Buttons": [
+		{
+			"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontRightPanel#/Buttons/QuickSync",
+			"@odata.type": "#Dell.ControlPanel.1.0.0.Buttons",
+			"Id": "QuickSync",
+            "ButtonType": "QuickSync",
+            "IndicatorLED": "Lit",
+            "Status": {
+                "State": "Enabled"
+            },
+            "Configuration": {
+                "@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontRightPanel#/Configurations/QuickSync"
+            },
+            "Actions": {
+                "#Buttons.Press": {
+                    "target": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontRightPanel#/Buttons/QuickSync/Actions/Buttons.Press"
+                }
+            }
+		}
+    ],
+    "Links": {
+        "Chassis": {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791"
+        }
+    },
+    "Oem": {}
+}

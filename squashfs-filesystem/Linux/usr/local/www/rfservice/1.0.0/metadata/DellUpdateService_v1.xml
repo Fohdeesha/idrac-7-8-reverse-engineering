@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellUpdateService  v1.0.0 -->
+<!--# This schema complements to OEM section of Update Service Resource                   -->
+<!--# Copyright 2014-2016 Dell, Inc. or its subsidiaries.All Rights Reserved.             -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.1.0.0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
+
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService">
+      <EntityType Name="DellUpdateService" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+	    <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+        <Annotation Term="OData.Description" String="This is the schema definition for the additional OEM properties to complement DMTF Update Service Schema."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an OEM Update Service for a Redfish implementation."/>
+      </EntityType>
+	  <Action Name="Install" IsBound="true">
+		<Parameter Name="DellUpdateService" Type="DellUpdateService.v1_0_0.OemActions"/>
+		<Parameter Name="SoftwareIdentityURIs" Type="Collection(Edm.String)" Nullable="false">
+		  <Annotation Term="OData.Description" String="Contains the relative URIs of the firmware inventory components to be installed, only one component installation at a time is allowed."/>
+		  <Annotation Term="OData.LongDescription" String="Contains the relative URIs of the firmware inventory components to be installed, only one component installation at a time is allowed."/>
+		  <Annotation Term="Redfish.Required"/>
+		</Parameter>
+		<Parameter Name="InstallUpon" Type="DellUpdateService.v1_0_0.InstallUpon" Nullable="false">
+		  <Annotation Term="OData.Description" String="The type of Install Upon option, default value is NextReboot if not provided by user"/>
+		  <Annotation Term="OData.LongDescription" String="The type of Install Upon option, default value is NextReboot if not provided by user"/>
+		</Parameter>
+        <Annotation Term="OData.Description" String="This action is used to install firmware inventory instances"/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform install of firmware inventory instances"/>
+      </Action>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService.v1_0_0">
+
+      <EntityType Name="DellUpdateService" BaseType="DellUpdateService.DellUpdateService">
+        <Annotation Term="OData.Description" String="This is the schema definition for the additional OEM properties to complement DMTF Update Service Schema."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an OEM Update Service for a Redfish implementation."/>
+      </EntityType>
+       <ComplexType Name="OemActions">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+       </ComplexType>
+      <!--InstallUpon parameter values for Install Action-->
+      <EnumType Name="InstallUpon">
+        <Member Name="Now">
+          <Annotation Term="OData.Description" String="To indicate install now"/>
+        </Member>
+        <Member Name="NextReboot">
+          <Annotation Term="OData.Description" String="To indicate install on next reboot"/>
+        </Member>
+        <Member Name="NowAndReboot">
+          <Annotation Term="OData.Description" String="To indicate install and reboot"/>
+        </Member>
+     </EnumType>
+    </Schema>
+
+  </edmx:DataServices>
+</edmx:Edmx>

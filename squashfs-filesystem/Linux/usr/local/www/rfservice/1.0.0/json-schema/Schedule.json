@@ -1,0 +1,10 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#Schedule",
+    "definitions": {
+        "Schedule": {
+                "$ref": "/redfish/v1/Schemas/Schedule.v1_0_0.json#/definitions/Schedule"
+        }
+    },
+    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

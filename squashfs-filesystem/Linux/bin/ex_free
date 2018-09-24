@@ -1,0 +1,78 @@
+#!/bin/sh
+
+flag_intr=0
+
+WEB=/usr/local/bin/appweb
+GDS=/usr/local/bin/guiDataServer
+
+intr_rot()
+{
+  flag_intr=1
+}
+
+check_pgm ()
+{
+  xpid=$(pgrep -x ${1})
+  if [ ${flag_intr} -eq 1 ] ; then
+    return 0;
+  fi
+  if [ -z ${xpid} ] ; then
+    echo "Program: ${1} pid: ${2} is not running"
+    return 1
+  fi
+  if [ ${xpid} -ne ${2} ] ; then
+    echo "Program: ${1} restarted old pid: ${2} new pid: ${xpid}"
+    return 1
+  fi
+  return 0
+}
+
+trap intr_rot 1 2 
+
+pkill -9 AppMonitor
+
+MPID=$(ps | grep "appweb_monitor.sh" | grep -v grep | awk '{ print $1 }')
+if [ -n "$MPID" ] ; then
+  kill -9 $MPID
+  sleep 2
+fi
+
+START=${1:-$(date)}
+cnt=30
+web_pid=$(pgrep -x ${WEB})
+gui_pid=$(pgrep -x ${GDS})
+
+while true ; do
+if [ ${flag_intr} -ne 0 ] ; then
+  echo "script aborted by user"
+  break;
+fi
+check_pgm ${WEB} ${web_pid} || break
+check_pgm ${GDS} ${gui_pid} || break
+
+cnt=$(expr $cnt + 1)
+
+if [ $cnt -lt 30 ] ; then
+sleep 1
+continue
+fi
+cnt=0
+
+echo "-------------------------------------------------";
+echo "Start  :" $START
+echo "Current:" $(date) 
+free
+top -b -n1 | grep "appweb\|guiData\|aim\|fullfw\|avct_server\|dsm_sa_data\|ipmi" | grep -v grep
+echo "-------------------------------------------------";
+proc_mem_usage.sh ${gui_pid}
+echo "GDS Connections: " $(netstat -anp 2>/dev/null | grep 8195 | grep guiDataServer | grep -cv "LISTEN\|grep")
+echo "WEB Connections: " $(netstat -anp 2>/dev/null | grep 8195 | grep appweb | grep -cv grep)
+echo "WEB sockets: " $(ls -l /proc/${web_pid}/fd | grep socket | grep -cv grep)
+done
+
+echo "=================================================";
+grep appweb /messages/messages
+echo "-------------------------------------------------";
+echo "start : $START"
+echo "finish: $(date)"
+

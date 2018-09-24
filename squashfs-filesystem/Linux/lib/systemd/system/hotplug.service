@@ -1,0 +1,20 @@
+[Unit]
+Description=SD Detection
+After=osinet.service
+After=maser_access_controller.service
+After=dm-stage2.service
+
+[Service]
+# This script takes a while, and we don't need to wait for it, so we'll use
+# 'simple'
+# from docs: "Behavior of oneshot is
+# similar to simple; however, it is expected that the process has to exit
+# before systemd starts follow-up units. RemainAfterExit= is particularly
+# useful for this type of service."
+Type=simple
+EnvironmentFile=/etc/global.env
+ExecStartPre=/bin/sh -c "echo /etc/sysapps_script/hotplug.sh > /proc/sys/kernel/hotplug"
+ExecStart=/etc/sysapps_script/hotplug.sh boot
+
+[Install]
+WantedBy=multi-user.target

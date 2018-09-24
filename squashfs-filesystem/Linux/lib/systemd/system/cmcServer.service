@@ -1,0 +1,16 @@
+[Unit]
+Description=CMC Server
+After=osinet.service
+ConditionPathExists=/flash/data0/features/platform-modular
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStartPre=/etc/sysapps_script/S_7603_cmcServer.sh init
+ExecStart=/usr/bin/cmcServer
+KillSignal=SIGKILL
+
+[Install]
+WantedBy=multi-user.target

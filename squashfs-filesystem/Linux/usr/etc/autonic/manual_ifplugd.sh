@@ -1,0 +1,1 @@
+../../bin/manual_ifplugd.sh

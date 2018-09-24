@@ -1,0 +1,25 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#AccountService",
+    "@odata.id": "/redfish/v1/AccountService"  ,"@oem.nav.parentid": "/redfish/v1",
+    "@odata.type": "#AccountService.1.0.0.AccountService",
+    "Id": "AccountService",
+    "Name": "Account Service",
+    "Description": "EC User Accounts",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "ServiceEnabled": true,
+    "AuthFailureLoggingThreshold": 3,
+    "MinPasswordLength": 8,
+    "AccountLockoutThreshold": 5,
+    "AccountLockoutDuration": 30,
+    "AccountLockoutCounterResetAfter": 30,
+    "Accounts": {
+        "@odata.id": "/redfish/v1/AccountService/Accounts"
+    },
+    "Roles": {
+        "@odata.id": "/redfish/v1/AccountService/Roles"
+    }
+}

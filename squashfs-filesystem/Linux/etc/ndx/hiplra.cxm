@@ -1,0 +1,37 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _LRAGlobalObj 
+{
+        u32 respCapabilities;
+        s32 protAllowActivateTimeOut;
+        s32 protReCheckTimeOut;
+} LRAGlobalObj;
+
+typedef struct _LRAResponseObj 
+{
+        __BITMAP u32 settings;
+        astring epfName[256];
+} LRAResponseObj;
+
+typedef struct _LRAProtectObj 
+{
+        u32 condition;
+} LRAProtectObj;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

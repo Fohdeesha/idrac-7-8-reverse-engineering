@@ -1,0 +1,43 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/ENCL791/Batteries/$entity",
+    "@odata.id": "/redfish/v1/Systems/Manager.ENCL791.1/Batteries",
+    "@oem.nav.parentid": "/redfish/v1/Systems/Manager.ENCL791.1",
+    "@odata.type": "Dell#Batteries.0.0.1.Batteries",
+    "Id": "Batteries",
+    "Name": "Enclosure Batteries",
+    "Batteries": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Manager.ENCL791.1/Batteries#/Batteries/1",
+            "MemberId": "1",
+            "Name": "RTC battery",
+            "SensorNumber": 81,
+            "Status": {
+                "Health": "Critical"
+            }
+        }
+    ],
+    "Status": {
+        "Health": "Critical",
+        "HealthRollup": "Critical"
+    },
+    "FaultList": [
+        {
+            "Message": "This is a sample message that can indicate why a component health status is not OK.",
+            "MessageID": "BAT0007",
+            "MessageArgs": [ 
+                "sample" 
+            ],
+            "FQDD": "Enc.Battery.1"
+        },
+        {
+            "Message": "This is a sample message that can indicate why a component health status is not OK.",
+            "MessageID": "BAT0004",
+            "MessageArgs": [ 
+                "sample" 
+            ],
+            "FQDD": "Enc.Battery.2"
+        }
+    ],
+    "Oem": {}
+}

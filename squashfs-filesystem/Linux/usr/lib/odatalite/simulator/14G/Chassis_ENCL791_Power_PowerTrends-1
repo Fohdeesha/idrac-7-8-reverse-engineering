@@ -1,0 +1,21 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/ENCL791/Power/PowerTrends-1/$entity",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Power/PowerTrends-1",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/Power",
+    "@odata.type": "Dell#PowerTrendsCollection.PowerTrendsCollection",
+    "Id": "PowerTrends-1",
+    "Name": "Power Trends Collection",
+    "Members@odata.count": "3",
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power/PowerTrends-1/LastHour"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power/PowerTrends-1/LastDay"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power/PowerTrends-1/LastWeek"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+//
+// indication classes for mofc
+//
+//
+
+// ===================================================================
+// 	dummy classes to get event classes loaded by mofc
+// ===================================================================
+
+class DMY_ProcessIndication : CIM_ProcessIndication
+{
+};
+
+class DMY_InstCreation : CIM_InstCreation
+{
+};
+
+class DMY_InstModification : CIM_InstModification
+{
+};
+
+class DMY_InstDeletion : CIM_InstDeletion
+{
+};
+
+class SFCB_ServiceAffectsElement : CIM_ServiceAffectsElement
+{
+};
+
+// Allows for assocs calls to interopServerProvider (3422650)
+class DMY_System : CIM_System
+{
+};

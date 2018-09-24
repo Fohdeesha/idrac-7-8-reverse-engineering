@@ -1,0 +1,1 @@
+session   required        pam_session_manager.so sessiontype=SOL maxsessions=1

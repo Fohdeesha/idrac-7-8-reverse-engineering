@@ -1,0 +1,36 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Managers/Members/1/LogServices/Members/LCL/Entries",
+    "@odata.id": "/redfish/v1/Managers/ENCL791.1/LogServices/LCL/Entries"  ,"@oem.nav.parentid": "/redfish/v1/Managers/ENCL791.1/LogServices/LCL",
+    "@odata.type": "#LogEntryCollection.LogEntryCollection",
+    "Name": "Log Service Collection",
+    "Description": "Collection of Logs for this System",
+    "members@odata.count": 1,
+    "members": [
+        {
+            "@odata.id": "/redfish/v1/Managers/ENCL791.1/LogServices/LCL/Entries/1",
+            "@odata.type": "#LogEntry.1.0.0.LogEntry",
+            "Id": "1",
+            "Name": "Log Entry 1",
+            "EntryType": "SEL",
+            "OEMRecordFormat": "CompanyX",
+            "Severity": "Critical",
+            "Created": "2012-03-07T14:44",
+            "EntryCode": "Assert",
+            "SensorType": "Temperature",
+            "SensorNumber": 1,
+            "Message": "Message for Event, Description for SEL, OEM depends",
+            "MessageId": "Event.1.0.TempAssert",
+            "MessageArgs": [
+                "ArrayOfMessageArgs"
+            ],
+            "Links": {
+                "OriginOfCondition": {
+                    "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal"
+                },
+                "Oem": {}
+            },
+            "Oem": {}
+        }
+    ]
+}

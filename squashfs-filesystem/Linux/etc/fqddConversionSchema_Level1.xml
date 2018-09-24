@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FQDDConversionSchema_Level1>
+  <DClass val="raid">
+    <Loc val="integrated">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Integrated RAID Controller %1</FName>
+        <UniqueID>RAIDInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Integrated RAID Controller %1</FName>
+        <UniqueID>RAIDInt1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>RAID Controller in Slot %1</FName>
+        <UniqueID>RAIDSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>RAID Controller in Slot %1</FName>
+        <UniqueID>RAIDSlot1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="mezzanine">
+      <Instance>
+        <Format>%1(%2c)</Format>
+        <FName>RAID Controller in Mezzanine %1</FName>
+        <UniqueID>RAIDMez1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="chassisintegrated">
+      <Instance>
+        <Format>%1-%2-#0-%4</Format>
+        <FName>Chassis Integrated RAID %1 Shared Function %4</FName>
+        <UniqueID>RAIDChassInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1</Format>
+        <FName>Chassis Integrated RAID %1</FName>
+        <UniqueID>RAIDChassInt2</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Chassis Integrated RAID %1</FName>
+        <UniqueID>RAIDChassInt2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="chassisslot">
+      <Instance>
+        <Format>%1-%2-#0-%4</Format>
+        <FName>RAID in Chassis Slot %1 Shared Function %4</FName>
+        <UniqueID>RAIDChassSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1</Format>
+        <FName>RAID Controller in Chassis Slot %1</FName>
+        <UniqueID>RAIDChassSlot2</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>RAID Controller in Chassis Slot %1</FName>
+        <UniqueID>RAIDChassSlot2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded RAID Controller %1</FName>
+        <UniqueID>RAIDEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded RAID Controller %1</FName>
+        <UniqueID>RAIDEmb1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="modular">
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Integrated RAID Controller %2 in Front Chassis Slot %1</FName>
+        <UniqueID>RAIDMod1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="disk">
+    <Loc val="virtual">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Virtual Disk %1</FName>
+        <UniqueID>DISKVirt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Virtual Disk %1-%2</FName>
+        <UniqueID>DISKVirt1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="bay">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Disk on Bay %1</FName>
+        <UniqueID>DISKBay1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Disk on Bay %1</FName>
+        <UniqueID>DISKBay1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="direct">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Disk %1</FName>
+        <UniqueID>DISKDir1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Disk %2</FName>
+        <UniqueID>DISKDir1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="usbinternal">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Disk connected to internal USB %1</FName>
+        <UniqueID>DISKUSB1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Disk connected to internal USB %1</FName>
+        <UniqueID>DISKUSB2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="usbfront">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Disk connected to front USB %1</FName>
+        <UniqueID>DISKUSBFRNT1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Disk connected to front USB %1</FName>
+        <UniqueID>DISKUSBFRNT2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="sdinternal">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Internal SD Card</FName>
+        <UniqueID>DISKSDInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Internal SD Card</FName>
+        <UniqueID>DISKSDInt2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="sataembedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Disk on Embedded SATA Port %1</FName>
+        <UniqueID>DISKSatEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Disk on Embedded SATA Port %1</FName>
+        <UniqueID>DISKSatEmb2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="vflash">
+      <Instance>
+        <Format>%1</Format>
+        <FName>vFlash Media %1</FName>
+        <UniqueID>DISKVflash1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>vFlash Media %1</FName>
+        <UniqueID>DISKVflash2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="vflashcard">
+      <Instance>
+        <Format>%1</Format>
+        <FName>vFlash Card</FName>
+        <UniqueID>DISKVflashCard1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>vFlash Card</FName>
+        <UniqueID>DISKVflashCard1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="idracvirtual">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Virtual Disk</FName>
+        <UniqueID>DISKIdracVirt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Virtual Disk</FName>
+        <UniqueID>DISKIdracVirt2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="nonraid">
+    <Loc val="integrated">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Integrated Storage Controller %1</FName>
+        <UniqueID>NonRAIDInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Integrated Storage Controller %1</FName>
+        <UniqueID>NonRAIDInt1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Storage Controller in Slot %1</FName>
+        <UniqueID>NonRAIDSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Storage Controller in Slot %1</FName>
+        <UniqueID>NonRAIDSlot1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="mezzanine">
+      <Instance>
+        <Format>%1(%2c)</Format>
+        <FName>Storage Controller in Mezzanine %1</FName>
+        <UniqueID>NonRAIDMez1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded Storage Controller %1</FName>
+        <UniqueID>NonRAIDEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded Storage Controller %1</FName>
+        <UniqueID>NonRAIDEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="nic">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded NIC %1</FName>
+        <UniqueID>NICEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded NIC %1 Port %2</FName>
+        <UniqueID>NICEmb2</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2-%3</Format>
+        <FName>Embedded NIC %1 Port %2 Partition %3</FName>
+        <UniqueID>NICEmb3</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2-%3-%4</Format>
+        <FName>Embedded NIC %1 Port %2 Partition %3 Shared Function %4</FName>
+        <UniqueID>NICEmb4</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>NIC in Slot %1</FName>
+        <UniqueID>NICSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>NIC in Slot %1 Port %2</FName>
+        <UniqueID>NICSlot2</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2-%3</Format>
+        <FName>NIC in Slot %1 Port %2 Partition %3</FName>
+        <UniqueID>NICSlot3</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2-%3-%4</Format>
+        <FName>NIC in Slot %1 Port %2 Partition %3 Shared Function %4</FName>
+        <UniqueID>NICSlot4</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="mezzanine">
+      <Instance>
+        <Format>%1(%2c)</Format>
+        <FName>NIC in Mezzanine %1</FName>
+        <UniqueID>NICMez1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1(%2c)-%3</Format>
+        <FName>NIC in Mezzanine %1 Port %3</FName>
+        <UniqueID>NICMez2</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1(%2c)-%3-%4</Format>
+        <FName>NIC in Mezzanine %1 Port %3 Partition %4</FName>
+        <UniqueID>NICMez3</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="integrated">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Integrated NIC %1</FName>
+        <UniqueID>NICInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Integrated NIC %1 Port %2</FName>
+        <UniqueID>NICInt2</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2-%3</Format>
+        <FName>Integrated NIC %1 Port %2 Partition %3</FName>
+        <UniqueID>NICInt3</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2-%3-%4</Format>
+        <FName>NIC in Slot %1 Port %2 Partition %3 Shared Function %4</FName>
+        <UniqueID>NICInt4</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="chassisslot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>NIC in Chassis Slot %1</FName>
+        <UniqueID>NICChassSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>NIC in Chassis Slot %1 Port %2</FName>
+        <UniqueID>NICChassSlot2</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2-%3</Format>
+        <FName>NIC in Chassis Slot %1 Port %2 Partition %3</FName>
+        <UniqueID>NICChassSlot3</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2-%3-%4</Format>
+        <FName>NIC in Chassis Slot %1 Port %2 Partition %3 Shared Function %4</FName>
+        <UniqueID>NICChassSlot4</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="video">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded Video Controller %1</FName>
+        <UniqueID>VidEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded Video Controller %1</FName>
+        <UniqueID>VidEmb2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Video Controller in Slot %1</FName>
+        <UniqueID>VidSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Video Controller in Slot %1</FName>
+        <UniqueID>NVidSlot2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="chassisslot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Video Controller in Chassis Slot %1</FName>
+        <UniqueID>VidChassSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Video Controller in Chassis Slot %1</FName>
+        <UniqueID>VidChassSlot2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="optical">
+    <Loc val="usbfront">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Optical Drive connected to front USB %1</FName>
+        <UniqueID>OptUSB1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Optical Drive connected to front USB %1</FName>
+        <UniqueID>OptUSB2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="sataexternal">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Optical Drive on External SATA Port %1</FName>
+        <UniqueID>OptExtSat1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Optical Drive on External SATA Port %1</FName>
+        <UniqueID>OptExtSat2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="idracvirtual">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Virtual Optical Drive</FName>
+        <UniqueID>OPTVirt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Virtual Optical Drive</FName>
+        <UniqueID>OPTVirt2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="floppy">
+    <Loc val="usbback">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Floppy Drive connected to back USB %1</FName>
+        <UniqueID>OptUSB1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Floppy Drive connected to back USB %1</FName>
+        <UniqueID>OptUSB2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="idracvirtual">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Virtual Floppy Drive</FName>
+        <UniqueID>FLOPPYVirt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Virtual Floppy Drive</FName>
+        <UniqueID>FLOPPYVirt2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="pciessd">
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>PCIe SSD in Slot %1</FName>
+        <UniqueID>PCIESSDSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>PCIe SSD in Slot %1</FName>
+        <UniqueID>PCIESSDSlot1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="pcieextender">
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>PCIe Extender in PCIe Slot %1</FName>
+        <UniqueID>PCIEEXTSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>PCIe Extender in PCIe Slot %1</FName>
+        <UniqueID>PCIEEXTSlot1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="system">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>System</FName>
+        <UniqueID>SysEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>System</FName>
+        <UniqueID>SysEmb2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="chassis">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Blade Chassis</FName>
+        <UniqueID>SysChs1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Blade Chassis</FName>
+        <UniqueID>SysChs2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="modular">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Blade %1</FName>
+        <UniqueID>SysMod1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Blade %1</FName>
+        <UniqueID>SysMod2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="psu">
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Power Supply %1</FName>
+        <UniqueID>PSUSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Power Supply %1</FName>
+        <UniqueID>PSUSlot1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="fan">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Fan %1</FName>
+        <UniqueID>FanEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Fan %1</FName>
+        <UniqueID>FanEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="cpu">
+    <Loc val="socket">
+      <Instance>
+        <Format>%1</Format>
+        <FName>CPU %1</FName>
+        <UniqueID>CPUSock1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>CPU %1</FName>
+        <UniqueID>CPUSock1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="dimm">
+    <Loc val="socket">
+      <Instance>
+        <Format>%1</Format>
+        <FName>DIMM %1</FName>
+        <UniqueID>DIMMSock1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>DIMM %1</FName>
+        <UniqueID>DIMMSock1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="mc">
+    <Loc val="chassis">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Chassis Management Controller %1</FName>
+        <UniqueID>MCChs1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Chassis Management Controller %1</FName>
+        <UniqueID>MCChs1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="kvm">
+    <Loc val="chassis">
+      <Instance>
+        <Format>%1</Format>
+        <FName>KVM</FName>
+        <UniqueID>KVMChs1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>KVM</FName>
+        <UniqueID>KVMChs1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="iom">
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>IO Module %1</FName>
+        <UniqueID>IOMSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>IO Module %1</FName>
+        <UniqueID>IOMSlot1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="cpld">
+    <Loc val="embedded">
+      <Instance>
+       <Format>%1</Format>
+        <FName>System CPLD</FName>
+        <UniqueID>CPLDEmb1</UniqueID>
+      </Instance>
+      <Instance>
+       <Format>%1-%2</Format>
+        <FName>System CPLD</FName>
+        <UniqueID>CPLDEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="tape">
+    <Loc val="sataembedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Tape Back-up on Embedded SATA Port %1</FName>
+        <UniqueID>TAPESatEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Tape Back-up on Embedded SATA Port %1</FName>
+        <UniqueID>TAPESatEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="bios">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>System BIOS</FName>
+        <UniqueID>BIOSEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>System BIOS</FName>
+        <UniqueID>BIOSEmb1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="setup">
+      <Instance>
+        <Format>%1</Format>
+        <FName>System BIOS Setup</FName>
+        <UniqueID>BIOSSetup1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>System BIOS Setup</FName>
+        <UniqueID>BIOSSetup1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="internalsetup">
+      <Instance>
+        <Format>%1</Format>
+        <FName>System BIOS Internal Setup</FName>
+        <UniqueID>BIOSIntSetup1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>System BIOS Internal Setup</FName>
+        <UniqueID>BIOSIntSetup1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="iscsisetup">
+      <Instance>
+        <Format>%1</Format>
+        <FName>System BIOS iSCSI Setup</FName>
+        <UniqueID>BIOSiSCSI1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>System BIOS iSCSI Setup</FName>
+        <UniqueID>BIOSiSCSI1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="harddisk">
+    <Loc val="list">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Hard Drive C:</FName>
+        <UniqueID>HARDDISKList1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Hard Drive C:</FName>
+        <UniqueID>HARDDISKList1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="lc">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Lifecycle Controller</FName>
+        <UniqueID>LCEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Lifecycle Controller</FName>
+        <UniqueID>LCEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="controlpanel">
+    <Loc val="chassis">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Control Panel</FName>
+        <UniqueID>CTRLChass1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Control Panel</FName>
+        <UniqueID>CTRLChass1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="lcd">
+    <Loc val="chassis">
+      <Instance>
+        <Format>%1</Format>
+        <FName>LCD</FName>
+        <UniqueID>LCDChass1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>LCD</FName>
+        <UniqueID>LCDChass1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="battery">
+    <Loc val="integrated">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Battery on Integrated RAID Controller %1</FName>
+        <UniqueID>BATTInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Battery on Integrated RAID Controller %1</FName>
+        <UniqueID>BATTInt1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="cmos">
+      <Instance>
+        <Format>%1</Format>
+        <FName>CMOS Battery</FName>
+        <UniqueID>BATTCmos1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>CMOS Battery</FName>
+        <UniqueID>BATTCmos1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="cable">
+    <Loc val="internal">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Cable %1</FName>
+        <UniqueID>CABLEInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Cable %1</FName>
+        <UniqueID>CABLEInt1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="watchdogtimer">
+    <Loc val="idrac">
+      <Instance>
+        <Format>%1</Format>
+        <FName>iDRAC Watchdog Timer</FName>
+        <UniqueID>WATCHDOGIdrac1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>iDRAC Watchdog Timer</FName>
+        <UniqueID>WATCHDOGIdrac1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="pciriser">
+    <Loc val="internal">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Internal PCIe Riser</FName>
+        <UniqueID>RISERInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Internal PCIe Riser</FName>
+        <UniqueID>RISERInt1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="midplane">
+    <Loc val="internal">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Mid-plane</FName>
+        <UniqueID>MIDPLANEInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Mid-plane</FName>
+        <UniqueID>MIDPLANEInt1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="miniplanar">
+    <Loc val="internal">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Internal Mini-Planar</FName>
+        <UniqueID>MINIPLANInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Internal Mini-Planar</FName>
+        <UniqueID>MINIPLANInt1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="networkfile">
+    <Loc val="idracvirtual">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Virtual Network File</FName>
+        <UniqueID>NTWKFILEVirt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Virtual Network File</FName>
+        <UniqueID>NTWKFILEVirt1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="idrac">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>iDRAC</FName>
+        <UniqueID>iDRACEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>iDRAC</FName>
+        <UniqueID>iDRACEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  
+  <!-- multi-term dependent instances -->
+  <DClass val="driver">
+    <Loc val="software">
+      <Instance>
+        <Format>%1</Format>
+        <UniqueID>DRIVERSoftware1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <UniqueID>DRIVERSoftware1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="emm">
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <UniqueID>EMMSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <UniqueID>EMMSlot1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="tempsensor">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <UniqueID>TEMPSensor1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <UniqueID>TEMPSensor1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="enclosure">
+    <Loc val="internal">
+      <Instance>
+        <Format>%1</Format>
+        <UniqueID>ENCInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <UniqueID>ENCInt1</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="external">
+      <Instance>
+        <Format>%1</Format>
+        <UniqueID>ENCExt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <UniqueID>ENCExt1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="usc">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <UniqueID>USCEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <UniqueID>USCEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="diagnostics">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <UniqueID>DIAGSEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <UniqueID>DIAGSEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="driverpack">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <UniqueID>DRIVERPACKEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <UniqueID>DRIVERPACKEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="cache">
+    <Loc val="internal">
+      <Instance>
+        <Format>%1</Format>
+        <UniqueID>CacheInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <UniqueID>CacheInt1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="hostbridge">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded Host Bridge %1</FName>
+        <UniqueID>HSTBRDGEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded Host Bridge %1</FName>
+        <UniqueID>HSTBRDGEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="isabridge">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded ISA Bridge %1</FName>
+        <UniqueID>ISABRDGEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded ISA Bridge %1</FName>
+        <UniqueID>ISABRDGEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="p2pbridge">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded P2P Bridge %1</FName>
+        <UniqueID>P2PBRDGEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded P2P Bridge %1-%2</FName>
+        <UniqueID>P2PBRDGEmb2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="integrated">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Integrated P2P Bridge %1</FName>
+        <UniqueID>P2PBRDGInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Integrated P2P Bridge %1-%2</FName>
+        <UniqueID>P2PBRDGInt2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="mezzanine">
+      <Instance>
+        <Format>%1(%2c)</Format>
+        <FName>P2P Bridge in Mezzanine %1</FName>
+        <UniqueID>P2PBRDGMez1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1(%2c)-%3</Format>
+        <FName>P2P Bridge in Mezzanine %1-%3</FName>
+        <UniqueID>P2PBRDGMez2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="usbehci">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded USB EHCI %1</FName>
+        <UniqueID>USBEHCIEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded USB EHCI %1</FName>
+        <UniqueID>USBEHCIEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="usbohci">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded USB OHCI %1</FName>
+        <UniqueID>USBOHCIEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded USB OHCI %1</FName>
+        <UniqueID>USBOHCIEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="usbuhci">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded USB UHCI %1</FName>
+        <UniqueID>USBUHCIEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded USB UHCI %1</FName>
+        <UniqueID>USBUHCIEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="ahci">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded AHCI %1</FName>
+        <UniqueID>AHCIEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded AHCI %1</FName>
+        <UniqueID>AHCIEmb1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="fc">
+    <Loc val="slot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Fibre Channel in Slot %1</FName>
+        <UniqueID>FCSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Fibre Channel in Slot %1-%2</FName>
+        <UniqueID>FCSlot2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="chassisslot">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Fibre Channel in Chassis Slot %1</FName>
+        <UniqueID>FCChassSlot1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Fibre Channel in Chassis Slot %1-%2</FName>
+        <UniqueID>FCChassSlot2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="fc">
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded Fibre Channel %1</FName>
+        <UniqueID>FCEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded Fibre Channel %1-%2</FName>
+        <UniqueID>FCEmb2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="fc">
+    <Loc val="integrated">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Integrated Fibre Channel %1</FName>
+        <UniqueID>FCInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Integrated Fibre Channel %1-%2</FName>
+        <UniqueID>FCInt2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="mezzanine">
+      <Instance>
+        <Format>%1(%2c)</Format>
+        <FName>Fibre Channel in Mezzanine %1</FName>
+        <UniqueID>FCMez1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1(%2c)-%3</Format>
+        <FName>Fibre Channel in Mezzanine %1-%3</FName>
+        <UniqueID>FCMez2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="smbus">
+    <Loc val="integrated">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Integrated SM Bus %1</FName>
+        <UniqueID>SMBUSInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Integrated SM Bus %1</FName>
+        <UniqueID>SMBUSInt2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="mezzanine">
+      <Instance>
+        <Format>%1(%2c)</Format>
+        <FName>SM Bus in Mezzanine %1</FName>
+        <UniqueID>SMBUSMez1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1(%2c)-%3</Format>
+        <FName>SM Bus in Mezzanine %1</FName>
+        <UniqueID>SMBUSMez2</UniqueID>
+      </Instance>
+    </Loc>
+    <Loc val="embedded">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Embedded SM Bus %1</FName>
+        <UniqueID>SMBUSEmb1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Embedded SM Bus %1</FName>
+        <UniqueID>SMBUSEmb2</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="slot">
+    <Loc val="riser">
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>DIMM RISER %1 SLOT %2</FName>
+        <UniqueID>SlotRiser1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+  <DClass val="quicksync">
+    <Loc val="integrated">
+      <Instance>
+        <Format>%1</Format>
+        <FName>Integrated Quick Sync %1</FName>
+        <UniqueID>QuickSyncInt1</UniqueID>
+      </Instance>
+      <Instance>
+        <Format>%1-%2</Format>
+        <FName>Integrated Quick Sync %1</FName>
+        <UniqueID>QuickSyncInt1</UniqueID>
+      </Instance>
+    </Loc>
+  </DClass>
+</FQDDConversionSchema_Level1>

@@ -1,0 +1,55 @@
+kernel/drivers/dell/g_mass_storage.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/dell/aess_pecisensordrv.ko:
+kernel/drivers/net/bonding/bonding.ko:
+kernel/drivers/dell/dell_eerspidrv.ko: kernel/drivers/dell/aess_rspidrv.ko kernel/drivers/dell/dell_cplddrv.ko kernel/drivers/dell/aess_dynairqdrv.ko kernel/drivers/dell/aess_eventhandlerdrv.ko kernel/drivers/dell/aess_sgpiodrv.ko kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/dell/aess_adcsensordrv.ko:
+kernel/drivers/usb/gadget/u_ether.ko:
+kernel/net/netfilter/xt_conntrack.ko: kernel/net/netfilter/nf_conntrack.ko
+kernel/drivers/dell/g_mass_storage2.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/net/ipv4/netfilter/nf_defrag_ipv4.ko:
+kernel/drivers/usb/gadget/libcomposite.ko:
+kernel/drivers/dell/g_mass_storage3.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/net/netfilter/xt_state.ko: kernel/net/netfilter/nf_conntrack.ko
+kernel/drivers/dell/aess_fansensordrv.ko: kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/usb/gadget/usb_f_rndis.ko: kernel/drivers/usb/gadget/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/scsi/scsi_mod.ko:
+kernel/drivers/dell/aess_dynairqdrv.ko: kernel/drivers/dell/aess_eventhandlerdrv.ko kernel/drivers/dell/aess_sgpiodrv.ko kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/dell/sh_pbi.ko:
+kernel/net/ipv4/netfilter/nf_conntrack_ipv4.ko: kernel/net/ipv4/netfilter/nf_defrag_ipv4.ko kernel/net/netfilter/nf_conntrack.ko
+kernel/drivers/dell/aess_i2cdrv_abs.ko: kernel/drivers/dell/i2c_riic.ko kernel/drivers/dell/aess_eventhandlerdrv.ko
+kernel/drivers/usb/gadget/g_ether.ko: kernel/drivers/usb/gadget/usb_f_rndis.ko kernel/drivers/usb/gadget/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/dell/VKCSDriver.ko:
+kernel/drivers/dell/cryptodev.ko:
+kernel/drivers/dell/aess_cryptodrv.ko:
+kernel/drivers/dell/aess_biospostdrv.ko:
+kernel/drivers/dell/aess_sgpiodrv.ko: kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/dell/aess_eventhandlerdrv.ko:
+kernel/drivers/dell/trab.ko:
+kernel/drivers/dell/shared_mem_drv.ko:
+kernel/drivers/dell/aess_spi1drv.ko: kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/usb/gadget/usb_f_ecm.ko: kernel/drivers/usb/gadget/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/dell/aess_rspidrv.ko: kernel/drivers/dell/dell_cplddrv.ko kernel/drivers/dell/aess_dynairqdrv.ko kernel/drivers/dell/aess_eventhandlerdrv.ko kernel/drivers/dell/aess_sgpiodrv.ko kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/dell/aess_kcsdrv.ko: kernel/drivers/dell/aess_eventhandlerdrv.ko
+kernel/drivers/dell/dell_fpdrv.ko: kernel/drivers/dell/dell_cplddrv.ko kernel/drivers/dell/aess_dynairqdrv.ko kernel/drivers/dell/aess_eventhandlerdrv.ko kernel/drivers/dell/aess_sgpiodrv.ko kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/usb/gadget/usb_f_ecm_subset.ko: kernel/drivers/usb/gadget/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/dell/aess_video.ko:
+kernel/net/netfilter/nf_conntrack.ko:
+kernel/drivers/dell/usbmux_drv.ko: kernel/drivers/dell/dell_cplddrv.ko kernel/drivers/dell/aess_dynairqdrv.ko kernel/drivers/dell/aess_eventhandlerdrv.ko kernel/drivers/dell/aess_sgpiodrv.ko kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/dell/aess_pwmdrv.ko: kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/scsi/sd_mod.ko: kernel/drivers/scsi/scsi_mod.ko
+kernel/drivers/dell/i2c_riic.ko: kernel/drivers/dell/aess_eventhandlerdrv.ko
+kernel/drivers/dell/aess_i2c_hwctrldrv.ko:
+kernel/drivers/dell/g_mass_storage4.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/usb/gadget/g_hub.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/dell/dell_cplddrv.ko: kernel/drivers/dell/aess_dynairqdrv.ko kernel/drivers/dell/aess_eventhandlerdrv.ko kernel/drivers/dell/aess_sgpiodrv.ko kernel/drivers/dell/aess_gpiodrv.ko
+kernel/drivers/usb/gadget/g_ether_usb.ko: kernel/drivers/usb/gadget/usb_f_rndis.ko kernel/drivers/usb/gadget/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/dell/aess_timerdrv.ko:
+kernel/drivers/i2c/busses/renesas/i2c-riic-drv.ko:
+kernel/drivers/usb/storage/usb-storage.ko: kernel/drivers/scsi/scsi_mod.ko
+kernel/drivers/dell/sh_tsip.ko:
+kernel/drivers/spi/spi-rspi.ko:
+kernel/drivers/dell/aess_i2cdrv.ko: kernel/drivers/dell/aess_i2c_hwctrldrv.ko kernel/drivers/dell/aess_eventhandlerdrv.ko
+kernel/drivers/dell/aess_memdrv.ko:
+kernel/drivers/dell/aess_gpiodrv.ko:
+kernel/drivers/dell/g_kbdmouse.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/dell/g_mass_storage1.ko: kernel/drivers/usb/gadget/libcomposite.ko

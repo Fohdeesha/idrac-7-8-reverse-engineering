@@ -1,0 +1,13 @@
+[Unit]
+Description=clockwatcher
+After=dsm-sa-datamgr.service
+After=osinet.service
+After=maser_access_controller.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/global.env
+ExecStart=/usr/bin/clockwatcher bootcheck
+
+[Install]
+WantedBy=multi-user.target

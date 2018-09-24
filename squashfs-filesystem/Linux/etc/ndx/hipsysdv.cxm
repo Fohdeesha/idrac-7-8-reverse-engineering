@@ -1,0 +1,163 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _DevPointingDev 
+{
+        u32 type;
+        u32 numButtons;
+} DevPointingDev;
+
+typedef struct _DevKeyboard 
+{
+        u32 offsetType;
+        u32 offsetLayout;
+} DevKeyboard;
+
+typedef struct _DevProcessor 
+{
+    u32 objExtFlags;
+    u32 keyOffset;  
+    u32 fqddOffset; 
+    u32 friendlyFQDDOffset;
+    astring Family[4];
+    u32 CurrentClockSpeed;
+    u32 MaxClockSpeed;
+    u32 ExternalBusClockSpeed;
+    u32 NumberofEnabledThreads;
+    u32 NumberOfProcessorCores;
+    u32 NumberofEnabledCores;
+    u32 Characteristics;
+    u8 hyperThreadingCapable;
+    u8 hyperThreadingEnabled;
+    u8 virtualizationTechCapable;
+    u8 virtualizationTechEnabled;
+    u8 executeDisableCapable;
+    u8 executeDisableEnabled;
+    u8 turboModeCapable;
+    u8 turboModeEnabled;
+    u8 procFamily;
+    u8 voltage;
+    astring CPUVoltage[4];
+    u8 CPUStatus;
+    u8 SocketStatus;
+    astring Manufacturer[32];
+    astring Version[32];
+    astring ProductName[64];
+    u8 PrimaryStatus;
+    s64 UpdateTime;
+    astring identificationRegisters[32];
+    u8 effectiveFamily;
+    u8 effectiveModel;
+    u8 processorStep;
+    astring procMicroCode[20];
+    astring Key[32];
+} DevProcessor;
+
+typedef struct _DevNFC {
+    u32 objExtFlags;
+    u32 keyOffset;
+    u32 fqddOffset;
+    u32 friendlyFQDDOffset;
+    u32 manufacturerOffset;
+    u32 productNameOffset;
+    u32 versionOffset;
+    u32 fwVersionOffset;
+} DevNFC;
+
+typedef struct _DevCache 
+{
+	u32 objExtFlags;
+    u32 keyOffset;  
+    u32 fqddOffset; 
+    u32 NumberOfBlocks;
+    u32 BlockSize;
+    u32 CacheSize;
+    u32 MaximumSize;
+    u32 InstalledSize;
+    astring ElementName[8];
+    u8 Level;
+    u8 ErrorMethodology;
+    u8 WritePolicy;
+    u8 Type;
+    u8 Associativity;
+    u8 EnabledState;
+    u8 Location;
+    u8 SRAMType;
+    u8 PrimaryStatus;
+    astring Key[42];
+} DevCache;
+
+typedef struct _SysResMapObj
+{
+        u32 type;
+} SysResMapObj;
+
+typedef struct _SysResOwnerObj
+{
+        u32 interfaceType;
+        u32 interfaceInstance;
+        u32 offsetOwnerDesc;
+} SysResOwnerObj;
+
+typedef struct _SysResIOPortObj
+{
+        s64 startingAddress;
+        s64 endingAddress;
+        u32 shareDisposition;
+} SysResIOPortObj;
+
+typedef struct _SysResMemObj
+{
+        s64 startingAddress;
+        s64 endingAddress;
+        u32 shareDisposition;
+        u32 flags;
+} SysResMemObj;
+
+typedef struct _SysResIRQObj
+{
+        u32 level;
+        u32 shareDisposition;
+        u32 type;
+        u32 trigger;
+} SysResIRQObj;
+
+typedef struct _SysResDMAObj
+{
+        u32 transferWidth;
+        u32 maxTransferSize;
+        u32 busMaster;
+        u32 shareDisposition;
+} SysResDMAObj;
+
+typedef struct _SystemBIOS 
+{
+        u32 startingAddr;
+        u32 endingAddr;
+        u32 romSize;
+        booln smbiosPresent;
+        u8 characteristicsExt1;
+        u8 characteristicsExt2;
+        u32 offsetManufacturer;
+        u32 offsetVersion;
+        u32 offsetReleaseDate;
+        u8 reservedAlign[4];
+        u64 characteristics;
+} SystemBIOS;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

@@ -1,0 +1,53 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis",
+    "@odata.id": "/redfish/v1/Chassis"  ,"@oem.nav.parentid": "/redfish/v1",
+    "@odata.type": "#ChassisCollection.ChassisCollection",
+    "Name": "Chassis Collection",
+    "Members@Message.ExtendedInfo": [ { "Message": "This collection contains ALL instances of Chassis entity in the view of the Redfish service." } ],
+    "Members@odata.count": 3,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/Manager.ENCL791.1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/Manager.ENCL791.2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/QSI3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/SLED941"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/SLED942"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/SLED943"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/SLED944"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/SLED945"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/SLED946"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/SLED947"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/STASH41"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/IOM5301"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/IOM5302"
+        }
+    ]
+}

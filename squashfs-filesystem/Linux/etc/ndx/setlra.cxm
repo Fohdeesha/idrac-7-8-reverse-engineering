@@ -1,0 +1,51 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _SetLRARespSettings
+{
+	s32 lrcLraType;
+	u32 lrcBitmapSettings;
+} SetLRARespSettings;
+
+typedef struct _SetLRARespEPFName
+{
+	s32 lrcLraType;
+	astring lrcEpfName[512]; 
+} SetLRARespEPFName;
+
+typedef struct _SetLRAProtCondition
+{
+	u32 lpcCondition;
+} SetLRAProtCondition;
+
+typedef struct _SetLRAProtCanBeForced
+{
+	s32 lrcLraType;
+	u32 lpcCanBeForced;
+} SetLRAProtCanBeForced;
+
+typedef struct _SetLRAActivateMsg
+{
+	s32 lrcLraType;
+	booln lraActForce;
+	u8 lraObjStatus;
+	astring lraActMsg[512];
+	astring lraMsgSrc[512];
+} SetLRAActivateMsg;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

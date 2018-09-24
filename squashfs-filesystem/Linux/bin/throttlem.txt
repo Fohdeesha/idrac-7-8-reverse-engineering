@@ -1,0 +1,419 @@
+
+# Updated: 2016-03-17
+# Added/updated descriptions for PECI completion codes to those for Skylake CPU. The descriptions are backward compatible to older-gen CPUs. The descriptions are distilled from Tables 67 & 69 in Skylake EDS Vol1.
+# Added the PECI Proxy completion codes to the "generic" section in throttlem.txt with "(PECI proxy)" prefix.
+# Added newer completion codes for the commands used by throttle.sh as per SPS 3.0 and 4.0 EIS spec.  So, file is now current for 14G.
+
+# Updated: 2013-09-12
+# document version: 1.00.10 Only be used by throttle.sh v2.0 and later.
+# This is a description information table which contains completioncodes/status/bitfields/certain-messages for easy human-reading.
+
+# -[HowTo]-
+# For examples:
+# Completion code 0x81 for return by NetFun=0x2F, Command=0xd9
+# >grep "^2E:42:CP:AC" -m 1 throttlem.txt | cut -d '=' -f 2
+# anchoring the keyword at the beginning of a line
+# The result on screen will display with "CPU not present."
+
+[SECTION]
+# CompletionCode in default usage
+CP:6F=Access denied. iDRAC Enterprise License required.
+CP:7E=(iDRAC-specific) Pending.
+CP:A0=(PECI Proxy) Partial success. Partial response provided. Response exceeds max IPMI message size for NM IPMI 41h command (Aggregated Send RAW PECI).
+CP:A1=(PECI Proxy) Wrong CPU number.
+CP:A2=(PECI Proxy) Command response timeout. Retry may be needed.
+CP:A4=(PECI Proxy) Bad read FCS (frame check sequence) in the response (even after retry). Most likely cause is incorrect requested read length.
+CP:A5=(PECI Proxy) Bad write FCS (frame check sequence) field in the response or Abort FCS in the response (even after retry). Most likely cause is incorrect requested write length.
+CP:A6=(PECI Proxy) Wrong (unsupported) write length in IPMI request.
+CP:A7=(PECI Proxy) Wrong (unsupported) read length in IPMI request.
+CP:A8=(PECI Proxy) Selected PECI interface not available. Not configured by BIOS (for in-band PECI), not functional (for in-band PECI or serial PECI), or not connected (for serial PECI, disabled using OEM configuration option).
+CP:AB=(PECI Proxy) Wrong (unknown/invalid/illegal) command code. Request not understood by CPU.
+CP:AC=(PECI Proxy) CPU not present. No response from PECI client.
+CP:C0=Node Busy. Command could not be processed because command processing resources are temporarily unavailable.
+CP:C1=Invalid Command. Used to indicate an unrecognized or unsupported command.
+CP:C2=Command invalid for given LUN.
+CP:C3=Timeout while processing command. Response unavailable.
+CP:C4=Out of space. Command could not be completed because of a lack of storage space required to execute the given command operation.
+CP:C5=Reservation Canceled or Invalid Reservation ID.
+CP:C6=Request data truncated.  Check requested data length.
+CP:C7=Request data length invalid.
+CP:C8=Request data field length limit exceeded.
+CP:C9=Parameter out of range. One or more parameters in the data field of the Request are out of range. This is different from 'Invalid data field' (CCh) code in that it indicates that the erroneous field(s) has a contiguous range of possible values.
+CP:CA=Cannot return number of requested data bytes.
+CP:CB=Requested Sensor, data, or record not present.
+CP:CC=Invalid data field in Request
+CP:CD=Command illegal for specified sensor or record type.
+CP:CE=Command response could not be provided.
+CP:CF=Cannot execute duplicated request. This completion code is for devices which cannot return the response that was returned for the original instance of the request.
+CP:D0=Command response could not be provided. SDR Repository in update mode.
+CP:D1=Command response could not be provided. Device in firmware update mode.
+CP:D2=Command response could not be provided. BMC initialization or initialization agent in progress.
+CP:D3=Destination unavailable. Cannot deliver request to selected destination.
+CP:D4=Cannot execute command due to insufficient privilege level or other security-based restriction.
+CP:D5=Cannot execute command. Command, or request parameter(s), not supported in present state or mode. CPU power management may be a HWP-based mode.  If command is a PECI Proxy command, platform not in S0/S1 state.
+CP:D6=Cannot execute command. Parameter is illegal because command sub-function has been disabled or is unavailable. Check whether iDRAC is in manufacturing mode. May need iDRAC to reboot into manufacturing mode with the MFG Mode Jumper installed to succeed.
+CP:DF=Resource busy within iDRAC. Retry is appropriate.
+CP:FF=Unspecified error.
+
+[SECTION]
+# NetFun=06/Cmd=59/CompleteCode - iDRAC Get System Information command
+06:59:CP:6F=Not licensed. iDRAC Enterprise License required.
+06:59:CP:80=Parameter not supported.
+
+[SECTION]
+# NetFun=0A/Cmd=43/CompleteCode - NM Get SEL Entry command
+0A:43:CP:C9=Parameter out of range or SEL log is empty.
+
+[SECTION]
+# NetFun=2E/Cmd=44/Bitdefine - NM Domain IDs
+2E:44:DM:00=NM Entire Platform Domain.
+2E:44:DM:01=NM CPU Subsystem Domain.
+2E:44:DM:02=NM Memory Subsystem Domain.
+2E:44:DM:03=NM Hardware Protection Domain.
+2E:44:DM:04=NM High Power I/O subsystem Domain.
+
+[SECTION]
+# NetFun=2E/Cmd=40/subCmd=A1/FCS - CPU PECI command completion codes
+FC:40=Command completed successfully.  Data is valid.
+FC:80=Response timeout. PECI was not able to obtain response in time. Retry is appropriate.
+FC:81=Command not serviced. PECI was not able to allocate resources for servicing this command at this time. Retry is appropriate.
+FC:82=Mailbox allocated, but HW resources needed to service this command are in a low power state or unavailable. CPU may be in Package C6 state. Set wake-on-PECI (WOP) and retry.
+FC:90=Unknown/Invalid/Illegal Request.
+FC:91=PCU hardware asserted CATERR_N or Pcode MCA occurred.
+FC:93=Pcode MCA. CPU unable to process the request in a timely manner.
+FC:94=Pcode MCA but the request went through. Response has data if Pcode processed request in timely manner and can be taken as successful with caution.
+
+[SECTION]
+# NetFun=2E/Cmd=40/CompleteCode - NM Send Raw PECI command
+2E:40:CP:A2=Command response timeout.
+2E:40:CP:A4=Bad read FCS (frame check sequence) in the response. Most likely cause is incorrect requested read length.
+2E:40:CP:A5=Bad write FCS (frame check sequence) field in the response. Most likely cause is incorrect requested write length.
+2E:40:CP:A8=Selected PECI interface not available. Not connected (for serial PECI, disabled using OEM configuration option).
+2E:40:CP:AB=Wrong command code. Request not understood by CPU.
+2E:40:CP:AC=CPU not present.
+2E:40:CP:D5=Platform not in S0/S1 state.
+2E:40:CP:FF=Other error encountered.
+
+[SECTION]
+# NetFun=2E/Cmd=42/CompleteCode - NM CPU Package Config Read command
+2E:42:CP:A1=Wrong CPU Number.
+2E:42:CP:A2=Command response timeout.
+2E:42:CP:A4=Bad read FCS (frame check sequence) in the response. Most likely cause is incorrect requested read length.
+2E:42:CP:A5=Bad write FCS (frame check sequence) field in the response. Most likely cause is incorrect requested write length.
+2E:42:CP:A7=Wrong read length.
+2E:42:CP:A8=Selected PECI interface not available. Not connected (for serial PECI, disabled using OEM configuration option).
+2E:42:CP:AB=Wrong command code. Request not understood by CPU.
+2E:42:CP:AC=CPU not present.
+2E:42:CP:D5=Platform not in S0/S1 state.
+2E:42:CP:FF=Other error encountered.
+
+[SECTION]
+# NetFun=2E/Cmd=42/CompleteCode - NM CPU Package Config Write command
+2E:43:CP:A1=Wrong CPU Number.
+2E:43:CP:A2=Command response timeout.
+2E:43:CP:A3=Inband PECI interface is down.
+2E:43:CP:A4=Bad read FCS (frame check sequence) in the response. Most likely cause is incorrect requested read length.
+2E:43:CP:A5=Bad write FCS (frame check sequence) field in the response. Most likely cause is incorrect requested write length.
+2E:43:CP:A6=Wrong write length.
+2E:43:CP:AB=Wrong command code. Request not understood by CPU.
+2E:43:CP:AC=CPU not present.
+2E:43:CP:D5=Platform not in S0/S1 state.
+2E:43:CP:FF=Other error encountered.
+
+[SECTION]
+# NetFun=2E/Cmd=44/CompleteCode - NM CPU PCI Config Read command
+2E:44:CP:A1=Wrong CPU Number.
+2E:44:CP:A2=Command response timeout.
+2E:44:CP:A4=Bad read FCS (frame check sequence) in the response. Most likely cause is incorrect requested read length.
+2E:44:CP:A5=Bad write FCS (frame check sequence) field in the response. Most likely cause is incorrect requested write length.
+2E:44:CP:A7=Wrong read length.
+2E:44:CP:A8=Selected PECI interface not available. Not connected (for serial PECI, disabled using OEM configuration option).
+2E:44:CP:AB=Wrong command code. Request not understood by CPU.
+2E:44:CP:AC=CPU not present.
+2E:44:CP:D5=Platform not in S0/S1 state.
+2E:44:CP:FF=Other error encountered.
+
+[SECTION]
+# NetFun=2E/Cmd=45/CompleteCode - NM CPU PCI Config Write command
+2E:45:CP:A1=Wrong CPU Number.
+2E:45:CP:A2=Command response timeout.
+2E:45:CP:A4=Bad read FCS (frame check sequence) in the response. Most likely cause is incorrect requested read length.
+2E:45:CP:A5=Bad write FCS (frame check sequence) field in the response. Most likely cause is incorrect requested write length.
+2E:45:CP:A6=Wrong write length.
+2E:45:CP:A8=Selected PECI interface not available. Not connected (for serial PECI, disabled using OEM configuration option).
+2E:45:CP:AB=Wrong command code. Request not understood by CPU.
+2E:45:CP:AC=CPU not present.
+2E:45:CP:D5=Platform not in S0/S1 state.
+2E:45:CP:FF=Other error encountered.
+
+[SECTION]
+# NetFun=2E/Cmd=C2/CompleteCode - Get NM Policy command
+2E:C2:CP:80=Policy ID Invalid. Extended error info follows the completion code byte.
+2E:C2:CP:81=Domain ID Invalid. Extended error info follows the completion code byte.
+
+[SECTION]
+# NetFun=2E/Cmd=C7/CompleteCode - NM Reset NM Statistics command
+2E:C7:CP:80=Policy ID Invalid.
+2E:C7:CP:81=Domain ID Invalid.
+2E:C7:CP:88=Invalid Mode.
+2E:C7:CP:D4=Insufficient privilege level due to wrong LUN.
+
+[SECTION]
+# NetFun=2E/Cmd=C8/CompleteCode - NM Get NM Statistics command
+2E:C8:CP:80=Policy ID/Component Identifier Invalid.
+2E:C8:CP:81=Domain ID Invalid.
+2E:C8:CP:88=Invalid Mode.
+
+[SECTION]
+# NetFun=2E/Cmd=42/CompleteCode - Set Turbo Synchronization Ratio
+2E:CC:CP:A1=Wrong CPU Number.
+2E:CC:CP:A2=Command response timeout.
+2E:CC:CP:A4=Bad read FCS (frame check sequence) in the response. Most likely cause is incorrect requested read length.
+2E:CC:CP:A5=Bad write FCS (frame check sequence) field in the response. Most likely cause is incorrect requested write length.
+2E:CC:CP:AC=CPU not present.
+2E:CC:CP:C9=Incorrect active cores configuration. Unsupported number of active cores.
+2E:CC:CP:CC=Turbo Ratio Limit out of range.
+2E:CC:CP:D5=Platform not in S0/S1 state.
+2E:CC:CP:FF=Other error encountered.
+
+[SECTION]
+# NetFun=2E/Cmd=42/CompleteCode - Get Turbo Synchronization Ratio
+2E:CD:CP:A1=Wrong CPU Number.
+2E:CD:CP:A2=Command response timeout.
+2E:CD:CP:A4=Bad read FCS (frame check sequence) in the response. Most likely cause is incorrect requested read length.
+2E:CD:CP:A5=Bad write FCS (frame check sequence) field in the response. Most likely cause is incorrect requested write length.
+2E:CD:CP:AC=CPU not present.
+2E:CD:CP:C9=Incorrect active cores configuration. Number of requested active cores exceeds number of cores in CPU.
+2E:CD:CP:D5=Platform not in S0/S1 state.
+2E:CD:CP:FF=Other error encountered.
+
+[SECTION]
+# NetFun=2E/Cmd=D3/CompleteCode - NM Get Max Allowed CPU P-state/T-state command
+2E:D3:CP:81=Invalid Domain ID.
+
+[SECTION]
+# NetFun=2E/Cmd=D9/CompleteCode - NM Send Raw PMBus command
+2E:D9:CP:80=Command response timeout. SMBUS device was not present.
+2E:D9:CP:81=Command not serviced. Not able to allocate the resources for serving this command at this time. Retry needed.
+2E:D9:CP:82=Command not executed due to conflict with PSU Optimization feature. (Illegal SMBUS Address Command)
+2E:D9:CP:A1=Illegal SMBUS PSU Slave Target Address.
+2E:D9:CP:A2=PEC error.
+2E:D9:CP:A3=Number of bytes returned by the Slave different from Read Length. See byte 7 of request.
+2E:D9:CP:A5=Unsupported Write Length.
+2E:D9:CP:A6=Unsupported Read Length.
+2E:D9:CP:A9=Mux communication problem.
+2E:D9:CP:AA=SMBus timeout.
+2E:D9:CP:50=SMBus Mux timeout.
+2E:D9:CP:51=SMBus Mux collision error.
+2E:D9:CP:52=SMBus Mux does not exist.
+2E:D9:CP:53=Incorrect SMBus Mux address or channel or MUX not present.
+2E:D9:CP:5F=Other SMBus Mux error.
+2E:D9:CP:60=Both SMBus lines short to GND. SMBus not operational.
+2E:D9:CP:61=SMBDAT line short to GND. SMBus not operational.
+2E:D9:CP:62=SMBCLK line short to GND. SMBus not operational.
+2E:D9:CP:63=Both SMBus lines behind Mux short to GND. SMBus behind Mux not operational.
+2E:D9:CP:64=SMBDAT line behind Mux short to GND. SMBus behind Mux not operational.
+2E:D9:CP:65=SMBCLK line behind Mux short to GND. SMBus behind Mux not operational.
+2E:D9:CP:66=Both SMBus lines short to GND. Recovery succeeded. SMBus is operational.
+2E:D9:CP:67=SMBDAT line short to GND. Recovery succeeded. SMBus is operational.
+2E:D9:CP:68=SMBCLK line short to GND. Recovery succeeded. SMBus is operational.
+2E:D9:CP:69=Both SMBus lines behind Mux short to GND. Recovery succeeded. SMBus behind Mux is operational.
+2E:D9:CP:6A=SMBDAT line behind Mux short to GND. Recovery succeeded. SMBus behind Mux is operational.
+2E:D9:CP:6B=SMBCLK line behind Mux short to GND. Recovery succeeded. SMBus behind Mux is operational.
+2E:D9:CP:6F=Other SMBus link error.
+
+[SECTION]
+# NetFun=2E/Cmd=EA/CompleteCode - NM Get Host CPU Data command
+2E:EA:CP:81=Invalid Domain ID.
+
+[SECTION]
+# NetFun=2E/Cmd=F2/CompleteCode - NM Get Limiting Policy ID command
+2E:F2:CP:81=Invalid Domain ID.
+2E:F2:CP:A1=No Policy is currently limiting for the specified Domain ID.
+
+[SECTION]
+# NetFun=2E/Cmd=FA/CompleteCode - NM Get Intel NM Parameter command
+2E:FA:CP:A2=Incorrect Parameter ID value
+2E:FA:CP:A3=Incorrect Sub ID value
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSU Status:PSU_REGISTERS_CATALOG
+2E:D9:78=STATUS_BYTE
+2E:D9:79=STATUS_WORD
+2E:D9:7A=STATUS_VOUT
+2E:D9:7B=STATUS_IOUT
+2E:D9:7C=STATUS_INPUT
+2E:D9:7D=STATUS_TEMPERATURE
+2E:D9:7E=STATUS_CML
+2E:D9:7F=STATUS_OTHER
+2E:D9:81=STATUS_FANS_1_2
+2E:D9:82=STATUS_FANS_3_4
+2E:D9:DC=OCW_SETTING_READ
+2E:D9:DD=OCW_STATUS
+2E:D9:ED=LATCH_CONTROL
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=78/Bitdefine:STATUS_BYTE
+2E:D9:78:80=[Bit7]:Busy: Unit too busy to respond to PMBus communication within the permissible transaction phase clock stretching limits.
+2E:D9:78:40=[Bit6]:OFF: Unit is not providing output power regardless of reason, including simply not being enabled.
+2E:D9:78:20=[Bit5]:VOUT_OV_FAULT: Output overvoltage fault has occurred.
+2E:D9:78:10=[Bit4]:IOUT_OC_FAULT: Output overcurrent fault has occurred.
+2E:D9:78:08=[Bit3]:VIN_UV_FAULT: Input undervoltage fault has occurred.
+2E:D9:78:04=[Bit2]:TEMPERATURE: Temperature fault or warning has occurred.
+2E:D9:78:02=[Bit1]:CML: Communication, memory, or logic fault has occurred.
+2E:D9:78:01=[Bit0]:None
+2E:D9:78:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=79/Bitdefine:STATUS_WORD
+2E:D9:79:80=[Bit7]:VOUT: Output voltage fault or warning has occurred.
+2E:D9:79:40=[Bit6]:IOUT: Output current or output power fault or warning has occurred.
+2E:D9:79:20=[Bit5]:INPUT: Input voltage, input current, or input power fault or warning has occurred.
+2E:D9:79:10=[Bit4]:MFR_SPECIFIC: Manufacturer-specific fault or warning has occurred.
+2E:D9:79:08=[Bit3]:POWER_GOOD#: POWER_GOOD signal, if present, is negated.
+2E:D9:79:04=[Bit2]:FANS: Fan or airflow fault or warning has occurred.
+2E:D9:79:02=[Bit1]:OTHER: A bit in STATUS_OTHER is set. An advanced feature event has occurred.
+2E:D9:79:01=[Bit0]:None
+2E:D9:79:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=7A/Bitdefine:STATUS_VOUT
+2E:D9:7A:80=[Bit7]:VOUT_OV_FAULT: Output Overvoltage Fault.
+2E:D9:7A:40=[Bit6]:None
+2E:D9:7A:20=[Bit5]:None
+2E:D9:7A:10=[Bit4]:VOUT_UV_FAULT: Output Undervoltage Fault.
+2E:D9:7A:08=[Bit3]:None
+2E:D9:7A:04=[Bit2]:TON_MAX_FAULT: Set when supply has not been able to turn on and assert POK within 4 seconds of detecting PS_ON_N assertion when input power available.
+2E:D9:7A:02=[Bit1]:None
+2E:D9:7A:01=[Bit0]:None
+2E:D9:7A:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=7B/Bitdefine:STATUS_IOUT
+2E:D9:7B:80=[Bit7]:IOUT_OC_FAULT: Output Overcurrent Fault. Short circuit should also set this bit.
+2E:D9:7B:40=[Bit6]:None
+2E:D9:7B:20=[Bit5]:IOUT_OC_WARNING: PSU primary output overcurrent warning.
+2E:D9:7B:10=[Bit4]:None
+2E:D9:7B:08=[Bit3]:None
+2E:D9:7B:04=[Bit2]:None
+2E:D9:7B:02=[Bit1]:POUT_OP_FAULT: PSU output overpower fault.
+2E:D9:7B:01=[Bit0]:POUT_OP_WARNING: PSU output overpower warning.
+2E:D9:7B:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=7C/Bitdefine:STATUS_INPUT
+2E:D9:7C:80=[Bit7]:None
+2E:D9:7C:40=[Bit6]:None
+2E:D9:7C:20=[Bit5]:VIN_UV_WARNING: Line input undervoltage warning.
+2E:D9:7C:10=[Bit4]:VIN_UV_FAULT: Line input undervoltage fault.
+2E:D9:7C:08=[Bit3]:UNIT_OFF_FOR_LOW_VOLTAGE: The supply is off or was not able to turn on due to Low input voltage.
+2E:D9:7C:04=[Bit2]:None
+2E:D9:7C:02=[Bit1]:IIN_OC_WARNING: Input Overcurrent Warning Occurred.
+2E:D9:7C:01=[Bit0]:PIN_OP_WARNING: Input Overpower Warning Occurred.
+2E:D9:7C:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=7D/Bitdefine:STATUS_TEMPERATURE
+2E:D9:7D:80=[Bit7]:OT_FAULT: Overtemperature Fault Occurred.
+2E:D9:7D:40=[Bit6]:OT_FAULT: Overtemperature Warning Occurred.
+2E:D9:7D:20=[Bit5]:None
+2E:D9:7D:10=[Bit4]:None
+2E:D9:7D:08=[Bit3]:None
+2E:D9:7D:04=[Bit2]:None
+2E:D9:7D:02=[Bit1]:None
+2E:D9:7D:01=[Bit0]:None
+2E:D9:7D:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=7E/Bitdefine:STATUS_CML
+2E:D9:7E:80=[Bit7]:Invalid/Unsupported Command. Slave received an invalid or unsupported command.
+2E:D9:7E:40=[Bit6]:Invalid/Unsupported Data. IPM2 Data Format Error occurred.
+2E:D9:7E:20=[Bit5]:PACKET_ERROR_CHECK_FAILED. Slave received an error PEC code.
+2E:D9:7E:10=[Bit4]:None
+2E:D9:7E:08=[Bit3]:None
+2E:D9:7E:04=[Bit2]:None
+2E:D9:7E:02=[Bit1]:None
+2E:D9:7E:01=[Bit0]:None
+2E:D9:7E:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=7F/Bitdefine:STATUS_OTHER
+2E:D9:7F:80=[Bit7]:Reserved
+2E:D9:7F:40=[Bit6]:RAPID_ON_FEATURE_EVENT. A Primary Protection Trigger External Rapid On feature event has occurred.
+2E:D9:7F:20=[Bit5]:None
+2E:D9:7F:10=[Bit4]:None
+2E:D9:7F:08=[Bit3]:None
+2E:D9:7F:04=[Bit2]:None
+2E:D9:7F:02=[Bit1]:None
+2E:D9:7F:01=[Bit0]:None
+2E:D9:7F:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=80/Bitdefine:STATUS_MFR_SPECIFIC
+2E:D9:80:80=[Bit7]:None
+2E:D9:80:40=[Bit6]:None
+2E:D9:80:20=[Bit5]:None
+2E:D9:80:10=[Bit4]:None
+2E:D9:80:08=[Bit3]:None
+2E:D9:80:04=[Bit2]:None
+2E:D9:80:02=[Bit1]:None
+2E:D9:80:01=[Bit0]:PS_ON_N waiting for deassertion: AC input is good, Eup_Ok is deasserted and PS_ON_N is asserted.
+2E:D9:80:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=81/Bitdefine:STATUS_FANS_1_2
+2E:D9:81:80=[Bit7]:FAN_1_FAULT: Fan 1 fault occurred.
+2E:D9:81:40=[Bit6]:FAN_2_FAULT: Fan 2 fault occurred.
+2E:D9:81:20=[Bit5]:FAN_1_WARNING: Fan 1 warning occurred.
+2E:D9:81:10=[Bit4]:FAN_2_WARNING: Fan 2 warning occurred.
+2E:D9:81:08=[Bit3]:FAN_1_SPEED_OVERRIDE: Fan1 Speed Override condition occurred.
+2E:D9:81:04=[Bit2]:FAN_2_SPEED_OVERRIDE: Fan2 Speed Override condition occurred.
+2E:D9:81:02=[Bit1]:None
+2E:D9:81:01=[Bit0]:None
+2E:D9:81:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=82/Bitdefine:STATUS_FANS_3_4
+2E:D9:82:80=[Bit7]:FAN_3_FAULT: Fan3 fault occurred.
+2E:D9:82:40=[Bit6]:FAN_4_FAULT: Fan4 fault occurred.
+2E:D9:82:20=[Bit5]:None
+2E:D9:82:10=[Bit4]:None
+2E:D9:82:08=[Bit3]:FAN_3_SPEED_OVERRIDE: Fan3 Speed Override condition occurred.
+2E:D9:82:04=[Bit2]:FAN_4_SPEED_OVERRIDE: Fan4 Speed Override condition occurred.
+2E:D9:82:02=[Bit1]:None
+2E:D9:82:01=[Bit0]:None
+2E:D9:82:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=DD/Bitdefine:OCW_STATUS
+2E:D9:DD:80=[Bit7]:None
+2E:D9:DD:40=[Bit6]:None
+2E:D9:DD:20=[Bit5]:None
+2E:D9:DD:10=[Bit4]:None
+2E:D9:DD:08=[Bit3]:Constant current has occurred
+2E:D9:DD:04=[Bit2]:OCW3 has occurred
+2E:D9:DD:02=[Bit1]:OCW2 has occurred
+2E:D9:DD:01=[Bit0]:OCW1 has occurred
+2E:D9:DD:00=None
+
+[SECTION]
+# NetFun=2E/Cmd=D9/PSUCmd=ED/Bitdefine:LATCH_CONTROL
+2E:D9:ED:80=x=[Bit7]:None
+2E:D9:ED:40=x=[Bit6]:None
+2E:D9:ED:20=x=[Bit5]:None
+2E:D9:ED:10=x=[Bit4]:None
+2E:D9:ED:08=x=[Bit3]:None
+2E:D9:ED:04=x=[Bit2]:None
+2E:D9:ED:02=x=[Bit1]:None
+2E:D9:ED:01=1=[Bit0]:OCW status latch disabled
+2E:D9:ED:01=0=[Bit0]:OCW status latch enabled (default)
+
+[SECTION]
+# NetFun=30/Cmd=B3/CompleteCode - iDRAC Power Consumption command
+30:B3:CP:6F=Not licensed. (Need LM_POWER_MONITORING) iDRAC Enterprise License required.
+
+[SECTION]
+# NetFun=30/Cmd=CE/CompleteCode - iDRAC Power/Thermal Management commands
+30:CE:CP:6F=Not licensed. (Need LM_POWER_MONITORING or LM_POWER_BUDGETING) iDRAC Enterprise License required.
+30:CE:CP:7E=(iDRAC-specific) Pending.
+30:CE:CP:FF=Failed.

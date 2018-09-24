@@ -1,0 +1,22 @@
+[Unit]
+Description=OSI App
+DefaultDependencies=no
+After=aim.service
+Wants=aim.service
+After=credential-vault-13g.service
+Wants=credential-vault-13g.service
+RequiresMountsFor=/flash/data0/cv
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/C
+Restart=on-failure
+
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/avct/sbin/os
+TimeoutStopSec=2
+ExecStop=/bin/kill -QUIT ${MAINPID}
+
+[Install]
+WantedBy=sysinit.target

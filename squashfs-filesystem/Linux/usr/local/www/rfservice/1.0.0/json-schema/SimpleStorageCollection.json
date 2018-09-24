@@ -1,0 +1,75 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_2_0.json",
+    "title": "#SimpleStorageCollection.SimpleStorageCollection",
+    "$ref": "#/definitions/SimpleStorageCollection",
+    "definitions": {
+        "SimpleStorageCollection": {
+            "anyOf": [
+                {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/idRef"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "type": [
+                                "array",
+                                "boolean",
+                                "number",
+                                "null",
+                                "object",
+                                "string"
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "properties": {
+                        "@odata.context": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                        },
+                        "@odata.id": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                        },
+                        "@odata.type": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                        },
+                        "Description": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                                {"type": "null"}
+                            ],
+                            "readonly": true
+                        },
+                        "Name": {
+                            "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                            "readonly": true
+                        },
+                        "Oem": {
+                            "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                            "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                            "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                        },
+                        "Members@odata.count": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/count"
+                        },
+                        "Members@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "Members": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "/redfish/v1/Schemas/SimpleStorage.json#/definitions/SimpleStorage"
+                            },
+                            "readonly": true,
+                            "description": "Contains the members of this collection."
+                        }
+                    }
+                }
+            ],
+            "description": "A Collection of SimpleStorage resource instances."
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}

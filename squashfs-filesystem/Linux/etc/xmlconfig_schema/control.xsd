@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="InstructionTable">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="InstructionRow" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="InstructionRow">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="InstructionType" type="xs:string"/>
+                <xs:element name="Instruction" type="xs:string"/>
+                <xs:element name="Value" type="xs:string"/>
+                <xs:element name="ValuePossibilities" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

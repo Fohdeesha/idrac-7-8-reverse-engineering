@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Copyright 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.--> 
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/DMTFExtensions.0.96.0">
+    <edmx:Include Namespace="DMTFExtensions.0.96.0" Alias="DMTF"/>
+    <edmx:Include Namespace="Validation.0.96.0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/EventService.0.96.0">
+    <edmx:Include Namespace="EventService.0.96.0" Alias="EventService"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/AccountService.0.96.0">
+    <edmx:Include Namespace="AccountService.0.96.0" Alias="AccountService"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/ComputerSystem.0.96.0">
+    <edmx:Include Namespace="ComputerSystem.0.96.0" Alias="ComputerSystem"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/Chassis.0.96.0">
+    <edmx:Include Namespace="Chassis.0.96.0" Alias="Chassis"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/Manager.0.96.0">
+    <edmx:Include Namespace="Managers.0.96.0" Alias="Manager"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/TaskService.0.96.0">
+    <edmx:Include Namespace="TaskService.0.96.0" Alias="TaskService"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/SessionService.0.96.0">
+    <edmx:Include Namespace="SessionService.0.96.0" Alias="SessionService"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/Messages.0.96.0">
+    <edmx:Include Namespace="Messages.0.96.0" Alias="Messages"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://schemas.dmtf.org/redfish/v1/JsonSchemaFile.0.96.0">
+    <edmx:Include Namespace="JsonSchemaFile.0.96.0" Alias="JsonSchemaFile"/>
+  </edmx:Reference>
+
+  <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ServiceRoot.0.96.0" Alias="ServiceRoot">
+
+      <EntityContainer Name="ServiceContainer">
+        <Singleton Name="Service" Type="ServiceRoot.ServiceRoot"/>
+        <Singleton Name="Systems" Type="ComputerSystem.ComputerSystemCollection"/>
+        <Singleton Name="Chassis" Type="Chassis.ChassisCollection"/>
+        <Singleton Name="Managers" Type="Manager.ManagerCollection"/>
+        <Singleton Name="TaskService" Type="TaskService.TaskService"/>
+        <Singleton Name="AccountService" Type="AccountService.AccountService"/>
+        <Singleton Name="SessionService" Type="SessionService.SessionService"/>
+        <Singleton Name="EventService" Type="EventService.EventService"/>
+      </EntityContainer>
+
+      <!-- This object contains top-level properties of the Redfish service. -->
+      <EntityType Name="ServiceRoot" BaseType="Resource.Resource">
+        <Annotation Term="OData.Description" String="This object represents the root Redfish service."/>
+        <Annotation Term="OData.LongDescription" String="This object represents the root Redfish service.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."/>
+        <Property Name="RedfishVersion" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="The version of the Redfish service"/>
+          <Annotation Term="OData.LongDescription" String="The value of this string shall represent the version of the Redfish service.  The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification. "/>
+          <Annotation Term="Validation.Pattern" String="^\\d+\\.\\d+\\.\\d+$"/>
+        </Property>
+        <Property Name="UUID" Type="ServiceRoot.UUID">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Unique identifier for a service instance.  This value should be an exact match of the UUID value returned in a 200OK from an SSDP M-SEARCH request during discovery."/>
+          <Annotation Term="OData.LongDescription" String="The value of this string shall represent the id of the Redfish service instance.  The format of this string shall be a 32-byte value in the form 8-4-4-4-12.  This value shall be an exact match of the UUID value returned in a 200OK from an SSDP M-SEARCH request during discovery."/>
+        </Property>
+        <Property Name="Links" Type="ServiceRoot.ServiceRootLinks" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="The links object contains the links to other resources that are related to this resource."/>
+          <Annotation Term="DMTF.Required"/>
+        </Property>
+      </EntityType>
+
+      <ComplexType Name="ServiceRootLinks">
+        <NavigationProperty Name="Systems" Type="ComputerSystem.ComputerSystemCollection">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="This is a link to a collection of Systems."/>
+          <Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the Systems schema.  The last segment of the path shall be 'Systems'."/>
+          <Annotation Term="DMTF.ExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="Chassis" Type="Chassis.ChassisCollection">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="This is a link to a collection of Chassis."/>
+          <Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the Chassis schema. The last segment of the path shall be 'Chassis'."/>
+          <Annotation Term="DMTF.ExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="Managers" Type="Manager.ManagerCollection">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="This is a link to a collection of Managers."/>
+          <Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the Managers schema.  The last segment of the path shall be 'Managers'."/>
+          <Annotation Term="DMTF.ExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="Tasks" Type="TaskService.TaskService">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="This is a link to the Task Service."/>
+          <Annotation Term="OData.LongDescription" String="The classes structure shall only contain a reference to a resource that complies to the TaskService schema.  The last segment of the path shall be 'Tasks'"/>
+          <Annotation Term="DMTF.ExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="SessionService" Type="SessionService.SessionService">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="This is a link to the Sessions Service."/>
+          <Annotation Term="OData.LongDescription" String="The classes structure shall only contain a reference to a resource that complies to the SessionService schema.  The last segment of the path shall be 'SessionService'."/>
+          <Annotation Term="DMTF.ExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="AccountService" Type="AccountService.AccountService">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="This is a link to the Account Service."/>
+          <Annotation Term="OData.LongDescription" String="The classes structure shall only contain a reference to a resource that complies to the AccountService schema.  The last segment of the path shall be 'AccountService'"/>
+          <Annotation Term="DMTF.ExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="EventService" Type="EventService.EventService">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="This is a link to the EventService."/>
+          <Annotation Term="OData.LongDescription" String="The classes structure shall only contain a reference to a resource that complies to the EventService schema.  The last segment of the path shall be 'EventService'."/>
+          <Annotation Term="DMTF.ExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="Registries" Type="JsonSchemaFile.SchemaFileCollection">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="This is a link to a collection of Registries."/>
+          <Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the SchemaFile schema where the files are Registries.  The last segment of the path shall be 'Registries'."/>
+          <Annotation Term="DMTF.ExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="JsonSchemas" Type="JsonSchemaFile.SchemaFileCollection">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="This is a link to a collection of Json-Schema files."/>
+          <Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the SchemaFile schema where the files are Json-Schema files.  The last segment of the path shall be 'JsonSchemas'."/>
+          <Annotation Term="DMTF.ExpandReferences"/>
+        </NavigationProperty>
+      </ComplexType>
+
+      <TypeDefinition Name="UUID" UnderlyingType="Edm.String">
+        <Annotation Term="Validation.Pattern" String="([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"/>
+      </TypeDefinition>
+
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

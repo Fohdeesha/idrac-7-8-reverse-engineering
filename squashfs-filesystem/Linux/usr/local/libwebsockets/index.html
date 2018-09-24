@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WS server test page</title>
+  <meta charset=utf-8 http-equiv="Content-Language" content="en"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <style type="text/css">
+	div.title { font-size:18pt; font: Arial; font-weight:normal; text-align:center; color:#000000; }
+	.browser { font-size:18pt; font: Arial; font-weight:normal; text-align:center; color:#ffff00; vertical-align:middle; text-align:center; background:#d0b070; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;}
+	.group2 { width:600px; vertical-align:middle; text-align:center; background:#f0f0e0; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; }
+	.explain { vertical-align:middle; text-align:center; background:#f0f0c0; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; color:#404000; }
+	.content { vertical-align:top; text-align:center; background:#fffff0; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; }
+	.canvas { vertical-align:top; text-align:center; background:#efefd0; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; }
+ </style>
+    <script type="text/javascript">
+       
+    var origin = window.location.origin;
+    console.log("origin:: "+origin);
+    
+    window.onload = function()
+    {
+        console.log('WebSocket servers index.html: onload function entered');
+        function receiver(event) 
+        {
+            console.log('WebSocket servers index.html: reciever event:'+ event.data + "  "+event.origin);
+//            if (origin.indexOf(event.origin)==0)
+//            {
+                event.source.postMessage('Hello', event.origin);
+                window.close();
+//            }
+        }
+
+        window.addEventListener("message",receiver);
+        console.log('WebSocket servers index.html:: performed addEventListener');
+    }
+    
+    function closeThis(){
+        console.log('WebSocket servers index.html:: closeThis');
+        self.close();
+    }
+
+  </script>
+</head>
+
+<body>
+    <article>
+        <table>
+            <tr><td>
+                You have a SSL certificate for remote presence port. You should close this window now.
+            </td></tr>
+            <tr><td align="middle">   
+                <input id="btnClose" type="button" onclick="closeThis()" value="Close" />
+            </td></tr>
+        </table>
+    </article>
+</body>
+</html>

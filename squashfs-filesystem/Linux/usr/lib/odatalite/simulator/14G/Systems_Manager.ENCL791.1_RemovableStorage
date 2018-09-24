@@ -1,0 +1,43 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/ENCL791/RemovableStorage/$entity",
+    "@odata.id": "/redfish/v1/Systems/Manager.ENCL791.1/RemovableStorage",
+    "@oem.nav.parentid": "/redfish/v1/Systems/Manager.ENCL791.1",
+    "@odata.type": "Dell#RemovableStorage.0.0.1.RemovableStorage",
+    "Id": "RemovableStorage",
+    "Name": "Chassis manager removable flash media",
+    "RemovableStorage": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Manager.ENCL791.1/RemovableStorage#/RemovableStorage/1",
+            "MemberId": "1",
+            "Name": "Removable flash media",
+            "SensorNumber": 91,
+            "Status": {
+                "Health": "Critical"
+            }
+        }
+    ],
+    "Status": {
+        "Health": "Critical",
+        "HealthRollup": "Critical"
+    },
+    "FaultList": [
+        {
+            "Message": "This is a sample message that can indicate why a component health status is not OK.",
+            "MessageID": "RFM0007",
+            "MessageArgs": [ 
+                "sample" 
+            ],
+            "FQDD": "CMC.RFM.1"
+        },
+        {
+            "Message": "This is a sample message that can indicate why a component health status is not OK.",
+            "MessageID": "RFM0004",
+            "MessageArgs": [ 
+                "sample" 
+            ],
+            "FQDD": "CMC.RFM.1"
+        }
+    ],
+    "Oem": {}
+}

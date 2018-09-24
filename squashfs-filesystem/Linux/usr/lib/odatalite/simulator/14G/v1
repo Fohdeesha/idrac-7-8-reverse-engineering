@@ -1,0 +1,63 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#ServiceRoot",
+    "@odata.id": "/redfish/v1"  ,"@oem.nav.parentid": "/redfish",
+    "@odata.type": "#ServiceRoot.1.0.0.ServiceRoot",
+    "Id": "ServiceRoot",
+    "Name": "Service Root",
+    "Description": "This service is a simulation of 'Skylynx 8-in-7U Vertical Layout'",
+    "RedfishVersion": "1.0.0",
+    "UUID": "92384634-2938-2342-8820-489239905423",
+    "Systems" : {
+        "@odata.id": "/redfish/v1/Systems"
+    },
+    "Chassis" : {
+        "@odata.id": "/redfish/v1/Chassis"
+    },
+    "Managers" : {
+        "@odata.id": "/redfish/v1/Managers"
+    },
+    "Tasks" : {
+        "@odata.id": "/redfish/v1/TaskService"
+    },
+    "SessionService" : {
+        "@odata.id": "/redfish/v1/SessionService"
+    },
+    "AccountService" : {
+        "@odata.id": "/redfish/v1/AccountService"
+    },
+    "EventService" : {
+        "@odata.id": "/redfish/v1/EventService"
+    },
+    "Registries" : {
+        "@odata.id": "/redfish/v1/MessageRegistry"
+    },
+    "JsonSchemas" : {
+        "@odata.id": "/redfish/v1/JsonSchemas"
+    },
+    "Links" : {
+        "Sessions" : {
+            "@odata.id": "/redfish/v1/SessionService/Sessions"
+        }
+    },
+    "Oem" : {
+        "EID:674" : {
+            "@odata.type": "http://Dell.com/Schema#Dell.ServiceRoot",
+			"SoftwareService" : {
+				"@odata.id": "/redfish/v1/SoftwareService"
+			},
+			"Slots" : {
+				"@odata.id": "/redfish/v1/Slots"
+			},
+			"SlotConfigs" : {
+				"@odata.id": "/redfish/v1/SlotConfigs"
+			},
+			"ControlPanel" : {
+				"@odata.id": "/redfish/v1/ControlPanel"
+			},
+            "Storage" : {
+                "@odata.id": "http://10.36.0.109/rest/Dell/Storage/v1"
+            }
+        }
+    }
+}

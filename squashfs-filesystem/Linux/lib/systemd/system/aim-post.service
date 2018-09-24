@@ -1,0 +1,14 @@
+[Unit]
+Description=Setup AIM config items
+DefaultDependencies=no
+After=aim.service
+Wants=aim.service
+
+[Service]
+Type=oneshot
+Nice=5
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/init.d/aim-post.sh
+
+[Install]
+WantedBy=sysinit.target

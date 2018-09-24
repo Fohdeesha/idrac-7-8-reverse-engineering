@@ -1,0 +1,91 @@
+#!/bin/sh
+
+IFNAME=bond0
+SCRIPT_DIR=/etc/sysconfig/network_script
+
+check_opt16_opt17() {
+	. /tmp/dhclient_params
+	if [[ "${CONFIG_DHCP_BOOL_OPT16_OPT17}" == "true" ]]; then
+		sed -i -e '$a option dhcp6.vendor-class code 16 = {integer 32, integer 16, string};' ${SCRIPT_DIR}/dhclient.conf
+		sed -i -e '$a send dhcp6.vendor-class 674 13 "DCMI36465:1.5";' ${SCRIPT_DIR}/dhclient.conf
+		sed -i -e '$a send dhcp6.vendor-opts 00:00:02:a2:00:01:00:04:44:43:4d:49:00:02:00:03:36:37:34:00:03:00:04:32:2e:30:30;' ${SCRIPT_DIR}/dhclient.conf
+	else
+		sed -i -e '$a option dhcp6.vendor-class code 16 = {integer 32, integer 16, string};' ${SCRIPT_DIR}/dhclient.conf
+		sed -i -e '$a send dhcp6.vendor-class 674 5 "iDRAC";' ${SCRIPT_DIR}/dhclient.conf
+	fi
+}
+
+check_opt39() {
+	. /tmp/dhclient_params
+	HWADDR=`/sbin/ifconfig ${IFNAME} | grep ${IFNAME} | awk '{print $5}' | sed -e 's/:/-/g'`
+	
+	if [[ "${DOMAINNAME}" != "" ]]; then
+		if [[ "${CONFIG_DHCP_BOOL_OPT39}" == "true" ]]; then
+			if [[ "${MANAGEMENT_CONTROLLER_ID}" != "" ]]; then
+				sed -i -e '$a send fqdn.fqdn "'${MANAGEMENT_CONTROLLER_ID}'.'${DOMAINNAME}'";' ${SCRIPT_DIR}/dhclient.conf
+			else
+				sed -i -e '$a send fqdn.fqdn "DCMI'${HWADDR}'.'${DOMAINNAME}'";' ${SCRIPT_DIR}/dhclient.conf
+			fi
+			sed -i -e '$a send fqdn.encoded on;' ${SCRIPT_DIR}/dhclient.conf
+			sed -i -e '$a send fqdn.server-update off;' ${SCRIPT_DIR}/dhclient.conf
+			sed -i -e '$a request dhcp6.fqdn, fqdn;' ${SCRIPT_DIR}/dhclient.conf
+		else
+			if [[ "${HOSTNAME}" != "" ]]; then
+				sed -i -e '$a send fqdn.fqdn "'${HOSTNAME}'.'${DOMAINNAME}'";' ${SCRIPT_DIR}/dhclient.conf
+				sed -i -e '$a send fqdn.encoded on;' ${SCRIPT_DIR}/dhclient.conf
+				sed -i -e '$a send fqdn.server-update off;' ${SCRIPT_DIR}/dhclient.conf
+				sed -i -e '$a request dhcp6.fqdn, fqdn;' ${SCRIPT_DIR}/dhclient.conf
+			fi
+		fi
+	fi
+}
+
+handler_dhclient() {
+	. /tmp/dhclient_params
+
+	sed -i -e 's/.* fqdn.*$//g' ${SCRIPT_DIR}/dhclient.conf
+	sed -i -e 's/.* dhcp6.*$//g' ${SCRIPT_DIR}/dhclient.conf
+	sed -i -e '/^$/d' ${SCRIPT_DIR}/dhclient.conf
+
+	check_opt16_opt17
+	check_opt39
+
+	sed -i -e '$a request dhcp6.name-servers, dhcp6.domain-search;' ${SCRIPT_DIR}/dhclient.conf
+	
+	dhclient -6 -nw -cf ${SCRIPT_DIR}/dhclient.conf -sf ${SCRIPT_DIR}/dhclient-script ${IFNAME}
+}                                                                                                                       
+
+release_dhclient() {
+	. /tmp/dhclient_params
+	dhclient -6 -cf ${SCRIPT_DIR}/dhclient.conf -sf ${SCRIPT_DIR}/dhclient-script ${IFNAME} -r
+}
+
+trap handler_dhclient SIGUSR1
+trap release_dhclient SIGUSR2
+
+let count=1
+while [ 1 ]; do
+	if [ -e /tmp/dhclient_need_start ]; then
+		rm -rf /tmp/dhclient_need_start
+		handler_dhclient
+	fi
+
+        let count++
+        if [ ${count} -gt 60 ]; then
+            PID_LIST=`ps | grep dhclient | grep nw | awk '{print $1}'`
+            for PID in ${PID_LIST}; do
+                VMSIZE=`cat /proc/${PID}/status | grep VmSize | awk '{printf $2}'`
+                if [ ${VMSIZE} -gt 8000 ]; then
+                    release_dhclient
+                    sleep 1
+                    killall dhclient
+                    sleep 1
+                    handler_dhclient
+                    break
+                fi
+            done
+            let count=1
+        fi
+
+	sleep 1
+done

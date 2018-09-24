@@ -1,0 +1,25 @@
+[Unit]
+Description=Data Manager Stage 2 Populator Load
+Wants=dsm-sa-datamgr.service
+After=dsm-sa-datamgr.service
+PartOf=dsm-sa-datamgr.service
+
+After=pm.service
+After=maser_attch.service
+Wants=fullfw_app.service
+After=fullfw_app.service
+After=maser_access_controller.service
+
+[Service]
+Type=oneshot
+ControlGroup=memory:/idrac/C
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/usr/sbin/dcecfg command=loadpopgroup groupname=dmstagetwo
+ExecStartPost=/bin/sleep 20
+ExecStartPost=/bin/shmwrite -i 13 1
+ExecStartPost=-/bin/sh -c "/etc/sysapps_script/logLCLEvent.sh"
+
+[Install]
+Alias=data-engine.service
+WantedBy=multi-user.target

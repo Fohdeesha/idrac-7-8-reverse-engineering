@@ -1,0 +1,170 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#ClassOfService.v1_0_0.ClassOfService",
+    "$ref": "#/definitions/ClassOfService",
+    "definitions": {
+        "ClassOfService": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.v1_1_0.json#/definitions/Identifier"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value shall be unique within the managed ecosystem."
+                },
+                "ClassOfServiceVersion": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "The value identifies the current version of this class of service definition.",
+                    "longDescription": "The version describing the creation or last modification of this service option specification. The string representing the version shall be in the form: M + '.' + N + '.' + U  Where: M - The major version (in numeric form). N - The minor version (in numeric form). U - The update (e.g. errata or patch in numeric form)."
+                },
+                "LinesOfService": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/LinesOfService"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Lines of Service that define the required choices of utility or warranty.",
+                    "longDescription": "The value of this property shall define the required choices of utility or warranty."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "A service option composed of one or more service options.",
+            "longDescription": "This resource shall define a service option composed of one or more service options.  ITIL defines a service option as a choice of utility or warranty for a service."
+        },
+        "LinesOfService": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "DataProtectionLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/DataProtectionLoSCapabilities.v1_0_0.json#/definitions/DataProtectionLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "A collection of DataProtection lines of service elements.",
+                    "longDescription": "The value shall be a set of data protection service options.  Within a class of service, one data protection service option shall be present for each replication session."
+                },
+                "DataSecurityLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/DataSecurityLoSCapabilities.v1_0_0.json#/definitions/DataSecurityLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "A collection of DataSecurity lines of service elements.",
+                    "longDescription": "The value shall be a set of data security service options."
+                },
+                "DataStorageLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/DataStorageLoSCapabilities.v1_0_0.json#/definitions/DataStorageLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "A collection of DataStorage lines of service elements.",
+                    "longDescription": "The value shall be a set of data protection service options."
+                },
+                "IOConnectivityLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/IOConnectivityLoSCapabilities.v1_0_0.json#/definitions/IOConnectivityLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "A collection of IOConnectivity lines of service elements.",
+                    "longDescription": "The value shall be a set of IO connectivity service options.  Within a class of service, at most one IO connectivity service option may be present for a value of AccessProtocol."
+                },
+                "IOPerformanceLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/IOPerformanceLoSCapabilities.v1_0_0.json#/definitions/IOPerformanceLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "A collection of IOPerformance lines of service elements.",
+                    "longDescription": "The value shall be a set of IO performance service options.  "
+                }
+            },
+            "description": "This structure is a composition of related service options.",
+            "longDescription": "This structure may be used to collect a set of related service options."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

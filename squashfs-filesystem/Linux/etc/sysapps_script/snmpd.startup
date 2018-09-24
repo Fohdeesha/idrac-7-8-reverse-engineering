@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+# Init file for Snmpd server daemon
+#
+RETVAL=0
+PROG=snmpd
+BIN_PATH=/usr/sbin/snmpd
+CONFIG_PATH=/etc/snmp/snmpd.conf
+AIM_OUT=`/avct/sbin/aim_config_get_bool pm_bool_snmp_enabled`
+PROG_OPTIONS="udp:161,udp6:161"
+PROG_OPTIONS_LOCAL_ONLY="127.0.0.1:161,udp6:[::1]:161"
+PROG_OPTIONS_LOCAL_ONLY_CHECK="127.0.0.1"
+
+check_agent() {
+	# check is SNMP Agent process (i.e., snmpd) is running
+	if [ -n "`pgrep -x $BIN_PATH`" ]; then
+		# agent is running
+		#echo "snmpd.startup: agent is running"
+		AGENT_RETVAL=1
+	else
+		# agent is not running
+		#echo "snmpd.startup: agent is not running"
+		AGENT_RETVAL=0
+	fi
+
+	return $AGENT_RETVAL
+}
+
+start_snmpd() {
+
+	# test if SNMP Agent support is currently enabled for this iDRAC
+	# (iDRAC users have the option to disable the SNMP Agent to prevent
+	#  remote queries)
+	if [ $AIM_OUT ] && [ $AIM_OUT == "true" ];  then
+		$BIN_PATH $PROG_OPTIONS
+	else
+		# use localhost listening address to prevent remote queries
+		$BIN_PATH -c $CONFIG_PATH $PROG_OPTIONS_LOCAL_ONLY
+	fi
+}
+
+start() {
+	start_snmpd
+}
+
+stop() {
+	# check if agent is currently running or not
+	check_agent
+	if [ $? -eq 1 ]; then
+		# agent is running; stop the agent
+		killall snmpd
+		# kill the first instance of snmpd won't kill other snmpd threads sometimes
+		ps | grep $BIN_PATH | kill -9 `awk '{print $1}' | head -n 1`
+	fi
+}
+
+restart() {
+	stop
+	start_snmpd
+}
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		restart
+		;;
+	*)
+		echo $"Usage: $0 {start|stop|restart}"
+		RETVAL=1
+
+esac
+exit $RETVAL

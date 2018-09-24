@@ -1,0 +1,13 @@
+[Unit]
+Description=mmc tracking timer
+
+[Timer]
+#Time to wait after booting before running first time
+#if that time has already passed, then run immediately
+OnBootSec=15min
+# Time between running there after
+OnUnitActiveSec=1d
+Unit=mmc_track.service
+
+[Install]
+WantedBy=multi-user.target

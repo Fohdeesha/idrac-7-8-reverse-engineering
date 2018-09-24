@@ -1,0 +1,504 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/1/Thermal/$entity",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal"  ,"@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791",
+    "@odata.type": "#Thermal.1.0.0.Thermal",
+    "Id": "ENCL791",
+    "Name": "Thermal",
+    "Temperatures": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Temperatures/1",
+            "MemberId": "1",
+            "Name": "CPU1 Temp",
+            "SensorNumber": 42,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingCelsius": 21,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 42,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 200,
+            "PhysicalContext": "CPU",
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Systems/HL3F942#/Processors/1" }
+            ]
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Temperatures/2",
+            "MemberId": "2",
+            "Name": "CPU2 Temp",
+            "SensorNumber": 43,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingCelsius": 21,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 42,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 200,
+            "PhysicalContext": "CPU",
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Systems/HL3F942#/Processors/2" }
+            ]
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Temperatures/3",
+            "MemberId": "3",
+            "Name": "Chassis Intake Ambient Temp",
+            "SensorNumber": 44,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingCelsius": 25,
+            "UpperThresholdNonCritical": 30,
+            "UpperThresholdCritical": 45,
+            "UpperThresholdFatal": 50,
+            "LowerThresholdNonCritical": 10,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 0,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 200,
+            "PhysicalContext": "Intake",
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" },
+                {"@odata.id": "/redfish/v1/Systems/HL3F942" },
+                {"@odata.id": "/redfish/v1/Systems/JL3G942" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "ThermalMetrics": {
+                        "StartTime": "Wed Nov 5 06:07:42 2014",
+                        "MinPeakCelsius": 17.1,
+                        "MinPeakCelsiusTime": "Thu Oct 8 22:08:48 2015",
+                        "MaxPeakCelsius": 47.9,
+                        "MaxPeakCelsiusTime": "Thu Oct 8 22:08:48 2015",
+                        "ThermalTrends": {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal/ThermalTrends-1"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "Fans": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/1",
+            "MemberId": "1",
+            "FanName": "Chassis Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [ 
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-1"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/2",
+            "MemberId": "2",
+            "FanName": "Chassis Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-2"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/3",
+            "MemberId": "3",
+            "FanName": "Chassis Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [ 
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-3"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/4",
+            "MemberId": "4",
+            "FanName": "Chassis Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [ 
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-4"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/5",
+            "MemberId": "5",
+            "FanName": "Chassis Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [ 
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-5"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/6",
+            "MemberId": "6",
+            "FanName": "Chassis Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [ 
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Fan-6"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/IOM-1",
+            "MemberId": "IOM-1",
+            "FanName": "Chassis IOM Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [ 
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOMFan-1"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/IOM-2",
+            "MemberId": "IOM-2",
+            "FanName": "Chassis IOM Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [ 
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOMFan-2"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/IOM-3",
+            "MemberId": "IOM-3",
+            "FanName": "Chassis IOM Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [ 
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOMFan-3"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Fans/IOM-4",
+            "MemberId": "IOM-4",
+            "FanName": "Chassis IOM Fan",
+            "PhysicalContext": "Backplane",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingRPM": 2100,
+            "UpperThresholdNonCritical": 42,
+            "UpperThresholdCritical": 4200,
+            "UpperThresholdFatal": 42,
+            "LowerThresholdNonCritical": 42,
+            "LowerThresholdCritical": 5,
+            "LowerThresholdFatal": 42,
+            "MinReadingRange": 0,
+            "MaxReadingRange": 5000,
+            "Redundancy": [ 
+            ],
+            "RelatedItem": [
+                {"@odata.id": "/redfish/v1/Chassis/ENCL791" }
+            ],
+            "Oem": {
+                "EID:674": {
+                    "@odata.type": "#Dell.Thermal.1.0.0.Thermal",
+                    "InSlot": [
+                        {
+                            "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOMFan-4"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "Redundancy": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal#/Redundancy/0",
+            "MemberId": "0",
+            "Name": "Chassis Fans",
+            "RedundancySet": [
+            ],
+            "Mode": "N+m",
+            "Status": {
+                "State": "Disabled",
+                "Health": "OK"
+            },
+            "MinNumNeeded": 1,
+            "MaxNumSupported": 2
+        }
+    ],
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "#Dell.Thermal.0.0.1.Thermal",
+            "TemperatureSummary": {
+                "Status": {
+                    "HealthRollup": "Critical"
+                },
+                "FaultList": [
+                    {
+                        "Message": "This is a sample message that can indicate why a component health status is not OK.",
+                        "MessageID": "CPU0007",
+                        "MessageArgs": [ 
+                            "sample" 
+                        ],
+                        "FQDD": "CPU.Slot.1"
+                    },
+                    {
+                        "Message": "This is a sample message that can indicate why a component health status is not OK.",
+                        "MessageID": "CPU0004",
+                        "MessageArgs": [ 
+                            "sample" 
+                        ],
+                        "FQDD": "CPU.Slot.1"
+                    }
+                ]
+            },
+            "FanSummary": {
+                "Status": {
+                    "HealthRollup": "Critical"
+                },
+                "FaultList": [
+                    {
+                        "Message": "This is a sample message that can indicate why a component health status is not OK.",
+                        "MessageID": "FAN0007",
+                        "MessageArgs": [ 
+                            "sample" 
+                        ],
+                        "FQDD": "Fan.Slot.1"
+                    },
+                    {
+                        "Message": "This is a sample message that can indicate why a component health status is not OK.",
+                        "MessageID": "FAN0004",
+                        "MessageArgs": [ 
+                            "sample" 
+                        ],
+                        "FQDD": "PSU.Slot.2"
+                    }
+                ]
+            }
+        }
+    }
+}

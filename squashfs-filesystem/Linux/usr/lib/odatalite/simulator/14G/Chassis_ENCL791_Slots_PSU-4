@@ -1,0 +1,17 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/Slots",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/PSU-4",
+    "@odata.type": "#Slots.1.0.0.Slot",
+    "Id": "PSU-4",
+    "Name": "PSU-4",
+    "SlotId": "4",
+    "SlotGroup": "PSU",
+    "Occupied": true,
+    "SlotType": "PSU",
+    "SlotConfig": { "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/PSUSlots" },
+    "Contains": [
+        { "@odata.id": "/redfish/v1/Chassis/ENCL791/Power#/PowerSupplies/4" }
+    ],
+    "Oem": {}
+}

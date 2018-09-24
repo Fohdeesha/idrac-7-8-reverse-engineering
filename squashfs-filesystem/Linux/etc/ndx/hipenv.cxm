@@ -1,0 +1,665 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _ChassisObj 
+{
+        u8 reserved;
+} ChassisObj;
+
+typedef struct _ChassisProps1Obj 
+{
+        u32 chassType;
+        u32 systemClass;
+        booln chassLockPresent;
+		u8 systemRevision;
+		__BITMAP u8 systemProperties;
+        u8 machineID;
+        u8 reservedAlign1[1];
+        u16 systemIDExt;
+        u32 offsetChassName;
+        u32 offsetChassManufacturer;
+        u32 offsetChassModel;
+        u32 offsetSystemUUID;
+	u32 offsetSystemRevisionName;
+} ChassisProps1Obj;
+
+typedef struct _ChassisProps2Obj 
+{
+        u8 fanControl;
+        u8 faultLEDControl;
+        u8 faultLEDState;
+        u8 connectStatus;
+        u8 powerButtonControl;
+        u8 chassisIdentifyState;
+        u16 chassisIdentifyTimeout;
+        booln hdLedSupport;
+        booln identifySupport;
+        u8 nmiButtonControl;
+        u8 reservedAlign[1];
+        booln identifyOffSupport;
+        u32 offsetServiceTag;
+        u32 offsetAssetTag;
+} ChassisProps2Obj;
+
+typedef struct _TimerObj 
+{
+        u32 data[1];
+} TimerObj;
+
+typedef struct _FirmwareObj 
+{
+        u16 fwSize;
+        u16 fwUpdateCaps;
+        u8 fwType;
+        u8 reservedAlign[3];
+        s8 fwDate[8];
+        u32 offsetFwVersion;
+        u32 offsetFwText;
+} FirmwareObj;
+
+typedef struct _LCDObj {
+	u8 charSet;
+	u8 maxLines;
+	u8 lcdKVMStatus;
+	u8 lcdAccessState;
+} LCDObj;
+
+typedef struct _LCDLineObj {
+	__BITMAP u32 capabilities;
+	u32 state;
+	u8 maxLineSize;
+	u8 reservedAlign[2];
+	u32 offsetLCDstring;
+}LCDLineObj;
+
+
+
+typedef struct _PowerConsumptionDataObj {
+        u32 objExtFlags;  
+	u32 offsetKey;    
+	u32 cumulativeWatts;	
+	s64 cwStartTime;		
+	u32 peakWatts;			
+	s64 pwStartTime;		
+	s64 pwReadingTime;		
+	u32 peakAmps;			
+	s64 paStartTime;		
+	s64 paReadingTime;
+	u32 minPower;
+	u32 maxPower;
+	u32 powerCap;
+	u16 powerCapCaps;
+	u16 powerCapSetting;
+	u32 instHeadRoom;
+	u32 peakHeadRoom;
+	s32 timezone;
+	u32 bladePowerAllocation;
+    	u16 inputCapacity;         
+	u16 redundancyReserve;      
+	u32 offsetIdentifier;
+	u32 offsetpeakWatts;
+	u32 offsetpwReadingTime;
+	u32 offsetminPower;
+	u32 offsetmaxPower;
+	u32 offsetpwrCapWatts;
+	u32 offsetpwrCapBTU;
+	u32 offsetpwrCapPer;
+	u16 instAmpsPSU1_2;
+	u16 instWattsPSU1_2;
+} PowerConsumptionDataObj;
+
+
+typedef struct _ProbeThresholds 
+{
+        s32 unrThreshold;
+        s32 ucThreshold;
+        s32 uncThreshold;
+        s32 lncThreshold;
+        s32 lcThreshold;
+        s32 lnrThreshold;
+} ProbeThresholds;
+
+typedef struct _ProbeObj 
+{
+        u32 objExtFlags;
+	u32 offsetKey;
+        u32 subType;
+        s32 probeReading;
+        ProbeThresholds probeThresholds;
+        u8 probeStatus;
+        u8 unitModifier;
+        u16 probeCapabilities;
+        u32 offsetProbeLocation;
+        u32 offsetReAliasedName;
+	u32 offsetTargetDevKey;
+} ProbeObj;
+
+typedef struct _IntrusionObj 
+{
+        u32 objExtFlags;  
+	u32 offsetKey;    
+        u8 intrusionType;
+        u8 intrusionStatus;
+        u8 reservedAlign[2];
+        u32 offsetIntrusionLoc;
+} IntrusionObj;
+
+typedef struct _FanEnclObj 
+{
+        s64 removalTime;
+        s64 removalFailureTime;
+        u8 enclPresent;
+        u8 reservedAlign[3];
+        u32 offsetFanEnclLoc;
+} FanEnclObj;
+
+typedef struct _LogObj 
+{
+        u32 logType;
+        u32 logFormat;
+        u32 logRecSize;
+        booln isLogClearable;
+        booln clearRequiresReboot;
+} LogObj;
+
+typedef struct _ESMEventLogRecord
+{
+        s64 logTime;
+        u32 numberofLogRecords;
+        u8 objStatus;
+        u8 reservedAlign[3];
+        u32 offsetLogString;
+} ESMEventLogRecord;
+
+typedef struct _UuidObj 
+{
+        u8 uuidType;
+        u8 uuidLen;
+        u8 reservedAlign[2];
+        u32 offsetUuidValue;
+} UuidObj;
+
+typedef struct _HostControlObj 
+{
+        u32 objExtFlags;  
+	u32 offsetKey;    
+        __BITMAP u32 capabilities;
+        __BITMAP u32 settings;
+        s32 beforeActionTime;
+        s32 actionDurationTime;
+} HostControlObj;
+
+typedef struct _WatchDogObj 
+{
+        __BITMAP u32 capabilities;
+        u32 settings;
+        u32 timerCapabilities;
+        s32 expiryTime;
+        u32 state;
+        s32 heartBeatTime;
+        booln bASREventDetected;
+        u8 reservedAlign[2];
+} WatchDogObj;
+
+typedef struct _AcCordObj
+{
+        u32 acPresent;
+        u32 acActiveSrc;
+        u32 offsetAcCordName;
+} AcCordObj;
+
+typedef struct _AcSwitchObj
+{
+        u32 acSwitchCapabilities;
+        u32 acSwitchSettings;
+        u32 acRedundancyExpected;
+        u32 offsetAcSwitchName;
+} AcSwitchObj;
+
+typedef struct _PortableBatteryObj 
+{
+	u32 designCapacity;
+	u16 designVoltage;
+	u8	maximumErrorInBatteryData;
+	u8  portableBatteryType;
+	u32 offsetDeviceChemistry;
+	u32 offsetLocation;
+	u32 offsetManufacturer;
+	u32 offsetManufactureDate;
+	u32 offsetSerialNumber;
+	u32 offsetDeviceName;
+	u32 offsetSBDSversionNumber;
+	u8 BatteryNumber;
+	u8 BatteryStatus;
+	u8 ACLineStatus;
+	u8 PermanentFailureCode;
+	u8 ChargeRemainingPercent;
+	u8 batteryFlag;
+	u8 HealthInfo;
+	u8 HealthPercent;
+	booln DynamicDataPresent;
+	u16 ChargeRemainingMinutes;
+} PortableBatteryObj;
+
+typedef struct _MobilePowerManagementObject
+{
+	u16 PowerMode;
+	u16 MPMState;
+	u16 SmartCPU;
+	u16 FeatureBitMask;
+	u16 SaveToDiskMaxTimeout;
+	u16 SaveToDiskMinTimeout;
+	u16 SaveToDiskCurTimeout;
+	u16 DisplayMaxTimeout;
+	u16 DisplayMinTimeout;
+	u16 DisplayCurTimeout;
+	u16 HarddiskMaxTimeout;
+	u16 HarddiskMinTimeout;
+	u16 HarddiskCurTimeout;
+	u16 SuspendMaxTimeout;
+	u16 SuspendMinTimeout;
+	u16 SuspendCurTimeout;
+	u16 LCDBrightnessMaxValue;
+	u16 LCDBrightnessMinValue;
+	u16 LCDBrightnessCurValue;
+} MobilePowerManagementObj;
+
+typedef struct _VideoBIOSObj 
+{
+	u8  ShadowState;
+	u8  reserved[1];
+	u16 Characteristics;
+	u32 offsetManufacturer;
+	u32 offsetVersion;
+	u32 offsetReleaseDate;
+} VideoBIOSObj;
+
+typedef struct _FlatPanelObject
+{
+	u16 LCDPanelMaxHorz;
+	u16 LCDPanelMaxVert;	
+	u32 VideoMemorySizeKB;
+	u8  DisplayType;
+	u8  MonitorRates[7];
+} FlatPanelObj;
+
+typedef struct _DeviceBayObj
+{
+	u8 Type;
+	u8 CurrentDevice;
+	u8 HardwareVersionNumber;
+	u8 instance;
+	booln Present;
+	u16 reserved2[1];
+	u32 offsetLocationStr;
+	u32 offsetCurrentDeviceStr;
+	u32 offsetDevicesSupportedStr;
+	u32 offsetDeviceFWVersion;
+	u32 offsetControllerFWVersion;
+} DeviceBayObj;
+
+typedef struct _DockingStationObj
+{
+	booln ChassisLockPresent;
+	u8 Type;
+	u8  reserved[1];
+	u8 BootUpState;
+	u8 PowerSupplyState;
+	u8 ThermalState;
+	u8 SecurityStatus;
+	u32 offsetDockName;
+	u32 offsetManufacturer;
+	u32 offsetSerialNumber;
+} DockingStationObj;
+
+typedef struct _ePPIDDataObject
+{
+	u32 offsetCountryOfOrigin;
+	u32 offsetDellPartNumber;
+	u32 offsetManufacturerID;
+	u32 offsetDateCode;
+	u32 offsetSequenceNumber;
+	u32 offsetRevisionLevel;
+} ePPIDDataObject;
+
+typedef struct _PBAStatusObj
+{
+	u8 Revision;
+	u8 NumUsers;
+	u8 MaxUsers;
+	u8 reserved[1];
+	u32 SupportedAuthenticationMethods;
+	u32 ActiveAuthenticationMethods;
+} PBAStatusObj;
+
+typedef struct _PBAHDDDataObj
+{
+	booln bPresent;
+	booln bPasswordProtected;
+	booln bPasswordPending;
+	booln bAdminOnly;
+} PBAHDDDataObj;
+
+typedef struct _ACPRMBSetupObj 
+{
+	u32 state;
+	u32 cap;
+	booln isSetImmediate;
+	u16 minDelay;
+	u16 maxDelay;
+	u16 delay;
+	u32 offsetObjName;
+} ACPRMBSetupObj;
+
+typedef struct _MaserDeviceInfo{
+	u8 type; 
+	u8 bStoragePresent;
+	u8 reserved[2];
+	u32 size;
+}MaserDeviceInfo;
+
+typedef	struct _envPowerSetting{	
+	u8 powerSetting; 
+}envPowerSetting;
+
+typedef struct _HostPowerOnStatusObj {
+	u32 objExtFlags;  	//Object Ext Flags
+	u32 offsetKey;    	// offset to object key string
+	u8 powerState; 
+	u8 powerControl; 
+	u8 reservedAlign[2];
+} HostPowerOnStatusObj;
+
+typedef struct _AvgPowerConsumptionStatDataObj {
+       u32 objExtFlags;  
+	u32 offsetKey;    
+	u16 avgPwrLastMin;
+	u16 minPwrLastMin;
+	u16 maxPwrLastMin;
+	u16 avgPwrLastHour;
+	u16 minPwrLastHour;
+	u16 maxPwrLastHour;
+	u16 avgPwrLastDay;
+	u16 minPwrLastDay;
+	u16 maxPwrLastDay;
+	u16 avgPwrLastWeek;
+	u16 minPwrLastWeek;
+	u16 maxPwrLastWeek;
+	s64 minPwrLastMinTime;
+	s64 maxPwrLastMinTime;
+	s64 minPwrLastHourTime;
+	s64 maxPwrLastHourTime;
+	s64 minPwrLastDayTime;
+	s64 maxPwrLastDayTime;
+	s64 minPwrLastWeekTime;
+	s64 maxPwrLastWeekTime;
+	u32 minPwrConsByInterval;
+	u32 maxPwrConsByInterval;
+	u32 avgPwrConsByInterval;
+	u16 deviceType;
+	u16 defInterval;
+} AvgPowerConsumptionStatDataObj;
+
+typedef struct _SDBootObj {
+       u32 objExtFlags;  
+	u32 offsetKey;    
+	u8 bootOnceSetting;
+	u8 reservedAlign; 
+	u16 bootPartitionIndex;
+} SDBootObj;
+
+typedef struct _VFlashPartitionObj {
+    u32 objExtFlags;  
+	u32 offsetKey;    
+	u8 partitionIndex;
+	u8 partitionAccessType;
+	u8 partitionStatus;
+    u8 partitionAttachState;
+	u32 offsetPartitionFormatType; 
+	u32 offsetPartitionSize; 
+	u32 offsetDeviceType;  
+	u32 offsetPartitionIdentifier; 
+} VFlashPartitionObj;
+
+typedef struct _DeviceObj {
+       u32 objExtFlags;  
+	u32 offsetKey;    
+	u8 deviceType;
+	u8 reservedAlign[3]; 
+	u16 redundancyPolicy ;
+	u16 redundancyCapabilities;
+} DeviceObj;
+
+
+typedef struct _SDPortObj {
+    u32 objExtFlags;        
+    u32 offsetKey;          
+    u8 reserved; 
+} SDPortObj;
+
+
+typedef struct _SDCardObj {
+       u32 objExtFlags;  
+	u32 offsetKey;    
+	u8 type;
+	booln isSDCardPresent;
+	u8 reserved1[1];
+	u32 sdCardSizeMB;
+	u32 sdCardFreeSizeMB;
+	u32 sdCardState;
+	u32 sdConfigState;
+	u32 sdConfigCaps;
+	u32 offsetSDLocation;
+	u8 sdLicense;
+	u8 sdInitialized;
+	u8 reserved[2];
+	u32 offsetSDCardHealth;
+	u32 offsetSDCardSizeMB;
+	u32 offsetSDCardFreeSizeMB;
+	u32 offsetSDCardName;
+	u32 offsetFQDD;
+} SDCardObj;
+
+typedef struct _VersionDependencyObject 
+{ 
+    u32 OffsetVersionString;
+    u32 ComponentID;
+    u16 ComponentType;
+    u16 Type;
+} VersionDependencyObject;
+
+typedef struct _VersionDependencyArray
+{
+    u32 VerDepCount;
+    u32 VerDepArrSize;
+    VersionDependencyObject VersionDepList[1];
+}VersionDependencyArray;
+
+typedef struct _BaseSoftwareInventoryObject 
+{ 
+    u32 objExtFlags;                   // object flags 
+    u32 KeyOffset;                     // Key offset
+    u32 FQDDOffset;                    // FQDD offset
+    u32 FriendlyFQDDOffset;            // friendly FQDD offset
+    u64 InstallationDate;              // obtained from SIPopLib 
+    u32 OffsetPreviousVersionString;   // obtained from SIPopLib 
+    u32 OffsetCurrentVersionString;    // obtained from SIPopLib 
+    u32 OffsetInstalledVersionString;  // actual version retrieved from the device 
+    u32 OffsetDisplayName; 
+    u32 OffsetVersionDependencyArray;  // device inter dependencies (mainly for BIOS|USC|iDRAC) 
+    u32 ComponentID; 
+    u16 ImpactsTPMmeasurements;        // always true 
+    u16 ComponentType;                 // BIOS|Firmware|Application 
+    u16 DeviceType;                    // Base|SoltDevice|PCIDevice
+    u8 Flags;                          // default is 0,  bit(0) = if set to 1, ignore the object for software inventory (could be pending object or PSU absent object, etc)
+                                       // default is 0,  bit(1) = set to 1 if the device is not updateable
+                                       //                     bit(2) - bit(7) = reserved
+    u8 Reserved;                       // Padding for DWORD alignment
+} BaseSoftwareInventoryObject;
+
+
+// Slot based device type
+// SlotBasedSoftwareInventoryObject contains mandatory information including slot 
+// information (PSU, HDD, etc)
+typedef struct _SlotBasedSoftwareInventoryObject 
+{
+    BaseSoftwareInventoryObject BSInfo; 
+    u16 SlotNum; 
+    u16 Reserved; // Padding for DWORD alignment
+} SlotBasedSoftwareInventoryObject;
+
+typedef struct _IDracInfoObj {	// structure for iDrac Time and other future attributes 
+	BaseSoftwareInventoryObject baseSoftwareInventoryObject;
+	//u32 objExtFlags;  	//Object Ext Flags
+	u32 offsetKey;    	// offset to object key string
+	u32 timestamp;		// iDrac time
+	u8 resetType;		// iDrac reset type
+    astring  IPMIVersionString[32];  
+    astring  FirmwareVersionString[8];
+    astring  ProductName[129];
+    astring  ProductDescription[128];
+    astring  PermanentMACAddress[20];
+    astring  GUID[36];
+    astring  IdracURL[32];
+    u8  LANEnabledState;
+    u8  SOLEnabledState;
+    s64 UpdateTime;  // time_t value
+} IDracInfoObj;			// Object type 0x37
+
+
+typedef struct _CMCFWInfoObj {
+	BaseSoftwareInventoryObject baseSoftwareInventoryObject;
+} CMCFWInfoObj;         // Object type CMC_FW_INFO_OBJ_TYPE
+
+
+typedef struct _FanExtObj
+{
+	u32 objExtFlags;  	//Object Ext Flags
+	u32 offsetKey;    	// offset to object key string
+    u32 VariableSpeed;
+    u8  PrimaryStatus;
+    u8  iFanSDR;
+    u8  iFanSDRType;
+    u8  iFanExponent;
+    u8  iFanAccuracy;
+    u8  iFanOffset;
+    u8  iFanTolerance;
+    u8  iFanMultiplier;
+    u8  RedundancyStatus;
+    s64 UpdateTime;     
+    u32 offsetFQDD;       
+}FanExtObj;
+typedef struct _PowerSupplyObj 
+{
+	SlotBasedSoftwareInventoryObject slotBasedSoftwareInventoryObject;
+	u32 offsetKey;    
+        s32 outputWatts;
+	s32 inputRatedWatts;
+        s32 inputVolts;
+        booln psACOn;
+        booln psSwitchOn;
+        booln psPOK;
+        booln psOn;
+        booln psFanFail;
+        u16 psState;
+        u8 psType;
+        u8 psCfgErrType;
+        booln bPMCapable;
+	u16 ratedAmps;  
+	u8 inputStatus;		
+	u8 psuSlot;
+	u16 instAmpsPSU1_2;
+	u8 reservedAlign[2];			
+	u32 psuCapabilities;  
+	u32 offsetfwVer;        
+        u32 offsetPSLocation;
+	    astring  boardProductName[32];
+    	astring  boardSerialNumber[32];
+	    astring  boardPartNumber[16];
+    	astring  boardManufacturer[16];
+	    u8  RedundancyStatus;
+	    s64 UpdateTime;  
+        s32 currentInputVolts;
+} PowerSupplyObj;
+
+typedef struct _RACEvtFilterCfgRoot {
+    u32 objExtFlags;
+    u32 offsetKey;
+}RACEvtFilterCfgRoot;
+
+typedef struct _EvtFilterConfig{
+    u32 objExtFlags;
+    u32 offsetKey;
+	u32 eventID;
+	u16 pefIndex;
+	u16 category;
+	u16 severity;
+	u8	filterVisible;
+	astring msgId[9];
+	u32 filterActions; 
+	u32 permittedFilterActions; 
+	u8 sensorType; 
+	u8 sensorReading;
+	u8 ED1EOM_1; 
+	u8 ED2EOM_2; 
+}EvtFilterConfig;
+
+typedef struct _GenHostControlObj{
+    u32 objExtFlags;
+    u32 offsetKey;
+}GenHostControlObj;
+
+
+typedef struct _PowerSupplySlotObj{
+    u32 objExtFlags;        
+    u32 offsetKey;          
+    u32 offsetTargetDeviceKey;
+} PowerSupplySlotObj;
+
+typedef struct _FRUObj{
+    u32 objExtFlags;
+    u32 offsetKey;
+    u8  deviceType;
+    u32 offsetProductName;
+    u32 offsetSerialNumber;
+    u32 offsetPartNumber;
+    u32 offsetManufacturer;
+    u32 offsetRevision;
+} FRUObj;
+
+typedef struct _IDSDMObj {
+    u32 objExtFlags;        
+    u32 offsetKey;          
+    u8  isdCardPhySizeGB;   
+    u8  isdCardVolSizeGB;   
+    s16 isdCardState;       
+    u32 offsetProbeLocation;
+	u32 offsetFQDD;
+} IDSDMObj;
+
+typedef struct _EmptySlotObj{
+	u32 objExtFlags;           
+	u32 offsetKey;             
+	u32 offsetTargetDeviceKey; 
+	u16 slotType ;             
+	booln isEnabled;
+	u16 slotNum;
+	astring slotNumStr[10];           
+} EmptySlotObj;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

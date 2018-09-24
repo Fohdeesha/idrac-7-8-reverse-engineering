@@ -1,0 +1,162 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _CP2SetAssetTag
+{
+	ustring AssetTag[11];
+} CP2SetAssetTag;
+
+typedef struct _envLCDStr 
+{ 
+	u8 lcdIndex;
+	u32 config;
+	astring lcdStr[63]; 
+} envLCDStr;
+
+typedef struct _envLCDKVMState 
+{ 
+	u8 state;
+} envLCDKVMState;
+
+typedef struct _envLCDAccessState 
+{ 
+	u8 state;
+} envLCDAccessState;
+
+typedef struct _envPCDCumulativeCounter
+{
+	u8 setting;
+} envPCDCumulativeCounter;
+
+typedef struct _envPCDPeakCounters
+{
+	u8 setting;
+} envPCDPeakCounters;
+
+typedef struct _envPCDPowerCap
+{
+	u16 setting;
+} envPCDPowerCap;
+
+typedef struct _envPowerCapConfig
+{
+	u8 powercapConfig;
+} envPowerCapConfig;
+
+typedef struct _ppcurprofile
+{
+	u16 setting;
+} ppcurprofile;
+
+typedef struct _pnmemfreq
+{
+	u16 setting;
+} pnmemfreq;
+
+typedef struct _pnpstate
+{
+	u16 setting;
+} pnpstate;
+
+typedef struct _pnfan
+{
+	u16 setting;
+} pnfan;
+
+typedef struct _rciBBSTable 
+{ 
+	u32 setbits;
+	u8 IPLPriorityList[32];
+	u8 IPLSkipList[32];
+	u8 BCVPriorityList[32];
+	u8 OneShotBootDev;
+	u8 QuickSetBootDev;	
+} rciBBSTable;
+
+typedef struct _hstCntl
+{
+	u32 setting;
+	astring IPAddress[65];
+} hstCntl;
+
+typedef	struct _envPowerSetting
+{	
+	u8 powerSetting; 
+} envPowerSetting;
+
+typedef	struct _IDracInfo
+{
+	u32 timestamp;
+}IDracInfo;
+		
+typedef	struct _IDracReset
+{
+	u8 resetType;
+}IDracReset;
+
+typedef struct _probeUNCThreshold
+{		
+    s32 uncThreshold;
+    u32 seckey;
+} probeUNCThreshold;
+
+typedef struct _probeLNCThreshold
+{		
+    s32 lncThreshold;
+    u32 seckey;
+} probeLNCThreshold;
+
+typedef struct _envpartAccess
+{
+	u16 setting;
+}envpartAccess;
+
+typedef struct _envpartAttach
+{
+	u16 setting;
+}envpartAttach;
+
+typedef struct _envpartDetach
+{
+	u16 setting;
+}envpartDetach;
+
+typedef struct _envsdEnableDisable
+{
+	u16 setting;
+}envsdEnableDisable;
+
+typedef struct _envPeakPwrClr
+{
+	u16 setting;
+}envPeakPwrClr;
+
+typedef struct _envPwrConsClr
+{
+	u16 setting;
+}envPwrConsClr;
+
+typedef struct _iracevtfiltersetalert
+{
+	u16 category;
+	u16 severity;
+	astring subCategory[9];
+	u32 actions; 
+}iracevtfiltersetalert;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

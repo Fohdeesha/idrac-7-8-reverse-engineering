@@ -1,0 +1,10 @@
+[Unit]
+Description=Front Panel SPI recovery timer
+
+[Timer]
+#Time to wait after booting before running first time
+#if that time has already passed, then run immediately
+OnBootSec=3min
+
+[Install]
+WantedBy=multi-user.target

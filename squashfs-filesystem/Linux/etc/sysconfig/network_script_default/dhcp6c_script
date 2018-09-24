@@ -1,0 +1,88 @@
+#!/bin/sh
+
+prog=dhcp6c
+dhcp6c_var_dir=/var/lib/dhcpv6
+lockfile=$dhcp6c_var_dir/dhcp6c.lockfile
+resolv_script=/etc/sysconfig/network_script/network-functions
+resolv_script_link=$dhcp6c_var_dir/network-functions
+dhcp6c_conf=/etc/sysconfig/network_script/dhcp6c.conf
+
+RETVAL=0
+
+start() {
+	# remove lockfile if it exists
+	rm -f lockfile
+
+	# check if program is already running
+	pid=`pidof $prog`
+	if [ "x$pid" != "x" ]; then
+		echo -n $"$prog: already running"
+		echo
+		touch $lockfile
+		exit 1
+	fi
+
+	if [ "$2" ]; then
+		iface=$2
+	else
+		iface=eth0
+	fi
+
+	if [ "$1" = "dns" ]; then
+		rm -f $dhcp6c_var_dir/*
+		ln -s $resolv_script $resolv_script_link
+		$prog -c ${dhcp6c_conf} -I $iface
+		RETVAL=$?
+	elif [ "$1" = "ip" ]; then
+		rm -f $resolv_script_link
+		$prog -c ${dhcp6c_conf} $iface
+		RETVAL=$?
+	elif [ "$1" = "all" ]; then
+		ln -s $resolv_script $resolv_script_link
+		$prog -c ${dhcp6c_conf} $iface
+		RETVAL=$?
+	else
+		exit 1;
+	fi
+
+	# check if program starts up 
+	pid=`pidof $prog`
+	if [ "x$pid" != "x" ]; then
+		touch $lockfile
+	fi
+
+	return $RETVAL
+}
+
+stop() {
+	# check if program is indeed running
+	pid=`pidof ${prog}`
+	if [ "x${pid}" = "x" ]; then
+		echo -n $"${prog}: not running"
+		echo
+		rm -f $lockfile
+		exit 1
+	fi
+	
+	kill ${pid}
+	RETVAL=$?
+	[ $RETVAL -eq 0 ] && rm -f $lockfile
+	return ${RETVAL}
+}
+
+case "$1" in
+    start)
+        start $2 $3
+        RETVAL=$?
+        ;;
+    stop)
+        stop
+        RETVAL=$?
+        ;;
+    *)
+        RETVAL=3
+        ;;
+esac
+
+exit $RETVAL
+

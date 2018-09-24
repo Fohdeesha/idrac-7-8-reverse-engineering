@@ -1,0 +1,19 @@
+[Unit]
+Description=System call agent
+DefaultDependencies=no
+After=aim.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/C
+LimitSTACK=65536
+StandardOutput=journal+console
+StandardError=inherit
+ExecStart=/usr/bin/syscallagent
+KillSignal=SIGKILL
+Restart=on-failure
+EnvironmentFile=/etc/global.env
+Environment=USER=root
+
+[Install]
+WantedBy=sysinit.target

@@ -1,0 +1,20 @@
+[Unit]
+Description=Enable KCS SERIRQ
+DefaultDependencies=no
+After=early-mount.service
+Wants=early-mount.service
+After=driver-load.service
+Wants=driver-load.service
+
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=/etc/global.env
+
+# Enable KCS SERIRQ
+ExecStart=/usr/local/bin/kcssirq w 29 1
+ExecStart=/usr/local/bin/kcssirq w 10 1    
+
+[Install]
+WantedBy=sysinit.target

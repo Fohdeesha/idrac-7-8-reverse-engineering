@@ -1,0 +1,18 @@
+[Unit]
+Description=IPMI Gateway 
+After=osinet.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+
+ExecStart=/bin/ipmi_gateway
+KillSignal=SIGKILL
+TimeoutStopSec=2
+
+[Install]
+WantedBy=multi-user.target

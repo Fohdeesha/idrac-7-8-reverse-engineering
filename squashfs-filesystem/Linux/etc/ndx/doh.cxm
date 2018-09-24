@@ -1,0 +1,54 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2012 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _ObjList
+{
+	u32 objCount;
+	ObjID objID[-1];
+} ObjList;
+
+typedef struct _DataObjHeader
+{
+	u32 objSize;
+	ObjID objID;
+	u16 objType;
+	u8 objStatus;
+	u8 objFlags;
+	u8 refreshInterval;
+	u8 reservedAlign[3];
+} DataObjHeader;
+
+typedef struct _DataObjRoot
+{
+	u32 objExtFlags;
+	u32 offsetKey;
+	u32 reserved;
+} DataObjRoot;
+
+typedef struct _DataObjRedundancy
+{
+	u32 objExtFlags;
+	u32 offsetKey;
+	u8 redStatus;
+	u8 subType;
+	u16 redCount;
+	u32 offsetRedName;
+} DataObjRedundancy;
+
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

@@ -1,0 +1,17 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/Slots",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-3",
+    "@odata.type": "#Slots.1.0.0.Slot",
+    "Id": "Sled-3",
+    "Name": "Sled-3",
+    "SlotId": "3",
+    "SlotGroup": "Sled",
+    "Occupied": true,
+    "SlotType": "Sled",
+    "SlotConfig": { "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/SledSlots" },
+    "Contains": [
+        { "@odata.id": "/redfish/v1/Chassis/QSI3" }
+    ],
+    "Oem": {}
+}

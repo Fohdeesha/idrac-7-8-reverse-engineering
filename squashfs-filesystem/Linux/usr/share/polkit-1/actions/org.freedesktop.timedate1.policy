@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+        "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+
+        <vendor>The systemd Project</vendor>
+        <vendor_url>http://www.freedesktop.org/wiki/Software/systemd</vendor_url>
+
+        <action id="org.freedesktop.timedate1.set-time">
+                <description>Set system time</description>
+                <description xml:lang="pl">Ustawienie czasu systemu</description>
+                <message>Authentication is required to set the system time.</message>
+                <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby ustawić czas systemu.</message>
+                <defaults>
+                        <allow_any>auth_admin_keep</allow_any>
+                        <allow_inactive>auth_admin_keep</allow_inactive>
+                        <allow_active>auth_admin_keep</allow_active>
+                </defaults>
+        </action>
+
+        <action id="org.freedesktop.timedate1.set-timezone">
+                <description>Set system timezone</description>
+                <description xml:lang="pl">Ustawienie strefy czasowej systemu</description>
+                <message>Authentication is required to set the system timezone.</message>
+                <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby ustawić strefę czasową systemu.</message>
+                <defaults>
+                        <allow_any>auth_admin_keep</allow_any>
+                        <allow_inactive>auth_admin_keep</allow_inactive>
+                        <allow_active>auth_admin_keep</allow_active>
+                </defaults>
+        </action>
+
+        <action id="org.freedesktop.timedate1.set-local-rtc">
+                <description>Set RTC to local timezone or UTC</description>
+                <description xml:lang="pl">Ustawienie RTC na lokalną strefę czasową lub strefę UTC</description>
+                <message>Authentication is required to control whether the RTC stores the local or UTC time.</message>
+                <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby kontrolować, czy RTC przechowuje czas lokalny lub czas UTC.</message>
+                <defaults>
+                        <allow_any>auth_admin_keep</allow_any>
+                        <allow_inactive>auth_admin_keep</allow_inactive>
+                        <allow_active>auth_admin_keep</allow_active>
+                </defaults>
+        </action>
+
+        <action id="org.freedesktop.timedate1.set-ntp">
+                <description>Turn network time synchronization on or off</description>
+                <description xml:lang="pl">Włączenie lub wyłączenie synchronizacji czasu przez sieć</description>
+                <message>Authentication is required to control whether network time synchronization shall be enabled.</message>
+                <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby kontrolować, czy włączyć synchronizację czasu przez sieć.</message>
+                <defaults>
+                        <allow_any>auth_admin_keep</allow_any>
+                        <allow_inactive>auth_admin_keep</allow_inactive>
+                        <allow_active>auth_admin_keep</allow_active>
+                </defaults>
+        </action>
+
+</policyconfig>

@@ -1,0 +1,192 @@
+#!/bin/sh
+
+DEBUG=
+dbecho ()
+{
+    echo "${1}"
+	if [ ! -z "${DEBUG}" ]; then
+		echo "${1}" > /dev/console
+	fi
+}
+
+dbecho "DHCPv4 script:"
+dbecho "  Command     : $1"
+dbecho "  Interface   : ${interface}"
+dbecho "  IP Address  : ${ip}"
+dbecho "  Subnet Mask : ${subnet}"
+dbecho "  Routers     : ${router}"
+dbecho "  DNS Servers : ${dns}"
+dbecho "  Hostname    : ${hostname}"
+dbecho "  Domain      : ${domain}"
+dbecho "  Vendor opt  : ${vendopts}"
+dbecho "  Vendor opt15: ${vendopts_option15}"
+
+RESOLV_CONF=/etc/resolv.conf
+RESOLV_TEMP=/tmp/resolv.temp
+DHCP6C_TEXT="#--- Needed for dhcp6c (DO NOT REMOVE) ---"
+OLD_CONF_DIR=/tmp/network_config
+CONF_FILE=iDRACnet.old
+MAGIC_NUM=0
+
+if [ "${vendopts_option15}" != "" ]; then
+        export domain=${vendopts_option15}
+fi
+
+############################################################
+# Read committed settings (from last run of iDRACNet script)
+############################################################
+if [[ -e ${OLD_CONF_DIR}/${CONF_FILE} ]]; then
+	dbecho "Reading committed configuration..."
+	while [[ "${MAGIC_NUM}" == "0" ]]; do
+	  source ${OLD_CONF_DIR}/${CONF_FILE}
+	  if [[ "${OLD_FILE_COMPLETE}" != "TRUE" ]]; then
+	    sleep 1
+	  else
+	    MAGIC_NUM=1
+	  fi  
+	done  
+else
+	echo "Failed to read committed configuration."
+fi
+
+if [[ "${OLD_V4_DHCP_ENABLED}" != "yes" ]]; then
+	echo "WARNING: DHCPv4 isn't enabled so this shouldn't be running."
+	exit
+fi
+
+if [[ "$1" == "bound" ]] || [[ "$1" == "renew" ]]; then
+	# Build configuration string
+	CONFIG="iDRAC inet dhcp_renew add ${ip} netmask ${subnet}"
+
+	if [[ "${router}" != "" ]]; then
+		CONFIG="${CONFIG} route ${router}"
+	fi
+
+	if [[ "${OLD_DOMAIN_FROM_DHCP_ENABLED}" == "yes" ]] && [[ "${domain}" != "" ]]; then
+		dbecho "Updating domain..."
+		
+		echo -n ${domain} > /proc/sys/kernel/domainname
+
+		# Possible fix for SSO sign on.
+              #  if [[ "${OLD_HOST_NAME}" != "" ]]; then
+              #      sed "s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}.*${OLD_HOST_NAME}/${ip}    ${OLD_HOST_NAME}\.${domain}   ${OLD_HOST_NAME}/" /etc/hosts > /tmp/hosts.$$
+              #     mv /tmp/hosts.$$ /flash/data0/etc/hosts
+              #  fi
+
+		
+		CONFIG="${CONFIG} domain ${domain}"
+	else
+		dbecho "Skipping domain update..."
+	fi
+
+	if [[ "${OLD_V4_DNS_FROM_DHCP_ENABLED}" == "yes" ]]; then
+#		SERVERS=(${dns})
+#		V4_DNS1=${SERVERS[0]} 
+#		V4_DNS2=${SERVERS[1]}
+		V4_DNS1=$(echo ${dns} | cut -d" " -f1)
+		V4_DNS2=$(echo ${dns} | cut -d" " -f2 -s)
+		
+		# Add new nameservers to resolv.conf
+		if [[ "${V4_DNS1}" != "" ]]; then
+			CONFIG="${CONFIG} dns1 ${V4_DNS1}"
+		else
+			CONFIG="${CONFIG} dns1 0.0.0.0"
+		fi
+		
+		if [[ "${V4_DNS2}" != "" ]]; then
+			CONFIG="${CONFIG} dns2 ${V4_DNS2}"
+		else
+			CONFIG="${CONFIG} dns2 0.0.0.0"
+		fi
+	else
+		dbecho "Skipping update of DNS servers..."
+	fi
+	
+	dbecho "Configuration command line: ${CONFIG}"
+
+	/avct/sbin/avctifconfig ${CONFIG}
+	  SCA_PID=`pidof serverconfigagent`
+	  if [ "${SCA_PID}" == "" ]; then
+		# invoke only if -O option requested. so check arguments
+		UDHCPC_PID=`pidof udhcpc`
+		cat /proc/${UDHCPC_PID}/cmdline
+	  	if [ "${UDHCPC_PID}" != "" ]; then
+		   if grep -iq "vendopts" /proc/${UDHCPC_PID}/cmdline
+		   then
+		    /usr/bin/serverconfigagent ${vendopts} &
+		   else
+			dbecho "SERVER CONFIG AGENT NOT CALLED !!!!!!!!"
+		   fi
+		fi
+	  fi
+    if [[ "${OLD_DDNS_ENABLED}" == "yes" ]] && \
+       [[ "${OLD_V4_ENABLED}" == "yes" ]]   && \
+       [[ "${OLD_V4_DNS1}" != "0.0.0.0" ]]  && \
+       [[ "${OLD_HOST_NAME}" != "" ]]       && \
+       [[ "${OLD_DOMAIN_NAME}" != "" ]]     && \
+       [[ "${OLD_V4_ADDR}" != "0.0.0.0" ]]
+    then
+		OLD_V4_DDNS_ENABLED=yes
+    fi
+    
+    if [[ "${OLD_V4_DDNS_ENABLED}" == "yes" ]]; then
+		dbecho "Updating V4 DDNS..."
+                dbecho "osinet.script register: OLD_V4_DNS1=${OLD_V4_DNS1}"
+                dbecho "osinet.script register: V4_DNS1=${V4_DNS1}"
+        FQDN=${OLD_HOST_NAME}.${OLD_DOMAIN_NAME}
+        echo "update add ${FQDN} 86400 A ${OLD_V4_ADDR}" > /tmp/ddns
+        echo "send" >> /tmp/ddns
+        echo "update add $(ip2dns ${ip}) 86400 PTR ${FQDN}" >> /tmp/ddns
+        echo "send" >> /tmp/ddns
+        /usr/bin/nsupdate -t 10 -v /tmp/ddns
+    fi
+
+    if [[ "${staticroutes}" ]]; then
+	    ip addr add dev ${interface} local ${ip}/${mask} ${broadcast:+broadcast $broadcast}
+	    echo "${staticroutes}" | while read n g; do
+		    ip route add table main $n via $g
+	    done
+    elif  [[ "${msstaticroutes}" ]]; then
+	    ip addr add dev ${interface} local ${ip}/${mask} ${broadcast:+broadcast $broadcast}
+	    echo "${msstaticroutes}" | while read n g; do
+		    ip route add table main $n via $g
+	    done
+    fi
+elif [[ "$1" == "deconfig" ]]; then
+	dbecho "deconfig command"
+	# Build configuration string
+	CONFIG="iDRAC inet dhcp_renew add 0.0.0.0 netmask 0.0.0.0 route 0.0.0.0"
+
+	if [[ "${OLD_V4_DNS_FROM_DHCP_ENABLED}" == "yes" ]]; then
+		CONFIG="${CONFIG} dns1 0.0.0.0 dns2 0.0.0.0"
+	fi
+
+	# DELL REQUIREMENT
+	if [[ "${OLD_DOMAIN_FROM_DHCP_ENABLED}" == "yes" ]]; then
+		CONFIG="${CONFIG} domain dhcp"
+	fi
+	
+	dbecho "Configuration command line: ${CONFIG}"
+
+#	PID=$(pidof avctifconfig)
+#	while [[ "${PID}" != "" ]]; do
+#		# Currently running for a different interface so kill it
+#		dbecho "Killing avctifconfig..."
+#		killall avctifconfig
+#		PID=$(pidof avctifconfig)
+#	done
+
+	/avct/sbin/avctifconfig ${CONFIG} wait
+
+	IP=$(/sbin/ifconfig bond0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}')
+	if [[ "" == "${IP}" ]]; then
+		echo "Clear!"
+	else
+		echo "Clear Error! Ignore tempoparily"
+	fi
+	
+	# Allow some time for the 0.0.0.0 address to take effect before the discover is sent
+	# This is important to make sure we don't get a different address every time we enable DHCP
+	# TODO: Actually wait for the configuration event
+#	sleep 10
+fi

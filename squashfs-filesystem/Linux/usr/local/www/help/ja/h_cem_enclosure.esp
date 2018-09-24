@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+    <% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7 : ストレージ - エンクロージャ</title> 
+<script src="/js/prototype.js" type="text/javascript">     
+</script> 
+<script src="/js/Clarity.js" type="text/javascript">        
+</script> 
+<script src="h_common.js" type="text/javascript">
+        
+</script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+        
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> エンクロージャ </span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">移動先 : <a class="popup-jump-bar" href="#EnclosureSummary" id="cc7">エンクロージャ概要</a> | <a class="popup-jump-bar" href="#Enclosure" id="cc1">状態とプロパティ</a> | <a class="popup-jump-bar" href="#Fans" id="cc3">ファン</a> | <a class="popup-jump-bar" href="#PowerSupplies" id="cc4">電源装置</a> | <a class="popup-jump-bar" href="#TempProbes" id="cc5">温度プローブ</a> | <a class="popup-jump-bar" href="#EMM" id="cc6">エンクロージャ管理モジュール</a> | <a class="popup-jump-bar" href="#Other" id="A14">その他のオプション</a></span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p> このページを使用して、エンクロージャまたはバックプレーンの状態とプロパティを表示します。 このページは、接続先のコントローラによってグループ化されたストレージシステム内の全エンクロージャに関するサマリビューおよび詳細を提供します。 エンクロージャまたはバックプレーンに関連したコントローラの名前が次の形式でタブに表示されます。</p> 
+<p>&lt;コントローラモデル&gt; （PCI スロット&lt;X&gt;） または &lt;コントローラモデル&gt; （組み込み） </p> 
+<p>例えば、PERC H810 アダプタ（PCI スロット 1）または PERC H310 Mini（組み込み）</p> 
+<p> エンクロージャまたはバックプレーンの名前が次の形式でサブタブに表示されます。 </p> 
+<p> バックプレーンの場合、バックプレーン（&lt;コネクタID&gt;:&lt;配線順序&gt;）、ここで配線順序はベイ ID となります。 例：バックプレーン（0：0） </p> 
+<p> エンクロージャの場合、&lt;エンクロージャモデル名&gt;（&lt;コネクタID&gt;:&lt;配線順序&gt;）、配線順序はデイジーチェーンでの順序となります。 例：MD1200（1：0） </p> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>メモ：</span>これがバックプレーンの場合、このページには <b>エンクロージャ概要</b> および <b>正常性およびプロパティ</b> の項のみが表示されます。 </div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EnclosureSummary"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">トップに戻る</a> </div> 
+<span id="EnclosureSummary"> エンクロージャ概要 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"><p> この項では、エンクロージャまたはバックプレーン内の物理ディスク、およびそれらの状態が円グラフで表示されます。 エンクロージャまたはバックプレーン内の空きスロットの総数、およびそれらのスロットインデックスも表示されます。 </p> 
+<p> 現在選択されているエンクロージャまたはバックプレーンの物理ディスクを表示するには、<b> 物理ディスクの表示</b> をクリックします。 <b>物理ディスク</b> ページは該当するフィルタが自動適用された状態で表示されます。<br /> 
+</p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Enclosure"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">トップに戻る</a> </div> 
+<span id="Enclosure"> 状態およびプロパティ </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状態</b></span> </td> 
+<td class="desc"> 
+<p> エンクロージャまたはバックプレーンの状態が表示されます。 可能な値は次のとおりです。 </p> 
+<ul><li> OK <span class="status_ok"> &#8212; </span> コンポーネントが正常に動作していることを示します。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> プローブまたはその他の監視デバイスによって許容レベル以上またはそれ以下のコンポーネントの読み込みが検出されたことを示します。 コンポーネントは機能しているかもしれませんが、故障する可能性があります。 コンポーネントはまた、正常な状態で機能していない可能性があります。 </li> 
+<li> 重要 <span class="status_critical"> &#8212; </span> コンポーネントが故障したか、コンポーネントの故障が差し迫っていることを示します。 コンポーネントは早急に処置をする必要があり、交換が必要な場合があります。</li> 
+<li> 情報が使用できません<span class="status_unknown"> &#8212; </span> コンポーネントの状態が不明であることを示します。</li></ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>コネクタ</b></span> </td> 
+<td class="desc"> エンクロージャまたはバックプレーンが接続されているコントローラポートの番号を表示します。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>エンクロージャ位置</b></span></td> 
+<td class="desc"> エンクロージャに割り当てられたエンクロージャ ID が表示されます。 コントローラに接続されたエンクロージャのインデックスは、0 から始まります。 <br /> バックプレーンの場合、<b>該当なし</b> と表示されます。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>ベイ ID</b></span></td> 
+<td class="desc"> バックプレーンのベイ ID を表示します。 外部エンクロージャの場合、<b>該当なし</b> と表示されます。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>ファームウェアバージョン</b></span> </td> 
+<td class="desc"> エンクロージャのファームウェアバージョンを表示します。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>SAS アドレス</b></span> </td> 
+<td class="desc"> SAS エンクロージャまたはバックプレーン固有の SAS アドレスを表示します。 使用不可の場合、<b>該当なし</b> と表示されます。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>冗長パス</b></span> </td> 
+<td class="desc"> 
+<p> エンクロージャでの冗長パス設定が検出されたかどうかを示します。 可能な値は次のとおりです。 </p> 
+<ul> 
+<li> あり </li> 
+<li> なし </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>サービスタグ</b></span> </td> 
+<td class="desc"> エンクロージャのサービスタグ番号を表示します。 サービスプロバイダにお問い合わせの際、この番号が必要になります。 この番号とエンクロージャに貼られているサービスタグの番号を照合させることにより、この番号を使用してストレージ環境内の特定のエンクロージャを識別します。 例えば、複数のエンクロージャを所有しており、そのうちのひとつが故障した場合、サービスタグ番号を使用して故障したエンクロージャを識別できます。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b> 資産タグ</b></span> </td> 
+<td class="desc"> エンクロージャの資産タグ情報を表示します。 </td> 
+</tr> 
+</table> 
+<br></br> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>メモ：</span>これがバックプレーンの場合、<b>冗長パス</b>、<b>サービスタグ</b>、および <b>管理タグ</b> のプロパティは表示されません。 </div> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Fans"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">トップに戻る</a> </div> 
+<span id="Fans"> ファン </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td width="46" class="item"> 
+<span><b>状態</b></span> </td> 
+<td width="1003" class="desc"> 
+<p> ファンの状態を表示します。 可能な値は次のとおりです。 </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> コンポーネントが正常に動作していることを示します。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> プローブまたはその他の監視デバイスによって許容レベル以上またはそれ以下のコンポーネントの読み込みが検出されたことを示します。 コンポーネントは機能しているかもしれませんが、故障する可能性があります。 コンポーネントはまた、正常な状態で機能していない可能性があります。 </li> 
+<li> 重要 <span class="status_critical"> &#8212; </span> コンポーネントが故障したか、コンポーネントの故障が差し迫っていることを示します。 コンポーネントは早急に処置をする必要があり、交換が必要な場合があります。</li> 
+<li>情報が使用できません<span class="status_unknown"> &#8212; </span> コンポーネントの状態が不明であることを示します。 </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名前</b></span> </td> 
+<td class="desc"> ファンの名前を次の形式で表示します。ファン &lt;索引&gt; 例えば、ファン 1 などです。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>速度</b></span> </td> 
+<td class="desc"> 
+<p> ファン速度を示します。 可能な値は次のとおりです。 </p> 
+<ul> 
+<li> 速い </li> 
+<li> 中 </li> 
+<li> 遅い </li> 
+<li> 停止 </li> 
+<li> 情報が使用できません</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="PowerSupplies"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">トップに戻る</a> </div> 
+<span id="PowerSupplies"> 電源装置 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状態</b></span> </td> 
+<td class="desc"> 
+<p> 電源装置の状態を表示します。 可能な値は次のとおりです。 </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> コンポーネントが正常に動作していることを示します。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> プローブまたはその他の監視デバイスによって許容レベル以上またはそれ以下のコンポーネントの読み込みが検出されたことを示します。 コンポーネントは機能しているかもしれませんが、故障する可能性があります。 コンポーネントはまた、正常な状態で機能していない可能性があります。 </li> 
+<li> 重要 <span class="status_critical"> &#8212; </span> コンポーネントが故障したか、コンポーネントの故障が差し迫っていることを示します。 コンポーネントは早急に処置をする必要があり、交換が必要な場合があります。</li> 
+<li> 情報が使用できません<span class="status_unknown"> &#8212; </span> コンポーネントの状態が不明であることを示します。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名前</b></span> </td> 
+<td class="desc"> 電源装置ユニットの名前を次の形式で表示します。電源装置 &lt;索引&gt; 例えば、電源装置 1 などです。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>パーツ番号</b></span> </td> 
+<td class="desc"> 電源装置ユニットのパーツ番号を表示します。 <br /> このプロパティは、E.17 ファームウェア以降を備えた PowerVault 22xS エンクロージャでは表示されません。 </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="TempProbes"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">トップに戻る</a> </div> 
+<span id="TempProbes"> 温度プローブ </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> 温度プローブはエンクロージャの温度をモニタします。 各温度プローブには、警告しきい値および障害しきい値があります。 警告しきい値は、エンクロージャが許容範囲以上に熱い、または冷たい温度に近づいていることを示します。 障害しきい値は、エンクロージャが損傷やデータ損失につながる危険な温度に達したことを示します。 </p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span> 
+</span><span><b>状態</b></span> </td> 
+<td class="desc"> 
+<p> 温度プローブの状態を表示します。 可能な値は次のとおりです。 </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> コンポーネントが正常に動作していることを示します。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> プローブまたはその他の監視デバイスによって許容レベル以上またはそれ以下のコンポーネントの読み込みが検出されたことを示します。 コンポーネントは機能しているかもしれませんが、故障する可能性があります。 コンポーネントはまた、正常な状態で機能していない可能性があります。 </li> 
+<li> 重要 <span class="status_critical"> &#8212; </span> コンポーネントが故障したか、コンポーネントの故障が差し迫っていることを示します。 コンポーネントは早急に処置をする必要があり、交換が必要な場合があります。</li> 
+<li> 情報が使用できません<span class="status_unknown"> &#8212; </span> コンポーネントの状態が不明であることを示します。</li> 
+</ul> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>メモ：</span>一部のエンクロージャでは、現在のエンクロージャ温度および温度プローブ状態の表示前に短い遅延が発生する場合があります。 </div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名前</b></span> </td> 
+<td class="desc"> 温度プローブの名前を次の形式で表示します。温度プローブ &lt;索引&gt; 例えば、温度プローブ 0 となります。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>読み取り値</b></span> </td> 
+<td class="desc"> 温度プローブによって報告されたエンクロージャの現在の温度（摂氏）を表示します。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>最小警告しきい値</b></span> </td> 
+<td class="desc"> 現在設定されている最小警告しきい値温度（摂氏）を表示します。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>最大警告しきい値</b></span> </td> 
+<td class="desc"> 現在設定されている最大警告しきい値温度（摂氏）を表示します。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>最小エラーしきい値</b></span> </td> 
+<td class="desc"> 現在設定されている最小障害しきい値温度（摂氏）を表示します。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>最大エラーしきい値</b></span> </td> 
+<td class="desc"> 現在設定されている最大障害しきい値温度（摂氏）を表示します。 </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EMM"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">トップに戻る</a> </div> 
+<span id="EMM"> エンクロージャ管理モジュール </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> この項では、エンクロージャに取り付けられたエンクロージャ管理モジュール（EMM）に関する情報を表示します。 エンクロージャには 1つ、または複数の EMM が装備されている場合があります。 EMM モジュールはエンクロージャの次のコンポーネントをモニタします。 </p> 
+<ul> 
+<li> ファン </li> 
+<li> 電源装置 </li> 
+<li> 温度プローブ </li> 
+<li> 物理ディスクの挿入と取り外し </li> 
+<li> エンクロージャの LED </li> 
+</ul> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状態</b></span> </td> 
+<td class="desc"> 
+<p> EMM の状態を表示します。 可能な値は次のとおりです。 </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> コンポーネントが正常に動作していることを示します。 </li> 
+<li> 警告 <span class="status_noncritical"> &#8212; </span> プローブまたはその他の監視デバイスによって許容レベル以上またはそれ以下のコンポーネントの読み込みが検出されたことを示します。 コンポーネントは機能しているかもしれませんが、故障する可能性があります。 コンポーネントはまた、正常な状態で機能していない可能性があります。 </li> 
+<li> 重要 <span class="status_critical"> &#8212; </span> コンポーネントが故障したか、コンポーネントの故障が差し迫っていることを示します。 コンポーネントは早急に処置をする必要があり、交換が必要な場合があります。</li> 
+<li> 情報が使用できません<span class="status_unknown"> &#8212; </span> コンポーネントの状態が不明であることを示します。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名前</b></span> </td> 
+<td class="desc"> 
+<p> EMM の名前を EMM &lt;索引&gt; の形式で表示します。 例えば、EMM 1 となります。 </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>パーツ番号</b></span> </td> 
+<td class="desc"> EMM モジュールのパーツ番号を表示します。 </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>ファームウェアバージョン</b></span> </td> 
+<td class="desc"> EMM で使用可能なファームウェアバージョンを表示します。 エンクロージャ内の全 EMM モジュールのファームウェアは、すべて同じファームウェアレベルであるようにしてください。 </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                                        writeHelpOtherBegin();
+                                        writeHelpOtherEnd();
+                                    
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

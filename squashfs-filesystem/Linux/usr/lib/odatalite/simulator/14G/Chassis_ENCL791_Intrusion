@@ -1,0 +1,32 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/ENCL791/Intrusion/$entity",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Intrusion",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791",
+    "@odata.type": "Dell#Intrusion.0.0.1.Intrusion",
+    "Id": "Intrusion",
+    "Name": "Enclosure Intrusion",
+    "Status": {
+        "Health": "Critical",
+        "HealthRollup": "Critical"
+    },
+    "FaultList": [
+        {
+            "Message": "This is a sample message that can indicate why a component health status is not OK.",
+            "MessageID": "INT0007",
+            "MessageArgs": [ 
+                "sample" 
+            ],
+            "FQDD": "Enc.Intrusion.1"
+        },
+        {
+            "Message": "This is a sample message that can indicate why a component health status is not OK.",
+            "MessageID": "INT0004",
+            "MessageArgs": [ 
+                "sample" 
+            ],
+            "FQDD": "Enc.Intrusion.2"
+        }
+    ],
+    "Oem": {}
+}

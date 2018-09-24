@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+    <% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Speichergehäuse</title> 
+<script src="/js/prototype.js" type="text/javascript">     
+</script> 
+<script src="/js/Clarity.js" type="text/javascript">        
+</script> 
+<script src="h_common.js" type="text/javascript">
+        
+</script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+        
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> Gehäuse </span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">Gehe zu: <a class="popup-jump-bar" href="#EnclosureSummary" id="cc7">Gehäusezusammenfassung</a> | <a class="popup-jump-bar" href="#Enclosure" id="cc1">Funktionszustand und Eigenschaften</a> | <a class="popup-jump-bar" href="#Fans" id="cc3">Lüfter</a> | <a class="popup-jump-bar" href="#PowerSupplies" id="cc4">Netzteile</a> | <a class="popup-jump-bar" href="#TempProbes" id="cc5"> Temperatursonde</a> | <a class="popup-jump-bar" href="#EMM" id="cc6">Gehäuseverwaltungsmodul</a> | <a class="popup-jump-bar" href="#Other" id="A14">Weitere Optionen</a></span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p> Auf dieser Seite können Sie den Funktionszustand und die Eigenschaften des Gehäuses oder der Rückwandplatine anzeigen. Hier finden Sie einen Überblick und Details zu allen Gehäusen im Speichersystem, gruppiert nach den Controllern, mit denen sie verbunden sind. Der Name des dem Gehäuse oder der Rückwandplatine zugeordneten Controllers wird auf der Registerkarte in folgendem Format angezeigt:</p> 
+<p>&lt;Controller-Modell&gt; (PCI-Steckplatz&lt;X&gt;) ODER &lt;Controller-Modell&gt; (Integriert) </p> 
+<p>Zum Beispiel PERC H810 Adapter (PCI-Steckplatz 1 ) oder PERC H310 Mini (Integriert)</p> 
+<p> Der Name des Gehäuses oder der Rückwandplatine wird auf der untergeordneten Registerkarte im folgenden Format angezeigt: </p> 
+<p> Wenn es sich um eine Rückwandplatine handelt, Rückwandplatine (&lt;Anschluss-ID&gt;:&lt;Verkabelungsreihenfolge&gt;), wobei die kabelgebundene Reihenfolge die Schacht-ID ist. Beispiel: Rückwandplatine (0:0) </p> 
+<p> Wenn es sich um ein Gehäuse handelt, &lt;Gehäuse-Modellname&gt; (&lt;Anschluss-ID&gt;:&lt;Verkabelungsreihenfolge&gt;), wobei die kabelgebundene Reihenfolge hintereinander geschaltet sein muss. Beispiel: MD1200 (1:0) </p> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>Anmerkung:</span>Falls es eine Rückwandplatine ist, zeigt diese Seite nur die Abschnitte <b>Gehäusezusammenfassung</b> und <b>Funktionszustand und Eigenschaften</b> an. </div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EnclosureSummary"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Zurück zum Seitenanfang</a> </div> 
+<span id="EnclosureSummary"> Gehäusezusammenfassung </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"><p> Dieser Abschnitt zeigt ein Kreisdiagramm der physischen Festplatten im Gehäuse oder der Rückwandplatine und deren Zustand an. Zeigt auch die Gesamtzahl freier Steckplätze im Gehäuse oder der Rückwandplatine und deren Steckplatzindizes an. </p> 
+<p> Klicken Sie zur Anzeige der physischen Festplatten im derzeit ausgewählten Gehäuse oder der derzeit ausgewählten Rückwandplatine auf <b>Physische Festplatten anzeigen</b>. Es wird die Seite <b>Physische Festplatte</b> mit dem entsprechenden Filter angezeigt, der automatisch angewendet wird.<br /> 
+</p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Enclosure"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Zurück zum Seitenanfang</a> </div> 
+<span id="Enclosure"> Funktionszustand und Eigenschaften </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Status</b></span> </td> 
+<td class="desc"> 
+<p> Zeigt den Funktionszustand des Gehäuses oder der Rückwandplatine an. Mögliche Werte sind: </p> 
+<ul><li> OK <span class="status_ok"> &#8212; </span> Zeigt an, dass die Komponente wie erwartet funktioniert. </li> 
+<li> Warnung <span class="status_noncritical"> &#8212; </span>Zeigt an, dass eine Sonde oder ein anderes Überwachungsgerät einen Messwert für die Komponente erkannt hat, der über oder unter dem erlaubten Grenzwert liegt. Die Komponente funktioniert vielleicht, kann aber ausfallen. Die Funktionsfähigkeit der Komponente ist eventuell beeinträchtigt. </li> 
+<li> Kritisch <span class="status_critical"> &#8212; </span> Zeigt an, dass die Komponente entweder fehlerhaft ist oder ein Fehler droht. Die Komponente erfordert sofortige Aufmerksamkeit und muss eventuell ersetzt werden.</li> 
+<li> Informationen nicht verfügbar<span class="status_unknown"> &#8212; </span> Zeigt an, dass der Komponentenstatus nicht bekannt ist.</li></ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Anschlüsse</b></span> </td> 
+<td class="desc"> Zeigt die Controller-Schnittstellennummer an, an die das Gehäuse oder die Rückwandplatine angeschlossen ist.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Gehäuseposition</b></span></td> 
+<td class="desc"> Zeigt die dem Gehäuse zugeordnete Gehäuse-ID an. Der Index für die den Controllern angehängten Gehäuse starten bei 0. <br /> Für die Rückwandplatine zeigt sie <b>Nicht zutreffend</b> an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Schacht-ID</b></span></td> 
+<td class="desc"> Zeigt die Schacht-ID der Rückwandplatine an. Für externe Gehäuse wird <b>Nicht zutreffend</b> angezeigt.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Firmware-Version</b></span> </td> 
+<td class="desc"> Zeigt die Gehäuse-Firmware-Version an. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>SAS-Adresse</b></span> </td> 
+<td class="desc"> Zeigt die einmalige SAS-Adresse des SAS-Gehäuses oder der Rückwandplatine an. Wenn sie nicht verfügbar ist, wird <b>Nicht zutreffend</b> angezeigt.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Redundanter Pfad</b></span> </td> 
+<td class="desc"> 
+<p> Gibt an, ob eine redundante Pfadkonfiguration zu einem Gehäuse entdeckt wird. Mögliche Werte sind: </p> 
+<ul> 
+<li> Vorhanden </li> 
+<li> Nicht vorhanden </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Service Tag</b></span> </td> 
+<td class="desc"> Zeigt die Service-Tag-Nummer des Gehäuses an. Diese Nummer wird benötigt, wenn Sie Ihren Dienstanbieter kontaktieren. Verwenden Sie diese Nummer, um ein bestimmtes Gehäuse Ihrer Umgebung zu identifizieren, indem Sie diese Nummer der Service-Tag-Nummer am Gehäuse zuordnen. Wenn Sie zum Beispiel mehrere Gehäuse haben und eines davon ausfällt, verwenden Sie die Service-Tag-Nummer, um das Gehäuse zu identifizieren, das fehlerhaft ist. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b> Systemkennnummer</b></span> </td> 
+<td class="desc"> Zeigt die Systemkennnummerdaten des Gehäuses an. </td> 
+</tr> 
+</table> 
+<br></br> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>Anmerkung:</span>Falls es eine Rückwandplatine ist, werden die Eigenschaften <b>Redundanter Pfad</b>, <b>Service-Tag-Nummer</b> und <b>Systemkennnummer</b> nicht angezeigt. </div> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Fans"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Zurück zum Seitenanfang</a> </div> 
+<span id="Fans"> Lüfter </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Status</b></span> </td> 
+<td class="desc"> 
+<p> Zeigt den Funktionszustand des Lüfters an. Mögliche Werte sind: </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> Zeigt an, dass die Komponente wie erwartet funktioniert. </li> 
+<li> Warnung <span class="status_noncritical"> &#8212; </span>Zeigt an, dass eine Sonde oder ein anderes Überwachungsgerät einen Messwert für die Komponente erkannt hat, der über oder unter dem erlaubten Grenzwert liegt. Die Komponente funktioniert vielleicht, kann aber ausfallen. Die Funktionsfähigkeit der Komponente ist eventuell beeinträchtigt. </li> 
+<li> Kritisch <span class="status_critical"> &#8212; </span> Zeigt an, dass die Komponente entweder fehlerhaft ist oder ein Fehler droht. Die Komponente erfordert sofortige Aufmerksamkeit und muss eventuell ersetzt werden.</li> 
+<li>Informationen nicht verfügbar<span class="status_unknown"> &#8212; </span> Zeigt an, dass der Komponentenstatus nicht bekannt ist. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Name</b></span> </td> 
+<td class="desc"> Zeigt den Namen des Lüfters im folgenden Format an: Lüfter &lt;index&gt;. Beispiel: Lüfter 1. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Geschwindigkeit</b></span> </td> 
+<td class="desc"> 
+<p> Zeigt die Lüftergeschwindigkeit an. Mögliche Werte sind: </p> 
+<ul> 
+<li> Schnell </li> 
+<li> Mittel </li> 
+<li> Langsam </li> 
+<li> Gestoppt </li> 
+<li>  Informationen nicht verfügbar</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="PowerSupplies"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Zurück zum Seitenanfang</a> </div> 
+<span id="PowerSupplies"> Netzteile </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Status</b></span> </td> 
+<td class="desc"> 
+<p> Zeigt den Funktionszustand der Netzteile an. Mögliche Werte sind: </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> Zeigt an, dass die Komponente wie erwartet funktioniert. </li> 
+<li> Warnung <span class="status_noncritical"> &#8212; </span>Zeigt an, dass eine Sonde oder ein anderes Überwachungsgerät einen Messwert für die Komponente erkannt hat, der über oder unter dem erlaubten Grenzwert liegt. Die Komponente funktioniert vielleicht noch, könnte aber ausfallen. Die Funktionsfähigkeit der Komponente ist eventuell beeinträchtigt. </li> 
+<li> Kritisch <span class="status_critical"> &#8212; </span> Zeigt an, dass die Komponente entweder fehlerhaft ist oder ein Fehler droht. Die Komponente erfordert sofortige Aufmerksamkeit und muss eventuell ersetzt werden.</li> 
+<li> Informationen nicht verfügbar<span class="status_unknown"> &#8212; </span> Zeigt an, dass der Komponentenstatus nicht bekannt ist.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Name</b></span> </td> 
+<td class="desc"> Zeigt den Namen der Netzteileinheit im folgenden Format an: Netzteil &lt;index&gt;. Beispiel: Netzteil 1. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Teilenummer</b></span> </td> 
+<td class="desc"> Zeigt die Teilenummer der Netzteileinheit an. <br /> Diese Eigenschaft wird bei PowerVault 22xS-Gehäusen mit einer Firmware-Version ab Version E.17 nicht angezeigt. </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="TempProbes"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Zurück zum Seitenanfang</a> </div> 
+<span id="TempProbes"> Temperatursonden </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> Die Temperatursonden überwachen die Temperatur des Gehäuses. Jeder Temperatursonde ist mit einem Schwellenwert für Warnungen und Ausfälle ausgerüstet. Der Warnungsschwellenwert zeigt an, dass das Gehäuse zu warm oder zu kalt wird. Der Ausfallschwellenwert zeigt an, dass das Gehäuse eine Besorgnis erregende Temperatur erreicht hat, die möglicherweise zu Schäden oder Datenverlusten führen könnte. </p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span> 
+</span><span><b>Status</b></span> </td> 
+<td class="desc"> 
+<p> Zeigt den Funktionszustand der Temperatursonde an. Mögliche Werte sind: </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> Zeigt an, dass die Komponente wie erwartet funktioniert. </li> 
+<li> Warnung <span class="status_noncritical"> &#8212; </span>Zeigt an, dass eine Sonde oder ein anderes Überwachungsgerät einen Messwert für die Komponente erkannt hat, der über oder unter dem erlaubten Grenzwert liegt. Die Komponente funktioniert vielleicht noch, könnte aber ausfallen. Die Funktionsfähigkeit der Komponente ist eventuell beeinträchtigt. </li> 
+<li> Kritisch <span class="status_critical"> &#8212; </span> Zeigt an, dass die Komponente entweder fehlerhaft ist oder ein Fehler droht. Die Komponente erfordert sofortige Aufmerksamkeit und muss eventuell ersetzt werden.</li> 
+<li> Informationen nicht verfügbar<span class="status_unknown"> &#8212; </span> Zeigt an, dass der Komponentenstatus nicht bekannt ist.</li> 
+</ul> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>Anmerkung:</span>Für einige Gehäuse gibt es vor der Anzeige der aktuellen Gehäusetemperatur und des Temperatursondenzustands evtl. eine kurze Verzögerung. </div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Name</b></span> </td> 
+<td class="desc"> Zeigt den Namen der Temperatursonde im Folgenden Format an: Temperatursonde &lt;index&gt;. Beispiel: Temperatursonde 0. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Messwert</b></span> </td> 
+<td class="desc"> Zeigt die aktuelle Temperatur des Gehäuses (in Grad Celsius) an, wie sie durch die Temperatursonde gemeldet wurde. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Minimaler Warnungsschwellenwert</b></span> </td> 
+<td class="desc"> Zeigt die Mindesttemperatur für den Warnungsschwellenwert (in Grad Celsius) an, die derzeit festgelegt ist. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Maximaler Warnungsschwellenwert</b></span> </td> 
+<td class="desc"> Zeigt die Höchsttemperatur für den Warnungsschwellenwert (in Grad Celsius) an, die derzeit festgelegt ist. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Minimaler Fehlerschwellenwert</b></span> </td> 
+<td class="desc"> Zeigt die Mindesttemperatur für den Fehlerschwellenwert (in Grad Celsius) an, die derzeit festgelegt ist. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Maximaler Fehlerschwellenwert</b></span> </td> 
+<td class="desc"> Zeigt die Höchsttemperatur für den Fehlerschwellenwert (in Grad Celsius) an, die derzeit festgelegt ist. </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EMM"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Zurück zum Seitenanfang</a> </div> 
+<span id="EMM"> Gehäuseverwaltungsmodul (EMM) </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> In diesem Abschnitt erhalten Sie Informationen zu den Gehäuseverwaltungsmodulen (EMMs), die innerhalb des Gehäuses installiert sind. Das Gehäuse kann ein oder mehrere EMMs enthalten. Die EMM-Module überwachen die folgenden Komponenten des Gehäuses: </p> 
+<ul> 
+<li> Lüfter </li> 
+<li> Netzteile </li> 
+<li> Temperatursonden </li> 
+<li> Einsetzen oder Entfernen einer physischen Festplatte </li> 
+<li> LEDs auf dem Gehäuse </li> 
+</ul> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Status</b></span> </td> 
+<td class="desc"> 
+<p> Zeigt den EMM-Funktionszustand an. Mögliche Werte sind: </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> Zeigt an, dass die Komponente wie erwartet funktioniert. </li> 
+<li> Warnung <span class="status_noncritical"> &#8212; </span>Zeigt an, dass eine Sonde oder ein anderes Überwachungsgerät einen Messwert für die Komponente erkannt hat, der über oder unter dem erlaubten Grenzwert liegt. Die Komponente funktioniert vielleicht, kann aber ausfallen. Die Funktionsfähigkeit der Komponente ist eventuell beeinträchtigt. </li> 
+<li> Kritisch <span class="status_critical"> &#8212; </span> Zeigt an, dass die Komponente entweder fehlerhaft ist oder ein Fehler droht. Die Komponente erfordert sofortige Aufmerksamkeit und muss eventuell ersetzt werden.</li> 
+<li> Informationen nicht verfügbar<span class="status_unknown"> &#8212; </span> Zeigt an, dass der Komponentenstatus nicht bekannt ist.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Name</b></span> </td> 
+<td class="desc"> 
+<p> Zeigt den EMM-Namen im Format EMM &lt;index&gt; an. Beispiel: EMM 1. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Teilenummer</b></span> </td> 
+<td class="desc"> Zeigt die Teilenummer des EMM an. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Firmware-Version</b></span> </td> 
+<td class="desc"> Zeigt die auf dem EMM verfügbare Firmware-Version an. Alle EMM-Module im Gehäuse müssen über dieselbe Firmware-Stufe verfügen. </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                                        writeHelpOtherBegin();
+                                        writeHelpOtherEnd();
+                                    
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

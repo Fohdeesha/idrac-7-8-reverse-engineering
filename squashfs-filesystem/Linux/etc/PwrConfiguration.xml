@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FQDD Name="System.Embedded.1">
+  <ConfigGroup Index="1" Name="ServerPwr" GroupType="0x4330" DisplayName="Server Power" Description="Server Power Information">
+    <ConfigItem Type="Integer" Min="0" Max="65535" DisplayOrder="1402">
+      <Name>PowerCapValue</Name>
+      <DisplayName Lang="en-US">Power Cap Value</DisplayName>
+      <DefaultValue>32767</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1401">
+      <Name>PowerCapSetting</Name>
+      <DisplayName Lang="en-US">Power Cap Setting</DisplayName>
+      <DefaultValue IntVal="0">Disabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="1">Enabled</PossibleValue>
+        <PossibleValue IntVal="0">Disabled</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Integer" RO="true" DisplayOrder="1403">
+      <Name>PowerCapMaxThres</Name>
+      <DisplayName Lang="en-US">Power Cap Max Threshold</DisplayName>
+      <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Integer" RO="true" DisplayOrder="1404">
+      <Name>PowerCapMinThres</Name>
+      <DisplayName Lang="en-US">Power Cap Min Threshold</DisplayName>
+      <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1405" HideFrom="DCS">
+      <Name>PSRedPolicy</Name>
+      <DisplayName Lang="en-US">Power Supply Redundancy Policy</DisplayName>
+      <DefaultValue IntVal="0">Not Redundant</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="255">N/A</PossibleValue>
+        <PossibleValue IntVal="0">Not Redundant</PossibleValue>
+        <PossibleValue IntVal="1">AC/Input Redundant</PossibleValue>
+        <PossibleValue IntVal="2">PSU Redundant</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1406" HideFrom="DCS">
+      <Name>PSPFCEnabled</Name>
+      <DisplayName Lang="en-US">Power Supply PFC Enable</DisplayName>
+      <DefaultValue IntVal="0">Disabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="1">Enabled</PossibleValue>
+        <PossibleValue IntVal="0">Disabled</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Integer"  Min="0" Max="500" RO="true" DisplayOrder="1407" HideFrom="DCS">
+      <Name>pciePowerAllocation</Name>
+      <DisplayName Lang="en-US">PCIe Power Power Allocation</DisplayName>
+      <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1408" HideFrom="DCS">
+      <Name>PSRapidOn</Name>
+      <DisplayName Lang="en-US">Power Supply Rapid On Enable</DisplayName>
+      <DefaultValue IntVal="1">Enabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="1">Enabled</PossibleValue>
+        <PossibleValue IntVal="0">Disabled</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Integer" Min="0" Max="65535" RO="true"  DisplayOrder="1409">
+      <Name>ActivePowerCapVal</Name>
+      <DisplayName Lang="en-US">Active Power Cap Value</DisplayName>
+      <DefaultValue>32767</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="128" RO="true" DisplayOrder="1410" HideFrom="DCS">
+      <Name>ActivePolicyName</Name>
+      <DisplayName Lang="en-US">Active Power Cap Policy Name</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1411" HideFrom="DCS">
+      <Name>RapidOnPrimaryPSU</Name>
+      <DisplayName Lang="en-US">Rapid on Primary PSU</DisplayName>
+      <DefaultValue IntVal="1">PSU1</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="1">PSU1</PossibleValue>
+        <PossibleValue IntVal="2">PSU2</PossibleValue>
+        <PossibleValue IntVal="5">PSU1 and PSU3</PossibleValue>
+        <PossibleValue IntVal="10">PSU2 and PSU4</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Integer" Min="0" Max="1600" RO="true" DisplayOrder="1412" HideFrom="PE">
+      <Name>SCViewSledPwr</Name>
+      <DisplayName Lang="en-US">Chassis controller view of Individual sled power</DisplayName>
+      <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="ServerTopology" GroupType="0x4331" DisplayName="Server Topology" Description="Server Topology Information">
+    <ConfigItem Type="String" MaxLength="128" DisplayOrder="1421">
+      <Name>DataCenterName</Name>
+      <DisplayName Lang="en-US">Data Center Name</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="128" DisplayOrder="1422">
+      <Name>AisleName</Name>
+      <DisplayName Lang="en-US">Aisle Name</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="128" DisplayOrder="1423">
+      <Name>RackName</Name>
+      <DisplayName Lang="en-US">Rack Name</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Integer" Min="1" Max="255" DisplayOrder="1424">
+      <Name>RackSlot</Name>
+      <DisplayName Lang="en-US">Rack Slot</DisplayName>
+      <DefaultValue>1</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Integer" RO="true"  DisplayOrder="1425">
+      <Name>SizeOfManagedSystemInU</Name>
+      <DisplayName Lang="en-US">Size of Managed System in U</DisplayName>
+      <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="64" RO="true" DisplayOrder="1426">
+      <Name>ChassisName</Name>
+      <DisplayName Lang="en-US">Chassis Name(Modular Only)</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" RO="true"  DisplayOrder="1427">
+      <Name>BladeSlotNumInChassis</Name>
+      <DisplayName Lang="en-US">Blade Slot Num In Chassis(Modular Only)</DisplayName>
+      <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="128" DisplayOrder="1428">
+      <Name>RoomName</Name>
+      <DisplayName Lang="en-US">Room Name</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>    
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="LCD" GroupType="0x4023" DisplayName="LCD" Description="LCD Configuration">
+    <ConfigItem Type="String" MaxLength="62" RO="true" DisplayOrder="1431" HideFrom="DCS">
+      <Name>CurrentDisplay</Name>
+      <DisplayName Lang="en-US">Current LCD Display String</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="62" DisplayOrder="1433" HideFrom="DCS">
+      <Name>UserDefinedString</Name>
+      <DisplayName Lang="en-US">User Defined String for LCD</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1432" HideFrom="DCS">
+      <Name>Configuration</Name>
+      <DisplayName Lang="en-US">LCD Configuration</DisplayName>
+      <DefaultValue IntVal="32">Service Tag</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">User Defined</PossibleValue>
+        <PossibleValue IntVal="1">Model Name</PossibleValue>
+        <PossibleValue IntVal="2">None</PossibleValue>
+        <PossibleValue IntVal="4">iDRAC IPv4 Address</PossibleValue>
+        <PossibleValue IntVal="8">iDRAC MAC Address</PossibleValue>
+        <PossibleValue IntVal="16">OS System Name</PossibleValue>
+        <PossibleValue IntVal="32">Service Tag</PossibleValue>
+        <PossibleValue IntVal="64">IPv6 Address</PossibleValue>
+        <PossibleValue IntVal="128">Ambient Temperature</PossibleValue>
+        <PossibleValue IntVal="256">System Watts</PossibleValue>
+        <PossibleValue IntVal="512">Asset Tag</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1434" HideFrom="DCS">
+      <Name>vConsoleIndication</Name>
+      <DisplayName Lang="en-US">vConsole Indication</DisplayName>
+      <DefaultValue IntVal="0">Disabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="1">Enabled</PossibleValue>
+        <PossibleValue IntVal="0">Disabled</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1435" HideFrom="DCS">
+      <Name>QualifierWatt</Name>
+      <DisplayName Lang="en-US">System Watt Qualifier</DisplayName>
+      <DefaultValue IntVal="0">Watts</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Watts</PossibleValue>
+        <PossibleValue IntVal="1">BTU/hr</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1436" HideFrom="DCS">
+      <Name>QualifierTemp</Name>
+      <DisplayName Lang="en-US">Ambient Temperature Qualifier</DisplayName>
+      <DefaultValue IntVal="0">C</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">C</PossibleValue>
+        <PossibleValue IntVal="1">F</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1437" HideFrom="DCS">
+      <Name>FrontPanelLocking</Name>
+      <DisplayName Lang="en-US">FrontPanel Locking</DisplayName>
+      <DefaultValue IntVal="0">Full-Access</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Full-Access</PossibleValue>
+        <PossibleValue IntVal="1">View-Only</PossibleValue>
+        <PossibleValue IntVal="2">Locked</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="ThermalConfig" GroupType="0x4039" DisplayName="Thermal Configuration" Description="Configuration data related to Thermal Monitoring">
+    <ConfigItem Type="Integer" Min="0" Max="365" DisplayOrder="1440" HideFrom="DCS">
+      <Name>EventGenerationInterval</Name>
+      <DisplayName Lang="en-US">Event Generation Interval</DisplayName>
+      <DefaultValue>30</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="1441" HideFrom="DCS">
+      <Name>FreshAirCompliantConfiguration</Name>
+      <DisplayName Lang="en-US">Fresh Air Compliant Configuration</DisplayName>
+      <DefaultValue IntVal="1">Yes</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Not Applicable</PossibleValue>
+        <PossibleValue IntVal="1">Yes</PossibleValue>
+        <PossibleValue IntVal="2">No</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Integer" Min="0" Max="365" DisplayOrder="1440" HideFrom="DCS">
+      <Name>CriticalEventGenerationInterval</Name>
+      <DisplayName Lang="en-US">Critical Event Generation Interval</DisplayName>
+      <DefaultValue>30</DefaultValue>
+    </ConfigItem>
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="ServerOS" GroupType="0x4332" DisplayName="Server Operating System" Description="Information about the Server OS name, OS version and Host Name">
+    <ConfigItem Type="String" MaxLength="62" DisplayOrder="1450">
+	  <Name>HostName</Name>
+	  <DisplayName Lang="en-US">Host Name</DisplayName>
+	  <DefaultValue></DefaultValue>
+	</ConfigItem> 
+	<ConfigItem Type="String" MaxLength="62" DisplayOrder="1451">
+	  <Name>OSName</Name>
+	  <DisplayName Lang="en-US">Operating System Name</DisplayName>
+	  <DefaultValue></DefaultValue>
+	</ConfigItem>
+	<ConfigItem Type="String" MaxLength="62" RO="true" DisplayOrder="1452">
+	 <Name>OSVersion</Name>
+	 <DisplayName Lang="en-US">Operating System Version</DisplayName>
+	 <DefaultValue></DefaultValue>
+	</ConfigItem>
+    <ConfigItem Type="Integer" RO="true" DisplayOrder="1453">
+      <Name>ServerPoweredOnTime</Name>
+      <DisplayName Lang="en-US">Server Powered On Time Duration</DisplayName>
+      <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="62" RO="true" DisplayOrder="1454">
+      <Name>OEMOSVersion</Name>
+      <DisplayName Lang="en-US">OEM Operating System Version</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="ChassisInfo" GroupType="0x4333" DisplayName="Chassis Info" Description="Chassis Information">
+    <ConfigItem Type="String" MaxLength="128" RO="true" DisplayOrder="1461">
+      <Name>ChassisModel</Name>
+      <DisplayName Lang="en-US">Chassis Model</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="10" RO="true" DisplayOrder="1462">
+      <Name>ChassisServiceTag</Name>
+      <DisplayName Lang="en-US">Chassis Service Tag</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="String" MaxLength="64" RO="true" DisplayOrder="1463">
+      <Name>ChassisName</Name>
+      <DisplayName Lang="en-US">Chassis Name</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="1464">
+      <Name>ChassisType</Name>
+      <DisplayName Lang="en-US">Chassis Type</DisplayName>
+      <DefaultValue IntVal="0">Data Not Available</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Data Not Available</PossibleValue>
+        <PossibleValue IntVal="9">M1000e</PossibleValue>
+        <PossibleValue IntVal="10">VRTX</PossibleValue>
+        <PossibleValue IntVal="11">FX2 PSB</PossibleValue>
+        <PossibleValue IntVal="12">FX2 FOB</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="ThermalSettings" GroupType="0x4056" DisplayName="Thermal Settings" Description="Thermal Settings">
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1470" HideFrom="DCS">
+      <Name>ThermalProfile</Name>
+      <DisplayName Lang="en-US">Thermal Profile</DisplayName>
+      <DefaultValue IntVal="0">Default Thermal Profile Settings</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Default Thermal Profile Settings</PossibleValue>
+        <PossibleValue IntVal="1">Maximum Performance</PossibleValue>
+        <PossibleValue IntVal="2">Minimum Power</PossibleValue>
+	<PossibleValue IntVal="3">Acoustic Optimized</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1471" HideFrom="DCS">
+      <Name>AirExhaustTemp</Name>
+      <DisplayName Lang="en-US">Average Air Exhaust Temperature</DisplayName>
+      <DefaultValue IntVal="255">70</DefaultValue>
+      <PossibleValues>
+	<PossibleValue IntVal="255">70</PossibleValue>
+        <PossibleValue IntVal="0">40</PossibleValue>
+        <PossibleValue IntVal="1">45</PossibleValue>
+        <PossibleValue IntVal="2">50</PossibleValue>
+        <PossibleValue IntVal="3">55</PossibleValue>
+        <PossibleValue IntVal="4">60</PossibleValue>
+        <PossibleValue Intval="5">65</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1472" HideFrom="DCS">
+      <Name>FanSpeedOffset</Name>
+      <DisplayName Lang="en-US">Fan Speed Offset</DisplayName>
+      <DefaultValue IntVal="255">Off</DefaultValue>
+      <PossibleValues>
+	<PossibleValue IntVal="255">Off</PossibleValue>
+        <PossibleValue IntVal="0">Low Fan Speed Offset</PossibleValue>
+        <PossibleValue IntVal="1">High Fan Speed Offset</PossibleValue>
+        <PossibleValue IntVal="2">Medium Fan Speed Offset</PossibleValue>
+        <PossibleValue IntVal="3">Max Fan Speed Offset</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Integer" Min="0" Max="65535" DisplayOrder="1473" HideFrom="DCS">
+    <Name>MinimumFanSpeed</Name>
+    <DisplayName Lang="en-US">Minimum Fan Speed</DisplayName>
+    <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Integer" RO="TRUE" DisplayOrder="1474" HideFrom="DCS">
+    <Name>MFSMinimumLimit</Name>
+    <DisplayName Lang="en-US">MFS Minimum Limit</DisplayName>
+    <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Integer" RO="TRUE" DisplayOrder="1475" HideFrom="DCS">
+    <Name>MFSMaximumLimit</Name>
+    <DisplayName Lang="en-US">MFS Maximum Limit</DisplayName>
+    <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Integer" RO="TRUE" DisplayOrder="1476" HideFrom="DCS">
+    <Name>FanSpeedLowOffsetVal</Name>
+    <DisplayName Lang="en-US">Fan Speed Low Offset Value</DisplayName>
+    <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Integer" RO="TRUE" DisplayOrder="1477" HideFrom="DCS">
+    <Name>FanSpeedMediumOffsetVal</Name>
+    <DisplayName Lang="en-US">Fan Speed Medium Offset Value</DisplayName>
+    <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Integer" RO="TRUE" DisplayOrder="1478" HideFrom="DCS">
+    <Name>FanSpeedHighOffsetVal</Name>
+    <DisplayName Lang="en-US">Fan Speed High Offset Value</DisplayName>
+    <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Integer" RO="TRUE" DisplayOrder="1479" HideFrom="DCS">
+    <Name>FanSpeedMaxOffsetVal</Name>
+    <DisplayName Lang="en-US">Fan Speed Maximum Offset Value</DisplayName>
+    <DefaultValue>0</DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1480" HideFrom="DCS">
+      <Name>ThirdPartyPCIFanResponse</Name>
+      <DisplayName Lang="en-US">Fan Speed Response for Third-Party PCI Cards</DisplayName>
+      <DefaultValue IntVal="1">Enabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disabled</PossibleValue>
+        <PossibleValue IntVal="1">Enabled</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="QuickSync" GroupType="0x4058" DisplayName="Quick Sync" Description="Quick Sync">
+   <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="2300">
+      <Name>Presence</Name>
+      <DisplayName Lang="en-US">Quick Sync Presence</DisplayName>
+      <DefaultValue IntVal="0">Not Supported</DefaultValue>
+      <PossibleValues>
+           <PossibleValue IntVal="0">Not Supported</PossibleValue>
+           <PossibleValue IntVal="1">Absent</PossibleValue>
+           <PossibleValue IntVal="2">Present</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+	<ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="2301" >
+      <Name>Access</Name>
+      <DisplayName Lang="en-US">Quick Sync Access</DisplayName>
+      <DefaultValue IntVal="2">Read-write</DefaultValue>
+      <PossibleValues>
+           <PossibleValue IntVal="0">Disabled</PossibleValue>
+           <PossibleValue IntVal="1">Read-only</PossibleValue>
+           <PossibleValue IntVal="2">Read-write</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="2302" >
+      <Name>InactivityTimerEnable</Name>
+      <DisplayName Lang="en-US">Quick Sync Inactivity Timer Enable</DisplayName>
+      <DefaultValue IntVal="1">Enabled</DefaultValue>
+      <PossibleValues>
+           <PossibleValue IntVal="0">Disabled</PossibleValue>
+           <PossibleValue IntVal="1">Enabled</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Integer"  Min="15" Max="3600" DisplayOrder="2303" >
+      <Name>InactivityTimeout</Name>
+      <DisplayName Lang="en-US">Quick Sync Inactivity Timeout Value</DisplayName>
+      <DefaultValue>30</DefaultValue>
+    </ConfigItem>
+  </ConfigGroup>    
+  <ConfigGroup Index="1" Name="ServerInfo" GroupType="0x4059" DisplayName="Server Information" Description="Server Information">
+    <ConfigItem Type="String" MaxLength="64" DisplayOrder="1480" HideFrom="DCS">
+      <Name>AssetTag</Name>
+      <DisplayName Lang="en-US">Asset Tag</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="1481" HideFrom="DCS">
+      <Name>AssetTagSetByDCMI</Name>
+      <DisplayName Lang="en-US">Asset Tag set by DCMI</DisplayName>
+      <DefaultValue IntVal="0">False</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">False</PossibleValue>
+        <PossibleValue IntVal="1">True</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="Diagnostics" GroupType="0x4060" DisplayName="Server Information" Description="Server Information">
+    <ConfigItem Type="String" MaxLength="64" RO="TRUE" DisplayOrder="2310" HideFrom="DCS">
+      <Name>OSAppCollectionTime</Name>
+      <DisplayName Lang="en-US">OS App Collection Time</DisplayName>
+      <DefaultValue></DefaultValue>
+    </ConfigItem>
+  </ConfigGroup>  
+  <ConfigGroup Index="0" Name="Backplane" GroupType="0x4061" DisplayName="Backplane" Description="Backplane">
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="2320" HideFrom="DCS">
+      <Name>BackplaneBusMode</Name>
+      <DisplayName Lang="en-US">Backplane Bus Mode</DisplayName>
+      <DefaultValue IntVal="0">Unknown</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Unknown</PossibleValue>
+        <PossibleValue IntVal="1">I2C</PossibleValue>
+        <PossibleValue IntVal="2">SGPIO</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup>  
+  <ConfigGroup Index="1" Name="Backplane" GroupType="0x4061" DisplayName="Backplane" Description="Backplane">
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="2330" HideFrom="DCS">
+      <Name>BackplaneBusMode</Name>
+      <DisplayName Lang="en-US">Backplane Bus Mode</DisplayName>
+      <DefaultValue IntVal="0">Unknown</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Unknown</PossibleValue>
+        <PossibleValue IntVal="1">I2C</PossibleValue>
+        <PossibleValue IntVal="2">SGPIO</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup>  
+  <ConfigGroup Index="2" Name="Backplane" GroupType="0x4061" DisplayName="Backplane" Description="Backplane">
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="2340" HideFrom="DCS">
+      <Name>BackplaneBusMode</Name>
+      <DisplayName Lang="en-US">Backplane Bus Mode</DisplayName>
+      <DefaultValue IntVal="0">Unknown</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Unknown</PossibleValue>
+        <PossibleValue IntVal="1">I2C</PossibleValue>
+        <PossibleValue IntVal="2">SGPIO</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup>  
+  <ConfigGroup Index="3" Name="Backplane" GroupType="0x4061" DisplayName="Backplane" Description="Backplane">
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="2350" HideFrom="DCS">
+      <Name>BackplaneBusMode</Name>
+      <DisplayName Lang="en-US">Backplane Bus Mode</DisplayName>
+      <DefaultValue IntVal="0">Unknown</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Unknown</PossibleValue>
+        <PossibleValue IntVal="1">I2C</PossibleValue>
+        <PossibleValue IntVal="2">SGPIO</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup>  
+  <ConfigGroup Index="4" Name="Backplane" GroupType="0x4061" DisplayName="Backplane" Description="Backplane">
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="2360" HideFrom="DCS">
+      <Name>BackplaneBusMode</Name>
+      <DisplayName Lang="en-US">Backplane Bus Mode</DisplayName>
+      <DefaultValue IntVal="0">Unknown</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Unknown</PossibleValue>
+        <PossibleValue IntVal="1">I2C</PossibleValue>
+        <PossibleValue IntVal="2">SGPIO</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup> 
+  <ConfigGroup Index="1" Name="ChassisControl" GroupType="0x4063" DisplayName="Chassis Control" Description="Chassis Control">
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="2370" HideFrom="DCS">
+      <Name>ChassisManagementMonitoring</Name>
+      <DisplayName Lang="en-US">Chassis Management and Monitoring</DisplayName>
+      <DefaultValue IntVal="1">Enabled</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Disabled</PossibleValue>
+        <PossibleValue IntVal="1">Enabled</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+    <ConfigItem Type="Enumeration" SubType="Int" RO="true" DisplayOrder="2371" HideFrom="DCS">
+      <Name>ChassisManagementatServer</Name>
+      <DisplayName Lang="en-US">Chassis Management at Server</DisplayName>
+      <DefaultValue IntVal="0">None</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">None</PossibleValue>
+        <PossibleValue IntVal="1">Monitor</PossibleValue>
+        <PossibleValue IntVal="2">Manage and Monitor</PossibleValue>
+      </PossibleValues>
+     </ConfigItem>   
+  </ConfigGroup>
+  <ConfigGroup Index="1" Name="ChassisPwrState" GroupType="0x4334" DisplayName="Powerstate" Description="Power state">
+    <ConfigItem Type="Enumeration" SubType="Int" DisplayOrder="2372" >
+      <Name>ChassisLEDState</Name>
+      <DisplayName Lang="en-US">LED State</DisplayName>
+      <DefaultValue IntVal="0">Unknown</DefaultValue>
+      <PossibleValues>
+        <PossibleValue IntVal="0">Unknown</PossibleValue>
+        <PossibleValue IntVal="2">Blinking</PossibleValue>
+        <PossibleValue IntVal="3">Off</PossibleValue>
+      </PossibleValues>
+    </ConfigItem>
+  </ConfigGroup>
+  </FQDD>

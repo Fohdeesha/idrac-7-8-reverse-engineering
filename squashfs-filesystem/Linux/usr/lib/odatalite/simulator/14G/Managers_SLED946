@@ -1,0 +1,72 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Managers/Members/$entity",
+    "@odata.id": "/redfish/v1/Managers/SLED946"  ,"@oem.nav.parentid": "/redfish/v1/Managers",
+    "@odata.type": "#Managers.1.0.0.Manager",
+    "Id": "SLED946",
+    "Name": "Manager Sled",
+    "Description": "TODO: content here could be the Help text.",
+    "ManagerType": "ManagementController",
+    "ServiceEntryPointUUID": "92384634-2938-2342-8820-489239905423",
+    "UUID": "00000000-0000-0000-0000-000000000000",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "EthernetInterfaces": {
+        "@odata.id": "/redfish/v1/Managers/SLED946#/EthernetInterfaces",
+        "@odata.type": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
+        "Name": "Ethernet Network Interface Collection",
+        "Description": "Collection of EthernetInterfaces for this Manager",
+        "Members@odata.count": 1,
+        "Members": [
+            {
+                "@odata.id": "/redfish/v1/Managers/SLED946#/EthernetInterfaces/NIC.Embedded.1",
+                "@odata.type": "#EthernetInterface.1.0.0.EthernetInterface",
+                "Id": "NIC.Embedded.1",
+                "Name": "Manager Ethernet Interface",
+                "Description": "TODO: content here could be the Help text.",
+                "Status": {
+                    "State": "Enabled",
+                    "Health": "OK"
+                },
+                "PermanentMACAddress": "AA:BB:CC:DD:EE:FF",
+                "MACAddress": "AA:BB:CC:DD:EE:FF",
+                "VLAN": {
+                    "VLANEnable": true,
+                    "VLANId": 101
+                },
+                "IPv6StaticAddresses": [
+                    {
+                        "Address": "fe80::1ec1:deff:fe6f:1e24",
+                        "PrefixLength": 16
+                    }
+                ],
+                "IPv6DefaultGateway": "fe80::1ec1:deff:fe6f:1e24",
+                "IPv6Addresses": [
+                    {
+                        "Address": "fe80::1ec1:deff:fe6f:1e24",
+                        "PrefixLength": 64,
+                        "AddressOrigin": "SLAAC",
+                        "AddressState": "Preferred",
+                        "Oem": {}
+                    }
+                ],
+                "Oem": {}
+            }
+        ]
+    },
+    "Links": {
+        "ManagerForServers": [
+            {
+                "@odata.id": "/redfish/v1/Systems/SLED946"
+            }
+        ],
+        "ManagerForChassis": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/SLED946"
+            }
+        ]
+    },
+    "Oem": {}
+}

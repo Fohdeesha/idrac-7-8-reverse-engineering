@@ -1,0 +1,37 @@
+[Unit]
+Description=Restart iDRAC Services during RTD (12G HW only)
+
+[Service]
+Type=oneshot
+ExecStart=-/bin/systemctl start aim.service
+ExecStart=-/bin/systemctl start aim-post.service
+ExecStart=-/bin/systemctl restart network.service
+ExecStart=-/bin/systemctl restart osinet_init_modular.service
+ExecStart=-/bin/systemctl restart osinet_init.service
+ExecStart=-/bin/systemctl restart credential-vault-13g.service
+ExecStart=-/bin/systemctl restart osinterface.service
+ExecStart=-/bin/systemctl restart personality_module.service
+ExecStart=-/bin/systemctl restart pm.service
+ExecStart=-/bin/systemctl restart VFK.service
+ExecStart=-/bin/systemctl restart fullfw_app.service
+ExecStart=-/bin/systemctl restart syscallagent.service
+ExecStart=-/bin/systemctl restart unique_certificate.service
+ExecStart=-/bin/systemctl restart aps.service
+ExecStart=-/bin/systemctl restart vnc.service
+ExecStart=-/bin/systemctl restart vnc-server.service
+ExecStart=-/bin/systemctl restart VKVM_PM.service
+ExecStart=-/bin/systemctl restart dsm-sa-datamgr.service
+ExecStart=-/bin/systemctl restart fmgr.service
+# dependencies will start
+ExecStart=-/bin/systemctl restart osinet.service
+ExecStart=-/bin/systemctl restart racadm_ipmiextd.service
+ExecStart=-/bin/systemctl restart ipmigateway_app.service
+ExecStart=-/bin/systemctl restart racadm_raclogd.service
+ExecStart=-/bin/systemctl restart snmpd.service
+ExecStart=-/bin/systemctl restart telnetd_app.service
+ExecStart=-/bin/systemctl start sshd.service
+ExecStart=-/bin/systemctl restart ttymonitor.service
+ExecStart=-/bin/systemctl restart appweb.service
+ExecStart=-/bin/systemctl restart tm_app.service
+ExecStart=-/bin/systemctl restart hotplug.service
+ExecStart=-/bin/systemctl restart xmlconfig.service

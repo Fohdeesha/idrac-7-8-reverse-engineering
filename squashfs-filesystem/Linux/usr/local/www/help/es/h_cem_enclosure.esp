@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+    <% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Gabinetes de almacenamiento</title> 
+<script src="/js/prototype.js" type="text/javascript">     
+</script> 
+<script src="/js/Clarity.js" type="text/javascript">        
+</script> 
+<script src="h_common.js" type="text/javascript">
+        
+</script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+        
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> Gabinetes </span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">Ir a: <a class="popup-jump-bar" href="#EnclosureSummary" id="cc7">Resumen de gabinete</a> | <a class="popup-jump-bar" href="#Enclosure" id="cc1">Condición y propiedades</a> | <a class="popup-jump-bar" href="#Fans" id="cc3">Ventiladores</a> | <a class="popup-jump-bar" href="#PowerSupplies" id="cc4">Suministros de energía</a> | <a class="popup-jump-bar" href="#TempProbes" id="cc5">Sondas de temperatura</a> | <a class="popup-jump-bar" href="#EMM" id="cc6">Módulo de administración de gabinetes</a> | <a class="popup-jump-bar" href="#Other" id="A14">Otras opciones</a></span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p> Use esta página para ver la condición y las propiedades del gabinete o plano posterior. Esta página proporciona un resumen e información detallada sobre todos los gabinetes que se encuentran en el sistema de almacenamiento agrupados por los controladores a los que están conectados. El nombre del controlador asociado con el gabinete o el plano posterior aparece en la ficha en el siguiente formato:</p> 
+<p>&lt;Modelo del controlador&gt; (Ranura PCI&lt;X&gt;) O &lt;Modelo del controlador&gt; (Incorporado) </p> 
+<p>Por ejemplo, el adaptador PERC H810 (Ranura PCI 1 ) o PERC H310 Mini (Incorporado)</p> 
+<p> El nombre del gabinete o plano posterior aparece en la subficha en el siguiente formato: </p> 
+<p> Si se trata de un plano posterior, Plano posterior (&lt;ID del conector&gt;:&lt;orden enviada&gt;), en donde la orden enviado es el identificación de la plataforma. Ejemplo, Plano posterior (0:0) </p> 
+<p> Si se trata de un gabinete, &lt;nombre del modelo de gabinete&gt; (&lt;ID del conector&gt;:&lt;orden enviada&gt;), en donde el orden enviada es la orden en la cadena tipo margarita. Ejemplo, MD1200 (1:0) </p> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>Nota:</span>si es un plano posterior, esta página solo muestra las secciones de <b>Resumen del gabinete </b> y <b>Condición y Propiedades</b>. </div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EnclosureSummary"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Volver al principio</a> </div> 
+<span id="EnclosureSummary"> Resumen del gabinete </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"><p> Esta sección muestra una gráfica circular de los discos físicos dentro del gabinete o plano posterior y el estado en el que se encuentran. Además, muestra el número total de ranuras libres en el gabinete o plano posterior junto con sus índices de ranuras. </p> 
+<p> Para ver los discos físicos en el gabinete o plano posterior seleccionado actualmente, haga clic en <b>Ver discos físicos</b>. La página <b>Discos físicos</b> se muestra con el filtro adecuado aplicado de manera automática.<br /> 
+</p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Enclosure"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Volver al principio</a> </div> 
+<span id="Enclosure"> Condición y propiedades </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Estatus</b></span> </td> 
+<td class="desc"> 
+<p> Muestra la condición del gabinete o plano posterior. Posibles valores: </p> 
+<ul><li> Bueno<span class="status_ok"> &#8212;</span> indica que el componente funciona según lo previsto. </li> 
+<li> Advertencia <span class="status_noncritical"> &#8212;</span> indica que una sonda u otro dispositivo de supervisión ha detectado una lectura para el componente que se encuentra por encima o por debajo del nivel aceptable. El componente puede estar en funcionamiento, pero puede fallar. Es posible que el componente también esté funcionando en un estado de deterioro. </li> 
+<li> Crítico<span class="status_critical"> &#8212;</span> indica que el componente ha fallado o que la falla es inminente. Este requiere atención inmediata y es posible que deba reemplazarse.</li> 
+<li> Información no disponible <span class="status_unknown"> &#8212; </span> indica que se desconoce el estado del componente.</li></ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Conector</b></span> </td> 
+<td class="desc"> Muestra el número de puerto del controlador al que se encuentra conectado el gabinete o plano posterior.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Posición del gabinete</b></span></td> 
+<td class="desc"> Muestra la ID de gabinete asignada al gabinete. El índice para los gabinetes conectados a los controladores comienza desde 0. <br /> En el caso del plano posterior, muestra la opción <b>No aplicable</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Identificación de la plataforma</b></span></td> 
+<td class="desc"> Muestra la identificación de la plataforma del plano posterior. En el caso del gabinete externo, muestra la opción <b>No aplicable</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Versión del firmware</b></span> </td> 
+<td class="desc"> Muestra la versión del firmware del gabinete. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Dirección SAS</b></span> </td> 
+<td class="desc"> Muestra la dirección SAS única del gabinete o plano posterior SAS. Si no se encuentra disponible, se muestra la opción<b> No aplicable</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Ruta redundante</b></span> </td> 
+<td class="desc"> 
+<p> Indica si se detecta la configuración de ruta redundante hacia un gabinete. Posibles valores: </p> 
+<ul> 
+<li> Presente </li> 
+<li> Ausente </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Etiqueta de servicio</b></span> </td> 
+<td class="desc"> muestra el número de la etiqueta de servicio del gabinete. Necesitará este número cuando se comunique con el proveedor de servicio. Use este número para identificar un gabinete específico en su entorno al cotejar este número con el número que se encuentra en la etiqueta de servicio anexada al gabinete. Por ejemplo, si tiene múltiples gabinetes y uno de ellos presenta una falla, use el número en la etiqueta de servicio para identificar el gabinete que ha fallado. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b> Etiqueta de propiedad</b></span> </td> 
+<td class="desc"> muestra la información de la etiqueta de propiedad del gabinete. </td> 
+</tr> 
+</table> 
+<br></br> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>Nota:</span>si es un plano posterior, no se muestran las propiedades de <b>Ruta redundante</b>, <b>Etiqueta de servicio</b> ni <b>Etiqueta de propiedad</b>. </div> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Fans"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Volver al principio</a> </div> 
+<span id="Fans"> Ventiladores </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Estado</b></span> </td> 
+<td class="desc"> 
+<p> Muestra la condición del ventilador. Posibles valores: </p> 
+<ul> 
+<li> OK<span class="status_ok"> &#8212;</span> indica que el componente funciona según lo previsto. </li> 
+<li> Advertencia <span class="status_noncritical"> &#8212;</span> indica que una sonda u otro dispositivo de supervisión ha detectado una lectura para el componente que se encuentra por encima o por debajo del nivel aceptable. El componente puede estar en funcionamiento, pero puede fallar. Es posible que el componente también esté funcionando en un estado de deterioro. </li> 
+<li> Crítico<span class="status_critical"> &#8212;</span> indica que el componente ha fallado o que la falla es inminente. Este requiere atención inmediata y es posible que deba reemplazarse.</li> 
+<li>Información no disponible <span class="status_unknown"> &#8212; </span> indica que se desconoce el estado del componente. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nombre</b></span> </td> 
+<td class="desc"> Muestra el nombre del ventilador en formato Ventilador&lt;Índice&gt;. Por ejemplo, Ventilador 1. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Velocidad</b></span> </td> 
+<td class="desc"> 
+<p> Indica la velocidad del ventilador. Posibles valores: </p> 
+<ul> 
+<li> Alta </li> 
+<li> Media </li> 
+<li> Baja </li> 
+<li> Detenido </li> 
+<li> Información no disponible</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="PowerSupplies"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Volver al principio</a> </div> 
+<span id="PowerSupplies"> Suministros de energía </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Estado</b></span> </td> 
+<td class="desc"> 
+<p> muestra la condición de los suministros de energía. Posibles valores: </p> 
+<ul> 
+<li> OK<span class="status_ok"> &#8212;</span> indica que el componente funciona según lo previsto. </li> 
+<li> Advertencia <span class="status_noncritical"> &#8212;</span> indica que una sonda u otro dispositivo de supervisión ha detectado una lectura para el componente que se encuentra por encima o por debajo del nivel aceptable. Es posible que el componente aún funcione, pero puede fallar. Es posible que el componente también esté funcionando en un estado de deterioro. </li> 
+<li> Crítico<span class="status_critical"> &#8212;</span> indica que el componente ha fallado o que la falla es inminente. Este requiere atención inmediata y es posible que deba reemplazarse.</li> 
+<li> Información no disponible <span class="status_unknown"> &#8212; </span> indica que se desconoce el estado del componente.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nombre</b></span> </td> 
+<td class="desc"> Muestra el nombre de la unidad de suministro de energía en formato Suministro de energía&lt;Índice&gt;. Por ejemplo, Suministro de energía 1. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Número de parte</b></span> </td> 
+<td class="desc"> muestra el número de parte de la unidad de suministro de energía. <br /> Esta propiedad no se muestra en los gabinetes PowerVault 22xS que tienen firmware E.17 o una versión posterior. </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="TempProbes"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Volver al principio</a> </div> 
+<span id="TempProbes"> Sondas de temperatura </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> Las sondas de temperatura supervisan la temperatura del gabinete. Cada sonda de temperatura cuentan con un umbral de advertencia y de falla. El umbral de advertencia indica que el gabinete está alcanzando una temperatura alta o baja inaceptable. El umbral de falla indica que el gabinete ha alcanzado una temperatura peligrosa que podría ocasionar daños y pérdida de datos. </p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span> 
+</span><span><b>Estado</b></span> </td> 
+<td class="desc"> 
+<p> muestra la condición de la sonda de temperatura. Posibles valores: </p> 
+<ul> 
+<li> OK<span class="status_ok"> &#8212;</span> indica que el componente funciona según lo previsto. </li> 
+<li> Advertencia <span class="status_noncritical"> &#8212;</span> indica que una sonda u otro dispositivo de supervisión ha detectado una lectura para el componente que se encuentra por encima o por debajo del nivel aceptable. Es posible que el componente aún funcione, pero puede fallar. Es posible que el componente también esté funcionando en un estado de deterioro. </li> 
+<li> Crítico<span class="status_critical"> &#8212;</span> indica que el componente ha fallado o que la falla es inminente. Este requiere atención inmediata y es posible que deba reemplazarse.</li> 
+<li> Información no disponible <span class="status_unknown"> &#8212; </span> indica que se desconoce el estado del componente.</li> 
+</ul> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>Nota:</span> para algunos gabinetes, es posible que haya una pequeña demora antes de mostrar la temperatura actual del gabinete y el estado de la sonda de temperatura. </div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nombre</b></span> </td> 
+<td class="desc"> Muestra el nombre de la sonda de temperatura en formato Sonda de temperatura&lt;Índice&gt;. Por ejemplo, Sonda de temperatura 0. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Lectura</b></span> </td> 
+<td class="desc"> muestra la temperatura actual del gabinete según lo indicado por la sonda de temperatura (en grados Celsius). </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Umbral de advertencia mínimo</b></span> </td> 
+<td class="desc"> muestra la temperatura indicada por el umbral de advertencia mínimo (en grados Celsius) establecida actualmente. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Umbral de advertencia mínimo</b></span> </td> 
+<td class="desc"> muestra la temperatura indicada por el umbral de advertencia máximo (en grados Celsius) establecida actualmente. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Umbral de falla mínimo</b></span> </td> 
+<td class="desc"> muestra la temperatura indicada por el umbral de falla mínimo (en grados Celsius) establecida actualmente. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Umbral de falla máximo</b></span> </td> 
+<td class="desc"> muestra la temperatura indicada por el umbral de falla máximo (en grados Celsius) establecida actualmente. </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EMM"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Volver al principio</a> </div> 
+<span id="EMM"> Módulo de administración de gabinetes </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> Esta sección muestra información sobre los Módulos de administración de gabinetes (Enclosure Management Modules, EMM) instalados en el gabinete. El gabinete puede contener uno o más módulos de administración de gabinetes. Los módulos EMM monitorean los siguientes componentes del gabinete: </p> 
+<ul> 
+<li> Ventiladores </li> 
+<li> Suministros de energía </li> 
+<li> Sondas de temperatura </li> 
+<li> Inserción o extracción de un disco físico </li> 
+<li> LED en el gabinete </li> 
+</ul> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Estado</b></span> </td> 
+<td class="desc"> 
+<p> Muestra la condición de los EMM. Posibles valores: </p> 
+<ul> 
+<li> OK<span class="status_ok"> &#8212;</span> indica que el componente funciona según lo previsto. </li> 
+<li> Advertencia <span class="status_noncritical"> &#8212;</span> indica que una sonda u otro dispositivo de supervisión ha detectado una lectura para el componente que se encuentra por encima o por debajo del nivel aceptable. El componente puede estar en funcionamiento, pero puede fallar. Es posible que el componente también esté funcionando en un estado de deterioro. </li> 
+<li> Crítico<span class="status_critical"> &#8212;</span> indica que el componente ha fallado o que la falla es inminente. Este requiere atención inmediata y es posible que deba reemplazarse.</li> 
+<li> Información no disponible <span class="status_unknown"> &#8212; </span> indica que se desconoce el estado del componente.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nombre</b></span> </td> 
+<td class="desc"> 
+<p> Muestra el nombre EMM en el formato EMM &lt;Índice&gt;. Por ejemplo, EMM 1. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Número de parte</b></span> </td> 
+<td class="desc"> muestra el número de parte del módulo EMM. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Versión del firmware</b></span> </td> 
+<td class="desc"> Muestra la versión de firmware disponible en EMM. Todos los módulos EMM en el gabinete deben tener el mismo nivel de firmware. </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                                        writeHelpOtherBegin();
+                                        writeHelpOtherEnd();
+                                    
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

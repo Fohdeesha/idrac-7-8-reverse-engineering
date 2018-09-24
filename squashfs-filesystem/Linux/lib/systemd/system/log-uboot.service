@@ -1,0 +1,19 @@
+[Unit]
+Description=log uboot messages
+After=dsm-sa-datamgr.service
+After=osinet.service
+After=maser_access_controller.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+
+ExecStart=-/bin/loguboot -l
+#Don't really have anywhere else to put these
+ExecStartPost=-/bin/dellutil pathretry -c
+#ExecStartPost=-/bin/memusage -t 10240 &
+
+[Install]
+WantedBy=multi-user.target

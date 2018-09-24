@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+<% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Almacenamiento de discos físicos</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 	
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> Discos físicos</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items"> Ir a: <a class="popup-jump-bar" href="#PhysicalDisks" id="cc3">Condición y propiedades</a> |<a class="popup-jump-bar" href="#Other" id="A14">Otras opciones</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Use esta página para ver la lista de discos físicos presentes en el subsistema de almacenamiento y sus propiedades. Los discos físicos se encuentran dentro de un gabinete o conectados al controlador. En un controlador RAID el disco físico se usa para crear discos virtuales.</p> 
+</div> 
+<div class="popup_subheader">
+<span id="BasicFilter"> Filtro de disco físico básico/avanzado </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<p>Use los menús desplegables para filtrar la lista de discos físicos según los gabinetes o discos virtuales. Haga clic en <b>Aplicar</b>. Haga clic en <strong>Cancelar</strong> para restaurar el valor predeterminado en el menú descendente.</p> 
+<p>Haga clic en <b>Filtro avanzado</b> para filtrar la lista de discos físicos según una o más de las siguientes opciones:</p> 
+<ul> 
+<li>Gabinete</li> 
+<li>Discos virtuales</li> 
+<li>Estado del componente</li> 
+<li>Estado</li> 
+<li>Protocolo del bus</li> 
+<li>Tipo de medio</li> 
+<li>Estado de alimentación</li> 
+<li>Falla prevista</li> 
+<li>Estado de seguridad</li> 
+<li>Repuesto dinámico</li> 
+<li>Tamaño mínimo (GB)</li> 
+<li>Número de parte</li> 
+<li>Espacio libre mínimo (%)</li> 
+<li>ID del producto</li> 
+<li>Número de serie</li> 
+<li>Fabricante</li> 
+</ul> 
+<p>Para obtener información sobre cada propiedad, consulte la sección <a class="popup-jump-bar" href="#PhysicalDisks" id="cc4">Condición y propiedades</a>. </p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="PhysicalDisks"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Volver al principio</a> </div> 
+<span id="PhysicalDisks">Condición y propiedades </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Se muestran las siguientes propiedades básicas para cada disco físico.</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Estatus</b></span></td> 
+<td class="desc"> 
+<p>Muestra la condición del disco físico. Posibles valores: </p> 
+<ul> 
+<li>Buen estado<span class="status_ok"> &#8212;</span>: indica que el componente funciona según lo previsto.</li> 
+<li>Advertencia <span class="status_noncritical"> &#8212;</span>: indica que una sonda u otro dispositivo de supervisión ha detectado una lectura del controlador que se encuentra por encima o por debajo del nivel aceptable. El componente puede estar en funcionamiento, pero puede fallar. Es posible que el componente también esté funcionando en un estado de deterioro. </li> 
+<li>Crítico<span class="status_critical"> &#8212;</span>: indica que el componente ha fallado o que la falla es inminente. Este requiere atención inmediata y es posible que deba reemplazarse.</li> 
+<li>Información no disponible <span class="status_unknown"> &#8212; </span> indica que se desconoce el estado del componente. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nombre</b></span></td> 
+<td class="desc"> 
+<p>Muestra el nombre del disco físico. El formato es el formato de Disco físico<connector number>:<enclosure ID>:<disk number>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Estado</b></span></td> 
+<td class="desc"> 
+<p>Muestra el estado actual de los discos físicos</p> 
+<ul> 
+<li>Listo&#8212;: indica que el disco físico está funcionando normalmente. Si el disco está conectado a un controlador RAID, el estado Listo indica que el disco virtual puede usar el disco físico.</li> 
+<li>En línea&#8212;: indica que el disco físico forma parte de un disco virtual y está funcionando normalmente. </li> 
+<li>Fuera de línea&#8212;: indica que el disco se encuentra incluido dentro de un disco virtual, pero no recibe entrada ni salida.</li> 
+<li>No RAID: indica que el sistema operativo host puede acceder y controlar la unidad física.</li> 
+<li>Ajeno&#8212;: indica que el disco físico se traslada desde otro controlador y contiene la totalidad o una parte de un disco virtual (configuración ajena).</li> 
+<li>Extraído&#8212;: indica que el disco físico se extrae. Este estado sólo se aplica a los discos físicos que forman parte de un disco virtual.</li> 
+<li> Bloqueado&#8212;: indica que el controlador ha bloqueado actualmente el disco físico y que no se permite realizar operaciones en el disco físico.</li> 
+<li> Fallido: indica que no se puede acceder al disco físico.</li> 
+<li> Desconocido&#8212;: indica que el disco físico ha presentado una falla o no se puede usar.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Número de ranura</b></span> </td> 
+<td class="desc"> 
+<p>indica en número de ranura en donde se encuentra la unidad.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Tamaño</b></span></td> 
+<td class="desc"> Muestra el tamaño del disco físico en gigabytes (GB).</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Estado de seguridad</b></span> </td> 
+<td class="desc"> 
+<p>Indica si el disco físico es un disco de autocifrado (Self Encryption Disk, SED). Posibles valores:</p> 
+<ul> 
+<li>Protegido&#8212;: indica que el disco físico está cifrado.</li> 
+<li>Bloqueado&#8212;: indica que el disco físico está cifrado actualmente pero no se usa.</li> 
+<li>Asegurado con clave ajena&#8212;: indica que el disco físico está bloqueado con una clave desconocida.</li> 
+<li>Sin capacidad&#8212;: indica que el disco físico no admite el cifrado.</li> 
+<li>Información no disponible &#8212; indica que la Información no está disponible.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Protocolo del bus</b></span></td> 
+<td class="desc"><p>Muestra la tecnología que usa el disco físico. Posibles valores: </p> 
+<ul> 
+<li>SAS &#8212; Indica que SCSI se encuentra conectada en serie</li> 
+<li>SATA &#8212; Indica una conexión serie de tecnología avanzada (SATA) </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"><span><b>Tipo de medio</b></span></td> 
+<td class="desc"> 
+<p>Muestra el tipo de medio del disco físico. Posibles valores:</p> 
+<ul> 
+<li>HDD&#8212;: indica que el tipo de soporte es una unidad de disco duro (HDD). Una HDD es un dispositivo de almacenamiento no volátil que almacena datos codificados de manera digital en bandejas de rotación rápida con superficies magnéticas.</li> 
+<li>SSD &#8212;: indica que el tipo de soporte es una unidad de estado continuo (SSD). Una SSD es un dispositivo de almacenamiento de datos que usa una memoria en estado sólido para almacenar datos persistentes.</li> 
+<li>Información no disponible &#8212; indica que la Información no está disponible. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Repuesto dinámico</b></span></td> 
+<td class="desc"> 
+<p>indica si el disco se asignó como un repuesto dinámico y de qué tipo de repuesto dinámico se trata. Posibles valores:</p> 
+<ul> 
+<li>No&#8212;: indica que el disco no está asignado a un repuesto dinámico.</li> 
+<li>Dedicado&#8212;: indica que el disco está asignado como un repuesto dinámico dedicado.</li> 
+<li>Global&#8212;: indica que el disco está asignado como un repuesto dinámico global.</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_inner_content"><div><p>Para cada disco físico, Haga clic en el símbolo + para mostrar las siguientes propiedades avanzadas junto con las propiedades básicas.</p></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Estado operativo</b></span></td> 
+<td class="desc"> 
+<p>Se visualiza sólo cuando hay una operación basada en el progreso:</p> 
+<ul> 
+<li>Copia de respaldo: indica que se copian datos de un repuesto dinámico al disco físico o viceversa.</li> 
+<li>Borrar: indica que hay una operación de borrado en progreso en el disco físico. Un disco físico puede mostrar el estado Borrar si forma parte de un disco virtual que se está iniciando lentamente.</li> 
+<li>Recreando: indica que los datos de un disco virtual redundante actualmente se están recreando en el disco físico.</li> 
+<li>No aplicable: indica que no hay una operación en progreso.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Estado de alimentación</b></span></td> 
+<td class="desc"><p> indica el estado del husillo de las unidades físicas. Posibles valores:</p> 
+<ul> 
+<li>Reducción de velocidad de giro&#8212;: indica que la unidad física se encuentra en estado de reducción de velocidad de giro.</li> 
+<li>Transición: indica que la unidad física cambia del estado de detención al estado de aumento de velocidad de giro, o viceversa.</li> 
+<li>Aumento de velocidad de giro&#8212;: indica que la unidad física se encuentra en estado de aumento de velocidad de giro. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Falla prevista</b></span></td> 
+<td class="desc"> 
+<p>Muestra si el disco físico ha recibido una alerta SMART y se anticipa que fallará. Posibles valores: Sí o No. Además, lea el registro de alertas para verificar las alertas relacionadas con una falla predictiva SMART.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Progreso</b></span></td> 
+<td class="desc"> 
+<p>Muestra en porcentaje el estado de una operación realizada en el disco físico.</p> 
+<p>Si no hay una operación en progreso, muestra la opción<b>No aplicable</b>. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Espacio de disco RAID usado</b></span></td> 
+<td class="desc"> 
+<p>Muestra el espacio, en gigabytes (GB), del disco físico usado por los discos virtuales en el controlador.</p> 
+<p>En ciertas circunstancias la propiedad muestra el valor cero (0) aunque se utilice una parte del disco físico. Esto ocurre cuando el espacio usado es de 0,005 GB, o menos. El algoritmo para calcular el espacio de disco usado se redondea a un valor de 0,005 GB o menos de 0.  El espacio de disco usado que se encuentra entre 0,006 GB y 0,009 GB se redondea a 0,01 GB.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Espacio de disco RAID disponible </b> </span></td> 
+<td class="desc"> 
+<p>Muestra el espacio disponible en el disco (en GB).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Velocidad negociada</b></span> </td> 
+<td class="desc"> 
+<p>Muestra la velocidad de transferencia de datos que el disco negoció mientras aumentaba su velocidad de giro y durante la comunicación inicial con el controlador (en gigabytes por segundo). Esta velocidad depende de la velocidad del disco, la velocidad admitida del controlador, la velocidad actual del controlador en ese conector y la velocidad del Módulo de administración de gabinetes (EMM) en el gabinete. </p> 
+<p>Si la velocidad negociada no está disponible, se muestra <b>Información no disponible</b>.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Velocidad admitida</b></span> </td> 
+<td class="desc"> 
+<p>Muestra la velocidad máxima posible con la que el dispositivo puede transferir datos. Si la velocidad admitida no está disponible, se muestra <b>Información no disponible</b>.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Dirección SAS</b></span> </td> 
+<td class="desc"> 
+<p>Muestra la dirección SAS del disco físico. La dirección SAS es exclusiva para cada disco SAS. Si no se encuentra disponible, se muestra la opción<b>No aplicable</b>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Número de parte</b></span> </td> 
+<td class="desc"> 
+<p>Muestra la Identificación de la parte de la pieza (PPID) del disco físico. </p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Fabricante</b></span> </td> 
+<td class="desc"> 
+<p>Muestra el nombre del fabricante del &#39;disco físico.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>ID del producto</b></span> </td> 
+<td class="desc"> 
+<p>Muestra la identificación del producto del disco.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Revisión</b></span></td> 
+<td class="desc"> 
+<p>Muestra la versión del firmware.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Número de serie</b></span> </td> 
+<td class="desc"> 
+<p>Muestra el número de serie del disco.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Día de fabricación</b></span> </td> 
+<td class="desc"> 
+<p>Muestra el día en que se fabricó el disco físico. Si se usó el protocolo de bus SATA, se muestra el valor cero (0).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Semana de fabricación</b></span> </td> 
+<td class="desc"> 
+<p>Muestra la semana en que se fabricó el disco físico. Si se usó el protocolo de bus SATA, se muestra el valor cero (0).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Año de fabricación</b></span> </td> 
+<td class="desc"> 
+<p>Muestra el año en que se fabricó el disco físico. Si se usó el protocolo de bus SATA, se muestra el valor cero (0).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Factor de forma</b></span></td> 
+<td class="desc"> indica el tamaño físico y el diseño de la unidad del disco físico en pulgadas. Los posibles valores son 1,8, 2,5 o 3,5.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Controlador</b></span></td> 
+<td class="desc"> 
+<p>Haga clic en el vínculo del nombre del controlador para ver las propiedades del controlador relacionadas con este disco físico.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Gabinete</b></span> </td> 
+<td class="desc"> 
+<p>Haga clic en el vínculo con el nombre del gabinete para ver las propiedades del gabinete relacionadas con este disco físico. Si el disco físico está directamente conectado al controlador, no se muestra esta propiedad.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Ver discos virtuales de este disco físico</b></span></td> 
+<td class="desc"> Haga clic en este vínculo para ver los discos virtuales relacionados con este disco físico.</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

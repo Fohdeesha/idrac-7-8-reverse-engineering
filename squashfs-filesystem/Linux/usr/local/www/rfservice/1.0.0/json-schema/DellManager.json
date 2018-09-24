@@ -1,0 +1,31 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#DellManager.DellManager",
+    "$ref": "#/definitions/DellManager",
+    "definitions": {
+        "DellManager": {
+            "anyOf": [
+                {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/DellManager.v1_0_0.json#/definitions/DellManager"
+                }
+            ]
+        },
+        "ResetType": {
+            "type": "string",
+            "enum": [
+                "All",
+                "ResetAllWithRootDefaults",
+                "Default"
+            ],
+            "enumDescriptions": {
+                "All": "All configuration is set to default.",
+                "ResetAllWithRootDefaults": "All configuration including network is set to default exception root user password set to calvin.",
+                "Default": "All configuration is set to default except users and network settings are preserved."
+            }
+        }
+    },
+    "copyright": "Copyright 2016 Dell, Inc. or its subsidiaries.  All Rights Reserved."
+}

@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+<% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Speicher – Physische Festplatten</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 	
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> Physische Festplatten</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items"> Gehe zu: <a class="popup-jump-bar" href="#PhysicalDisks" id="cc3">Funktionszustand und Eigenschaften</a> |<a class="popup-jump-bar" href="#Other" id="A14">Weitere Optionen</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Verwenden Sie diese Seite zur Anzeige der Liste physischer Festplatten, die im Speichersubsystem und dessen Eigenschaften vorhanden sind. Physische Festplatten befinden sich innerhalb des Gehäuses oder sind mit dem Controller verbunden. Bei einem RAID-Controller werden physische Festplatten für die Erstellung von virtuellen Festplatten verwendet.</p> 
+</div> 
+<div class="popup_subheader">
+<span id="BasicFilter"> Grundlegende / Erweiterte Filter der physischen Laufwerke </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<p>Verwenden Sie das Drop-Down-Menü, um die Liste der physische Festplatten nach „Gehäuse“ oder „Virtuelle Festplatten“ zu filtern. Klicken Sie auf <b>Anwenden</b>. Klicken Sie auf <strong>Abbrechen</strong>, um den Standardwert im Dropdown-Menü wiederherzustellen.</p> 
+<p>Klicken Sie auf <b>Erweiterter Filter</b>, um die Liste der physischen Festplatten nach einer oder mehreren der folgenden Kriterien zu filtern:</p> 
+<ul> 
+<li>Gehäuse</li> 
+<li>Virtuelle Festplatten</li> 
+<li>Komponentenstatus</li> 
+<li>Zustand</li> 
+<li>Bus-Protokoll</li> 
+<li>Datenträgertyp</li> 
+<li>Stromstatus</li> 
+<li>Fehler erwartet</li> 
+<li>Sicherheitsstatus</li> 
+<li>Hotspare</li> 
+<li>Minimale Größe (GB)</li> 
+<li>Teilenummer</li> 
+<li>Minimaler freier Speicherplatz (%)</li> 
+<li>Product ID</li> 
+<li>Seriennummer</li> 
+<li>Hersteller</li> 
+</ul> 
+<p>Weitere Informationen über die jeweilige Eigenschaft, finden Sie im Abschnitt<a class="popup-jump-bar" href="#PhysicalDisks" id="cc4"> Funktionszustand und Eigenschaften</a>. </p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="PhysicalDisks"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Zurück zum Seitenanfang</a> </div> 
+<span id="PhysicalDisks">Funktionszustand und Eigenschaften </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Die folgenden grundlegenden Eigenschaften werden für jede physische Festplatte angezeigt.</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Status</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Funktionsstatus der physischen Festplatten an. Mögliche Werte sind: </p> 
+<ul> 
+<li>OK <span class="status_ok"> &#8212; </span> Zeigt an, dass die Komponente wie erwartet funktioniert.</li> 
+<li>Warnung <span class="status_noncritical"> &#8212; </span>Zeigt an, dass eine Sonde oder ein anderes Überwachungsgerät einen Messwert für die Komponente erkannt hat, der über oder unter dem erlaubten Grenzwert liegt. Die Komponente funktioniert vielleicht, kann aber ausfallen. Die Funktionsfähigkeit der Komponente ist eventuell beeinträchtigt. </li> 
+<li>Kritisch <span class="status_critical"> &#8212; </span> Zeigt an, dass die Komponente entweder fehlerhaft ist oder ein Fehler droht. Die Komponente erfordert sofortige Aufmerksamkeit und muss eventuell ersetzt werden.</li> 
+<li>Informationen nicht verfügbar<span class="status_unknown"> &#8212; </span> Zeigt an, dass der Komponentenstatus nicht bekannt ist. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Name</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Namen der physischen Festplatte an. Das Format ist Physische Festplatte <connector number>:<enclosure ID>:<disk number>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Zustand</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den aktuellen Zustand der physischen Festplatten an:</p> 
+<ul> 
+<li>Bereit &#8212; Zeigt an, dass die physische Festplatte normal funktioniert. Falls die Festplatte an einen RAID-Controller angehängt ist, gibt der Zustand 'Bereit' an, dass die virtuelle Festplatte die physische Festplatte verwenden kann.</li> 
+<li>Online &#8212; Zeigt an, dass die physische Festplatte Teil einer virtuellen Festplatte ist und normal funktioniert. </li> 
+<li>Offline &#8212; Zeigt an, dass die Festplatte in einer virtuellen Festplatte enthalten ist, jedoch keine Ein- oder Ausgaben empfängt.</li> 
+<li>Nicht-RAID — Gibt an, dass auf das physische Laufwerk zugegriffen werden kann und dass es vom Betriebssystem des Hosts gesteuert wird.</li> 
+<li>Fremd &#8212; Zeigt an, dass die physische Festplatte von einem anderen Controller entfernt wurde und die ganze virtuelle Festplatte oder Teile davon (Fremdkonfiguration) enthält.</li> 
+<li>Entfernt&#8212; Zeigt an, dass die physische Festplatte entfernt ist. Dieser Status kann nur auf physische Festplatten angewendet werden, die Teil einer virtuellen Festplatten sind.</li> 
+<li> Blockiert &#8212; Gibt an, dass der Controller die physische Festplatte derzeit blockiert hat und die physische Festplatte nicht in Betrieb genommen werden darf.</li> 
+<li> Fehlerhaft —Zeigt an, dass die physische Festplatte nicht zugreifbar ist.</li> 
+<li> Unbekannt &#8212; Gibt an, dass die physische Festplatte ausgefallen ist oder nicht verwendet werden kann.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Steckplatznummer</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt die Steckplatznummer an, unter der sich das Laufwerk befindet.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Größe</b></span></td> 
+<td class="desc"> Zeigt die Größe der physischen Festplatte in Gigabyte (GB) an.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Sicherheitsstatus</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt an, ob die physische Festplatte eine Festplatte mit Selbstverschlüsselung (Self Encryption Disk, SED) ist. Mögliche Werte sind:</p> 
+<ul> 
+<li>Gesichert &#8212; Zeigt an, dass die physische Festplatte verschlüsselt ist.</li> 
+<li>Gesperrt &#8212; Zeigt an, dass die physische Festplatte derzeit verschlüsselt, jedoch nicht in Verwendung ist.</li> 
+<li>Von Fremdschlüssel gesichert &#8212; Gibt an, dass die physische Festplatte mit einem unbekannten Schlüssel gesperrt wurde.</li> 
+<li>Nicht unterstützt &#8212; Zeigt an, dass die physische Festplatte Verschlüsselung nicht unterstützt.</li> 
+<li>Informationen nicht verfügbar &#8212; Zeigt an, dass die  Informationen nicht verfügbar sind.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Bus-Protokoll</b></span></td> 
+<td class="desc"><p>Zeigt die Technologie an, die von der physischen Festplatte verwendet wird. Mögliche Werte sind: </p> 
+<ul> 
+<li>SAS &#8212; Gibt eine seriell angehängte SCSI an</li> 
+<li>SATA &#8212; Gibt Serial Advanced Technology Attachment (SATA) an </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"><span><b>Datenträgertyp</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Medientyp der physischen Festplatte an. Mögliche Werte sind:</p> 
+<ul> 
+<li>HDD &#8212; Gibt an, dass der Medientyp ein Festplattenlaufwerk ist. Eine HDD ist Gerät mit einem nicht-flüchtigen Speicher, das digital verschlüsselte Daten auf einer schnell drehenden Festplatte mit magnetischen Oberflächen speichert.</li> 
+<li>SSD &#8212; Gibt an, dass der Medientyp ein Laufwerk mit solidem Zustand (SSD) ist. Eine SSD ist ein Datenspeichergerät, das einen Festkörperspeicher für die Speicherung von beständigen Daten verwendet.</li> 
+<li>Informationen nicht verfügbar &#8212; Zeigt an, dass die  Informationen nicht verfügbar sind. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Hotspare</b></span></td> 
+<td class="desc"> 
+<p>Zeigt an, ob die Festplatte als Hotspare zugewiesen wurde und zeigt auch die Art des Hotspares an. Mögliche Werte sind:</p> 
+<ul> 
+<li>Nein &#8212; Zeigt an, dass die Festplatte nicht als Hotspare zugewiesen wurde.</li> 
+<li>Dediziert &#8212; Zeigt an, dass die Festplatte als dediziertes Hotspare zugewiesen wurde.</li> 
+<li>Global &#8212; Zeigt an, dass die Festplatte als globales Hotspare zugewiesen wurde.</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_inner_content"><div><p>Klicken Sie für jede physische Festplatte auf das Plus-Symbol, um neben den Basiseigenschaften auch die folgenden erweiterten Eigenschaften anzuzeigen:</p></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Betriebsbereiter Zustand</b></span></td> 
+<td class="desc"> 
+<p>Wird nur angezeigt, wenn es sich um einen Prozess-basierten Vorgang handelt:</p> 
+<ul> 
+<li>Rückkopieren — Zeigt an, dass Daten von einem Hotspare auf die physische Festplatte oder umgekehrt kopiert wurden.</li> 
+<li>Löschen — Zeigt an, dass ein Löschvorgang auf der physischen Festplatte durchgeführt wird. Eine physische Festplatte kann auch den Status „Löschen“ aufweisen, wenn die physische Festplatte Mitglied einer virtuellen Festplatte ist, die eine langsame Initialisierung durchläuft.</li> 
+<li>Neu erstellen — Zeigt an, dass Daten von einer redundanten virtuellen Festplatte momentan auf der physische Festplatte neu erstellt werden.</li> 
+<li>Nicht zutreffend — Gibt an, dass gerade kein Vorgang läuft.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Stromstatus</b></span></td> 
+<td class="desc"><p> Zeigt den Rotationsstatus der physischen Festplatten an. Mögliche Werte sind:</p> 
+<ul> 
+<li>Spindown &#8212; Zeigt an, dass sich die physische Festplatte im Spindown befindet.</li> 
+<li>Transition — Zeigt an, dass die physische Festplatte vom Spindown-Status in den Spinup-Status oder umgekehrt wechselt.</li> 
+<li>Spinup &#8212; Zeigt an, dass sich die physische Festplatte im Spinup-Status befindet. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Fehler erwartet</b></span></td> 
+<td class="desc"> 
+<p>Zeigt an, ob die physische Festplatte eine SMART-Warnung erhalten hat und ihr Ausfall vorhergesagt wird. Mögliche Werte: Ja oder Nein. Im Warnungsprotokoll finden Sie außerdem Warnungen, die zur SMART-Vorhersage eines Ausfalls gehören.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Fortschritt</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Status eines Vorgangs in Prozenten an, der gerade auf der physischen Festplatte ausgeführt wird.</p> 
+<p>Wenn kein Vorgang abläuft, wird <b>Nicht zutreffend</b> angezeigt. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Verwendeter RAID-Speicherplatz</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Speicherplatz der physischen Festplatte an, der von den virtuellen Festplatten auf dem Controller verwendet wird (in Gigabyte, GB).</p> 
+<p>In gewissen Fällen zeigt die Eigenschaft einen Wert von Null (0) an, auch wenn ein Teil der physischen Festplatte verwendet wird. Dies kann beispielsweise in Fällen passieren, wenn nur 0,005 GB oder weniger Speicherplatz verwendet werden. Der Algorithmus zur Berechnung des belegten Festplattenspeicherplatzes rundet Werte von 0,005 GB und weniger auf 0. Belegter Festplattenspeicherplatz zwischen 0,006 GB und 0,009 GB wird auf 0,01 GB aufgrundet.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Verfügbarer RAID-Speicherplatz </b> </span></td> 
+<td class="desc"> 
+<p>Zeigt den verfügbaren Speicherplatz auf einer Festplatte (in GB) an.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Ausgehandelte Geschwindigkeit</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt die Datenübertragungsgeschwindigkeit an, die die Festplatte während dem Hochfahren und während der ersten Kommunikation mit dem Controller ausgehandelt hat (in Gigabyte pro Sekunde). Diese Geschwindigkeit ist unabhängig von der Geschwindigkeit der Festplatte, des theoretischen Geschwindigkeitspotenzials des Controllers, der aktuellen Geschwindigkeit des Controllers auf dem Anschluss und der Geschwindigkeit des Gehäuseverwaltungsmoduls (EMM) auf dem Gehäuse. </p> 
+<p>Ist die ausgehandelte Geschwindigkeit nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Mögliche Taktrate</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt die höchst mögliche Geschwindigkeit an, mit der das Gerät Daten übertragen kann. Ist die mögliche Geschwindigkeit nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>SAS-Adresse</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt die SAS-Adresse der physischen Festplatte an. Die SAS-Adresse ist für jede SAS-Festplatte einmalig. Wenn sie nicht verfügbar ist, wird <b>Nicht zutreffend</b> angezeigt.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Teilenummer</b></span> </td> 
+<td class="desc"> 
+<p>Die Komponentenidentifizierung (PPID) der physischen Festplatte. </p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Hersteller</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt den Herstellernamen der physischen Festplatte an.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Product ID</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt die Produkt-ID der Festplatte an.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Revision</b></span></td> 
+<td class="desc"> 
+<p>Zeigt die Firmware-Version an.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Seriennummer</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt die Seriennummer der Festplatten an.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Tag der Herstellung</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt den Tag an, an dem die physische Festplatte hergestellt wurde. Falls das verwendete Busprotokoll SATA ist, zeigt es Null (0) an.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Woche der Herstellung</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt die Woche an, in der die physische Festplatte hergestellt wurde. Falls das verwendete Busprotokoll SATA ist, zeigt es Null (0) an.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Jahr der Herstellung</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt das Jahr an, in dem die physische Festplatte gefertigt wurde. Falls das verwendete Busprotokoll SATA ist, zeigt es Null (0) an.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Formfaktor</b></span></td> 
+<td class="desc"> Zeigt die physische Größe und das Layout der physischen Festplatte in Zoll an. Die folgenden Werte sind zulässig: 1.8, 2.5 und 3.5.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Controller</b></span></td> 
+<td class="desc"> 
+<p>Klicken Sie auf den Link des Controllernamens, um die Controllereigenschaften der jeweiligen physischen Festplatte anzuzeigen.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Gehäuse</b></span> </td> 
+<td class="desc"> 
+<p>Klicken Sie auf den Link des Gehäusenamens, um die Gehäuseeigenschaften der jeweiligen physischen Festplatte anzuzeigen. Falls die physische Festplatte direkt an den Controller angehängt ist, wird diese Eigenschaft nicht angezeigt.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Virtuelle Festplatte für diese physischen Festplatte anzeigen</b></span></td> 
+<td class="desc"> Klicken Sie auf diesen Link, um die virtuellen Festplatten der physischen Festplatte anzuzeigen.</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

@@ -1,0 +1,4 @@
+#%PAM-1.0
+auth            required        pam_ldap_manager.so diags
+account         required        pam_ldap_manager.so diags
+session         requisite       pam_permit.so

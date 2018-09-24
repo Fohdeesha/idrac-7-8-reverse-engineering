@@ -1,0 +1,34 @@
+//
+// instance of CIM_RegisteredProfile
+// for Indications Profile
+//
+
+class SFCB_IndicationServiceCapabilities : CIM_IndicationServiceCapabilities
+{
+};
+
+instance of SFCB_IndicationServiceCapabilities
+{
+  InstanceID = "CIM:SFCB_ISC";
+  FilterCreationEnabledIsSettable           = FALSE;
+  DeliveryRetryAttemptsIsSettable           = FALSE;
+  DeliveryRetryIntervalIsSettable           = FALSE;
+  SubscriptionRemovalActionIsSettable       = FALSE;
+  SubscriptionRemovalTimeIntervalIsSettable = FALSE;
+  MaxListenerDestinations                   = 100;
+  MaxActiveSubscriptions                    = 100;
+  SubscriptionsPersisted                    = TRUE;
+};
+
+instance of SFCB_RegisteredProfile
+{
+  InstanceID = "CIM:SFCB_IP";
+  RegisteredOrganization = 2;
+  RegisteredName = "Indications";
+  RegisteredVersion = "1.1.0";
+  AdvertiseTypes = 3;
+};
+
+class SFCB_ElementCapabilities : CIM_ElementCapabilities
+{
+};

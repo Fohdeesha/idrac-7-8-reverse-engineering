@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript"><% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: 存储 - 虚拟磁盘</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> 虚拟磁盘</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">跳转至：<a class="popup-jump-bar" href="#VirtualDisks" id="cc3">虚拟磁盘</a> |<a class="popup-jump-bar" href="#Other" id="A14">其他选项</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>使用此页面可查看存储子系统中的虚拟磁盘列表及其属性。 </p> 
+</div> 
+<div class="popup_subheader">
+<span id="BasicFilter"> 基本 / 高级虚拟磁盘筛选 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"><p>使用 <b>控制器</b>下拉菜单以控制器来筛选虚拟磁盘。 单击<b>应用</b>。</p> 
+<p>单击 <b>高级筛选</b>来基于下列条件对虚拟磁盘列表进行筛选：</p> 
+<ul> 
+<li>控制器</li> 
+<li>状况</li> 
+<li>状态</li> 
+<li>布局</li> 
+<li>总线协议</li> 
+<li>介质类型</li> 
+<li>读策略</li> 
+<li>写策略</li> 
+<li>找到的坏区块</li> 
+<li>受保护的</li> 
+<li>磁盘高速缓存策略</li> 
+<li>增强的高速缓存</li> 
+<li>最小容量（ MB）</li> 
+<li>完整名称或部分名称</li> 
+</ul> 
+<p>有关每项属性的信息，请参见<a class="popup-jump-bar" href="#VirtualDisks" id="cc4">虚拟磁盘</a>小节。</p> 
+<p>单击<strong>取消</strong>可恢复此字段的默认值。</p></div> 
+<div class="popup_subheader"> 
+<a name="VirtualDisks"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">返回页首</a> </div> 
+<span id="VirtualDisks"> 虚拟磁盘 </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p>对每块虚拟磁盘均显示下列基本属性。</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>状况</b></span></td> 
+<td class="desc"> 
+<p>显示虚拟磁盘的运行状况。 可能的值： </p> 
+<ul> 
+<li>正常 <span class="status_ok"> &#8212; </span> 表示组件运行正常。</li> 
+<li>警告 <span class="status_noncritical"> &#8212; </span> 表示探测器或其它监测设备检测到组件的读数超过或低于可接受级别。 组件可能仍在运转，但是可能会发生故障。 组件也可能在受损的状态下工作。 </li> 
+<li>严重 <span class="status_critical"> &#8212; </span> 表示组件已出现故障或即将故障。 组件需要立即加以关注并且可能需要更换。</li> 
+<li>无此信息 <span class="status_unknown"> &#8212; </span> 表示此组件的状态为未知。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>名称</b></span></td> 
+<td class="desc"> 
+<p>显示虚拟磁盘的名称。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>状态</b></span></td> 
+<td class="desc"> 
+<p>显示虚拟磁盘的当前状态。</p> 
+<ul> 
+<li>联机 &#8212; 表示虚拟磁盘正在以最佳状态运行。</li> 
+<li>降级 &#8212; 表示冗余虚拟磁盘中的某物理磁盘未联机。</li> 
+<li>失效 &#8212; 表示虚拟磁盘发生一个或多个组件故障，并且已经停止运行。</li> 
+<li>未知 &#8212; 表示虚拟磁盘的状态为未知。</li> 
+</ul> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">注：</span>对于某些控制器，虚拟磁盘状态直到控制器执行 I/O 操作时才得以更新。</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>布局</b></span></td> 
+<td class="desc"> 
+<p>显示 RAID 等级。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>大小</b></span> </td> 
+<td class="desc"> 
+<p>显示虚拟磁盘的总容量（ 以 MB 或 GB 计）。</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>介质类型</b></span></td> 
+<td class="desc"> 
+<p>显示存在于虚拟磁盘中的物理磁盘的介质类型。 可能的值：</p> 
+<ul> 
+<li>HDD &#8212;表示介质类型是硬盘驱动器。 HDD 是一种非易变性的存储设备，在高速旋转的、表面带有磁性的盘片上存储数字化编码的数据。</li> 
+<li>SSD &#8212; &#8212;表示介质类型是固态驱动器。 SSD 是一种使用固态记忆体永久性存储数据的数据存储设备。</li> 
+<li>无此信息 — 表示此信息不可用。</li> 
+</ul> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">注：</span>虚拟磁盘中不可同时具有 HDD 和 SSD 介质。 并且虚拟磁盘中不能同时具有 SAS 和 SATA 驱动器。</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>读策略</b></span> </td> 
+<td class="desc"> 
+<p>显示控制器用于此虚拟磁盘的读策略。 可能的值：</p> 
+<ul> 
+<li>预读 &#8212; 表示对给定的卷，预期到一个未来的数据请求，控制器将按顺序地预读请求数据之后的数据，将其存于高速缓存。  这会加速顺序数据的读取，但在访问随机数据时性能提升会减小。</li> 
+<li>适应性预读 &#8212; 表示对给定的卷，如果最近的两次磁盘访问发生于相邻的扇区上，控制器将采用高速缓存预读策略。 如果读请求是随机的，则控制器返回至无预读模式。</li> 
+<li>无预读 &#8212; 表示对给定的卷，不使用预读策略。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>写策略</b></span></td> 
+<td class="desc"><p>显示控制器用于此虚拟磁盘的写策略。 可能的值：</p> 
+<ul> 
+<li>回写 &#8212;表示对给定的卷，当控制器高速缓存已接收到某操作的所有数据时，控制器会发送一数据传输完成信号给主机系统。 然后控制器在后台将缓存中的数据写入存储设备。</li> 
+<li>通写 &#8212;表示对给定的卷，当磁盘子系统已接收到事务中所有数据时发送一数据传输完成信号给主机系统。</li> 
+<li>强制回写 &#8212; 当使用强制回写缓存机制时，写缓存无论控制器是否有电池均启用。 如果控制器没有电池且强制回写缓存机制启用， 在电源故障时会发生数据丢失。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"><span><b>磁条大小</b></span></td> 
+<td class="desc"> 
+<p>显示虚拟磁盘的磁条大小。 磁条大小指每个磁条在单个磁盘上占用的空间。 可能的值：8 KB、16 KB、32 KB、64 KB、128 KB、256 KB、512 KB 或 1 MB。</p> 
+<p>如果此值不可用，则显示 <b>无此信息</b>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>受保护的</b></span> </td> 
+<td class="desc">显示虚拟磁盘是否受保护。 可能的值：是或否。<br /> 要保护虚拟磁盘，需要自加密驱动器（SED）。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>剩余冗余</b></span> </td> 
+<td class="desc">显示在虚拟磁盘发生故障前还可失去的驱动器数目。 可能的值：0，1，或 2。</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_inner_content"><div> 
+<p>单击 +  标记可显示每台虚拟磁盘的 <b>高级属性</b>和基本属性。</p></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>总线协议</b></span></td> 
+<td class="desc"> 
+<p>显示包含在虚拟磁盘中的物理磁盘所用的技术。 可能的值： </p> 
+<ul><li>SAS - 串行连接的 SCSI</li> 
+<li>SATA - 串行高级技术连接（SATA）</li> 
+</ul> 
+<p>默认情况下， SAS 是禁用的而 SATA 是启用的。</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>操作状态</b></span></td> 
+<td class="desc"> 
+<p>仅当基于进度的操作出现时显示：</p> 
+<ul> 
+<li>再同步 &#8212;表示在虚拟磁盘正在进行一致性检查。</li> 
+<li>后台初始化 &#8212; 表示在虚拟磁盘正在进行后台初始化。</li> 
+<li>初始化 &#8212;表示虚拟磁盘正在进行初始化。</li> 
+<li>重构 &#8212; 表示虚拟磁盘配置已更改。 虚拟磁盘中的物理磁盘正在修改以便支持新的配置。</li> 
+<li>不适用 — 表示没有正在执行的操作。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>磁盘高速缓存策略</b></span></td> 
+<td class="desc"> 
+<p>显示作为虚拟磁盘一部分的物理磁盘的磁盘缓存策略是否已启用或禁用。 可能的值：</p> 
+<ul> 
+<li> 已启用 — 表示磁盘的写入高速缓存已启用。 这会增强性能和提高在失去电源时数据丢失的可能性。 </li> 
+<li> 已禁用 — 表示磁盘的写入高速缓存已禁用。 这会降低性能和减少在失去电源时数据丢失的可能性。</li> 
+<li>默认 &#8212;表示磁盘正使用其默认的写入高速缓存模式。 对于 SATA 磁盘这是已启用，对于 SAS 磁盘这是已禁用。</li> 
+</ul> 
+<p> 对基于 SATA 驱动器的虚拟磁盘，其默认磁盘高速缓存策略为已启用，而基于 SAS 驱动器的虚拟磁盘则为已禁用</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>增强的高速缓存</b></span></td> 
+<td class="desc"> 
+<p>显示 PERC 控制器是否在使用虚拟磁盘作为二级缓存以提升随机读取性能。 此属性仅对 SSC 虚拟磁盘显示。 可能的值：</p> 
+<ul> 
+<li>是 &#8212; 表示虚拟磁盘正被用作二级缓存。</li> 
+<li>不适用 &#8212; 表示二级缓存不适用。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>进度</b></span></td> 
+<td class="desc"> 
+<p>以百分比的形式显示虚拟磁盘上正在执行操作的进度。</p> 
+<p>如果没有进行任何操作，则显示 <b>不适用</b>. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>发现的坏区块</b></span> </td> 
+<td class="desc"><p> 显示虚拟磁盘是否有坏的区块。 虚拟磁盘的坏区块由其一个或多个成员物理磁盘的坏区块造成。 在带有坏区块的虚拟磁盘上进行读操作可能会失败。 虚拟磁盘的坏区块是在控制器执行任何需要扫描磁盘的操作时发现的。 可能的值： </p> 
+<ul> 
+<li>是 &#8212; 表示虚拟磁盘有坏区块。</li> 
+<li>否 &#8212; 表示虚拟磁盘没坏区块。</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>控制器</b></span></td> 
+<td class="desc">单击控制器名称链接以查看与此虚拟磁盘相连的控制器属性。</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>查看物理磁盘</b></span></td> 
+<td class="desc">单击此链接以查看与此虚拟磁盘相连的物理磁盘。</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

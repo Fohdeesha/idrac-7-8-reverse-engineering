@@ -1,0 +1,16 @@
+[Unit]
+Description=VKVM_PM
+After=aps.service
+After=osinet.service
+
+[Service]
+Type=simple
+Restart=on-failure
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/sbin/vkvm_pm
+KillSignal=SIGKILL
+
+[Install]
+WantedBy=multi-user.target

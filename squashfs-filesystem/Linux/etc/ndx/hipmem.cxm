@@ -1,0 +1,93 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _MemoryArray 
+{
+        u32 location;
+        u32 use;
+        u32 errCorrType;
+        u32 maxSize;
+        u32 numSocketsTotal;
+        u32 numSocketsInUse;
+        s32 nrThreshold;
+        s32 cThreshold;
+        s32 ncThreshold;
+} MemoryArray;
+
+typedef struct _MemoryDevice 
+{
+        u32 totalWidth;
+        u32 dataBusWidth;
+        u32 size;
+        u32 formFactor;
+        u32 deviceSet;
+        u32 type;
+        u32 typeDetail;
+        u32 speed;
+        s32 errCount;
+        s32 sbErrCount;
+        s32 mbErrCount;
+        bytestr sno;
+        u32 offsetDeviceLocator;
+        u32 offsetBankLocator;
+        u32 failureModes;
+        u32 offsetManufacturer;
+        u32 offsetSerialNumber;
+        u32 offsetAssetTag;
+        u32 offsetPartNumber;
+        u32 offsetSpeedAsString;
+        u32 offsetAMBManufacturer;
+        u32 offsetSDRAMManufacturer;
+} MemoryDevice;
+
+typedef struct _MemArrMapAdr 
+{
+        u32 startingAddr;
+        u32 endingAddr;
+        u32 partitionWidth;
+} MemArrMapAdr;
+
+typedef struct _MemDevMapAdr 
+{
+        u32 startingAddr;
+        u32 endingAddr;
+        u32 partRowPos;
+        u32 interleavePos;
+        u32 interleaveDataDepth;
+} MemDevMapAdr;
+
+typedef struct _MemoryConfigObj 
+{
+        u8 capabilities;
+        u8 curConfig;
+        u8 foState;
+} MemoryConfigObj;
+
+typedef struct _ECCLogStatusObj 
+{
+        u8 state;
+} ECCLogStatusObj;
+
+typedef struct _MemoryCard 
+{
+        u32 numSocketsTotal;
+        u32 numSocketsInUse;
+        u32 offsetCardName;
+} MemoryCard;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

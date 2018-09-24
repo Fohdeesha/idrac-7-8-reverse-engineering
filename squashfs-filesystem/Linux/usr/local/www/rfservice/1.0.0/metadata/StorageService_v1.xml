@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!-- Copyright 2015-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+	</edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Measures.V1.xml">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+		<edmx:Include Namespace="Resource"/>
+		<edmx:Include Namespace="Resource.v1_0_0" />
+		<edmx:Include Namespace="Resource.v1_1_0" />
+	</edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/ComputerSystem_v1.xml">
+		<edmx:Include Namespace="ComputerSystem"/>
+	</edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Chassis_v1.xml">
+    <edmx:Include Namespace="Chassis"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Redundancy_v1.xml">
+    <edmx:Include Namespace="Redundancy"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/DriveCollection_v1.xml">
+    <edmx:Include Namespace="DriveCollection"/>
+  </edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/StorageGroupCollection_v1.xml">
+		<edmx:Include Namespace="StorageGroupCollection"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/VolumeCollection_v1.xml">
+		<edmx:Include Namespace="VolumeCollection"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/FileSystemCollection_v1.xml">
+		<edmx:Include Namespace="FileSystemCollection"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/EndpointCollection_v1.xml">
+		<edmx:Include Namespace="EndpointCollection"/>
+	</edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/DataProtectionLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="DataProtectionLoSCapabilities" />
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/DataStorageLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="DataStorageLoSCapabilities" />
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/DataSecurityLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="DataSecurityLoSCapabilities" />
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/IOConnectivityLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="IOConnectivityLoSCapabilities" />
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/IOPerformanceLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="IOPerformanceLoSCapabilities" />
+  </edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/StoragePoolCollection_v1.xml">
+		<edmx:Include Namespace="StoragePoolCollection"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/ClassOfService_v1.xml">
+		<edmx:Include Namespace="ClassOfService"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/ClassOfServiceCollection_v1.xml">
+		<edmx:Include Namespace="ClassOfServiceCollection"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/redfish/v1/Schemas/EndpointGroupCollection_v1.xml">
+		<edmx:Include Namespace="EndpointGroupCollection"/>
+	</edmx:Reference>
+
+  <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService">
+
+      <EntityType Name="StorageService" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+        <Annotation Term="OData.Description" String="A storage service."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent resources that are managed by a storage service."/>
+      </EntityType>
+
+      <Action Name="SetEncryptionKey" IsBound="true">
+        <Parameter Name="Storage" Type="StorageService.v1_0_0.Actions"/>
+        <Parameter Name="EncryptionKey" Type="Edm.String">
+          <Annotation Term="OData.Description" String="The encryption key to set on the storage subsytem"/>
+          <Annotation Term="OData.LongDescription" String="This defines the property name for the action."/>
+        </Parameter>
+        <Annotation Term="OData.Description" String="This action is used to set the encryption key for the storage subsystem."/>
+        <Annotation Term="OData.LongDescription" String="This defines the name of the custom action supported on this resource."/>
+      </Action>
+
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService.v1_0_0">
+
+    <EntityType Name="StorageService" BaseType="StorageService.StorageService">
+            <Annotation Term="OData.Description" String="Collection of resources that are managed and exposed to hosts as a group."/>
+            <Annotation Term="OData.LongDescription" String="Collection of resources that the system can make available to one or more host systems.  The collection can contain: block, file, or object storage; local system access points through which the collection is made available; hosts, or host access points to which the collection is made available."/>
+            <Property Name="Identifier" Type="Resource.v1_1_0.Identifier">
+             <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+              <Annotation Term="OData.Description" String="The value identifies this resource." />
+              <Annotation Term="OData.LongDescription" String="The value identifies this resource.  The value shall be unique within the managed ecosystem." />
+            </Property>
+            <Property Name="Status" Type="Resource.Status"/>
+            <Property Name="Links" Type="StorageService.v1_0_0.Links" Nullable="false">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="Contains links to other resources that are related to this resource."/>
+            </Property>
+            <NavigationProperty Name="StorageGroups" Type="StorageGroupCollection.StorageGroupCollection" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="StorageGroups."/>
+                <Annotation Term="OData.LongDescription" String="The value of each enty in the array shall reference a StorageGroup."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <NavigationProperty Name="ClientEndpointGroups" Type="EndpointGroupCollection.EndpointGroupCollection" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                <Annotation Term="OData.Description" String="Client endpoint groups."/>
+                <Annotation Term="OData.LongDescription" String="The value of each entry in the array shall reference an EndpointGroup."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <NavigationProperty Name="ServerEndpointGroups" Type="EndpointGroupCollection.EndpointGroupCollection" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                <Annotation Term="OData.Description" String="Server endpoint groups."/>
+                <Annotation Term="OData.LongDescription" String="The value of each entry in the array shall reference a EndpointGroup."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <NavigationProperty Name="Volumes" Type="VolumeCollection.VolumeCollection" Nullable="false" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                <Annotation Term="OData.Description" String="Volumes."/>
+                <Annotation Term="OData.LongDescription" String="An array of references to Volumes managed by this storage service."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <NavigationProperty Name="FileSystems" Type="FileSystemCollection.FileSystemCollection" Nullable="false" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                <Annotation Term="OData.Description" String="FileSystems."/>
+                <Annotation Term="OData.LongDescription" String="An array of references to FileSystems managed by this storage service."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <NavigationProperty Name="StoragePools" Type="StoragePoolCollection.StoragePoolCollection" Nullable="false" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="StoragePools."/>
+                <Annotation Term="OData.LongDescription" String="An array of references to StoragePools."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <NavigationProperty Name="Drives" Type="DriveCollection.DriveCollection" Nullable="false"  ContainsTarget="true">
+              <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+              <Annotation Term="OData.Description" String="The set of drives managed by this storage service."/>
+              <Annotation Term="OData.LongDescription" String="A collection that indicates all the drives managed by this storage service."/>
+              <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <NavigationProperty Name="Endpoints" Type="EndpointCollection.EndpointCollection" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="Endpoints."/>
+                <Annotation Term="OData.LongDescription" String="The value of each enty in the array shall reference an Endpoint managed by this service."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <Property Name="Actions" Type="StorageService.v1_0_0.Actions" Nullable="false">
+              <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+              <Annotation Term="OData.Description" String="The available actions for this resource."/>
+              <Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
+            </Property>
+            <NavigationProperty Name="Redundancy" Type="Collection(Redundancy.Redundancy)" Nullable="false">
+              <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+              <Annotation Term="OData.Description" String="Redundancy information for the storage subsystem"/>
+              <Annotation Term="OData.AutoExpand"/>
+            </NavigationProperty>
+         <NavigationProperty Name="ClassesOfService" Type="ClassOfServiceCollection.ClassOfServiceCollection" ContainsTarget="true">
+            <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+            <Annotation Term="OData.Description" String="The ClassesOfService that all storage in this StorageService can support."/>
+            <Annotation Term="OData.LongDescription" String="The value of each enty in the array shall reference a ClassOfService supported by this service."/>
+            <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        </EntityType>
+
+      <ComplexType Name="Links" BaseType="Resource.Links">
+        <NavigationProperty Name="HostingSystem" Type="ComputerSystem.ComputerSystem">
+          <Annotation Term="OData.Description" String="The hosting system."/>
+          <Annotation Term="OData.LongDescription" String="The value shall reference the ComputerSystem that hosts this service."/>
+        </NavigationProperty>
+        <NavigationProperty Name="DefaultClassOfService" Type="ClassOfService.ClassOfService">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="The default class of service for entities allocated by this storage service." />
+          <Annotation Term="OData.LongDescription"
+          String="If present, this property shall reference the default class of service for entities allocated by this storage service. This default may be overridden by the DefaultClassOfService property values within contained StoragePools."/>
+          <Annotation Term="OData.AutoExpandReferences" />
+        </NavigationProperty>
+       <NavigationProperty Name="DataProtectionLoSCapabilities" Type="DataProtectionLoSCapabilities.DataProtectionLoSCapabilities">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="The data protection capabilities of this service." />
+          <Annotation Term="OData.LongDescription" String="The value shall reference the data protection capabilities of this service." />
+        </NavigationProperty>
+        <NavigationProperty Name="DataSecurityLoSCapabilities" Type="DataSecurityLoSCapabilities.DataSecurityLoSCapabilities">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="The data security capabilities of this service." />
+          <Annotation Term="OData.LongDescription" String="The value shall reference the data security capabilities of this service." />
+        </NavigationProperty>
+        <NavigationProperty Name="DataStorageLoSCapabilities" Type="DataStorageLoSCapabilities.DataStorageLoSCapabilities">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="The data storage capabilities of this service."/>
+          <Annotation Term="OData.LongDescription" String="The value shall reference the data storage capabilities of this service." />
+        </NavigationProperty>
+        <NavigationProperty Name="IOConnectivityLoSCapabilities" Type="IOConnectivityLoSCapabilities.IOConnectivityLoSCapabilities">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="The IO connectivity capabilities of this service." />
+          <Annotation Term="OData.LongDescription" String="The value shall reference the IO connectivity capabilities of this service." />
+        </NavigationProperty>
+        <NavigationProperty Name="IOPerformanceLoSCapabilities" Type="IOPerformanceLoSCapabilities.IOPerformanceLoSCapabilities">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="The IO performance capabilities of this service." />
+          <Annotation Term="OData.LongDescription" String="The value shall reference the IO performance capabilities of this service." />
+        </NavigationProperty>
+      </ComplexType>
+
+      <ComplexType Name="Actions">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Property Name="Oem" Type="StorageService.v1_0_0.OemActions" Nullable="false"/>
+      </ComplexType>
+
+      <ComplexType Name="OemActions">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+      </ComplexType>
+
+
+      <EnumType Name="Protocol">
+        <Member Name="PCIe">
+          <Annotation Term="OData.Description" String="PCI Express (Vendor Proprietary)"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the PCI-SIG PCI Express Base Specification only beyond that is uses some vendor proprietary mechanism to communicate."/>
+        </Member>
+        <Member Name="AHCI">
+          <Annotation Term="OData.Description" String="Advanced Host Controller Interface"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the Intel Advanced Host Controller Interface Specification."/>
+        </Member>
+        <Member Name="UHCI">
+          <Annotation Term="OData.Description" String="Universal Host Controller Interface"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the Intel Universal Host Controller Interface Specification, Enhanced Host Controller Interface Specification, or the Extensible Host Controller Interface specification."/>
+        </Member>
+        <Member Name="SAS">
+          <Annotation Term="OData.Description" String="Serial Attached SCSI"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the T10 SAS Protocol Layer Specification."/>
+        </Member>
+        <Member Name="SATA">
+          <Annotation Term="OData.Description" String="Serial AT Attachment"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the Serial ATA International Organization Serial ATA Specification."/>
+        </Member>
+        <Member Name="USB">
+          <Annotation Term="OData.Description" String="Universal Serial Bus"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the USB Implementers Forum Universal Serial Bus Specification."/>
+        </Member>
+        <Member Name="NVMe">
+          <Annotation Term="OData.Description" String="Non-Volatile Memory Express"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the Non-Volatile Memory Host Controller Interface Specification Specification."/>
+        </Member>
+        <Member Name="FC">
+          <Annotation Term="OData.Description" String="Fibre Channel"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the T11 Fibre Channel Physical and Signaling Interface Specification."/>
+        </Member>
+        <Member Name="iSCSI">
+          <Annotation Term="OData.Description" String="Internet SCSI"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the IETF Internet Small Computer Systems Interface (iSCSI) Specification."/>
+        </Member>
+        <Member Name="FCoE">
+          <Annotation Term="OData.Description" String="Fibre Channel over Ethernet"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the T11 FC-BB-5 Specification."/>
+        </Member>
+        <Member Name="NVMeOverFabrics">
+          <Annotation Term="OData.Description" String="NVMe over Fabrics"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the NVM Express over Fabrics Specification."/>
+        </Member>
+        <Member Name="SMB">
+          <Annotation Term="OData.Description" String="Server Message Block (aka CIFS Common Internet File System)"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the Microsoft Server Message Block Protocol."/>
+        </Member>
+        <Member Name="NFSv3">
+          <Annotation Term="OData.Description" String="Network File System version 3"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the Network File System protocol as defined by RFC 1813."/>
+        </Member>
+        <Member Name="NFSv4">
+          <Annotation Term="OData.Description" String="Network File System version 4"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the Network File System protocol as defined by RFC 3010 or RFC 5661."/>
+        </Member>
+        <Member Name="HTTP">
+          <Annotation Term="OData.Description" String="Hypertext Transport Protocol"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the Hypertext Transfer protocol as defined by RFC 2068 or RFC 2616."/>
+        </Member>
+        <Member Name="HTTPS">
+          <Annotation Term="OData.Description" String="Secure Hypertext Transport Protocol"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the Hypertext Transfer protocol as defined by RFC 2068 or RFC 2616 utilizing Transport Layer Security as specified by RFC 5246 or RFC 6176."/>
+        </Member>
+        <Member Name="FTP">
+          <Annotation Term="OData.Description" String="File Transfer Protocol"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the File Transfer protocol as defined by RFC 114."/>
+        </Member>
+        <Member Name="SFTP">
+          <Annotation Term="OData.Description" String="Secure File Transfer Protocol"/>
+          <Annotation Term="OData.LongDescription" String="This value shall mean that this device conforms to the File Transfer protocol as defined by RFC 114 utilizing Transport Layer Security as specified by RFC 5246 or RFC 6176."/>
+        </Member>
+      </EnumType>
+    </Schema>
+
+	</edmx:DataServices>
+</edmx:Edmx>

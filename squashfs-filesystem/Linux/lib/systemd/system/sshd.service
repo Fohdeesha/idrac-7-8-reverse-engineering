@@ -1,0 +1,21 @@
+[Unit]
+Description=SSH Daemon
+After=osinet.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/C
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+
+PIDFile=/var/run/sshd.pid
+ExecStart=/etc/sysapps_script/sshd.startup start
+ExecStop=/etc/sysapps_script/sshd.startup stop
+KillSignal=SIGKILL
+KillMode=process
+
+# startup can take very long if we have to generate keys
+TimeoutStartSec=600
+
+[Install]
+WantedBy=multi-user.target

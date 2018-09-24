@@ -1,0 +1,20 @@
+[Unit]
+Description=idrac discovery
+After=osinet_late.service
+After=dm-stage2.service
+#ConditionPathExists=/flash/data0/oem_ps/auto_discovery_enabled
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+#Fips support - don't complain if not there
+EnvironmentFile=-/flash/data0/features/fips.txt
+Environment=USER=root
+
+ExecStartPre=/etc/sysapps_script/S_9001_idrac_discovery.sh init
+ExecStart=/bin/idrac_discovery
+
+[Install]
+WantedBy=multi-user.target

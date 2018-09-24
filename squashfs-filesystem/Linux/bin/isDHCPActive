@@ -1,0 +1,14 @@
+#!/bin/sh
+
+DHCP_ACTIVE=1
+
+DHCP_CNT=$(ps | grep -c udhcpc)
+
+echo DHCP_CNT $DHCP_CNT
+
+if [ $DHCP_CNT -gt 1 ]
+then
+	DHCP_ACTIVE=0
+fi
+
+exit "$DHCP_ACTIVE"

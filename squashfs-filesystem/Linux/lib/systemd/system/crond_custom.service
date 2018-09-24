@@ -1,0 +1,17 @@
+[Unit]
+Description=Custom crond
+After=dsm-sa-datamgr.service
+After=osinet.service
+After=maser_access_controller.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStartPre=/etc/sysapps_script/S_9700_crond_custom.sh init
+ExecStart=/sbin/crond -b
+
+[Install]
+WantedBy=multi-user.target

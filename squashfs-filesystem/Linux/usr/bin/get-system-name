@@ -1,0 +1,10 @@
+PlatformList=/flash/pd0/ipmi/sysid_mapping.lst
+
+# Get system ID from CPLD
+planar_type=$(/etc/default/ipmi/systemID)
+
+# Parse the file to get the name for the ID.
+platform_name=$(grep ${planar_type} ${PlatformList} | awk '{print $2}')
+
+# default platform name if not set in system id list
+echo ${platform_name:-evb}

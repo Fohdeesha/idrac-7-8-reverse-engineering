@@ -1,0 +1,25 @@
+[Unit]
+Description=AppWeb Server
+After=dsm-sa-datamgr.service
+After=osinet.service
+After=personality_module.service
+After=dsm-sa-datamgr.service
+After=maser_access_controller.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/C
+Restart=on-failure
+LimitSTACK=65536
+LimitCORE=infinity
+
+#EnvironmentFile=/etc/global.env
+Environment=LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/usr/local/lib/appweb:/usr/local/bin:/lib/security USER=root AVCT_SERVICE_MANAGER_CONFIG=/usr/local/etc/serviceman.conf SFCC_CLIENT=SfcbLocal 
+# link for /etc/krb5.conf file is created at build time. Copy the content at run time
+ExecStartPre=-/bin/sh -c "if [ -e /flash/data0/oem_ps/fips.txt ];then /bin/cp -a /etc/krb5.conf.fips.default /var/run/krb5.conf;else /bin/cp -a /etc/krb5.conf.default /var/run/krb5.conf;fi"
+ExecStart=/etc/init.d/systemd_appwebbin.sh start
+KillSignal=SIGKILL
+TimeoutStopSec=2
+
+[Install]
+WantedBy=multi-user.target

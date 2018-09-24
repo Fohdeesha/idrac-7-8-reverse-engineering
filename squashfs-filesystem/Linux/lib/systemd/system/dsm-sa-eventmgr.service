@@ -1,0 +1,22 @@
+[Unit]
+Description=Event Manager
+After=dsm-sa-datamgr.service
+Wants=dsm-sa-datamgr.service
+
+# for CPU Utilization
+After=fullfw_app.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/C
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+#Fips support - don't complain if not there
+EnvironmentFile=-/flash/data0/features/fips.txt
+
+ExecStart=/usr/sbin/dsm_sa_eventmgrd
+
+[Install]
+Alias=dm-event.service
+WantedBy=multi-user.target

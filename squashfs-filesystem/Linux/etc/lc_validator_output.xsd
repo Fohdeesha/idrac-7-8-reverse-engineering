@@ -1,0 +1,52 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Files">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FileDetails" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Device">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Component" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="name" use="optional"/>
+                            <xs:attribute type="xs:string" name="target" use="optional"/>
+                            <xs:attribute type="xs:string" name="version" use="optional"/>
+                            <xs:attribute type="xs:string" name="vendorID" use="optional"/>
+                            <xs:attribute type="xs:string" name="deviceID" use="optional"/>
+                            <xs:attribute type="xs:string" name="subVendorID" use="optional"/>
+                            <xs:attribute type="xs:string" name="subDeviceID" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="target" use="optional"/>
+                  <xs:attribute type="xs:string" name="ComponentID" use="optional"/>
+                  <xs:attribute type="xs:string" name="ComponentType" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="optional"/>
+            <xs:attribute type="xs:string" name="displayName" use="optional"/>
+            <xs:attribute type="xs:string" name="Protocol" use="optional"/>
+            <xs:attribute type="xs:string" name="BaseLocation" use="optional"/>
+            <xs:attribute type="xs:string" name="path" use="optional"/>
+            <xs:attribute type="xs:string" name="packageVersion" use="optional"/>
+            <xs:attribute type="xs:string" name="status" use="optional"/>
+            <xs:attribute type="xs:string" name="messageID" use="optional"/>
+            <xs:attribute type="xs:string" name="message" use="optional"/>
+            <xs:attribute type="xs:string" name="ApplyUpdate" use="optional"/>
+            <xs:attribute type="xs:string" name="Criticality" use="optional"/>
+            <xs:attribute type="xs:string" name="RebootType" use="optional"/>
+            <xs:attribute type="xs:string" name="JobID" use="optional"/>
+            <xs:attribute type="xs:string" name="Category" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

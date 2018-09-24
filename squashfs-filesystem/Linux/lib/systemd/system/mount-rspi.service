@@ -1,0 +1,14 @@
+[Unit]
+Description=Mount RSPI Filesystem
+DefaultDependencies=no
+After=driver-load.service
+Wants=driver-load.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Nice=-15
+ExecStart=/bin/sh -c "/bin/mount /flash/data3 || (/usr/sbin/flash_eraseall -j /dev/$(cat /proc/mtd | grep '\"fpspi\"' | cut -d: -f1) && /bin/mount /flash/data3)"
+ExecStartPost=/bin/sh -c "/bin/touch /tmp/fpspi_mount_success"
+[Install]
+WantedBy=local-fs.target

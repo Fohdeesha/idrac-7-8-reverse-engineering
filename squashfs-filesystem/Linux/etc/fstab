@@ -1,0 +1,29 @@
+sysfs		/sys		    sysfs	    defaults	0	0
+devpts		/dev/pts	    devpts	    gid=5,mode=620	0	0
+proc		/proc		    proc	    defaults	0	0
+tmpfs		/tmp		    tmpfs	    defaults,noauto	0	0
+debugfs		/sys/kernel/debug	debugfs	defaults 0	0
+tmpfs       /var/volatile   tmpfs       defaults,noauto 0       0
+usbdevfs    /proc/bus/usb   usbdevfs    noauto           0       0
+# need this if we ever do NFS server stuff
+# nfsd        /proc/fs/nfsd   nfsd        auto             0       0
+
+/dev/mmcblk0p11	/flash/data0	ext3        nofail,noauto,noatime 0 0
+mtd:lcl	        /flash/data1	jffs2	    nofail,noauto,noatime 0 0
+/dev/mmcblk0p14 /flash/data2    ext2        nofail,noauto,noatime 0 0
+
+# SYSTEMD MOUNTS THIS ONE FOR US
+mtd:fpspi       /flash/data3    jffs2       nofail,noauto,noatime 0 0
+
+# moving mountpoint from /tmp/pd0 -> /flash/pd0 so we can get mountpoint out of
+# tmp. symlink for back compat
+/dev/mmcblk0p9  /flash/pd9      squashfs    nofail,noauto,noatime 0 0
+/dev/mmcblk0p10  /flash/pd10      squashfs    nofail,noauto,noatime 0 0
+
+/dev/mmcblk0p12 /mmc1           ext3        nofail,noauto,noatime,barrier=1,user_xattr 0 0
+/dev/mmcblk0p15 /mmc2           ext3        nofail,noauto,noatime 0 0
+
+/dev/mmcblk0p8  /mnt/rawscratch ext3        nofail,noauto,noatime,errors=continue,user_xattr,barrier=1,data=writeback 0 0
+/mnt/rawscratch/scrtch.img  /mnt/scratchpad vfat nofail,noauto,noatime 0 0
+
+/dev/mmcblk0p13 /mnt/cores      ext3        nofail,noauto,noatime,errors=continue,user_xattr,barrier=1,data=writeback 0 0

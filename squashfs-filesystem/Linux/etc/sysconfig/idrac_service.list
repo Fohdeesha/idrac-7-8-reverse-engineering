@@ -1,0 +1,24 @@
+# List of services for self-test results
+# Do NOT leave any blank line in the file!!!
+/avct/sbin/os
+/avct/sbin/osinet
+/avct/sbin/pm
+/bin/ipmi_gateway
+/bin/ipmi_monitor
+/bin/ttymonitor
+/sbin/aim
+/sbin/avct_server
+/sbin/klogd
+#/sbin/openwsmand
+/sbin/sfcbd
+/sbin/sshd
+/sbin/syslogd
+/sbin/watchdog
+/usr/local/bin/appweb
+/usr/local/bin/guiDataServer
+/usr/local/bin/serviceman
+/usr/sbin/ipmiextd
+/usr/sbin/raclogd
+#udhcpc
+#/bin/fullfw
+# This is end of the list

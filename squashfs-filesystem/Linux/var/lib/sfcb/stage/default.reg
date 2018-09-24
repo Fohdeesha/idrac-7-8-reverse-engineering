@@ -1,0 +1,140 @@
+[$ClassProvider$]
+   provider: ClassProvider
+   location: sfcClassProviderSf
+   type: class method
+   unload: never
+   namespace: *
+#   parameters: cacheLimit=10
+#
+[$DefaultProvider$]
+   provider: InternalProvider
+   location: sfcInternalProvider
+   type: instance association method
+   unload: never
+   namespace: *
+#
+[$InterOpProvider$]
+   provider: InteropProvider
+   location: sfcInteropProvider
+   type: instance method
+   unload: never
+   namespace: root/interop
+#
+#[$ProfileProvider$]
+#   provider: ProfileProvider
+#   location: sfcProfileProvider
+#   type: method
+#   unload: never
+#   namespace: root/interop
+#
+#[$QualifierProvider$]
+#   provider: QualifierProvider
+#   location: sfcQualifierProvider
+#   type: qualifier
+#   unload: never
+#   namespace: *
+#
+[CIM_IndicationHandlerCIMXML]
+   provider: IndCIMXMLHandler
+   location: sfcIndCIMXMLHandler
+   type: instance method
+   namespace: root/interop
+#
+[CIM_ListenerDestinationCIMXML]
+   provider: IndCIMXMLHandler
+   location: sfcIndCIMXMLHandler
+   type: instance method
+   namespace: root/interop
+#
+[CIM_IndicationSubscription]
+   provider: InteropProvider
+   location: sfcInteropProvider
+   type: instance method
+   namespace: root/interop
+#
+[CIM_IndicationFilter]
+   provider: InteropProvider
+   location: sfcInteropProvider
+   type: instance method
+   namespace: root/interop
+#
+[SFCB_IndicationServiceCapabilities]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[SFCB_ElementCapabilities]
+   provider: ElementCapabilities
+   location: sfcElementCapabilitiesProvider
+   type: association
+   namespace: root/interop
+
+#[SFCB_Account]
+#   provider: CimAccountPassthroughProvider
+#   location: sfccimAccountPassthroughProvider
+#   type: method
+#   parameters: AccountClass=root/cimv2:cim_account
+#   namespace: root/interop
+#
+[SFCB_RegisteredProfile]
+   provider: InternalProvider
+   location: sfcInternalProvider
+   type: instance
+   namespace: root/interop
+#
+[CIM_Namespace]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[CIM_ObjectManager]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[SFCB_CIMXMLCommunicationMechanism]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[CIM_IndicationService]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[SFCB_ServiceAffectsElement]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance association
+   namespace: root/interop
+#
+[CIM_HostedService]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance association
+   namespace: root/interop
+#
+[SFCB_ElementConformsToProfile]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance association
+   namespace: root/interop
+#
+[SFCB_IndicationElement]
+   provider: InternalProvider
+   location: sfcInternalProvider
+   type: instance method association
+   unload: never
+   namespace: root/interop
+#
+[CIM_NamespaceInManager]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: association
+   namespace: root/interop
+#

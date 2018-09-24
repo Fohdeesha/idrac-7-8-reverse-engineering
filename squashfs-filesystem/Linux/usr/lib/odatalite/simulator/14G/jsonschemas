@@ -1,0 +1,14 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemas",
+    "@odata.id": "/redfish/v1/JsonSchemas"  ,"@oem.nav.parentid": "/redfish/v1",
+    "@odata.type": "#JsonSchemaFileCollection.JsonSchemaFileCollection",
+    "Name": "Schema Repository",
+    "Description": "Schema Repository",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/JsonSchemas/Chassis.1.0.0"
+        }
+    ]
+}

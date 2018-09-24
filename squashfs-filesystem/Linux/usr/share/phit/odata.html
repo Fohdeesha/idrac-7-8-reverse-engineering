@@ -1,0 +1,66 @@
+<br>
+<h2>OData Query:</h2>
+<b>Metadata:</b>
+<br>
+<input type="radio" name="metadata" id="none">none</input>
+<input type="radio" name="metadata" id="minimal" checked>minimal</input>
+<input type="radio" name="metadata" id="full">full</input>
+<br>
+<br>
+<b>Query:</b>
+<br>
+<input type="text" id=URI name="URI" value="odata/" size=80/>
+<input type="button" name="Go" value="Go" onClick="HandleGo();" />
+<script language="javascript">
+  function UpdatePageCallback(page)
+  {
+    document.open();
+    document.clear();
+    document.write("<PRE>");
+    document.write(page);
+    document.write("</PRE>");
+  }
+  function EventListener(evt)
+  {
+    if (this.status == 200)
+      this.userDefinedCallback(this.response);
+    else
+    {
+      var msg = "<h3>HTTP Status Code: " + this.status + "</h3>";
+      msg = msg + "<h3>HTTP Error Content:</h3>";
+      this.userDefinedCallback(msg + this.response);
+    }
+  }
+  function GetPage(uri)
+  {
+    var metadata = 'minimal';
+
+    if (document.getElementById('none').checked) 
+        metadata = 'none';
+    else if (document.getElementById('full').checked) 
+        metadata = 'full';
+
+    if (uri.substring(0,1) == '/')
+        uri = ".." + uri;
+    else
+        uri = "../" + uri;
+
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", EventListener, false);
+    xhr.addEventListener("error", EventListener, false);
+    xhr.addEventListener("abort", EventListener, false);
+    xhr.open('GET', uri, true);
+    xhr.setRequestHeader('Accept',
+      'application/json;odata.metadata=' + metadata);
+    xhr.setRequestHeader('OData-Version', '4.0');
+    xhr.userDefinedUri = uri;
+    xhr.userDefinedCallback = UpdatePageCallback;
+    xhr.userDefinedBase = uri;
+    xhr.send();
+  }
+  function HandleGo(uri)
+  {
+    GetPage(URI.value);
+  }
+</script>
+<br>

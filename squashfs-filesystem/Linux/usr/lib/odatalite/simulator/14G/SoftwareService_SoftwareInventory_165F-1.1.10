@@ -1,0 +1,65 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#SoftwareService/Members/SoftwareInventory/165F-1.1.10/$entity",
+	"@odata.id": "/redfish/v1/SoftwareService/SoftwareInventory/165F-1.1.10",
+    "@oem.nav.parentid": "/redfish/v1/SoftwareService/SoftwareInventory",
+    "@odata.type": "#Dell.SoftwarePackage.1.0.0.SoftwarePackage",
+    "Id": "165F-1.1.10",
+    
+    "Description": "An example of Software that is installed on two components. This software was previously installed on the other four components under CanInstallTo which was upgraded. An upgrade was attempted on the remaining two but failed, see InstallTasks property of the software upgrade for failure info.",
+    "Name": "Broadcom Gigabit Ethernet BCM5720",
+    "ComponentID": "165F",
+    "ComponentType": "FRMW",
+    "MajorVersion": "1",
+    "MinorVersion": "1",
+    "RevisionNumber": "10",
+    "UpdateFileType": "DellUpdatePackage",
+    "UpdateFileChecksum": "2ff3f8c296bb4e25d4f0872a271f801f5d0fdd87a6d0be46f54854d4a66eae06",
+    "UpdateFileChecksumType": "SHA-256",
+    "VersionString": "1.1.10",
+    "VendorID": "14E4",
+    
+    "CanUpdate": true,
+    "CanInstall": true,
+    "CanInstallTo": [
+        { 
+            "@odata.id": "/redfish/v1/Systems/SLED946/EthernetInterfaces/NIC.Integrated.1-2-1"
+        },
+        { 
+            "@odata.id": "/redfish/v1/Systems/SLED946/EthernetInterfaces/NIC.Integrated.1-2-2"
+        },
+        { 
+            "@odata.id": "/redfish/v1/Systems/SLED946/EthernetInterfaces/NIC.Integrated.1-3-1"
+        },
+        { 
+            "@odata.id": "/redfish/v1/Systems/SLED946/EthernetInterfaces/NIC.Integrated.1-3-2"
+        }
+    ],
+    
+    "InstallDate": "2015-03-13T04:14:33+06:00",
+    "InstalledOn": [
+        { 
+            "@odata.id": "/redfish/v1/Systems/SLED946/EthernetInterfaces/NIC.Integrated.1-1-1"
+        },
+        { 
+            "@odata.id": "/redfish/v1/Systems/SLED946/EthernetInterfaces/NIC.Integrated.1-1-2"
+        }
+    ],
+    
+    "InstallEffectiveTime": null,
+    "InstallExpiryTime": null,
+    "InstallUpon": null,
+    "InstallTasks": [
+    ],
+    "Actions": {
+        "#SoftwarePackage.Install": {
+            "Force": "Edm.Boolean type. If false (default), update file shall be installed only to components that this software is not yet installed. If true, update file shall be installed to all components even if it is already installed.",
+            "Select": "A collection (array) of links to resources that represent the applicable components. It provides the ability to install the update file only to a subset of applicable components. If not provided, the update file is installed only to resources in the CanInstallTo property.",
+            "InstallUpon": "Enumeration used by the service as condition for executing the installation of update file. Immediatly (default) instructs to execute the install process now or as soon as the service can. NextReboot instructs to execute the install process upon the next system reboot.",
+            "InstallEffectiveTime": "Edm.DateTimeOffset type. A specific date and time instructing the service when the execution of the install action can commensurate. Affects InstallUpon.",
+            "InstallExpiryTime": "Edm.DateTimeOffset type. A specific date and time after InstallEffectiveTime. If the execution of the install has not started by this time, then the execution is cancelled."
+        },
+        "Oem": {}
+    },
+    "Oem": {}
+}

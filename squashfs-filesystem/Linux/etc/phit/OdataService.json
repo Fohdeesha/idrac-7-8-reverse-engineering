@@ -1,0 +1,44 @@
+{
+  "value": [
+    {
+      "name": "Service",
+      "kind": "Singleton",
+      "url": "/redfish/v1"
+    },
+    {
+      "name": "Systems",
+      "kind": "Singleton",
+      "url": "/redfish/v1/Systems"
+    },
+    {
+      "name": "Chassis",
+      "kind": "Singleton",
+      "url": "/redfish/v1/Chassis"
+    },
+    {
+      "name": "Managers",
+      "kind": "Singleton",
+      "url": "/redfish/v1/Managers"
+    },
+    {
+      "name": "TaskService",
+      "kind": "Singleton",
+      "url": "/redfish/v1/TaskService"
+    },
+    {
+      "name": "AccountService",
+      "kind": "Singleton",
+      "url": "/redfish/v1/AccountService"
+    },
+    {
+      "name": "SessionService",
+      "kind": "Singleton",
+      "url": "/redfish/v1/SessionService"
+    },
+    {
+      "name": "EventService",
+      "kind": "Singleton",
+      "url": "/redfish/v1/EventService"
+    }
+  ]
+}

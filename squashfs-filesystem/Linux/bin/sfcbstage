@@ -1,0 +1,89 @@
+#!/bin/sh
+
+usage() 
+{
+    echo "usage: $0 [-h] [-n namespace] [ -s stagingdir] [ -r regfile ] [ mof ... ]  " 1>&2 
+}
+
+args=`getopt hn:r:s: $*`
+rc=$?
+
+if [ $rc = 127 ]
+then
+    echo "warning: getopt not found ...continue without syntax check"
+    args=$*
+elif [ $rc != 0 ]
+then
+    usage $0
+    exit 1
+fi
+
+set -- $args
+
+while [ -n "$1" ]
+do
+  case $1 in
+      -h) help=1; 
+	  shift;;
+      -n) namespace=$2 
+	  shift 2;;
+      -s) stagingdir=$2
+	  shift 2;;
+      -r) regfile=$2
+	  shift 2;;
+      --) shift;
+	  break;;
+      **) break;;
+  esac
+done
+
+if [ "$help" = "1" ]
+then
+    usage
+    echo -e "\t-h display help message"
+    echo -e "\t-n specify CIM namespace [root/cimv2]"
+    echo -e "\t-s specify staging directory [/var/lib/sfcb/stage]"
+    echo -e "\t-r specify sfcb registration file"
+    echo
+    echo Use this command to copy registration files to the sfcb staging area.
+    exit 0
+fi
+
+if [ -z "$*" ] && [ -z "$regfile" ]
+then
+    usage $0
+    exit 1
+fi
+
+if [ -z "$namespace" ]
+then
+    namespace=root/cimv2
+fi
+
+if [ -z "$stagingdir" ]
+then
+    stagingdir=${DESTDIR}/var/lib/sfcb/stage
+fi
+
+if [ -n "$regfile" ]
+then
+    test -d $stagingdir/regs || mkdir -p $stagingdir/regs
+    if ! cp $regfile $stagingdir/regs
+    then
+	echo "Error: could not copy registration files " 1>&2
+	exit 1
+    fi
+fi
+
+if [ -n "$*" ]
+then
+    test -d $stagingdir/mofs/$namespace || mkdir -p $stagingdir/mofs/$namespace
+    for mofname in $*
+    do
+      if ! sfcbmofpp $mofname > $stagingdir/mofs/$namespace/`basename $mofname`
+      then
+	  echo "Error: could not copy schema files " 1>&2    
+	  exit 1
+      fi
+    done
+fi

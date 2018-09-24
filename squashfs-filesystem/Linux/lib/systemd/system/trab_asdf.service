@@ -1,0 +1,12 @@
+[Unit]
+Description=Install trace buffer module
+
+[Service]
+Type=simple
+LimitSTACK=infinity
+ControlGroup=memory:/idrac/NC
+EnvironmentFile=/etc/global.env
+ExecStart=/sbin/insmod /lib/modules/trab.ko
+
+[Install]
+WantedBy=basic.target

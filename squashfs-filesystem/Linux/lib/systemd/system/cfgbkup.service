@@ -1,0 +1,16 @@
+[Unit]
+Description=Config Backup / Restore
+After=dsm-sa-datamgr.service
+After=osinet.service
+After=maser_access_controller.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/sysapps_script/cfgscripts/cfgbkup.sh
+ExecStop=-/bin/sh -c "mv /tmp/cfgbkp/cfgbkp* /mmc1/cfgbkp/."
+
+[Install]
+WantedBy=multi-user.target

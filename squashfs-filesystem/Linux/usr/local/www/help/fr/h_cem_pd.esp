@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+<% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Stockage - Disques physiques</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 	
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> Disques physiques</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items"> Aller à : <a class="popup-jump-bar" href="#PhysicalDisks" id="cc3">Intégrité et propriétés</a> |<a class="popup-jump-bar" href="#Other" id="A14">Autres options</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Utilisez cette page pour afficher la liste des disques physiques présents dans le sous-système de stockage et leurs propriétés. Les disques physiques se trouvent dans une enceinte ou sont reliés au contrôleur. Lorsqu'ils sont reliés à un contrôleur RAID, les disques physiques servent à la création de disques virtuels.</p> 
+</div> 
+<div class="popup_subheader">
+<span id="BasicFilter"> Filtre de disque physique de base / avancé </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<p>Utilisez les menus déroulants pour filtrer la liste des disques physiques en fonction des enceintes ou des disques virtuels. Cliquez sur <b>Appliquer</b>. Cliquez sur <strong>Annuler</strong> pour restaurer la valeur par défaut dans le menu déroulant.</p> 
+<p>Cliquez sur <b>Filtre avancé</b> pour filtrer la liste des disques physiques en fonction d'un ou plusieurs des éléments suivants :</p> 
+<ul> 
+<li>Enceinte</li> 
+<li>Disques virtuels</li> 
+<li>Condition des composants</li> 
+<li>État</li> 
+<li>Protocole du bus</li> 
+<li>Type de média</li> 
+<li>État de l'alimentation</li> 
+<li>Échec prévu</li> 
+<li>État de la sécurité</li> 
+<li>Disque de secours</li> 
+<li>Taille minimale (Go)</li> 
+<li>Numéro de pièce</li> 
+<li>Espace disponible minimal (%)</li> 
+<li>Référence du produit</li> 
+<li>Numéro de série</li> 
+<li>Fabricant</li> 
+</ul> 
+<p>Pour plus d'informations sur chaque propriété, consultez la section <a class="popup-jump-bar" href="#PhysicalDisks" id="cc4">Intégrité et propriétés</a>. </p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="PhysicalDisks"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Retour au début</a> </div> 
+<span id="PhysicalDisks">Intégrité et propriétés </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Les propriétés de base suivantes s'affichent pour chaque disque physique.</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Condition</b></span></td> 
+<td class="desc"> 
+<p>Affiche l'intégrité du disque physique. Valeurs possibles : </p> 
+<ul> 
+<li>OK <span class="status_ok"> &#8212; </span> indique que le composant fonctionne comme prévu.</li> 
+<li>Avertissement <span class="status_noncritical"> &#8212;</span> indique qu'un capteur ou autre périphérique de surveillance a détecté une lecture du composant supérieure ou inférieure au niveau acceptable. Le composant peut toujours fonctionner, mais il risque d'échouer. Ou encore, le composant peut fonctionner, mais de façon altérée. </li> 
+<li>Critique<span class="status_critical"> &#8212; </span> indique que le composant a échoué ou qu'un échec est imminent. Le composant doit être examiné immédiatement et devra peut-être être remplacé.</li> 
+<li>Informations non disponibles<span class="status_unknown"> &#8212; </span> Indique que la condition du composant est inconnue. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nom</b></span></td> 
+<td class="desc"> 
+<p>Cette propriété affiche le nom du disque physique. Le format est disque physique <connector number>:<enclosure ID>:<disk number>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>État</b></span></td> 
+<td class="desc"> 
+<p>Affiche l'état actuel des disques physiques :</p> 
+<ul> 
+<li>Prêt  &#8212; indique que le disque physique fonctionne normalement. Si le disque est attaché à un contrôleur RAID, l'état Prêt indique que le disque virtuel peut utiliser le disque physique.</li> 
+<li>En ligne &#8212; indique que le disque physique fait partie du disque virtuel importé et fonctionne normalement. </li> 
+<li>Hors ligne &#8212; indique que le disque est inclus dans un disque virtuel, mais ne reçoit aucune entrée ou sortie.</li> 
+<li>Non RAID — Indique que le disque physique est accessible et contrôlé par le système d'exploitation hôte.</li> 
+<li>Étranger &#8212; indique que le disque physique a été déplacé d'un autre contrôleur et comporte une partie ou la totalité d'un disque virtuel (configuration étrangère).</li> 
+<li>Supprimé &#8212; indique que le disque physique a été supprimé. Cet état s'applique uniquement aux disques physiques faisant partie d'un disque virtuel.</li> 
+<li> Bloqué &#8212; Indique que le contrôleur a bloqué actuellement le disque physique et que les opérations ne sont pas autorisées sur le disque physique.</li> 
+<li> A échoué : indique que le disque physique n'est pas accessible.</li> 
+<li> Inconnu &#8212; Indique que le disque physique a échoué ou est inutilisable.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Numéro de logement</b></span> </td> 
+<td class="desc"> 
+<p>Indique le numéro du logement sur lequel se trouve le lecteur.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Taille</b></span></td> 
+<td class="desc"> Affiche la taille du disque physique en gigaoctets (Go).</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>État de la sécurité</b></span> </td> 
+<td class="desc"> 
+<p>Indique si le disque physique est un disque autocryptable (SED). Valeurs possibles :</p> 
+<ul> 
+<li>Sécurisé &#8212; indique si le disque physique est crypté sur le contrôleur.</li> 
+<li>Verrouillé &#8212; indique que le disque physique est actuellement crypté mais pas utilisé.</li> 
+<li>Sécurisé par une clé étrangère &#8212; Indique que le disque physique est verrouillé à l'aide d'une clé inconnue.</li> 
+<li>Pas de capacité &#8212; indique que le disque physique ne prend pas en charge le cryptage.</li> 
+<li>Informations non disponibles &#8212; Indique que les informations ne sont pas disponibles.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Protocole du bus</b></span></td> 
+<td class="desc"><p>Affiche la technologie utilisée par le disque physique. Valeurs possibles : </p> 
+<ul> 
+<li>SAS &#8212; Indique Serial Attached SCSI</li> 
+<li>SATA &#8212; Indique Serial Advanced Technology Attachment (SATA) </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"><span><b>Type de média</b></span></td> 
+<td class="desc"> 
+<p>Affiche le type de support du disque physique. Valeurs possibles :</p> 
+<ul> 
+<li>Disque dur &#8212; Indique que le média est un disque dur. Un disque dur est un périphérique de stockage rémanent qui stocke des données codées numériquement sur des plateaux pivotants rapides à surface magnétique.</li> 
+<li>SSD &#8212; Indique que le média est un disque Solid State Drive. Un disque dur SSD est un périphérique de stockage de données qui utilise une mémoire à semi-conducteurs pour stocker les données persistantes.</li> 
+<li>Informations non disponibles &#8212; Indique que les informations ne sont pas disponibles. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Disque de secours</b></span></td> 
+<td class="desc"> 
+<p>Indique si le disque est attribué en tant que disque de secours, et, le cas échéant, de quel type de secours il s'agit. Valeurs possibles :</p> 
+<ul> 
+<li>Non &#8212; indique que le disque n'est pas attribué en tant que disque de secours.</li> 
+<li>Dédié &#8212; Indique que le disque est attribué en tant que disque de secours dédié.</li> 
+<li>Global &#8212; indique que le disque est attribué en tant que disque de secours global.</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_inner_content"><div><p>Pour chaque disque physique, cliquez sur + pour afficher les propriétés avancées et les propriétés de base suivantes.</p></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>État opérationnel</b></span></td> 
+<td class="desc"> 
+<p>Cette propriété n'est affichée que lorsqu'une opération de progression est en cours :</p> 
+<ul> 
+<li>Recopie : indique que les données se trouvant sur un disque de secours sont en cours de copie sur un disque physique ou vice versa.</li> 
+<li>Supprimer : indique que l'option Supprimer est en cours sur le disque physique. Un disque physique peut également afficher l'état Effacer s'il est membre d'un disque virtuel en cours d'initialisation lente.</li> 
+<li>En cours de recréation : les données d'un disque virtuel redondant sont en train d'être recrées sur le disque physique.</li> 
+<li>Inapplicable : indique qu'il n'y a pas d'opération en cours.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>État de l'alimentation</b></span></td> 
+<td class="desc"><p> Indique l'état de rotation des lecteurs physiques. Valeurs possibles :</p> 
+<ul> 
+<li>Arrêt de la rotation &#8212; indique que le disque physique en état d'arrêt de la rotation.</li> 
+<li>Transition : indique que le disque physique passe de l'état d'arrêt de la rotation à l'état d'accélération de la rotation.</li> 
+<li>Accélération de la rotation &#8212;  indique que le disque physique est en état d'accélération de la rotation. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Échec prévu</b></span></td> 
+<td class="desc"> 
+<p>Affiche si le disque physique a reçu une alerte SMART et que son échec est prévu. Les valeurs possibles sont : Oui ou Non. Consultez également le journal des alertes pour en savoir plus sur les alertes relatives à un échec prévisible SMART.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Progression</b></span></td> 
+<td class="desc"> 
+<p>Affiche l'état d'une opération en cours d'exécution sur le disque physique en pourcentage.</p> 
+<p>Si aucune opération n'est en cours, elle affiche <b>Inapplicable</b>. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Espace disque RAID utilisé</b></span></td> 
+<td class="desc"> 
+<p>Affiche l'espace de disque physique utilisé par les disques virtuels sur le contrôleur en gigaoctets (Go).</p> 
+<p>Dans certains cas, la propriété affiche la valeur zéro (0) bien qu'une partie du disque physique soit utilisée. Ceci se produit lorsque l'espace utilisé est de 0,005 Go ou moins. L'algorithme de calcul de l'espace disque utilisé arrondit une valeur de 0,005 Go ou moins à 0. Une valeur d'espace disque utilisé entre 0,006 Go et 0,009 Go est arrondie à 0,01 Go.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Espace disque RAID disponible </b> </span></td> 
+<td class="desc"> 
+<p>Affiche l'espace disponible sur le disque (en Go).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Vitesse négociée</b></span> </td> 
+<td class="desc"> 
+<p>Affiche la vitesse de transfert de données que le disque a négociée lors de la mise en rotation et durant la communication initiale avec le contrôleur (en gigaoctets par seconde). Cette vitesse dépend de la vitesse du disque, de la vitesse possible du contrôleur, de la vitesse actuelle du contrôleur de ce connecteur et de la vitesse du module de gestion d'enceinte (EMM) de l'enceinte. </p> 
+<p>Si la valeur de vitesse négociée n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Vitesse possible</b></span> </td> 
+<td class="desc"> 
+<p>Affiche la vitesse maximale possible à laquelle les données peuvent être transférées. Si la valeur de vitesse possible n'est pas disponible, le message <b>Informations non disponibles</b> s'affiche.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Adresse SAS</b></span> </td> 
+<td class="desc"> 
+<p>Affiche l'adresse SAS du disque physique. L'adresse SAS de chaque disque SAS est unique. Si celle-ci n'est pas disponible, la propriété affiche <b>Inapplicable</b>.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Numéro de pièce</b></span> </td> 
+<td class="desc"> 
+<p>Affiche l'identification de pièce (PPID) du disque physique. </p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Fabricant</b></span> </td> 
+<td class="desc"> 
+<p>Affiche le nom du fabricant du disque physique.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Référence du produit</b></span> </td> 
+<td class="desc"> 
+<p>Affiche la référence de produit du disque.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Révision</b></span></td> 
+<td class="desc"> 
+<p>Affiche la version du micrologiciel.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Numéro de série</b></span> </td> 
+<td class="desc"> 
+<p>Affiche le numéro de série du disque.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Jour de fabrication</b></span> </td> 
+<td class="desc"> 
+<p>Affiche le jour de fabrication du disque physique. Si le protocole de bus utilisé est SATA, cette propriété affiche zéro (0).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Semaine de fabrication</b></span> </td> 
+<td class="desc"> 
+<p>Affiche la semaine de fabrication du disque physique. Si le protocole de bus utilisé est SATA, cette propriété affiche zéro (0).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Année de fabrication</b></span> </td> 
+<td class="desc"> 
+<p>Affiche l'année de fabrication du disque physique. Si le protocole de bus utilisé est SATA, cette propriété affiche zéro (0).</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Facteur de format</b></span></td> 
+<td class="desc"> Indique la taille et la disposition physiques du disque physique en pouces. Les valeurs possibles sont 1,8, 2,5 ou 3,5.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Contrôleur</b></span></td> 
+<td class="desc"> 
+<p>Cliquez sur le lien du nom du contrôleur pour afficher les propriétés du contrôleur associées à ce disque physique.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Enceinte</b></span> </td> 
+<td class="desc"> 
+<p>Cliquez sur le lien du nom de l'enceinte pour afficher les propriétés de l'enceinte associée à ce disque physique. Si le disque physique est attaché directement au contrôleur, cette propriété n'est pas affichée.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Afficher les disques virtuels pour ce disque physique.</b></span></td> 
+<td class="desc"> Cliquez sur ce lien pour afficher les disques virtuels associés à ce disque physique.</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

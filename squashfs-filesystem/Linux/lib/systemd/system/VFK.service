@@ -1,0 +1,16 @@
+[Unit]
+Description=Virtual Flash Key (VFK)
+After=osinet.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/sbin/vfk
+KillSignal=SIGKILL
+
+[Install]
+WantedBy=multi-user.target

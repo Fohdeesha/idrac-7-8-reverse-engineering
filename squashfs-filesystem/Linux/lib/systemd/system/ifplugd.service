@@ -1,0 +1,17 @@
+[Unit]
+Description=Ifplug Daemon
+After=osinet.service
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+RemainAfterExit=yes
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+
+ExecStart=/usr/sbin/ifplugd -i bond0 -afqIn -u0 -d0 -miff
+ExecStop=/usr/sbin/ifplugd -k -i bond0
+
+[Install]
+WantedBy=multi-user.target

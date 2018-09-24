@@ -1,0 +1,20 @@
+[Unit]
+Description=Basic network initialization
+DefaultDependencies=no
+
+# cpu utilization
+After=fullfw_app.service
+# to update aim variable
+After=aim.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+# nice this process so it doesn't compete with fullfw for cpu. it't not critical that this process finish quickly, as long as it finishes before about 30 seconds after boot.
+Nice=-15
+
+ExecStart=/etc/init.d/network.sh
+
+[Install]
+WantedBy=sysinit.target

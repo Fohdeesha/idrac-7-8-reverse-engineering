@@ -1,0 +1,34 @@
+[Unit]
+Description=spi recovery 
+
+[Service]
+Type=oneshot
+ControlGroup=memory:/idrac/NC
+
+# Switch to exclusive use of shadow - this will fail if the monitoring isn't enabled
+# which will happen if the first time the spi_monitor.service is run and the SPI is unresponsive
+# we're counting on the SPI to be responsive for at least 10 minutes after boot
+ExecStart=-/bin/sh -c "echo -n '3'> /sys/devices/platform/sh_spi.0/spi_master/spi0/spi0.1/shadow 2>&1"
+
+
+# Log a message
+ExecStart=-/usr/bin/dellutil spi 
+
+# Stop the timer service so that we don't keep spamming the log
+ExecStart=-/bin/systemctl stop spi_monitor.timer
+
+# Dump the spi command buffer
+ExecStart=-/bin/dd if=/sys/kernel/debug/spicommand of=/mmc1/SPI_commands.bin bs=4096
+
+
+####### Remove for debugging right now ########
+##Do the recover
+##ExecStart=/bin/sh -c "echo -n '0x0F'> /sys/devices/platform/sh_spi.0/spi_master/spi0/spi0.1/reset 2>&1"
+#
+##Check to see if we succeeded
+##ExecStart=/etc/init.d/spi_monitor.sh
+##ExecStart=/bin/sh -c "echo 'SPI back to responding, restarting monitor service' >> /mmc1/idraclogs 2>&1"
+#
+## Restart the timer service
+##ExecStart=/bin/systemctl start spi_monitor.timer
+

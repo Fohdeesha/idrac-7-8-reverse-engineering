@@ -1,0 +1,77 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#StorageSystemCollection.StorageSystemCollection",
+    "$ref": "#/definitions/StorageSystemCollection",
+    "definitions": {
+        "StorageSystemCollection": {
+            "anyOf": [
+                {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/idRef"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "type": [
+                                "array",
+                                "boolean",
+                                "number",
+                                "null",
+                                "object",
+                                "string"
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "properties": {
+                        "@odata.context": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                        },
+                        "@odata.id": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                        },
+                        "@odata.type": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                        },
+                        "Description": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                                {"type": "null"}
+                            ],
+                            "readonly": true
+                        },
+                        "Name": {
+                            "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                            "readonly": true
+                        },
+                        "Oem": {
+                            "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                            "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                            "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                        },
+                        "Members@odata.count": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/count"
+                        },
+                        "Members@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "Members": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "/redfish/v1/Schemas/ComputerSystem.json#/definitions/ComputerSystem"
+                            },
+                            "readonly": true,
+                            "description": "The value of each member references a Storage System resource.",
+                            "longDescription": "The value of each member entry shall reference a ComputerSystem resource that shall have a HostingRoles entry with a value of 'StorageServer'."
+                        }
+                    }
+                }
+            ],
+            "description": "A Collection of ComputerSystem resource instances that each have an entry in HostingRoles set to 'StorageServer'.",
+            "longDescription": "An instance of this resource shall reference the set of ComputerSystem resources known in the scope of its use and and that has a HostingRoles entry with a value of 'StorageServer'."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

@@ -1,0 +1,231 @@
+#!/bin/sh
+
+usage() 
+{
+    echo "usage: $0 [-h] [-f] [-i] [-b backendopt] [-c cimschemadir] [-s stagingdir] [-r registrationdir] [-t format]" 1>&2 
+}
+args=`getopt fhzib:s:r:c:t:X: $*`
+rc=$?
+if [ $rc = 127 ]
+then
+    echo "warning: getopt not found ...continue without syntax check"
+    args=$*
+elif [ $rc != 0 ]
+then
+    usage $0
+    exit 1
+fi
+
+set -- $args
+
+cpformat="auto"
+
+while [ -n "$1" ]
+do
+  case $1 in
+      -h) help=1; 
+	  shift;;
+      -f) force=1
+	  shift;;
+      -i) ignore_instances=1
+	  shift;;
+      -b) backendopt="-b $2"
+          shift 2;;
+      # -X previously used, replaced by -b.  Keep it around for compatibility.
+      -X) backendopt="-b $2"
+	  shift 2;;
+      -s) stagingdir=$2
+	  shift 2;;
+      -r) registrationdir=$2
+	  shift 2;;
+      -c) cimschemadir=$2
+	  shift 2;;
+      -t) cpformat="$2"
+          shift 2;;
+      -z) compress=1
+          shift;;
+      --) shift;
+	  break;;
+      **) break;;
+  esac
+done
+
+if [ "$help" = "1" ]
+then
+    usage
+    echo -e "\t-h display help message"
+    echo -e "\t-f force repository creation"
+    echo -e "\t-i do not migrate instances from previous repository (default=do migrate)"
+    echo -e "\t-X create repository in non-native format as specifed by argument"
+    echo -e "\t-s specify staging directory [/var/lib/sfcb/stage]"
+    echo -e "\t-r specify repository directory [/var/lib/sfcb/registration]"
+    echo -e "\t-c specify directory containing CIM Schema MOFs [/usr/share/sfcb/CIM]"
+    echo -e "\t-t create tiny class repository by omitting inheritance information"
+    echo -e "\t-z compress repository with gzip"
+    echo
+    echo "Use to create sfcb provider registration and class repository."
+    exit 0
+fi
+
+if [ -z "$force" ]
+then 
+    echo Setting up sfcb Repository, Class, and Provider Registration
+    echo Your old repository and registration data will be deleted
+    echo -n "(static instances will "
+    if [ $ignore_instances ]
+    then    echo -n "NOT "
+    fi
+    echo "be saved)"
+    echo Do you want to proceed? "(type yes to continue)"
+
+    read response
+
+    if [ x$response = x ] || [ $response != yes ]
+    then
+	echo Keeping old data
+	exit 2
+    fi
+fi
+
+if [ -z "$stagingdir" ]
+then
+    stagingdir=${DESTDIR}/var/lib/sfcb/stage
+fi
+
+if [ -z "$registrationdir" ]
+then
+    registrationdir=${DESTDIR}/var/lib/sfcb/registration
+fi
+
+if [ -z "$cimschemadir" ]
+then
+    cimschemadir=${DESTDIR}/usr/share/sfcb/CIM
+fi
+
+if [ -d $stagingdir ] && [ -f $stagingdir/default.reg ] &&
+	[ -f $cimschemadir/CIM_Schema.mof ] 
+then
+    if [ -d $registrationdir/repository ]
+    then
+	rm -rf $registrationdir/repository.previous 2> /dev/null
+	mv -f $registrationdir/repository $registrationdir/repository.previous
+	if [ $? != 0 ]
+        then
+	    echo "Failed to remove old repository" >&2
+	    exit 1
+	fi
+    fi
+
+    if [ -f $registrationdir/providerRegister ]
+    then
+	mv -f $registrationdir/providerRegister $registrationdir/providerRegister.previous 
+	if [ $? != 0 ]
+	then
+	    echo "Failed to remove old provider registry" >&2
+	    exit 1
+	fi
+    fi
+
+    # Creating empty default namespace directories
+    mkdir -p $registrationdir/repository/root/cimv2 &&
+    mkdir -p $registrationdir/repository/root/interop &&
+    cp $stagingdir/default.reg $registrationdir/providerRegister
+    if [ $? != 0 ]
+    then
+	echo "Failed to create default repositories and registry" >&2
+	exit 1
+    fi
+
+    if ls $stagingdir/regs/*.reg > /dev/null 2>&1
+    then
+	if ! cat $stagingdir/regs/*.reg >> $registrationdir/providerRegister
+	then
+	    echo Failed copying the registration files. >&2
+	    exit 1
+	fi
+    fi
+    
+    if false
+    then
+    # Note: do we need "legacy" support -- don't think so
+	if ls $stagingdir/mofs/*.mof > /dev/null 2>&1
+	then
+	    cp $stagingdir/mofs/*.mof $stagingdir/mofs/root/cimv2
+	fi
+    fi
+    
+    # Check which ClassProvider we're using, and set $cpformat if "-t auto". If ClassProviderSf, "-t sf" is required (at least for now)
+    if [ "$cpformat" = "sf" ]
+    then
+            cpformat="-t"
+    elif [ "$cpformat" = "std" ]
+    then
+            cpformat=""
+    elif [ "$cpformat" = "auto" ] && grep ClassProviderSf $registrationdir/providerRegister > /dev/null
+    then
+            echo "Sf format being used."
+            cpformat="-t"
+    else
+            cpformat=""
+    fi
+
+    # Compile all staged namespace directories
+    instmigfile=/tmp/sfcbinst.mof
+    mofsubdirs=`find $stagingdir/mofs/* -type d -print 2> /dev/null`
+    if ls $stagingdir/mofs/*.mof > /dev/null 2>&1
+    then
+	globalmofs=$stagingdir/mofs/*.mof
+    else
+	globalmofs=""
+    fi
+    for mofdir in $mofsubdirs
+    do
+	if ls $mofdir/*.mof > /dev/null 2>&1
+	then
+	    namespace=`echo $mofdir | sed s?$stagingdir/mofs/??`
+	    repositorydir=$registrationdir/repository/
+	    [ -d $repositorydir ] || mkdir -p $repositorydir
+
+        #grab all non-mof static instances, output to /tmp/sfcbinst.mof
+        if [ -z "$ignore_instances" ]
+        then
+            rm -f $instmigfile 2> /dev/null
+            #get class names (from filenames), ignoring specific files, from repos.previous, as it's already been moved
+            if [ -e $registrationdir/repository.previous/$namespace/ ]
+            then
+                static_inst_files=`ls $registrationdir/repository.previous/$namespace/ -I classSchemas -I qualifiers -I *.idx` > /dev/null 2>&1
+                for instfile in $static_inst_files
+                do
+                    sfcbinst2mof -n $namespace -c $instfile -o $instmigfile -r $registrationdir/repository.previous/ -g ${DESTDIR}/etc/sfcb/sfcb.cfg 2> /dev/null
+                done
+            fi
+        fi
+        if [ -e $instmigfile ]
+        then
+            instmigopt="-m $instmigfile"
+        else
+            instmigopt=""
+        fi
+	    if ! sfcbmof -d $repositorydir -n $namespace -o classSchemas -I $cimschemadir -i CIM_Schema.mof $cpformat $backendopt $instmigopt $mofdir/*.mof $globalmofs
+	    then
+            rm -f $instmigfile 2> /dev/null
+		    echo Failed compiling the MOF files. >&2
+		    exit 1
+	    fi
+        if [ -e $instmigfile ]
+        then
+            rm -f $instmigfile 2> /dev/null
+        fi
+
+        if [ "$compress" = "1" ]
+        then
+          gzip $repositorydir/$namespace/classSchemas  
+        fi
+
+	fi
+    done
+
+else
+    echo Could not find required staging files. Please check your setup. >&2
+    exit 1
+fi

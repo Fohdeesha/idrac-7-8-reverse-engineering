@@ -1,0 +1,18 @@
+[Unit]
+Description=Market Usage Tracking Collection for shutdown
+After=dm-stage2.service
+After=gds.service
+After=appweb.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+EnvironmentFile=/etc/global.env
+
+StandardOutput=journal+console
+StandardError=inherit
+ExecStart=/bin/true
+ExecStop=/usr/bin/aggregateMUT collect
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,20 @@
+[Unit]
+Description=Setup network interfaces on modular
+DefaultDependencies=no
+After=setup-flash.service
+Wants=setup-flash.service
+After=driver-load.service
+Wants=driver-load.service
+RequiresMountsFor=/flash/data0
+ConditionPathExists=/flash/data0/features/eth2-init
+
+# Eth2 has to be up and running before fullfw for CMC communication
+Before=fullfw_app.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/etc/init.d/eth2_init.sh
+
+[Install]
+WantedBy=basic.target

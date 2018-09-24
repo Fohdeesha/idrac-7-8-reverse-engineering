@@ -1,0 +1,25 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#EventService/Members/Events/1",
+    "@odata.id": "/redfish/v1/EventService/Events/1"  ,"@oem.nav.parentid": "/redfish/v1/EventService/Events",
+    "@odata.type": "#EventService.1.0.0.Event",
+    "Id": "1",
+    "Name": "Event Array",
+    "Events": [
+        {
+            "EventType": "Alert",
+            "EventId": "ABC132489713478812346",
+            "Severity": "Warning",
+            "Message": "The LAN has been disconnected",
+            "MessageId": "Alert.1.0.LanDisconnect",
+            "MessageArgs": [
+                "EthernetInterface 1",
+                "/redfish/v1/Systems/HL3F942"
+            ],
+            "OriginOfCondition": {
+                "@odata.id": "/redfish/v1/Systems/HL3F942/EthernetInterfaces/NIC.Integrated.1"
+            },
+            "Context": "ABCDEFGH"
+        }
+    ]
+}

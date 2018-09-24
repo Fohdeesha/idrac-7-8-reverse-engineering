@@ -1,0 +1,23 @@
+[Unit]
+Description=Apply BMC settings to sysfs
+DefaultDependencies=no
+After=setup-flash.service
+Requires=setup-flash.service
+After=driver-load.service
+Wants=driver-load.service
+RequiresMountsFor=/flash/data0
+ConditionPathExists=/flash/data0/BMC_Data/drvsetting.dat
+
+# CPU Utilization
+After=fullfw_app.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+Nice=10
+ControlGroup=memory:/idrac/NC
+EnvironmentFile=/etc/global.env
+ExecStart=/bin/apply-bmc-sysfs.sh
+
+[Install]
+WantedBy=sysinit.target

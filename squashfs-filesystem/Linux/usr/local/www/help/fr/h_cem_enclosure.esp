@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript">
+    <% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Stockage - Enceintes</title> 
+<script src="/js/prototype.js" type="text/javascript">     
+</script> 
+<script src="/js/Clarity.js" type="text/javascript">        
+</script> 
+<script src="h_common.js" type="text/javascript">
+        
+</script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+        
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> Enceintes </span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">Aller à : <a class="popup-jump-bar" href="#EnclosureSummary" id="cc7">Récapitulatif des enceintes </a> | <a class="popup-jump-bar" href="#Enclosure" id="cc1">Intégrité et propriétés </a> | <a class="popup-jump-bar" href="#Fans" id="cc3">Ventilateurs</a> | <a class="popup-jump-bar" href="#PowerSupplies" id="cc4">Blocs d'alimentation</a> | <a class="popup-jump-bar" href="#TempProbes" id="cc5">Capteurs de température </a> | <a class="popup-jump-bar" href="#EMM" id="cc6"> Module de gestion d'enceinte</a> | <a class="popup-jump-bar" href="#Other" id="A14">Autres options</a></span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p> Utilisez cette page pour consulter la santé et les propriétés de l'enceinte ou du fond de panier. Cette page fournit un récapitulatif et des détails sur toutes les enceintes du système de stockage regroupés selon les contrôleurs auxquels ils sont connectés. Le nom du contrôleur associé au boîtier ou au fond de panier apparaît sur l'onglet au format suivant :</p> 
+<p>&lt;modèle du contrôleur&gt; (logement PCI &lt;X&gt;) OU &lt;modèle du contrôleur&gt; (Intégré) </p> 
+<p>Par exemple, Adaptateur PERC H810 (logement PCI 1 ) ou PERC H310 Mini (intégré)</p> 
+<p> Le nom de l'enceinte ou du fond de panier apparaît sur le sous-onglet au format suivant : </p> 
+<p> S'il s'agit d'un fond de panier, Fond de panier (&lt;ID du connecteur&gt;:&lt;séquence câblée&gt;), où la séquence câblée correspond à la référence de baie. Exemple, Fond de panier (0:0) </p> 
+<p> S'il s'agit d'une enceinte, &lt;nom du modèle d'enceinte&gt; (&lt;ID du connecteur &gt;:&lt;séquence câblée&gt;), où la séquence câblée correspond à la séquence de connexion en chaîne. Exemple, MD1200 (1:0) </p> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>Remarque :</span> s'il s'agit d'un fond de panier, cette page affiche uniquement les sections <b>Récapitulatif de l'enceinte</b> et <b>Intégrité et propriétés</b>. </div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EnclosureSummary"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Retour au début</a> </div> 
+<span id="EnclosureSummary"> Récapitulatif de l'enceinte </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"><p> Le récapitulatif affiche un diagramme circulaire des disques physiques de l'enceinte ou du fond de panier et leur état. Il affiche aussi le nombre total de logements libres de l'enceinte ou du fond de panier ainsi que les index des logements. </p> 
+<p> Pour afficher les disques physiques dans l'enceinte ou le fond de panier actuellement sélectionné, cliquez sur <b>Afficher les disques physiques</b>. La page <b>Disque physique</b> s'affiche avec un filtre approprié automatiquement appliqué.<br /> 
+</p> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Enclosure"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Retour au début</a> </div> 
+<span id="Enclosure"> Intégrité et propriétés </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Condition</b></span> </td> 
+<td class="desc"> 
+<p> Affiche l'intégrité de l'enceinte ou du fond de panier. Valeurs possibles : </p> 
+<ul><li> OK <span class="status_ok"> &#8212; </span> Indique que le composant fonctionne comme prévu. </li> 
+<li> Avertissement <span class="status_noncritical"> &#8212;</span> Indique qu'un capteur ou autre périphérique de surveillance a détecté une lecture du composant supérieure ou inférieure au niveau acceptable. Le composant peut toujours fonctionner, mais il risque d'échouer. Ou encore, le composant peut fonctionner, mais de façon altérée. </li> 
+<li> Critique<span class="status_critical"> &#8212; </span> Indique que le composant a échoué ou qu'un échec est imminent. Le composant doit être examiné immédiatement et devra peut-être être remplacé.</li> 
+<li> Informations non disponibles <span class="status_unknown"> &#8212; </span> Indique que la condition du composant est inconnue.</li></ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Connecteur</b></span> </td> 
+<td class="desc"> Affiche le numéro de port du contrôleur auquel l'enceinte ou le fond de panier est connecté(e).</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Position de l'enceinte</b></span></td> 
+<td class="desc"> Affiche l'ID d'enceinte attribué à l'enceinte. L'index des enceintes attachées aux contrôleurs part de 0. <br /> Dans le cas du fond de panier, la propriété affiche <b>Inapplicable</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Référence de baie</b></span></td> 
+<td class="desc"> Affiche la référence de baie du fond de panier. Dans le cas de l'enceinte externe, la propriété affiche <b>Inapplicable</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Version du micrologiciel</b></span> </td> 
+<td class="desc"> Affiche la version du micrologiciel de l'enceinte. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Adresse SAS</b></span> </td> 
+<td class="desc"> Affiche l'adresse SAS unique de l'enceinte ou du fond panier SAS. Si celle-ci n'est pas disponible, la propriété affiche <b>Inapplicable</b>.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Chemin redondant</b></span> </td> 
+<td class="desc"> 
+<p> Indique si une configuration de chemin redondant vers une enceinte est détectée. Valeurs possibles : </p> 
+<ul> 
+<li> Présent </li> 
+<li> Absent </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Numéro de service</b></span> </td> 
+<td class="desc"> Affiche le numéro de service de l'enceinte. Ce numéro est nécessaire lorsque vous contactez le fournisseur de services. Utilisez ce numéro pour identifier une enceinte spécifique de votre environnement en vérifiant que ce numéro est le même que celui du numéro de service inscrit sur l'enceinte. Par exemple, si vous avez plusieurs enceintes et que l'une d'entre elles a un problème, utilisez le numéro de service pour identifier quelle enceinte est concernée. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b> Numéro d'inventaire</b></span> </td> 
+<td class="desc"> Affiche des informations sur numéro d'inventaire. </td> 
+</tr> 
+</table> 
+<br></br> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>Remarque :</span>s'il s'agit d'un fond de panier, les propriétés <b>Chemin redondant</b>, <b>Numéro de service</b> et <b>Numéro d'inventaire</b> ne sont pas affichées. </div> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="Fans"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Retour au début</a> </div> 
+<span id="Fans"> Ventilateurs </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Condition</b></span> </td> 
+<td class="desc"> 
+<p> Affiche l'intégrité du ventilateur. Valeurs possibles : </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> Indique que le composant fonctionne comme prévu. </li> 
+<li> Avertissement <span class="status_noncritical"> &#8212;</span> Indique qu'un capteur ou autre périphérique de surveillance a détecté une lecture du composant supérieure ou inférieure au niveau acceptable. Le composant peut toujours fonctionner, mais il risque d'échouer. Ou encore, le composant peut fonctionner, mais de façon altérée. </li> 
+<li> Critique<span class="status_critical"> &#8212; </span> Indique que le composant a échoué ou qu'un échec est imminent. Le composant doit être examiné immédiatement et devra peut-être être remplacé.</li> 
+<li>Informations non disponibles<span class="status_unknown"> &#8212; </span> Indique que l'état ​​du composant est inconnu. </li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nom</b></span> </td> 
+<td class="desc"> Affiche le nom du ventilateur au format Ventilateur &lt;index&gt; Par exemple, Ventilateur 1. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Vitesse</b></span> </td> 
+<td class="desc"> 
+<p> Indique la vitesse du ventilateur. Valeurs possibles : </p> 
+<ul> 
+<li> Rapide </li> 
+<li> Moyenne </li> 
+<li> Lente </li> 
+<li> Arrêté </li> 
+<li> Informations non disponibles</li> 
+</ul> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="PowerSupplies"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Retour au début</a> </div> 
+<span id="PowerSupplies"> Blocs d'alimentation </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Condition</b></span> </td> 
+<td class="desc"> 
+<p> Affiche l'intégrité des blocs d'alimentation. Valeurs possibles : </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> Indique que le composant fonctionne comme prévu. </li> 
+<li> Avertissement <span class="status_noncritical"> &#8212;</span> Indique qu'un capteur ou autre périphérique de surveillance a détecté une lecture du composant supérieure ou inférieure au niveau acceptable. Le composant peut toujours fonctionner, mais il risque d'échouer. Ou encore, le composant peut fonctionner, mais de façon altérée. </li> 
+<li> Critique<span class="status_critical"> &#8212; </span> Indique que le composant a échoué ou qu'un échec est imminent. Le composant doit être examiné immédiatement et devra peut-être être remplacé.</li> 
+<li> Informations non disponibles <span class="status_unknown"> &#8212; </span> Indique que l'état ​​du composant est inconnu.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nom</b></span> </td> 
+<td class="desc"> Affiche le nom du bloc d'alimentation au format Bloc d'alimentation &lt;index&gt;. Par exemple, Bloc d'alimentation 1. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Numéro de pièce</b></span> </td> 
+<td class="desc"> Affiche le numéro de pièce du bloc d'alimentation. <br /> Cette propriété ne s'affiche pas pour les enceintes PowerVault 22xS dotées du micrologiciel de version E.17 ou ultérieure. </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="TempProbes"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Retour au début</a> </div> 
+<span id="TempProbes"> Les capteurs de température </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> Le capteur de température surveille la température de l'enceinte. Chaque capteur de température a un seuil d'avertissement et d'échec. Le seuil d'avertissement indique que l'enceinte approche une température inacceptable. Le seuil d'échec indique que l'enceinte a atteint une température dangereuse qui risque d'entraîner des dommages et une perte des données. </p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span> 
+</span><span><b>Condition</b></span> </td> 
+<td class="desc"> 
+<p> Affiche l'intégrité du capteur de température. Valeurs possibles : </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> Indique que le composant fonctionne comme prévu. </li> 
+<li> Avertissement <span class="status_noncritical"> &#8212;</span> Indique qu'un capteur ou autre périphérique de surveillance a détecté une lecture du composant supérieure ou inférieure au niveau acceptable. Le composant peut toujours fonctionner, mais il risque d'échouer. Ou encore, le composant peut fonctionner, mais de façon altérée. </li> 
+<li> Critique<span class="status_critical"> &#8212; </span> Indique que le composant a échoué ou qu'un échec est imminent. Le composant doit être examiné immédiatement et devra peut-être être remplacé.</li> 
+<li> Informations non disponibles <span class="status_unknown"> &#8212; </span> Indique que l'état ​​du composant est inconnu.</li> 
+</ul> 
+<div> 
+<div class='popup_note'> 
+</div> 
+<span class='popup_bold'>Remarque :</span>pour certaines enceintes, il peut y avoir un court délai avant l'affichage de la température actuelle de l'enceinte et de l'état du capteur de température. </div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nom</b></span> </td> 
+<td class="desc"> Affiche le nom du capteur de température au format Capteur de température &lt;index&gt;. Par exemple, capteur de température 0. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Mesure</b></span> </td> 
+<td class="desc"> Affiche la température actuelle de l'enceinte telle que signalée par le capteur de température (en degré Celsius). </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Seuil d'avertissement minimal</b></span> </td> 
+<td class="desc"> Affiche la température correspondant au seuil minimal d'avertissement (en degré Celsius) actuellement définie. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Seuil d'avertissement maximal</b></span> </td> 
+<td class="desc"> Affiche la température correspondant au seuil maximal d'avertissement (en degré Celsius) actuellement définie. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Seuil d'échec minimal</b></span> </td> 
+<td class="desc"> Affiche la température correspondant au seuil minimal d'échec (en degré Celsius) actuellement définie. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Seuil d'échec maximal</b></span> </td> 
+<td class="desc"> Affiche la température correspondant au seuil minimal d'échec (en degré Celsius) actuellement définie. </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_subheader"> 
+<a name="EMM"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Retour au début</a> </div> 
+<span id="EMM"> Module de gestion d'enceinte (EMM - enclosure management module) </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p> Cette section affiche des informations concernant les modules EMM installés dans l'enceinte. L'enceinte peut contenir un ou plusieurs modules EMM. Les modules EMM surveillent les composants suivants de l'enceinte : </p> 
+<ul> 
+<li> Ventilateurs </li> 
+<li> Blocs d'alimentation </li> 
+<li> Les capteurs de température </li> 
+<li> Insertion ou retrait d'un disque physique </li> 
+<li> Voyants de l'enceinte </li> 
+</ul> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Condition</b></span> </td> 
+<td class="desc"> 
+<p> Affiche l'intégrité du module EMM. Valeurs possibles : </p> 
+<ul> 
+<li> OK <span class="status_ok"> &#8212; </span> Indique que le composant fonctionne comme prévu. </li> 
+<li> Avertissement <span class="status_noncritical"> &#8212;</span> Indique qu'un capteur ou autre périphérique de surveillance a détecté une lecture du composant supérieure ou inférieure au niveau acceptable. Le composant peut toujours fonctionner, mais il risque d'échouer. Ou encore, le composant peut fonctionner, mais de façon altérée. </li> 
+<li> Critique<span class="status_critical"> &#8212; </span> Indique que le composant a échoué ou qu'un échec est imminent. Le composant doit être examiné immédiatement et devra peut-être être remplacé.</li> 
+<li> Informations non disponibles <span class="status_unknown"> &#8212; </span> Indique que l'état ​​du composant est inconnu.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Nom</b></span> </td> 
+<td class="desc"> 
+<p> Affiche le nom du module EMM au format EMM &lt;index&gt;. Par exemple, EMM 1. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Numéro de pièce</b></span> </td> 
+<td class="desc"> Affiche le numéro de pièce du module EMM. </td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Version du micrologiciel</b></span> </td> 
+<td class="desc"> Affiche la version du micrologiciel disponible sur le module EMM. Tous les modules EMM dans l'enceinte doit avoir le niveau même firmware. </td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                                        writeHelpOtherBegin();
+                                        writeHelpOtherEnd();
+                                    
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

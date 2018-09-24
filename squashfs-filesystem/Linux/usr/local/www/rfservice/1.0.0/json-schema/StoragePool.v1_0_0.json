@@ -1,0 +1,187 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#StoragePool.v1_0_0.StoragePool",
+    "$ref": "#/definitions/StoragePool",
+    "definitions": {
+        "StoragePool": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.v1_1_0.json#/definitions/Identifier"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value identifies this resource. The value shall be unique within the managed ecosystem."
+                },
+                "BlockSizeBytes": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By",
+                    "minimum": 0,
+                    "readonly": true,
+                    "description": "Maximum Block size in bytes.",
+                    "longDescription": "Maximum size in bytes of the blocks which form this Volume. If the block size is variable, then the maximum block size in bytes should be specified. If the block size is unknown or if a block concept is not valid (for example, with Memory), enter a 1."
+                },
+                "Capacity": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Capacity.v1_0_0.json#/definitions/Capacity"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "Capacity utilization.",
+                    "longDescription": "The value of this property shall provide an information about the actual utilization of the capacity within this storage pool."
+                },
+                "CapacitySources": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/Capacity.v1_0_0.json#/definitions/CapacitySource"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": true,
+                    "description": "An array of space allocations to this store.",
+                    "longDescription": "Fully or partially consumed storage from a source resource. Each entry shall provide capacity allocation data from a named source resource."
+                },
+                "LowSpaceWarningThresholdPercents": {
+                    "type": "array",
+                    "items": {
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "units": "%",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "readonly": false,
+                    "description": "Low space warning threshold specified in percents.",
+                    "longDescription": "Each time the following value is less than one of the values in the array the LOW_SPACE_THRESHOLD_WARNING event shall be triggered: Across all CapacitySources entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes)."
+                },
+                "Links": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "type": [
+                                "array",
+                                "boolean",
+                                "number",
+                                "null",
+                                "object",
+                                "string"
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "properties": {
+                        "Oem": {
+                            "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                            "description": "Oem extension object.",
+                            "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
+                        },
+                        "DefaultClassOfService": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/ClassOfService.json#/definitions/ClassOfService"},
+                                {"type": "null"}
+                            ],
+                            "readonly": false,
+                            "description": "The default class of service for entities allocated from this storage pool.",
+                            "longDescription": "If present, this property shall reference the default class of service for entities allocated from this storage pool.  If the ClassesOfService collection is not empty, then the value of this property shall be one of its entries. If not present, the default class of service of the containing StorageService entity shall be used."
+                        }
+                    },
+                    "readonly": true,
+                    "description": "Contains links to other resources that are related to this resource.",
+                    "longDescription": "This structure shall contain references to resources that are not contained within this resource."
+                },
+                "Status": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Status"},
+                        {"type": "null"}
+                    ]
+                },
+                "AllocatedVolumes": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/VolumeCollection.json#/definitions/VolumeCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "A reference to the collection of volumes allocated from this storage pool.",
+                    "longDescription": "The value of this property shall contain a reference to the collection of volumes allocated from this storage pool."
+                },
+                "AllocatedPools": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/StoragePoolCollection.json#/definitions/StoragePoolCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "A reference to the collection of storage pools allocated from this storage pool.",
+                    "longDescription": "The value of this property shall contain a reference to the collection of storage pools allocated from this storage pool."
+                },
+                "ClassesOfService": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The ClassesOfService supported by this storage pool.",
+                    "longDescription": "This property shall contain references to all classes of service supported by this storage pool. Capacity allocated from this storage pool shall conform to one of the referenced classes of service."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "A container of data storage.",
+            "longDescription": "A container of data storage capable of providing capacity conforming to one of its supported classes of service. The storage pool does not support IO to its data storage."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

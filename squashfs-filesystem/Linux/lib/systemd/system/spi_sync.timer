@@ -1,0 +1,15 @@
+[Unit]
+Description=spi sync timer
+
+[Timer]
+
+#Debugging
+#OnActiveSec=5min
+#OnUnitActiveSec=5min
+
+# Time between running there after
+OnActiveSec=24h
+OnUnitActiveSec=24h
+
+Unit=spi_sync.service
+

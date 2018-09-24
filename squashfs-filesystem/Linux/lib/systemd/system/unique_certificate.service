@@ -1,0 +1,26 @@
+[Unit]
+Description=Unique Certificate
+After=aim.service
+Wants=aim.service
+
+# needs to pull from iDRACnet.conf
+After=osinet_init.service
+Wants=osinet_init.service
+
+# these things need us
+Before=aps.service
+Before=vnc.service
+Before=appweb.service
+
+# cpu utilization
+After=fullfw_app.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/global.env
+Environment=USER=root
+
+ExecStart=/etc/sysapps_script/create_unique_certificate.sh
+
+[Install]
+WantedBy=multi-user.target

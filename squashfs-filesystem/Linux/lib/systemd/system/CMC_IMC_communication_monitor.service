@@ -1,0 +1,17 @@
+[Unit]
+Description=CMC IMC communication monitor
+After=dsm-sa-datamgr.service
+After=osinet.service
+After=maser_access_controller.service
+ConditionPathExists=/flash/data0/features/platform-modular
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+PIDFile=/var/run/cmc-idrac.pid
+ExecStart=/etc/sysapps_script/S_CMC_IMC_communication_monitor.sh
+
+[Install]
+WantedBy=multi-user.target

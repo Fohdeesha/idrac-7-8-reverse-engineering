@@ -1,0 +1,10 @@
+[Unit]
+Description=gds socket
+
+[Socket]
+ListenStream=127.0.0.1:8195
+Accept=false
+FreeBind=true
+
+[Install]
+WantedBy=sockets.target

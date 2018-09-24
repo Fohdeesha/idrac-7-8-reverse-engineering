@@ -1,0 +1,226 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#DellJob.v1_0_0.DellJob",
+    "$ref": "#/definitions/DellJob",
+    "definitions": {
+        "DellJob": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id"
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ]
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name"
+                },
+                "JobState": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/JobState"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The State of the Job.",
+                    "longDescription": "The value of the property specifies the State of the Job."
+                },
+                "MessageId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "The Message Id of the Job.",
+                    "longDescription": "The value of this property the Message Id of the Job."
+                },
+                "Message": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "The status Message for the Job.",
+                    "longDescription": "The value of this property shall indicate the status message for the Job."
+                },
+                "MessageArgs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "This array of message arguments are substituted for the arguments in the message.",
+                    "longDescription": "This property shall contain the message substitution arguments for the specific message referenced by the MessageId and shall only be included if the MessageId is present."
+                },
+                "StartTime": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "This property represents start time of Job.",
+                    "longDescription": "This property will be defined as a String that will contain a timestamp in Edm.DateTime format. TIME_NOW is a default value that implies apply pending configuration now. This property will be required when creating a job with future timestamp."
+                },
+                "EndTime": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "This property represents End time of Job.",
+                    "longDescription": "This is the timestamp until when the service will wait for a job to complete. If a job did not complete within this time, it will be killed and marked as failed. TIME_NA is a default value that implies EndTime is not applicable. It is optional for clients to specify this property when creating a job."
+                },
+                "CompletionTime": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "This property represents completion time of Job.",
+                    "longDescription": "The value of this property represents when the job was completed."
+                },
+                "PercentComplete": {
+                    "type": "number",
+		    "minimum": 1,
+                    "maximum": 100,
+                    "readonly": true,
+                    "description": "The percentage completion of the Job.",
+                    "longDescription": "The value of this property shall indicate the percentage completion of the Job."
+                },
+                "JobType": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/JobType"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "This property represent configuration type of job.",
+                    "longDescription": "The value of this property will be one of the possible configuration type of job."
+                },
+                "TargetSettingsURI": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "This property will be resource uri of settings object.",
+                    "longDescription": "The value of this property will be the URI of a target resource on which the configuration is being applied. This property will be required when creating a job. This Property will be null on GET operation."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "requiredOnCreate": [
+                "TargetSettingsURI"
+            ],
+            "description": "This resource contains information about a specific configuration Job scheduled by or being executed by a Redfish service's Job Service.",
+            "longDescription": "This resource shall be used to represent a Job for a Redfish implementation."
+        },
+        "JobState": {
+            "type": "string",
+            "enum": [
+                "New",
+                "Scheduled",
+                "Running",
+                "Completed"
+            ],
+            "enumDescriptions": {
+                "New": "A job is in newly created state",
+                "Scheduled": "A job is in scheduled state",
+                "Running": "A job is in running state",
+                "Completed": "A job is in completed state"
+            }
+        },
+        "JobType": {
+            "type": "string",
+            "enum": [
+                "FirmwareUpdate",
+                "FirmwareRollback",
+                "RepositoryUpdate",
+                "RebootPowerCycle",
+                "RebootForce",
+                "RebootNoForce",
+                "Shutdown",
+                "RAIDConfiguration",
+                "BIOSConfiguration",
+                "NICConfiguration",
+                "FCConfiguration",
+                "iDRACConfiguration",
+                "SystemInfoConfiguration",
+                "InbandBIOSConfiguration",
+                "ExportConfiguration",
+                "ImportConfiguration",
+                "RemoteDiagnostics",
+                "RealTimeNoRebootConfiguration",
+                "LCLogExport",
+                "HardwareInventoryExport",
+                "FactoryConfigurationExport",
+                "LiceneImport",
+                "LicenseExport",
+                "ThermalHistoryExport",
+                "LCConfig",
+                "LCExport",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "FirmwareUpdate": "A firmware update job",
+                "FirmwareRollback": "A firmware rollback job",
+                "RepositoryUpdate": "A update job from a repository",
+                "RebootPowerCycle": "A power cycle job",
+                "RebootForce": "A graceful reboot job with forced shutdown",
+                "RebootNoForce": "A graceful reboot job without forced shutdown",
+                "Shutdown": "A shutdown job",
+                "RAIDConfiguration": "A RAID configuration job",
+                "BIOSConfiguration": "A BIOS configuration job",
+                "NICConfiguration": "A NIC configuration job",
+                "FCConfiguration": "A FC configuration job",
+                "iDRACConfiguration": "A iDRAC configuration job",
+                "SystemInfoConfiguration": "A system info configuration job",
+                "InbandBIOSConfiguration": "A inband BIOS configuration job",
+                "ExportConfiguration": "A server configuration profile export job",
+                "ImportConfiguration": "A server configuration profile import job",
+                "RemoteDiagnostics": "A factory installed job",
+                "RealTimeNoRebootConfiguration": "A real time configuration job without reboot",
+                "LCLogExport": "A lifecyle controller log export job",
+                "HardwareInventoryExport": "A hardware inventory export job",
+                "FactoryConfigurationExport": "A factory configuration export job",
+                "LiceneImport": "A license import job",
+                "LicenseExport": "A license export job",
+                "ThermalHistoryExport": "A thermal history export job",
+                "LCConfig": "A lifecyle controller attribute configuration job",
+                "LCExport": "A lifecyle controller log export job",
+                "Unknown": "A unknown job"
+            }
+        }
+    },
+    "copyright": "Copyright 2016 Dell, Inc. or its subsidiaries.  All Rights Reserved."
+}

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!-- Copyright 2015-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/Schemas/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0"/>
+    <edmx:Include Namespace="Resource.v1_1_0"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLoSCapabilities">
+      <EntityType Name="IOConnectivityLoSCapabilities" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+        <Annotation Term="OData.Description" String="Describe IO connectivity capabilities"/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to describe the capabilities to provide IO connectivity."/>
+      </EntityType>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLoSCapabilities.v1_0_0">
+      <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.IOConnectivityLoSCapabilities">
+        <Annotation Term="OData.Description" String="Describe IO Connectivity capabilities."/>
+        <Annotation Term="OData.LongDescription" String="Each instance of IOConnectivityLoSCapabilities describes capabilities of the system to support various IO Connectivity service options."/>
+        <Property Name="Identifier" Type="Resource.v1_1_0.Identifier">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="The value identifies this resource."/>
+          <Annotation Term="OData.LongDescription" String="The value identifies this resource. The value shall be unique within the managed ecosystem."/>
+        </Property>
+        <Property Name="SupportedAccessProtocols" Type="Collection(IOConnectivityLoSCapabilities.v1_0_0.AccessProtocol)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="SupportedAccessProtocols."/>
+          <Annotation Term="OData.LongDescription" String="Access protocols supported by this service option. NOTE: SMB+NFS* requires that SMB and at least one of NFSv3 or NFXv4 are also selected, (i.e. {'SMB', 'NFSv4', 'SMB+NFS*'})."/>
+        </Property>
+        <Property Name="MaxSupportedIOPS" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="The maximum IOPS that a connection can support."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be the maximum IOPS that a connection can support."/>
+        </Property>
+        <Property Name="SupportedIOConnectivityLinesOfService" Type="Collection(IOConnectivityLoSCapabilities.v1_0_0.IOConnectivityLineOfService)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="Collection of known and supported IOConnectivityLinesOfService."/>
+          <Annotation Term="OData.LongDescription" String="The collection shall contain known and supported IOConnectivityLinesOfService."/>
+        </Property>
+      </EntityType>
+
+      <ComplexType Name="IOConnectivityLineOfService">
+        <Annotation Term="OData.Description" String="A service option within the IO Connectivity line of service."/>
+        <Annotation Term="OData.LongDescription" String="An IO connectivity service option may be used to specify the characteristics of storage connectivity."/>
+        <Property Name="Name" Type="Resource.Name" />
+        <Property Name="AccessProtocol" Type="IOConnectivityLoSCapabilities.v1_0_0.AccessProtocol">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="SupportedAccessProtocols."/>
+          <Annotation
+            Term="OData.LongDescription"
+            String="The Enumeration Literal shall specify the Access protocol for this service option. NOTE: If SMB+NFS* is specified, the corresponding MaxSupportedIOPS governs the max achieved across both protocol uses. This may be less than the sum of the individual max values."/>
+        </Property>
+        <Property Name="MaxIOPS" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="The maximum supported IOs per second that the connection will support for the selected access protocol."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be the maximum IOs per second that the connection shall allow for the selected access protocol."/>
+        </Property>
+      </ComplexType>
+
+      <EnumType Name="AccessProtocol">
+        <Annotation Term="OData.Description" String="This enumeration defines choices for access protocols."/>
+        <Annotation Term="OData.LongDescription" String="This enumeration may be used to specify an access protocol."/>
+        <Member Name="FC">
+          <Annotation Term="OData.Description" String="FC2"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the Fibre Channel Framing and Signaling Interface."/>
+        </Member>
+        <Member Name="FCP">
+          <Annotation Term="OData.Description" String="FC4 SCSI Protocol"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the Fibre Channel SCSI Protocol."/>
+        </Member>
+        <Member Name="iSCSI">
+          <Annotation Term="OData.Description" String="Internet SCSI"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the Internet SCSI protocol."/>
+        </Member>
+        <Member Name="SAS">
+          <Annotation Term="OData.Description" String="Serial Attached SCSI"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the Serial Attached SCSI protocol."/>
+        </Member>
+        <Member Name="SMB">
+          <Annotation Term="OData.Description" String="SMB"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the SMB protocol."/>
+        </Member>
+        <Member Name="NFSv3">
+          <Annotation Term="OData.Description" String="NFSv3"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the NFSv3 protocol."/>
+        </Member>
+        <Member Name="NFSv4">
+          <Annotation Term="OData.Description" String="NFSv4"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the NFSv4 protocol."/>
+        </Member>
+        <Member Name="HTTP">
+          <Annotation Term="OData.Description" String="Hypertext Transfer Protocol"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the Hypertext Transfer Protocol."/>
+        </Member>
+        <Member Name="HTTPS">
+          <Annotation Term="OData.Description" String="Secure HTTP"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the Secure HTTP protocol."/>
+        </Member>
+        <Member Name="FTP">
+          <Annotation Term="OData.Description" String="File Transfer Protocol"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the File Transfer Protocol."/>
+        </Member>
+        <Member Name="FTPS">
+          <Annotation Term="OData.Description" String="Secure FTP"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the Secure FTP protocol."/>
+        </Member>
+        <Member Name="SecureNFS">
+          <Annotation Term="OData.Description" String="Secure NFS"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the Secure NFS protocol."/>
+        </Member>
+        <Member Name="FICON">
+          <Annotation Term="OData.Description" String="FICON"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the FICON protocol."/>
+        </Member>
+        <Member Name="FCOE">
+          <Annotation Term="OData.Description" String="FC2 over Ethernet"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate the FC2 over Ethernet protocol."/>
+        </Member>
+        <Member Name="SMBAndNFS">
+          <Annotation Term="OData.Description" String="Both SMB and an NFS protocol"/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that both SMB and an NFS protocol are supported."/>
+        </Member>
+      </EnumType>
+
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch=".." name="origin"/>
+  
+  <default remote="origin" revision="rel/idrac8/master" sync-j="4"/>
+  
+  <project groups="default" name="14g/opensource/canisters-fips.git" path="externalsrc/canisters-fips" revision="a37a70daf327b5c6201e8db980964bcece0a6538">
+    <annotation name="TAGS_ALLOWED" value="0"/>
+    <annotation name="BRANCHES_ALLOWED" value="0"/>
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+  <project groups="default" name="14g/opensource/openssl-fips.git" path="externalsrc/openssl-fips" revision="a08671c0c7db92c29cf1ad60ac54af844d12cbb4">
+    <annotation name="TAGS_ALLOWED" value="0"/>
+    <annotation name="BRANCHES_ALLOWED" value="0"/>
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+  <project groups="default" name="avctsrc/aim.git" path="externalsrc/aim" revision="fa68ad8dbe611525ff33ec468b4efb8db32392ad"/>
+  <project groups="default" name="avctsrc/appmonitor.git" path="externalsrc/appmonitor" revision="e2d6b49eb56f3477e7e6481102c77cb27711fe2a"/>
+  <project groups="default" name="avctsrc/appweb-data-handler.git" path="externalsrc/appweb-data-handler" revision="dc76007040e2ef486530c3dd335f0ced56f17a33"/>
+  <project groups="default" name="avctsrc/avct_smash.git" path="externalsrc/smash-clp" revision="1f60e79e80f2c2ca0595dd22a0ebed881c5d3ce7"/>
+  <project groups="default" name="avctsrc/avct_trace.git" path="externalsrc/avct-trace" revision="91bbef0096508538feb5ef5cff8fa20dea063c84"/>
+  <project groups="default" name="avctsrc/avctutil.git" path="externalsrc/avctutil" revision="eb9efc44e050145d5df5df47f47946fd6bd6df2d"/>
+  <project groups="default" name="avctsrc/biospost.git" path="externalsrc/biospost" revision="c4162cc5aa1293d5931d919dcefd7e1584e480e4"/>
+  <project groups="default" name="avctsrc/cmcauth.git" path="externalsrc/cmcauth" revision="92236508b7b44ed0f493152f5d3b4b8bf003b8ee"/>
+  <project groups="default" name="avctsrc/cpld_lib.git" path="externalsrc/cpld-lib" revision="7f0ade5cad007e6c47e452c0badcf6f8cda489c7"/>
+  <project groups="default" name="avctsrc/fmgr.git" path="externalsrc/fmgr" revision="37ce82df13dfb1033a1da269e9056470153f4997"/>
+  <project groups="default" name="avctsrc/fp_lib.git" path="externalsrc/fpdrv" revision="a8a4c193b14c66c1d7f4d82a37f9e149ec6b5bd8"/>
+  <project groups="default" name="avctsrc/fwtool.git" path="externalsrc/fwtool" revision="b341f4cbc3d7dae0c4910587b2aecb0654f780e7"/>
+  <project groups="default" name="avctsrc/gpiolib.git" path="externalsrc/gpiolib" revision="d8cb655bb6c42c44487a8b46366ea42d0c3d6cad"/>
+  <project groups="default" name="avctsrc/gui-data-server.git" path="externalsrc/gui-data-server" revision="442428fd18308356f6059f2a8eb4702d42e107f4"/>
+  <project groups="default" name="avctsrc/i2clib.git" path="externalsrc/i2clib" revision="ba68d2a382cab1a3b9cf7fe997b0b6a13a7bce42"/>
+  <project groups="default" name="avctsrc/idrac-gui-precompiled.git" path="externalsrc/idrac-gui-precompiled" revision="1df415f3c39ff71eb416fb3ed64d560dc99f0084"/>
+  <project groups="default" name="avctsrc/idrac-gui.git" path="externalsrc/idrac-gui" revision="1ac39ab1e53680ff1fdf61277b6c33e4e2031a1d"/>
+  <project groups="default" name="avctsrc/ipmi_gateway.git" path="externalsrc/ipmi-gateway" revision="3a678430912f92e85672dd23277fe61db772dcc2"/>
+  <project groups="default" name="avctsrc/ipmi_libapi.git" path="externalsrc/ipmi-libapi" revision="8710f6d2e3edfa22a9618aaf941841882168e129"/>
+  <project groups="default" name="avctsrc/ipmi_stack.git" path="externalsrc/ipmi-stack" revision="7c5f2394ac25dcbf69ea0622352ca333c221de22"/>
+  <project groups="default" name="avctsrc/ipmi_temp_sdk.git" path="externalsrc/ipmi-temp-sdk" revision="8268469a103d80bbd5e12e446b4c29af9b247c38"/>
+  <project groups="default" name="avctsrc/ipmiutils.git" path="externalsrc/ipmiutils" revision="2c1a51604933a36bef699aa64996bdbb9dcfb06c"/>
+  <project groups="default" name="avctsrc/ipv6lib.git" path="externalsrc/ipv6lib" revision="8ea381463edb030137e74281e1e5097485cd23c7"/>
+  <project groups="default" name="avctsrc/kvm-vmedia.git" path="externalsrc/kvm-vmedia" revision="3b46bb4d5c0931042efe6b952c6cd900934d0e35"/>
+  <project groups="default" name="avctsrc/libipmi.git" path="externalsrc/libipmi" revision="240bffeb3cfd1fe63a72bcdf3790af7a555e263f"/>
+  <project groups="default" name="avctsrc/librpipc.git" path="externalsrc/librpipc" revision="d965db73f354dac1a70846fb5e285eeff6841521"/>
+  <project groups="default" name="avctsrc/lock.git" path="externalsrc/lock" revision="eb09a951aa4c9007520a8ac3dc2772fd4f6ddf17"/>
+  <project groups="default" name="avctsrc/makeFWImage.git" path="externalsrc/mkfwimg" revision="8fde52dfecfd3994b2bbdf83d1941e892040500b"/>
+  <project groups="default" name="avctsrc/memaccess.git" path="externalsrc/memaccess" revision="a55ad149808941703c93b4bd5b43782eb3777577"/>
+  <project groups="default" name="avctsrc/mkfwid.git" path="externalsrc/mkfwid" revision="d645950abe2b0e49ded5ddc8830b0ab25c566d7d"/>
+  <project groups="default" name="avctsrc/ncsipassthroughlib.git" path="externalsrc/ncsipassthroughlib" revision="90c3dd5f57329935a9a0af269ec45a24b5d77721"/>
+  <project groups="default" name="avctsrc/osi.git" path="externalsrc/osi" revision="fdb5b51de4e0d71fe701149317881a046fbd5b11"/>
+  <project groups="default" name="avctsrc/osibins.git" path="externalsrc/osi-bins" revision="24373a2c5311b1a72106e4e68efdf2e3e8e7771e"/>
+  <project groups="default" name="avctsrc/osinet.git" path="externalsrc/osinet" revision="7c9edcb6cdd98ff7187ab46a40eb286faaa6d1d4"/>
+  <project groups="default" name="avctsrc/pam-plugins.git" path="externalsrc/pam-plugins" revision="3694992b3b675ec637abe03ef03da2887d027e83"/>
+  <project groups="default" name="avctsrc/pbidrv.git" path="externalsrc/pbidrv" revision="756dfeffc6a29cad19114850f16d23dfa1d76488"/>
+  <project groups="default" name="avctsrc/pm.git" path="externalsrc/pm" revision="532d0890c78beccd1a7ef9792a921af113db3196"/>
+  <project groups="default" name="avctsrc/read-id-devid.git" path="externalsrc/read-id-devid" revision="e4f4e5ac5ae69a53a5a8e7583c402885ad30d149"/>
+  <project groups="default" name="avctsrc/rootfs.git" path="externalsrc/rootfs" revision="48f3c0c79d84a13dbab15a922286f357511cfe68"/>
+  <project groups="default" name="avctsrc/rspidrv.git" path="externalsrc/rspidrv" revision="9d3ae2e211aa6c0ccea873904eccb4ca8ee234d8"/>
+  <project groups="default" name="avctsrc/ser-redir.git" path="externalsrc/ser-redir" revision="6a8f918c828da14bf9b25f7e13af585f106fcfd8"/>
+  <project groups="default" name="avctsrc/service-manager.git" path="externalsrc/service-manager" revision="9a4a611cf6b2a6e0c21d491eb5789769c26a8a72"/>
+  <project groups="default" name="avctsrc/spidrv.git" path="externalsrc/spidrv" revision="443e2e1b36b4a1419ee09c383ac2ec2ef09559a6"/>
+  <project groups="default" name="avctsrc/strutil.git" path="externalsrc/strutil" revision="863f9a9b20232dfbe8020e46f50c2f803280b02e"/>
+  <project groups="default" name="avctsrc/sysstatus.git" path="externalsrc/sysstatus" revision="52ebdc1d6a3d1cc9a555ba6e4d6fb15abab3dc2f"/>
+  <project groups="default" name="avctsrc/testprogs.git" path="externalsrc/testprogs" revision="7abd2366a09bf1156e5bfae99821a1331a190c77"/>
+  <project groups="default" name="avctsrc/thermalparser.git" path="externalsrc/thermalparser" revision="fcce471c6fccf1dd4d9a6a7fe2db65cc7321ca5a"/>
+  <project groups="default" name="avctsrc/thermalshmutil.git" path="externalsrc/thermalshmutil" revision="01446a918cb7fab35a1248c139876f50aaa0bae7"/>
+  <project groups="default" name="avctsrc/timerlib.git" path="externalsrc/timerlib" revision="88277c209a35b01d258a245cb51b0bb91f06f142"/>
+  <project groups="default" name="avctsrc/tm.git" path="externalsrc/tm" revision="a53d7734a856ddb2ad21dd3680d52b0d8b08b647"/>
+  <project groups="default" name="avctsrc/ttymonitor.git" path="externalsrc/ttymonitor" revision="c39bc2171b69a4ab0011be27df658d44ce84780c"/>
+  <project groups="default" name="avctsrc/vfk.git" path="externalsrc/vfk" revision="a2d93ecb84e5877cf8a28fc8c1bc75c389e3ebae"/>
+  <project groups="default" name="avctsrc/vkcs.git" path="externalsrc/ipmiraw" revision="1c75867727167c51445f279bbfe6da1d7c2f39af"/>
+  <project groups="default" name="avctsrc/watchdog.git" path="externalsrc/watchdog" revision="5ba15e680418d33fabfd590ff8cefd78979baa6e"/>
+  <project groups="default" name="avctsrc/wsmanhandler.git" path="externalsrc/wsmanhandler" revision="08958537f425147b43d0ff685a46fa5166d7bc97"/>
+  <project groups="default" name="dellsrc/app-vnc.git" path="externalsrc/fb-vserver" revision="34e827b2b83c014a50a299129928c7b5d104273c"/>
+  <project groups="default" name="dellsrc/autonic.git" path="externalsrc/autonic" revision="3b1350dc6c6cda5d4fbb77ccd9b4cfb728891855"/>
+  <project groups="default" name="dellsrc/build-config.git" path="build-yocto-sh4" revision="c5b5faf56bcd3cc757705ce036b966d913fc1276"/>
+  <project groups="default" name="dellsrc/capi-logging.git" path="externalsrc/capi" revision="544e9a1667a20bd9981ed04f2020c9f3d94fde86"/>
+  <project groups="default" name="dellsrc/cem-gui.git" path="externalsrc/cem-gui" revision="90b966985709f1007f71b8f5c9c279d328cfcef8"/>
+  <project groups="default" name="dellsrc/cfglib.git" path="externalsrc/cfglib" revision="5b0eb2932a0c4d17e8550034439915669a24c95f"/>
+  <project groups="default" name="dellsrc/cssd.git" path="externalsrc/cssd" revision="1843e105187a7128756604ee2a4bf1e16317e648"/>
+  <project groups="default" name="dellsrc/dataengine.git" path="externalsrc/dataengine" revision="701b8a4118ce3c4e1e36094462843d5f55736b94"/>
+  <project groups="default" name="dellsrc/dchsi.git" path="externalsrc/hapi-dchsi" revision="fa4b0b7894f9c863c61169ce6bafc4f9334f7156"/>
+  <project groups="default" name="dellsrc/dcpopcmn.git" path="externalsrc/dcpopcmn" revision="4c67cc08ea19642226e97194be50a2e96e881a0d"/>
+  <project groups="default" name="dellsrc/debug-cap.git" path="externalsrc/debug-cap" revision="68587dc4b6ed75cdd51b440a6194b8172f602b71"/>
+  <project groups="default" name="dellsrc/dellutil.git" path="externalsrc/dellutil" revision="e4c97f07b005216ba4bd43721a0c07602559c87a"/>
+  <project groups="default" name="dellsrc/ehrdaif.git" path="externalsrc/ehrdaif" revision="5e5336742801deb50abfbee7e9cffc4e7fa76360"/>
+  <project groups="default" name="dellsrc/eventfilter.git" path="externalsrc/eventfilter" revision="cd2a8d4cae4719753ba4ed04ab33b1cc9b0ec09f"/>
+  <project groups="default" name="dellsrc/eventmgr.git" path="externalsrc/eventmgr" revision="44fbab2a1238c0fddedc7fc65e7a55e7a0319254"/>
+  <project groups="default" name="dellsrc/fqddfriendlyname.git" path="externalsrc/fqddfriendlyname" revision="30c1804119127a6d2e4ac6cc6c2122204f2eae74"/>
+  <project groups="default" name="dellsrc/hapi.git" path="externalsrc/hapi" revision="5e86d3e678cfb6ab1ae6e01c7e1f97b76c62f0e9"/>
+  <project groups="default" name="dellsrc/hwinvapp.git" path="externalsrc/hwinvapp" revision="cf92eb9c603a92ab4fc0413ca675165f70802987"/>
+  <project groups="default" name="dellsrc/idrac-discovery-opensource.git" path="externalsrc/idrac-discovery-opensource" revision="4829ff21970f67ec0b356328e66d3e539a975c9a"/>
+  <project groups="default" name="dellsrc/idrac_discovery.git" path="externalsrc/idrac-discovery" revision="fb4669126bb4ef873a49823e09a417704b49c0aa"/>
+  <project groups="default" name="dellsrc/idracmonitor.git" path="externalsrc/idracmonitor" revision="94e865e99bec1501edda92affd95f844192b19ca"/>
+  <project groups="default" name="dellsrc/instrumentationservice.git" path="externalsrc/instrumentationservice" revision="60f34e7f84e61d5899b0a99899f2201ea46843e5"/>
+  <project groups="default" name="dellsrc/inventory.git" path="externalsrc/inventory" revision="7ffb08b932d72fdf47013e7837aeb743f7fe15d0"/>
+  <project groups="default" name="dellsrc/ipmiextd.git" path="externalsrc/ipmiextd" revision="6c03c37c093960e57e5cb6c9e46e09ff79f3be48"/>
+  <project groups="default" name="dellsrc/ism.git" path="externalsrc/ism" revision="27c3851c6626bb258b95d359f55efea0d5b3a3e7"/>
+  <project groups="default" name="dellsrc/isvc-core.git" path="externalsrc/isvc-core" revision="ff7138e6d6837533644f056c6144427d85040fed"/>
+  <project groups="default" name="dellsrc/isvc-core2.git" path="externalsrc/isvc-core2" revision="a9d31ed83ab4383104597829a2559c1a8c09debb"/>
+  <project groups="default" name="dellsrc/jcdaif.git" path="externalsrc/jcdaif" revision="82060a9155353922e8960625fa5399b5c2d1f8c5"/>
+  <project groups="default" name="dellsrc/job_scheduler.git" path="externalsrc/job-scheduler" revision="76d63bd07ecf2cb835add93ec3263d341b71ba5e"/>
+  <project groups="default" name="dellsrc/jobdisplayname.git" path="externalsrc/jobdisplayname" revision="e0199a485002dd3076059c16191ed7edd6cf702f"/>
+  <project groups="default" name="dellsrc/jtasks.git" path="externalsrc/jtasks" revision="bde7f80e56739e0b2043372a6c325cbd9aaaa27b"/>
+  <project groups="default" name="dellsrc/lcdsend.git" path="externalsrc/lcdsend" revision="06aed637cebca3e90c4b79725494652e8079ceb6"/>
+  <project groups="default" name="dellsrc/lcllibrary.git" path="externalsrc/lcllibrary" revision="c7a5556a66789d62a2868989f16108e2a60b86f4"/>
+  <project groups="default" name="dellsrc/lclogging.git" path="externalsrc/lclogging" revision="c21ebc491cd3aac5ed83882fff48b1d71a201420"/>
+  <project groups="default" name="dellsrc/libehr.git" path="externalsrc/libehr" revision="7676332195d62a0ae0d458223f38fc312f673b4e"/>
+  <project groups="default" name="dellsrc/libfipsint.git" path="externalsrc/libfipsint" revision="31332d5b9d54bf4290551c190451bb8892d85123"/>
+  <project groups="default" name="dellsrc/libfsi.git" path="externalsrc/libfsi" revision="14f83aa98948f649a7b6720e34afb3cff11fadc5"/>
+  <project groups="default" name="dellsrc/libndcmac.git" path="externalsrc/libndcmac" revision="0c87a03ab0d53bdfdb73c4a92e61f9c375bb6160"/>
+  <project groups="default" name="dellsrc/libredfishhelper.git" path="externalsrc/libredfishhelper" revision="05cee6d7f8e24475aff04c5cd281a4da75ce5a17"/>
+  <project groups="default" name="dellsrc/libsecutil.git" path="externalsrc/libsecutil" revision="d9246d78d5c95043e1e13e5fb3487b3d3a1c60be"/>
+  <project groups="default" name="dellsrc/libsfcbp.git" path="externalsrc/libsfcbp" revision="0adbda1e8d311918e009b47c1f0a7b71788cb79d"/>
+  <project groups="default" name="dellsrc/libvws.git" path="externalsrc/libvws" revision="d4a110221207031110a01dc10198870cbb38c9f0"/>
+  <project groups="default" name="dellsrc/linux-yocto-v3.16.git" path="externalsrc/linux-yocto" revision="f8b981256b6011c6a0b240b58f5bdd018216e7fe"/>
+  <project groups="default" name="dellsrc/lmdaif.git" path="externalsrc/lmdaif" revision="9d582c78ddf9805a1b4f3944f9dd831fa00164fd"/>
+  <project groups="default" name="dellsrc/lscript.git" path="externalsrc/lscript" revision="5861c44d362a889e9ce87a162a7e5a5224fe90d3"/>
+  <project groups="default" name="dellsrc/mapilibrary.git" path="externalsrc/mapilibrary" revision="cd4a23d59a8e059dae979675e986105306ac5dc3"/>
+  <project groups="default" name="dellsrc/mctpd.git" path="externalsrc/mctpd" revision="ccc3d85915c75ad5ced78d73b921b237a067c1f3"/>
+  <project groups="default" name="dellsrc/memusage.git" path="externalsrc/memusage" revision="d5807d376d8f33308096d585e3e9441fbc2522ad"/>
+  <project groups="default" name="dellsrc/messageregistry.git" path="externalsrc/messageregistry" revision="346f30d469c563049b6832bceb9fe582fa24df99"/>
+  <project groups="default" name="dellsrc/meta-common.git" path="meta-common" revision="961ebd9835df7d431da4ff766d7acb69545dee99"/>
+  <project groups="default" name="dellsrc/meta-drac.git" path="meta-drac" revision="742ed7d299e571dc88ef148aea3d37ab8e56fdd5"/>
+  <project groups="default" name="dellsrc/mmc-stats.git" path="externalsrc/mmc-stats" revision="55afa58bddb40abb7106c5477f4f5700d406efa5"/>
+  <project groups="default" name="dellsrc/ncsiapp.git" path="externalsrc/ncsiapp" revision="30ca621878689e70fbf6b276b9eeb582b9d72ac7"/>
+  <project groups="default" name="dellsrc/nfcd.git" path="externalsrc/nfcd" revision="64bb8a327ae6e124d93a300e0ded48ede62d7056"/>
+  <project groups="default" name="dellsrc/odatalite-providers.git" path="externalsrc/odatalite-providers" revision="66c46a2b5bf8b2f6c0d2e4c4d38852e759e84dba"/>
+  <project groups="default" name="dellsrc/odatalite.git" path="externalsrc/odatalite" revision="a576366ba0ae25026a0c4c3588c90466df71df52"/>
+  <project groups="default" name="dellsrc/osd.git" path="externalsrc/osd" revision="740021ccea5021da78d420d8b7cc0ab981140095"/>
+  <project groups="default" name="dellsrc/persmod.git" path="externalsrc/persmod" revision="18a461eab49384fa8d81741f06ebec5ddc6d5140"/>
+  <project groups="default" name="dellsrc/pmmonitor.git" path="externalsrc/pmmonitor" revision="4eefc19c3d555b48f5035f0bd88e09843ab36295"/>
+  <project groups="default" name="dellsrc/pwrsim.git" path="externalsrc/pwrsim" revision="375fe6fca7ce94240eff947c35210d2db975250a"/>
+  <project groups="default" name="dellsrc/racadm-core.git" path="externalsrc/racadm-core" revision="0f5ce38d8eee588d7f6a73037a5473bc808a5055"/>
+  <project groups="default" name="dellsrc/racadm.git" path="externalsrc/racadm" revision="c7169ccd633f03c0e8de4283d3a0245754ec6431"/>
+  <project groups="default" name="dellsrc/rackstylemgmt.git" path="externalsrc/rackstylemgmt" revision="f728186fbc8c00b7b848666ab075ec53b8a468ff"/>
+  <project groups="default" name="dellsrc/redownloader.git" path="externalsrc/redownloader" revision="c3c31e2014d62354820f359cc8d227f60c5ee5ab"/>
+  <project groups="default" name="dellsrc/sdlib.git" path="externalsrc/sdlib" revision="c692355f8eed00a5be6e56866d120e7687699eca"/>
+  <project groups="default" name="dellsrc/server-config-agent.git" path="externalsrc/server-config-agent" revision="87598934647d787397fec35832705f2a90c55cfa"/>
+  <project groups="default" name="dellsrc/shared-mem-app.git" path="externalsrc/shared-mem-app" revision="ad63af663c84875d7f19f56e084a12bb2f36569b"/>
+  <project groups="default" name="dellsrc/siclib.git" path="externalsrc/siclib" revision="bd3b2e75eb9c5815f0e15fa3fe9b458dee9c8abd"/>
+  <project groups="default" name="dellsrc/smash-providers.git" path="externalsrc/smash-providers" revision="9ac8a15b8b543fc2186586df27e9668cd8b0a160"/>
+  <project groups="default" name="dellsrc/syscallagent.git" path="externalsrc/syscallagent" revision="10ef9fb754ef5aaa5f310edcb2313bdc2663ce29"/>
+  <project groups="default" name="dellsrc/sysinfoapp.git" path="externalsrc/sysinfoapp" revision="e840c0b7b4296113d17e570deee4d944c4812d0d"/>
+  <project groups="default" name="dellsrc/template.git" path="externalsrc/TEMPLATE" revision="204c67908a6ae5502b48008ad8b47cd7e37e2ce5"/>
+  <project groups="default" name="dellsrc/throwaway-test.git" path="externalsrc/TEST" revision="23275792e88b7ea767b36f3e68ef55f373cbf0e7"/>
+  <project groups="default" name="dellsrc/trabdump.git" path="externalsrc/trabdump" revision="2e4343b26559a7e8be72772c6eca05692cfdfb5a"/>
+  <project groups="default" name="dellsrc/trapalloc.git" path="externalsrc/trapalloc" revision="819e832d0c08deb871856476a7fed1eab4e76fec"/>
+  <project groups="default" name="dellsrc/ubenv.git" path="externalsrc/ubenv" revision="7ed55dbe590298d1fb0531074159e11e7184a23a"/>
+  <project groups="default" name="dellsrc/uefistate.git" path="externalsrc/uefistate" revision="e2ed012038103148dc816bd204994bcb73227f75"/>
+  <project groups="default" name="dellsrc/usb-app.git" path="externalsrc/usb-app" revision="e3219fa6c1a73abb9513e2745fa177644bbe5c47"/>
+  <project groups="default" name="dellsrc/vflash.git" path="externalsrc/vflash" revision="e88415bdbfbe5a10ded66760e03f673046806afb"/>
+  <project groups="default" name="dellsrc/wmiapp.git" path="externalsrc/wmiapp" revision="63fe617f8cec0aa5bda5c037e07cce8cb00820e2"/>
+  <project groups="default" name="dellsrc/wsman-pythonlib.git" path="externalsrc/wsman-pythonlib" revision="86cac45b431ca08f69c1e123f622e76f7801932a"/>
+  <project groups="default" name="dracsrc/drac-uboot.git" path="externalsrc/u-boot-idrac8" revision="11d56733478f6a097b83f7190d02393bf14eb830"/>
+  <project groups="default" name="dracsrc/ipk-dropbox-2.0-msc-svn.git" path="ipk-dropbox-msc-svn" revision="c2d22838608b91bbb8986c3f1bbdd865519109cc">
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+  <project groups="default" name="dracsrc/ipk-dropbox-2.0-msc.git" path="ipk-dropbox-msc" revision="f3da8f2ee9260c9545b6776d4dfc5774fe7cbfc0">
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+  <project groups="default" name="dracsrc/ipk-dropbox-2.0.git" path="ipk-dropbox" revision="f538a42f4816fb04a410b516d2c36dead01ebcb6">
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+  <project groups="default" name="dracsrc/kernel-drivers.git" path="externalsrc/linux-drivers" revision="3a07ea9b79d72fac99d8759de901cf121a96fe6c"/>
+  <project groups="default" name="dracsrc/v-s-c-i.git" path="externalsrc/saved-manifests" revision="32175482bfebdd0e67a608dc83004e2dc9148605">
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+  <project groups="default" name="dracsrc/xmlconfigagent.git" path="externalsrc/xmlconfigagent" revision="ba691e13d71e2d956f0c0829fbce05b9494a74ca"/>
+  <project groups="default" name="mscsrc/backuprestore.git" path="externalsrc/backuprestore" revision="589bfc57d6574c13aeb0a2d1e2b34a72ec6fc36d"/>
+  <project groups="default" name="mscsrc/getDMstatus.git" path="externalsrc/getdmstatus" revision="8875234f2846ca10cbeb5c4d8be2bb277429d599"/>
+  <project groups="default" name="mscsrc/hiipop.git" path="externalsrc/hiipop" revision="18ca6064eac38e916279d2c0cb4278b01bfcc31b"/>
+  <project groups="default" name="mscsrc/msc-dcs-dial.git" path="externalsrc/dial" revision="216849ea4cabd6bed315b44c3ddbbaa0d57e292a"/>
+  <project groups="default" name="mscsrc/msc-debug.git" path="externalsrc/msc-debug" revision="b4f220b8712b385d098f8a333a1d4c0e48e4920d"/>
+  <project groups="default" name="mscsrc/raidpop-sdk.git" path="externalsrc/raidpopsdk" revision="9ca111c85cf3875704d2e093ac5cb7173765feea"/>
+  <project groups="default" name="mscsrc/raidpop.git" path="externalsrc/raidpop" revision="43d4b509b49ea769a089bfef8091070f6bfe12e8"/>
+  <project groups="default" name="mscsrc/rtcem.git" path="externalsrc/rtcem" revision="567c6f4cf10906c4ed9878e73d2316a6e26f109a"/>
+  <project groups="default" name="mscsrc/uefilinux.git" path="externalsrc/uefilinux" revision="f5e5db4aa5ff88625c08647f21d92e1806f7994f"/>
+  <project groups="default" name="mscsrc/vnc-server-app.git" path="externalsrc/fb-src" revision="b61fbedeadc82dec4fa6b22cbc883cbf2145192c"/>
+  <project groups="default" name="tools/build-scripts.git" path="scripts" revision="cb8e6583cf6ae04cf2a6a2a2c74d573c14f17002"/>
+  <project groups="default" name="tools/download-binaries.git" path="sources" revision="ed92f0d86bc972bdd712862b10f1d84b7ec55107"/>
+  <project groups="default" name="tools/idrac-binaries.git" path="externalsrc/base-image-binaries" revision="283ba405dc794e50f93ce129e044ed253675a5b8">
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+  <project groups="default" name="tools/idrac-factory.git" path="factory" revision="3fbb2ee416e33d5da17c89f101e1ae6c39f5d026">
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+  <project groups="default" name="tools/matf.git" path="externalsrc/matf" revision="589c443fa7a81d7af998557a4c252539ed8fce66"/>
+  <project groups="default" name="yocto-upstream/meta-oe.git" path="meta-oe" revision="d095cf01dabf79b846add708f2ae813c64bec9e1">
+    <annotation name="TAGS_ALLOWED" value="0"/>
+    <annotation name="BRANCHES_ALLOWED" value="0"/>
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+  <project groups="default" name="yocto-upstream/poky.git" path="poky" revision="27af23e65f63b41962a7cfddba9e9372d5212396">
+    <annotation name="TAGS_ALLOWED" value="0"/>
+    <annotation name="BRANCHES_ALLOWED" value="0"/>
+    <annotation name="MERGE_CHANGES_FROM_PREVIOUS" value="0"/>
+  </project>
+</manifest>

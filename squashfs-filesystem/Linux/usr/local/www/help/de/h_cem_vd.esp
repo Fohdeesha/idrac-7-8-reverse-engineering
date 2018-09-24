@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <script type="text/javascript"><% include "h_serverType.html" %></script> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head><meta content="text/javascript" http-equiv="Content-Script-Type" /> 
+<link href="/css/popup.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/custom.css" rel="stylesheet" type="text/css" /> 
+<link href="/css/icons.css" rel="stylesheet" type="text/css" /> 
+<title>iDRAC7: Speicher - Virtuelle Festplatten</title> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/Clarity.js" type="text/javascript"></script> 
+<script src="h_common.js" type="text/javascript"></script> 
+</head> 
+<body onload="javascript:popUp.initialize(true);"> 
+<div class="popup_container"> 
+<script type="text/javascript">writeHelpHeader(<%=dracType %>); 
+</script> 
+<div class="popup_content"> 
+<div class="popup_content_top_right"> 
+<div class="popup_content_top_left"> 
+<div class="popup_content_top"> 
+</div> 
+</div> 
+</div> 
+<div class="popup_content_right"> 
+<div class="popup_content_left"> 
+<div class="popup_content_middle"> 
+<div class="popup_page_title"> 
+<span id="helpTitle"> Virtuelle Festplatten</span> <div class="popup_line"> 
+</div> 
+</div> 
+<div class="popup-jump-bar"> 
+<span class="popup-jump-items">Gehe zu: <a class="popup-jump-bar" href="#VirtualDisks" id="cc3">Virtuelle Festplatten</a> |<a class="popup-jump-bar" href="#Other" id="A14">Weitere Optionen</a> </span> <div class="popup_jumpbar-line"> 
+</div> 
+</div> 
+<div id="popup_overflow"> 
+<a name="top"></a> 
+<div class="popup_inner_content"> 
+<div> 
+<p>Verwenden Sie diese Seite, um eine Liste der vorhandenen virtuellen Festplatten des Speicher-Subsystems und seiner Eigenschaften anzuzeigen. </p> 
+</div> 
+<div class="popup_subheader">
+<span id="BasicFilter"> Grundlegender / Erweiterter Filter für virtuelle Festplatten </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"><p>Verwenden Sie das <b>Controller</b> Drop-Down-Menü, um die Liste der virtuellen Festplatten nach Controllern zu filtern. Klicken Sie auf <b>Anwenden</b>.</p> 
+<p>Klicken Sie auf <b>Erweiterter Filter</b>, um die Liste der virtuellen Festplatten nach folgenden Kriterien zu filtern:</p> 
+<ul> 
+<li>Controller</li> 
+<li>Status</li> 
+<li>Zustand</li> 
+<li>Layout</li> 
+<li>Bus-Protokoll</li> 
+<li>Datenträgertyp</li> 
+<li>Leseregel</li> 
+<li>Schreibregel</li> 
+<li>Ungültiger Block gefunden</li> 
+<li>Gesichert</li> 
+<li>Festplatten-Cache-Regeln</li> 
+<li>Erweiterter Cache</li> 
+<li>Minimale Größe (MB)</li> 
+<li>Alle oder Teil des Namen</li> 
+</ul> 
+<p>Weitere Informationen über jede Eigenschaft finden Sie im Abschnitt <a class="popup-jump-bar" href="#VirtualDisks" id="cc4">Virtuelle Festplatten</a>.</p> 
+<p>Klicken Sie auf <strong> Abbrechen</strong>, um die Standardwerte in den Feldern wiederherzustellen.</p></div> 
+<div class="popup_subheader"> 
+<a name="VirtualDisks"></a> 
+<div class="popup_backtotop"> 
+<a href="javascript:popUp.scrolltoTop()">Zurück zum Seitenanfang</a> </div> 
+<span id="VirtualDisks"> Virtuelle Festplatten </span> <div class="popup_subheaderline"> 
+</div> 
+</div> 
+<div class="popup_inner_content"> 
+<div><p>Folgende grundlegenden Eigenschaften werden für jede virtuelle Festplatte angezeigt.</p> 
+</div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Status</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Funktionsstatus der virtuellen Festplatten an. Mögliche Werte sind: </p> 
+<ul> 
+<li>OK <span class="status_ok"> &#8212; </span> Zeigt an, dass die Komponente wie erwartet funktioniert.</li> 
+<li>Warnung <span class="status_noncritical"> &#8212; </span>Zeigt an, dass eine Sonde oder ein anderes Überwachungsgerät einen Messwert für die Komponente erkannt hat, der über oder unter dem erlaubten Grenzwert liegt. Die Komponente funktioniert vielleicht, kann aber ausfallen. Die Funktionsfähigkeit der Komponente ist eventuell beeinträchtigt. </li> 
+<li>Kritisch <span class="status_critical"> &#8212; </span> Zeigt an, dass die Komponente entweder fehlerhaft ist oder ein Fehler droht. Die Komponente erfordert sofortige Aufmerksamkeit und muss eventuell ersetzt werden.</li> 
+<li>Informationen nicht verfügbar<span class="status_unknown"> &#8212; </span> Zeigt an, dass der Komponentenstatus nicht bekannt ist.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Name</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Namen der virtuellen Festplatte an.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Zustand</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den aktuellen Status der virtuellen Festplatten an.</p> 
+<ul> 
+<li>Online &#8212; Gibt an, dass die virtuelle Festplatte optimal funktioniert.</li> 
+<li>Herabgesetzt &#8212; Zeigt an, dass eine physische Festplatte einer redundanten virtuellen Festplatte nicht online ist.</li> 
+<li>Fehlerhaft &#8212; Gibt an, dass die virtuelle Festplatte einen oder mehrere Komponentenausfälle gefunden hat und nicht funktioniert.</li> 
+<li> Unbekannt &#8212; Zeigt an, dass der Zustand der virtuellen Festplatte nicht bekannt ist.</li> 
+</ul> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">Anmerkung:</span> Auf einigen Controllern wird der Zustand der virtuellen Festplatte erst dann aktualisiert, wenn der Controller einen E/A-Vorgang ausführt.</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Layout</b></span></td> 
+<td class="desc"> 
+<p>Zeigt die RAID-Stufe an.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Größe</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt die Gesamtkapazität der virtuellen Festplatte (in MB oder GB) an.</p></td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Datenträgertyp</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Medientyp der in der virtuellen Festplatte vorhanden physischen Festplatte an. Mögliche Werte sind:</p> 
+<ul> 
+<li>HDD &#8212; Gibt an, dass der Medientyp ein Festplattenlaufwerk ist. Ein HDD ist ein nicht-flüchtiges Speichergerät, das digital codierte Daten auf schnell drehenden Platten mit einer magnetischen Fläche speichert.</li> 
+<li>SSD &#8212; Gibt an, dass der Medientyp ein Laufwerk mit solidem Zustand (SSD) ist. Eine SSD ist ein Datenspeichergerät, das einen Festkörperspeicher für die Speicherung von beständigen Daten verwendet.</li> 
+<li>Informationen nicht verfügbar — Zeigt an, dass die  Informationen nicht verfügbar sind.</li> 
+</ul> 
+<div> 
+<div class="popup_note"> 
+</div> 
+<span class="popup_bold">Anmerkung:</span> Sie können HDD- und SSD-Medien nicht beide auf einer virtuellen Festplatte haben. Außerdem können SAS- und auch SATA-Festplatten nicht gleichzeitig auf der virtuellen Festplatte vorhanden sein.</div> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Leseregel</b></span> </td> 
+<td class="desc"> 
+<p>Zeigt die Leseregel des Controllers für die virtuelle Festplatte an. Mögliche Werte sind:</p> 
+<ul> 
+<li>Vorauslesen &#8212; Gibt an, dass der Controller für den angegebenen Datenträger die angeforderten Daten sequentiell voraus liest und zusätzliche Daten im Cache-Speicher speichert, um auf eine künftige Datenanforderung vorbereitet zu sein.  Dies beschleunigt das sequentielle Lesen von Daten, ergibt aber kaum bessere Ergebnisse, wenn auf zufällige Daten zugegriffen wird.</li> 
+<li>Adaptives Vorauslesen &#8212; Gibt an, dass die Steuerung für den angegebenen Datenträger die Vorauslese-Cache-Richtlinie verwendet, falls die zwei letzten Zugriffe auf die Festplatte in sequentiellen Sektoren vorgenommen wurden. Falls die Leseanforderungen zufällig sind, kehrt der Controller zum Modus 'Kein Vorauslesen' zurück.</li> 
+<li>Kein Vorauslesen &#8212; Zeigt an, dass für den gewählten Datenträger die Kein Vorauslesen-Regel verwendet wird.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Schreibregel</b></span></td> 
+<td class="desc"><p>Zeigt die Schreibregel an, die der Controller für die jeweilige virtuelle Festplatte verwendet. Mögliche Werte sind:</p> 
+<ul> 
+<li>Rückschreiben &#8212; Gibt an, dass der Controller für den angegebenen Datenträger ein Datenübertragungsabschluss-Signal an das Hostsystem sendet, wenn der Controller-Cachespeicher alle Daten in einer Transaktion erhalten hat. Der Controller schreibt dann die zwischengespeicherten Daten auf das Speichergerät im Hintergrund.</li> 
+<li>Durchschreiben &#8212;Zeigt an, dass der Controller für den gewählten Datenträger ein Datenübertragungsabschluss-Signal an den Host sendet, wenn das Festplatten-Subsystem alle Daten einer Transaktion empfangen hat.</li> 
+<li>Rückschreiben erzwingen &#8212; Wenn durch Rückschreiben erzwingen Daten im Cache-Speicher abgelegt werden, wird Schreib-Cache aktiviert, egal ob der Controller eine Batterie hat oder nicht. Wenn der Controller keine Batterie hat und Daten durch Rückschreiben erzwingen im Cache-Speicher abgelegt werden sollen, kann es im Fall eines Stromausfalls zu Datenverlusten kommen.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"><span><b>Stripe-Größe</b></span></td> 
+<td class="desc"> 
+<p>Zeigt die Stripe-Größe der virtuellen Festplatte an. Die Stripe-Größe verweist auf den Speicherplatz, den jeder Stripe auf einer einzigen Festplatte benötigt. Mögliche Werte sind 8 KB, 16 KB, 32 KB, 64 KB, 128 KB, 256 KB, 512 KB oder 1 MB.</p> 
+<p>Ist dieser Wert nicht verfügbar, wird <b>Informationen nicht verfügbar</b> angezeigt.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Gesichert</b></span> </td> 
+<td class="desc">Zeigt an, ob eine virtuelle Festplatte gesichert ist oder nicht. Mögliche Werte: Ja und Nein.<br /> Um die virtuelle Festplatte zu sichern, werden Festplatten mit Selbstverschlüsselung (Self-Encrypting Drives, SEDs) benötigt.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Verbleibende Redundanz</b></span> </td> 
+<td class="desc">Zeigt die Anzahl der Festplatten an, die ausfallen können, bevor die virtuelle Festplatte fehlschlägt. Mögliche Werte: 0, 1 oder 2.</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<div class="popup_inner_content"><div> 
+<p>Klicken Sie auf das + Zeichen, um die<b> Erweiterten Eigenschaften</b> für jede virtuelle Festplatte zusätzlich zu den grundlegenden Eigenschaften anzuzeigen.</p></div> 
+<div class="popup_infolist"> 
+<table> 
+<tr> 
+<td class="item"> 
+<span><b>Bus-Protokoll</b></span></td> 
+<td class="desc"> 
+<p>Zeigt die Technologie an, die die physischen Festplatten, die in der virtuellen Festplatte enthalten sind,  verwenden. Mögliche Werte sind: </p> 
+<ul><li>SAS &#8212; Serial Attached SCSI</li> 
+<li>SATA &#8212; SATA (Serial Advanced Technology Attachment)</li> 
+</ul> 
+<p>Standardmäßig ist SAS deaktiviert und SATA aktiviert.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Betriebsbereiter Zustand</b></span></td> 
+<td class="desc"> 
+<p>Wird nur angezeigt, wenn es sich um einen Prozess-basierten Vorgang handelt:</p> 
+<ul> 
+<li>Resynchronisieren &#8212; Zeigt an, dass eine Übereinstimmungsprüfung auf der virtuellen Festplatte durchgeführt wird.</li> 
+<li>Hintergrundinitialisierung &#8212; Zeigt an, dass eine Hintergrundinitialisierung auf der virtuellen Festplatte durchgeführt wird.</li> 
+<li>Initialisierung &#8212; Zeigt an, dass die virtuelle Festplatte initialisiert wird.</li> 
+<li>Rekonstruieren &#8212; Zeigt an, dass die Konfiguration der virtuellen Festplatte geändert wurde. Die in der virtuellen Festplatte enthaltenen physischen Festplatten werden geändert, um die neue Konfiguration zu unterstützen.</li> 
+<li>Nicht zutreffend — Gibt an, dass gerade kein Vorgang läuft.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Festplatten-Cache-Regeln</b></span></td> 
+<td class="desc"> 
+<p>Zeigt an, ob die Festplatten-Cache-Regeln der physischen Festplatten, die Teil der virtuellen Festplatte sind, aktiviert oder deaktiviert sind. Mögliche Angaben sind:</p> 
+<ul> 
+<li>  Aktiviert — Zeigt an, dass der Schreib-Cache der Festplatte aktiviert ist. Dies erhöht die Leistung und die Wahrscheinlichkeit eines Datenverlusts bei einem Stromausfall. </li> 
+<li>  Deaktiviert — Zeigt an, dass der Schreib-Cache der Festplatte deaktiviert ist. Dies verringert die Leistung und die Wahrscheinlichkeit eines Datenverlusts.</li> 
+<li> Standardeinstellung &#8212; Zeigt an, dass die Festplatte ihren Standardmodus für den Schreib-Cache verwendet. Für SATA-Festplatten lautete dieser „aktiviert“ und für SAS- Festplatten „deaktiviert“.</li> 
+</ul> 
+<p>Für auf SATA-Laufwerken basierende virtuelle Festplatten lautet die Standardeinstellung für die Festplatten-Cache-Regeln „aktiviert“ und für auf SAS-Laufwerken basierende virtuelle Festplatten „deaktiviert“.</p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Erweiterter Cache</b></span></td> 
+<td class="desc"> 
+<p>Zeigt an, ob der PER-Controller die virtuelle Festplatte als sekundären Cache verwendet, um die Random-Leseleistung zu verbessern. Diese Eigenschaft wird nur für SSC virtuelle Festplatten angezeigt. Mögliche Werte sind:</p> 
+<ul> 
+<li>Ja &#8212; Zeigt an, dass die virtuelle Festplatte als sekundärer Cache verwendet wird.</li> 
+<li>Nicht zutreffend &#8212; Zeigt an, dass der sekundäre Cache nicht zutreffend ist.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Fortschritt</b></span></td> 
+<td class="desc"> 
+<p>Zeigt den Fortschritt eines Vorgangs in Prozenten an, der auf der virtuellen Festplatte ausgeführt wird.</p> 
+<p>Wenn kein Vorgang abläuft, wird <b>Nicht zutreffend</b> angezeigt. </p> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Ungültiger Block gefunden</b></span> </td> 
+<td class="desc"><p> Zeigt an, ob die virtuelle Festplatte einen ungültigen Block hat. Ein ungültiger Block auf der virtuellen Festplatte wird durch einen ungültigen Block auf einer oder mehreren Mitgliedern der physischen Festplatte verursacht. Lesevorgang auf virtuellen Festplatten mit ungültigem Block kann fehlschlagen. Ein ungültiger Block auf der virtuellen Festplatte wird entdeckt, wenn der Controller einen Vorgang durchführt, der einen Laufwerkscan erfordert. Mögliche Werte sind: </p> 
+<ul> 
+<li>Ja &#8212; Zeigt an, dass die virtuelle Festplatte einen ungültigen Block hat.</li> 
+<li>Nein &#8212;Zeigt an, dass die virtuelle Festplatte keinen ungültigen Block hat.</li> 
+</ul> 
+</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Controller</b></span></td> 
+<td class="desc">Klicken Sie auf den Link mit dem Controllernamen, um die Eigenschaften des Controllers anzuzeigen, der dieser virtuellen Festplatte zugeordnet ist.</td> 
+</tr> 
+<tr> 
+<td class="item"> 
+<span><b>Physische Festplatte anzeigen</b></span></td> 
+<td class="desc">Klicken Sie auf diesen Link, um die physische Festplatte anzuzeigen, die dieser virtuellen Festplatte zugeordnet sind.</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+<script type="text/javascript">
+                writeHelpOtherBegin();
+				writeHelpOtherEnd();
+			  
+</script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html> 

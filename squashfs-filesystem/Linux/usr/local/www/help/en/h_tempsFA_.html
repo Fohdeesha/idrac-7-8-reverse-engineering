@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<script type="text/javascript"><% include "h_serverType.html" %></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link href="/css/popup.css" rel="stylesheet" type="text/css" />
+  <link href="/css/custom.css" rel="stylesheet" type="text/css" />
+  <link href="/css/icons.css" rel="stylesheet" type="text/css" />
+  <title>iDRAC7: Temperatures</title>
+
+  <script src="/js/prototype.js" type="text/javascript"></script>
+  <script src="/js/Clarity.js" type="text/javascript"></script>
+  <script src="h_common.js" type="text/javascript"></script>
+
+</head>
+<body onload="javascript:popUp.initialize(true);">
+
+  <div class="popup_container">
+    <script type="text/javascript">writeHelpHeader(<%=dracType %>); </script>
+    <div class="popup_content">
+      <div class="popup_content_top_right">
+        <div class="popup_content_top_left">
+          <div class="popup_content_top">
+          </div>
+        </div>
+      </div>
+      <div class="popup_content_right">
+        <div class="popup_content_left">
+          <div class="popup_content_middle">
+            <div class="popup_page_title">
+              <span id="helpTitle">Temperatures</span>
+              <div class="popup_line">
+              </div>
+            </div>
+            <div class="popup-jump-bar">
+              <span class="popup-jump-items">Jump to:
+			  <a id="jb1" href="#FreshAir" class="popup-jump-bar">Fresh Air</a>
+              | <a id="jb1" href="#TemperatureProbes" class="popup-jump-bar">Temperature Probes</a>
+              | <a id="jb1" href="#SystemBoardInlet" class="popup-jump-bar">System Board Inlet Temperature Historical Data</a>
+               | <a id="A14" href="#Other" class="popup-jump-bar">Other Options</a>
+              </span>
+              <div class="popup_jumpbar-line">
+              </div>
+            </div>
+            <div id="popup_overflow">
+              <a name="top"></a>
+              <div class="popup_inner_content">
+                <div>
+                                <p>Use this page to:</p>
+								<ul>
+												<li>View the status and readings of the 
+								on-board ambient temperature probes. All 
+								readings are displayed in Centigrade (°C) and 
+								Fahrenheit (°F) units. The temperature 
+                        		probes may be system dependent. The 
+								minimum and maximum temperature thresholds for 
+								warning and critical states are displayed, along 
+								with the current health status of the probe.</li> <br /> <br />
+												<li>View if the system is Fresh 
+												Air compliant or not and monitor the percentage 
+								of time the system has spent operating in an 
+								environment, where the ambient temperature is 
+								greater than the normally supported temperature 
+								threshold. The system board 
+								inlet temperature sensor reading is collected over a period of time 
+												to monitor the temperature. 
+								See <a id="jb1" href="#SystemBoardInlet" class="popup-jump-bar">System Board Inlet Temperature Historical Data</a>.</li>
+																								For 
+												more information on Fresh Air 
+												cooling, see the <i>iDRAC7 User&#39;s 
+												Guide</i>.</ul>
+                </div>
+                </div>
+			  
+			  <div class="popup_subheader">
+                <a name="FreshAir"></a>
+                <div class="popup_backtotop">
+                  <a href="javascript:popUp.scrolltoTop()">Back to top</a>
+                </div>
+                <span id="FreshAir">Fresh Air</span>
+                <div class="popup_subheaderline">
+                </div>
+              </div>
+              <div class="popup_inner_content">
+                <div class="popup_infolist">
+                  <div><p> This section indicates if the system in Fresh Air compliant or not.
+                  <br />
+                </div>
+              </div>
+			  </div>
+			  			  
+              <div class="popup_subheader">
+                <a name="TemperatureProbes"></a>
+                <div class="popup_backtotop">
+                  <a href="javascript:popUp.scrolltoTop()">Back to top</a>
+                </div>
+                <span id="TemperatureProbes">Temperature Probes</span>
+                <div class="popup_subheaderline">
+                </div>
+              </div>
+
+              <div class="popup_inner_content">
+			    <div>
+				    <div class="popup_note">
+				    </div>
+				    <span class="popup_bold">Note:</span>The temperature sensor information is available only if the system is powered on. When iDRAC is powering on, invalid values may be displayed.
+				</div>
+				<div class="popup_infolist">
+                  <table>
+                    <tr>
+                      <td class="item">
+                        <span><b>Status</b></span>
+                      </td>
+                      <td class="desc">
+                      Indicates temperature probe status:
+						<ul>
+						<li><span class="status_ok"> &#8212; </span> OK<br></br></li>
+                        <li><span class="status_noncritical"> &#8212; </span>Warning alert issued<br></br></li>
+                        <li><span class="status_critical"> &#8212; </span> Critical alert issued</li>
+						</ul>
+                                              </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Probe Name</b></span>
+                      </td>
+                      <td class="desc">
+						Displays the name of the temperature sensor for the system board.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Reading</b></span>
+                      </td>
+                      <td class="desc">
+						Indicates the current temperature.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Warning Threshold</b></span>
+                      </td>
+                      <td class="desc">
+						Displays the minimum and maximum threshold when a warning alert is 
+                          issued.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Critical Threshold</b></span>
+                      </td>
+                      <td class="desc">
+						Displays the minimum and maximum threshold when a critical alert is 
+                          issued.
+                      </td>
+                    </tr>
+                  </table>
+                  <br />
+				</div>
+              </div>
+                <div class="popup_subheader">
+                <a name="SystemBoardInlet"></a>
+                <div class="popup_backtotop">
+                  <a href="javascript:popUp.scrolltoTop()">Back to top</a>
+                </div>
+                <span id="SystemBoardInlet">System Board Inlet Temperature Historical Data</span>
+                <div class="popup_subheaderline">
+                </div>
+              </div>
+              
+              <div class="popup_inner_content">
+              <div>
+							<p>This section provides a graphical display of the stored inlet temperature 
+							(average and peak values) for the last day, last 30 
+							days, and last year. 
+							By default, the data for the last year is displayed. The 
+							data collection starts when the system is first powered 
+							on after it is shipped from the factory. The data is 
+							collected and displayed for the duration when the 
+							system is powered on. For more information on Fresh Air 
+							cooling, see <i>iDRAC7 User&#39;s Guide</i>.</p>
+							<p>
+							The graphs are populated with:</p>
+							<ul>
+											<li>24 data points for the last 24 
+											hours (average and peak values for each 
+											hour)</li>
+											<li>30 data points for the last 30 
+											days (average and peak values for each day)</li>
+											<li>52 data points for the last 52 
+											weeks (average and peak values for each 
+											week)</li>
+							</ul>
+							<p>When you hover over each point, the average and peak 
+							values with the number of hours, days, or weeks that has elapsed from the current hour, day, or week respectively
+							is displayed within the graph. </p>
+							<p>The graph drops to the OFF position when the 
+							system is powered off.</p>
+							<div>
+				    <div class="popup_note">
+				    </div>
+				    <span class="popup_bold">Note:</span>The historical data may be available even when the system is powered off, only the last few hours may not be available.</div>
+
+							<p>
+							You can export the stored inlet temperature data of 
+							the last seven years to an XML or CSV file. The data 
+							is collected twice per day. After selecting the file 
+							type, click <b>Export</b>. The <b>Save As</b> dialog box is displayed. Specify the location to save the file and click 
+							<b>OK</b>. 
+							For each recorded inlet temperature data, the 
+							timestamp, average and peak values are available. At 
+							any time, if the system was powered off, then the 
+							reading is -128 degree centigrade (that is, data is unavailable). At a 
+							time, only one user can export the data. </p>
+							</div>
+			    
+			   <div class="popup_infolist">
+                  <table>
+                    <tr>
+                      <td class="item">
+                        <span><b>Total Operation Time</b></span>
+                      </td>
+                      <td class="desc">
+                        Indicates the number of days the system has been in 
+						operation. The maximum value is 365 days.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Time Spent in Warning Threshold Range</b></span>
+                      </td>
+                      <td class="desc">
+                        Displays the time the system has spent in the warning 
+						threshold range:<ul>
+						<li>Green &#8212; No time is spent in range 0%.</li>
+						<li>Amber &#8212; Time spent is in the range of 1-7%.</li>
+						<li>Red &#8212; Time spent is more than 8%.</li>
+						</ul></td>
+                    </tr>
+                    <tr>
+                      <td class="item">
+                        <span><b>Time Spent in Critical Threshold Range</b></span>
+                      </td>
+                      <td class="desc">
+                        				Displays the time the system has 
+												spent in the critical threshold 
+												range:<ul>
+						<li>Green &#8212; No time is spent in range 0%.					<li>Amber &#8212; Time spent is in the range of 0.1-0.7%.</li>
+						<li>Red &#8212; Time spent is more than 0.8%.</li>
+												</ul>
+</td>
+                    </tr>
+                   </table>   
+                                
+                                                    
+                </div>
+                <div>
+				    <div class="popup_note">
+				    </div>
+				    <span class="popup_bold">Note:</span>If the system has spent more than 10% of the time in the warning threshold range or more than 
+					1% of the time in the critical threshold range, events are logged in the Lifecycle Log and SNMP traps are generated. You can 
+					also set the alert recurrence. To do this, go to <b>Overview</b>&#8594; <b>Server</b>&#8594; <b>Alerts</b>&#8594; <b> Alert Recurrence</b>.
+
+				  </div>
+
+                
+              </div>
+
+              <script type="text/javascript">writeHelpOther();</script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

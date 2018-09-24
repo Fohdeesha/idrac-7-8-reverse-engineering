@@ -1,0 +1,21 @@
+[Unit]
+Description=Setup /flash/data0
+DefaultDependencies=no
+After=early-mount.service
+Requires=early-mount.service
+RequiresMountsFor=/flash/pd0 /flash/data0
+
+# need to ensure that setup runs after config is cleared (if it is run, it's
+# only run when flag file is present.) Implies we should not want=
+After=clear_private_store.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Nice=-15
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/init.d/setup-flash.sh
+ExecStartPost=-/etc/debug/idrac-debug.sh
+
+[Install]
+WantedBy=sysinit.target

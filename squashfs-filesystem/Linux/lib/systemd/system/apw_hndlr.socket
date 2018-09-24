@@ -1,0 +1,10 @@
+[Unit]
+Description=appweb handlr socket
+After=tmp.mount
+
+[Socket]
+ListenSequentialPacket=/tmp/apwHdlrSock
+Accept=false
+
+[Install]
+WantedBy=sockets.target

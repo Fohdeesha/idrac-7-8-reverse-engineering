@@ -1,0 +1,11 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#SessionService/Sessions/Members/$entity",
+    "@odata.id": "/redfish/v1/SessionService/Sessions/1234567890ABCDEF"  ,"@oem.nav.parentid": "/redfish/v1/SessionService/Sessions",
+    "@odata.type": "#Session.1.0.0.Session",
+    "Id": "1234567890ABCDEF",
+    "Name": "User Session",
+    "Description": "Manager User Session",
+    "UserName": "root",
+    "Oem": {}
+}

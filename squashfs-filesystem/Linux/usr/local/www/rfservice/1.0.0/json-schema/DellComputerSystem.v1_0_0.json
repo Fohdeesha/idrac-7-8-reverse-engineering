@@ -1,0 +1,65 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#DellComputerSystem.v1_0_0.DellComputerSystem",
+    "$ref": "#/definitions/DellComputerSystem",
+    "definitions": {
+        "DellComputerSystem": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id"
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ]
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name"
+                },
+                "BootOrder": {
+                    "$ref": "/redfish/v1/Schemas/DellBootSources.json#/definitions/DellBootSources",
+                    "readonly": true,
+                    "description": "A reference to the BootSources settings associated with this system.",
+                    "longDescription": "The value of this property shall be a link to a resource of type BootSources that lists the BootSources settings for this system."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "This resource contains the Dell specific Redfish implementation for ComputerSystem.",
+            "longDescription": "This resource contains the Dell specific Redfish implementation for ComputerSystem."
+        }
+    },
+    "copyright": "Copyright 2016 Dell, Inc. or its subsidiaries.  All Rights Reserved."
+}

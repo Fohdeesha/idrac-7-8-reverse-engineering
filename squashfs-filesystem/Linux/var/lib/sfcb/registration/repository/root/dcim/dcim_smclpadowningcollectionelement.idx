@@ -1,0 +1,1 @@
+218 202 ownedelement=root/dcim:dcim_hardwareconcretecollection.instanceid="$(PCFG_OEM_Str):Hardware:ConcreteCollection:1",owningelement=root/dcim:dcim_admindomain.creationclassname="DCIM_AdminDomain",name="MAP" 440 0

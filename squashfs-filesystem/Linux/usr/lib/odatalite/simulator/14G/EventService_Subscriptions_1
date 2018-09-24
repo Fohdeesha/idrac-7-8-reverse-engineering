@@ -1,0 +1,14 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#EventService/Members/Subscriptions/Members/$entity",
+    "@odata.id": "/redfish/v1/EventService/Subscriptions/1"  ,"@oem.nav.parentid": "/redfish/v1/EventService/Subscriptions",
+    "@odata.type": "#EventService.1.0.0.EventDestination",
+    "Id": "1",
+    "Name": "EventSubscription 1",
+    "Destination": "http://www.dnsname.com/Destination1",
+    "EventTypes": [
+        "Alert"
+    ],
+    "Context": "ABCDEFGHJLKJ",
+    "Protocol": "Redfish"
+}

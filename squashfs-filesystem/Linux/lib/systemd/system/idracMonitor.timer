@@ -1,0 +1,10 @@
+[Unit]
+Description=AppMonitor timer
+
+[Timer]
+#Time to wait after booting before running first time
+#if that time has already passed, then run immediately
+OnBootSec=10min
+
+[Install]
+WantedBy=multi-user.target

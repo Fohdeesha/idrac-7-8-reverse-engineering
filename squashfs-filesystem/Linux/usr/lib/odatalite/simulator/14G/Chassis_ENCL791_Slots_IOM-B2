@@ -1,0 +1,16 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/Slots",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/IOM-B2",
+    "@odata.type": "#Slots.1.0.0.Slot",
+    "Id": "IOM-B2",
+    "Name": "IOM-B2",
+    "SlotId": "B2",
+    "SlotGroup": "IOM-B",
+    "Occupied": true,
+    "SlotType": "IOMInterposer",
+    "SlotConfig": { "@odata.id": "/redfish/v1/Chassis/ENCL791/SlotConfigs/DirectIOMSlots" },
+    "Contains": [
+    ],
+    "Oem": {}
+}

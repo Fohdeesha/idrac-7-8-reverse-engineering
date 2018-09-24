@@ -1,0 +1,71 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _PerfDiskObj
+{
+        u64 sampleDuration;
+        u64 bytesWrittenPerSec;
+        u64 bytesReadPerSec;
+        u32 writesPerSec;
+        u32 readsPerSec;
+        u32 offsetInstanceName;
+} PerfDiskObj;
+
+typedef struct _PerfProcessorObj
+{
+        u64 sampleDuration;
+        u64 percentProcessorTime;
+        u64 percentUserTime;
+        u64 percentPrivilegedTime;
+        u32 interruptsPerSec;
+        u32 offsetInstanceName;
+} PerfProcessorObj;
+
+typedef struct _PerfMemoryObj
+{
+        u64 sampleDuration;
+        u64 availableBytes;
+        u64 committedBytes;
+        u64 commitLimit;
+        u32 pageFaultsPerSec;
+        u32 pagesPerSec;
+        u32 offsetInstanceName;
+} PerfMemoryObj;
+
+typedef struct _PerfVirtualMemoryObj
+{
+        u64 sampleDuration;
+        u32 percentUsage;
+        u32 percentUsagePeak;
+        u32 offsetInstanceName;
+} PerfVirtualMemoryObj;
+
+typedef struct _PerfNetworkObj
+{
+        u64 sampleDuration;
+        u32 bytesTotalPerSec;
+        u32 packetsPerSec;
+        u32 packetsReceivedPerSec;
+        u32 packetsSentPerSec;
+        u32 currentBandwidth;
+        u32 bytesReceivedPerSec;
+        u32 bytesSentPerSec;
+        u32 offsetInstanceName;
+} PerfNetworkObj;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

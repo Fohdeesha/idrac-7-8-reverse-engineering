@@ -1,0 +1,15 @@
+[Unit]
+Description=personality module
+After=fullfw_app.service
+Wants=maser_attch.service
+After=maser_attch.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/sysapps_script/persmod_setup.sh start
+ExecStartPost=/bin/touch /tmp/pmStartUpComplete
+
+[Install]
+WantedBy=multi-user.target

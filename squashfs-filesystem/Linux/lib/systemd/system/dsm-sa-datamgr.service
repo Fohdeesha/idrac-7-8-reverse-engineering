@@ -1,0 +1,33 @@
+[Unit]
+Description=Data Manager
+DefaultDependencies=no
+After=setup-flash.service
+Requires=setup-flash.service
+After=debugcontrol.service
+Wants=debugcontrol.service
+# fullfw needs license manager, which is a populator started on DM startup
+# so, don't put a dep on fullfw here
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/C
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+
+ExecStart=/usr/sbin/dsm_sa_datamgrd
+#set DM Stage 1 post bit
+ExecStartPost=/bin/shmwrite -i 22 1
+
+# this command initiates DM stop
+ExecStop=/bin/kill -TERM ${MAINPID}
+# this command waits up to 60 secs for DM to stop
+ExecStop=/bin/sh -c "echo \"Waiting for Data Manager to stop\"; secs=0; \
+ while [ -d /proc/${MAINPID} -a $secs -lt 60 ]; do sleep 1; secs=$(( $secs + 1)); done; \
+ echo \"Waited $secs seconds for Data Manager to stop\";"
+# kill DM and pops with SIGKILL if DM still running after ExecStop commands
+KillSignal=SIGKILL
+
+[Install]
+Alias=data-engine-boot.service
+WantedBy=basic.target

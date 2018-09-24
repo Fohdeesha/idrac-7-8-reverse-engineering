@@ -1,0 +1,173 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _BiosSetupState
+{
+	u32 state;
+} BiosSetupState;
+
+typedef struct _BIOSSetupHelpObj
+{
+	u16	helpTextSize;
+	u16 reservedAlign;
+	u32 offsetHelpText;
+} BIOSSetupHelpObj;
+
+typedef struct _BIOSSetupStateInfo
+{
+	u32 stateSetting;
+	u32 offsetStateName;
+} BIOSSetupStateInfo;
+
+typedef struct _BIOSSetupObj 
+{
+	u32 state;
+	u32 cap;
+	bytestr value;
+	u32 offsetObjName;
+	booln isSetImmediate;
+	booln isExtended;
+	booln passwordRequired;
+	u16 ReservedAlign;
+	u32 offsetPassword;
+	u16	helpTextSize;
+	u8 defaultState;
+	u8 numStates;
+	BIOSSetupStateInfo stateInfo[1];
+} BIOSSetupObj;
+
+typedef struct _RemoteBIOSUpdateObj
+{
+        u32 support;
+        u32 state;
+        u32 minContiguousMemSize;
+        u32 completionCode;
+        s32 lastUpdateYear;
+        s32 lastUpdateMonth;
+        s32 lastUpdateDay;
+        s32 lastUpdateHour;
+        s32 lastUpdateMin;
+        s32 lastUpdateSec;
+        astring ipfName[256];
+} RemoteBIOSUpdateObj;
+
+typedef struct _MgmSftwPropsObj
+{
+        u32 buildNum;
+        __BITMAP u32 supportedProtocol;
+        __BITMAP u32 preferredProtocol;
+        booln web1To1Preferred;
+        u8 reservedAlign[2];
+        u32 offsetProductName;
+        u32 offsetVersion;
+        u32 offsetManufacturer;
+        u32 offsetDescription;
+        u32 offsetUpdateLevel;
+        u32 offsetUrl;
+        u32 offsetLanguage;
+        u32 offsetGlobalVersion;
+        __BITMAP u32 snmpCapabilities;
+} MgmSftwPropsObj;
+
+typedef struct _BaseBoardObj 
+{
+        u32 baseBoardType;
+        u32 featureFlags;
+        u32 locationIndex;
+        u32 offsetManufacturer;
+        u32 offsetProductName;
+        u32 offsetVersion;
+        u32 offsetServiceTag;
+        u32 offsetPiecePartID;
+        u32 offsetAssetTag;
+        u32 offsetBoardLocation;
+        u32 offsetBaseBoardType;
+} BaseBoardObj;
+
+typedef struct _BootDeviceObj
+{
+        u8 objType;
+        u8 index;
+        u16 deviceType;
+        u8 classType;
+        u8 embedded;
+        u16 statusFlags;
+        u16 vendorID;
+        u16 deviceID;
+        u8 pciBus;
+        u8 pciDevice;
+        u8 pciFunction;
+        u8 slotNum;
+        booln IsFirstIPLDevice;
+        u8 reserved[3];
+        u32 offsetDescription;
+} BootDeviceObj;
+
+typedef struct _BiosBootSpecObj
+{
+        u8 IPLNum;
+        u8 BCVNum;
+        u8 MaxIPLNum;
+        u8 MaxBCVNum;
+        u32 RCIErrorCode;
+        u32 ModifiedFlags;
+        u16 OneShotBootDev;
+		u16 QuickSetBootDev;        
+        u8 IPLPriorityList[32];
+        u8 IPLSkipList[32];
+        u8 BCVPriorityList[32];
+	    booln StructCorrupted;
+} BIOSBootSpecObj;
+
+typedef struct _PowerKnobMemoryObject {
+	u8 type;	
+	u8 reserved;
+	__BITMAP u16 capabilities;	
+	__BITMAP u16 requireReboot; 
+	__BITMAP u16 currentState;
+	__BITMAP u16 pendingState; 
+}PowerKnobMemoryObject;
+
+typedef struct _PowerKnobFanObject {
+	u8 type;	
+	u8 reserved;
+	__BITMAP u16 capabilities;	
+	__BITMAP u16 requireReboot; 
+	__BITMAP u16 currentState;
+	__BITMAP u16 pendingState; 
+}PowerKnobFanObject;
+
+typedef struct _PowerKnobPstateObject {
+	u8 type;	
+	u8 reserved;
+	__BITMAP u16 capabilities;	
+	__BITMAP u16 requireReboot; 
+	__BITMAP u16 currentState;
+	__BITMAP u16 pendingState; 
+}PowerKnobPstateObject;
+
+typedef struct _PowerProfilesObject {
+	__BITMAP u16 profilesSupported;		
+	__BITMAP u16 profilesRequireReboot;	
+	__BITMAP u16 curProfile;			
+	__BITMAP u16 PendingProfile;	
+} PowerProfilesObject;
+
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------
+

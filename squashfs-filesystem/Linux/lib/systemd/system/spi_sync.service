@@ -1,0 +1,11 @@
+[Unit]
+Description=spi syncronization when doing shadow ram operations 
+
+[Service]
+Type=oneshot
+ControlGroup=memory:/idrac/NC
+
+ExecStart=/bin/sh -c "echo -n '2' > /sys/devices/platform/sh_spi.0/spi_master/spi0/spi0.1/shadow 2>&1"
+      # copy the memory
+ExecStart=/bin/dd if=/sys/kernel/debug/spishadow of=/mmc1/SPI_shadow.bin bs=4096
+

@@ -1,0 +1,14 @@
+[Unit]
+Description=NFS permission changes
+DefaultDependencies=no
+Before=basic.target
+RequiresMountsFor=/tmp
+ConditionKernelCommandLine=nfsroot
+
+[Service]
+Type=oneshot
+ExecStart=/bin/chown root /bin/racadm
+ExecStart=/bin/chgrp root /bin/racadm
+
+[Install]
+WantedBy=sysinit.target

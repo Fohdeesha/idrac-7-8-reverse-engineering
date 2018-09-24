@@ -1,0 +1,19 @@
+[Unit]
+Description=Rack Style Management daemon
+After=dm-stage2.service
+Wants=dm-stage2.service
+After=osinet.service
+Wants=osinet.service
+After=maser_access_controller.service
+Wants=maser_access_controller.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/bin/sh -c 'rsmcapable=$(/usr/bin/shmread -s 22 -o 4 -l 1);if [ $rsmcapable -eq 1 ]; then echo "RSM enabled"; /usr/sbin/rsmd; else echo "RSM disabled"; fi'
+
+[Install]
+WantedBy=multi-user.target

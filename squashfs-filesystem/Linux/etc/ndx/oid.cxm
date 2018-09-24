@@ -1,0 +1,49 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2012 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _ObjID
+{
+    union _ObjIDUnion
+    {
+		u32 asu32;
+		u8 asu8[4];
+		struct _InnerObjIDStruct
+		{
+			u8 objID3;
+			u8 objID2;
+			u8 objID1;
+			u8 popID;
+		} InnerObjIDStruct;
+		struct _ObjIDTypeInstStruct
+		{
+			u16 objType;
+			u8 objInst;
+			u8 popID;
+		} ObjIDTypeInstStruct;
+		struct _ObjIDCreatorStruct
+		{
+			u8 objID3;
+			u8 objID2;
+			u8 objID1;
+			u8 creatorID;
+		} ObjIDCreatorStruct;
+    } ObjIDUnion;
+} ObjID;
+
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

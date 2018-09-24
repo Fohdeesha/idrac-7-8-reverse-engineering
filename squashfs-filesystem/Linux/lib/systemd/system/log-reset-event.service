@@ -1,0 +1,11 @@
+[Unit]
+Description=Log Reset Event Service
+Wants=dm-stage2.service
+After=dm-stage2.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "/etc/sysapps_script/logLCLEventResetCause.sh"
+
+[Install]
+WantedBy=multi-user.target

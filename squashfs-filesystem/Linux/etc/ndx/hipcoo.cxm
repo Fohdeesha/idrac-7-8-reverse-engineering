@@ -1,0 +1,205 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _Acquisition 
+{
+        u32 purchaseCost;
+        u32 waybillNum;
+        s64 dateOfInstallation;
+        s64 dateOfPurchase;
+        u32 poNum;
+        u32 offsetSignAuthority;
+} Acquisition;
+
+typedef struct _CostCenter 
+{
+        u32 offsetCostCenter;
+} CostCenter;
+
+typedef struct _UserInfo 
+{
+        u32 offsetUserID;
+} UserInfo;
+
+typedef struct _ExtWarranty 
+{
+        s64 startDate;
+        s64 endDate;
+        u32 cost;
+        u32 offsetProvider;
+} ExtWarranty;
+
+typedef struct _OwershipCodes 
+{
+        u32 type;
+} OwershipCodes;
+
+typedef struct _CorporateOwner 
+{
+        u32 offsetName;
+} CorporateOwner;
+
+typedef struct _HazWasteCode 
+{
+        u32 offsetCode;
+} HazWasteCode;
+
+typedef struct _DeploymentTime 
+{
+        u32 deploymentTime;
+        u32 type;
+} DeploymentTime;
+
+typedef struct _Training 
+{
+        u32 offsetTraining;
+} TrainingInfo;
+
+typedef struct _OMConfig 
+{
+        booln Expensed;
+        u8 reservedAlign[2];
+        u32 offsetVendor;
+} OMConfig;
+
+typedef struct _Outsourcing 
+{
+        u32 offsetSysComponent;
+        u32 offsetServiceFee;
+        u32 offsetSignAuthority;
+        u32 offsetProviderFee;
+        u32 offsetLevels;
+} Outsourcing;
+
+typedef struct _Insurance 
+{
+        u32 offsetCompanyName;
+} Insurance;
+
+typedef struct _Box 
+{
+        u32 offsetAssetTag;
+        u32 offsetSystem;
+        u32 offsetSerNum;
+} Box;
+
+typedef struct _OSAddlInfo 
+{
+        u32 offsetType;
+        u32 offsetPatchLevel;
+        u32 offsetDtUpgrade;
+} OSAddlInfo;
+
+typedef struct _Depreciation 
+{
+        u32 duration;
+        u32 unit ;
+        u32 percentage;
+        u32 offsetMethod;
+} DepreciationInfo;
+
+typedef struct _Register 
+{
+        booln bRegister;
+        u8 reservedAlign[2];
+} Register;
+
+typedef struct _SvcContracts 
+{
+        booln bRenewed;
+        u8 reservedAlign[2];
+        u32 offsetType;
+        u32 offsetVendor;
+} SvcContracts;
+
+typedef struct _CostEventLog 
+{
+        u32 duration;
+        u32 unitType;
+        u32 offsetDescription;
+} CostEventLog;
+
+typedef struct _Warranty 
+{
+        u32 duration;
+        u32 unitType;
+        s64 endDate;
+        u32 cost;
+} Warranty;
+
+typedef struct _LeaseInfo 
+{
+        booln multiSchedules;
+        u8 reservedAlign[2];
+        u32 buyoutAmount;
+        s64 endDate;
+        u32 lrf;
+        u32 fmv;
+        u32 offsetLessor;
+} LeaseInfo;
+
+typedef struct _ScheduleNum 
+{
+        u32 leasingIndex;
+        u32 offsetScheduleNum;
+} ScheduleNum;
+
+typedef struct _Options 
+{
+        u32 leasingIndex;
+        u32 offsetOption;
+} Options;
+
+typedef struct _Maintenance 
+{
+        s64 startDate;
+        s64 endDate;
+        u32 offsetProvider;
+        u32 offsetRestrictions;
+} Maintenance;
+
+typedef struct _Repairs 
+{
+        u32 counter;
+        u32 offsetVendor;
+} Repairs;
+
+typedef struct _SupportInfo 
+{
+        booln bOutsoursed;
+        u8 reservedAlign[2];
+        u32 itType;
+        u32 offsetHelpDesk;
+        u32 offsetAutomaticFix;
+} SupportInfo;
+
+typedef struct _TroubleTicket 
+{
+        u32 supportIndex;
+        u32 offsetTicketNum;
+} TroubleTicket;
+
+typedef struct _ResellerObj
+{
+        u16 systemID;
+        u32 offsetName;
+        u32 offsetProductName;
+        u32 offsetContactInfo;
+} ResellerObj;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

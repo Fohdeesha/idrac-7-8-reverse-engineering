@@ -1,0 +1,46 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Systems",
+    "@odata.id": "/redfish/v1/Systems"  ,"@oem.nav.parentid": "/redfish/v1",
+    "@odata.type": "#ComputerSystemCollection.ComputerSystemCollection",
+    "Name": "Computer System Collection",
+    "Members@odata.count": 6,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/QSI3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/Manager.ENCL791.1"
+        },
+        {
+            "@odata.id": "https://192.168.148.41/redfish/v1/Systems/SLED941"
+        },
+        {
+            "@odata.id": "https://192.168.148.42/redfish/v1/Systems/SLED942a"
+        },
+        {
+            "@odata.id": "https://192.168.148.43/redfish/v1/Systems/SLED942b"
+        },
+        {
+            "@odata.id": "https://192.168.148.44/redfish/v1/Systems/SLED942c"
+        },
+        {
+            "@odata.id": "https://192.168.148.45/redfish/v1/Systems/SLED942d"
+        },
+        {
+            "@odata.id": "https://192.168.148.46/redfish/v1/Systems/SLED943"
+        },
+        {
+            "@odata.id": "https://192.168.148.47/redfish/v1/Systems/SLED944"
+        },
+        {
+            "@odata.id": "https://192.168.148.48/redfish/v1/Systems/SLED945"
+        },
+        {
+            "@odata.id": "https://192.168.148.49/redfish/v1/Systems/SLED946"
+        },
+        {
+            "@odata.id": "https://192.168.148.50/redfish/v1/Systems/SLED947"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+        "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+
+        <vendor>The systemd Project</vendor>
+        <vendor_url>http://www.freedesktop.org/wiki/Software/systemd</vendor_url>
+
+        <action id="org.freedesktop.hostname1.set-hostname">
+                <description>Set host name</description>
+                <description xml:lang="pl">Ustawienie nazwy komputera</description>
+                <message>Authentication is required to set the local host name.</message>
+                <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby ustawić nazwę lokalnego komputera.</message>
+                <defaults>
+                        <allow_any>auth_admin_keep</allow_any>
+                        <allow_inactive>auth_admin_keep</allow_inactive>
+                        <allow_active>auth_admin_keep</allow_active>
+                </defaults>
+        </action>
+
+        <action id="org.freedesktop.hostname1.set-static-hostname">
+                <description>Set static host name</description>
+                <description xml:lang="pl">Ustawienie statycznej nazwy komputera</description>
+                <message>Authentication is required to set the statically configured local host name, as well as the pretty host name.</message>
+                <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby ustawić statycznie skonfigurowaną nazwę lokalnego komputera, a także jego ładną nazwę.</message>
+                <defaults>
+                        <allow_any>auth_admin_keep</allow_any>
+                        <allow_inactive>auth_admin_keep</allow_inactive>
+                        <allow_active>auth_admin_keep</allow_active>
+                </defaults>
+        </action>
+
+        <action id="org.freedesktop.hostname1.set-machine-info">
+                <description>Set machine information</description>
+                <description xml:lang="pl">Ustawienie informacji o komputerze</description>
+                <message>Authentication is required to set local machine information.</message>
+                <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby ustawić informacje o lokalnym komputerze.</message>
+                <defaults>
+                        <allow_any>auth_admin_keep</allow_any>
+                        <allow_inactive>auth_admin_keep</allow_inactive>
+                        <allow_active>auth_admin_keep</allow_active>
+                </defaults>
+        </action>
+
+</policyconfig>

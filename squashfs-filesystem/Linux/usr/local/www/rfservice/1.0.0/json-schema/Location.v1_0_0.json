@@ -1,0 +1,172 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#Location.v1_0_0",
+    "definitions": {
+        "Location": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "Country": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Country",
+                    "longDescription": "The ISO 3166-1 alpha-2 ASCII country code or ISO 3166-1 numeric country code of the country in which the part is installed."
+                },
+                "Territory": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Territory",
+                    "longDescription": "Name of the territory in the country. Not all countries use this in addresses. India and China do."
+                },
+                "State": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "State",
+                    "longDescription": "Name of the state in the country or territory."
+                },
+                "City": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "City",
+                    "longDescription": "Name of the town or city in which the part is installed."
+                },
+                "Address1": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Address1",
+                    "longDescription": "Free form 1st address line for the location."
+                },
+                "Address2": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Address2",
+                    "longDescription": "Free form 2nd address line for the location."
+                },
+                "Address3": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Address3",
+                    "longDescription": "Free form 3rd address line for the location."
+                },
+                "PostalCode": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Postal code (or zip code)",
+                    "longDescription": "Postal code (or zip code)"
+                },
+                "Building": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Name of the building.",
+                    "longDescription": "Name of the building in which the part is installed."
+                },
+                "Room": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Name or number of the room.",
+                    "longDescription": "Name or number of the room in which the part is installed."
+                },
+                "Row": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Row name or number.",
+                    "longDescription": "Row name or number in which the part is installed."
+                },
+                "Rack": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Rack name or number.",
+                    "longDescription": "Rack name or number. If Row is specified, this should be the rack number within the row, otherwise it may have a more global meaning."
+                },
+                "Shelf": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Shelf or unit name or number.",
+                    "longDescription": "Shelf or unit name or number. If Rack is specified, this should be the shelf number within the rack, otherwise it may have a more global meaning."
+                },
+                "Item": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Item position.",
+                    "longDescription": "Item position. If Shelf is specified, this should be the slot number within the shelf, otherwise it may have a more global meaning."
+                },
+                "GPSCoords": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "The GPS coordinates of the part.",
+                    "longDescription": "The GPS coordinates of the part. If furnished, this shall be expressed in the format '[-][nn]n.nnnnnn, [-][nn]n.nnnnn', i.e. two numbers, either positive or negative, with six decimal places of precision, comma-separated."
+                },
+                "OtherLocationInfo": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Other free form text describing the item's location.",
+                    "longDescription": "Other free form text describing the item's location."
+                }
+            },
+            "description": "The location of a resource.",
+            "longDescription": "The location of a resource. For more information see RFC4514."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

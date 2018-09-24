@@ -1,0 +1,48 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+    "@odata.id": "/redfish/v1/Chassis/Manager.ENCL791.1",
+    "@oem.nav.parentid": "/redfish/v1/Chassis",
+    "@odata.type": "#Chassis.1.0.0.Chassis",
+    "Id": "Manager.ENCL791.1",
+    "Name": "Enclosure chassis manager card",
+    "ChassisType": "Module",
+    "Description": "An example instance of Chassis representing the management controller card.",
+    "Manufacturer": "Dell Inc.",
+    "Version": "1.0",
+    "Status": {
+        "State": "Enabled",
+        "Health": "Ok",
+        "HealthRollup": "Ok"
+    },
+    "Links": {
+        "ComputerSystems": [
+            {
+                "@odata.id": "/redfish/v1/Systems/Manager.ENCL791.1"
+            }
+        ],
+        "ManagedBy": [
+            {
+                "@odata.id": "/redfish/v1/Managers/ENCL791.1"
+            }
+        ],
+        "Oem": {}
+    },
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "Dell#Chassis.1.0.0.Chassis",
+            "Links": {
+                "Managers": [
+                    {
+                        "@odata.id": "/redfish/v1/Managers/ENCL791.1"
+                    }
+                ]
+            },
+            "InSlot": [
+                {
+                    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/EC-1"
+                }
+            ]
+        }
+    }
+}

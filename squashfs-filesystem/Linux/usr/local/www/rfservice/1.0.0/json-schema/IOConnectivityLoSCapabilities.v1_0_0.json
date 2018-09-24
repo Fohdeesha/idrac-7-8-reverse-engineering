@@ -1,0 +1,207 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#IOConnectivityLoSCapabilities.v1_0_0.IOConnectivityLoSCapabilities",
+    "$ref": "#/definitions/IOConnectivityLoSCapabilities",
+    "definitions": {
+        "AccessProtocol": {
+            "type": "string",
+            "enum": [
+                "FC",
+                "FCP",
+                "iSCSI",
+                "SAS",
+                "SMB",
+                "NFSv3",
+                "NFSv4",
+                "HTTP",
+                "HTTPS",
+                "FTP",
+                "FTPS",
+                "SecureNFS",
+                "FICON",
+                "FCOE",
+                "SMBAndNFS"
+            ],
+            "enumDescriptions": {
+                "FC": "FC2",
+                "FCP": "FC4 SCSI Protocol",
+                "iSCSI": "Internet SCSI",
+                "SAS": "Serial Attached SCSI",
+                "SMB": "SMB",
+                "NFSv3": "NFSv3",
+                "NFSv4": "NFSv4",
+                "HTTP": "Hypertext Transfer Protocol",
+                "HTTPS": "Secure HTTP",
+                "FTP": "File Transfer Protocol",
+                "FTPS": "Secure FTP",
+                "SecureNFS": "Secure NFS",
+                "FICON": "FICON",
+                "FCOE": "FC2 over Ethernet",
+                "SMBAndNFS": "Both SMB and an NFS protocol"
+            },
+            "enumLongDescriptions": {
+                "FC": "This enumeration literal shall indicate the Fibre Channel Framing and Signaling Interface.",
+                "FCP": "This enumeration literal shall indicate the Fibre Channel SCSI Protocol.",
+                "iSCSI": "This enumeration literal shall indicate the Internet SCSI protocol.",
+                "SAS": "This enumeration literal shall indicate the Serial Attached SCSI protocol.",
+                "SMB": "This enumeration literal shall indicate the SMB protocol.",
+                "NFSv3": "This enumeration literal shall indicate the NFSv3 protocol.",
+                "NFSv4": "This enumeration literal shall indicate the NFSv4 protocol.",
+                "HTTP": "This enumeration literal shall indicate the Hypertext Transfer Protocol.",
+                "HTTPS": "This enumeration literal shall indicate the Secure HTTP protocol.",
+                "FTP": "This enumeration literal shall indicate the File Transfer Protocol.",
+                "FTPS": "This enumeration literal shall indicate the Secure FTP protocol.",
+                "SecureNFS": "This enumeration literal shall indicate the Secure NFS protocol.",
+                "FICON": "This enumeration literal shall indicate the FICON protocol.",
+                "FCOE": "This enumeration literal shall indicate the FC2 over Ethernet protocol.",
+                "SMBAndNFS": "This enumeration literal shall indicate that both SMB and an NFS protocol are supported."
+            },
+            "description": "This enumeration defines choices for access protocols.",
+            "longDescription": "This enumeration may be used to specify an access protocol."
+        },
+        "IOConnectivityLineOfService": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "Name": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name"},
+                        {"type": "null"}
+                    ],
+                    "description": "A friendly name for this line of service.",
+                    "longDescription": "If present, the name shall be a friendly name for this line of service."
+                },
+                "AccessProtocol": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/AccessProtocol"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "SupportedAccessProtocols.",
+                    "longDescription": "The Enumeration Literal shall specify the Access protocol for this service option. NOTE: If SMB+NFS* is specified, the corresponding MaxSupportedIOPS governs the max achieved across both protocol uses. This may be less than the sum of the individual max values."
+                },
+                "MaxIOPS": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "The maximum supported IOs per second that the connection will support for the selected access protocol.",
+                    "longDescription": "The value shall be the maximum IOs per second that the connection shall allow for the selected access protocol."
+                }
+            },
+            "description": "A service option within the IO Connectivity line of service.",
+            "longDescription": "An IO connectivity service option may be used to specify the characteristics of storage connectivity."
+        },
+        "IOConnectivityLoSCapabilities": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.v1_1_0.json#/definitions/Identifier"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value identifies this resource. The value shall be unique within the managed ecosystem."
+                },
+                "SupportedAccessProtocols": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/AccessProtocol"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "SupportedAccessProtocols.",
+                    "longDescription": "Access protocols supported by this service option. NOTE: SMB+NFS* requires that SMB and at least one of NFSv3 or NFXv4 are also selected, (i.e. {'SMB', 'NFSv4', 'SMB+NFS*'})."
+                },
+                "MaxSupportedIOPS": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "The maximum IOPS that a connection can support.",
+                    "longDescription": "The value shall be the maximum IOPS that a connection can support."
+                },
+                "SupportedIOConnectivityLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/IOConnectivityLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Collection of known and supported IOConnectivityLinesOfService.",
+                    "longDescription": "The collection shall contain known and supported IOConnectivityLinesOfService."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "Describe IO Connectivity capabilities.",
+            "longDescription": "Each instance of IOConnectivityLoSCapabilities describes capabilities of the system to support various IO Connectivity service options."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

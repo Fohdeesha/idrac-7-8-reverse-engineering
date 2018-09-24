@@ -1,0 +1,28 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Managers/Members/1/LogServices/Members/LCL/Entries/$entity",
+    "@odata.id": "/redfish/v1/Managers/ENCL791.1/LogServices/LCL/Entries/1"  ,"@oem.nav.parentid": "/redfish/v1/Managers/ENCL791.1/LogServices/LCL/Entries",
+    "@odata.type": "#LogEntry.1.0.0.LogEntry",
+    "Id": "1",
+    "Name": "Log Entry 1",
+    "EntryType": "Event | SEL | OEM",
+    "OEMRecordFormat": "HP",
+    "RecordId": 1,
+    "Severity": "Degraded/Warning",
+    "Created": "2012-03-07T14:44",
+    "EntryCode": "Enum of Assert | Deassert | values from table 42-1 and 42-2.  Really only for SEL",
+    "SensorType": "For SEL.  Table 42-3 from IPMI Spec, same as in Metrics objects.  ",
+    "SensorNumber": "EntityInstance from IPMI spec for SEL, count of events for Event, OEM Specific for OEM, ",
+    "Message": "Message for Event, Description for SEL, OEM depends",
+    "MessageId": "Base.1.0.Success type for Event, EventData for SEL, OEM depends",
+    "MessageArgs": [
+        "ArrayOfMessageArgs"
+    ],
+    "Links": {
+        "OriginOfCondition": {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Thermal"
+        },
+        "Oem": {}
+    },
+    "Oem": {}
+}

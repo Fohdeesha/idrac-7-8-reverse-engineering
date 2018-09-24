@@ -1,0 +1,57 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Members/ENCL791/Power/$entity",
+    "@odata.id": "/redfish/v1/Chassis/ENCL791/Power/PowerTrends-1/LastHour", 
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/Power/PowerTrends-1",
+    "@odata.type": "Dell#PowerTrends.1.0.0.PowerTrends",
+    "Id": "LastHour",
+    "Name": "LastHour",
+    "Histogram": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power/PowerTrends-1/LastHour#/Histogram/Enclosure",
+            "MemberId": "Enclosure",
+            "StartTime": 1444357717,
+            "HistoryAverageWatts": 122,
+            "HistoryMinWatts": 118,
+            "HistoryMinWattsTime": "Thu Oct 8 22:18:41 2015",
+            "HistoryMaxWatts": 131,
+            "HistoryMaxWattsTime": "Thu Oct 8 22:09:01 2015",
+            "IntervalInMin": 5,
+            "HistoryData": [
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "123,5",
+                "121,5",
+                "121,5",
+                "122,5"
+            ]
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791/Power/PowerTrends-1/LastHour#/Histogram/EnclosureLessInfrastructure",
+            "MemberId": "EnclosureLessInfrastructure",
+            "StartTime": 1444357717,
+            "IntervalInMin": 5,
+            "HistoryData": [
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "0,0",
+                "103,5",
+                "101,5",
+                "101,5",
+                "102,5"
+            ]
+        }
+    ],
+    "Oem": {}
+}

@@ -1,0 +1,18 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#DellServiceRoot.DellServiceRoot",
+    "$ref": "#/definitions/DellServiceRoot",
+    "definitions": {
+        "DellServiceRoot": {
+            "anyOf": [
+                {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/DellServiceRoot.v1_0_0.json#/definitions/DellServiceRoot"
+                }
+            ]
+        }
+    },
+    "copyright": "Copyright 2016 Dell, Inc. or its subsidiaries.  All Rights Reserved."
+}

@@ -1,0 +1,66 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Chassis/Links/Members/entity",
+    "@odata.id": "/redfish/v1/Chassis/SLED942"  ,"@oem.nav.parentid": "/redfish/v1/Chassis",
+    "@odata.type": "#Chassis.1.0.0.Chassis",
+    "Id": "SLED942",
+	"Name": "Compute Sled",
+    "ChassisType": "Blade",
+    "Description": "A multi-node sled that fits into a single slog.",
+    "Manufacturer": "Dell Inc.",
+    "Model": "PowerEdge Multi-nodeSled",
+    "SKU": "SLED942",
+    "SerialNumber": "USE135ES77",
+    "Version": "1.0",
+    "PartNumber": "",
+    "AssetTag": "CustomerSpecifiedValue",
+    "Status": {
+        "State": "Enabled",
+        "Health": "Critical",
+        "HealthRollup": "Critical"
+    },
+    "Links": {
+        "ComputerSystems": [
+            {
+                "@odata.id": "https://192.168.148.42/redfish/v1/Systems/SLED942a"
+            },
+            {
+                "@odata.id": "https://192.168.148.43/redfish/v1/Systems/SLED942b"
+            },
+            {
+                "@odata.id": "https://192.168.148.44/redfish/v1/Systems/SLED942c"
+            },
+            {
+                "@odata.id": "https://192.168.148.45/redfish/v1/Systems/SLED942d"
+            }
+        ],
+        "ContainedBy": {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791"
+        },
+        "ManagedBy": [
+            {
+                "@odata.id": "https://192.168.148.42/redfish/v1/Managers/SLED942a"
+            },
+            {
+                "@odata.id": "https://192.168.148.43/redfish/v1/Managers/SLED942b"
+            },
+            {
+                "@odata.id": "https://192.168.148.44/redfish/v1/Managers/SLED942c"
+            },
+            {
+                "@odata.id": "https://192.168.148.45/redfish/v1/Managers/SLED942d"
+            }
+        ]
+    },
+    "Oem": {
+        "EID:674": {
+            "@odata.type": "Dell#Chassis.1.0.0.Chassis",
+            "InSlot": [
+                {
+                    "@odata.id": "/redfish/v1/Chassis/ENCL791/Slots/Sled-2"
+
+                }
+            ]
+        }
+    }
+}

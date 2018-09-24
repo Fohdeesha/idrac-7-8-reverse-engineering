@@ -1,0 +1,21 @@
+[Unit]
+Description=Records iDRAC boot progress
+DefaultDependencies=no
+After=early-mount.service
+Requires=early-mount.service
+RequiresMountsFor=/flash/data0
+
+# run on X-rev only as long as it's not disabled.  this is set up so that this
+# will run on a clean flash, otherwise there would be no easy way to ensure
+# this runs on clean flash
+ConditionPathExists=!/flash/data0/idrac_bootdetails_disable
+ConditionPathExists=/etc/xrev_fw
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+ExecStart=/bin/idrac-boot-details.sh
+StandardOutput=journal+console
+
+[Install]
+WantedBy=basic.target

@@ -1,0 +1,27 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_2_0.json",
+    "title": "#AttributeRegistry.AttributeRegistry",
+    "$ref": "#/definitions/AttributeRegistry",
+    "definitions": {
+        "AttributeRegistry": {
+            "anyOf": [
+                {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/AttributeRegistry.v1_0_0.json#/definitions/AttributeRegistry"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/AttributeRegistry.v1_0_1.json#/definitions/AttributeRegistry"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/AttributeRegistry.v1_0_2.json#/definitions/AttributeRegistry"
+                },
+                {
+                    "$ref": "/redfish/v1/Schemas/AttributeRegistry.v1_1_0.json#/definitions/AttributeRegistry"
+                }
+            ]
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}

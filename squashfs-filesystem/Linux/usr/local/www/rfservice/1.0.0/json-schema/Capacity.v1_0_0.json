@@ -1,0 +1,178 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#Capacity.v1_0_0",
+    "definitions": {
+        "Capacity": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "Data": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/CapacityInfo"},
+                        {"type": "null"}
+                    ],
+                    "description": "The capacity information relating to the user data.",
+                    "longDescription": "The value shall be capacity information relating to provisioned user data."
+                },
+                "Metadata": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/CapacityInfo"},
+                        {"type": "null"}
+                    ],
+                    "description": "The capacity information relating to  metadata.",
+                    "longDescription": "The value shall be capacity information relating to provisioned system (non-user accessible) data."
+                },
+                "Snapshot": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/CapacityInfo"},
+                        {"type": "null"}
+                    ],
+                    "description": "The capacity information relating to snapshot or backup data.",
+                    "longDescription": "The value shall be capacity information relating to provisioned snapshot or backup data."
+                },
+                "IsThinProvisioned": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "description": "Marks that the capacity is not necessarily fully allocated.",
+                    "longDescription": "If the value is false, the capacity shall be fully allocated.  The default value shall be false."
+                }
+            },
+            "description": "This is the schema definition for the Capacity of a device. It represents the properties for capacity for any data store.",
+            "longDescription": "This composition may be used to represent storage capacity.  The sum of the values in Data, Metadata, and Snapshot shall be equal to the total capacity for the data store."
+        },
+        "CapacityInfo": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "ConsumedBytes": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By",
+                    "description": "The number of bytes consumed in this data store for this data type.",
+                    "longDescription": "The value shall be the number of logical bytes currently consumed in this data store for this data type."
+                },
+                "AllocatedBytes": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By",
+                    "description": "The number of bytes currently allocated by the storage system in this data store for this data type.",
+                    "longDescription": "The value shall be the number of bytes currently allocated by the storage system in this data store for this data type."
+                },
+                "GuaranteedBytes": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By",
+                    "description": "The number of bytes the storage system guarantees can be allocated in this data store for this data type.",
+                    "longDescription": "The value shall be the number of bytes the storage system guarantees can be allocated in this data store for this data type."
+                },
+                "ProvisionedBytes": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By",
+                    "description": "The maximum number of bytes that can be allocated in this data store for this data type.",
+                    "longDescription": "The value shall be the maximum number of bytes that can be allocated in this data store for this data type."
+                }
+            },
+            "description": "The capacity of specific data type in a data store.",
+            "longDescription": "This composition may be used to represent the utilization of storage capacity."
+        },
+        "CapacitySource": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "ProvidedCapacity": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/Capacity"},
+                        {"type": "null"}
+                    ],
+                    "description": "The amount of space that has been provided from the ProvidingDrives, ProvidingVolumes or ProvidingPools.",
+                    "longDescription": "The value shall be the amount of space that has been provided from the ProvidingDrives, ProvidingVolumes or ProvidingPools."
+                },
+                "ProvidedClassOfService": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/ClassOfService.json#/definitions/ClassOfService"},
+                        {"type": "null"}
+                    ],
+                    "description": "The ClassOfService provided from the ProvidingDrives, ProvidingVolumes or ProvidingPools.",
+                    "longDescription": "The value shall reference the provided ClassOfService from the ProvidingDrives, ProvidingVolumes or ProvidingPools."
+                },
+                "ProvidingVolumes": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/VolumeCollection.json#/definitions/VolumeCollection"},
+                        {"type": "null"}
+                    ],
+                    "description": "The volume or volumes that provide this space.",
+                    "longDescription": "The value shall be a reference to a contributing volume or volumes."
+                },
+                "ProvidingPools": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/StoragePoolCollection.json#/definitions/StoragePoolCollection"},
+                        {"type": "null"}
+                    ],
+                    "description": "The pool or pools that provide this space.",
+                    "longDescription": "The value shall be a reference to a contributing storage pool or storage pools."
+                },
+                "ProvidingDrives": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/DriveCollection.json#/definitions/DriveCollection"},
+                        {"type": "null"}
+                    ],
+                    "description": "The drive or drives that provide this space.",
+                    "longDescription": "The value shall be a reference to a contributing drive or drives."
+                }
+            },
+            "description": "A description of the type and source of storage.",
+            "longDescription": "This composition may be used to represent the source and type of storage capacity.  At most one of the ProvidingDrives, ProvidingVolumes or ProvidingPools properties may have a value.  If any of ProvidingDrives, ProvidingVolumes or ProvidingPools reference more than one resource, allocation of capacity across those resources is implementation dependent."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

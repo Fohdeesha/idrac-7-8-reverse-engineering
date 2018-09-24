@@ -1,0 +1,37 @@
+Device ID Table Binary File Export Log
+DATE at 11-6-18 06:18:22
+========================================================
+ Name = Get Device ID(0701h)
+========================================================
+    Record Index = 0 (Device ID Record)
+    [1] Device ID = 0x20
+    [2] Device Revision = 0x81
+       <1> Device SDRs = 0x1
+       <2> Reserved = 0x0
+       <3> Device Revision = 0x1
+    [3] Major Firmware Revision = 0x01
+       <1> Device available = 0x0
+       <2> Major firmware revision = 0x01
+    [4] Minor Firmware Revision = 0x00
+    [5] IPMI Version = 0x02
+       <1> Least Significant digit of revision = 0x0
+       <2> Most Significant digit of revision = 0x2
+    [6] IPM Device Support = 0x7F
+       <1> Chassis Device = 0x0 (Off)
+       <2> Bridge = 0x1 (On)
+       <3> IPMB Event Generator = 0x1 (On)
+       <4> IPMB Event Receiver = 0x1 (On)
+       <5> FRU Inventory Device = 0x1 (On)
+       <6> SEL Device = 0x1 (On)
+       <7> SDR Repository Device = 0x1 (On)
+       <8> Sensor Device = 0x1 (On)
+    [7] Manufacturer ID = 0x0002A2
+    [8] Product ID = 0x0100
+    [9] Auxiliary Firmware Revision Information = 0x00010F00
+  ------------------------------------------------------
+========================================================
+ Total Record Count = 1
+========================================================
+========================================================
+ Total Record Count = 0
+========================================================

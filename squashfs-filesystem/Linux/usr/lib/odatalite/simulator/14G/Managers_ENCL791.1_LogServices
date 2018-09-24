@@ -1,0 +1,14 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Managers/Members/1/LogServices/$entity",
+    "@odata.id": "/redfish/v1/Managers/ENCL791.1/LogServices"  ,"@oem.nav.parentid": "/redfish/v1/Managers/ENCL791.1",
+    "@odata.type": "#LogServiceCollection.LogServiceCollection",
+    "Name": "Log Service Collection",
+    "Description": "Collection of Log Services for this System",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Managers/ENCL791.1/LogServices/LCL"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+[Unit]
+Description=iDRAC Quick Sync Interface Service
+After=aim.service
+
+# not a dep, for cpu utilization
+After=fullfw_app.service
+
+[Service]
+Type=forking
+ControlGroup=memory:/idrac/NC
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+
+ExecStart=/usr/bin/nfcd
+KillSignal=SIGKILL
+
+[Install]
+WantedBy=multi-user.target

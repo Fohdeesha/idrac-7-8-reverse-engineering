@@ -1,0 +1,16 @@
+[Unit]
+Description=iDRAC Service Monitor Service
+After=dsm-sa-datamgr.service
+After=osinet.service
+After=maser_access_controller.service
+
+[Service]
+Type=idle
+RemainAfterExit=no
+ControlGroup=memory:/IMON
+MemoryLimit=6M
+Restart=on-failure
+LimitSTACK=65536
+EnvironmentFile=/etc/global.env
+ExecStart=/usr/bin/idracmonitor
+KillSignal=SIGKILL

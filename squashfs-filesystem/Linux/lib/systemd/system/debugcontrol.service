@@ -1,0 +1,15 @@
+[Unit]
+Description=Common Logging Mechanism
+DefaultDependencies=no
+RequiresMountsFor=/flash/data0
+After=early-mount.service
+Requires=early-mount.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/init.d/systemd_debugcontrol.sh
+
+[Install]
+WantedBy=basic.target

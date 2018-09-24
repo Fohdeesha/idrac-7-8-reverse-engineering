@@ -1,0 +1,1740 @@
+[$ClassProvider$]
+   provider: ClassProvider
+   location: sfcClassProviderSf
+   type: class method
+   unload: never
+   namespace: *
+#   parameters: cacheLimit=10
+#
+[$DefaultProvider$]
+   provider: InternalProvider
+   location: sfcInternalProvider
+   type: instance association method
+   unload: never
+   namespace: *
+#
+[$InterOpProvider$]
+   provider: InteropProvider
+   location: sfcInteropProvider
+   type: instance method
+   unload: never
+   namespace: root/interop
+#
+#[$ProfileProvider$]
+#   provider: ProfileProvider
+#   location: sfcProfileProvider
+#   type: method
+#   unload: never
+#   namespace: root/interop
+#
+#[$QualifierProvider$]
+#   provider: QualifierProvider
+#   location: sfcQualifierProvider
+#   type: qualifier
+#   unload: never
+#   namespace: *
+#
+[CIM_IndicationHandlerCIMXML]
+   provider: IndCIMXMLHandler
+   location: sfcIndCIMXMLHandler
+   type: instance method
+   namespace: root/interop
+#
+[CIM_ListenerDestinationCIMXML]
+   provider: IndCIMXMLHandler
+   location: sfcIndCIMXMLHandler
+   type: instance method
+   namespace: root/interop
+#
+[CIM_IndicationSubscription]
+   provider: InteropProvider
+   location: sfcInteropProvider
+   type: instance method
+   namespace: root/interop
+#
+[CIM_IndicationFilter]
+   provider: InteropProvider
+   location: sfcInteropProvider
+   type: instance method
+   namespace: root/interop
+#
+[SFCB_IndicationServiceCapabilities]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[SFCB_ElementCapabilities]
+   provider: ElementCapabilities
+   location: sfcElementCapabilitiesProvider
+   type: association
+   namespace: root/interop
+
+#[SFCB_Account]
+#   provider: CimAccountPassthroughProvider
+#   location: sfccimAccountPassthroughProvider
+#   type: method
+#   parameters: AccountClass=root/cimv2:cim_account
+#   namespace: root/interop
+#
+[SFCB_RegisteredProfile]
+   provider: InternalProvider
+   location: sfcInternalProvider
+   type: instance
+   namespace: root/interop
+#
+[CIM_Namespace]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[CIM_ObjectManager]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[SFCB_CIMXMLCommunicationMechanism]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[CIM_IndicationService]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance
+   namespace: root/interop
+#
+[SFCB_ServiceAffectsElement]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance association
+   namespace: root/interop
+#
+[CIM_HostedService]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance association
+   namespace: root/interop
+#
+[SFCB_ElementConformsToProfile]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: instance association
+   namespace: root/interop
+#
+[SFCB_IndicationElement]
+   provider: InternalProvider
+   location: sfcInternalProvider
+   type: instance method association
+   unload: never
+   namespace: root/interop
+#
+[CIM_NamespaceInManager]
+   provider: ServerProvider
+   location: sfcInteropServerProvider
+   type: association
+   namespace: root/interop
+#
+[DCIM_MetricService]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance method
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_MetricServiceCapabilities]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_BaseMetricDefinition]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_AggregationMetricDefinition]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_BaseMetricValue]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_AggregationMetricValue]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_AggrMetricInstance]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_BaseMetricInstance]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_BMElementCapabilities]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_BMServiceAffectsElement]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_MetricDefForME]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_MetricForME]   
+   provider: DCIMBASEMETRICS
+   location: dcimbasemetrics
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_ComputerSystem]   
+   provider: DCIMBASESERVER
+   location: dcimbaseserver
+   type: instance method
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_Chassis]   
+   provider: DCIMBASESERVER
+   location: dcimbaseserver
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSEnabledLogicalElementCapabilities]   
+   provider: DCIMBASESERVER
+   location: dcimbaseserver
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_PhysicalPackage]   
+   provider: DCIMBASESERVER
+   location: dcimbaseserver
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_Slot]   
+   provider: DCIMBASESERVER
+   location: dcimbaseserver
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSElementCapabilities]   
+   provider: DCIMBASESERVER
+   location: dcimbaseserver
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_ComputerSystemPackage]   
+   provider: DCIMBASESERVER
+   location: dcimbaseserver
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SystemComponent]   
+   provider: DCIMBASESERVER
+   location: dcimbaseserver
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_LicenseManagementService]   
+   provider: DCIMLICENSEMGMT
+   location: dcimlicensemgmt
+   type: instance method
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_LicensableDevice]   
+   provider: DCIMLICENSEMGMT
+   location: dcimlicensemgmt
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_License]   
+   provider: DCIMLICENSEMGMT
+   location: dcimlicensemgmt
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_EFConfigurationService]   
+   provider: DCIMPEF
+   location: dcimeventfilter
+   type: instance method
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_EventFilter]   
+   provider: DCIMPEF
+   location: dcimeventfilter
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_CSPowerManagementService]   
+   provider: DCIMPOWERSTATEMGMT
+   location: dcimpowerstatemgmt
+   type: instance method
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_CSPowerManagementCapabilities]   
+   provider: DCIMPOWERSTATEMGMT
+   location: dcimpowerstatemgmt
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_CSAssociatedPowerManagementService]   
+   provider: DCIMPOWERSTATEMGMT
+   location: dcimpowerstatemgmt
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_PMSElementCapabilities]   
+   provider: DCIMPOWERSTATEMGMT
+   location: dcimpowerstatemgmt
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_SPHostedPowerManagementService]   
+   provider: DCIMPOWERSTATEMGMT
+   location: dcimpowerstatemgmt
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_LCLogEntry]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_LCRecordLog]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance method
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_LCRecordLogCapabilities]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_LCElementCapabilities]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance association
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_LCUseOfLog]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance association
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_LCLogManagesRecord]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance association
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_SELLogEntry]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_SELRecordLog]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance method
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_SELRecordLogCapabilities]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_SELElementCapabilities]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance association
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_SELUseOfLog]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance association
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_SELLogManagesRecord]   
+   provider: DCIMRECORDLOG
+   location: dcimrecordlog
+   type: instance association
+   namespace: root/dcim  
+   group: LOGS
+#
+[DCIM_Role]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMIRole]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPRole]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMISOLRole]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalRolePrivilege]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPPrivilege]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalRoleBasedAuthorizationService]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPRoleBasedAuthorizationService]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance method
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMIRoleBasedAuthorizationService]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance method
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalRoleBasedManagementCapabilities]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMIRoleBasedManagementCapabilities]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPRoleBasedManagementCapabilities]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalRBAElementCapabilities]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMIRBAElementCapabilities]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPRBAElementCapabilities]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalRBAServiceAffectsElementRole]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMIRBAServiceAffectsElementRole]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPRBAServiceAffectsElementRole]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_RBAOwningCollectionElement]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalServiceServiceDependency]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMIServiceServiceDependency]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPServiceServiceDependency]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalRoleConcreteDependency]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMIRBAIdentityMemberOfCollection]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMISOLRBAIdentityMemberOfCollection]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalPrivilegeMemberOfCollection]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPPrivilegeMemberOfCollection]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPRBAIdentityMemberOfCollection]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CSRoleLimitedToTarget]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_SPHostedRBAPService]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalRBAIdentityMemberOfCollection]   
+   provider: DCIMRBAP
+   location: dcimrolebasedauth
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_ADMProfilesMemberOfCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance association
+   namespace: root/dcim root/interop 
+   group: MISC
+#
+[DCIM_CSCapabilitiesConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSCapacitiesConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSSettingsConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSConsolesConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSLogsConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSSensorsConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_ADMProfilesConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPCapabilitiesConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPCapacitiesConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPSettingsConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPConsolesConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPLogsConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPSensorsConcreteCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSOwningCollectionElement]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPOwningCollectionElement]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_ADMProfilesOwningCollectionElement]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPCapabilitiesMemberOfCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPSettingsMemberOfCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSLogsMemberOfCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_CSCapabilitiesMemberOfCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_ADMProfilesMemberOfCollection]   
+   provider: DCIMSMASHCOLLECTIONS
+   location: dcimsmashcollections
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_SPComputerSystem]   
+   provider: DCIMSERVICEPROCESSOR
+   location: dcimserviceprocessor
+   type: instance method
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_TimeService]   
+   provider: DCIMSERVICEPROCESSOR
+   location: dcimserviceprocessor
+   type: instance method
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_SPHostedTimeService]   
+   provider: DCIMSERVICEPROCESSOR
+   location: dcimserviceprocessor
+   type: instance association
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_SPSystemDevice]   
+   provider: DCIMSERVICEPROCESSOR
+   location: dcimserviceprocessor
+   type: instance association
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_SoftwareInstallationService]   
+   provider: DCIMSOFTUPDATE
+   location: dcimsoftupdate
+   type: instance method
+   namespace: root/dcim  
+   group: LCUPDATE
+#
+[DCIM_CLPConcreteJob]   
+   provider: CLP_CLPCmdJobProvider
+   location: clpsvc
+   type: instance method
+   namespace: root/dcim  
+#
+[DCIM_CLPProtocolEndpoint]   
+   provider: CLP_CLPSessionProvider
+   location: clpsvc
+   type: instance
+   namespace: root/dcim  
+#
+[DCIM_CLPProtocolService]   
+   provider: CLP_CLPProtocolServiceProvider
+   location: clpsvc
+   type: instance
+   namespace: root/dcim  
+#
+[DCIM_CLPJobQueue]   
+   provider: CLP_CLPJobQueueProvider
+   location: clpsvc
+   type: instance
+   namespace: root/dcim  
+#
+[DCIM_TCPEndPoint]   
+   provider: CLP_TCPEndPointProvider
+   location: clpsvc
+   type: instance
+   namespace: root/dcim  
+#
+[DCIM_CLPJobDestinationJobs]   
+   provider: CLP_CLPJobQueueDestJobsProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_CLPEndpointOwningJobElement]   
+   provider: CLP_CLPSessionOwningJobsProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_CLPServiceOwningJobElement]   
+   provider: CLP_CLPSvcOwningJobsProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_CLPProvidesEndpoint]   
+   provider: CLP_CLPProvidesEndpointProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_HostedCLPAccessPoint]   
+   provider: CLP_HostedCLPSessionProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_SPHostedJobDestination]   
+   provider: CLP_SPHostedJobDestinationProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_CLPElementSettingData]   
+   provider: CLP_CLPElementSettingDataProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_CLPServiceAffectsJobQueue]   
+   provider: CLP_CLPServiceAffectsJobQueueProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_CLPElementCapabilities]   
+   provider: CLP_CLPElementCapabilitiesProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_CLPServiceAffectsAdminDomain]   
+   provider: CLP_CLPServiceAffectsAdminDomainProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_HostedTCPAccessPoint]   
+   provider: CLP_HostedTCPAccessPointProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_CLPAccessByTCP]   
+   provider: CLP_CLPAccessByTCPProvider
+   location: clpsvc
+   type: instance association
+   namespace: root/dcim  
+#
+[DCIM_BIOSString]   
+   provider: DCIMBIOS
+   location: dcimbios
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_BIOSEnumeration]   
+   provider: DCIMBIOS
+   location: dcimbios
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_BIOSInteger]   
+   provider: DCIMBIOS
+   location: dcimbios
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_BIOSPassword]   
+   provider: DCIMBIOS
+   location: dcimbios
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_BIOSService]   
+   provider: DCIMBIOS
+   location: dcimbios
+   type: instance method
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_BootConfigSetting]   
+   provider: DCIMBOOT
+   location: dcimbootcontrol
+   type: instance method
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_BootSourceSetting]   
+   provider: DCIMBOOT
+   location: dcimbootcontrol
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_FCView]   
+   provider: DCIMFC
+   location: dcimfc
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_FCString]   
+   provider: DCIMFC
+   location: dcimfc
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_FCEnumeration]   
+   provider: DCIMFC
+   location: dcimfc
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_FCInteger]   
+   provider: DCIMFC
+   location: dcimfc
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_FCService]   
+   provider: DCIMFC
+   location: dcimfc
+   type: instance method
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_FCCapabilities]   
+   provider: DCIMFC
+   location: dcimfc
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_FCStatistics]   
+   provider: DCIMFC
+   location: dcimfc
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_HeartBeat]   
+   provider: DCIMHEARTBEAT
+   location: dcimheartbeat
+   type: instance
+   namespace: root/dcim  
+   group: HEARTBEAT
+#
+[DCIM_FanView]   
+   provider: DCIMHWINFO
+   location: dcimhwinfo
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_MemoryView]   
+   provider: DCIMHWINFO
+   location: dcimhwinfo
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_CPUView]   
+   provider: DCIMHWINFO
+   location: dcimhwinfo
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_PCIDeviceView]   
+   provider: DCIMHWINFO
+   location: dcimhwinfo
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_VideoView]   
+   provider: DCIMHWINFO
+   location: dcimhwinfo
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_USBDeviceView]   
+   provider: DCIMHWINFO
+   location: dcimhwinfo
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_VideoNWParamsView]   
+   provider: DCIMHWINFO
+   location: dcimhwinfo
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_View]   
+   provider: DCIMHWINFO
+   location: dcimhwinfo
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_iDRACCardView]   
+   provider: DCIMIDRACCARD
+   location: dcimidraccard
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_iDRACCardString]   
+   provider: DCIMIDRACCARD
+   location: dcimidraccard
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_iDRACCardEnumeration]   
+   provider: DCIMIDRACCARD
+   location: dcimidraccard
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_iDRACCardInteger]   
+   provider: DCIMIDRACCARD
+   location: dcimidraccard
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_iDRACCardService]   
+   provider: DCIMIDRACCARD
+   location: dcimidraccard
+   type: instance method
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_DNSSettingData]   
+   provider: DCIMIDRACCARD
+   location: dcimidraccard
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_EthernetPort]   
+   provider: DCIMIDRACCARD
+   location: dcimidraccard
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_LifecycleJobAlertIndication]   
+   provider: DCIMINDICATION
+   location: dcimindication
+   type: indication
+   namespace: root/dcim  
+   group: HEARTBEAT
+#
+[DCIM_LifecycleJobCreateAlertIndication]   
+   provider: DCIMINDICATION
+   location: dcimindication
+   type: indication
+   namespace: root/dcim  
+   group: HEARTBEAT
+#
+[DCIM_LifecycleJobUpdateAlertIndication]   
+   provider: DCIMINDICATION
+   location: dcimindication
+   type: indication
+   namespace: root/dcim  
+   group: HEARTBEAT
+#
+[DCIM_AlertIndication]   
+   provider: DCIMINDICATION
+   location: dcimindication
+   type: indication
+   namespace: root/dcim  
+   group: HEARTBEAT
+#
+[DCIM_LCElementConformsToProfile]   
+   provider: DCIMINTEROP
+   location: dciminterop
+   type: instance association
+   namespace: root/interop root/dcim 
+   group: MISC
+#
+[DCIM_ElementConformsToProfile]   
+   provider: DCIMINTEROP
+   location: dciminterop
+   type: instance association
+   namespace: root/interop root/dcim 
+   group: MISC
+#
+[DCIM_LCRegisteredProfile]   
+   provider: DCIMINTEROP
+   location: dciminterop
+   type: instance
+   namespace: root/interop  
+   group: MISC
+#
+[DCIM_RegisteredProfile]   
+   provider: DCIMINTEROP
+   location: dciminterop
+   type: instance
+   namespace: root/interop  
+   group: MISC
+#
+[DCIM_JobService]   
+   provider: DCIMJOBCONTROL
+   location: dcimjobcontrol
+   type: instance method
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_LifecycleJob]   
+   provider: DCIMJOBCONTROL
+   location: dcimjobcontrol
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_LCString]   
+   provider: DCIMLCMANAGEMENT
+   location: dcimlcmgmt
+   type: instance
+   namespace: root/dcim  
+   group: LC
+#
+[DCIM_LCEnumeration]   
+   provider: DCIMLCMANAGEMENT
+   location: dcimlcmgmt
+   type: instance
+   namespace: root/dcim  
+   group: LC
+#
+[DCIM_LCService]   
+   provider: DCIMLCMANAGEMENT
+   location: dcimlcmgmt
+   type: instance method
+   namespace: root/dcim  
+   group: LC
+#
+[DCIM_NICView]   
+   provider: DCIMNIC
+   location: dcimnic
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_NICString]   
+   provider: DCIMNIC
+   location: dcimnic
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_NICEnumeration]   
+   provider: DCIMNIC
+   location: dcimnic
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_NICInteger]   
+   provider: DCIMNIC
+   location: dcimnic
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_NICService]   
+   provider: DCIMNIC
+   location: dcimnic
+   type: instance method
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_NICCapabilities]   
+   provider: DCIMNIC
+   location: dcimnic
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_NICStatistics]   
+   provider: DCIMNIC
+   location: dcimnic
+   type: instance
+   namespace: root/dcim  
+   group: HWINFO
+#
+[DCIM_OSDeploymentService]   
+   provider: DCIMOSDDEPLOY
+   location: dcimosdeploy
+   type: instance method
+   namespace: root/dcim  
+   group: LCUPDATE
+#
+[DCIM_OSDConcreteJob]   
+   provider: DCIMOSDDEPLOY
+   location: dcimosdeploy
+   type: instance
+   namespace: root/dcim  
+   group: LCUPDATE
+#
+[DCIM_PhysicalComputerSystemView]   
+   provider: DCIMPCSV
+   location: dcimpcsv
+   type: instance method
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_ElementView]   
+   provider: DCIMPCSV
+   location: dcimpcsv
+   type: instance association
+   namespace: root/dcim  
+   group: MISC
+#
+[DCIM_PowerSupplyView]   
+   provider: DCIMPOWERSUPPLY
+   location: dcimpowersupply
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_PowerSupply]   
+   provider: DCIMPOWERSUPPLY
+   location: dcimpowersupply
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_PowerRedundancySet]   
+   provider: DCIMPOWERSUPPLY
+   location: dcimpowersupply
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_PSMemberOfCollection]   
+   provider: DCIMPOWERSUPPLY
+   location: dcimpowersupply
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_PSOwningCollectionElement]   
+   provider: DCIMPOWERSUPPLY
+   location: dcimpowersupply
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_CSHostedPowerRedundancy]   
+   provider: DCIMPOWERSUPPLY
+   location: dcimpowersupply
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_SystemPSDevice]   
+   provider: DCIMPOWERSUPPLY
+   location: dcimpowersupply
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_ControllerView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_PhysicalDiskView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_VirtualDiskView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_EnclosureView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_RAIDEnumeration]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_RAIDInteger]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_RAIDService]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance method
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_RAIDString]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_EnclosureEMMView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_EnclosureFanSensor]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_EnclosureTemperatureSensor]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_EnclosurePSUView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_ControllerBatteryView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_PCIeSSDBackPlaneView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_PCIeSSDExtenderView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_PCIeSSDView]   
+   provider: DCIMRAID
+   location: dcimraid
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_Sensor]   
+   provider: DCIMSENSORS
+   location: dcimsensors
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_PresenceAndStatusSensor]   
+   provider: DCIMSENSORS
+   location: dcimsensors
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_NumericSensor]   
+   provider: DCIMSENSORS
+   location: dcimsensors
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_PSNumericSensor]   
+   provider: DCIMSENSORS
+   location: dcimsensors
+   type: instance
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_SystemSensorDevice]   
+   provider: DCIMSENSORS
+   location: dcimsensors
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_AssociatedSensor]   
+   provider: DCIMSENSORS
+   location: dcimsensors
+   type: instance association
+   namespace: root/dcim  
+   group: SENSORS
+#
+[DCIM_Account]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance method
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalUserAccountManagementService]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMIAccountManagementService]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPAccountManagementService]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalUserAccountManagementCapabilities]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMICLPAccountManagementCapabilities]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalUserIdentity]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LANIdentity]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_SerialIdentity]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPIdentity]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_EnabledLogicalElementCapabilities]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_AssignedAcctIdent]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_AccountOnSystem]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_AccountCapabilities]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalUserElementCapabilities]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMICLPElementCapabilities]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_LocalUserServiceAffectsIdentity]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_IPMIServiceAffectsIdentity]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_CLPServiceAffectsIdentity]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_SPHostedSIMPService]   
+   provider: DCIMSIMP
+   location: dcimsimp
+   type: instance association
+   namespace: root/dcim  
+   group: USERS
+#
+[DCIM_SoftwareIdentity]   
+   provider: SOFTINVPROVIDER
+   location: dcimsoftinv
+   type: instance
+   namespace: root/dcim  
+   group: LCUPDATE
+#
+[DCIM_SystemView]   
+   provider: DCIMSYSINFO
+   location: dcimsysinfo
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_SystemQuickSyncView]   
+   provider: DCIMSYSINFO
+   location: dcimsysinfo
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_HostNetworkInterfaceView]   
+   provider: DCIMSYSINFO
+   location: dcimsysinfo
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_SystemString]   
+   provider: DCIMSYSINFO
+   location: dcimsysinfo
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_SystemInteger]   
+   provider: DCIMSYSINFO
+   location: dcimsysinfo
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_SystemEnumeration]   
+   provider: DCIMSYSINFO
+   location: dcimsysinfo
+   type: instance
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_SystemManagementService]   
+   provider: DCIMSYSINFO
+   location: dcimsysinfo
+   type: instance method
+   namespace: root/dcim  
+   group: SYSTEM
+#
+[DCIM_VFlashView]   
+   provider: DCIMVFLASH
+   location: dcimvflash
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_OpaqueManagementData]   
+   provider: DCIMVFLASH
+   location: dcimvflash
+   type: instance
+   namespace: root/dcim  
+   group: VFRAID
+#
+[DCIM_PersistentStorageService]   
+   provider: DCIMVFLASH
+   location: dcimvflash
+   type: instance method
+   namespace: root/dcim  
+   group: VFRAID
+#

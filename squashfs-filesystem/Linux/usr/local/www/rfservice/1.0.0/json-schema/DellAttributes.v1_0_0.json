@@ -1,0 +1,98 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#DellAttributes.v1_0_0.DellAttributes",
+    "$ref": "#/definitions/DellAttributes",
+    "definitions": {
+        "Attributes": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                },
+                "[A-Za-z0-9]+": {
+                    "type": [
+                        "string",
+                        "boolean",
+                        "number",
+                        "null"
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "properties": {}
+        },
+        "DellAttributes": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id"
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ]
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name"
+                },
+                "AttributeRegistry": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The Resource ID of the Attribute Registry for the manager Attributes resource.",
+                    "longDescription": "The reference to the Attribute Registry that lists the metadata describing the manager attribute settings in this resource."
+                },
+                "Attributes": {
+                    "$ref": "#/definitions/Attributes",
+                    "description": "This is the manufacturer/provider specific list of manager attributes.",
+                    "longDescription": "Manager Attribute settings appear as additional properties in this object, and can be looked up in the Attribute Registry by their AttributeName."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "DellAttributes contains properties of additional properties to complement the Attribute Registry DMTF schema. It contains attributes surrounding attribute registry and Actions needed to perform changes to settings, which typically doesn't require a manager reset to apply.",
+            "longDescription": "This resource shall be used to represent Oem attributes for a Redfish implementation."
+        }
+    },
+    "copyright": "Copyright 2016 Dell, Inc. or its subsidiaries.  All Rights Reserved."
+}

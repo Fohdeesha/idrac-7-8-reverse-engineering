@@ -1,0 +1,22 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#AccountService/Members/Roles/$entity",
+    "@odata.type": "#RoleCollection.RoleCollection",
+    "@odata.id": "/redfish/v1/AccountService/Roles"  ,"@oem.nav.parentid": "/redfish/v1/AccountService",
+    "Name": "Roles Collection",
+    "Members@odata.count": 4,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/AccountService/Roles/Admin"
+        },
+        {
+            "@odata.id": "/redfish/v1/AccountService/Roles/Operator"
+        },
+        {
+            "@odata.id": "/redfish/v1/AccountService/Roles/ReadOnlyUser"
+        },
+        {
+            "@odata.id": "/redfish/v1/AccountService/Roles/Custom1"
+        }
+    ]
+}

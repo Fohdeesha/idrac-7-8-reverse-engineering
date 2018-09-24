@@ -1,0 +1,26 @@
+#
+# Format this file as following
+# [dir name]
+# file name
+# .
+# .
+# [dir name]
+# .
+# .
+#
+[/usr/local/www/images/]
+favicon.ico.gz
+favicon.png.gz
+logo.gif.gz
+logo.png.gz
+masthead.png.gz
+login_table_header.png.gz
+Ttl_2_iDRAC7_Ent_ML.png.gz
+Ttl_2_iDRAC7_Exp_ML.png.gz
+Ttl_2_iDRAC7_ExpB_ML.png.gz
+Ttl_2_iDRAC7_Base_ML.png.gz
+Ttl_2_iDRAC7_Ent.png.gz
+Ttl_2_iDRAC7_Exp.png.gz
+Ttl_2_iDRAC7_ExpB.png.gz
+Ttl_2_iDRAC7_Base.png.gz
+Ttl_2_iDRAC8_Base_ML.png.gz

@@ -1,0 +1,14 @@
+[Unit]
+Description=SMASH Command Line Processor Daemon (clpd)
+Before=sshd.service
+After=sfcbd.service
+Wants=sfcbd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=/etc/global.env
+ExecStart=/etc/init.d/clpd.sh start
+
+[Install]
+WantedBy=multi-user.target

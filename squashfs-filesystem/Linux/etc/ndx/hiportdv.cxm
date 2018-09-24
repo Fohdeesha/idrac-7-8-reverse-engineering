@@ -1,0 +1,122 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _PortParallel 
+{
+        u32 baseIOAddr;
+        u32 irqLevel;
+        u32 connectorType;
+        u32 connectorPinout;
+        __BITMAP u32 capabilities;
+        booln dmaSupported;
+        u8 reservedAlign[2];
+        u32 securitySettings;
+        u32 offsetExtName;
+} PortParallel;
+
+typedef struct _PortSerial 
+{
+        u32 baseIOAddr;
+        u32 irqLevel;
+        u32 connectorType;
+        u32 capabilities;
+        u32 maxSpeed;
+        u32 securitySettings;
+        u32 offsetExtName;
+} PortSerial;
+
+typedef struct _PortGeneric 
+{
+        u32 connectorType;
+        u32 securitySettings;
+        u32 smbiosConnType;
+        u32 offsetExtName;
+} PortGeneric;
+
+typedef struct _DevGeneric 
+{
+        u32 type;
+        u32 offsetDesc;
+} DevGeneric;
+
+typedef struct _HotPlugSystemSlot 
+{
+        u32 dataBusWidth;
+        u32 slotSpeed;
+        u32 adapterSpeed;
+        booln isHotPlugCapable;
+        booln isPowered;
+        booln isAttnState;
+        booln isPowerFault;
+        booln isAdapterPresent;
+        booln isSlotBtnPressed;
+} HotPlugSystemSlot;
+
+typedef struct _SystemSlot 
+{
+        u32 type;
+        u32 curUsage;
+        u32 length;
+        u32 slotID;
+        u32 category;
+        HotPlugSystemSlot hpss;
+        booln isCharacUnknown;
+        booln isVolt5;
+        booln isVolt33;
+        booln isShared;
+        booln isCard16;
+        booln isCardBus;
+        booln isZoomVideo;
+        booln isModemRingResume;
+        booln isPMECapable;
+        u8 reservedAlign[2];
+        u32 offsetExtName;
+} SystemSlot;
+
+typedef struct _PCICfgSpcEntry
+{
+        u32 busNum;
+        u32 deviceNum;
+        u32 functionNum;
+        u8 cfgSpc[64];
+} PCICfgSpcEntry;
+
+typedef struct _DevPCI 
+{
+    u32 objExtFlags;
+    u32 keyOffset;
+    u32 fqddOffset;
+    u32 friendlyFQDDOffset;
+    astring productName[128];
+    astring manufacturer[64];
+    astring description[128];
+    u32 busNum;
+    u32 deviceNum;
+    u32 functionNum;
+    u16 vendorID;
+    u16 deviceID;
+    u16 subVendorID;
+    u16 subDeviceID;
+    u8 dataBusWidth;
+    u8 slotLength;
+    u8 slotType;
+    s64 UpdateTime;
+    astring key[64];
+} DevPCI;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

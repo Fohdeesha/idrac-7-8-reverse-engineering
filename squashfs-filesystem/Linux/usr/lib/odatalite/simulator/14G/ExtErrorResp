@@ -1,0 +1,35 @@
+{
+    "error": {
+        "code": "Base.1.0.0.GeneralError",
+        "message": "A general error has occurred. See ExtendedInfo for more information.",
+        "@Message.ExtendedInfo": [
+            {
+                "@odata.type": "/redfish/v1/$metadata#Message.1.0.0.Message",
+                "MessageId": "Base.1.0.0.PropertyValueNotInList",
+                "RelatedProperties": [
+                    "#/IndicatorLED"
+                ],
+                "Message": "The value RED for the property IndicatorLED is not in the list of acceptable values",
+                "MessageArgs": [
+                    "RED",
+                    "IndicatorLED"
+                ],
+                "Severity": "Warning",
+                "Resolution": "Remove the property from the request body and resubmit the request if the operation failed"
+            },
+            {
+                "@odata.type": "/redfish/v1/$metadata#Message.1.0.0.Message",
+                "MessageId": "Base.1.0.0.PropertyNotWriteable",
+                "RelatedProperties": [
+                    "#/SKU"
+                ],
+                "Message": "The property SKU is a read only property and cannot be assigned a value",
+                "MessageArgs": [
+                    "SKU"
+                ],
+                "Severity": "Warning",
+                "Resolution": "Remove the property from the request body and resubmit the request if the operation failed"
+            }
+        ]
+    }
+}

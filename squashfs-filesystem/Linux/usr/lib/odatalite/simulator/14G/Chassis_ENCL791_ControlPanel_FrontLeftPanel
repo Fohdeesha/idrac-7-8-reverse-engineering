@@ -1,0 +1,91 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#ControlPanel/Members/Chassis/ENCL791/ControlPanel/$entity",
+	"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel",
+    "@oem.nav.parentid": "/redfish/v1/Chassis/ENCL791/ControlPanel",
+    "@odata.type": "#Dell.ControlPanel.1.0.0.ControlPanel",
+    "Id": "FrontLeftPanel",
+    "Name": "Front left control panel",
+    "Description": "Control panel located at the left side in front of the chassis enclosure.",
+    "Status": {
+        "Health": "Ok"
+    },
+    "Indicators": [
+		{
+			"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel#/Indicators/Health",
+			"@odata.type": "#Dell.ControlPanel.1.0.0.Indicators",
+			"Id": "Health",
+            "Description": "If the system is on, and in good health, the indicator lights solid blue. The indicator blinks amber if the system is on or in standby, and any error exists (for example, a failed fan or hard drive).",
+            "IndicatorLED": "Lit",
+            "ColorLED": "Blue"
+		},
+		{
+			"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel#/Indicators/Electrical",
+			"@odata.type": "#Dell.ControlPanel.1.0.0.Indicators",
+			"Id": "Electrical",
+            "Description": "The indicator blinks amber if the system experiences an electrical error (for example, voltage out of range, or a failed power supply or voltage regulator).",
+            "IndicatorLED": "Off",
+            "ColorLED": "Blue"
+		},
+		{
+			"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel#/Indicators/Temperature",
+			"@odata.type": "#Dell.ControlPanel.1.0.0.Indicators",
+			"Id": "Temperature",
+            "Description": "The indicator blinks amber if the system experiences a thermal error (for example, a temperature out of range or fan failure).",
+            "IndicatorLED": "Lit",
+            "ColorLED": "Blue"
+		}
+    ],
+    "Buttons": [
+		{
+			"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel#/Buttons/Power",
+			"@odata.type": "#Dell.ControlPanel.1.0.0.Buttons",
+			"Id": "Power",
+            "ButtonType": "Power",
+            "IndicatorLED": "Lit",
+            "Status": {
+                "State": "Enabled"
+            },
+            "Actions": {
+                "#Buttons.Press": {
+                    "target": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel#/Buttons/Power/Actions/Buttons.Press"
+                }
+            }
+		},
+		{
+			"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel#/Buttons/Identify",
+			"@odata.type": "#Dell.ControlPanel.1.0.0.Buttons",
+			"Id": "Identify",
+            "ButtonType": "Identify",
+            "IndicatorLED": "Off",
+            "Status": {
+                "State": "Enabled"
+            },
+            "Actions": {
+                "#Buttons.Press": {
+                    "target": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel#/Buttons/Power/Actions/Buttons.Press"
+                }
+            }
+		},
+		{
+			"@odata.id": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel#/Buttons/KVMSelect",
+			"@odata.type": "#Dell.ControlPanel.1.0.0.Buttons",
+			"Id": "KVMSelect",
+            "ButtonType": "KVMSelect",
+            "Status": {
+                "State": "Enabled"
+            },
+            "Actions": {
+                "#Buttons.Press": {
+                    "target": "/redfish/v1/Chassis/ENCL791/ControlPanel/FrontLeftPanel#/Buttons/Power/Actions/Buttons.Press"
+                }
+            }
+		}
+    ],
+    "Links": {
+        "Chassis": {
+            "@odata.id": "/redfish/v1/Chassis/ENCL791"
+        }
+    },
+    "Oem": {}
+}

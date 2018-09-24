@@ -1,0 +1,14 @@
+[Unit]
+Description=display information required for factory
+DefaultDependencies=no
+After=log-uboot.service
+ConditionPathExists=!/etc/xrev_fw
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/etc/init.d/display_factory_info.sh
+StandardOutput=journal+console
+
+[Install]
+WantedBy=sysinit.target

@@ -1,0 +1,27 @@
+{
+    "@Redfish.Copyright": "Copyright (c) 2015 Dell Inc. All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Managers/Members/1/LogServices/Members/$entity",
+    "@odata.id": "/redfish/v1/Managers/ENCL791.1/LogServices/LCL"  ,"@oem.nav.parentid": "/redfish/v1/Managers/ENCL791.1/LogServices",
+    "@odata.type": "#LogService.1.0.0.LogService",
+    "Id": "LCL",
+    "Name": "Lifecycle Log Service",
+    "MaxNumberOfRecords": 1000,
+    "OverWritePolicy": "WrapsWhenFull",
+    "DateTime": "2015-03-13T04:14:33+06:00",
+    "DateTimeLocalOffset": "+06:00",
+    "ServiceEnabled": true,
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Oem": {},
+    "Actions": {
+        "#LogService.ClearLog": {
+            "target": "/redfish/v1/Managers/ENCL791.1/LogServices/LCL/Actions/LogService.Reset"
+        },
+        "Oem": {}
+    },
+    "Entries": {
+        "@odata.id": "/redfish/v1/Managers/ENCL791.1/LogServices/LCL/Entries"
+    }
+}

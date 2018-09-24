@@ -1,0 +1,66 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _GetESMEventLogRecord
+{
+        u32 logRecordNumber;
+} GetESMEventLogRecord;
+
+typedef struct _GetESMEventLogRecordRsp
+{
+	s64 logTime;
+	u32 numberofLogRecords;
+	u8  objStatus;
+	u8 reservedAlign[3];
+	u32 offsetLogString;
+	u32 offsetRawSelData;
+} GetESMEventLogRecordRsp;
+
+typedef struct _GetNextASREvent
+{
+	s64 currEventTime;
+} GetNextASREvent;
+
+typedef struct _GetNextASREventRsp
+{
+	s64 eventTime;
+	u32 action;
+} GetNextASREventRsp;
+
+typedef struct _EventFilterPassThruOpts
+{
+	u16 category;
+	u16 severity;
+	astring msgID[9];
+	u32 bitmask;
+}EventFilterPassThruOpts;
+
+typedef struct _IRACEvtFilterCfgObjList
+{
+	u32 objCount;
+	EvtFilterConfig evtFilterConfig[1];
+}IRACEvtFilterCfgObjList;
+
+
+typedef struct _GetPwrConsByInterval
+{
+	u16 timeInterval; 
+	u16 deviceType;
+}GetPwrConsByInterval;
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

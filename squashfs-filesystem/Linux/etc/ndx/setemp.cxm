@@ -1,0 +1,354 @@
+#//-------------------------------------------------------------------------
+#//
+#//                 Dell Inc. PROPRIETARY INFORMATION
+#//
+#//  This software is supplied under the terms of a license agreement or
+#//  nondisclosure agreement with Dell Inc. and may not be copied or
+#//  disclosed except in accordance with the terms of that agreement.
+#//
+#//  Copyright (c) 1995-2009 Dell Inc. All Rights Reserved.
+#//
+#//  Abstract/Purpose:
+#//    NDX configuration file
+#//    See readme_ndx.txt for more info
+#//
+#//-------------------------------------------------------------------------
+
+typedef struct _empChannelEnable 
+{
+	booln channelEnable; 
+} empChannelEnable; 
+
+typedef struct _empPEFAlertingEnable 
+{
+	booln PEFAlertingEnable; 
+} empPEFAlertingEnable; 
+
+typedef struct _empChannelAccess 
+{
+	s8 channelAccessLevel; 
+} empChannelAccess; 
+
+typedef struct _empUserName 
+{ 
+	u8 userID; 
+	astring userName[17]; 
+} empUserName; 
+
+typedef struct _empUserPwd 
+{ 
+	u8 userID; 
+	astring userPwd[21]; 
+} empUserPwd; 
+
+typedef struct _empUserState 
+{ 
+	u8 userID; 
+	booln currentState; 
+} empUserState; 
+
+typedef struct _empUserAccess 
+{ 
+	u32 setbits;
+	u8 userID; 
+	u8 channelNumber; 
+	u16 channelMediumType;
+	u8 userAccessLevel; 
+} empUserAccess; 
+
+typedef struct _empAuthenTypeEnables 
+{
+	u32 setbits; 
+	u8 authenTypeEnableCallback; 
+	u8 authenTypeEnableUser; 
+	u8 authenTypeEnableOperator; 
+	u8 authenTypeEnableAdmin; 
+	u8 authenTypeEnableOEM; 
+} empAuthenTypeEnables; 
+
+typedef struct _empSerialConnMode 
+{
+	u32 setbits; 
+	s8 connectionMode; 
+	u8 connectionModeEnables; 
+} empSerialConnMode; 
+
+typedef struct _empSerialCommSettings 
+{
+	u32 setbits; 
+	s8 commSettingsFlowControl; 
+	s8 commSettingsBitRate; 
+	booln commSettingsDTRHangUp; 
+} empSerialCommSettings; 
+
+typedef struct _empSerialTermConfig 
+{
+	u32 setbits; 
+	booln termLineEditing; 
+	s8 termDelCtrl; 
+	booln termEcho; 
+	booln termHandshake; 
+	s8 termNLSeq; 
+	s8 termInputNLSeq; 
+} empSerialTermConfig; 
+
+typedef struct _empLANIPAddrSrc 
+{
+	u32 setbits; 
+	s8 IPAddrSource; 
+} empLANIPAddrSrc; 
+
+typedef struct _empLANIPAddr 
+{
+	u32 setbits; 
+	astring IPAddress[16]; 
+} empLANIPAddr; 
+
+typedef struct _empLANSubnetMask 
+{
+	u32 setbits; 
+	astring subnetMask[16]; 
+} empLANSubnetMask; 
+
+typedef struct _empLANIPv4Header 
+{
+	u32 setbits; 
+	s8 IPv4HeaderTimeToLive; 
+	s8 IPv4HeaderFlags; 
+	s8 IPv4HeaderPrecedence; 
+	s8 IPv4HeaderServiceType; 
+} empLANIPv4Header; 
+
+typedef struct _empLANDefaultGateway 
+{
+	u32 setbits; 
+	astring defaultGateway[16]; 
+} empLANDefaultGateway; 
+
+typedef struct _empLANCommunityStr 
+{
+	u32 setbits; 
+	astring communityString[19]; 
+} empLANCommunityStr; 
+
+typedef struct _empLANVLANID 
+{
+	u32 setbits; 
+	booln VLANIDEnable; 
+	s16 VLANID; 
+} empLANVLANID; 
+
+typedef struct _empLANVLANPriority 
+{
+	s8 VLANPriority; 
+} empLANVLANPriority; 
+
+typedef struct _empLANDestType 
+{
+	u8 destSelector; 
+	u32 setbits; 
+	u8 destType; 
+	booln alertAck; 
+	u8 ackTimeoutRetryInterval; 
+	u8 retries; 
+} empLANDestType; 
+
+typedef struct _empLANDestAddr 
+{
+	u8 destSelector; 
+	u32 setbits; 
+	u8 addressFormat; 
+	u8 gatewaySelector; 
+	astring alertingIPAddr[40]; 
+	astring alertingMACAddr[13]; 
+} empLANDestAddr; 
+
+typedef struct _empPEFControl 
+{
+	u32 setbits; 
+	booln PEFControlEnable; 
+} empPEFControl; 
+
+typedef struct _empPEFActGlobalCtrl 
+{
+	u32 setbits; 
+	u8 PEFActGlobalCtrl; 
+} empPEFActGlobalCtrl; 
+
+typedef struct _empPEFSystemGUID 
+{
+	u32 setbits; 
+	s8 GUIDUsage;
+	astring systemGUID[33]; 
+} empPEFSystemGUID; 
+
+typedef struct _empPEFEventFilter 
+{
+	u8 filterNumber; 
+	u32 filterKey;
+	u32 setbits; 
+	booln filterConfigEnable; 
+	booln evtFltrActionDiagInt; 
+	booln evtFltrActionOEM; 
+	booln evtFltrActionPwrCycl; 
+	booln evtFltrActionReset; 
+	booln evtFltrActionPwrOff; 
+	booln evtFltrActionAlert; 
+	u8 alertPolicyNumber; 
+	u8 eventSeverity; 
+	u8 sensorType; 
+	u8 eventTrigger; 
+	u16 eventData1OffsetMask; 
+} empPEFEventFilter; 
+
+typedef struct _empPEFAltPlcyEntry
+{
+	u8 policyEntryNumber;
+	u32 setbits;
+	booln entryEnable;
+	u8 policyNumber;
+	u8 policy;
+	u8 channleNumber;
+	u8 destSelector;
+	booln evtSpecAltStr;
+	u8 altStrSetSelector;
+} empPEFAltPlcyEntry;
+
+typedef struct _empSOLEnable 
+{
+	booln SOLEnable; 
+} empSOLEnable; 
+
+typedef struct _empSOLAuthen 
+{
+	u32 setbits; 
+	booln SOLAuthenForcePayloadEnc; 
+	booln SOLAuthenForcePayloadAuthen; 
+	s8 SOLAuthenPrivilegeLevel; 
+} empSOLAuthen; 
+
+typedef struct _empSOLChar 
+{
+	u32 setbits; 
+	s32 SOLCharAccumInterval; 
+	s32 SOLCharSendThreshold; 
+} empSOLChar; 
+
+typedef struct _empSOLRetry 
+{
+	u32 setbits; 
+	s8 SOLRetryCount; 
+	s32 SOLRetryInterval; 
+} empSOLRetry; 
+
+typedef struct _empSOLBitRateNonVolatile 
+{
+	s8 SOLBitRateNonVolatile; 
+} empSOLBitRateNonVolatile; 
+
+typedef struct _empSOLBitRateVolatile 
+{
+	s8 SOLBitRateVolatile; 
+} empSOLBitRateVolatile; 
+
+typedef struct _empChannelSecKey
+{ 
+	u32 setbits;
+	u8 keyID;
+	u8 channelNum;
+	u16 channelMediumType;
+	astring keyValue[64];
+} empChannelSecKey; 
+
+typedef struct _empUserRACPriv
+{
+	u8 userID;
+	u32 RACPriv;
+} empUserRACPriv;
+
+typedef struct _empUserPayloadSettings
+{
+	u32 setbits;
+	u8 userID;
+	u8 userChannelNum;
+	u16 userChannelMediumType;
+	u32 payloadAccessSettings;
+} empUserPayloadSettings;
+
+typedef struct _empNICTeamingMode {
+	u32 teamingModeSettings;
+} empNICTeamingMode;
+
+typedef struct _empSerialMuxMode{
+	u8 serialMuxModeSettings;
+} empSerialMuxMode;
+
+typedef struct _empNICEnable {
+	booln NICEnable;
+} empNICEnable;
+
+typedef struct _empUISetting {
+	u8 uiSetting;
+} empUISetting;
+
+typedef struct _empIPV4Setting {
+	u8 ipv4Setting;
+} empIPV4Setting;
+
+typedef struct _empIPV6Setting {
+	u8 ipv6Setting;
+} empIPV6Setting;
+
+typedef struct _empIPSecSetting {
+	u8 ipsecSetting;
+} empIPSecSetting;
+
+typedef struct _empIPV6Config 
+{
+	u8 AutoConfiguration; 
+} empIPV6Config; 
+
+typedef struct _empIPV6DNSConfig 
+{
+	u8 AutoConfigurationDNS; 
+} empIPV6DNSConfig; 
+
+typedef struct _empIPV6PrefixLen 
+{
+	u8 prefixBitLen; 
+} empIPV6PrefixLen; 
+
+typedef struct _empv6LLIPAddr 
+{
+	astring IPAddress[65]; 
+} empv6LLAddr; 
+
+typedef struct _empv6GLIPAddr 
+{
+	astring IPAddress[65]; 
+} empv6GLAddr; 
+
+typedef struct _empv6SLIPAddr 
+{
+	astring IPAddress[65]; 
+} empv6SLAddr; 
+
+typedef struct _empv6GWIPAddr 
+{
+	astring IPAddress[65]; 
+} empv6GWAddr; 
+
+typedef struct _empv6DNS1IPAddr 
+{
+	astring IPAddress[65]; 
+} empv6DNS1Addr; 
+
+typedef struct _empv6DNS2IPAddr 
+{
+	astring IPAddress[65]; 
+} empv6DNS2Addr; 
+
+
+#//-------------------------------------------------------------------------
+#// End
+#//-------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+[Unit]
+Description=socket activation test service
+ConditionPathExists=/usr/bin/sdtool_sockserv
+
+[Service]
+Type=simple
+ControlGroup=memory:/idrac/NC
+ExecStart=/bin/sdtool_sockserv
+

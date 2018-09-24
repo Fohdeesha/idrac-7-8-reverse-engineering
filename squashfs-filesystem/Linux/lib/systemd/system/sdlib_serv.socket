@@ -1,0 +1,10 @@
+[Unit]
+Description=sdlib test server-side socket
+ConditionPathExists=/usr/bin/sdtool_sockserv
+
+[Socket]
+ListenStream=/tmp/sd_socktest.sk
+Accept=false
+
+[Install]
+WantedBy=sockets.target

@@ -1,0 +1,21 @@
+[Unit]
+Description=spi monitor timer
+
+[Timer]
+#Time to wait after booting before running first time
+#if that time has already passed, then run immediately
+OnBootSec=10min
+
+#Debugging
+#OnBootSec=1min
+
+# Time between running there after
+OnUnitActiveSec=1h
+
+#Debugging
+#OnUnitActiveSec=5min
+
+Unit=spi_monitor.service
+
+[Install]
+WantedBy=multi-user.target

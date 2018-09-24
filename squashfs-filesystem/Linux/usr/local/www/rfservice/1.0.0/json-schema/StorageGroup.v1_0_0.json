@@ -1,0 +1,317 @@
+{
+    "$schema": "/redfish/v1/Schemas/redfish-schema.v1_1_0.json",
+    "title": "#StorageGroup.v1_0_0.StorageGroup",
+    "$ref": "#/definitions/StorageGroup",
+    "definitions": {
+        "ExposeVolumes": {
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Friendly action name"
+                },
+                "target": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to invoke action"
+                }
+            },
+            "description": "Expose the storage volumes of this group.",
+            "longDescription": "Exposes the storage of this group via the target endpoints named in the ServerEndpointGroups to the initiator endpoints named in the ClientEndpointGroups.  The property VolumesAreExposed shall be set to true when this action is completed."
+        },
+        "HideVolumes": {
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Friendly action name"
+                },
+                "target": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to invoke action"
+                }
+            },
+            "description": "Hide the storage volumes of this group.",
+            "longDescription": "Hide the storage of this group from the initiator endpoints named in the ClientEndpointGroups. The property VolumesAreExposed shall be set to false when this action is completed."
+        },
+        "StorageGroup": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.v1_1_0.json#/definitions/Identifier"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value shall be unique within the managed ecosystem."
+                },
+                "AccessState": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/EndpointGroup.v1_0_0.json#/definitions/AccessState"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "AccessState for this storage group.",
+                    "longDescription": "The value of this property shall describe the access characteristics of this storage group. All associated logical units through all aggregated ports shall share this access state."
+                },
+                "MembersAreConsistent": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "Members are kept in a consistent state.",
+                    "longDescription": "The value of this property shall be set to true if all members are in a consistent state. The default value for this property is false."
+                },
+                "VolumesAreExposed": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "Storage volumes are exposed to the Client Endpoints.",
+                    "longDescription": "The value of this property shall be set to true if storage volumes are exposed to the initiator endpoints.  The default value for this property is false."
+                },
+                "Status": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Status"},
+                        {"type": "null"}
+                    ]
+                },
+                "Links": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "type": [
+                                "array",
+                                "boolean",
+                                "number",
+                                "null",
+                                "object",
+                                "string"
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "properties": {
+                        "Oem": {
+                            "$ref": "/redfish/v1/Schemas/Resource.json#/definitions/Oem",
+                            "description": "Oem extension object.",
+                            "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
+                        },
+                        "ParentStorageGroups@odata.count": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/count"
+                        },
+                        "ParentStorageGroups@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "ParentStorageGroups": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/StorageGroup"
+                            },
+                            "readonly": true,
+                            "description": "Parent StorageGroups.",
+                            "longDescription": "An array of references to StorageGroups that incorporate this StorageGroup"
+                        },
+                        "ChildStorageGroups@odata.count": {
+                            "$ref": "/redfish/v1/Schemas/odata.4.0.0.json#/definitions/count"
+                        },
+                        "ChildStorageGroups@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "ChildStorageGroups": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/StorageGroup"
+                            },
+                            "readonly": false,
+                            "description": "Child StorageGroups.",
+                            "longDescription": "An array of references to StorageGroups are incorporated into this StorageGroup"
+                        },
+                        "ClassOfService": {
+                            "anyOf": [
+                                {"$ref": "/redfish/v1/Schemas/ClassOfService.json#/definitions/ClassOfService"},
+                                {"type": "null"}
+                            ],
+                            "readonly": true,
+                            "description": "The ClassOfService that all storage in this StorageGroup conforms to.",
+                            "longDescription": "The ClassOfService that all storage in this StorageGroup conforms to."
+                        }
+                    },
+                    "readonly": true,
+                    "description": "Contains links to other resources that are related to this resource.",
+                    "longDescription": "This structure shall contain references to resources that are not contained within this resource."
+                },
+                "ReplicaInfos": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "/redfish/v1/Schemas/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaInfo"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": true,
+                    "description": "Describes this storage group in its role as a source and/or target for replication.",
+                    "longDescription": "This property shall describe the replication relationship between this storage group and a corresponding source and/or target storage group."
+                },
+                "Actions": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "type": [
+                                "array",
+                                "boolean",
+                                "number",
+                                "null",
+                                "object",
+                                "string"
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "properties": {
+                        "Oem": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                                    "type": [
+                                        "array",
+                                        "boolean",
+                                        "number",
+                                        "null",
+                                        "object",
+                                        "string"
+                                    ],
+                                    "description": "This property shall specify a valid odata or Redfish property."
+                                }
+                            },
+                            "additionalProperties": true,
+                            "properties": {}
+                        },
+                        "#StorageGroup.ExposeVolumes": {
+                            "$ref": "#/definitions/ExposeVolumes"
+                        },
+                        "#StorageGroup.HideVolumes": {
+                            "$ref": "#/definitions/HideVolumes"
+                        }
+                    },
+                    "readonly": true,
+                    "description": "The available actions for this resource.",
+                    "longDescription": "The Actions property shall contain the available actions for this resource."
+                },
+                "ClientEndpointGroups": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "ClientEndpointGroup in this StorageGroup.",
+                    "longDescription": "An array of references to ClientEndpointGroups that contain the Endpoints that may be used by clients to make requests to the storage exposed by this StorageGroup."
+                },
+                "ServerEndpointGroups": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "ServerEndpointGroups in this StorageGroup.",
+                    "longDescription": "An array of references to ServerEndpointGroups that contain the Endpoints that may be used by the storage service to receive requests from clients for storage exposed by this StorageGroup."
+                },
+                "Volumes": {
+                    "anyOf": [
+                        {"$ref": "/redfish/v1/Schemas/VolumeCollection.json#/definitions/VolumeCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Volumes in this StorageGroup.",
+                    "longDescription": "An array of references to Volumes managed by this StorageGroup."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "Collection of resources that are managed and exposed to hosts as a group.",
+            "longDescription": "A storage group collects a set of related storage entities (volumes, file systems...) The collection should be useful for managing the storage of a set of related client applications."
+        }
+    },
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

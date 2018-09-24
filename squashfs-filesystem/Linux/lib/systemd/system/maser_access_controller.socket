@@ -1,0 +1,12 @@
+[Unit]
+Description=maser access controller socket
+After=tmp.mount
+
+[Socket]
+# following string is the keyword. many cliens opens this file to read socket path.
+ListenStream=/tmp/maser.sk
+Backlog=10
+Accept=false
+
+[Install]
+WantedBy=sockets.target
