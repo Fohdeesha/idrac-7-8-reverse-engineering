@@ -1,0 +1,594 @@
+U-Boot 2009.08 (Jun 11 2018 - 05:56:29) Avocent (0.0.3) EVB
+
+CPU: SH-4A
+BOARD: R0P7757LC00xxRL (Cn step) board
+BOOT: Secure, HRK generated
+DRAM:  240MB
+  (240MB of 256MB total DRAM is available on U-Boot)
+ENV:   Using primary env area.
+In:    serial
+Out:   serial
+Err:   serial
+PCIe:  Bridge loaded with 0x18000 bytes
+WDT2:  Booted Lower Vector, 'uboot1'
+sh_mmcif: 0, sh-sdhi: 1
+Net:   sh_eth.0, sh_g_eth.0
+INFO: 00:002 Start-up -to- util_idrac_main()
+INFO: 00:004 U-Boot 2009.08 (Jun 11 2018 - 05:56:29) Avocent (0.0.3) EVB
+INFO: 00:007 U-Boot checkin date(08-11-2016) Version(1.1.32)
+INFO: 00:006 iDRAC PPID <NULL>
+INFO: 00:003 SPI NOR init 4096 KiB N25Q032 bus=0 cs=0, speed=1000000, mode=3
+INFO: 00:007 SH-4A Product: Major Ver=0x31  Minor Ver=0x13 C3 Little endian
+             Family=0x10    Major Ver=0x30  Minor Ver=0x0b
+INFO: 00:139 BCM54610 OUI=0x00d897  Model=0x26  Revision=0x0a PhyAddr=1
+INFO: 00:007 Dedicated monolithic mgmt NIC disabled
+INFO: 00:005 SD CARD: is not found
+INFO: 00:040 EMMC:   Device: sh_mmcif   Manufacturer ID: 15   OEM: 100
+             Name: M4G1E   Tran Speed: 25000000   Rd Blk Len: 512
+             MMC ver 4.0   HC: Yes   cap(<2gb): 0  cap(>2gb): 7815168
+             ext_rev: 3    rst_n: 0  ext[96]: 0
+INFO: 00:023 CPLD: Major Ver=0x1  Minor Ver=0x0  Maint Ver=0x3
+             Planar: Type=0x02  Rev=0x8  Rework=0x0  Scratch/PathRetry=0x00
+PASS: 00:014 Coin cell detected good,  AD=0x3ae low water=0x2c1
+PASS: 00:008 PCIe SH7757_C0 Ver=0.15 MCTP en, CRC=0x8e9b6875 @0x8efbd914 cnt=0x18000
+INFO: 00:008 Init PCIe mailbox(PCIe 0xFFEE0150=0x40010000)
+INFO: 00:006 mode=normal 
+INFO: 00:002 reset_cause=ac 
+PASS: 00:005 Booted Lower Vector, 'uboot1' wdt2cnt=0
+INFO: 00:005 wdt0cnt=0  cpld_recover_cnt=0  ddr_recover_cnt=0  
+PASS: 00:007 Clear CH1/CH2, clear 4K shared memory@0xffcaa000 on AC power up
+PASS: 00:007 SMR0 no sermux env, default 0xd4
+INFO: 00:004 GRACR=0x3c HISEL=0x00 SIRQCR5_D=0x03 SIRQCR6_D=0x01 LADMSK0=0xff2
+             MRSTCR0=0xfedffe7f MRSTCR1=0xfff3ff0f MRSTCR2=0x6f80feff
+             BARMAP=0x1 BCR=0x85000000 NCER=0x01fc NCMCR=0x0006 NCCSR=0x0303
+PASS: 00:022 etherc0=5C:F9:DD:F1:C9:90
+             getherc0=5C:F9:DD:F1:C9:91
+INFO: 00:009 Fan logic for monolithic planar type 2
+             fan1 - def 0000 1fff 3d   fan2 - def 0000 1fff 3d   
+             fan3 - def 0000 1fff 3d   fan4 - def 0000 1fff 3d   
+             fan5 - def 0000 1fff 3d   fan6 - def 0000 1fff 3d   
+             fan7 - def 0000 1fff 3d   fan8 - def 0000 1fff 3d   
+INFO: 00:076 Env and backup CRC'ed ok
+Erasing SPI flash at 0x100000...Writing to SPI flash...done
+Erasing SPI flash at 0x110000...Writing to SPI flash...done
+*** no text signature found ***
+INFO: 02:596 Sync eMMC/SPI NOR/Alternate u-boot images
+PASS: 00:268 Current u-boot1 1.1.32 verified with 'ubootN1'
+             Trailer Struct - Missing start token, exp=0xc0de1111 rec=0x0
+             U-boot2 in sync with u-boot1 1.1.32 
+PASS: 08:371 Verify OS Images N-1: CRC32 OK: Kernel=0x5e098687 Rootfs=0x43309725 PData=0x34bbc90a
+PASS: 00:009 Boot device=emmc  Boot partition5/N-1
+             Boot Path Retry:P1/N=0 P5/N-1=0
+INFO: 00:009 Autoboot will abort as Bootdelay = -1, Disable WDT2
+INFO: 00:000 11:675
+iDRAC8=> setenv runtime_args mode=vhard init=/bin/sh reset_cause=ac 
+iDRAC8=> boot
+OS_WDT0_EN:180 seconds,  Re-load ILRAM:
+SPI_WP: Not attempted.
+EMMC_WP: Not attempted.
+Boot Path Retry:P1/N=0 P5/N-1=0
+Copying kernel image ... OK
+## Booting kernel from Legacy Image at 88000000 ...
+   Image Name:   sh-linux
+   Image Type:   SuperH Linux Kernel Image (gzip compressed)
+   Data Size:    3081532 Bytes =  2.9 MB
+   Load Address: 80001000
+   Entry Point:  80002000
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+WDT2: Disable in do_bootm_linux()
+Linux version 3.16.47 (jenkins@yocto-build-316) (gcc version 4.7.2 (GCC) ) #1 Mon Jun 11 05:56:06 CDT 2018
+Boot params:
+... MOUNT_ROOT_RDONLY - 00000000
+... RAMDISK_FLAGS     - 00000000
+... ORIG_ROOT_DEV     - 00000000
+... LOADER_TYPE       - 00000000
+... INITRD_START      - 00000000
+... INITRD_SIZE       - 00000000
+Memory limited to 234MB
+Booting machvec: SH7757LCR
+PMB: boot mappings:
+       0x000a0000 -> 0x00040000 [  128MB uncached ]
+       0x000a8000 -> 0x00048000 [  128MB uncached ]
+       0x00080000 -> 0x00040000 [  128MB   cached ]
+       0x00088000 -> 0x00048000 [  128MB   cached ]
+Node 0: start_pfn = 0x40000, low = 0x4ea00
+Zone ranges:
+  Normal   [mem 0x40000000-0x4e9fffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x40000000-0x4e9fffff]
+Renesas R0P7757LC0012RL support.
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 59436
+Kernel command line: root=/dev/mmcblk0p6 rootwait rw rootfstype=squashfs mem=239616k console=ttyS2,115200 <NULL> mac1=5C:F9:DD:F1:C9:90 mac2=5C:F9:DD:F1:C9:91  mode=vhard init=/bin/sh reset_cause=acquiet console=ttySC2,115200 init=/sbin/init
+PID hash table entries: 1024 (order: 0, 4096 bytes)
+Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+Sorting __ex_table...
+allocated 479232 bytes of page_cgroup
+please try 'cgroup_disable=memory' option if you don't want memory cgroups
+PVR=10300b00 CVR=73440410 PRR=00003113
+I-cache : n_ways=4 n_sets=256 way_incr=8192
+I-cache : entry_mask=0x00001fe0 alias_mask=0x00001000 n_aliases=2
+D-cache : n_ways=4 n_sets=256 way_incr=8192
+D-cache : entry_mask=0x00001fe0 alias_mask=0x00001000 n_aliases=2
+Memory: 231408K/239616K available (3347K kernel code, 214K rwdata, 1424K rodata, 128K init, 432K bss, 8204K reserved)
+virtual kernel memory layout:
+    fixmap  : 0xdffd7000 - 0xdffff000   ( 160 kB)
+    vmalloc : 0xc0000000 - 0xdffd5000   ( 511 MB)
+    lowmem  : 0x80000000 - 0x8ea00000   ( 234 MB) (cached)
+            : 0x8ea00000 - 0xaea00000   ( 512 MB) (uncached)
+      .init : 0x804e2000 - 0x80502000   ( 128 kB)
+      .data : 0x80346e80 - 0x804e1b80   (1643 kB)
+      .text : 0x80001000 - 0x80346e80   (3351 kB)
+TRAB buffer at 8eb00000 allocated
+TRABLOOKUP buffer at 8eb40000 allocated
+NR_IRQS:8 nr_irqs:8 0
+intc: Registered controller 'sh7757' with 169 IRQs
+intc: Registered controller 'sh7757-irq4567' with 4 IRQs
+intc: Registered controller 'sh7757-irq0123' with 4 IRQs
+Console: colour dummy device 80x25
+ sh-tmu.0: ch0: used for clock events
+ sh-tmu.0: ch0: used for periodic clock events
+ sh-tmu.0: ch1: used as clock source
+Calibrating delay loop (skipped)... 576.00 BogoMIPS PRESET (lpj=2880000)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Initializing cgroup subsys memory
+CPU: SH7757
+Performance Events: sh4a support registered
+devtmpfs: initialized
+futex hash table entries: 256 (order: -1, 3072 bytes)
+pinctrl core: initialized pinctrl subsystem
+NET: Registered protocol family 16
+sh-pfc pfc-sh7757: sh7757_pfc handling gpio 0 -> 203
+sh-pfc pfc-sh7757: sh7757_pfc handling gpio 204 -> 500
+sh-pfc pfc-sh7757: sh7757_pfc support registered
+HW Breakpoints: SH-4A UBC support registered
+sh-pfc pfc-sh7757: Use of GPIO API for function requests is deprecated. Convert to pinctrl
+Dell_get_idrac_type: 0
+enable PCIe shared memory area
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+Registering the semaphore for port change notification 
+usbcore: registered new device driver usb
+DMA: Registering riic_dmac handler (24 channels).
+DMA: Registering RIIC DMA API.
+sh_tmu sh-tmu.0: kept as earlytimer
+Switched to clocksource sh-tmu.0
+FS-Cache: Loaded
+sh_tmu sh-tmu.0: ch0: used for oneshot clock events
+NET: Registered protocol family 2
+TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+TCP: Hash tables configured (established 2048 bind 2048)
+TCP: reno registered
+UDP hash table entries: 256 (order: 0, 4096 bytes)
+UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+NFS: Registering the id_resolver key type
+Key type id_resolver registered
+Key type id_legacy registered
+nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+fuse init (API version 7.23)
+msgmni has been set to 451
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+SuperH (H)SCI(F) driver initialized
+sh-sci.0: ttySC0 at MMIO 0xfe4b0000 (irq = 40, base_baud = 0) is a scif
+sh-sci.1: ttySC1 at MMIO 0xfe4c0000 (irq = 76, base_baud = 0) is a scif
+sh-sci.2: ttySC2 at MMIO 0xfe4d0000 (irq = 104, base_baud = 0) is a scif
+console [ttySC2] enabled
+sh-sci.3: ttySC3 at MMIO 0xfe4c0000 (irq = 76, base_baud = 0) is a scif
+sh-sci.4: ttySC4 at MMIO 0xfe4c0000 (irq = 76, base_baud = 0) is a scif
+sh-sci.5: ttySC5 at MMIO 0xfe4c0000 (irq = 76, base_baud = 0) is a scif
+sh-sci.6: ttySC6 at MMIO 0xfe4c0000 (irq = 76, base_baud = 0) is a scif
+sh-sci.7: ttySC7 at MMIO 0xfe4b0000 (irq = 40, base_baud = 0) is a scif
+sh-sci.8: ttySC8 at MMIO 0xfe4c0000 (irq = 76, base_baud = 0) is a scif
+brd: module loaded
+loop: module loaded
+sh_spi sh_spi.0: master is unqueued, this is deprecated
+m25p80 spi0.1: found n25q032, expected m25p80
+m25p80 spi0.1: n25q032 (4096 Kbytes)
+Creating 9 MTD partitions on "m25p80":
+0x000000000000-0x000000080000 : "u-boot1"
+0x000000080000-0x000000100000 : "u-boot2"
+0x000000100000-0x000000110000 : "env1"
+0x000000110000-0x000000120000 : "env2"
+0x000000120000-0x000000130000 : "fru"
+0x000000130000-0x000000140000 : "res1"
+0x000000140000-0x0000001c0000 : "tracebuf"
+0x0000001c0000-0x000000340000 : "lcl"
+0x000000340000-0x000000400000 : "res2"
+
+Monolithic/DRB
+Dell_get_planar_type: id 2
+12G System
+libphy: sh_mii: probed
+Base address at 0xfee00000, 00:00:00:00:00:00, IRQ 315.
+Dell_get_planar_type: id 2
+12G System
+libphy: sh_mii: probed
+Base address at 0xfef00800, 00:00:00:00:00:00, IRQ 84.
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+sh_ehci sh_ehci: SuperH EHCI
+sh_ehci sh_ehci: new USB bus registered, assigned bus number 1
+sh_ehci sh_ehci: irq 57, io mem 0xfe4f1000
+sh_ehci sh_ehci: USB 2.0 started, EHCI 1.00
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 2 ports detected
+ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+ohci-platform: OHCI generic platform driver
+r8a66597_udc r8a66597_udc.0: version 2017-10-10
+r8a66597_udc r8a66597_udc.1: version 2017-10-10
+r8a66597_udc r8a66597_udc.2: version 2017-10-10
+r8a66597_udc r8a66597_udc.3: version 2017-10-10
+r8a66597_udc r8a66597_udc.4: version 2017-10-10
+r8a66597_udc r8a66597_udc.5: version 2017-10-10
+r8a66597_udc r8a66597_udc.6: version 2017-10-10
+r8a66597_udc r8a66597_udc.7: version 2017-10-10
+mousedev: PS/2 mouse device common for all mice
+mknod /dev/aess_wdtdrv c 10 130 
+aess_wdtdrv: initialized. (nowayout=0)
+device-mapper: ioctl: 4.27.0-ioctl (2013-10-30) initialised: dm-devel@redhat.com
+sh_mobile_sdhi sh_mobile_sdhi.0: Runtime PM disabled, clock forced on.
+vflash_init: power control pin initiated
+platform sh_mobile_sdhi.0: Driver sh_mobile_sdhi requests probe deferral
+sh_mmcif sh_mmcif.0: No vmmc regulator found
+sh_mmcif sh_mmcif.0: No vqmmc regulator found
+sh_mmcif sh_mmcif.0: driver version 2010-04-28
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+sermux sermux: version 2012-10-11
+ipip: IPv4 over IPv4 tunneling driver
+ip_tables: (C) 2000-2006 Netfilter Core Team
+TCP: cubic registered
+NET: Registered protocol family 10
+ip6_tables: (C) 2000-2006 Netfilter Core Team
+sit: IPv6 over IPv4 tunneling driver
+NET: Registered protocol family 17
+8021q: 802.1Q VLAN Support v1.8
+Key type dns_resolver registered
+registered taskstats version 1
+sh_mobile_sdhi sh_mobile_sdhi.0: Runtime PM disabled, clock forced on.
+vflash_init: power control pin initiated
+sh_mobile_sdhi sh_mobile_sdhi.0: No vmmc regulator found
+sh_mobile_sdhi sh_mobile_sdhi.0: No vqmmc regulator found
+mmc0: switch to bus width 2 failed
+mmc0: switch to bus width 1 failed
+mmc0: new high speed MMC card at address 0001
+mmcblk0: mmc0:0001 M4G1EM 3.72 GiB 
+ mmcblk0: p1 p2 p3 p4 < p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 >
+sh_mobile_sdhi sh_mobile_sdhi.0: mmc1 base at 0xffe50000 clock rate 48 MHz
+VFS: Mounted root (squashfs filesystem) readonly on device 179:6.
+devtmpfs: mounted
+Freeing unused kernel memory: 128K (804e2000 - 80502000)
+systemd[1]: systemd 195 running in system mode. (-PAM -LIBWRAP -AUDIT -SELINUX +IMA +SYSVINIT -LIBCRYPTSETUP +GCRYPT +ACL +XZ; debian)
+
+Welcome to Linux!
+
+systemd[1]: could not find module by name='autofs4'
+systemd[1]: Failed to insert 'autofs4'
+systemd[1]: Set hostname to <idrac8>.
+random: systemd: uninitialized urandom read (16 bytes read, 32 bits of entropy available)
+systemd[1]: Initializing machine ID from random generator.
+systemd[1]: Installed transient /etc/machine-id file.
+random: systemd: uninitialized urandom read (12 bytes read, 32 bits of entropy available)
+systemd[1]: Started Developer Shell.
+systemd[1]: Starting Login Prompts.
+[  OK  ] Reached target Login Prompts.
+systemd[1]: Reached target Login Prompts.
+systemd[1]: Starting Remote File Systems.
+[  OK  ] Reached target Remote File Systems.
+systemd[1]: Reached target Remote File Systems.
+systemd[1]: Starting Delayed Shutdown Socket.
+[  OK  ] Listening on Delayed Shutdown Socket.
+systemd[1]: Listening on Delayed Shutdown Socket.
+systemd[1]: Starting udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+systemd[1]: Listening on udev Kernel Socket.
+systemd[1]: Starting udev Control Socket.
+[  OK  ] Listening on udev Control Socket.
+systemd[1]: Listening on udev Control Socket.
+systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+systemd[1]: Starting Swap.
+[  OK  ] Reached target Swap.
+systemd[1]: Reached target Swap.
+systemd[1]: Starting Local File Systems (Pre).
+[  OK  ] Reached target Local File Systems (Pre).
+systemd[1]: Reached target Local File Systems (Pre).
+systemd[1]: Starting Journal Socket.
+[  OK  ] Listening on Journal Socket.
+systemd[1]: Listening on Journal Socket.
+systemd[1]: Started NFS permission changes.
+systemd[1]: Mounted Huge Pages File System.
+systemd[1]: Mounting POSIX Message Queue File System...
+         Mounting POSIX Message Queue File System...
+systemd[1]: Started Set Up Additional Binary Formats.
+systemd[1]: Starting Journal Service...
+         Starting Journal Service...
+[  OK  ] Started Journal Service.
+systemd[1]: Started Journal Service.
+systemd[1]: Started Load Kernel Modules.
+systemd[1]: Mounting FUSE Control File System...
+         Mounting FUSE Control File System...
+systemd[1]: Mounting Configuration File System...
+         Mounting Configuration File System...
+systemd[1]: Starting Apply Kernel Variables...
+         Starting Apply Kernel Variables...
+systemd[1]: Starting udev Kernel Device Manager...
+         Starting udev Kernel Device Manager...
+systemd[1]: Starting Mount All Filesystems...
+         Starting Mount All Filesystems...
+         Starting Initializes cgroup hierarchy...
+         Starting Load IPMI drivers...
+         Mounting /sys/kernel/debug...
+[  OK  ] Mounted POSIX Message Queue File System.
+[  OK  ] Mounted FUSE Control File System.
+[  OK  ] Mounted Configuration File System.
+[  OK  ] Started Apply Kernel Variables.
+[  OK  ] Mounted /sys/kernel/debug.
+[  OK  ] Reached target Local File Systems.
+[  OK  ] Started Initializes cgroup hierarchy.
+[  OK  ] Started udev Kernel Device Manager.
+[  OK  ] Stopped Trigger Flushing of Journal to Persistent Storage.
+         Stopping Journal Service...
+[  OK  ] Stopped Journal Service.
+         Starting Journal Service...
+[  OK  ] Started Journal Service.
+[  OK  ] Stopped Trigger Flushing of Journal to Persistent Storage.
+         Stopping Journal Service...
+[  OK  ] Stopped Journal Service.
+         Starting Journal Service...
+[  OK  ] Started Journal Service.
+[  OK  ] Stopped Trigger Flushing of Journal to Persistent Storage.
+         Stopping Journal Service...
+[  OK  ] Stopped Journal Service.
+         Starting Journal Service...
+[  OK  ] Started Journal Service.
+[  OK  ] Started Load IPMI drivers.
+         Starting Hardware Watchdog...
+         Starting Mount RSPI Filesystem...
+[FAILED] Failed to start Mount RSPI Filesystem.
+See 'systemctl status mount-rspi.service' for details.
+[  OK  ] Started Hardware Watchdog.
+[  OK  ] Started Mount All Filesystems.
+         Starting Enable KCS SERIRQ...
+         Starting Common Logging Mechanism...
+         Starting Recreate Volatile Files and Directories...
+         Starting Mount 13G credential vault...
+         Starting Setup /flash/data0...
+[  OK  ] Started Common Logging Mechanism.
+[  OK  ] Started Enable KCS SERIRQ.
+[FAILED] Failed to start Recreate Volatile Files and Directories.
+See 'systemctl status systemd-tmpfiles-setup.service' for details.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Listening on appweb handlr socket.
+[  OK  ] Listening on feature manager socket.
+[  OK  ] Listening on gds socket.
+[  OK  ] Listening on maser access controller socket.
+[  OK  ] Listening on wsman data handlr socket.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Reached target Sockets.
+[  OK  ] Reached target Basic System.
+         Starting Install trace buffer module...
+[  OK  ] Started Install trace buffer module.
+         Starting Random Number Generator Daemon...
+         Starting D-Bus System Message Bus...
+[  OK  ] Started D-Bus System Message Bus.
+[  OK  ] Started Random Number Generator Daemon.
+[  OK  ] Started Mount 13G credential vault.
+         Starting 12G credential vault shutdown sync...
+[  OK  ] Started 12G credential vault shutdown sync.
+[  OK  ] Started Setup /flash/data0.
+         Starting Data Manager...
+         Starting aim...
+[  OK  ] Started aim.
+         Starting Setup AIM config items...
+         Starting OSI App...
+[  OK  ] Started OSI App.
+         Starting ttymonitor...
+         Starting System call agent...
+[  OK  ] Started System call agent.
+         Starting fullfw...
+[  OK  ] Started ttymonitor.
+[  OK  ] Started Data Manager.
+[  OK  ] Started Setup AIM config items.
+[  OK  ] Started fullfw.
+         Starting Apply BMC settings to sysfs...
+[  OK  ] Started Apply BMC settings to sysfs.
+         Starting Load USB drivers...
+         Starting Event Manager...
+         Starting SNMP Plug-in Manager...
+         Starting Feature manager...
+         Starting iDRAC Quick Sync Interface Service...
+         Starting Basic network initialization...
+         Starting Personality Module...
+[  OK  ] Started Personality Module.
+         Starting Syslog...
+         Starting tm app...
+         Starting OSINET INIT...
+         Starting Verify maser partitions...
+[  OK  ] Started OSINET INIT.
+         Starting Unique Certificate...
+[  OK  ] Started tm app.
+[  OK  ] Started iDRAC Quick Sync Interface Service.
+Sep 16 05:17:30 idrac8 syslogd 1.4.2: restart.
+
+[  OK  ] Started Syslog.
+[  OK  ] Started Feature manager.
+[  OK  ] Started SNMP Plug-in Manager.
+[  OK  ] Started Load USB drivers.
+         Starting udhcpd usb0...
+[  OK  ] Started Verify maser partitions.
+[  OK  ] Started Unique Certificate.
+[  OK  ] Started Basic network initialization.
+         Starting OSINET...
+[  OK  ] Started OSINET.
+         Starting Remote File Share (RFS)...
+[  OK  ] Started Remote File Share (RFS).
+         Starting Virtual Flash Key (VFK)...
+[  OK  ] Started Virtual Flash Key (VFK).
+         Starting APS...
+         Starting dhclient daemon...
+[  OK  ] Started dhclient daemon.
+         Starting Ifplug Daemon...
+[  OK  ] Started Ifplug Daemon.
+         Starting IPMI Gateway...
+[  OK  ] Started IPMI Gateway.
+         Starting js start...
+[  OK  ] Started js start.
+         Starting RACADM Remote Access Controller Log Daemon...
+[  OK  ] Started RACADM Remote Access Controller Log Daemon.
+         Starting sfcbd...
+         Starting Telnet Daemon...
+         Starting VNC server...
+[  OK  ] Started VNC server.
+         Starting VNC source...
+[  OK  ] Started VNC source.
+[  OK  ] Started Event Manager.
+[FAILED] Failed to start udhcpd usb0.
+See 'systemctl status usb0.service' for details.
+[DEPEND] Dependency failed for Avahi-usb0.
+[  OK  ] Started sfcbd.
+         Starting SMASH Command Line Processor Daemon (clpd)...
+[  OK  ] Started Telnet Daemon.
+[  OK  ] Started SMASH Command Line Processor Daemon (clpd).
+         Starting SSH Daemon...
+[  OK  ] Started SSH Daemon.
+[  OK  ] Started APS.
+         Starting VKVM_PM...
+[  OK  ] Started VKVM_PM.
+         Starting Attach maser...
+[  OK  ] Started Attach maser.
+         Starting MCTPD...
+         Starting MR Cache Daemon...
+         Starting personality module...
+         Starting racadm ipmiextd...
+         Starting Maser Access Controller...
+[  OK  ] Started Maser Access Controller.
+         Starting Config Backup / Restore...
+[  OK  ] Started Config Backup / Restore.
+         Starting clockwatcher...
+         Starting Custom crond...
+         Starting Data Manager Stage 2 Populator Load...
+         Starting log uboot messages...
+         Starting Post initialization cleanup...
+[  OK  ] Started Custom crond.
+[  OK  ] Started personality module.
+         Starting AppWeb Server...
+[  OK  ] Started AppWeb Server.
+[  OK  ] Started MCTPD.
+[  OK  ] Started Post initialization cleanup.
+[  OK  ] Started log uboot messages.
+         Starting display information required for factory...
+[  OK  ] Started racadm ipmiextd.
+[  OK  ] Started clockwatcher.
+display_factory_info.sh[2504]: cat /etc/fw_ver
+display_factory_info.sh[2504]: 2.60.52.60.60
+[  OK  ] Started display information required for factory.
+display_factory_info.sh[2504]: 2.60.60.60.120
+display_factory_info.sh[2504]: built for - system
+display_factory_info.sh[2504]: Mon Jun 11 06:21:10 CDT 2018
+display_factory_info.sh[2504]: 180611062110
+display_factory_info.sh[2504]: IDRAC SVN Rev  =
+display_factory_info.sh[2504]: Hudson Project = idrac-13g-ducati1.7-master-release-A-Rev
+display_factory_info.sh[2504]: Hudson Build # = 676
+display_factory_info.sh[2504]: Release ID     =
+display_factory_info.sh[2504]: MSC Revision = https://pgre-svn2.us.dell.com/svn/LC/13g/branches/rts_1_7/msc 5229
+display_factory_info.sh[2504]: cat /proc/cmdline
+display_factory_info.sh[2504]: root=/dev/mmcblk0p6 rootwait rw rootfstype=squashfs mem=239616k console=ttyS2,115200 <NULL> mac1=5C:F9:DD:F1:C9:90 mac2=5C:F9:DD:F1:C9:91  mode=vhard init=/bin/sh reset_cause=acquiet console=ttySC2,115200 init=/sbin/init
+display_factory_info.sh[2504]: cat /tmp/loguboot
+display_factory_info.sh[2504]: L1, S13  INFO: 00:002 Start-up -to- util_idrac_main()
+display_factory_info.sh[2504]: L1, S13  INFO: 00:004 U-Boot 2009.08 (Jun 11 2018 - 05:56:29) Avocent (0.0.3) EVB
+display_factory_info.sh[2504]: L1, S13  INFO: 00:007 U-Boot checkin date(08-11-2016) Version(1.1.32)
+display_factory_info.sh[2504]: L1, S13  INFO: 00:006 iDRAC PPID <NULL>
+display_factory_info.sh[2504]: L1, S13  INFO: 00:003 SPI NOR init 4096 KiB N25Q032 bus=0 cs=0, speed=1000000, mode=3
+display_factory_info.sh[2504]: L1, S13  INFO: 00:007 SH-4A Product: Major Ver=0x31  Minor Ver=0x13 C3 Little endian
+display_factory_info.sh[2504]: Family=0x10    Major Ver=0x30  Minor Ve
+display_factory_info.sh[2504]: L1, S13  INFO: 00:139 BCM54610 OUI=0x00d897  Model=0x26  Revision=0x0a PhyAddr=1
+display_factory_info.sh[2504]: L1, S13  INFO: 00:007 Dedicated monolithic mgmt NIC disabled
+display_factory_info.sh[2504]: L1, S13  INFO: 00:005 SD CARD: is not found
+display_factory_info.sh[2504]: L1, S13  INFO: 00:040 EMMC:   Device: sh_mmcif   Manufacturer ID: 15   OEM: 100
+display_factory_info.sh[2504]: Name: M4G1E   Tran Speed: 25000000   Rd Blk
+display_factory_info.sh[2504]: L1, S13  INFO: 00:023 CPLD: Major Ver=0x1  Minor Ver=0x0  Maint Ver=0x3
+display_factory_info.sh[2504]: Planar: Type=0x02  Rev=0x8  Rework=0x0  Scratch/Path
+display_factory_info.sh[2504]: L1, S13  PASS: 00:014 Coin cell detected good,  AD=0x3ae low water=0x2c1
+display_factory_info.sh[2504]: L1, S13  PASS: 00:008 PCIe SH7757_C0 Ver=0.15 MCTP en, CRC=0x8e9b6875 @0x8efbd914 cnt=0x18000
+display_factory_info.sh[2504]: L1, S13  INFO: 00:008 Init PCIe mailbox(PCIe 0xFFEE0150=0x40010000)
+display_factory_info.sh[2504]: L1, S13  INFO: 00:006 mode=normal
+display_factory_info.sh[2504]: L1, S13  INFO: 00:002 reset_cause=ac
+display_factory_info.sh[2504]: L1, S13  PASS: 00:005 Booted Lower Vector, 'uboot1' wdt2cnt=0
+display_factory_info.sh[2504]: L1, S13  INFO: 00:005 wdt0cnt=0  cpld_recover_cnt=0  ddr_recover_cnt=0
+display_factory_info.sh[2504]: L1, S13  PASS: 00:007 Clear CH1/CH2, clear 4K shared memory@0xffcaa000 on AC power up
+display_factory_info.sh[2504]: L1, S13  PASS: 00:007 SMR0 no sermux env, default 0xd4
+display_factory_info.sh[2504]: L1, S13  INFO: 00:004 GRACR=0x3c HISEL=0x00 SIRQCR5_D=0x03 SIRQCR6_D=0x01 LADMSK0=0xff2
+display_factory_info.sh[2504]: MRSTCR0=0xfedffe7f MRSTCR1=0xfff3ff0
+display_factory_info.sh[2504]: L1, S13  PASS: 00:022 etherc0=5C:F9:DD:F1:C9:90
+display_factory_info.sh[2504]: getherc0=5C:F9:DD:F1:C9:91
+display_factory_info.sh[2504]: L1, S13  INFO: 00:009 Fan logic for monolithic planar type 2
+display_factory_info.sh[2504]: fan1 - def 0000 1fff 3d   fan2 - def 0000 1fff 3d
+display_factory_info.sh[2504]: L1, S13  INFO: 00:076 Env and backup CRC'ed ok
+display_factory_info.sh[2504]: L1, S13  INFO: 02:596 Sync eMMC/SPI NOR/Alternate u-boot images
+display_factory_info.sh[2504]: L1, S13  PASS: 00:268 Current u-boot1 1.1.32 verified with 'ubootN1'
+display_factory_info.sh[2504]: Trailer Struct - Missing start token, exp=0xc0de1111 re
+display_factory_info.sh[2504]: L1, S13  PASS: 08:371 Verify OS Images N-1: CRC32 OK: Kernel=0x5e098687 Rootfs=0x43309725 PData=0x34bbc90a
+display_factory_info.sh[2504]: L1, S13  PASS: 00:009 Boot device=emmc  Boot partition5/N-1
+display_factory_info.sh[2504]: Boot Path Retry:P1/N=0 P5/N-1=0
+display_factory_info.sh[2504]: L1, S13  INFO: 00:009 Autoboot will abort as Bootdelay = -1, Disable WDT2
+display_factory_info.sh[2504]: L1, S13  INFO: 00:000 11:675
+display_factory_info.sh[2504]: /bin/MemAccess -ww ffec0030 5500
+display_factory_info.sh[2504]: +               0    2    4    6 :    8    A    C    E
+display_factory_info.sh[2504]: ------------------------------------------------------
+display_factory_info.sh[2504]: 0xffec0030 = 5500 0000 0400 2900 : e900 0500 8000 0000
+display_factory_info.sh[2504]: 0xffec0040 = 5000 0e00 c000 6f00 : fe00 2c00 6f00 2400
+display_factory_info.sh[2504]: ^
+display_factory_info.sh[2504]: /bin/MemAccess -rb 0x14000000
+display_factory_info.sh[2504]: +             0  1  2  3  4  5  6  7 :  8  9  A  B  C  D  E  F
+display_factory_info.sh[2504]: --------------------------------------------------------------
+display_factory_info.sh[2504]: 0x14000000 = 01 00 03 00 02 00 00 00 : 08 00 00 00 01 00 06 0a
+display_factory_info.sh[2504]: 0x14000010 = 00 08 08 00 04 00 04 00 : 00 07 0c 09 03 0c 0c 0f
+display_factory_info.sh[2504]: 0x14000020 = 07 07 0e 07 00 00 00 00 : 00 00 00 01 00 00 01 01
+display_factory_info.sh[2504]: 0x14000030 = 00 00 00 00 00 00 00 00 : 00 00 00 00 00 00 00 00
+
+
+[  OK  ] Started MR Cache Daemon.
+
+
+
+         Starting SNMPD...
+[  OK  ] Started SNMPD.
+[  OK  ] Started Data Manager Stage 2 Populator Load.
+         Starting Trigger Flushing of Journal to Persistent Storage...
+         Starting SD Detection...
+         Starting idrac discovery...
+         Starting idrac discovery ipchange...
+         Starting Log Reset Event Service...
+         Starting Market Usage Tracking Collection...
+[  OK  ] Started Market Usage Tracking Collection.
+         Starting Market Usage Tracking Collection for shutdown...
+         Starting Rack Style Management daemon...
+         Starting USB app...
+[  OK  ] Started USB app.
+         Starting avct_wsman...
+[  OK  ] Started SD Detection.
+[  OK  ] Started idrac discovery.
+[  OK  ] Started idrac discovery ipchange.
+[  OK  ] Started Market Usage Tracking Collection for shutdown.
+[  OK  ] Started Rack Style Management daemon.
+[  OK  ] Started avct_wsman.
+[  OK  ] Started Trigger Flushing of Journal to Persistent Storage.
+[  OK  ] Started Log Reset Event Service.
+[  OK  ] Reached target Multi-User.
+Sep 16 05:19:29 idrac8 syslogd 1.4.2: restart.
+Shell Hidden
+
