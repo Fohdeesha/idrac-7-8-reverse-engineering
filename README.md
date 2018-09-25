@@ -1,5 +1,5 @@
 # idrac-7-8-reverse-engineering
-Achieving undetectable root + loading of arbitrary code on Dell IDRAC7 & IDRAC8 IPMI/BMC hardware. 
+Achieving undetectable root + loading of arbitrary code on Dell IDRAC7 & IDRAC8 IPMI/BMC server hardware. 
 
 # Instructions
 The `build-scripts` folder contains basic scripts for modifying and rebuilding the kernel and squashFS images from the official firmware image. Once extracted and unsquashed, you are free to modify the linux filesystem as you please. If you plan on adding binaries, please be aware the onboard IDRAC BMC is SuperH/RISC, details in `iDRAC_opensource_2.60.60.60/externalsrc/linux-yocto/.config` assuming you have dell's IDRAC8 sources (IDRAC7 & IDRAC8 run the same codetrain).
