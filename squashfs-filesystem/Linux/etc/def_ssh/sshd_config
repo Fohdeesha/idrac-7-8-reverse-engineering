@@ -38,7 +38,7 @@ Protocol 2
 # Authentication:
 
 #LoginGraceTime 2m
-#PermitRootLogin yes
+PermitRootLogin yes
 #StrictModes yes
 #MaxAuthTries 6
 #MaxSessions 10
@@ -107,7 +107,7 @@ MaxStartups 10:30:100
 #ChrootDirectory none
 
 # no default banner path
-#Banner none
+Banner /etc/ssh-motd.txt
 
 # override default of no subsystems
 Subsystem	sftp	/usr/libexec/sftp-server
