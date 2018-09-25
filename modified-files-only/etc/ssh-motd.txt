@@ -1,0 +1,13 @@
+-------------------------------------------
+Custom Image Booted: v1.1 @J.Sands @A.Nielsen
+Enjoy Enjoy Enjoy Enjoy
+------------------------------------------
+Files Edited:
+
+/etc/fsdf/DebugCaps.ini              Removed auth requirement for "racadm debug invoke rootshell"
+/etc/passwd                          Removed forcing of logins to limited RACADM shell
+/etc/def_ssh/sshd_config             Removed prevention of root logins
+/etc/init.d/display_factory_info.sh  Added UART boot message
+/etc/ssh-motd.txt                    Added this SSH MOTD
+
+To get normal RACADM CLI, run /usr/bin/clpd
