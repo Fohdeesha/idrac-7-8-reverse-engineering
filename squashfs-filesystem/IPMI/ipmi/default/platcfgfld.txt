@@ -1,4 +1,0 @@
-#Grptype:datatype:fieldindex:numinstances:fieldname:default:maxlength:readwrite:unique name to query by:
-20051:CFG_BIN:1:1:DefaultLicenseFeatures:'0x20 0x00':2:CFG_READONLY::
-20051:CFG_BIN:2:1:AllowableLicenses:'0x38 0x00':2:CFG_READONLY::
-
