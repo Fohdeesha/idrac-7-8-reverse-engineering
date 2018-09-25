@@ -1,0 +1,8 @@
+[aess_sgpiodrv]
+SGPIO_En="Disable_P0"
+SGPIO_En="Disable_P1"
+SGPIO_XferCLK="P0_XferCLK=3"
+SGPIO_XferCLK="P1_XferCLK=3"
+SGPIO_XferNum="P0_XferNum=16"
+SGPIO_XferNum="P1_XferNum=8"
+aess_sgpiodrv_End
