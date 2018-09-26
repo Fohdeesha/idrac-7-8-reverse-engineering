@@ -1,10 +1,12 @@
+**Special thanks to Adam Nielsen for his help and poking through sources with me over 70+ emails in two timezones. Also, for keeping the same Uni email for 10+ years**
+
 # idrac-7-8-reverse-engineering
 Achieving undetectable root + loading of arbitrary code on Dell IDRAC7 & IDRAC8 IPMI/BMC server hardware. 
 
 # Instructions
 The `build-scripts` folder contains basic scripts for modifying and rebuilding the kernel and squashFS images from the official firmware image. Once extracted and unsquashed, you are free to modify the linux filesystem as you please. If you plan on adding binaries, please be aware the onboard IDRAC BMC is SuperH/RISC, details in `iDRAC_opensource_2.60.60.60/externalsrc/linux-yocto/.config` assuming you have dell's IDRAC8 sources (IDRAC7 & IDRAC8 run the same codetrain).
 
-What is **not** covered in this repo is instructions on bypassing Dell's PGP signature checks to load and run your modified firmware onto the controller. These instructions may be added at a later date pending security disclosure. Hint: **u-boot**
+What is **not** covered in this repo is instructions on bypassing Dell's PGP signature checks to load and run your modified firmware onto the controller. These instructions may be added at a later date
 
 ```
 display_factory_info.sh[2377]: 0x14000000 = 01 00 03 00 02 00 00 00 : 08 00 00 00 01 00 06 0b
@@ -25,7 +27,7 @@ display_factory_info.sh[2377]: /etc/init.d/display_factory_info.sh  Added these 
 display_factory_info.sh[2377]: -------------------------------------------
 ```
 
-**Special thanks to Adam Nielsen for poking through sources with me over 70+ emails in two timezones**
+
 
 
 ![drac-1](https://i.imgur.com/NEoeaf7.jpg)

@@ -1,0 +1,2 @@
+# Pre-compiled squashFS image with root enabled
+This is a pre-made squashfs linux image with root enabled. For changes made, see this commit: [Edited Nix Files](https://github.com/Fohdeesha/idrac-7-8-reverse-engineering/commit/af2da507b4386ba9964057fc6d698618d73b346d)
