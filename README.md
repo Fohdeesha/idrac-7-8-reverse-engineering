@@ -33,5 +33,3 @@ display_factory_info.sh[2377]: -------------------------------------------
 ![drac-1](https://i.imgur.com/NEoeaf7.jpg)
 
 ![drac-2](https://i.imgur.com/yQZiCP0.jpg)
-
-![drac-2](https://i.imgur.com/mAbKbew.png)
