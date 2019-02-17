@@ -3,6 +3,14 @@
 # idrac-7-8-reverse-engineering
 Achieving undetectable root + loading of arbitrary code on Dell IDRAC7 & IDRAC8 IPMI/BMC server hardware. 
 
+**Featured on:**
+* [ServeTheHome](https://www.servethehome.com/idracula-vulnerability-impacts-millions-of-legacy-dell-emc-servers/)
+* [The Register](https://www.theregister.co.uk/2018/10/03/idrac_dell_server_firmware/)
+* [AnandTech](https://www.anandtech.com/show/13414/dell-emc-poweredge-idrac-bmc-vulnerability)
+
+**CVE:** [CVE-2018-15776](https://www.dell.com/support/article/us/en/04/sln315190/dell-emc-idrac-multiple-vulnerabilities-cve-2018-15774-and-cve-2018-15776-?lang=en)
+
+
 # Instructions
 The `build-scripts` folder contains basic scripts for modifying and rebuilding the kernel and squashFS images from the official firmware image. Once extracted and unsquashed, you are free to modify the linux filesystem as you please. If you plan on adding binaries, please be aware the onboard IDRAC BMC is SuperH/RISC, details in `iDRAC_opensource_2.60.60.60/externalsrc/linux-yocto/.config` assuming you have dell's IDRAC8 sources (IDRAC7 & IDRAC8 run the same codetrain).
 
